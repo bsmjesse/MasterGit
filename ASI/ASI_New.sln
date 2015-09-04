@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://localhost/ASI_New/", "http://localhost/ASI_New", "{8DCFF936-96D2-4808-9997-CA926A5B3DAA}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""$/HGI VLF/VLF 2.0/ASI_New", UVAFAAAA"
+		SccAuxPath = ""
+		SccLocalPath = "."
+		SccProvider = "MSSCCI:Microsoft Visual SourceSafe"
+		Debug.AspNetCompiler.VirtualPath = "/ASI_New"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\ASI_New\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\ASI_New\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/ASI_New"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\ASI_New\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\ASI_New\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\..\..\..\inetpub\wwwroot\ASI_New\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DCFF936-96D2-4808-9997-CA926A5B3DAA}.Debug|.NET.ActiveCfg = Debug|.NET
+		{8DCFF936-96D2-4808-9997-CA926A5B3DAA}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 1
+		SccWebProject0 = true
+		SccProjectUniqueName0 = http://localhost/ASI_New
+		SccProjectName0 = \u0022$/HGI\u0020VLF/VLF\u00202.0/ASI_New\u0022,\u0020UVAFAAAA
+		SccLocalPath0 = ..\\..\\..\\..\\..\\..\\inetpub\\wwwroot\\ASI_New
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectEnlistmentChoice0 = 2
+	EndGlobalSection
+EndGlobal

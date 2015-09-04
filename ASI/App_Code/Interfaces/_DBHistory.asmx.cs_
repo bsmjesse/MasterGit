@@ -1,0 +1,894 @@
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Globalization;
+using System.Web;
+using System.Web.Services;
+using VLF.ERRSecurity;
+using VLF.DAS.Logic;
+using System.IO;
+
+namespace VLF.ASI.Interfaces
+{
+
+    [WebService(Namespace = "http://www.sentinelfm.com")]
+
+    /// <summary>
+    /// Summary description for DBHistory.
+    /// </summary>
+    public class DBHistory : System.Web.Services.WebService
+    {
+        public DBHistory()
+        {
+            //CODEGEN: This call is required by the ASP.NET Web Services Designer
+            InitializeComponent();
+        }
+
+        #region Component Designer generated code
+
+        //Required by the Web Services Designer 
+        private IContainer components = null;
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+        }
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && components != null)
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
+
+        public int GetVehicleHistory(int userId, string SID, string licensePlate, string dateTimeFrom, string dateTimeTo, ref string xml)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetVehicleHistory( userId = {0}, licensePlate = {1}, dateTimeFrom = {2}, dateTimeTo = {3} )", userId, licensePlate, dateTimeFrom, dateTimeTo)));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+                //Authorization
+                VLF.DAS.Logic.User dbUser = new User(Application["ConnectionString"].ToString());
+                if (!dbUser.ValidateUserLicensePlate(userId, licensePlate))
+                    return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+
+                return (int)InterfaceError.NotImplemented;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+        [WebMethod(Description = "Retrieves vehicles status from history by vehicle Id . XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize], [StreetAddress],[SequenceNum],[BoxArmed],[MsgDetails],[MsgDirection],[Acknowledged],[Scheduled]")]
+        public int GetVehicleStatusHistoryByVehicleId(int userId, string SID, Int64 vehicleId, string dateTimeFrom, string dateTimeTo, bool includeCoordinate, bool includeSensor, bool includePositionUpdate, bool includeInvalidGps, Int16 DclId, ref string xml, ref bool requestOverflowed)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetVehicleStatusHistoryByVehicleId( userId = {0}, vehicleId = {1}, dateTimeFrom = {2}, dateTimeTo = {3} )", userId, vehicleId, dateTimeFrom, dateTimeTo)));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+
+                //Authorization
+                VLF.DAS.Logic.User dbUser = new User(Application["ConnectionString"].ToString());
+                if (!dbUser.ValidateUserVehicle(userId, vehicleId))
+                    return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+                DataSet dsMsgInHst = null;
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                    int totalSqlRecords = 0;
+                    dsMsgInHst = dbMessageQueue.GetMessagesFromHistoryByVehicleId(userId, vehicleId, Convert.ToDateTime(dateTimeFrom), Convert.ToDateTime(dateTimeTo), includeCoordinate, includeSensor, includePositionUpdate, includeInvalidGps, DclId,"en",    ref requestOverflowed, ref totalSqlRecords);
+
+                    if (dsMsgInHst != null && dsMsgInHst.Tables.Count > 0 && dsMsgInHst.Tables[0].Rows.Count > 0)
+                        xml = dsMsgInHst.GetXml();
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+
+        [WebMethod(Description = "Retrieves vehicles status from history by vehicle Id . XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize], [StreetAddress],[SequenceNum],[BoxArmed],[MsgDetails],[MsgDirection],[Acknowledged],[Scheduled]")]
+        public int GetVehicleStatusHistoryByVehicleIdByLang(int userId, string SID, Int64 vehicleId, string dateTimeFrom, string dateTimeTo, bool includeCoordinate, bool includeSensor, bool includePositionUpdate, bool includeInvalidGps, Int16 DclId, string lang, ref string xml, ref bool requestOverflowed)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetVehicleStatusHistoryByVehicleId( userId = {0}, vehicleId = {1}, dateTimeFrom = {2}, dateTimeTo = {3} )", userId, vehicleId, dateTimeFrom, dateTimeTo)));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+
+                //Authorization
+                VLF.DAS.Logic.User dbUser = new User(Application["ConnectionString"].ToString());
+                if (!dbUser.ValidateUserVehicle(userId, vehicleId))
+                    return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+                DataSet dsMsgInHst = null;
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                    int totalSqlRecords = 0;
+                    dsMsgInHst = dbMessageQueue.GetMessagesFromHistoryByVehicleId(userId, vehicleId, Convert.ToDateTime(dateTimeFrom), Convert.ToDateTime(dateTimeTo), includeCoordinate, includeSensor, includePositionUpdate, includeInvalidGps, DclId,lang, ref requestOverflowed, ref totalSqlRecords);
+
+                   
+                   //XSD generation
+                    //string strURL = @"C:\Inetpub\wwwroot\ASI\Reports\TmpReports\Hist.xsd";
+                    //StreamWriter writer = null;
+                    //writer = new StreamWriter(strURL);
+                    //dsMsgInHst.WriteXmlSchema(writer);
+                    //if (writer != null)
+                    //   writer.Close();
+
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+
+                if (lang != "en")
+                {
+                    LocalizationLayer.ServerLocalizationLayer dbl = new LocalizationLayer.ServerLocalizationLayer(Application["ConnectionString"].ToString());
+                    dbl.LocalizationData(lang, "BoxMsgInTypeId", "BoxMsgInTypeName", "MessageType", ref dsMsgInHst);
+                }
+
+                if (dsMsgInHst != null && dsMsgInHst.Tables.Count > 0 && dsMsgInHst.Tables[0].Rows.Count > 0)
+                    xml = dsMsgInHst.GetXml();
+
+                if (lang != "en")
+                {
+                    Resources.Const.Culture = new CultureInfo(lang);
+                    xml = xml.Replace(VLF.CLS.Def.Const.cmdAck, Resources.Const.MessageType_Yes)
+                             .Replace(VLF.CLS.Def.Const.cmdNotAck, Resources.Const.MessageType_No);
+                }
+
+                return (int)InterfaceError.NoError;
+            }
+
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+
+        [WebMethod(Description = "Retrieves vehicle off hours info from history. XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize], [StreetAddress],[SequenceNum],[BoxArmed],[MsgDetails],[MsgDirection],[Acknowledged],[Scheduled]")]
+        public int GetVehicleOffHoursInfo(int userId, string SID, Int64 vehicleId, string dateTimeFrom, string dateTimeTo, short dayFromHour, short dayFromMin, short dayToHour, short dayToMin, short weekendFromHour, short weekendFromMin, short weekendToHour, short weekendToMin, bool includeCoordinate, bool includeSensor, bool includePositionUpdate, bool includeInvalidGps, ref string xml, ref bool requestOverflowed)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetBoxOffHoursInfo( userId = {0}, vehicleId = {1}, dateTimeFrom = {2}, dateTimeTo = {3}, dayFromHour = {4}, dayFromMin = {5}, dayToHour = {6} , dayToMin = {7} , weekendFromHour = {8} , weekendFromMin = {9} , weekendToHour = {10} , weekendToMin = {11} )", userId, vehicleId, dateTimeFrom, dateTimeTo, dayFromHour, dayFromMin, dayToHour, dayToMin, weekendFromHour, weekendFromMin, weekendToHour, weekendToMin)));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+                //Authorization
+                VLF.DAS.Logic.User dbUser = new User(Application["ConnectionString"].ToString());
+                if (!dbUser.ValidateUserVehicle(userId, vehicleId))
+                    return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+                DataSet dsMsgInHst = null;
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                    int totalSqlRecords = 0;
+                    dsMsgInHst = dbMessageQueue.GetVehicleOffHoursInfo(userId, vehicleId, Convert.ToDateTime(dateTimeFrom), Convert.ToDateTime(dateTimeTo), dayFromHour, dayFromMin, dayToHour, dayToMin, weekendFromHour, weekendFromMin, weekendToHour, weekendToMin, includeCoordinate, includeSensor, includePositionUpdate, includeInvalidGps, ref requestOverflowed, ref totalSqlRecords);
+
+                    if (dsMsgInHst != null && dsMsgInHst.Tables.Count > 0 && dsMsgInHst.Tables[0].Rows.Count > 0)
+                        xml = dsMsgInHst.GetXml();
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+        [WebMethod(Description = "Retrieves fleet off hours info from history. XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize], [StreetAddress],[SequenceNum],[BoxArmed],[MsgDetails],[MsgDirection],[Acknowledged],[Scheduled]")]
+        public int GetFleetOffHoursInfo(int userId, string SID, int fleetId, string dateTimeFrom, string dateTimeTo, short dayFromHour, short dayFromMin, short dayToHour, short dayToMin, short weekendFromHour, short weekendFromMin, short weekendToHour, short weekendToMin, bool includeCoordinate, bool includeSensor, bool includePositionUpdate, bool includeInvalidGps, ref string xml, ref bool requestOverflowed)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetBoxOffHoursInfo( userId = {0}, fleetId = {1}, dateTimeFrom = {2}, dateTimeTo = {3}, dayFromHour = {4}, dayFromMin = {5}, dayToHour = {6} , dayToMin = {7} , weekendFromHour = {8} , weekendFromMin = {9} , weekendToHour = {10} , weekendToMin = {11} )", userId, fleetId, dateTimeFrom, dateTimeTo, dayFromHour, dayFromMin, dayToHour, dayToMin, weekendFromHour, weekendFromMin, weekendToHour, weekendToMin)));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+
+                //Authorization
+                VLF.DAS.Logic.User dbUser = new User(Application["ConnectionString"].ToString());
+                if (!dbUser.ValidateUserFleet(userId, fleetId))
+                    return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+
+                DataSet dsMsgInHst = null;
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                    DataTable tblLandmarks = null;
+                    int totalSqlRecords = 0;
+                    dsMsgInHst = dbMessageQueue.GetFleetOffHoursInfo(userId, fleetId, Convert.ToDateTime(dateTimeFrom), Convert.ToDateTime(dateTimeTo), dayFromHour, dayFromMin, dayToHour, dayToMin, weekendFromHour, weekendFromMin, weekendToHour, weekendToMin, includeCoordinate, includeSensor, includePositionUpdate, includeInvalidGps, ref requestOverflowed, ref totalSqlRecords);
+
+                    if (dsMsgInHst != null && dsMsgInHst.Tables.Count > 0 && dsMsgInHst.Tables[0].Rows.Count > 0)
+                        xml = dsMsgInHst.GetXml();
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+        [WebMethod(Description = "Retrieves detailed information about incoming messages (Message In) from history by box id and DateTime. XML File format:[BoxId],[DateTime],[MsgTypeId],[MsgTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[StreetAddress],[BoxArmed],[UserName],[FirstName],[LastName]")]
+        public int GetDetailedMessageInFromHistory(int userId, string SID, int boxId, DateTime msgDateTime, ref string xml)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetDetailedMessageInFromHistory( userId = {0}, boxId = {1}, msgDateTime = {2} )", userId, boxId, msgDateTime)));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+                //Authorization
+                VLF.DAS.Logic.User dbUser = new User(Application["ConnectionString"].ToString());
+                if (!dbUser.ValidateUserBox(userId, boxId))
+                    return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+
+
+                DataSet dsResult = null;
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                    dsResult = dbMessageQueue.GetDetailedMessageInFromHistory(userId, boxId, msgDateTime);
+                    if (dsResult != null && dsResult.Tables.Count > 0 && dsResult.Tables[0].Rows.Count > 0)
+                        xml = dsResult.GetXml();
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+
+        [WebMethod(Description = "Retrieves last messages from the history (Maximum return messages should be specified). XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize],[StreetAddress],[SequenceNum],[BoxArmed]")]
+        public int GetLastMessagesFromHistory(int userId, string SID, short numOfRecords, int boxId, short msgType, DateTime from, DateTime to, ref string xml)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetLastMessagesFromHistory( userId = {0}, numOfRecords = {1}, boxId = {2}, msgType = {3}, from = {4}, to = {5} )", userId, numOfRecords, boxId, msgType, from, to)));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+                //Authorization
+                VLF.DAS.Logic.User dbUser = new User(Application["ConnectionString"].ToString());
+                if (!dbUser.ValidateHGISuperUser(userId))
+                    return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+
+
+                DataSet dsMsgInHst = null;
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                    dsMsgInHst = dbMessageQueue.GetLastMessagesFromHistory(numOfRecords, boxId, msgType, from, to);
+
+                    if (dsMsgInHst != null && dsMsgInHst.Tables.Count > 0 && dsMsgInHst.Tables[0].Rows.Count > 0)
+                        xml = dsMsgInHst.GetXml();
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+
+
+       [WebMethod(Description = "Retrieves last messages from the history (Maximum return messages should be specified). XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize],[StreetAddress],[SequenceNum],[BoxArmed]")]
+       public int GetLastMessagesFromHistoryByOrganization(int userId, string SID, short numOfRecords, int orgId,int fleetId,int boxId, short msgType, DateTime from, DateTime to, ref string xml)
+       {
+          try
+          {
+             Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetLastMessagesFromHistory( userId = {0}, numOfRecords = {1}, boxId = {2}, msgType = {3}, from = {4}, to = {5} )", userId, numOfRecords, boxId, msgType, from, to)));
+
+             // Authenticate & Authorize
+             LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+             //Authorization
+             VLF.DAS.Logic.User dbUser = new User(Application["ConnectionString"].ToString());
+             if (!dbUser.ValidateHGISuperUser(userId))
+                return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+
+
+             DataSet dsMsgInHst = null;
+             MessageQueue dbMessageQueue = null;
+             try
+             {
+                dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                dsMsgInHst = dbMessageQueue.GetLastMessagesFromHistoryByOrganization(numOfRecords,orgId,fleetId, boxId, msgType, from, to);
+
+                if (dsMsgInHst != null && dsMsgInHst.Tables.Count > 0 && dsMsgInHst.Tables[0].Rows.Count > 0)
+                   xml = dsMsgInHst.GetXml();
+             }
+             finally
+             {
+                if (dbMessageQueue != null)
+                   dbMessageQueue.Dispose();
+             }
+             return (int)InterfaceError.NoError;
+          }
+          catch (Exception Ex)
+          {
+             return (int)ASIErrorCheck.CheckError(Ex);
+          }
+       }
+
+        [WebMethod(Description = "Retrieves last outgoing messages (Message Out) from history. XML File format:[DateTime],[BoxId],[UserId],[Priority],[DclId],[AslId],[BoxCmdOutTypeId],[BoxCmdOutTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[CustomProp],[SequenceNum],[Acknowledged]")]
+        public int GetLastMessagesOutFromHistory(int userId, string SID, short numOfRecords, int boxId, short cmdType, DateTime from, DateTime to, ref string xml)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetLastMessagesOutFromHistory( userId = {0}, numOfRecords = {1}, boxId = {2}, cmdType = {3}, from = {4}, to = {5} )", userId, numOfRecords, boxId, cmdType, from, to)));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+                //Authorization
+                VLF.DAS.Logic.User dbUser = new User(Application["ConnectionString"].ToString());
+                if (!dbUser.ValidateHGISuperUser(userId))
+                    return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+
+                DataSet dsMsgOutHst = null;
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                    dsMsgOutHst = dbMessageQueue.GetLastMessagesOutFromHistory(numOfRecords, boxId, cmdType, from, to);
+
+                    if (dsMsgOutHst != null && dsMsgOutHst.Tables.Count > 0 && dsMsgOutHst.Tables[0].Rows.Count > 0)
+                        xml = dsMsgOutHst.GetXml();
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+
+
+       [WebMethod(Description = "Retrieves last outgoing messages (Message Out) from history. XML File format:[DateTime],[BoxId],[UserId],[Priority],[DclId],[AslId],[BoxCmdOutTypeId],[BoxCmdOutTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[CustomProp],[SequenceNum],[Acknowledged]")]
+       public int GetLastMessagesOutFromHistoryByOrganization(int userId, string SID, short numOfRecords,int orgId, int fleetId, int boxId, short cmdType, DateTime from, DateTime to, ref string xml)
+       {
+          try
+          {
+             Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetLastMessagesOutFromHistory( userId = {0}, numOfRecords = {1}, boxId = {2}, cmdType = {3}, from = {4}, to = {5} )", userId, numOfRecords, boxId, cmdType, from, to)));
+
+             // Authenticate & Authorize
+             LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+             //Authorization
+             VLF.DAS.Logic.User dbUser = new User(Application["ConnectionString"].ToString());
+             if (!dbUser.ValidateHGISuperUser(userId))
+                return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+
+             DataSet dsMsgOutHst = null;
+             MessageQueue dbMessageQueue = null;
+             try
+             {
+                dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                dsMsgOutHst = dbMessageQueue.GetLastMessagesOutFromHistoryByOrganization (numOfRecords,orgId,fleetId,  boxId, cmdType, from, to);
+
+                if (dsMsgOutHst != null && dsMsgOutHst.Tables.Count > 0 && dsMsgOutHst.Tables[0].Rows.Count > 0)
+                   xml = dsMsgOutHst.GetXml();
+             }
+             finally
+             {
+                if (dbMessageQueue != null)
+                   dbMessageQueue.Dispose();
+             }
+             return (int)InterfaceError.NoError;
+          }
+          catch (Exception Ex)
+          {
+             return (int)ASIErrorCheck.CheckError(Ex);
+          }
+       }
+
+        [WebMethod(Description = "Retrieves detailed information about outgoing messages (Message Out) from history by box id and DateTime. XML File format:[BoxId],[DateTime],[MsgTypeId],[MsgTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[StreetAddress],[BoxArmed],[UserName],[FirstName],[LastName]")]
+        public int GetDetailedMessageOutFromHistory(int userId, string SID, int boxId, DateTime msgDateTime, ref string xml)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetDetailedMessageOutFromHistory( userId = {0}, boxId = {1}, msgDateTime = {2} )", userId, boxId, msgDateTime)));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+                //Authorization
+                VLF.DAS.Logic.User dbUser = new User(Application["ConnectionString"].ToString());
+                if (!dbUser.ValidateUserBox(userId, boxId))
+                    return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+
+                DataSet dsResult = null;
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                    dsResult = dbMessageQueue.GetDetailedMessageOutFromHistory(userId, boxId, msgDateTime);
+                    if (dsResult != null && dsResult.Tables.Count > 0 && dsResult.Tables[0].Rows.Count > 0)
+                        xml = dsResult.GetXml();
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+
+
+        #region TextMessaging Interfaces
+        [WebMethod(Description = "Retrieves text messages full information. XML File format:[VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId],[MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId]")]
+        public int GetTextMessagesFullInfo(int userId, string SID, int boxId, string from, string to, short msgDirection, ref string xml)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetTextMessagesFullInfo( userId = {0}, boxId = {1}, from = {2}, to = {3}, msgDirection = {4} )", userId, boxId, from, to, msgDirection)));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+
+                //Authorization
+                VLF.DAS.Logic.User dbUser = new User(Application["ConnectionString"].ToString());
+                if (!dbUser.ValidateUserBox(userId, boxId))
+                    return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+
+                DataSet dsInfo = null;
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                    dsInfo = dbMessageQueue.GetTextMessagesFullInfo(userId, boxId, Convert.ToDateTime(from), Convert.ToDateTime(to), msgDirection);
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+                if (dsInfo != null && dsInfo.Tables.Count > 0 && dsInfo.Tables[0].Rows.Count > 0)
+                    xml = dsInfo.GetXml();
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+
+        [WebMethod(Description = "Retrieves single text message full information. XML File format:[VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId],[MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId],[Acknowledged],[UserName],[StreetAddress],[Latitude],[Longitude],[Speed],[Heading]")]
+        public int GetTextMessageFullInfo(int userId, string SID, int msgId, Int64 vehicleId, ref string xml)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetTextMessageFullInfo( userId = {0}, msgId = {1} )", userId, msgId)));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+
+                //Authorization
+                VLF.DAS.Logic.User dbUser = new User(Application["ConnectionString"].ToString());
+                if (!dbUser.ValidateUserVehicle(userId, vehicleId))
+                    return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+
+                DataSet dsInfo = null;
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                    dsInfo = dbMessageQueue.GetMessageFullInfo(userId, msgId, vehicleId);
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+                if (dsInfo != null && dsInfo.Tables.Count > 0 && dsInfo.Tables[0].Rows.Count > 0)
+                    xml = dsInfo.GetXml();
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+
+        [WebMethod(Description = "Retrieves text messages full information by User ID. XML File format:  [VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId], [MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId]")]
+        public int GetUserTextMessagesFullInfo(int userId, string SID, string from, string to, short msgDirection, ref string xml)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetUserTextMessagesFullInfo( userId = {0}, from = {1}, to = {2}, msgDirection = {3} )", userId, from, to, msgDirection)));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+                DataSet dsInfo = null;
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                    dsInfo = dbMessageQueue.GetUserTextMessagesFullInfo(userId, Convert.ToDateTime(from), Convert.ToDateTime(to), msgDirection);
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+                if (dsInfo != null && dsInfo.Tables.Count > 0 && dsInfo.Tables[0].Rows.Count > 0)
+                    xml = dsInfo.GetXml();
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+
+        [WebMethod(Description = "Retrieves text messages by Fleet ID. XML File format:[VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId], [MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId]")]
+        public int GetFleetTextMessagesFullInfo(int userId, string SID, int fleetId, string from, string to, short msgDirection, ref string xml)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetFleetTextMessagesFullInfo( userId = {0}, fleetId = {1}, from = {2}, to = {3}, msgDirection = {4} )", userId, fleetId, from, to, msgDirection)));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+
+                //Authorization
+                VLF.DAS.Logic.User dbUser = new User(Application["ConnectionString"].ToString());
+                if (!dbUser.ValidateUserFleet(userId, fleetId))
+                    return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+
+                DataSet dsInfo = null;
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+
+                    //dsInfo = dbMessageQueue.GetFleetTextMessagesFullInfo(userId,fleetId,Convert.ToDateTime(from),Convert.ToDateTime(to),msgDirection);
+                    dsInfo = dbMessageQueue.GetFleetTxtMsgs(userId, fleetId, Convert.ToDateTime(from), Convert.ToDateTime(to), msgDirection);
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+                if (dsInfo != null && dsInfo.Tables.Count > 0 && dsInfo.Tables[0].Rows.Count > 0)
+                    xml = dsInfo.GetXml();
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+
+        [WebMethod(Description = "Retrieves messages info by User ID. XML File format:[VehicleId],[Description],[LicensePlate], [MsgId],[BoxId],[MsgDateTime],[MsgBody (20)]")]
+        public int GetUserTextMessagesShortInfo(int userId, string SID, string from, string to, short msgDirection, ref string xml)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetUserTextMessagesShortInfo( userId = {0}, from = {1}, to = {2}, msgDirection = {3} )", userId, from, to, msgDirection)));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+                DataSet dsInfo = null;
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                    dsInfo = dbMessageQueue.GetUserTextMessagesShortInfo(userId, Convert.ToDateTime(from), Convert.ToDateTime(to), msgDirection);
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+                if (dsInfo != null && dsInfo.Tables.Count > 0 && dsInfo.Tables[0].Rows.Count > 0)
+                    xml = dsInfo.GetXml();
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+        [WebMethod(Description = "Mark message as read by User")]
+        public int SetMsgUserId(int userId, string SID, int msgId)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("SetMsgUserId( userId = {0}, msgId = {1} )", userId, msgId)));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+                //Authorization
+                VLF.DAS.Logic.User dbUser = new User(Application["ConnectionString"].ToString());
+                if (!dbUser.ValidateUserMsg(userId, msgId))
+                    return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+
+
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                    dbMessageQueue.SetMsgUserId(msgId, userId);
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+
+
+       [WebMethod(Description = "Update MsgInHist CustomProperty")]
+       public int UpdateCustomPropInHistory(int userId, string SID, int boxId, DateTime origin, Int16 boxMsgInTypeId, string customPropertyAddons)
+       {
+          try
+          {
+             Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("UpdateCustomPropInHistory( userId = {0}, origin = {1},  boxMsgInTypeId = {2}, customPropertyAddons = {3} )", userId, boxId, origin, boxMsgInTypeId, customPropertyAddons)));
+
+             // Authenticate & Authorize
+             LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+             DataSet dsInfo = null;
+             MsgInLite dbMsgIn = null;
+             try
+             {
+                dbMsgIn = new MsgInLite(Application["ConnectionString"].ToString());
+                dbMsgIn.UpdateCustomPropInHistory(boxId, origin, boxMsgInTypeId, customPropertyAddons);
+             }
+             finally
+             {
+                if (dbMsgIn != null)
+                   dbMsgIn.Dispose();
+             }
+             return (int)InterfaceError.NoError;
+          }
+          catch (Exception Ex)
+          {
+             return (int)ASIErrorCheck.CheckError(Ex);
+          }
+       }
+
+
+
+       //[WebMethod(Description = "Retrieves MDT Forms messages")]
+       //public int GetMDTFormsMessages(int userId, string SID, string from, string to, int fleetId, int boxId,int formId,ref string xml)
+       //{
+       //   try
+       //   {
+       //      Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetUserTextMessagesShortInfo( userId = {0}, from = {1}, to = {2}, fleetId = {3},boxId = {4} )", userId, from, to, fleetId,boxId )));
+
+       //      // Authenticate & Authorize
+       //      LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+       //      DataSet dsInfo = null;
+       //      MessageQueue dbMessageQueue = null;
+       //      try
+       //      {
+       //         dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+       //         dsInfo = dbMessageQueue.GetMDTFormsMessages(Convert.ToDateTime(from), Convert.ToDateTime(to), fleetId, boxId,formId);
+       //      }
+       //      finally
+       //      {
+       //         if (dbMessageQueue != null)
+       //            dbMessageQueue.Dispose();
+       //      }
+       //      if (dsInfo != null && dsInfo.Tables.Count > 0 && dsInfo.Tables[0].Rows.Count > 0)
+       //         xml = dsInfo.GetXml();
+       //      return (int)InterfaceError.NoError;
+       //   }
+       //   catch (Exception Ex)
+       //   {
+       //      return (int)ASIErrorCheck.CheckError(Ex);
+       //   }
+       //}
+
+
+
+
+
+    
+
+        #endregion
+
+        #region Diagnostic Interfaces
+        [WebMethod(Description = "Box Diagnostic utilities")]
+        public int GetInvalidGPSStatistic(int userId, string SID, int InvalidGPSPercent, int Hours, ref string xml)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetInvalidGPSStatistic( InvalidGPSPercent = {0})", InvalidGPSPercent)));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+                DataSet dsMsgInHst = null;
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                    dsMsgInHst = dbMessageQueue.GetInvalidGPSStatistic(InvalidGPSPercent, Hours);
+
+                    if (dsMsgInHst != null && dsMsgInHst.Tables.Count > 0 && dsMsgInHst.Tables[0].Rows.Count > 0)
+                        xml = dsMsgInHst.GetXml();
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+
+        [WebMethod(Description = "Box Diagnostic utilities")]
+        public int GetBoxesWithoutIpUpdates(int userId, string SID, int Hours, ref string xml)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetBoxesWithoutIpUpdates()")));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+                DataSet dsMsgInHst = null;
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                    dsMsgInHst = dbMessageQueue.GetBoxesWithoutIpUpdates(Hours);
+
+                    if (dsMsgInHst != null && dsMsgInHst.Tables.Count > 0 && dsMsgInHst.Tables[0].Rows.Count > 0)
+                        xml = dsMsgInHst.GetXml();
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+
+        [WebMethod(Description = "Box Diagnostic utilities")]
+        public int GetBoxesReportedFrequency(int userId, string SID, int Hours, int TotalMsg, Int16 OrganizationId, ref string xml)
+        {
+            try
+            {
+                Trace.WriteLineIf(AppConfig.tsWeb.Enabled | AppConfig.tsMain.TraceVerbose, CLS.Util.TraceFormat(CLS.Def.Enums.TraceSeverity.WebInterfaces, string.Format("GetBoxesWithoutIpUpdates()")));
+
+                // Authenticate & Authorize
+                LoginManager.GetInstance().SecurityCheck(userId, SID);
+
+                DataSet dsMsgInHst = null;
+                MessageQueue dbMessageQueue = null;
+                try
+                {
+                    dbMessageQueue = new MessageQueue(Application["ConnectionString"].ToString());
+                    dsMsgInHst = dbMessageQueue.GetBoxesReportedFrequency(Hours, TotalMsg, OrganizationId);
+
+                    if (dsMsgInHst != null && dsMsgInHst.Tables.Count > 0 && dsMsgInHst.Tables[0].Rows.Count > 0)
+                        xml = dsMsgInHst.GetXml();
+                }
+                finally
+                {
+                    if (dbMessageQueue != null)
+                        dbMessageQueue.Dispose();
+                }
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+        #endregion Diagnostic Interfaces
+    }
+}

@@ -1,0 +1,1251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="assignText" xml:space="preserve">
+    <value>Attribuer</value>
+  </data>
+  <data name="btnAssignAllTmpResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnAssignAllTmpResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnAssignTmpResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnAssignTmpResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCloseResource1.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="btnCloseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnunAssignAllTmpResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnunAssignAllTmpResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnunAssignTmpResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnunAssignTmpResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="errorDelete" xml:space="preserve">
+    <value>Supprimer a échoué</value>
+  </data>
+  <data name="errorLoad" xml:space="preserve">
+    <value>Chargement de données échoué</value>
+  </data>
+  <data name="errorSave" xml:space="preserve">
+    <value>Sauvegarde échouée</value>
+  </data>
+  <data name="freqTxt" xml:space="preserve">
+    <value>ID de la fréquence:</value>
+  </data>
+  <data name="gdMCCMaintenancesDescriptionResource1.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesDescriptionResource1.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesDescriptionResource1.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesDescriptionResource1.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="gdMCCMaintenancesDescriptionResource1.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="gdMCCMaintenancesDescriptionResource1.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesDescriptionResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesDescriptionResource1.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesDescriptionResource1.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesDescriptionResource1.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesDescriptionResource1.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesDescriptionResource1.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="gdMCCMaintenancesDescriptionResource1.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesDescriptionResource1.SortExpression" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="gdMCCMaintenancesFixedFixedServiceDateResource1.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFixedFixedServiceDateResource1.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFixedFixedServiceDateResource1.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFixedFixedServiceDateResource1.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="gdMCCMaintenancesFixedFixedServiceDateResource1.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="gdMCCMaintenancesFixedFixedServiceDateResource1.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFixedFixedServiceDateResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFixedFixedServiceDateResource1.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFixedFixedServiceDateResource1.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFixedFixedServiceDateResource1.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFixedFixedServiceDateResource1.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFixedFixedServiceDateResource1.HeaderText" xml:space="preserve">
+    <value>Date fixe</value>
+  </data>
+  <data name="gdMCCMaintenancesFixedFixedServiceDateResource1.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFixedFixedServiceDateResource1.SortExpression" xml:space="preserve">
+    <value>FixedServiceDate</value>
+  </data>
+  <data name="gdMCCMaintenancesFrequencyIDResource1.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFrequencyIDResource1.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFrequencyIDResource1.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFrequencyIDResource1.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="gdMCCMaintenancesFrequencyIDResource1.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="gdMCCMaintenancesFrequencyIDResource1.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFrequencyIDResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFrequencyIDResource1.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFrequencyIDResource1.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFrequencyIDResource1.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFrequencyIDResource1.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFrequencyIDResource1.HeaderText" xml:space="preserve">
+    <value>Fréquence</value>
+  </data>
+  <data name="gdMCCMaintenancesFrequencyIDResource1.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesFrequencyIDResource1.SortExpression" xml:space="preserve">
+    <value>FrequencyName</value>
+  </data>
+  <data name="gdMCCMaintenancesIntervalResource1.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesIntervalResource1.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesIntervalResource1.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesIntervalResource1.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="gdMCCMaintenancesIntervalResource1.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="gdMCCMaintenancesIntervalResource1.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesIntervalResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesIntervalResource1.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesIntervalResource1.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesIntervalResource1.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesIntervalResource1.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesIntervalResource1.HeaderText" xml:space="preserve">
+    <value>Intervalle</value>
+  </data>
+  <data name="gdMCCMaintenancesIntervalResource1.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesIntervalResource1.SortExpression" xml:space="preserve">
+    <value>IntervalDesc </value>
+  </data>
+  <data name="gdMCCMaintenancesNotificationTypeResource1.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesNotificationTypeResource1.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesNotificationTypeResource1.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesNotificationTypeResource1.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="gdMCCMaintenancesNotificationTypeResource1.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="gdMCCMaintenancesNotificationTypeResource1.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesNotificationTypeResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesNotificationTypeResource1.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesNotificationTypeResource1.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesNotificationTypeResource1.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesNotificationTypeResource1.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesNotificationTypeResource1.HeaderText" xml:space="preserve">
+    <value>Type de notification</value>
+  </data>
+  <data name="gdMCCMaintenancesNotificationTypeResource1.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesNotificationTypeResource1.SortExpression" xml:space="preserve">
+    <value>NotificationDescription</value>
+  </data>
+  <data name="gdMCCMaintenancesOperationTypeResource1.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesOperationTypeResource1.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesOperationTypeResource1.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesOperationTypeResource1.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="gdMCCMaintenancesOperationTypeResource1.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="gdMCCMaintenancesOperationTypeResource1.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesOperationTypeResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesOperationTypeResource1.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesOperationTypeResource1.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesOperationTypeResource1.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesOperationTypeResource1.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesOperationTypeResource1.HeaderText" xml:space="preserve">
+    <value>Type d'opération</value>
+  </data>
+  <data name="gdMCCMaintenancesOperationTypeResource1.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdMCCMaintenancesOperationTypeResource1.SortExpression" xml:space="preserve">
+    <value>OperationType</value>
+  </data>
+  <data name="GridTemplateColumnResource1.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridTemplateColumnResource1.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource2.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource2.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource2.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridTemplateColumnResource2.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource2.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource2.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource2.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource2.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource2.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource2.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource2.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesAssignAllResource5.Text" xml:space="preserve">
+    <value>Assigner Tout</value>
+  </data>
+  <data name="gvServicesAssignAllResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesAssignResource5.Text" xml:space="preserve">
+    <value>Assigner</value>
+  </data>
+  <data name="gvServicesAssignResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.BackImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.ClientSettings.ClientMessages.ColumnResizeTooltipFormatString" xml:space="preserve">
+    <value>Width: &lt;strong&gt;{0}&lt;/strong&gt; &lt;em&gt;pixels&lt;/em&gt;</value>
+  </data>
+  <data name="gvServicesDestResource1.ClientSettings.ClientMessages.DragToGroupOrReorder" xml:space="preserve">
+    <value>Drag to group or reorder</value>
+  </data>
+  <data name="gvServicesDestResource1.ClientSettings.ClientMessages.DragToResize" xml:space="preserve">
+    <value>Drag to resize</value>
+  </data>
+  <data name="gvServicesDestResource1.ClientSettings.ClientMessages.DropHereToReorder" xml:space="preserve">
+    <value>Drop here to reorder</value>
+  </data>
+  <data name="gvServicesDestResource1.ClientSettings.ClientMessages.PagerTooltipFormatString" xml:space="preserve">
+    <value>Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;</value>
+  </data>
+  <data name="gvServicesDestResource1.FilterMenu.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.GroupingSettings.CollapseTooltip" xml:space="preserve">
+    <value>Collapse group</value>
+  </data>
+  <data name="gvServicesDestResource1.GroupingSettings.ExpandTooltip" xml:space="preserve">
+    <value>Expand group</value>
+  </data>
+  <data name="gvServicesDestResource1.GroupingSettings.GroupByFieldsSeparator" xml:space="preserve">
+    <value>; </value>
+  </data>
+  <data name="gvServicesDestResource1.GroupingSettings.GroupContinuedFormatString" xml:space="preserve">
+    <value>... group continued from the previous page. </value>
+  </data>
+  <data name="gvServicesDestResource1.GroupingSettings.GroupContinuesFormatString" xml:space="preserve">
+    <value> Group continues on the next page.</value>
+  </data>
+  <data name="gvServicesDestResource1.GroupingSettings.GroupSplitDisplayFormat" xml:space="preserve">
+    <value>Showing {0} of {1} items.</value>
+  </data>
+  <data name="gvServicesDestResource1.GroupingSettings.GroupSplitFormat" xml:space="preserve">
+    <value> ({0})</value>
+  </data>
+  <data name="gvServicesDestResource1.GroupingSettings.UnGroupButtonTooltip" xml:space="preserve">
+    <value>Click here to ungroup</value>
+  </data>
+  <data name="gvServicesDestResource1.GroupingSettings.UnGroupTooltip" xml:space="preserve">
+    <value>Drag out of the bar to ungroup</value>
+  </data>
+  <data name="gvServicesDestResource1.GroupPanel.Text" xml:space="preserve">
+    <value>Drag a column header and drop it here to group by that column</value>
+  </data>
+  <data name="gvServicesDestResource1.GroupPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.HeaderContextMenu.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.HierarchySettings.CollapseTooltip" xml:space="preserve">
+    <value>Collapse</value>
+  </data>
+  <data name="gvServicesDestResource1.HierarchySettings.ExpandTooltip" xml:space="preserve">
+    <value>Expand</value>
+  </data>
+  <data name="gvServicesDestResource1.HierarchySettings.SelfCollapseTooltip" xml:space="preserve">
+    <value>Self reference collapse</value>
+  </data>
+  <data name="gvServicesDestResource1.HierarchySettings.SelfExpandTooltip" xml:space="preserve">
+    <value>Self reference expand</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.CommandItemSettings.AddNewRecordImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.CommandItemSettings.AddNewRecordText" xml:space="preserve">
+    <value>Add new record</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.CommandItemSettings.ExportToCsvImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.CommandItemSettings.ExportToCsvText" xml:space="preserve">
+    <value>Export to CSV</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.CommandItemSettings.ExportToExcelImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.CommandItemSettings.ExportToExcelText" xml:space="preserve">
+    <value>Export to Excel</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.CommandItemSettings.ExportToPdfImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.CommandItemSettings.ExportToPdfText" xml:space="preserve">
+    <value>Export to Pdf</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.CommandItemSettings.ExportToWordImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.CommandItemSettings.ExportToWordText" xml:space="preserve">
+    <value>Export to Word</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.CommandItemSettings.RefreshImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.CommandItemSettings.RefreshText" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.EditFormSettings.CaptionFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.EditFormSettings.InsertCaption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.ExpandCollapseColumn.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.ExpandCollapseColumn.CollapseImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.ExpandCollapseColumn.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.ExpandCollapseColumn.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.ExpandCollapseColumn.ExpandImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.ExpandCollapseColumn.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.ExpandCollapseColumn.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.ExpandCollapseColumn.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.ExpandCollapseColumn.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.ExpandCollapseColumn.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.ExpandCollapseColumn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.ExpandCollapseColumn.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.ExpandCollapseColumn.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.FilterExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.NoDetailRecordsText" xml:space="preserve">
+    <value>No child records to display.</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.NoMasterRecordsText" xml:space="preserve">
+    <value>No records to display.</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.PagerStyle.FirstPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.PagerStyle.FirstPageToolTip" xml:space="preserve">
+    <value>First Page</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.PagerStyle.LastPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.PagerStyle.LastPageToolTip" xml:space="preserve">
+    <value>Last Page</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.PagerStyle.NextPagesToolTip" xml:space="preserve">
+    <value>Next Pages</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.PagerStyle.NextPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.PagerStyle.NextPageToolTip" xml:space="preserve">
+    <value>Next Page</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.PagerStyle.PagerTextFormat" xml:space="preserve">
+    <value>Change page: {4} &amp;nbsp;Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;, items &lt;strong&gt;{2}&lt;/strong&gt; to &lt;strong&gt;{3}&lt;/strong&gt; of &lt;strong&gt;{5}&lt;/strong&gt;.</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.PagerStyle.PageSizeLabelText" xml:space="preserve">
+    <value>Page size:</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.PagerStyle.PrevPagesToolTip" xml:space="preserve">
+    <value>Previous Pages</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.PagerStyle.PrevPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.PagerStyle.PrevPageToolTip" xml:space="preserve">
+    <value>Previous Page</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.RowIndicatorColumn.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.RowIndicatorColumn.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.RowIndicatorColumn.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.RowIndicatorColumn.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.RowIndicatorColumn.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.RowIndicatorColumn.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.RowIndicatorColumn.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.RowIndicatorColumn.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.RowIndicatorColumn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.RowIndicatorColumn.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.RowIndicatorColumn.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.Summary" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.MasterTableView.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.PagerStyle.FirstPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.PagerStyle.FirstPageToolTip" xml:space="preserve">
+    <value>First Page</value>
+  </data>
+  <data name="gvServicesDestResource1.PagerStyle.LastPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.PagerStyle.LastPageToolTip" xml:space="preserve">
+    <value>Last Page</value>
+  </data>
+  <data name="gvServicesDestResource1.PagerStyle.NextPagesToolTip" xml:space="preserve">
+    <value>Next Pages</value>
+  </data>
+  <data name="gvServicesDestResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.PagerStyle.NextPageToolTip" xml:space="preserve">
+    <value>Next Page</value>
+  </data>
+  <data name="gvServicesDestResource1.PagerStyle.PagerTextFormat" xml:space="preserve">
+    <value>Change page: {4} &amp;nbsp;Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;, items &lt;strong&gt;{2}&lt;/strong&gt; to &lt;strong&gt;{3}&lt;/strong&gt; of &lt;strong&gt;{5}&lt;/strong&gt;.</value>
+  </data>
+  <data name="gvServicesDestResource1.PagerStyle.PageSizeLabelText" xml:space="preserve">
+    <value>Page size:</value>
+  </data>
+  <data name="gvServicesDestResource1.PagerStyle.PrevPagesToolTip" xml:space="preserve">
+    <value>Previous Pages</value>
+  </data>
+  <data name="gvServicesDestResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesDestResource1.PagerStyle.PrevPageToolTip" xml:space="preserve">
+    <value>Previous Page</value>
+  </data>
+  <data name="gvServicesDestResource1.SortingSettings.SortedAscToolTip" xml:space="preserve">
+    <value>Sorted asc</value>
+  </data>
+  <data name="gvServicesDestResource1.SortingSettings.SortedDescToolTip" xml:space="preserve">
+    <value>Sorted desc</value>
+  </data>
+  <data name="gvServicesDestResource1.SortingSettings.SortToolTip" xml:space="preserve">
+    <value>Click here to sort</value>
+  </data>
+  <data name="gvServicesDestResource1.StatusBarSettings.LoadingText" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="gvServicesDestResource1.StatusBarSettings.ReadyText" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="gvServicesDestResource1.ToolTip" xml:space="preserve">
+    <value>Assigned Services</value>
+  </data>
+  <data name="gvServicesSourceResource1.BackImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.ClientSettings.ClientMessages.ColumnResizeTooltipFormatString" xml:space="preserve">
+    <value>Width: &lt;strong&gt;{0}&lt;/strong&gt; &lt;em&gt;pixels&lt;/em&gt;</value>
+  </data>
+  <data name="gvServicesSourceResource1.ClientSettings.ClientMessages.DragToGroupOrReorder" xml:space="preserve">
+    <value>Drag to group or reorder</value>
+  </data>
+  <data name="gvServicesSourceResource1.ClientSettings.ClientMessages.DragToResize" xml:space="preserve">
+    <value>Drag to resize</value>
+  </data>
+  <data name="gvServicesSourceResource1.ClientSettings.ClientMessages.DropHereToReorder" xml:space="preserve">
+    <value>Drop here to reorder</value>
+  </data>
+  <data name="gvServicesSourceResource1.ClientSettings.ClientMessages.PagerTooltipFormatString" xml:space="preserve">
+    <value>Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;</value>
+  </data>
+  <data name="gvServicesSourceResource1.FilterMenu.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.GroupingSettings.CollapseTooltip" xml:space="preserve">
+    <value>Collapse group</value>
+  </data>
+  <data name="gvServicesSourceResource1.GroupingSettings.ExpandTooltip" xml:space="preserve">
+    <value>Expand group</value>
+  </data>
+  <data name="gvServicesSourceResource1.GroupingSettings.GroupByFieldsSeparator" xml:space="preserve">
+    <value>; </value>
+  </data>
+  <data name="gvServicesSourceResource1.GroupingSettings.GroupContinuedFormatString" xml:space="preserve">
+    <value>... group continued from the previous page. </value>
+  </data>
+  <data name="gvServicesSourceResource1.GroupingSettings.GroupContinuesFormatString" xml:space="preserve">
+    <value> Group continues on the next page.</value>
+  </data>
+  <data name="gvServicesSourceResource1.GroupingSettings.GroupSplitDisplayFormat" xml:space="preserve">
+    <value>Showing {0} of {1} items.</value>
+  </data>
+  <data name="gvServicesSourceResource1.GroupingSettings.GroupSplitFormat" xml:space="preserve">
+    <value> ({0})</value>
+  </data>
+  <data name="gvServicesSourceResource1.GroupingSettings.UnGroupButtonTooltip" xml:space="preserve">
+    <value>Click here to ungroup</value>
+  </data>
+  <data name="gvServicesSourceResource1.GroupingSettings.UnGroupTooltip" xml:space="preserve">
+    <value>Drag out of the bar to ungroup</value>
+  </data>
+  <data name="gvServicesSourceResource1.GroupPanel.Text" xml:space="preserve">
+    <value>Drag a column header and drop it here to group by that column</value>
+  </data>
+  <data name="gvServicesSourceResource1.GroupPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.HeaderContextMenu.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.HierarchySettings.CollapseTooltip" xml:space="preserve">
+    <value>Collapse</value>
+  </data>
+  <data name="gvServicesSourceResource1.HierarchySettings.ExpandTooltip" xml:space="preserve">
+    <value>Expand</value>
+  </data>
+  <data name="gvServicesSourceResource1.HierarchySettings.SelfCollapseTooltip" xml:space="preserve">
+    <value>Self reference collapse</value>
+  </data>
+  <data name="gvServicesSourceResource1.HierarchySettings.SelfExpandTooltip" xml:space="preserve">
+    <value>Self reference expand</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.CommandItemSettings.AddNewRecordImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.CommandItemSettings.AddNewRecordText" xml:space="preserve">
+    <value>Add new record</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.CommandItemSettings.ExportToCsvImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.CommandItemSettings.ExportToCsvText" xml:space="preserve">
+    <value>Export to CSV</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.CommandItemSettings.ExportToExcelImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.CommandItemSettings.ExportToExcelText" xml:space="preserve">
+    <value>Export to Excel</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.CommandItemSettings.ExportToPdfImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.CommandItemSettings.ExportToPdfText" xml:space="preserve">
+    <value>Export to Pdf</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.CommandItemSettings.ExportToWordImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.CommandItemSettings.ExportToWordText" xml:space="preserve">
+    <value>Export to Word</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.CommandItemSettings.RefreshImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.CommandItemSettings.RefreshText" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.EditFormSettings.CaptionFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.EditFormSettings.InsertCaption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.ExpandCollapseColumn.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.ExpandCollapseColumn.CollapseImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.ExpandCollapseColumn.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.ExpandCollapseColumn.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.ExpandCollapseColumn.ExpandImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.ExpandCollapseColumn.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.ExpandCollapseColumn.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.ExpandCollapseColumn.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.ExpandCollapseColumn.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.ExpandCollapseColumn.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.ExpandCollapseColumn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.ExpandCollapseColumn.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.ExpandCollapseColumn.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.FilterExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.NoDetailRecordsText" xml:space="preserve">
+    <value>No child records to display.</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.NoMasterRecordsText" xml:space="preserve">
+    <value>No records to display.</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.PagerStyle.FirstPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.PagerStyle.FirstPageToolTip" xml:space="preserve">
+    <value>First Page</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.PagerStyle.LastPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.PagerStyle.LastPageToolTip" xml:space="preserve">
+    <value>Last Page</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.PagerStyle.NextPagesToolTip" xml:space="preserve">
+    <value>Next Pages</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.PagerStyle.NextPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.PagerStyle.NextPageToolTip" xml:space="preserve">
+    <value>Next Page</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.PagerStyle.PagerTextFormat" xml:space="preserve">
+    <value>Change page: {4} &amp;nbsp;Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;, items &lt;strong&gt;{2}&lt;/strong&gt; to &lt;strong&gt;{3}&lt;/strong&gt; of &lt;strong&gt;{5}&lt;/strong&gt;.</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.PagerStyle.PageSizeLabelText" xml:space="preserve">
+    <value>Page size:</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.PagerStyle.PrevPagesToolTip" xml:space="preserve">
+    <value>Previous Pages</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.PagerStyle.PrevPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.PagerStyle.PrevPageToolTip" xml:space="preserve">
+    <value>Previous Page</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.RowIndicatorColumn.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.RowIndicatorColumn.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.RowIndicatorColumn.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.RowIndicatorColumn.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.RowIndicatorColumn.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.RowIndicatorColumn.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.RowIndicatorColumn.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.RowIndicatorColumn.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.RowIndicatorColumn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.RowIndicatorColumn.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.RowIndicatorColumn.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.Summary" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.MasterTableView.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.PagerStyle.FirstPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.PagerStyle.FirstPageToolTip" xml:space="preserve">
+    <value>First Page</value>
+  </data>
+  <data name="gvServicesSourceResource1.PagerStyle.LastPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.PagerStyle.LastPageToolTip" xml:space="preserve">
+    <value>Last Page</value>
+  </data>
+  <data name="gvServicesSourceResource1.PagerStyle.NextPagesToolTip" xml:space="preserve">
+    <value>Next Pages</value>
+  </data>
+  <data name="gvServicesSourceResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.PagerStyle.NextPageToolTip" xml:space="preserve">
+    <value>Next Page</value>
+  </data>
+  <data name="gvServicesSourceResource1.PagerStyle.PagerTextFormat" xml:space="preserve">
+    <value>Change page: {4} &amp;nbsp;Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;, items &lt;strong&gt;{2}&lt;/strong&gt; to &lt;strong&gt;{3}&lt;/strong&gt; of &lt;strong&gt;{5}&lt;/strong&gt;.</value>
+  </data>
+  <data name="gvServicesSourceResource1.PagerStyle.PageSizeLabelText" xml:space="preserve">
+    <value>Page size:</value>
+  </data>
+  <data name="gvServicesSourceResource1.PagerStyle.PrevPagesToolTip" xml:space="preserve">
+    <value>Previous Pages</value>
+  </data>
+  <data name="gvServicesSourceResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesSourceResource1.PagerStyle.PrevPageToolTip" xml:space="preserve">
+    <value>Previous Page</value>
+  </data>
+  <data name="gvServicesSourceResource1.SortingSettings.SortedAscToolTip" xml:space="preserve">
+    <value>Sorted asc</value>
+  </data>
+  <data name="gvServicesSourceResource1.SortingSettings.SortedDescToolTip" xml:space="preserve">
+    <value>Sorted desc</value>
+  </data>
+  <data name="gvServicesSourceResource1.SortingSettings.SortToolTip" xml:space="preserve">
+    <value>Click here to sort</value>
+  </data>
+  <data name="gvServicesSourceResource1.StatusBarSettings.LoadingText" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="gvServicesSourceResource1.StatusBarSettings.ReadyText" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="gvServicesSourceResource1.ToolTip" xml:space="preserve">
+    <value>Services non assignés</value>
+  </data>
+  <data name="gvServicesunAssignAllResource5.Text" xml:space="preserve">
+    <value>Tout désassigner</value>
+  </data>
+  <data name="gvServicesunAssignAllResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesunAssignResource5.Text" xml:space="preserve">
+    <value>Désassigner</value>
+  </data>
+  <data name="gvServicesunAssignResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="hideFilter" xml:space="preserve">
+    <value>Cacher le filtre</value>
+  </data>
+  <data name="inteTxt" xml:space="preserve">
+    <value>inteTxt</value>
+  </data>
+  <data name="lblMccNameResource.Text" xml:space="preserve">
+    <value>Nom de groupe</value>
+  </data>
+  <data name="lblMccNameResource.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMccNameTextResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMccNameTextResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnassignedMaintenancesResource" xml:space="preserve">
+    <value>Services non assignés</value>
+  </data>
+  <data name="LoadingPanel1Resource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LoadingPanel1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="n1Txt" xml:space="preserve">
+    <value>Notification1:</value>
+  </data>
+  <data name="n2Txt" xml:space="preserve">
+    <value>Notification2:</value>
+  </data>
+  <data name="n3Txt" xml:space="preserve">
+    <value>Notification3:</value>
+  </data>
+  <data name="notiTxt" xml:space="preserve">
+    <value>Type de notification:</value>
+  </data>
+  <data name="RadWindowContentTemplate2Resource1.Localization.Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="RadWindowContentTemplate2Resource1.Localization.Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="RadWindowContentTemplate2Resource1.Localization.Maximize" xml:space="preserve">
+    <value>Maximize</value>
+  </data>
+  <data name="RadWindowContentTemplate2Resource1.Localization.Minimize" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <data name="RadWindowContentTemplate2Resource1.Localization.No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="RadWindowContentTemplate2Resource1.Localization.OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="RadWindowContentTemplate2Resource1.Localization.PinOff" xml:space="preserve">
+    <value>Pin off</value>
+  </data>
+  <data name="RadWindowContentTemplate2Resource1.Localization.PinOn" xml:space="preserve">
+    <value>Pin on</value>
+  </data>
+  <data name="RadWindowContentTemplate2Resource1.Localization.Reload" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="RadWindowContentTemplate2Resource1.Localization.Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="RadWindowContentTemplate2Resource1.Localization.Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="RadWindowContentTemplate2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadWindowContentTemplateResource1.Localization.Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="RadWindowContentTemplateResource1.Localization.Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="RadWindowContentTemplateResource1.Localization.Maximize" xml:space="preserve">
+    <value>Maximize</value>
+  </data>
+  <data name="RadWindowContentTemplateResource1.Localization.Minimize" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <data name="RadWindowContentTemplateResource1.Localization.No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="RadWindowContentTemplateResource1.Localization.OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="RadWindowContentTemplateResource1.Localization.PinOff" xml:space="preserve">
+    <value>Pin off</value>
+  </data>
+  <data name="RadWindowContentTemplateResource1.Localization.PinOn" xml:space="preserve">
+    <value>Pin on</value>
+  </data>
+  <data name="RadWindowContentTemplateResource1.Localization.Reload" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="RadWindowContentTemplateResource1.Localization.Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="RadWindowContentTemplateResource1.Localization.Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="RadWindowContentTemplateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.Maximize" xml:space="preserve">
+    <value>Maximize</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.Minimize" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.PinOff" xml:space="preserve">
+    <value>Pin off</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.PinOn" xml:space="preserve">
+    <value>Pin on</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.Reload" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="RadWindowManager1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="selectService" xml:space="preserve">
+    <value>Sélectionner un service</value>
+  </data>
+  <data name="showFilter" xml:space="preserve">
+    <value>Afficher le filtre</value>
+  </data>
+  <data name="unAssignText" xml:space="preserve">
+    <value>Non attribuer</value>
+  </data>
+</root>

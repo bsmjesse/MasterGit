@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ButtonColumnResource1.Text" xml:space="preserve">
+    <value>&lt;img src=../images/edit.gif border=0&gt;</value>
+  </data>
+  <data name="ButtonColumnResource2.Text" xml:space="preserve">
+    <value>&lt;img src=../images/delete.gif border=0&gt;</value>
+  </data>
+  <data name="cboDirectionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboGeoZoneDirectionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboGeoZoneSeverityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboLandmarks_Item_0" xml:space="preserve">
+    <value>Sélectionner un Site</value>
+  </data>
+  <data name="cboLandmarksResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboSeverityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboTimeZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCriticalResource1.Text" xml:space="preserve">
+    <value>Alarme critique</value>
+  </data>
+  <data name="chkCriticalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDayLightResource1.Text" xml:space="preserve">
+    <value>Ajustement automatique de l'heure avancée</value>
+  </data>
+  <data name="chkDayLightResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkNotifyResource1.Text" xml:space="preserve">
+    <value>Alarme mineure</value>
+  </data>
+  <data name="chkNotifyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkWarningResource1.Text" xml:space="preserve">
+    <value>Alarme majeure</value>
+  </data>
+  <data name="chkWarningResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCancelLandmarkResource1.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="cmdCancelLandmarkResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdGeoZoneAddResource1.Text" xml:space="preserve">
+    <value>Ajouter une Géo-Zone</value>
+  </data>
+  <data name="cmdGeoZoneAddResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdGeoZoneResource1.Text" xml:space="preserve">
+    <value>Géo-Zone</value>
+  </data>
+  <data name="cmdGeoZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdLandmarkResource1.Text" xml:space="preserve">
+    <value>Sites</value>
+  </data>
+  <data name="cmdLandmarkResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdMapResource1.Text" xml:space="preserve">
+    <value>Carte</value>
+  </data>
+  <data name="cmdMapResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSaveGeoZoneResource1.Text" xml:space="preserve">
+    <value>Sauvegarder</value>
+  </data>
+  <data name="cmdSaveGeoZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdVehicleGeoZoneResource1.Text" xml:space="preserve">
+    <value>Assigner des véhicules &amp; des Géo-Zones</value>
+  </data>
+  <data name="cmdVehicleGeoZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgGeozone_DeleteConfirmation" xml:space="preserve">
+    <value>Êtes-vous certain de vouloir supprimer?</value>
+  </data>
+  <data name="dgGeozone_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="dgGeozone_Direction" xml:space="preserve">
+    <value>Direction</value>
+  </data>
+  <data name="dgGeozone_GeozoneName" xml:space="preserve">
+    <value>Géo-Zone</value>
+  </data>
+  <data name="dgGeozone_Item_Delete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="dgGeozone_Item_Edit" xml:space="preserve">
+    <value>Éditer</value>
+  </data>
+  <data name="dgGeozone_Item_HeightKM" xml:space="preserve">
+    <value>Hauteur (km)</value>
+  </data>
+  <data name="dgGeozone_Item_HeightMI" xml:space="preserve">
+    <value>Hauteur (mi)</value>
+  </data>
+  <data name="dgGeozone_Item_WidthKM" xml:space="preserve">
+    <value>Largeur (km)</value>
+  </data>
+  <data name="dgGeozone_Item_WidthMI" xml:space="preserve">
+    <value>Largeur (mi)</value>
+  </data>
+  <data name="dgGeozone_Severity" xml:space="preserve">
+    <value>Sévérité</value>
+  </data>
+  <data name="dgGeoZoneResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgGeoZoneResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgGeoZoneResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgGeoZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HyperLinkColumnResource1.Text" xml:space="preserve">
+    <value>Afficher la carte</value>
+  </data>
+  <data name="lblAddMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAddMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDefaultSeverityTitleResource1.Text" xml:space="preserve">
+    <value>Sévérité par défaut :</value>
+  </data>
+  <data name="lblDefaultSeverityTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDirectionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDirectionTitleResource1.Text" xml:space="preserve">
+    <value>Direction :</value>
+  </data>
+  <data name="lblDirectionTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDrawGeozoneTitleResource1.Text" xml:space="preserve">
+    <value>Dessiner une Géo-Zone</value>
+  </data>
+  <data name="lblDrawGeozoneTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmailNotificationTitleResource1.Text" xml:space="preserve">
+    <value>Notification par courriel en cas de :</value>
+  </data>
+  <data name="lblEmailNotificationTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmailTitleResource1.Text" xml:space="preserve">
+    <value>Courriel :</value>
+  </data>
+  <data name="lblEmailTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneDescriptionTitleResource1.Text" xml:space="preserve">
+    <value>Description de la Géo-Zone :</value>
+  </data>
+  <data name="lblGeozoneDescriptionTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeoZoneIdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeoZoneIdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneNameTitleResource1.Text" xml:space="preserve">
+    <value>Nom du la Géo-Zone :</value>
+  </data>
+  <data name="lblGeozoneNameTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessage_Text_AddGeozoneFailedError" xml:space="preserve">
+    <value>L'ajoute d'une Géo-Zone a échoué.</value>
+  </data>
+  <data name="lblMessage_Text_AddGeozoneSuccess" xml:space="preserve">
+    <value>L'ajout d'une Géo-Zone a réussi</value>
+  </data>
+  <data name="lblMessage_Text_DeleteGeozoneFailedError" xml:space="preserve">
+    <value>La suppression de la Géo-Zone a échoué. Seuls les Géo-Zones non-assignées seront supprimées.</value>
+  </data>
+  <data name="lblMessage_Text_DeleteGeozoneSuccess" xml:space="preserve">
+    <value>Géo-Zone supprimée!</value>
+  </data>
+  <data name="lblMessage_Text_GeozoneReadOnlyError" xml:space="preserve">
+    <value>L'information contenue dans la Géo-Zone est en mode lecture seulement car elle est assignée à une unité.</value>
+  </data>
+  <data name="lblMessage_Text_UpdateGeozoneFailedError" xml:space="preserve">
+    <value>La mise à jour de la Géo-Zone a échoué</value>
+  </data>
+  <data name="lblMessage_Text_UpdateGeozoneSuccess" xml:space="preserve">
+    <value>La mise à jour de la Géo-Zone a réussie</value>
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOldGeoZoneNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOldGeoZoneNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSeverityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTimeZoneTitleResource1.Text" xml:space="preserve">
+    <value>Fuseau horaire :</value>
+  </data>
+  <data name="lblTimeZoneTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Géo-Zone</value>
+  </data>
+  <data name="txtEmailResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEmailResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtGeoZoneDescResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtGeoZoneDescResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtGeoZoneNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtGeoZoneNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtMapMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtMapMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valEmailResource1.ErrorMessage" xml:space="preserve">
+    <value>Entrer une adresse courriel valide</value>
+  </data>
+  <data name="valEmailResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valEmailResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValidationSummary1Resource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValidationSummary1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valLandmarkResource1.ErrorMessage" xml:space="preserve">
+    <value>Entrer un nom de Géo-Zone</value>
+  </data>
+  <data name="valLandmarkResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valLandmarkResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lnkByCoordinatesResource1.Text" xml:space="preserve">
+    <value>Par les coordonnées</value>
+  </data>
+  <data name="lnkByCoordinatesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMultipleEmails.Text" xml:space="preserve">
+    <value>*Les adresses courriels doivent être séparées par un point virgule ou virgule</value>
+  </data>
+  <data name="cboFleet_Item_0" xml:space="preserve">
+    <value>Sélectionner des véhicules</value>
+  </data>
+  <data name="HyperLinkColumnResource2.Text" xml:space="preserve">
+    <value>Assignation actuelle</value>
+  </data>
+  <data name="lblMessage_Text_DeleteGeozoneFailedErrorSecurity" xml:space="preserve">
+    <value>Supprimer authentification Geozone échoué.</value>
+  </data>
+  <data name="lblMessage_Text_GeozoneReadOnlyErrorSecurity" xml:space="preserve">
+    <value>Cette information Geozone est en lecture seule car il est appartient à un autre utilisateur .</value>
+  </data>
+</root>

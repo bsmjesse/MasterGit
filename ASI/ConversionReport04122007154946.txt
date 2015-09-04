@@ -1,0 +1,8 @@
+﻿ERROR: Unable to parse project file CLS.csproj.
+
+=========================COMMENTS=================
+Project CLS.csproj has been converted successfully at April 12 2007, 15:49:46.
+ERROR: Unable to parse project file CLS.csproj.
+
+=========================COMMENTS=================
+Project CLS.csproj has been converted successfully at April 12 2007, 15:50:03.

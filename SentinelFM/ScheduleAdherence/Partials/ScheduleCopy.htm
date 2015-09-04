@@ -1,0 +1,18 @@
+﻿<div ng-controller="ScheduleCopyCtrl">
+    <div class="modal-body">
+        <table>
+            <tr class="InstanceRow">
+                <td>From Date:</td>
+                <td>{{OrgSchedule.ScheduleBeginDate| date:'mediumDate'}}</td>
+            </tr>
+            <tr class="InstanceRow">
+                <td>To Date:</td>
+                <td><select ng-model="DesSchedule" ng-options="s.ScheduleBeginDate | date:'mediumDate' for s in ScheduleList " required></select></td>
+            </tr>
+        </table>
+    </div>        
+    <div class="modal-footer">
+        <button ng-disabled="Status!='Loaded'" ng-click="ok()">OK</button>
+        <button ng-click="cancel()">Cancel</button>
+    </div>
+</div>

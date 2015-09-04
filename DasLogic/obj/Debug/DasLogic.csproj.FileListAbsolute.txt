@@ -1,0 +1,5 @@
+C:\Builds\SentinelFM\Main\BIN\DasLogic.dll
+C:\Builds\SentinelFM\Main\BIN\DasLogic.pdb
+C:\Builds\SentinelFM\Main\DasLogic\obj\Debug\DasLogic.csprojResolveAssemblyReference.cache
+C:\Builds\SentinelFM\Main\DasLogic\obj\Debug\DasLogic.dll
+C:\Builds\SentinelFM\Main\DasLogic\obj\Debug\DasLogic.pdb

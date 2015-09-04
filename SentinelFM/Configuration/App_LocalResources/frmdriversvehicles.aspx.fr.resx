@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BoundFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.HeaderText" xml:space="preserve">
+    <value>Prénom</value>
+  </data>
+  <data name="BoundFieldResource2.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource2.HeaderText" xml:space="preserve">
+    <value>Nom </value>
+  </data>
+  <data name="BoundFieldResource3.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource3.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource3.HeaderText" xml:space="preserve">
+    <value>Permis de conduire</value>
+  </data>
+  <data name="BoundFieldResource4.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource4.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource4.HeaderText" xml:space="preserve">
+    <value>Véhicule</value>
+  </data>
+  <data name="BoundFieldResource5.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource5.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource5.HeaderText" xml:space="preserve">
+    <value>Date d'assignation</value>
+  </data>
+  <data name="CheckBoxFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CheckBoxFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CheckBoxFieldResource1.HeaderText" xml:space="preserve">
+    <value>Assignation</value>
+  </data>
+  <data name="CheckBoxFieldResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAssignDriverResource1.Text" xml:space="preserve">
+    <value>Assigner un chauffeur</value>
+  </data>
+  <data name="cmdAssignDriverResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAssignResource1.Text" xml:space="preserve">
+    <value>Ajouter-&gt;</value>
+  </data>
+  <data name="cmdAssignResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdDriverResource1.Text" xml:space="preserve">
+    <value>Chauffeurs</value>
+  </data>
+  <data name="cmdDriverResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdDriverResource2.Text" xml:space="preserve">
+    <value>Organisation</value>
+  </data>
+  <data name="cmdDriverResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdDriversInfoResource1.Text" xml:space="preserve">
+    <value>Informations chauffeurs</value>
+  </data>
+  <data name="cmdDriversInfoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdFleetsResource1.Text" xml:space="preserve">
+    <value>Flotte</value>
+  </data>
+  <data name="cmdFleetsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdShowHistoryResource1.Text" xml:space="preserve">
+    <value>Afficher l'historique du chauffeur</value>
+  </data>
+  <data name="cmdShowHistoryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdShowVehicleHistoryResource1.Text" xml:space="preserve">
+    <value>Afficher l'historique du véhicule</value>
+  </data>
+  <data name="cmdShowVehicleHistoryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdUnassignResource1.Text" xml:space="preserve">
+    <value>&lt;-Supprimer</value>
+  </data>
+  <data name="cmdUnassignResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdUsersResource1.Text" xml:space="preserve">
+    <value>Usagers</value>
+  </data>
+  <data name="cmdUsersResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdVehiclesDriversResource1.Text" xml:space="preserve">
+    <value>Assigner des véhicules aux chauffeurs</value>
+  </data>
+  <data name="cmdVehiclesDriversResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdVehiclesResource1.Text" xml:space="preserve">
+    <value>Véhicules</value>
+  </data>
+  <data name="cmdVehiclesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlAssgnTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlEndAMResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlPostFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlPostVehicleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlStartAMResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlVehicleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdvAssgnHistoryResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdvAssgnHistoryResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdvAssgnHistoryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAllDriversResource1.Text" xml:space="preserve">
+    <value>Chauffeurs</value>
+  </data>
+  <data name="lblAllDriversResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAssUsersResource1.Text" xml:space="preserve">
+    <value>Chauffeurs assignés</value>
+  </data>
+  <data name="lblAssUsersResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEndAssgnDateResource1.Text" xml:space="preserve">
+    <value>Date de la fin</value>
+  </data>
+  <data name="lblEndAssgnDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEndAssgnTimeResource1.Text" xml:space="preserve">
+    <value>Heure de la fin</value>
+  </data>
+  <data name="lblEndAssgnTimeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblErrorEndDateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblErrorEndDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblErrorStartDateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblErrorStartDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetResource1.Text" xml:space="preserve">
+    <value>Flotte : </value>
+  </data>
+  <data name="lblFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPostFleetResource1.Text" xml:space="preserve">
+    <value>Flotte : </value>
+  </data>
+  <data name="lblPostFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPostVehicleResource1.Text" xml:space="preserve">
+    <value>Véhicule : </value>
+  </data>
+  <data name="lblPostVehicleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStartAssgnDateResource1.Text" xml:space="preserve">
+    <value>Date de départ</value>
+  </data>
+  <data name="lblStartAssgnDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStartAssgnTimeResource1.Text" xml:space="preserve">
+    <value>Heure de départ</value>
+  </data>
+  <data name="lblStartAssgnTimeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnUsersResource1.Text" xml:space="preserve">
+    <value>Chauffeurs non-assignés</value>
+  </data>
+  <data name="lblUnUsersResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleResource1.Text" xml:space="preserve">
+    <value>Véhicule : </value>
+  </data>
+  <data name="lblVehicleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lboAllDriversResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lboAssignedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lboUnassignedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource1.Text" xml:space="preserve">
+    <value>Sélectionner le type d'assignation</value>
+  </data>
+  <data name="ListItemResource1.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource2.Text" xml:space="preserve">
+    <value>Assignation actuelle</value>
+  </data>
+  <data name="ListItemResource2.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource3.Text" xml:space="preserve">
+    <value>Assignation ultérieur</value>
+  </data>
+  <data name="ListItemResource3.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource4.Text" xml:space="preserve">
+    <value>AM</value>
+  </data>
+  <data name="ListItemResource4.Value" xml:space="preserve">
+    <value>AM</value>
+  </data>
+  <data name="ListItemResource5.Text" xml:space="preserve">
+    <value>PM</value>
+  </data>
+  <data name="ListItemResource5.Value" xml:space="preserve">
+    <value>PM</value>
+  </data>
+  <data name="ListItemResource6.Text" xml:space="preserve">
+    <value>AM</value>
+  </data>
+  <data name="ListItemResource6.Value" xml:space="preserve">
+    <value>AM</value>
+  </data>
+  <data name="ListItemResource7.Text" xml:space="preserve">
+    <value>PM</value>
+  </data>
+  <data name="ListItemResource7.Value" xml:space="preserve">
+    <value>PM</value>
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Page sans titre</value>
+  </data>
+  <data name="Panel1Resource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Panel1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlAssgnTypeResource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlAssgnTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlAssignmentResource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlAssignmentResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlPostfactumResource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlPostfactumResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlShowHistoryResource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlShowHistoryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="resAssignDriverError" xml:space="preserve">
+    <value>Assigner l'erreur du chauffeur</value>
+  </data>
+  <data name="resFailedAddHistory" xml:space="preserve">
+    <value>L'ajout de l'assignation d'historique a échoué</value>
+  </data>
+  <data name="resFillEndDate" xml:space="preserve">
+    <value>Entrer la date de l'arrivée</value>
+  </data>
+  <data name="resFillStartDate" xml:space="preserve">
+    <value>Entrer la date de départ</value>
+  </data>
+  <data name="resGetFleetsError" xml:space="preserve">
+    <value>Demander les erreurs de la flotte</value>
+  </data>
+  <data name="resHistoryAdded" xml:space="preserve">
+    <value>L'assignation de l'historique est ajoutée</value>
+  </data>
+  <data name="resInvEndDate" xml:space="preserve">
+    <value>Format invalide pour la date de fin</value>
+  </data>
+  <data name="resInvStartDate" xml:space="preserve">
+    <value>Format invalide pour la date du début</value>
+  </data>
+  <data name="resNoAssignments" xml:space="preserve">
+    <value>Aucune assignation pour la période sélectionnée</value>
+  </data>
+  <data name="resNoDrivers" xml:space="preserve">
+    <value>Aucun chauffeur dans la compagnie</value>
+  </data>
+  <data name="resNoDriversAvailable" xml:space="preserve">
+    <value>Aucun chauffeur disponible</value>
+  </data>
+  <data name="resNoVehiclesForFleet" xml:space="preserve">
+    <value>La flotte sélectionnée ne contient pas de véhicules</value>
+  </data>
+  <data name="resSelectDriver" xml:space="preserve">
+    <value>Sélectionner un chaufeur</value>
+  </data>
+  <data name="resSelectFleet" xml:space="preserve">
+    <value>Sélectionner une flotte de véhicules</value>
+  </data>
+  <data name="resSelectVehicle" xml:space="preserve">
+    <value>Sélectionner un véhicule</value>
+  </data>
+  <data name="resStartDateExceed" xml:space="preserve">
+    <value>La date du début ne doit pas dépasser la date de la fin</value>
+  </data>
+  <data name="resUnassignDriverError" xml:space="preserve">
+    <value>Désassigner l'erreur du chauffeur</value>
+  </data>
+  <data name="resVehicleAlreadyAssigned" xml:space="preserve">
+    <value>Ce véhicule est déjà assigné à un chauffeur</value>
+  </data>
+  <data name="txtEndAssgnDateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEndAssgnDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEndAssgnTimeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEndAssgnTimeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStartAssgnDateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStartAssgnDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStartAssgnTimeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStartAssgnTimeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valEndTimeResource1.ErrorMessage" xml:space="preserve">
+    <value>Heure de départ invalide</value>
+  </data>
+  <data name="valEndTimeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valEndTimeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valStartTimeResource1.ErrorMessage" xml:space="preserve">
+    <value>Heure d'arrivée invalide</value>
+  </data>
+  <data name="valStartTimeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valStartTimeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdScheduledTasksResource1.Text" xml:space="preserve">
+    <value>Voir les tâches programmées</value>
+  </data>
+  <data name="cmdScheduledTasksResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>

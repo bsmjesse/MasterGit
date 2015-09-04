@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Fleets" xml:space="preserve">
+    <value>Flotte</value>
+  </data>
+  <data name="FleetView" xml:space="preserve">
+    <value>Vue par flotte</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Fin de session</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Carte</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Recherche</value>
+  </data>
+  <data name="Vehicles" xml:space="preserve">
+    <value>Véhicules</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Débuter la session</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Nom d'usager</value>
+  </data>
+  <data name="BaseLayers" xml:space="preserve">
+    <value>Couches de base</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="Closestnumvehicles" xml:space="preserve">
+    <value>Les %num% véhicules les plus près</value>
+  </data>
+  <data name="Criteria" xml:space="preserve">
+    <value>Critère</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Direction" xml:space="preserve">
+    <value>Direction</value>
+  </data>
+  <data name="GoogleHybrid" xml:space="preserve">
+    <value>Google Hybride</value>
+  </data>
+  <data name="GoogleSatellite" xml:space="preserve">
+    <value>Google Satellite</value>
+  </data>
+  <data name="GoogleStreets" xml:space="preserve">
+    <value>Google Streets</value>
+  </data>
+  <data name="LandmarkGeozone" xml:space="preserve">
+    <value>Site/Géozone</value>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>Couches</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Emplacement</value>
+  </data>
+  <data name="Novehicles" xml:space="preserve">
+    <value>Pas de véhicules</value>
+  </data>
+  <data name="OverlayLayers" xml:space="preserve">
+    <value>Couches de superposition</value>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>Le champ mot de passe est requis</value>
+  </data>
+  <data name="SearchCriteria" xml:space="preserve">
+    <value>Rechercher un critère</value>
+  </data>
+  <data name="SearchFleets" xml:space="preserve">
+    <value>Rechercher une flotte</value>
+  </data>
+  <data name="SearchForClosestVehicles" xml:space="preserve">
+    <value>Entrez les coordonnées pour rechercher les véhicules les plus proches</value>
+  </data>
+  <data name="SearchRadius" xml:space="preserve">
+    <value>Rerchercher un rayon</value>
+  </data>
+  <data name="Speed" xml:space="preserve">
+    <value>Vitesse</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>État</value>
+  </data>
+  <data name="UserNamePasswordIncorrect" xml:space="preserve">
+    <value>Le nom d'usager ou le mot de passe fourni est incorrecte</value>
+  </data>
+  <data name="UserNameRequired" xml:space="preserve">
+    <value>Le champ nom d'usager est requis</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>À propos</value>
+  </data>
+  <data name="ViewFullSize" xml:space="preserve">
+    <value>Visualiser en pleine grandeur</value>
+  </data>
+  <data name="Follow" xml:space="preserve">
+    <value>Suivre</value>
+  </data>
+  <data name="Unfollow" xml:space="preserve">
+    <value>Se désabonner</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Effacer</value>
+  </data>
+  <data name="CommandSuccessful" xml:space="preserve">
+    <value>La commande a réussi.</value>
+  </data>
+  <data name="CommandSuccessfulWith" xml:space="preserve">
+    <value>La commande a été envoyée avec succès en utilisant</value>
+  </data>
+  <data name="CommandTimeOut" xml:space="preserve">
+    <value>Cessation de la commande</value>
+  </data>
+  <data name="Config" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Courriel</value>
+  </data>
+  <data name="FailedToSetOdometer" xml:space="preserve">
+    <value>Échec de la mise à jour de l’odomètre</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="Fuel" xml:space="preserve">
+    <value>Carburant</value>
+  </data>
+  <data name="GpsInvalid" xml:space="preserve">
+    <value>GPS: Invalide</value>
+  </data>
+  <data name="GpsValid" xml:space="preserve">
+    <value>GPS: Valide</value>
+  </data>
+  <data name="Hierarchy" xml:space="preserve">
+    <value>Structure corporative</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>Historique</value>
+  </data>
+  <data name="HistoryClearMsg" xml:space="preserve">
+    <value>Vous supprimerez toute l’historique de votre page et votre carte.</value>
+  </data>
+  <data name="InvalidOdometer2" xml:space="preserve">
+    <value>Seuls les nombres contenant des chiffres 0 à 16777215 sont autorisés</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="MsgGetCommanStatusFailed" xml:space="preserve">
+    <value>L'unité est inaccessible en ce moment</value>
+  </data>
+  <data name="Odometer" xml:space="preserve">
+    <value>Odomètre</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Veuillez patienter...</value>
+  </data>
+  <data name="SearchVehicles" xml:space="preserve">
+    <value>Entrez le nom du véhicule</value>
+  </data>
+  <data name="SessionTimeOut" xml:space="preserve">
+    <value>Expiration de la session</value>
+  </data>
+  <data name="Set" xml:space="preserve">
+    <value>Définir</value>
+  </data>
+  <data name="SpeedKm" xml:space="preserve">
+    <value>Km/h</value>
+  </data>
+  <data name="SpeedMile" xml:space="preserve">
+    <value>mi/h</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>À</value>
+  </data>
+  <data name="UpdateVehicleNameFail" xml:space="preserve">
+    <value>Échec de la mise à jour du nom du véhicule.</value>
+  </data>
+  <data name="UpdateVehicleNameSuccess" xml:space="preserve">
+    <value>Nom du véhicule mis à jour avec succès.</value>
+  </data>
+  <data name="VehicleName" xml:space="preserve">
+    <value>Nom du véhicule</value>
+  </data>
+  <data name="AddressResolutionInProgress" xml:space="preserve">
+    <value>Résolution d’adresse en cours</value>
+  </data>
+  <data name="NW" xml:space="preserve">
+    <value>NO</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Actualiser</value>
+  </data>
+  <data name="SW" xml:space="preserve">
+    <value>SO</value>
+  </data>
+  <data name="West" xml:space="preserve">
+    <value>Ouest</value>
+  </data>
+  <data name="AirFuelRatiox10" xml:space="preserve">
+    <value>Rapport air/carburant x 10</value>
+  </data>
+  <data name="Armed" xml:space="preserve">
+    <value>Armer</value>
+  </data>
+  <data name="BackupBattery" xml:space="preserve">
+    <value>Batterie de soutien</value>
+  </data>
+  <data name="Cell" xml:space="preserve">
+    <value>Cellulaire</value>
+  </data>
+  <data name="CloseStatusInfo" xml:space="preserve">
+    <value>Fermer l'information de l'état</value>
+  </data>
+  <data name="DateFormat" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
+  </data>
+  <data name="Denominator" xml:space="preserve">
+    <value>Dénominateur</value>
+  </data>
+  <data name="Diesel" xml:space="preserve">
+    <value>Diesel</value>
+  </data>
+  <data name="EngineDisplacement" xml:space="preserve">
+    <value>Cylindrée du moteur (ml)</value>
+  </data>
+  <data name="EnterHierarchyName" xml:space="preserve">
+    <value>Entrer le nom de la hiérarchie</value>
+  </data>
+  <data name="FirmwareVersion" xml:space="preserve">
+    <value>Version du micrologiciel</value>
+  </data>
+  <data name="FuelType" xml:space="preserve">
+    <value>Type de carburant</value>
+  </data>
+  <data name="Get" xml:space="preserve">
+    <value>Demander</value>
+  </data>
+  <data name="GetBoxStatus" xml:space="preserve">
+    <value>Demander l'état de l'unité</value>
+  </data>
+  <data name="MainBattery" xml:space="preserve">
+    <value>Batterie principale</value>
+  </data>
+  <data name="MDTmessagesinmemory" xml:space="preserve">
+    <value>Messages de la TEHS en mémoire</value>
+  </data>
+  <data name="MemoryUsage" xml:space="preserve">
+    <value>Utilisation de la mémoire</value>
+  </data>
+  <data name="Mid" xml:space="preserve">
+    <value>Moyen</value>
+  </data>
+  <data name="NaturalGas" xml:space="preserve">
+    <value>Gaz naturel</value>
+  </data>
+  <data name="Premium" xml:space="preserve">
+    <value>Supérieur</value>
+  </data>
+  <data name="PRL" xml:space="preserve">
+    <value>PRL</value>
+  </data>
+  <data name="Regular" xml:space="preserve">
+    <value>Régulier</value>
+  </data>
+  <data name="SendCommandFailedUsing" xml:space="preserve">
+    <value>L'envoi de la commande a échoué en utilisant</value>
+  </data>
+  <data name="Sensors" xml:space="preserve">
+    <value>Capteurs</value>
+  </data>
+  <data name="SensorStatus" xml:space="preserve">
+    <value>État du capteur</value>
+  </data>
+  <data name="SetFuelConfiguration" xml:space="preserve">
+    <value>Définir la configuration du carburant</value>
+  </data>
+  <data name="SIMESN" xml:space="preserve">
+    <value>SIM/ESN</value>
+  </data>
+  <data name="SN" xml:space="preserve">
+    <value>Numéro de série</value>
+  </data>
+  <data name="TimeFormat" xml:space="preserve">
+    <value>HH:mm</value>
+  </data>
+  <data name="UpdatePosition" xml:space="preserve">
+    <value>Mettre à jour la position</value>
+  </data>
+  <data name="Volt" xml:space="preserve">
+    <value>Volt</value>
+  </data>
+  <data name="VolumeEfficency" xml:space="preserve">
+    <value>Rendement Volumétrique (0-100%)</value>
+  </data>
+  <data name="RPM" xml:space="preserve">
+    <value>RPM</value>
+  </data>
+  <data name="Run" xml:space="preserve">
+    <value>Envoyer</value>
+  </data>
+  <data name="DirectionW" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="NonGPSData" xml:space="preserve">
+    <value>Aucune données GPS</value>
+  </data>
+</root>

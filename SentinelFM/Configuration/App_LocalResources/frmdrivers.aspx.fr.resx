@@ -1,0 +1,690 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BoundFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.HeaderText" xml:space="preserve">
+    <value>Identification </value>
+  </data>
+  <data name="BoundFieldResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource2.HeaderText" xml:space="preserve">
+    <value>Prénom </value>
+  </data>
+  <data name="BoundFieldResource3.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource3.HeaderText" xml:space="preserve">
+    <value>Nom de famille </value>
+  </data>
+  <data name="BoundFieldResource4.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource4.HeaderText" xml:space="preserve">
+    <value>Permis  </value>
+  </data>
+  <data name="BoundFieldResource5.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource5.HeaderText" xml:space="preserve">
+    <value>Affectation </value>
+  </data>
+  <data name="BoundFieldResource6.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource6.HeaderText" xml:space="preserve">
+    <value>No. télécommande</value>
+  </data>
+  <data name="btnDeleteDriverResource1" xml:space="preserve">
+    <value>Êtes-vous certain de vouloir effacer le chauffeur</value>
+  </data>
+  <data name="cmdAddDriverResource1.Text" xml:space="preserve">
+    <value>Ajouter un chauffeur</value>
+  </data>
+  <data name="cmdAddDriverResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCancelResource1.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="cmdCancelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdDownloadDriversResource1.Text" xml:space="preserve">
+    <value>Créer la liste des chauffeurs</value>
+  </data>
+  <data name="cmdDriverResource1.Text" xml:space="preserve">
+    <value>Chauffeurs</value>
+  </data>
+  <data name="cmdDriverResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdDriverResource2.Text" xml:space="preserve">
+    <value>Organisation</value>
+  </data>
+  <data name="cmdDriverResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdDriversInfoResource1.Text" xml:space="preserve">
+    <value>Informations chauffeurs</value>
+  </data>
+  <data name="cmdDriversInfoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdDriversVehiclesResource1.Text" xml:space="preserve">
+    <value>Assigner des véhicules aux chauffeurs</value>
+  </data>
+  <data name="cmdDriversVehiclesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdFleetsResource1.Text" xml:space="preserve">
+    <value>Flotte de véhicules</value>
+  </data>
+  <data name="cmdFleetsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSaveDriverResource1.Text" xml:space="preserve">
+    <value>Soumettre</value>
+  </data>
+  <data name="cmdSaveDriverResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdUploadAssignmentsResource1.Text" xml:space="preserve">
+    <value>Importer les assignations</value>
+  </data>
+  <data name="cmdUploadDriverListResource1.Text" xml:space="preserve">
+    <value>Assigner des chauffeurs</value>
+  </data>
+  <data name="cmdUsersResource1.Text" xml:space="preserve">
+    <value>Usagers</value>
+  </data>
+  <data name="cmdUsersResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdVehiclesResource1.Text" xml:space="preserve">
+    <value>Véhicules</value>
+  </data>
+  <data name="cmdVehiclesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.CancelText" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="CommandFieldResource1.DeleteText" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="CommandFieldResource1.EditText" xml:space="preserve">
+    <value>Éditer</value>
+  </data>
+  <data name="CommandFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.InsertText" xml:space="preserve">
+    <value>Insérer</value>
+  </data>
+  <data name="CommandFieldResource1.NewText" xml:space="preserve">
+    <value>Nouveau</value>
+  </data>
+  <data name="CommandFieldResource1.SelectText" xml:space="preserve">
+    <value>Sélectionner</value>
+  </data>
+  <data name="CommandFieldResource1.UpdateText" xml:space="preserve">
+    <value>Mise à jour</value>
+  </data>
+  <data name="ddlGenderResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlStateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdvDriversResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdvDriversResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdvDriversResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelCustomerNoteResource1.Text" xml:space="preserve">
+    <value>Note: Veuillez appeler le Service à la clientèle de BSM au 1-866-768-4771 afin de confirmer le transfert du fichier.</value>
+  </data>
+  <data name="lblAdditionalPhoneResource1.Text" xml:space="preserve">
+    <value>Numéro de téléphone supplémentaire</value>
+  </data>
+  <data name="lblAdditionalPhoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAddressResource1.Text" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="lblAddressResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCellPhoneResource1.Text" xml:space="preserve">
+    <value>Numéro de téléphone cellulaire</value>
+  </data>
+  <data name="lblCellPhoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCityResource1.Text" xml:space="preserve">
+    <value>Ville</value>
+  </data>
+  <data name="lblCityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblClassResource1.Text" xml:space="preserve">
+    <value>License Classe</value>
+  </data>
+  <data name="lblClassResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCountryResource1.Text" xml:space="preserve">
+    <value>Pays</value>
+  </data>
+  <data name="lblCountryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDescriptionResource1.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmailResource1.Text" xml:space="preserve">
+    <value>Courriel</value>
+  </data>
+  <data name="lblEmailResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFirstNameResource1.Text" xml:space="preserve">
+    <value>Prénom</value>
+  </data>
+  <data name="lblFirstNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGenderResource1.Text" xml:space="preserve">
+    <value>Sexe</value>
+  </data>
+  <data name="lblGenderResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblHeightResource1.Text" xml:space="preserve">
+    <value>Taille</value>
+  </data>
+  <data name="lblHeightResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblHomePhoneResource1.Text" xml:space="preserve">
+    <value>Numéro de téléphone de la résidence</value>
+  </data>
+  <data name="lblHomePhoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLastNameResource1.Text" xml:space="preserve">
+    <value>Nom de famille</value>
+  </data>
+  <data name="lblLastNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLicenseExpiredResource1.Text" xml:space="preserve">
+    <value>Permis expiré</value>
+  </data>
+  <data name="lblLicenseExpiredResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLicenseIssuedResource1.Text" xml:space="preserve">
+    <value>Permis émis</value>
+  </data>
+  <data name="lblLicenseIssuedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLicenseResource1.Text" xml:space="preserve">
+    <value>Permis</value>
+  </data>
+  <data name="lblLicenseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value>Aucun chauffeur</value>
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNoDriversMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNoDriversMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSMSIDResource1.Text" xml:space="preserve">
+    <value>Employé ID</value>
+  </data>
+  <data name="lblSMSIDResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStateResource1.Text" xml:space="preserve">
+    <value>État/province</value>
+  </data>
+  <data name="lblStateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblZipCodeResource1.Text" xml:space="preserve">
+    <value>Code postal</value>
+  </data>
+  <data name="lblZipCodeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="linkDriverAssignmentListResource1.Text" xml:space="preserve">
+    <value>Télécharger les assignations</value>
+  </data>
+  <data name="linkDriverListResource1.Text" xml:space="preserve">
+    <value>Télécharger les chauffeurs</value>
+  </data>
+  <data name="ListItemResource1.Text" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="ListItemResource1.Value" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="ListItemResource2.Text" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="ListItemResource2.Value" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Page sans titre</value>
+  </data>
+  <data name="resAddDriverError" xml:space="preserve">
+    <value>Ajouter l'erreur du chauffeur.</value>
+  </data>
+  <data name="resDateFormat" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
+  </data>
+  <data name="resDriversAssignUploadSuccess" xml:space="preserve">
+    <value>Les tâches des chauffeurs ont été téléchargées avec succès</value>
+  </data>
+  <data name="resDriversUploadSuccess" xml:space="preserve">
+    <value>La liste des chauffeurs a été téléchargée avec succès</value>
+  </data>
+  <data name="resErrorUploadingDriversAssignList" xml:space="preserve">
+    <value>Erreur de téléchargement de la liste des tâches des chauffeurs</value>
+  </data>
+  <data name="resErrorUploadingDriversList" xml:space="preserve">
+    <value>Erreur de téléchargement de la liste des chauffeurs</value>
+  </data>
+  <data name="resErrorUploadingFile" xml:space="preserve">
+    <value>Erreur lors du transfert du fichier </value>
+  </data>
+  <data name="resExpirationDateNotValid" xml:space="preserve">
+    <value>La date d'expiration doit être supérieure à la date d'émission</value>
+  </data>
+  <data name="resFillClass" xml:space="preserve">
+    <value>Remplir la case "Classe" du permis de conduire</value>
+  </data>
+  <data name="resFillFirstName" xml:space="preserve">
+    <value>Entrer le prénom</value>
+  </data>
+  <data name="resFillLastName" xml:space="preserve">
+    <value>Entrer le nom</value>
+  </data>
+  <data name="resFillLicense" xml:space="preserve">
+    <value>Entrer le numéro du permis de conduire</value>
+  </data>
+  <data name="resFillLicenseExpired" xml:space="preserve">
+    <value>Entrer la date d'expiration du permis de conduire</value>
+  </data>
+  <data name="resFillLicenseIssued" xml:space="preserve">
+    <value>Entrer la date d'émission du permis de conduire</value>
+  </data>
+  <data name="resGetStatesError" xml:space="preserve">
+    <value>Erreur dans l'obtention l'information dans "État"</value>
+  </data>
+  <data name="resHeightFormat" xml:space="preserve">
+    <value>Le format est invalide</value>
+  </data>
+  <data name="resNo" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="resNoDrivers" xml:space="preserve">
+    <value>Aucun chauffeur dans la compagnie</value>
+  </data>
+  <data name="resSelectFile" xml:space="preserve">
+    <value>Sélectionner et télécharger un fichier</value>
+  </data>
+  <data name="resUpdateDriverError" xml:space="preserve">
+    <value>Mise à jour de l'erreur du chauffeur.</value>
+  </data>
+  <data name="txtAdditionalPhoneResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAdditionalPhoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAddressResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAddressResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCellPhoneResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCellPhoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCityResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtClassResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtClassResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCountryResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCountryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDescriptionResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEmailResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEmailResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFirstNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFirstNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtHeightResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtHeightResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtHomePhoneResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtHomePhoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLastNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLastNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLicenseExpiredResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLicenseExpiredResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLicenseIssuedResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLicenseIssuedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLicenseResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLicenseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSmsidResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSmsidResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtZipcodeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtZipcodeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label1Resource1.Text" xml:space="preserve">
+    <value>Confirmez employé ID Mot de passe</value>
+  </data>
+  <data name="Label1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSMSPWDResource1.Text" xml:space="preserve">
+    <value>Employé ID Mot de passe</value>
+  </data>
+  <data name="lblSMSPWDResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Êtes-vous certain de vouloir effacer le chauffeur</value>
+  </data>
+  <data name="cmdScheduledTasksResource1.Text" xml:space="preserve">
+    <value>Voir les tâches programmées</value>
+  </data>
+  <data name="cmdScheduledTasksResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnEditDriverResource1.ToolTip" xml:space="preserve">
+    <value>Modifier chauffeur</value>
+  </data>
+  <data name="MasterTableViewResource1.NoMasterRecordsText" xml:space="preserve">
+    <value>Aucun chauffeur dans la compagnie</value>
+  </data>
+  <data name="gdvDrivers_Emergency" xml:space="preserve">
+    <value>Urgence</value>
+  </data>
+  <data name="lblKeyFobID.Text" xml:space="preserve">
+    <value>No. télécommande</value>
+  </data>
+  <data name="lblKeyFobID.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkAssignEmergencyResource1.Text" xml:space="preserve">
+    <value>Assigner un plan d’urgence</value>
+  </data>
+  <data name="chkAssignEmergencyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmergencytelResource1.Text" xml:space="preserve">
+    <value>Téléphone d’urgence</value>
+  </data>
+  <data name="ddlEmergencyPlanItem0Resource1.Text" xml:space="preserve">
+    <value>Choisir un plan</value>
+  </data>
+  <data name="chkHeaderRowResource1.Text" xml:space="preserve">
+    <value>Première rangée est un en-tête</value>
+  </data>
+  <data name="chkIsSupervisorResource1.Text" xml:space="preserve">
+    <value>Est superviseur?</value>
+  </data>
+  <data name="ddlCaCycleResource1Item0Resource1.Text1" xml:space="preserve">
+    <value>Choisir le cycle Canadien</value>
+  </data>
+  <data name="ddlCaCycleResource1Item1Resource1.Text1" xml:space="preserve">
+    <value>Cycle canadien 1</value>
+  </data>
+  <data name="ddlCaCycleResource1Item2Resource1.Text1" xml:space="preserve">
+    <value>Cycle canadien 2</value>
+  </data>
+  <data name="ddlCaCycleResource1Item3Resource1.Text1" xml:space="preserve">
+    <value>Règle du champ pétrolier canadien</value>
+  </data>
+  <data name="ddlUsaCycleResource1Item0Resource1.Text" xml:space="preserve">
+    <value>Choisir le cycle USA</value>
+  </data>
+  <data name="ddlUsaCycleResource1Item1Resource1.Text" xml:space="preserve">
+    <value>É.-U. 60/7</value>
+  </data>
+  <data name="ddlUsaCycleResource1Item2Resource1.Text" xml:space="preserve">
+    <value>É.-U. 70/8</value>
+  </data>
+  <data name="ddlUsaCycleResource1Item3Resource1.Text" xml:space="preserve">
+    <value>Règlement du champ pétrolier É.-U.</value>
+  </data>
+  <data name="lblCaCycleResource1.Text1" xml:space="preserve">
+    <value>Cycle Canadien</value>
+  </data>
+  <data name="lblUsaCycleResource1.Text" xml:space="preserve">
+    <value>Cycle USA</value>
+  </data>
+  <data name="lblPositionInfo.Text" xml:space="preserve">
+    <value>informations de position</value>
+  </data>
+  <data name="lblTerminationDate.Text" xml:space="preserve">
+    <value>date de résiliation</value>
+  </data>
+  <data name="txtPositionInfo.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtTerminationDate.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldClassResource.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldClassResource.HeaderText" xml:space="preserve">
+    <value>Classe</value>
+  </data>
+  <data name="resDriverErrorNameAndEmployeeNoExists" xml:space="preserve">
+    <value>Pilote avec le même Prénom, Nom et ID employé existe déjà.</value>
+  </data>
+  <data name="resDriverErrorNameExists" xml:space="preserve">
+    <value>Pilote avec le même prénom et le nom existe déjà.</value>
+  </data>
+</root>

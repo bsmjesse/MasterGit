@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstFuelTransaction" targetNamespace="http://tempuri.org/dstViolationReport.xsd" xmlns:mstns="http://tempuri.org/dstViolationReport.xsd" xmlns="http://tempuri.org/dstViolationReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstFuelTransaction" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="rpt_FuelTransactionReport">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" type="xs:int" minOccurs="0" />
+              <xs:element name="vinNum" type="xs:string" minOccurs="0" />
+              <xs:element name="licensePlate" type="xs:string" minOccurs="0" />
+              <xs:element name="VehicleDescription" type="xs:string" minOccurs="0" />
+              <xs:element name="driversName" type="xs:string" minOccurs="0" />
+              <xs:element name="latitude" type="xs:double" minOccurs="0" />
+              <xs:element name="longitude" type="xs:double" minOccurs="0" />
+              <xs:element name="latitudeFound" type="xs:double" minOccurs="0" />
+              <xs:element name="longitudeFound" type="xs:double" minOccurs="0" />
+              <xs:element name="data" type="xs:string" minOccurs="0" />
+              <xs:element name="address" type="xs:string" minOccurs="0" />
+              <xs:element name="addressFound" type="xs:string" minOccurs="0" />
+              <xs:element name="dtTransaction" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dtReceived" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dtClosed" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="StatusName" type="xs:string" minOccurs="0" />
+              <xs:element name="DistDelta" type="xs:double" minOccurs="0" />
+              <xs:element name="dtLocationFound" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Odometer" type="xs:int" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

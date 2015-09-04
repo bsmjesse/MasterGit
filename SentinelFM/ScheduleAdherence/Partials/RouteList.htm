@@ -1,0 +1,45 @@
+﻿<div ng-controller="SARouteCtrl">
+<div>
+    <!-- Search Route content-->
+    Route:<input ng-model="filterForRoute.Tag" placeholder="Route name or vehicle name"/>
+</div>
+<br />
+<div>
+    <div class="buttonbar">
+        <a href="" ng-show="CanNewRoute()" ng-click="EditRoute(0)" class="imgbutton">
+            <span class="imgbuttonicon imgbuttonnew">New</span>
+        </a> 
+        <a href="" ng-show="CanEditRoute()" ng-click="EditRoute()" class="imgbutton">
+            <span class="imgbuttonicon imgbuttonedit">Edit</span>
+        </a> 
+        <a href="" ng-show="CanDeleteRoute()" ng-click="DeleteRoute()" class="imgbutton">
+            <span class="imgbuttonicon imgbuttondelete">Delete</span>
+        </a> 
+    </div>
+    <div ng-show="IsRouteInit()">Please select a schedule.</div>
+    <div ng-show="IsRouteNoData()">No Data.</div>
+    <div ng-show="IsRouteLoading()">Loading....</div>
+    <div ng-show="Status == 'Data'">
+    <!--Route body-->
+    <table>
+        <tr class="tableRow">
+            <th>Route</th>
+            <th>Vehicle</th>
+            <th>Departure On</th>
+            <th>Arrival On</th>
+            <th>Description</th>
+        </tr>
+        <tr class="tableRow " ng-class="{extable_current:IsCurrentRoute({{route.RouteId}}), extable_uncompleted:IsUncompletedRoute({{route.RouteId}})}" 
+                ng-click="SelectRoute({{route.RouteId}})" ng-class-odd="'ItemOdd'" ng-class-even="'ItemEven'"
+            ng-repeat="route in RouteList | filter:filterForRoute:strict | orderBy:'Name'">
+            <td>{{route.Name}}</td>
+            <td>{{route.VehicleName}}</td>
+            <td>{{route.RSCDepartureTime| date:'medium'}}</td>
+            <td>{{route.RSCArrivalTime| date:'medium'}}</td>
+            <td>{{route.Description}}</td>
+        </tr>
+        <thead></thead>
+    </table>
+    </div>
+</div>
+</div>

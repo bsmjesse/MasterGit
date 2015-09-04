@@ -1,0 +1,645 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Assigning Users to Access Groups</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="SentinelFMStyleSheet_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='SentinelFMStyleSheet.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+h1.whs1 { margin-bottom:0pt; }
+hr.whs2 { float:alignleft; color:#008000; }
+table.whs3 { x-cell-content-align:top; border-spacing:0px; }
+col.whs4 { width:319px; }
+col.whs5 { width:78px; }
+col.whs6 { width:69px; }
+col.whs7 { width:60px; }
+col.whs8 { width:47px; }
+tr.whs9 { x-cell-content-align:top; }
+td.whs10 { width:319px; padding-right:10px; padding-left:10px; border-left-color:#000000; border-left-style:Solid; border-top-style:Solid; border-top-color:#000000; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-right-width:1px; border-left-width:1px; border-top-width:1px; border-bottom-width:1px; background-color:#008000; }
+p.whs11 { color:#ffffff; }
+td.whs12 { width:78px; padding-right:10px; padding-left:10px; border-top-style:Solid; border-top-color:#000000; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-right-width:1px; border-top-width:1px; border-bottom-width:1px; background-color:#008000; }
+td.whs13 { width:69px; padding-right:10px; padding-left:10px; border-top-style:Solid; border-top-color:#000000; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-right-width:1px; border-top-width:1px; border-bottom-width:1px; background-color:#008000; }
+td.whs14 { width:60px; padding-right:10px; padding-left:10px; border-top-style:Solid; border-top-color:#000000; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-right-width:1px; border-top-width:1px; border-bottom-width:1px; background-color:#008000; }
+td.whs15 { width:47px; padding-right:10px; padding-left:10px; border-top-style:Solid; border-top-color:#000000; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-top-width:1px; border-bottom-width:1px; border-right-width:1px; background-color:#008000; }
+td.whs16 { width:319px; padding-right:10px; padding-left:10px; border-left-width:1px; border-left-color:#000000; border-left-style:Solid; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; }
+td.whs17 { width:78px; padding-right:10px; padding-left:10px; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; }
+p.whs18 { text-align:center; }
+td.whs19 { width:69px; padding-right:10px; padding-left:10px; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; }
+td.whs20 { width:60px; padding-right:10px; padding-left:10px; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; }
+td.whs21 { width:47px; padding-right:10px; padding-left:10px; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; }
+td.whs22 { width:319px; border-left-width:1px; border-left-color:#000000; border-left-style:Solid; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+td.whs23 { width:78px; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+td.whs24 { width:69px; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+td.whs25 { width:60px; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+td.whs26 { width:47px; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+ul.whs27 { list-style:disc; }
+img_whs28 { border:none; width:293px; height:144px; margin-right:0px; margin-top:0px; margin-bottom:0px; margin-left:36px; float:none; border-style:none; }
+img_whs29 { border:none; width:446px; height:237px; margin-right:0px; margin-top:0px; margin-bottom:0px; margin-left:30px; float:none; border-style:none; }
+p.whs30 { font-style:italic; border-left-width:1px; border-left-style:Solid; border-top-width:1px; border-top-style:Solid; border-right-width:1px; border-right-style:Solid; border-bottom-width:1px; border-bottom-style:Solid; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "h1.whs1 {margin-bottom:1pt; }";
+  strNSS += "img_whs28 {margin-right:1pt;margin-top:1pt;margin-bottom:1pt; }";
+  strNSS += "img_whs29 {margin-right:1pt;margin-top:1pt;margin-bottom:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Setting Up Users\nAssigning Users to Access Groups");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("SentinelFM_ConfigurationGuide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1 class="whs1">Assigning Users to Access Groups</h1>
+
+
+<hr align="left" color="#008000" class="whs2">
+
+
+<p>Users can be assigned to a variety of access groups by an Administrator 
+ that determine the level of access a particular user has to various components 
+ of the Sentinel-FM system. &nbsp;A 
+ breakdown of activities available to different access groups are outlined 
+ in the table below:</p>
+
+<p>&nbsp;</p>
+
+<table x-use-null-cells cellspacing="0" class="whs3">
+<script language='JavaScript'><!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4)) document.write("</table><table x-use-null-cells cellspacing='0' border='1' bordercolor='black' bordercolorlight='black' bordercolordark='black'>");
+//--></script>
+<col class="whs4">
+<col class="whs5">
+<col class="whs6">
+<col class="whs7">
+<col class="whs8">
+
+<tr valign="top" class="whs9">
+<td bgcolor="#008000" width="319px" class="whs10">
+<p class="whs11">Activity</td>
+<td bgcolor="#008000" width="78px" class="whs12">
+<p class="whs11">Security Administrator</td>
+<td bgcolor="#008000" width="69px" class="whs13">
+<p class="whs11">Security High</td>
+<td bgcolor="#008000" width="60px" class="whs14">
+<p class="whs11">Security Low</td>
+<td bgcolor="#008000" width="47px" class="whs15">
+<p class="whs11">View Only</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs16">
+<p>Clear Memory</td>
+<td width="78px" class="whs17">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs19">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs20">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs21">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Set Enabled Sensors</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Set Fence</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Set Speed Threshold</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Arm</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Disarm</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Get GeoZone IDs</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Delete All GeoZones</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="319px" class="whs22">
+<p>Output Name / Output Action</td>
+<td colspan="1" rowspan="1" width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td colspan="1" rowspan="1" width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td colspan="1" rowspan="1" width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td colspan="1" rowspan="1" width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Horn On/Off</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Door Lock/Unlock</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>User Def1 On/Off</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>User Def2 On/Off</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>User Def3 On/Off</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>VCR On/Off</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>GetBoxSetup</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">X</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>GetBoxStatus</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">X</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>UpdatePosition</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">X</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>MapIt</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">X</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">X</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>&nbsp;</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Email Addresses -&gt; Add/Delete Email Address</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Fleet Management -&gt; Add/Delete Fleet</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Fleet - Vehicle Assignment</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Fleet - User Assignment</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Vehicle Info -&gt; Add/Delete Vehicle</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Modify Sensors/Alarms</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Modify Outputs</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>User Info / Add User</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>User-Groups Assignment</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Vehicle-GeoZone Assignment</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>&nbsp;</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Send Text Message</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">X</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>View Text Message</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">X</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>&nbsp;</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">&nbsp;</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">&nbsp;</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="319px" class="whs22">
+<p>Generate/View Reports</td>
+<td width="78px" class="whs23">
+<p align="center" class="whs18">X</td>
+<td width="69px" class="whs24">
+<p align="center" class="whs18">X</td>
+<td width="60px" class="whs25">
+<p align="center" class="whs18">X</td>
+<td width="47px" class="whs26">
+<p align="center" class="whs18">X</td></tr>
+<script language='JavaScript'><!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4)) document.write("</table></table><table>");
+//--></script>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>To modify User group access:</p>
+
+<p>&nbsp;</p>
+
+<ul type="disc" class="whs27">
+	
+	<li class=kadov-p><p>From the button on the left side of any Sentinel-FM 
+ page, click <span style="font-weight: bold;"><B>Configuration</B></span>;</p></li>
+	
+	<li class=kadov-p><p>Select the <span style="font-weight: bold;"><B>Users</B></span> 
+ tab and then the <span style="font-weight: bold;"><B>User-Groups Assignment</B></span> 
+ sub tab;</p></li>
+	
+	<li class=kadov-p><p>Select a <span style="font-weight: bold;"><B>Group</B></span> 
+ to be modified from the drop-down list;</p></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><script type="text/javascript" language="JavaScript"><!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) <= 4)) 
+{  if (parseInt(navigator.appVersion) != 2) document.write("<img src='GROUP.JPG' x-maintain-ratio='TRUE' width='293px' height='144px' border='0' class='img_whs28'>");}
+else
+{   document.write("<img src='GROUP.JPG' x-maintain-ratio='TRUE' style='margin-right:0px;margin-top:0px;margin-bottom:0px;margin-left:36px;' width='293px' height='144px' border='0' class='img_whs28'>");}
+//--></script><noscript><img src='GROUP.JPG' x-maintain-ratio='TRUE' style='margin-right:0px;margin-top:0px;margin-bottom:0px;margin-left:36px;' width='293px' height='144px' border='0' class='img_whs28'></noscript></p>
+
+<p>&nbsp;</p>
+
+<ul type="disc" class="whs27">
+	
+	<li class=kadov-p><p>Move users from the <span style="font-weight: bold;"><B>Unassigned</B></span> 
+ <span style="font-weight: bold;"><B>users</B></span> column to the <span style="font-weight: bold;"><B>Assigned 
+ users</B></span> column or vice versa by using the <span style="font-weight: bold;"><B>Add</B></span> 
+ or <span style="font-weight: bold;"><B>Remove</B></span> buttons;</p></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><script type="text/javascript" language="JavaScript"><!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) <= 4)) 
+{  if (parseInt(navigator.appVersion) != 2) document.write("<img src='ASSIGN.JPG' x-maintain-ratio='TRUE' width='446px' height='237px' border='0' class='img_whs29'>");}
+else
+{   document.write("<img src='ASSIGN.JPG' x-maintain-ratio='TRUE' style='margin-right:0px;margin-top:0px;margin-bottom:0px;margin-left:30px;' width='446px' height='237px' border='0' class='img_whs29'>");}
+//--></script><noscript><img src='ASSIGN.JPG' x-maintain-ratio='TRUE' style='margin-right:0px;margin-top:0px;margin-bottom:0px;margin-left:30px;' width='446px' height='237px' border='0' class='img_whs29'></noscript></p>
+
+<p>&nbsp;</p>
+
+<p class="whs30"><SPAN style="font-style: italic; padding-left: 4px; padding-right: 4px; padding-top: 2px; padding-bottom: 2px; "><I><span style="font-weight: bold;"><B>Note:</B></span> 
+ &nbsp;One User 
+ can belong to one or more User Groups. &nbsp;For 
+ example, in the case of a User assigned to two User Groups, he/she will 
+ have permissions for both.</I></SPAN></p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+
+<!--SALMAN-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="../ValidateHelp.js"></script>
+<!--SALMAN-->
+
+</body>
+</html>

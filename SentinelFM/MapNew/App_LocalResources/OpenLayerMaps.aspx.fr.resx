@@ -1,0 +1,530 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="geozoneDefaultFormTitle" xml:space="preserve">
+    <value>Configurer la Géo-zone</value>
+    <comment>Edit Geozone</comment>
+  </data>
+  <data name="geozoneDefaultInfoTitle" xml:space="preserve">
+    <value>Géozone :</value>
+    <comment>Geozone:</comment>
+  </data>
+  <data name="geozoneLandmarkFormTitle" xml:space="preserve">
+    <value>Configurer le Site</value>
+    <comment>Edit Landmark</comment>
+  </data>
+  <data name="geozoneLandmarkInfoTitle" xml:space="preserve">
+    <value>Site :</value>
+    <comment>Landmark:</comment>
+  </data>
+  <data name="lblCallTimerTitle" xml:space="preserve">
+    <value>Temps expiré :</value>
+    <comment>Timeout:</comment>
+  </data>
+  <data name="lblContactNameTitle" xml:space="preserve">
+    <value>Nom du contact :</value>
+    <comment>Contact Name:</comment>
+  </data>
+  <data name="lblDefaultSeverityTitle" xml:space="preserve">
+    <value>Sévérité  par défaut :</value>
+    <comment>Default Severity:</comment>
+  </data>
+  <data name="lblDirectionTitle" xml:space="preserve">
+    <value>Direction :</value>
+    <comment>Direction:</comment>
+  </data>
+  <data name="lblEmailTitle" xml:space="preserve">
+    <value>Courriel :</value>
+    <comment>Email:</comment>
+  </data>
+  <data name="lblGeozoneDescriptionTitle" xml:space="preserve">
+    <value>Description de la Géo-zone :</value>
+    <comment>GeoZone Description:</comment>
+  </data>
+  <data name="lblGeozoneNameTitle" xml:space="preserve">
+    <value>Nom de la Géo-zone (*) :</value>
+    <comment>GeoZone Name (*):</comment>
+  </data>
+  <data name="lblLandmarkDescriptionTitle" xml:space="preserve">
+    <value>Description du site :</value>
+    <comment>Landmark Description:</comment>
+  </data>
+  <data name="lblLandmarkNameTitle" xml:space="preserve">
+    <value>Nom du site :</value>
+    <comment>Landmark Name (*):</comment>
+  </data>
+  <data name="lblPhoneTitle" xml:space="preserve">
+    <value>Téléphone :</value>
+    <comment>Phone :</comment>
+  </data>
+  <data name="vehicleText" xml:space="preserve">
+    <value>Rayon :</value>
+    <comment>Radius:</comment>
+  </data>
+  <data name="lblTimeZoneTitle" xml:space="preserve">
+    <value>Fuseau horaire :</value>
+    <comment>Time Zone:</comment>
+  </data>
+  <data name="SearchHistoryTitle" xml:space="preserve">
+    <value>Recherche historique :</value>
+    <comment>Search History:</comment>
+  </data>
+  <data name="WMSInfoControlTitle" xml:space="preserve">
+    <value>Identifier les options en cliquant</value>
+    <comment>Identify features by clicking</comment>
+  </data>
+  <data name="alandmarkformmoreoptionsText" xml:space="preserve">
+    <value>Plus d’options</value>
+    <comment>More Options</comment>
+  </data>
+  <data name="alertDeletePolygonFailedText" xml:space="preserve">
+    <value>Impossible de supprimer un Site/Géo-zone</value>
+    <comment>Failed to delete the Landmark/Geozone</comment>
+  </data>
+  <data name="alertEditPolygonFailedText" xml:space="preserve">
+    <value>Impossible de configurer le Site</value>
+    <comment>Failed to edit the landmark</comment>
+  </data>
+  <data name="alertErrorText" xml:space="preserve">
+    <value>Échec</value>
+    <comment>failure</comment>
+  </data>
+  <data name="alertGeozoneLoadFailedText" xml:space="preserve">
+    <value>Impossible de charger la Géo-zone.</value>
+    <comment>Failed to load geozones.</comment>
+  </data>
+  <data name="alertLandmarkLoadFailedText" xml:space="preserve">
+    <value>Impossible de charger le Site.</value>
+    <comment>Failed to load landmarks.</comment>
+  </data>
+  <data name="btnDeletePolygonText" xml:space="preserve">
+    <value>Supprimer!</value>
+    <comment>Delete!</comment>
+  </data>
+  <data name="CancelText" xml:space="preserve">
+    <value>Annuler</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="cboDirection_DisableText" xml:space="preserve">
+    <value>Désactiver</value>
+    <comment>Disable</comment>
+  </data>
+  <data name="cboDirection_InOutText" xml:space="preserve">
+    <value>Entrée/Sortie</value>
+    <comment>InOut</comment>
+  </data>
+  <data name="cboDirection_InText" xml:space="preserve">
+    <value>Entrée</value>
+    <comment>In</comment>
+  </data>
+  <data name="cboDirection_OutText" xml:space="preserve">
+    <value>Sortie</value>
+    <comment>Out</comment>
+  </data>
+  <data name="cboGeoZoneSeverity_CriticalText" xml:space="preserve">
+    <value>Critique</value>
+    <comment>Critical</comment>
+  </data>
+  <data name="cboGeoZoneSeverity_NoAlarmText" xml:space="preserve">
+    <value>Aucune alarme</value>
+    <comment>NoAlarm</comment>
+  </data>
+  <data name="cboGeoZoneSeverity_NotifyText" xml:space="preserve">
+    <value>Notifier</value>
+    <comment>Notify</comment>
+  </data>
+  <data name="cboGeoZoneSeverity_WarningText" xml:space="preserve">
+    <value>Avertissement</value>
+    <comment>Warning</comment>
+  </data>
+  <data name="cboTimeZoneGMT" xml:space="preserve">
+    <value>GMT</value>
+    <comment>GMT</comment>
+  </data>
+  <data name="chkCriticalText" xml:space="preserve">
+    <value>Alarme critique</value>
+    <comment>Critical Alarm</comment>
+  </data>
+  <data name="chkDayLightText" xml:space="preserve">
+    <value>Ajuster automatiquement l'heure avancée</value>
+    <comment>Automatically adjust for daylight savings time</comment>
+  </data>
+  <data name="chkNotifyText" xml:space="preserve">
+    <value>Notification de l'alarme</value>
+    <comment>Notify Alarm</comment>
+  </data>
+  <data name="chkWarningText" xml:space="preserve">
+    <value>Alarme d'avertissement</value>
+    <comment>Warning Alarm</comment>
+  </data>
+  <data name="closeText" xml:space="preserve">
+    <value>Fermée</value>
+    <comment>Close</comment>
+  </data>
+  <data name="cvHistoryInfoIdTitle" xml:space="preserve">
+    <value>Message</value>
+    <comment>Message</comment>
+  </data>
+  <data name="cvLocationTitle" xml:space="preserve">
+    <value>Adresse :</value>
+    <comment>Address:</comment>
+  </data>
+  <data name="errorContentFailedDataFetchText" xml:space="preserve">
+    <value>Données irrécupérables.</value>
+    <comment>failed to fetch the data.</comment>
+  </data>
+  <data name="h6CircleContentText" xml:space="preserve">
+    <value>Nouveau Site</value>
+    <comment>New circle type landmark</comment>
+  </data>
+  <data name="h6NewGeozoneLandmarlText" xml:space="preserve">
+    <value>Nouveau Géo-zone / Site</value>
+    <comment>New Geozone/Landmark</comment>
+  </data>
+  <data name="lblMultipleEmailsText" xml:space="preserve">
+    <value>*Les adresses courriels doivent être séparées par un point-virgule ou une virgule</value>
+    <comment>*Multiple email addresses Must be Separated by semicolon or comma</comment>
+  </data>
+  <data name="lnkAssignGeozoneToFleetText" xml:space="preserve">
+    <value>Assigner à une flotte</value>
+    <comment>Assign to fleet</comment>
+  </data>
+  <data name="lnkBackText" xml:space="preserve">
+    <value>Retour</value>
+    <comment>Back</comment>
+  </data>
+  <data name="lnkClosestVehicleText" xml:space="preserve">
+    <value>Véhicules les plus proches</value>
+    <comment>Closest Vehicles</comment>
+  </data>
+  <data name="lnkloadPopupsendmessageText" xml:space="preserve">
+    <value>Envoyer un message</value>
+    <comment>Send Message</comment>
+  </data>
+  <data name="lnkRouteAssignmentText" xml:space="preserve">
+    <value>Assignation d’une route</value>
+    <comment>Route Assignment</comment>
+  </data>
+  <data name="lnkShowMapHistoryText" xml:space="preserve">
+    <value>Historique</value>
+    <comment>History</comment>
+  </data>
+  <data name="lstPublicPrivate_PrivateText" xml:space="preserve">
+    <value>Privé</value>
+    <comment>Private</comment>
+  </data>
+  <data name="lstPublicPrivate_PublicText" xml:space="preserve">
+    <value>Public</value>
+    <comment>Public</comment>
+  </data>
+  <data name="messagebarEditLandmarkCircleText" xml:space="preserve">
+    <value>Utiliser le bouton Configurer pour modifier le Site</value>
+    <comment>Please use Edit button to modify Landmark Circle.</comment>
+  </data>
+  <data name="messagebarGeoLandZoomInText" xml:space="preserve">
+    <value>Géo-zone/Site(s); Agrandir pour les détails.</value>
+    <comment>Geozone/Landmark(s). Zoom in for details.</comment>
+  </data>
+  <data name="messagebarGeozoneNonEditableText" xml:space="preserve">
+    <value>Cette Géo-zone est assignée à une boîte non modifiable.</value>
+    <comment>This Geozone is assigned to a box and it's not editable.</comment>
+  </data>
+  <data name="messagebarSaveChangesText" xml:space="preserve">
+    <value>Les changements ont été sauvegardés.</value>
+    <comment>The change(s) has been saved.</comment>
+  </data>
+  <data name="messagebarSavePolygonFailedText" xml:space="preserve">
+    <value>Impossible de créer un Site/Géo-zone</value>
+    <comment>Failed to create the Landmark/Geozone</comment>
+  </data>
+  <data name="onFeatureSelectContentText" xml:space="preserve">
+    <value>Nouveau Site ou Géo-zone</value>
+    <comment>New Landmark or Geozone</comment>
+  </data>
+  <data name="cvDriverText" xml:space="preserve">
+    <value>Chauffeur :</value>
+    <comment>Driver:</comment>
+  </data>
+  <data name="cvEquipmentText" xml:space="preserve">
+    <value>Équipement :</value>
+    <comment>Equipment:</comment>
+  </data>
+  <data name="cvMyHeadingText" xml:space="preserve">
+    <value>Direction :</value>
+    <comment>Heading:</comment>
+  </data>
+  <data name="cvListNameText" xml:space="preserve">
+    <value>Nom de la liste :</value>
+    <comment>List name:</comment>
+  </data>
+  <data name="cvCustomSpeedText" xml:space="preserve">
+    <value>Vitesse :</value>
+    <comment>Speed:</comment>
+  </data>
+  <data name="cvVehicleStatusText" xml:space="preserve">
+    <value>Statut :</value>
+    <comment>Status:</comment>
+  </data>
+  <data name="cvTeamLeaderNameText" xml:space="preserve">
+    <value>Chef d'équipe :</value>
+    <comment>Team Leader:</comment>
+  </data>
+  <data name="SaveText" xml:space="preserve">
+    <value>Sauvegarder</value>
+    <comment>Save</comment>
+  </data>
+  <data name="searchAddressMessageText" xml:space="preserve">
+    <value>* Rayon ne peut dépasser 2000m</value>
+    <comment>* Radius cannot exceed 2000m</comment>
+  </data>
+  <data name="SearchHistoryDateText" xml:space="preserve">
+    <value>Date :</value>
+    <comment>Date:</comment>
+  </data>
+  <data name="SearchHistoryMinutesText" xml:space="preserve">
+    <value>Minutes</value>
+    <comment>Minutes</comment>
+  </data>
+  <data name="SearchHistoryTimeRangeText" xml:space="preserve">
+    <value>Intervalle de temps :</value>
+    <comment>Time Range:</comment>
+  </data>
+  <data name="SearchHistoryTimeText" xml:space="preserve">
+    <value>Temps :</value>
+    <comment>Time:</comment>
+  </data>
+  <data name="searchmessageHtmlText" xml:space="preserve">
+    <value>Adresse invalide</value>
+    <comment>Invalid address</comment>
+  </data>
+  <data name="SearchText" xml:space="preserve">
+    <value>Recherche</value>
+    <comment>Search</comment>
+  </data>
+  <data name="h6featureVehiclesText" xml:space="preserve">
+    <value>Véhicules.</value>
+    <comment>Vehicles.</comment>
+  </data>
+  <data name="vehicleViewMoreLinkText" xml:space="preserve">
+    <value>Voir plus</value>
+    <comment>View More</comment>
+  </data>
+  <data name="ClosestVehiclesNumOfVehicles" xml:space="preserve">
+    <value>Véhicules :</value>
+    <comment>Vehicles:</comment>
+  </data>
+  <data name="lbllstAddOptionsGeozoneText" xml:space="preserve">
+    <value>Géo-zone</value>
+    <comment>Geozone</comment>
+  </data>
+  <data name="lblRadiusTitle" xml:space="preserve">
+    <value>Rayon</value>
+    <comment>Radius</comment>
+  </data>
+  <data name="lnklandmarkhistorysearchText" xml:space="preserve">
+    <value>Recherche historique</value>
+    <comment>Search History</comment>
+  </data>
+  <data name="lstAddOptionsLandmarkText" xml:space="preserve">
+    <value>Site</value>
+    <comment>Landmark</comment>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Configurer</value>
+    <comment>Edit</comment>
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Suivre les véhicules sur la carte</value>
+    <comment>Track vehicles on map</comment>
+  </data>
+  <data name="tooltip_Add_a_landmark_Circle" xml:space="preserve">
+    <value>Ajouter un site</value>
+    <comment>Add a landmark Circle</comment>
+  </data>
+  <data name="tooltip_Draw_a_Polygon" xml:space="preserve">
+    <value>Dessiner un polygone de la Géozone/site</value>
+    <comment>Draw a polygon Geozone/Landmark</comment>
+  </data>
+  <data name="tooltip_Modify_feature" xml:space="preserve">
+    <value>Modifier la caractéristique</value>
+    <comment>Modify feature</comment>
+  </data>
+  <data name="tooltip_Pan_Map" xml:space="preserve">
+    <value>Déplacer la carte</value>
+    <comment>Pan Map</comment>
+  </data>
+  <data name="tooltip_UserPreference" xml:space="preserve">
+    <value>Configuration de la vue par défaut</value>
+    <comment>Default Map View Setting</comment>
+  </data>
+  <data name="DefaultViewGroup.BoxLabelOrganization.Text" xml:space="preserve">
+    <value>Pour l’organisation</value>
+    <comment>For Organization</comment>
+  </data>
+  <data name="DefaultViewGroup.BoxLabelUser.Text" xml:space="preserve">
+    <value>Pour l’usager</value>
+    <comment>For User</comment>
+  </data>
+  <data name="DefaultViewGroup.ButtonCancel.Text" xml:space="preserve">
+    <value>Annuler</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="DefaultViewGroup.ButtonSave.Text" xml:space="preserve">
+    <value>Sauvegarder</value>
+    <comment>Save</comment>
+  </data>
+  <data name="DefaultViewGroup.Window.Text" xml:space="preserve">
+    <value>Configuration de la vue par défaut</value>
+    <comment>Default map view setting</comment>
+  </data>
+  <data name="PlaceHolder.Text" xml:space="preserve">
+    <value>Entrer une adresse</value>
+    <comment>Enter a location</comment>
+  </data>
+  <data name="tooltip_PrintMap" xml:space="preserve">
+    <value>Imprimer la carte</value>
+    <comment>Print Map</comment>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Touts</value>
+    <comment>All</comment>
+  </data>
+  <data name="By" xml:space="preserve">
+    <value>Par</value>
+    <comment>By</comment>
+  </data>
+  <data name="Fleet" xml:space="preserve">
+    <value>Flotte</value>
+    <comment>Fleet</comment>
+  </data>
+  <data name="Hierarchy" xml:space="preserve">
+    <value>Hiérarchie</value>
+    <comment>Hierarchy</comment>
+  </data>
+  <data name="SelectedVehicles" xml:space="preserve">
+    <value>Véhicules sélectionnés</value>
+    <comment>Selected Vehicles</comment>
+  </data>
+  <data name="CategoryTitle" xml:space="preserve">
+    <value>catégorie (*):</value>
+  </data>
+  <data name="DeleteConfirmation" xml:space="preserve">
+    <value>Êtes-vous certain de vouloir supprimer?</value>
+  </data>
+</root>

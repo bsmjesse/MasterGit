@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnCountryLevelResource1.Text" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnCountryLevelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnMaxZoomResource1.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnMaxZoomResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnMoveEastResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnMoveEastResource1.ToolTip" xml:space="preserve">
+    <value>Move map east</value>
+  </data>
+  <data name="btnMoveNorthResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnMoveNorthResource1.ToolTip" xml:space="preserve">
+    <value>Move map north</value>
+  </data>
+  <data name="btnMoveSouthResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnMoveSouthResource1.ToolTip" xml:space="preserve">
+    <value>Move map south</value>
+  </data>
+  <data name="btnMoveWestResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnMoveWestResource1.ToolTip" xml:space="preserve">
+    <value>Move map west</value>
+  </data>
+  <data name="btnRegionLevel1Resource1.Text" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnRegionLevel1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnRegionLevel2Resource1.Text" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnRegionLevel2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnStreetLevel1Resource1.Text" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnStreetLevel1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnStreetLevel2Resource1.Text" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnStreetLevel2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnZoomInResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnZoomInResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnZoomOutResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnZoomOutResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ButtonColumnResource1.Text" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="ButtonColumnResource2.Text" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="cmdCenterMapResource1.Text" xml:space="preserve">
+    <value>Show All</value>
+  </data>
+  <data name="cmdCenterMapResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdMapOptResource1.Text" xml:space="preserve">
+    <value>Map Options</value>
+  </data>
+  <data name="cmdMapOptResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdRecenterResource1.Text" xml:space="preserve">
+    <value>Re-Center</value>
+  </data>
+  <data name="cmdRecenterResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdStopLegendsResource1.Text" xml:space="preserve">
+    <value>Legend</value>
+  </data>
+  <data name="cmdStopLegendsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdZoomInResource1.Text" xml:space="preserve">
+    <value>Zoom In</value>
+  </data>
+  <data name="cmdZoomInResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdZoomOutResource1.Text" xml:space="preserve">
+    <value>Zoom Out</value>
+  </data>
+  <data name="cmdZoomOutResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgHistoryDetails_Arrival" xml:space="preserve">
+    <value>Arrival</value>
+  </data>
+  <data name="dgHistoryDetails_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="dgHistoryDetails_Departure" xml:space="preserve">
+    <value>Departure</value>
+  </data>
+  <data name="dgHistoryDetailsResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgHistoryDetailsResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="dgHistoryDetailsResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="dgHistoryDetailsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgStops_Arrival" xml:space="preserve">
+    <value>Arrival</value>
+  </data>
+  <data name="dgStops_Departure" xml:space="preserve">
+    <value>Departure</value>
+  </data>
+  <data name="dgStopsResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgStopsResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="dgStopsResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="dgStopsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HyperLinkColumnResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAckResource1.Text" xml:space="preserve">
+    <value>Ack</value>
+  </data>
+  <data name="lblAckResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAddress2Resource1.Text" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="lblAddress2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAddressResource1.Text" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="lblAddressResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblArrivalResource1.Text" xml:space="preserve">
+    <value>Arrival</value>
+  </data>
+  <data name="lblArrivalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDateTimeResource1.Text" xml:space="preserve">
+    <value>Date/Time</value>
+  </data>
+  <data name="lblDateTimeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDepartureResource1.Text" xml:space="preserve">
+    <value>Departure</value>
+  </data>
+  <data name="lblDepartureResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDurationResource1.Text" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="lblDurationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMenuCancelResource1.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="lblMenuCancelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMenuPrintMapResource1.Text" xml:space="preserve">
+    <value>Print Map</value>
+  </data>
+  <data name="lblMenuPrintMapResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMenuZoomInResource1.Text" xml:space="preserve">
+    <value>Zoom In</value>
+  </data>
+  <data name="lblMenuZoomInResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMenuZoomOutResource1.Text" xml:space="preserve">
+    <value>Zoom Out</value>
+  </data>
+  <data name="lblMenuZoomOutResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageTypeResource1.Text" xml:space="preserve">
+    <value>Message Type</value>
+  </data>
+  <data name="lblMessageTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNoHistoryMessageResource1.Text" xml:space="preserve">
+    <value>No history data matching the selected criteria.</value>
+  </data>
+  <data name="lblNoHistoryMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNoResource1.Text" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="lblNoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSpeedResource1.Text" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+  <data name="lblSpeedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStatusResource1.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="lblStatusResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTooManyRecordsMessage1Resource1.Text" xml:space="preserve">
+    <value>Too many records requested.</value>
+  </data>
+  <data name="lblTooManyRecordsMessage1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTooManyRecordsMessage2Resource1.Text" xml:space="preserve">
+    <value>Try to decrease history period ...</value>
+  </data>
+  <data name="lblTooManyRecordsMessage2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="ResizeMap" xml:space="preserve">
+    <value>Resize Map</value>
+  </data>
+  <data name="sn_MessageText_MaxNumOfRecords" xml:space="preserve">
+    <value>The maximum numbers of records cannot exceed 2000.</value>
+  </data>
+  <data name="Text_StartIdling" xml:space="preserve">
+    <value>Start Idling</value>
+  </data>
+</root>

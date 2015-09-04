@@ -1,0 +1,46 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DropDownCalendar
+</name>
+</assembly>
+<members>
+<member name="P:ControlFreak22.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:ControlFreak22.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:ControlFreak22.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:ControlFreak22.DropDownCalendar.Expanded">
+	<summary>
+ Sets or Gets the initial dropdown state of the control
+ </summary>
+</member><member name="P:ControlFreak22.DropDownCalendar.DisplayLongDate">
+	<summary>
+ Specifies whether the selected date should be displayed in a long or short date format in the text area of the control.
+ </summary>
+</member><member name="P:ControlFreak22.DropDownCalendar.ButtonBackColor">
+	<summary>
+ Sets or gets the color of the background of the button.
+ </summary>
+</member><member name="P:ControlFreak22.DropDownCalendar.ButtonForeColor">
+	<summary>
+ Sets or gets the color of the button arrow.
+ </summary>
+</member><member name="M:ControlFreak22.DropDownCalendar.OnClickJS">
+	<summary>
+ Builds the client side onClick event to do dropdown
+ </summary>
+	<returns>JavaScript</returns>
+	<remarks>Shows/Hides Calendar portion</remarks>
+</member>
+</members>
+</doc>

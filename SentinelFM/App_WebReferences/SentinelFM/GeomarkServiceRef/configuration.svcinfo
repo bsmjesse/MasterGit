@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;httpbasic1&quot; /&gt;" bindingType="basicHttpBinding" name="httpbasic1" />
+    <binding digest="System.ServiceModel.Configuration.WSHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;httpws1&quot;&gt;&lt;reliableSession enabled=&quot;true&quot; /&gt;&lt;security mode=&quot;None&quot; /&gt;&lt;/Data&gt;" bindingType="wsHttpBinding" name="httpws1" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://dev2:8080/GeomarkService.svc/httpbind&quot; binding=&quot;wsHttpBinding&quot; bindingConfiguration=&quot;httpws1&quot; contract=&quot;SentinelFM.GeomarkServiceRef.IGeomarkService&quot; name=&quot;httpws&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://dev2:8080/GeomarkService.svc/httpbind&quot; binding=&quot;wsHttpBinding&quot; bindingConfiguration=&quot;httpws1&quot; contract=&quot;SentinelFM.GeomarkServiceRef.IGeomarkService&quot; name=&quot;httpws&quot; /&gt;" contractName="SentinelFM.GeomarkServiceRef.IGeomarkService" name="httpws" />
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://dev2:8080/GeomarkService.svc/basicbind&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;httpbasic1&quot; contract=&quot;SentinelFM.GeomarkServiceRef.IGeomarkService&quot; name=&quot;httpbasic&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://dev2:8080/GeomarkService.svc/basicbind&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;httpbasic1&quot; contract=&quot;SentinelFM.GeomarkServiceRef.IGeomarkService&quot; name=&quot;httpbasic&quot; /&gt;" contractName="SentinelFM.GeomarkServiceRef.IGeomarkService" name="httpbasic" />
+  </endpoints>
+</configurationSnapshot>

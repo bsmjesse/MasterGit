@@ -1,0 +1,165 @@
+\\192.168.9.11\c$\Inetpub\wwwroot\SentinelFM\Bin
+bsmexchange.local.bsmwireless.com
+web service:192.168.9.23
+\\192.168.9.11\c$\Inetpub\wwwroot\SentinelFM
+
+1.web.config
+2.basepage
+3.reports folder
+4.frmTopMenu.aspx
+5.sn.SuperOrganizationId = 622;
+6.frmReports_new.aspx,  frmMyReports.aspx
+sn.User.OrganizationId == 123 || sn.SuperOrganizationId == 382 || sn.User.OrganizationId == 622 || sn.User.OrganizationId == 1) //|| sn.User.OrganizationId == 1 by devin
+
+7.  clsReportParam class add property "xmlDoc" "myReportDate" for popupdate
+
+8.VLF3.DLL log4net.config database.config in bin folder
+9.clsAsynGenerateReport.cs class
+10. VLF3.DataAccess.DaoConfig.Init(); in globe.asax
+11. ReportWebService.cs
+
+12. Two important things:
+    a. Copy all Report Type from production to 
+    b. User table is different. Remove: for tesing by devin in  ReportWebService.cs, clsAsynGenerateReport.cs
+    c. make sure reporttype table guiid unique
+    d. Because user UserPreferenceId is empty so that comment checj userReport userID
+	c.check Resources:FilterTextResource and time picker localization
+    e:'deleted failed' french, make sure no '''';
+13. change frmMain.htm to frmMain_top.aspx
+    frmSuperOrganizationMenu.aspx.cs frmTimeout.apsx frmLoginPopUp.aspx  login.aspx
+
+14 RadGrid.Main.resx, RadGrid.Main.en-US.resx in App_GlobalResources
+
+Resource File comebacke check:
+1. check public static string PopupCalendarMsg_en = "Open the calendar popup.";
+2. check "" qutation
+3. check difference with orignal file
+4. check width
+
+Change RadTabResource4.text1 in frmReportMasterExtended_new.aspx.fr.resx
+
+Menu:
+1.frmTopMenu_New.aspx
+2.change frmMain.htm -> frmsuperorganization.aspx.cs
+4.change frmTopMenu.aspx -> frmPreference.aspx.cs
+TopMenu.ascx + .cs + res
+RadMenuStyle.css
+images/RadMenu
+hgj_cn
+adm-0712
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<telerik:RadScriptManager runat="server" ID="RadScriptManager1"  >
+          <Scripts>
+       <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js" />
+       <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" />
+   </Scripts>
+    </telerik:RadScriptManager>
+            
+        <telerik:RadAjaxManager runat="server" ID="RadAjaxManager1">
+        
+         <ClientEvents OnRequestStart="RequestStart"></ClientEvents>
+            <AjaxSettings>
+                <telerik:AjaxSetting AjaxControlID="RadTabStrip1">
+                    <UpdatedControls>
+                        <telerik:AjaxUpdatedControl ControlID="RadTabStrip1"  />
+                        <telerik:AjaxUpdatedControl ControlID="RadMultiPage1Panel" LoadingPanelID="LoadingPanel1" />
+                    </UpdatedControls>
+                </telerik:AjaxSetting>
+                <telerik:AjaxSetting AjaxControlID="RadMultiPage1">
+                    <UpdatedControls>
+                        <telerik:AjaxUpdatedControl ControlID="RadMultiPage1" LoadingPanelID="LoadingPanel1" />
+                    </UpdatedControls>
+                </telerik:AjaxSetting>
+            </AjaxSettings>
+        </telerik:RadAjaxManager>
+    <telerik:RadAjaxLoadingPanel ID="LoadingPanel1" runat="server" MinDisplayTime="1000" Skin="" IsSticky="true">
+   <asp:Image ID="Image1" runat="server" ImageUrl="~/TabStrip/aaa.gif" AlternateText="Loading.." />
+</telerik:RadAjaxLoadingPanel>
+                <telerik:RadTabStrip  ID="RadTabStrip1" SelectedIndex="0" CssClass="tabStrip" Width="200px"
+                    runat="server" MultiPageID="RadMultiPage1" Skin="Office2007"  
+                Orientation="HorizontalTop" AutoPostBack="True" 
+                ontabclick="RadTabStrip1_TabClick" >
+                    <Tabs>
+                      <telerik:RadTab Text ="v1" PageViewID ="v1" ></telerik:RadTab>
+                      <telerik:RadTab Text ="v2" PageViewID ="v2" ></telerik:RadTab>
+                    </Tabs>
+                </telerik:RadTabStrip>            
+                        <telerik:RadMultiPage ID="RadMultiPage1" runat="server" SelectedIndex="0" Height="600px"  >
+                            <telerik:RadPageView ID="v1" runat ="server" Height="600px"  >
+                              <table style ="height:660px">
+                                <tr>
+                                  <td>
+                                     <asp:TextBox ID="dd" runat ="server" ></asp:TextBox>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                                    this 1
+                                  </td>
+                                </tr>
+                                
+                              </table>
+                            </telerik:RadPageView>
+                            <telerik:RadPageView ID="v2" runat ="server" Height="600px" >
+            
+                                                            <table id="table" style ="height:660px">
+                                <tr>
+                                  <td>
+                                     <asp:TextBox ID="TextBox1" runat ="server" ></asp:TextBox>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                                    this 2
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <asp:Button ID="btn" runat ="server" OnClientClick ="return aaa();" />
+                                  </td>
+                                </tr>
+                              </table>
+<table>
+<tr>
+  <td>
+     dddgfd
+  </td>
+</tr>
+</table>
+                            </telerik:RadPageView>
+                            
+                </telerik:RadMultiPage>
+    </div>
+         <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
+<script type="text/javascript">
+
+    function aaa() {
+        $telerik.$('#table').fadeOut('slow');
+        return false;
+    }
+    function RequestStart(sender, eventArgs) {
+        var divElementStyle = $find("<%= LoadingPanel1.ClientID %>").get_element().style;
+        divElementStyle.position = 'absolute';
+        //position the loading panel
+        divElementStyle.left = eventArgs.get_eventTargetElement().offsetLeft + eventArgs.get_eventTargetElement().offsetWidth + "px";
+        divElementStyle.top = eventArgs.get_eventTargetElement().offsetTop + "px";
+    } 
+

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<tocdata>
+<item name="Overview of the Configuration Guide" url="Overview_Configuration_Guide.htm" />
+<book name="Setting Preferences" >
+  <item name="Setting Time Zones, Units of Measurement, and the Default Fleet" url="SettingTimeZones,Units_of_Measurement,_and_the_Default_Fleet.htm" />
+  <item name="Changing Your Password" url="Changing_Your_Password.htm" />
+</book>
+<item name="Setting Up Email Addresses for Alarm Notification" url="Setting_Up_Email_Addresses.htm" />
+<book name="Setting Up Vehicle Information" >
+  <item name="Setting Up Vehicles" url="Setting_Up_Vehicles.htm" />
+  <item name="Assigning Vehicles to Fleets" url="Assigning_Vehicles_to_Fleets.htm" />
+  <item name="Setting Alarm Severity and Customizing Sensor Names " url="Setting_Alarm_Severity_and_Customizing_Sensor_Names.htm" />
+  <item name="Customizing Output Names " url="Customizing_Output_Names.htm" />
+</book>
+<book name="Setting Up Landmarks and Geozones" >
+  <item name="Setting Up Landmarks" url="Setting_Up_Landmarks.htm" />
+  <item name="Setting Up GeoZones" url="Setting_Up_Geozones.htm" />
+  <item name="Assigning GeoZones to Vehicles" url="Assigning_GeoZones_to_Vehicles.htm" />
+  <item name="Changing Severity Levels for GeoZones" url="Changing_Severity_Levels_for_GeoZones.htm" />
+  <item name="Viewing Landmarks and Geozones" url="Viewing_Landmarks_and_Geozones.htm" />
+</book>
+
+</tocdata>

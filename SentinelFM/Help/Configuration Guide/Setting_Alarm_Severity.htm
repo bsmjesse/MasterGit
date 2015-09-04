@@ -1,0 +1,220 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Setting Alarm Severity</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="SentinelFMStyleSheet_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='SentinelFMStyleSheet.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+h1.whs1 { margin-bottom:0pt; }
+hr.whs2 { float:alignleft; color:#008000; }
+p.whs3 { font-style:italic; margin-left:0px; border-left-width:1px; border-left-style:Solid; border-top-width:1px; border-top-style:Solid; border-right-width:1px; border-right-style:Solid; border-bottom-width:1px; border-bottom-style:Solid; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; }
+ul.whs4 { list-style:disc; }
+img_whs5 { border:none; width:16px; height:16px; float:none; border-style:none; }
+img_whs6 { border:none; width:15px; height:16px; float:none; border-style:none; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "h1.whs1 {margin-bottom:1pt; }";
+  strNSS += "p.whs3 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Setting Up Vehicles\nModifying Input Sensor Alarm Severity");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("SentinelFM_ConfigurationGuide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1 class="whs1">&nbsp;Modifying 
+ Input Sensor Alarm Severity </h1>
+
+
+<hr align="left" color="#008000" class="whs2">
+
+
+<p>&nbsp;</p>
+
+<p class="whs3"><SPAN style="font-style: italic; padding-left: 4px; padding-right: 4px; padding-top: 2px; padding-bottom: 2px; "><I><span style="font-weight: bold;"><B>Note:</B></span> 
+ Warnings or critical alarms will be generated for a vehicle only if the 
+ box in the vehicle is armed. For more information about sensors, as well 
+ as details about arming the box, see <a href="../User Guide/Viewing_Sensors_and_Sending_Outputs_or_Commands.htm"
+										style="font-style: italic;">Viewing 
+ Sensors and Sending Outputs or Commands</a>.</I></SPAN></p>
+
+<h2>Alarm Severity Levels</h2>
+
+<p>You can decide whether a particular physical or virtual sensor should 
+ trigger an alarm by assigning it a severity. For all levels of alarm, 
+ sensors that were triggered are reported in the History screen. (See <a 
+ href="../User Guide/Viewing_Vehicle_Path_History.htm">Viewing Vehicle 
+ Path History</a>.) You can also create a report that lists when these 
+ sensors were triggered. (See <a href="../User Guide/Report_Descriptions.htm">Report 
+ Descriptions</a>.)</p>
+
+<p>&nbsp;</p>
+
+<p>There are several levels of severity for alarms:</p>
+
+<p>&nbsp;</p>
+
+<ul type="disc" class="whs4">
+	
+	<li class=kadov-p><p><span style="font-weight: bold;"><B>No Alarm </B></span>-- 
+ No alarm appears in the Alarms window in the <a href="../Getting Started Guide/The_Map_Screen.htm">Map 
+ screen</a>; no email is sent out. </p></li>
+	
+	<li class=kadov-p><p><span style="font-weight: bold;"><B>Notify </B></span>-- 
+ No alarm appears in the Alarms window in the Map screen. People who were 
+ entered in the <a href="Setting_Up_Email_Addresses.htm">email list for 
+ alarm notification</a> for that fleet or that specific vehicle receive 
+ an email.</p></li>
+	
+	<li class=kadov-p><p><span style="font-weight: bold;"><B>Warning </B></span>-- 
+ Appears in gold in the Alarms screen in the Map screen, thus notifying 
+ the dispatcher. People who were entered in the <a href="Setting_Up_Email_Addresses.htm">email 
+ list for alarm notification</a> for that fleet or that specific vehicle 
+ also receive an email.</p></li>
+	
+	<li class=kadov-p><p><span style="font-weight: bold;"><B>Critical </B></span>-- 
+ Appears in red in the Alarms screen in the Map screen, thus notifying 
+ the dispatcher. People who were entered in the <a href="Setting_Up_Email_Addresses.htm">email 
+ list for alarm notification</a> for that fleet or that specific vehicle 
+ also receive an email.</p></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>In an example of physical sensors and alarms, the &quot;Action Off&quot; 
+ state for a &quot;Door&quot; sensor would usually be &quot;Closed&quot;, 
+ while the &quot;Action On&quot; state would be &quot;Open&quot;. However, 
+ having a car door open may not be considered severe enough to trigger 
+ an alarm, so you could assign it a severity of &quot;No Alarm&quot;. </p>
+
+<p>&nbsp;</p>
+
+<p>For a &quot;Panic Button&quot; physical sensor, however, when you specify 
+ that the &quot;Action On&quot; state is &quot;On&quot;, you may consider 
+ this serious enough to assign it a severity of &quot;Critical&quot;. &nbsp;The 
+ virtual sensor panic button feature on the key fob (pressing two buttons 
+ at the same time) would also likely be assigned an alarm severity of &quot;Critical&quot;.</p>
+
+<p>&nbsp;</p>
+
+<p>To modify the alarm severity settings for an existing vehicle:</p>
+
+<p>&nbsp;</p>
+
+<ol>
+	
+	<li style="margin-left: -20px;"
+		class=kadov-p-CNumberedList><p class=NumberedList
+										style="margin-bottom: 6px;">From 
+ any Sentinel-FM page, click the <span style="font-weight: bold;"><B>Configuration 
+ </B></span>hyperlink<span style="font-weight: bold;"> <B></B></span>on the top of 
+ the screen. On the <span style="font-weight: bold;"><B>Vehicles</B></span> tab, 
+ choose the <span style="font-weight: bold;"><B>Sensors/Alarms/Messages</B></span> 
+ sub tab, and choose a fleet, then a vehicle. Wait for the list of sensors 
+ to appear. </p></li>
+	
+	<li style="margin-left: -20px;"
+		class=kadov-p-CNumberedList><p class=NumberedList
+										style="margin-bottom: 6px;">To 
+ change the alarm severity settings of a physical or virtual sensor, click 
+ the edit icon (<img src="images/edit_icon.gif" x-maintain-ratio="TRUE" width="16px" height="16px" border="0" class="img_whs5">) in the row for that sensor.</p></li>
+	
+	<li style="margin-left: -20px;"
+		class=kadov-p-CNumberedList><p class=NumberedList
+										style="margin-bottom: 6px;">Make 
+ changes in the following fields:</p></li>
+	
+	<li class=kadov-p-CBullet2><p class=Bullet2
+									style="margin-bottom: 0px;">In the 
+ <span style="font-weight: bold;"><B>Severity</B></span> field, enter the <a href="#Alarm_Severity_Levels">level 
+ of severity</a> of the alarm that should be triggered by this sensor. 
+ </p></li>
+</ol>
+
+<ol start=4>
+	
+	<li style="margin-left: -20px;"
+		class=kadov-p-CNumberedList><p class=NumberedList
+										style="margin-bottom: 6px;">Click 
+ the check (<img src="images/check_confirm_icon.gif" x-maintain-ratio="TRUE" width="15px" height="16px" border="0" class="img_whs6">) to save.</p></li>
+</ol>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+
+<!--SALMAN-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="../ValidateHelp.js"></script>
+<!--SALMAN-->
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SentinelMobile.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SentinelMobile_DBFleet_DBFleet" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://asi1.sentinelfm.com/ASI/Interfaces/DBFleet.asmx</Value>
+    </Setting>
+    <Setting Name="SentinelMobile_ServerDBUser_DBUser" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.9.10/ASINew/Interfaces/DBUser.asmx</Value>
+    </Setting>
+    <Setting Name="SentinelMobile_SecurityManager_SecurityManager" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.9.10/ASINew/Interfaces/SecurityManager.asmx</Value>
+    </Setting>
+    <Setting Name="SentinelMobile_ServerDBOrganization_DBOrganization" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.9.10/ASINew/Interfaces/DBOrganization.asmx</Value>
+    </Setting>
+    <Setting Name="SentinelMobile_Resolver_Resolver" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.9.9/Resolver.asmx</Value>
+    </Setting>
+    <Setting Name="SentinelMobile_ServerDBHistory_DBHistory" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.9.10/ASINew/Interfaces/DBHistory.asmx</Value>
+    </Setting>
+    <Setting Name="SentinelMobile_LocationMgr_Location" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.9.10/ASINew/Interfaces/Location.asmx</Value>
+    </Setting>
+    <Setting Name="SentinelMobile_ServerDBVehicle_DBVehicle" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.9.29/ASINew/Interfaces/DBVehicle.asmx</Value>
+    </Setting>
+    <Setting Name="SentinelMobile_ServerDBSystem_DBSystem" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.9.10/ASINew/Interfaces/DBSystem.asmx</Value>
+    </Setting>
+    <Setting Name="SentinelMobile_Hos_Ws_HOSFileReteriver" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.9.45/HOSWS/HOSFileRetriver.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

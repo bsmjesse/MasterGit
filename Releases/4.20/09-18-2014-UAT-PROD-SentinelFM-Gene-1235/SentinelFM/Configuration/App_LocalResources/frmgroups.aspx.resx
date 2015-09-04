@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddUserFailed" xml:space="preserve">
+    <value>User already exists in the database. Add user failed.</value>
+  </data>
+  <data name="ButtonColumnResource1.Text" xml:space="preserve">
+    <value>&lt;img src=../images/edit.gif border=0&gt;</value>
+  </data>
+  <data name="ButtonColumnResource2.Text" xml:space="preserve">
+    <value>&lt;img src=../images/delete.gif border=0&gt;</value>
+  </data>
+  <data name="cboSearchTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddGroupResource1.Text" xml:space="preserve">
+    <value>Add Group</value>
+  </data>
+  <data name="cmdAddGroupResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCancelAddUserResource1.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="cmdCancelAddUserResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCancelExpireResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCancelExpireResource1.ToolTip" xml:space="preserve">
+    <value>Cancel Expire Date</value>
+  </data>
+  <data name="cmdClearResource1.Text" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="cmdClearResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdDriverResource1.Text" xml:space="preserve">
+    <value>Drivers</value>
+  </data>
+  <data name="cmdDriverResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdDriverResource2.Text" xml:space="preserve">
+    <value>Organization</value>
+  </data>
+  <data name="cmdDriverResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdFleetsResource1.Text" xml:space="preserve">
+    <value>Fleets</value>
+  </data>
+  <data name="cmdFleetsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSaveUserResource1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="cmdSaveUserResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSearchResource1.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="cmdSearchResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdUserGroupsResource1.Text" xml:space="preserve">
+    <value>User-Groups Assignment</value>
+  </data>
+  <data name="cmdUserGroupsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdGroupsResource1.Text" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="cmdGroupsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdUsersResource1.Text" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="cmdUsersResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdVehiclesResource1.Text" xml:space="preserve">
+    <value>Vehicles</value>
+  </data>
+  <data name="cmdVehiclesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CompareUserGroupResource1.ErrorMessage" xml:space="preserve">
+    <value>User group is not selected</value>
+  </data>
+  <data name="CompareUserGroupResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="CompareUserGroupResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Are you sure you want to delete?</value>
+  </data>
+  <data name="ddlUserGroupResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeleteToolTip" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeleteUserFailed" xml:space="preserve">
+    <value>Delete user failed</value>
+  </data>
+  <data name="dgGroups_Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="dgGroups_Group" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="dgGroupsResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgGroupsResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="dgGroupsResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="dgGroupsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EditToolTip" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="ExperationDate" xml:space="preserve">
+    <value>The expiration date is invalid!</value>
+  </data>
+  <data name="ExpireDate" xml:space="preserve">
+    <value>Unlimited</value>
+  </data>
+  <data name="lblExpiredDateResource1.Text" xml:space="preserve">
+    <value>Expiration Date:</value>
+  </data>
+  <data name="lblExpiredDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFirstNameResource1.Text" xml:space="preserve">
+    <value>First Name:</value>
+  </data>
+  <data name="lblFirstNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLastNameResource1.Text" xml:space="preserve">
+    <value>Last Name:</value>
+  </data>
+  <data name="lblLastNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPasswordResource1.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="lblPasswordResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReenterPasswordResource1.Text" xml:space="preserve">
+    <value>Re-enter the  password:</value>
+  </data>
+  <data name="lblReenterPasswordResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUserGroupResource1.Text" xml:space="preserve">
+    <value>User Group:</value>
+  </data>
+  <data name="lblUserGroupResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUserIdResource1.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblUserIdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUserNameResource1.Text" xml:space="preserve">
+    <value>User Name:</value>
+  </data>
+  <data name="lblUserNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource1.Text" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="ListItemResource1.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource2.Text" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="ListItemResource2.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lnkResetPasswordResource1.Text" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="lnkResetPasswordResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="msgPsw_Medium" xml:space="preserve">
+    <value>Medium!</value>
+  </data>
+  <data name="msgPsw_MoreCharacters" xml:space="preserve">
+    <value>More Characters</value>
+  </data>
+  <data name="msgPsw_Strong" xml:space="preserve">
+    <value>Strong!</value>
+  </data>
+  <data name="msgPsw_TypePassword" xml:space="preserve">
+    <value />
+  </data>
+  <data name="msgPsw_Weak" xml:space="preserve">
+    <value>Weak!</value>
+  </data>
+  <data name="msgWeakPassword" xml:space="preserve">
+    <value>The password is weak</value>
+  </data>
+  <data name="NoPermissions" xml:space="preserve">
+    <value>You don't have appropriate permission to perform this operation.</value>
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>frmUsers</value>
+  </data>
+  <data name="RequiredFieldValidator1Resource1.ErrorMessage" xml:space="preserve">
+    <value>Please Enter First Name</value>
+  </data>
+  <data name="RequiredFieldValidator1Resource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredFieldValidator1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator2Resource1.ErrorMessage" xml:space="preserve">
+    <value>Please Enter Last Name</value>
+  </data>
+  <data name="RequiredFieldValidator2Resource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredFieldValidator2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator3Resource1.ErrorMessage" xml:space="preserve">
+    <value>Please Enter an User Name</value>
+  </data>
+  <data name="RequiredFieldValidator3Resource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredFieldValidator3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SelectGroup" xml:space="preserve">
+    <value>Please Select User Group</value>
+  </data>
+  <data name="txtExpireResource1.Text" xml:space="preserve">
+    <value>Unlimited</value>
+  </data>
+  <data name="txtExpireResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFirstNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFirstNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLastNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLastNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPasswordResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPasswordResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtReenterPasswordResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtReenterPasswordResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSearchParamResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSearchParamResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUserNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUserNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UserAdded" xml:space="preserve">
+    <value>This User has been added successfully</value>
+  </data>
+  <data name="GroupDeleted" xml:space="preserve">
+    <value>Group successfully deleted.</value>
+  </data>
+  <data name="UserUpdated" xml:space="preserve">
+    <value>User's info has been updated</value>
+  </data>
+  <data name="ValidationSummary1Resource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValidationSummary1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valPasswordCompResource1.ErrorMessage" xml:space="preserve">
+    <value>Please re-enter the new password</value>
+  </data>
+  <data name="valPasswordCompResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valPasswordCompResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valPasswordResource1.ErrorMessage" xml:space="preserve">
+    <value>Please Enter a Password</value>
+  </data>
+  <data name="valPasswordResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valPasswordResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdScheduledTasksResource1.Text" xml:space="preserve">
+    <value>Scheduled Tasks</value>
+  </data>
+  <data name="cmdScheduledTasksResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AddUserPasswordFailed21" xml:space="preserve">
+    <value>The password must contain 1 capital letter and 1 low case letter</value>
+  </data>
+  <data name="AddUserPasswordFailed22" xml:space="preserve">
+    <value>The password is duplicated in one of the last 8 passwords that you have used recently</value>
+  </data>
+  <data name="cboStatusSearc_Active.Text" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="cboStatusSearc_Active.Value" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="cboStatusSearc_All.Text" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="cboStatusSearc_All.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cboStatusSearc_Deactivated.Text" xml:space="preserve">
+    <value>Deactivated</value>
+  </data>
+  <data name="cboStatusSearc_Deactivated.Value" xml:space="preserve">
+    <value>Deactivated</value>
+  </data>
+  <data name="cboStatusSearc_Deleted.Text" xml:space="preserve">
+    <value>Deleted</value>
+  </data>
+  <data name="cboStatusSearc_Deleted.Value" xml:space="preserve">
+    <value>Deleted</value>
+  </data>
+  <data name="cboStatusSearc_Reset.Text" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="cboStatusSearc_Reset.Value" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="lblChangeStatus.Text" xml:space="preserve">
+    <value>Change Status:</value>
+  </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="ListItemResource3.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ListItemResource3.Value" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="dgGroups_SecurityLevel" xml:space="preserve">
+    <value>Security Level</value>
+  </data>
+  <data name="lblGroupResource1.Text" xml:space="preserve">
+    <value>Group:</value>
+  </data>
+  <data name="cmAddGroupResource1.Text" xml:space="preserve">
+    <value>Add Group</value>
+  </data>
+  <data name="cmAddGroupResource1.ToolTip" xml:space="preserve">
+    <value>Click to add new group settings</value>
+  </data>
+  <data name="cmdGroupConfiguration.Text" xml:space="preserve">
+    <value>Group Configuration</value>
+  </data>
+  <data name="cmdUserDashBoardsResource1.Text" xml:space="preserve">
+    <value>User-DashBoard</value>
+  </data>
+  <data name="cmdControlsResource1.Text" xml:space="preserve">
+    <value>Controls</value>
+  </data>
+  <data name="DeleteUserGroupError" xml:space="preserve">
+    <value>Error to delete User Group. Please try again.</value>
+  </data>
+  <data name="cmdServicesResource1.Text" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="CreateDefaultGroupsError" xml:space="preserve">
+    <value>Error to create Default User Groups. Please try again.</value>
+  </data>
+</root>

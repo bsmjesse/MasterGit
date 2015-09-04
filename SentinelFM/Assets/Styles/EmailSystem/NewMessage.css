@@ -1,0 +1,24 @@
+﻿ html, body, form 
+ {
+    height:100%;
+    margin:0;
+    padding:0;
+    overflow :hidden ;
+    font-family:Tahoma;font-size:x-small;
+    background-color :#D6D6B6 ;
+ }
+ 
+ .MessageFormatDiv
+ {
+ 	overflow :auto ;
+ 	
+ }
+ input
+ {
+     font-family:Tahoma;font-size:x-small;
+ }
+ 
+ .BodyTextCss 
+ {
+       vertical-align :top ;
+ }

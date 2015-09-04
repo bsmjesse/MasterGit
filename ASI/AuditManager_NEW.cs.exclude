@@ -1,0 +1,380 @@
+using System;
+using System.IO;
+using System.Threading;
+using System.Diagnostics;
+using System.Reflection;
+using System.Collections.Generic;
+using System.Text;
+using System.Data;
+using Sentinel.WSProxy;
+//using VLF.DAS.Logic;
+
+namespace VLF.ASI
+{
+    public delegate void KeyRemovalHandler(int key);
+
+    public sealed class OrganizationAudit
+    {
+        int _OrganizationId;
+
+        int _AuditGroupId;
+        public int AuditGroupId { get { return _AuditGroupId; } }
+
+        string _Name;
+        public string Name { get { return _Name; } }
+
+        int _PeriodInMinutes;
+        public int PeriodInMinutes { get { return _PeriodInMinutes; } }
+
+        int _Frequency;
+        public int Frequency { get { return _Frequency; } }
+
+        int _RequestCount;
+        public int RequestCount { get { return _RequestCount; } }
+
+        DateTime _BaselineTimestamp;
+        public DateTime BaselineTimestamp { get { return _BaselineTimestamp; } }
+
+        List<string> _WebMethodNames;
+        public List<string> WebMethodNames { get { return _WebMethodNames; } }
+
+        public bool ContainsMethod(string methodName) { return _WebMethodNames.Contains(methodName); }
+
+        public void AddMethod(string methodName)
+        {
+            if (!WebMethodNames.Contains(methodName))
+                _WebMethodNames.Add(methodName);
+        }
+
+
+        public bool Validate()
+        {
+            DateTime now = DateTime.UtcNow;
+            try
+            {
+                if (_BaselineTimestamp.AddMinutes(_PeriodInMinutes) < now)
+                {
+                    _BaselineTimestamp = now;
+                    Trace.TraceInformation(string.Format("Resetting baseline timestamp for group [{0}][{1}] to {2}", _OrganizationId, _Name, now));
+                    _RequestCount = 1;
+                    Trace.TraceInformation(string.Format("Setting call counter to {3} for group [{0}][{1}] @ {2}", _OrganizationId, _Name, now, _RequestCount));
+                    return true;
+                }
+                _RequestCount++;
+                Trace.TraceInformation(string.Format("Incrementing call counter to {3} for group [{0}][{1}] @ {2} ", _OrganizationId, _Name, now, _RequestCount));
+                if (_RequestCount <= _Frequency)
+                {
+
+                    Trace.TraceInformation(string.Format("Audit passed; Count {3} of {4} for group [{0}][{1}] @  {2} ", _OrganizationId, _Name, now, _RequestCount, _Frequency));
+                    return true;
+                }
+                else
+                {
+                    Trace.TraceInformation(string.Format("Audit failed; Request count {3} exceeds maximum of {4} calls for group [{0}][{1}] @  {2}, Baseline Timestamp: {5} PeriodInMinutes: {6}", _OrganizationId, _Name, now, _RequestCount, _Frequency, _BaselineTimestamp, _PeriodInMinutes));
+                    return false;
+                }
+            }
+            catch (Exception exc)
+            {
+                Trace.TraceError("{0} :: Validate Error -> {1}", this, exc.Message);
+                return false;
+            }
+        }
+
+        public OrganizationAudit(int organizationId, int auditGroupId, string name, int periodInMinutes, int frequency)
+        {
+            _WebMethodNames = new List<string>();
+            _AuditGroupId = auditGroupId;
+            _Name = name;
+            _PeriodInMinutes = periodInMinutes;
+            _Frequency = frequency;
+            _RequestCount = 0;
+            _BaselineTimestamp = new DateTime();
+            _OrganizationId = organizationId;
+        }
+
+
+    }
+
+    public sealed class OrganizationAudits
+    {
+
+        public event KeyRemovalHandler KeyRemoved;
+
+        //const int frameNumber = 5; //3;
+        const int scanvengeperiod = 300000;
+
+        Timer _Scavenger;
+
+        int _OrganizationId;
+        public int OrganizationId { get { return _OrganizationId; } }
+
+        SortedList<int, DateTime> _Users;
+
+        SortedList<int, OrganizationAudit> _Audits;
+        public SortedList<int, OrganizationAudit> Audits { get { return _Audits; } }
+
+        public OrganizationAudits(int organizationId)
+        {
+            _Users = new SortedList<int, DateTime>();
+            _Audits = new SortedList<int, OrganizationAudit>();
+            _OrganizationId = organizationId;
+            _Scavenger = new Timer(new TimerCallback(Scavenge), null, scanvengeperiod, scanvengeperiod);
+        }
+
+        void Scavenge(object state)
+        {
+            if (_Users == null)
+                return;
+
+            try
+            {
+                for (int i = 0; i < _Users.Count; i++)
+                {
+                    int key = _Users.Keys[i];
+                    if (_Users[key].AddMinutes(scanvengeperiod / 60000) < DateTime.UtcNow)
+                    {
+                        Trace.TraceInformation(string.Format("Removing user key [{0}] for Organization [{1}]", key, _OrganizationId));
+                        _Users.Remove(key);
+                        if (KeyRemoved != null)
+                            KeyRemoved(key);
+                    }
+                }
+            }
+            catch { }
+        }
+
+        public bool Validate(int userId)
+        {
+            StackTrace oStack = new StackTrace(true);
+            StackFrame frame = oStack.GetFrame(AuditManager.frame);
+            string methodName = frame.GetMethod().Name;
+            DateTime now = DateTime.UtcNow;
+
+            for (int j = 0; j < oStack.FrameCount; j++)
+            {
+                string name = oStack.GetFrame(j).GetMethod().Name;
+                Trace.TraceInformation(string.Format("Frame method name [{0}] for frame # [{1}]", name, j));
+
+            }
+
+            Trace.TraceInformation(string.Format("Validate method name [{0}] for Organization [{1}]", methodName, _OrganizationId));
+
+
+            if (!_Users.ContainsKey(userId))
+                _Users.Add(userId, now);
+            else
+                _Users[userId] = now;
+
+            if (_Audits != null)
+            {
+                for (int i = 0; i < _Audits.Count; i++)
+                {
+                    int auditKey = _Audits.Keys[i];
+                    if (_Audits[auditKey].ContainsMethod(methodName))
+                    {
+
+                        bool interimResult = _Audits[auditKey].Validate();
+                        //least restrictive...return if any are good...
+                        if (interimResult == true)
+                            return true;
+                    }
+                    else
+                        return true;
+                }
+            }
+            else
+                return true;
+            return false;
+        }
+
+
+    }
+
+    public sealed class AuditManager
+    {
+        Timer _Reloader;
+        int _reloadIntervalInMinutes = 360;
+        SortedList<int, OrganizationAudits> _OrganizationAuditItems;
+        SortedList<int, int> _Users;
+        public SortedList<int, int> Users { get { return _Users; } }
+        string connectionString = string.Empty;
+        public static int frame = 0;
+
+        public AuditManager()
+        {
+            connectionString = System.Configuration.ConfigurationSettings.AppSettings["DBConnectionString"];
+            frame = Convert.ToInt32(System.Configuration.ConfigurationSettings.AppSettings["AuditFrame"]);
+            _reloadIntervalInMinutes = Convert.ToInt32(System.Configuration.ConfigurationSettings.AppSettings["AuditManagerReloadIntervalInMinutes"]);
+            _Users = new SortedList<int, int>();
+            _Reloader = new Timer(new TimerCallback(Reload), null, 0, _reloadIntervalInMinutes * 60000);
+
+        }
+
+
+
+        void Reload(object state)
+        {
+            try
+            {
+                lock (new object())
+                {
+                    LoadAuditInformation();
+                }
+            }
+            catch (Exception exc)
+            {
+                Trace.TraceError("{0} :: Reload Error -> {1}", this, exc.Message);
+            }
+
+        }
+
+        void LoadAuditInformation()
+        {
+            string xml = string.Empty;
+            try
+            {
+                Trace.TraceInformation("{0} :: Reloading Audit information...", this);
+
+                Organization org = new Organization(connectionString);
+
+                DataSet ds = org.GetAuditGroupInfo();
+                if (ds != null && ds.Tables.Count > 0)
+                {
+                    DataTable orgData = ds.Tables["Table"];
+                    if (orgData != null && orgData.Rows.Count > 0)
+                    {
+                        _OrganizationAuditItems = new SortedList<int, OrganizationAudits>();
+                        for (int i = 0; i < orgData.Rows.Count; i++)
+                        {
+                            DataRow row = orgData.Rows[i];
+                            /*
+                                <OrganizationId>1</OrganizationId>
+                                <AuditGroupId>1</AuditGroupId>
+                                <GroupName>AuditTest</GroupName>
+                                <MethodName>AuditTest</MethodName>
+                                <Frequency>5</Frequency>
+                                <Period>5</Period>                                 
+                             */
+                            int organizationId = Convert.ToInt32(row["OrganizationId"]);
+                            int auditGroupId = Convert.ToInt32(row["AuditGroupId"]);
+                            string groupName = (string)row["GroupName"];
+                            string methodName = (string)row["MethodName"];
+                            int frequency = Convert.ToInt32(row["Frequency"]);
+                            int period = Convert.ToInt32(row["Period"]);
+
+                            Trace.TraceInformation("{0} :: Loading Audit -> Org:{1} AuditGroup:{2} GroupName:{3} MethodName:{4} Frequency:{5} Period:{6}",
+                                this,
+                                organizationId,
+                                auditGroupId,
+                                groupName,
+                                methodName,
+                                frequency,
+                                period
+                                );
+
+                            if (!_OrganizationAuditItems.ContainsKey(organizationId))
+                                _OrganizationAuditItems.Add(organizationId, new OrganizationAudits(organizationId));
+
+                            if (!_OrganizationAuditItems[organizationId].Audits.ContainsKey(auditGroupId))
+                                _OrganizationAuditItems[organizationId].Audits.Add(auditGroupId, new OrganizationAudit(organizationId, auditGroupId, groupName, period, frequency));
+
+                            _OrganizationAuditItems[organizationId].Audits[auditGroupId].AddMethod(methodName);
+                        }
+
+                    }
+                }
+                else
+                    Trace.WriteLine(CLS.Util.TraceFormat("------  AuditManager not loaded ---------"));
+            }
+            catch { }
+
+        }
+
+        void KeyRemoved(int key)
+        {
+            if (_Users == null)
+                return;
+
+            if (_Users.ContainsKey(key))
+            {
+                _Users.Remove(key);
+                Trace.TraceInformation(string.Format("Removing user key [{0}] from global cache", key));
+            }
+        }
+
+        public bool Audit(int userId)
+        {
+            if (_Users == null)
+                return false;
+
+            if (_Users.ContainsKey(userId))
+                if (_OrganizationAuditItems[_Users[userId]] != null)
+                    return _OrganizationAuditItems[_Users[userId]].Validate(userId);
+                else
+                    return true;
+            else
+            {
+                int orgid = GetOrganizationId(userId);
+                if (orgid > 0)
+                {
+                    Trace.TraceInformation(string.Format("Added organization:[{0}]", orgid));
+
+                    if (!_Users.ContainsKey(userId))
+                    {
+                        _Users.Add(userId, orgid);
+                        Trace.TraceInformation(string.Format("Added User:[{0}]", userId));
+                    }
+                    if (_OrganizationAuditItems.ContainsKey(orgid))
+                        if (_OrganizationAuditItems[orgid] != null)
+                            return _OrganizationAuditItems[orgid].Validate(userId);
+                        else
+                            return true;
+                    else
+                    {
+                        _OrganizationAuditItems.Add(orgid, null);
+                        if (_OrganizationAuditItems.ContainsKey(orgid))
+                            if (_OrganizationAuditItems[orgid] != null)
+                            {
+                                _OrganizationAuditItems[orgid].KeyRemoved += new KeyRemovalHandler(KeyRemoved);
+                                _OrganizationAuditItems[orgid].Validate(userId);
+                                return true;
+                            }
+                            else
+                                return true;
+                    }
+                }
+                return false;
+            }
+        }
+
+        int GetOrganizationId(int uid)
+        {
+            int orgid = 0;
+            string xml = string.Empty;
+            try
+            {
+                Organization org = new Organization(connectionString);
+                DataSet ds = org.GetOrganizationInfoByUserId(uid);
+
+                if (ds != null && ds.Tables.Count > 0)
+                {
+                    xml = ds.GetXml();
+                }
+                if (!string.IsNullOrEmpty(xml))
+                {
+                    string smatch = "<OrganizationId>";
+                    string ematch = "</OrganizationId>";
+                    int spos = xml.IndexOf(smatch) + smatch.Length;
+                    int epos = xml.IndexOf(ematch);
+                    orgid = Convert.ToInt32(xml.Substring(spos, epos - spos));
+                }
+            }
+            catch { }
+
+            return orgid;
+        }
+
+
+    }
+}

@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7EC7BD8B-BCC9-49BB-B6DB-37DC22C2B412}</ProjectGuid>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>DasLogic</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>VLF.DAS.Logic</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <SccAuxPath>SAK</SccAuxPath>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\BIN\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;DEBUG;NEW_REPORTS;</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\BIN\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;NEW_REPORTS</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CLS, Version=2.6.3.28407, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dev\VisualDevWorkspace\BSMWireless.Net\Web\Projects\SentinelFM\Bin\CLS.dll</HintPath>
+    </Reference>
+    <Reference Include="ERR">
+      <Name>ERR</Name>
+      <HintPath>..\BIN\ERR.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alarm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyVersion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BatteryTrending.cs" />
+    <Compile Include="Box.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxFindMessages.cs" />
+    <Compile Include="BoxProfile.cs" />
+    <Compile Include="common\AssemblyVersion.cs" />
+    <Compile Include="Contact.cs" />
+    <Compile Include="CustomReportEmail.cs" />
+    <Compile Include="DashBoard.cs" />
+    <Compile Include="Equipment.cs" />
+    <Compile Include="EvtEvents.cs" />
+    <Compile Include="FuelCategoryMgr.cs" />
+    <Compile Include="GeoAsset.cs" />
+    <Compile Include="Integrations.cs" />
+    <Compile Include="LandmarkPointSet.cs" />
+    <Compile Include="LogEvent.cs" />
+    <Compile Include="MapLayers.cs" />
+    <Compile Include="MapSearch.cs" />
+    <Compile Include="MCC.cs" />
+    <Compile Include="Media.cs" />
+    <Compile Include="PostGisLandmark.cs" />
+    <Compile Include="ScheduleAdherence.cs" />
+    <Compile Include="ServiceAssignment.cs" />
+    <Compile Include="SystemNew.cs" />
+    <Compile Include="EngineCodes.cs" />
+    <Compile Include="MsgOutLiteHst.cs" />
+    <Compile Include="Notification.cs" />
+    <Compile Include="OrganizationPreferences.cs" />
+    <Compile Include="Driver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fleet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Form.cs" />
+    <Compile Include="Peripheral.cs" />
+    <Compile Include="PushConfiguration.cs" />
+    <Compile Include="VehicleEquipmentAssignment.cs" />
+    <Compile Include="Waypoint.cs" />
+    <Compile Include="Wex.cs" />
+    <Compile Include="Maintenance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MessageQueue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MsgInLite.cs" />
+    <Compile Include="MsgOutLite.cs" />
+    <Compile Include="Organization.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OrganizationProduct.cs" />
+    <Compile Include="OrganizationVehicleService.cs" />
+    <Compile Include="PersonInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SystemInstallJobs.cs" />
+    <Compile Include="SystemSensorProfile.cs" />
+    <Compile Include="SystemSpecial.cs" />
+    <Compile Include="TxtMsgs.cs" />
+    <Compile Include="User.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Vehicle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehicleMaintenance.cs" />
+    <Compile Include="VehicleServices.cs" />
+    <Compile Include="WorkingHours.cs" />
+    <Compile Include="WorkOrders.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DasDb\DasDb.csproj">
+      <Project>{9fb45c16-82de-4ad2-87ab-1e87e1107a3f}</Project>
+      <Name>DasDb</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

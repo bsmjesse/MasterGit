@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.sentinelfm.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.sentinelfm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.sentinelfm.com">
+      <s:element name="SendTextMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="typeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendTextMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendTextMessageResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendLocationMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="typeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="latitude" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="longitude" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="landmarkName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendLocationMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendLocationMessageResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGarminDevicesByUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGarminDevicesByUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetGarminDevicesByUserResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGarminTextMsgHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="showstatus" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGarminTextMsgHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetGarminTextMsgHistoryResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGarminLocationMsgHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="showstatus" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGarminLocationMsgHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetGarminLocationMsgHistoryResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendTextMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:SendTextMessage" />
+  </wsdl:message>
+  <wsdl:message name="SendTextMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:SendTextMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendLocationMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:SendLocationMessage" />
+  </wsdl:message>
+  <wsdl:message name="SendLocationMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:SendLocationMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGarminDevicesByUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGarminDevicesByUser" />
+  </wsdl:message>
+  <wsdl:message name="GetGarminDevicesByUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGarminDevicesByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGarminTextMsgHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetGarminTextMsgHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetGarminTextMsgHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetGarminTextMsgHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGarminLocationMsgHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetGarminLocationMsgHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetGarminLocationMsgHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetGarminLocationMsgHistoryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GarminSoap">
+    <wsdl:operation name="SendTextMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Send Text Message to Garmin.</wsdl:documentation>
+      <wsdl:input message="tns:SendTextMessageSoapIn" />
+      <wsdl:output message="tns:SendTextMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendLocationMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Send Text Message to Garmin.</wsdl:documentation>
+      <wsdl:input message="tns:SendLocationMessageSoapIn" />
+      <wsdl:output message="tns:SendLocationMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGarminDevicesByUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML contains list of available Garmin devices based on user.</wsdl:documentation>
+      <wsdl:input message="tns:GetGarminDevicesByUserSoapIn" />
+      <wsdl:output message="tns:GetGarminDevicesByUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGarminTextMsgHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML history of Garmin text messages</wsdl:documentation>
+      <wsdl:input message="tns:GetGarminTextMsgHistorySoapIn" />
+      <wsdl:output message="tns:GetGarminTextMsgHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGarminLocationMsgHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML history of Garmin location messages</wsdl:documentation>
+      <wsdl:input message="tns:GetGarminLocationMsgHistorySoapIn" />
+      <wsdl:output message="tns:GetGarminLocationMsgHistorySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GarminSoap" type="tns:GarminSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendTextMessage">
+      <soap:operation soapAction="http://www.sentinelfm.com/SendTextMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendLocationMessage">
+      <soap:operation soapAction="http://www.sentinelfm.com/SendLocationMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGarminDevicesByUser">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetGarminDevicesByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGarminTextMsgHistory">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetGarminTextMsgHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGarminLocationMsgHistory">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetGarminLocationMsgHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GarminSoap12" type="tns:GarminSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendTextMessage">
+      <soap12:operation soapAction="http://www.sentinelfm.com/SendTextMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendLocationMessage">
+      <soap12:operation soapAction="http://www.sentinelfm.com/SendLocationMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGarminDevicesByUser">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetGarminDevicesByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGarminTextMsgHistory">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetGarminTextMsgHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGarminLocationMsgHistory">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetGarminLocationMsgHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Garmin">
+    <wsdl:port name="GarminSoap" binding="tns:GarminSoap">
+      <soap:address location="http://localhost/ASI/Interfaces/Garmin.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GarminSoap12" binding="tns:GarminSoap12">
+      <soap12:address location="http://localhost/ASI/Interfaces/Garmin.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,420 @@
+﻿body {
+}
+/*header start*/
+.searchBar {
+    background-color: #F5CC26;
+    padding: 5px 5px 5px 5px;
+    border: 2px solid #DDDDDD;
+    border-bottom: none !important;
+    height: 100px;
+    align: center;
+    margin-top: 5px;
+}
+
+.eventLabel {
+    height: 30px;
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    Color: #E4E4E4;
+    font-weight: 200;
+    padding: 3px 5px 5px 5px;
+    margin-right:25px;
+}
+
+.searchButton {
+    height: 25px;
+    /*margin-Left: 5px;*/
+    padding: 5px 5px 30px 5px;
+    margin-right: 5px;
+    color: #E4E4E4;
+    border: none;
+    
+    background: transparent;
+}
+
+
+/*search textField start*/
+.searchTextfield {
+    margin-right: 2px;
+    margin-top: 5px;
+    /*float:right;*/
+}
+.textarea .x-form-text {
+    height: 20px;
+    border-radius: 25px !important;
+    border: 2px solid #DDDDDD !important;
+}
+/*search textField end*/
+
+.eventBtn {
+    height: 25px;
+    margin-left: 5px;
+    padding: 5px 5px 30px 5px;
+    border: none;
+    color: #E4E4E4;
+    background: transparent;
+}
+
+.printButton {
+    height: 25px;
+    margin-left: 5px;
+    padding: 5px 5px 30px 5px;
+    color: #8F778F;
+    border: 1px solid #DDDDDD;
+}
+
+.emailButton {
+    height: 25px;
+    margin-left: 5px;
+    padding: 5px 5px 30px 5px;
+    color: #8F778F;
+    border: 1px solid #DDDDDD;
+}
+
+.scheduleButton {
+    height: 25px;
+    margin-left: 5px;
+    padding: 5px 5px 30px 5px;
+    color: #8F778F;
+    border: 1px solid #DDDDDD;
+}
+
+.generateBtn {
+    float: right;
+    height: 25px;
+    margin-left: 5px;
+    padding: 5px 5px 30px 5px;
+    color: #E4E4E4;
+    border: none;
+    background:transparent;
+}
+
+.menutBtn {
+    float: right;
+    border: 1px solid #DDDDDD;
+    margin-right: 5px;
+    background-color: #2E8B57;
+}
+/*header end*/
+
+/*grid start*/
+.summarygrd {
+    margin-top: 5px;
+    text-align: center;
+    border: 1px solid #DDDDDD;
+    border-top: none !important;
+}
+
+
+.extra-alt .x-grid-row .x-grid-cell {
+    background-color: #fff;    
+}
+
+.extra-alt .x-grid-row-alt .x-grid-cell {
+    background-color: #FEFAE9;   
+}
+/*grid end*/
+
+/*scheduler window start*/
+.scheduleWin{
+    background-color:#DDDDDD;
+}
+.scheduleRadio {
+    margin-left: 20px;
+    margin-top: 10px;
+    border: 1px solid #B8B8B8;
+    color: black;   
+}
+
+.scheduleCombo {  
+    margin-top: 10px;
+    border: 1px solid #B8B8B8;
+    display: block;
+    color: black;
+}
+.scheduleDelivery {
+    margin-left: 20px;
+    margin-top: 10px;
+    border: 1px solid #B8B8B8;
+    color: black;
+}
+
+.scheduleFieldset {
+    margin-left: 20px;
+    margin-top: 10px;
+    border: 1px solid #B8B8B8;
+    color: black;
+}
+
+.scheduleSubmitBtn {
+    height: 25px;
+    margin-left: 120px;
+    margin-bottom: 10px;
+    padding: 5px 5px 30px 5px;
+    border: none;
+    Color: #B8B8B8;
+    background: transparent;
+}
+
+.scheduleCloseBtn {
+    height: 25px;
+    margin-left: 5px; 
+    margin-bottom: 10px;  
+    padding: 1px 5px 30px 5px;
+    border: none;
+    Color: #B8B8B8;
+    background: transparent;
+}
+
+.scheduleEmailTextField {
+    width:168%;
+    float:right;
+}
+
+.scheduleStoreToDiskLabel {
+    font-size: 11px;    
+    color:#F5CC26;
+}
+
+.scheduleValidationLabel {
+    font-size: 11px;    
+    color:#cc3300;
+    padding: 10px 60px;
+}
+
+
+.schedulePopupBorder {
+     background-color:black;
+      border: 2px solid #F5CC26;
+      color:#B8B8B8;
+      height:auto;
+}
+
+.scheduleCheckbox .x-form-radio {
+    background-image: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/grid/uncheckd.png') !important ;
+}
+
+.scheduleCheckbox .x-form-checkbox, .x-form-radio {
+    float: none;
+    vertical-align: -1px;
+    width: 15px !important;
+    height: 15px !important;
+    background: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/grid/uncheckd.png') no-repeat !important ;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+}
+
+
+
+.scheduleCheckbox .x-form-cb-checked .x-form-cb-focus {
+    /*background-position: -13px -13px;*/
+    width: 16px !important;
+    height: 16px !important;
+     background: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/grid/checked.png') no-repeat !important ;
+}
+
+.scheduleCheckbox .x-form-cb-checked .x-form-checkbox, .x-form-cb-checked .x-form-radio {
+    /*background-position: 0 -13px;*/
+    width: 16px !important;
+    height: 16px !important;
+    background-image: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/grid/checked.png') !important ;
+}
+
+.scheduleCheckbox .x-form-cb-focus {
+    /*background-position: -13px 0;*/
+    width: 16px !important;
+    height: 16px !important;
+     background-image: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/grid/checked.png') !important ;
+}
+
+.scheduleSection .x-fieldset-header .x-fieldset-header-text {
+        float: left;
+        font-weight: bold !important;
+
+    }
+/*scheduler window end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.no-icon-menu .x-menu-item-link {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.startbutton {
+    background-image: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/grid/checked.gif') !important;
+}
+
+.app-Grid table tr.x-grid-row,
+.app-Grid table tr td.x-grid-cell {
+    height: 36px;
+    border-color: #DDDDDD;
+}
+
+.x-grid-with-col-lines {
+    padding: 0 0 0 0 !important;
+    border-right: 1px solid #DDDDDD !important;
+    margin: 0px !important;
+}
+
+.child-row .x-grid-cell {
+    border-right-color: #DDDDDD;
+    border-right-style: solid;
+    border-left-color: #DDDDDD;
+    border-left-style: solid;
+    line-height: 17px;
+    padding: 2px;
+    margin: 0px;
+    vertical-align: middle;
+}
+
+/*column border
+.x-column-header {
+    border-right: 2px solid #DDDDDD !important;
+    border-top: solid 2px #DDDDDD;
+    border-bottom: solid 2px #DDDDDD;
+    font-weight: bold;
+}
+
+.x-column-header-align-left {
+    text-align: center !important;
+}
+
+.x-grid-header-ct {
+    border: solid 2px #DDDDDD;
+    /*border-top:solid 2px black;
+ border-bottom:solid;
+ border-right:solid 2px black;
+}
+
+/*Checkbox*/
+.x-grid-hd-checker-on .x-column-header-text {
+    background-image: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/grid/checked.png');
+    height: 18px !important;
+    width: 16px !important;
+}
+
+
+.x-grid-row-checker, .x-column-header-checkbox .x-column-header-text {
+    /*height: 16px;*/
+    width: 14px;
+    background-image: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/grid/uncheckd.png') !important;
+    /*background-position: -1px -1px;*/
+    /*background-repeat: no-repeat;*/
+    /*background-color: black;*/
+    /*border:solid 2px !important;*/
+}
+
+.x-grid-hd-checker-on .x-column-header-text {
+    background-image: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/grid/checked.png') !important;
+}
+
+.x-grid-row-selected .x-grid-row-checker, .x-grid-row-checked .x-grid-row-checker {
+    background-image: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/grid/checked.png') !important;
+}
+
+.x-form-checkbox, .x-form-radio {
+    vertical-align: -1px;
+    width: 13px;
+    height: 13px;
+    background: no-repeat;
+    background-image: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/form/checkbox.gif') !important;
+    overflow: hidden;
+    padding: 0;
+    /*border: 1px solid #C4C4C4;*/
+}
+
+/*Split button Chnages*/
+.x-btn-split-right-calender em, .x-btn-over-new em .x-btn-split-right-calender em {
+    background: transparent no-repeat right center !important;
+    background-image: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/button/s-arrow.gif') !important;
+    padding-right: 25px !important;
+    background-size: 25px !important;
+    margin: 2px 2px 2px 2px;
+}
+
+.x-btn-split-right-transport em, .x-btn-over-new em .x-btn-split-right-transport em {
+    background: transparent no-repeat right center !important;
+    background-image: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/button/s-arrow.gif') !important;
+    padding-right: 25px !important;
+    background-size: 25px !important;
+    margin: 2px 2px 2px 2px;
+}
+
+.x-btn-split-right-event em, .x-btn-over-new em .x-btn-split-right-event em {
+    background: transparent no-repeat right center !important;
+    background-image: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/button/s-arrow.gif') !important;
+    padding-right: 25px !important;
+    background-size: 25px !important;
+    margin: 2px 2px 2px 2px;
+}
+
+.x-btn-split-right-operation em, .x-btn-over-new em .x-btn-split-right-operation em {
+    background: transparent no-repeat right center !important;
+    background-image: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/button/s-arrow.gif') !important;
+    padding-right: 25px !important;
+    background-size: 25px !important;
+    margin: 2px 2px 2px 2px;
+}
+
+.x-btn-split-bottom em, .x-btn-over em .x-btn-split-bottom em {
+    background: transparent no-repeat center bottom;
+    background-image: url('../../ext-4.0.7/resources/themes/images/gray/button/s-arrow.gif') !important;
+    padding-bottom: 25px !important;
+    background-size: 25px !important;
+}
+
+.x-btn-over-new em .x-btn-split-right-new em {
+    background-image: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/button/s-arrow.gif') !important;
+    padding-right: 25px !important;
+    background-size: 25px !important;
+    width: 30px;
+    height: 30px;
+}
+
+.x-btn-over me .x-btn-split-bottom em {
+    background-image: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/button/s-arrow.gif') !important;
+    padding-bottom: 20px !important;
+    background-size: 25px !important;
+}
+
+.x-form-text .textarea.x-form-field {
+    padding: 1px 3px !important;
+    background: repeat-x 0 0 !important;
+    border: 1px solid !important;
+    background-color: white !important;
+    background-image: url('../../sencha/extjs-4.1.0/resources/themes/images/gray/form/text-bg.gif') !important;
+    border-color: black !important;
+    border-radius: 25px !important;
+}
+/*.x-webkit .x-form-empty-field {
+    line-height: 15px;
+    border-radius:25px;
+    border: 1px solid black;
+}*/
+
+
+
+.extra-alt .x-grid-cell-inner {
+    font-size: small;
+}
+
+/*.extra-alt .x-column-header-inner{
+    font-size:small;
+}*/

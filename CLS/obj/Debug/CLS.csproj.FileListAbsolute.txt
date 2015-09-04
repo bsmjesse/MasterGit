@@ -1,0 +1,5 @@
+C:\Builds\SentinelFM\Main\BIN\CLS.dll
+C:\Builds\SentinelFM\Main\BIN\CLS.pdb
+C:\Builds\SentinelFM\Main\CLS\obj\Debug\CLS.csprojResolveAssemblyReference.cache
+C:\Builds\SentinelFM\Main\CLS\obj\Debug\CLS.dll
+C:\Builds\SentinelFM\Main\CLS\obj\Debug\CLS.pdb

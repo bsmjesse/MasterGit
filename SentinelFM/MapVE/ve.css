@@ -1,0 +1,169 @@
+﻿body, .help
+{
+	font-family:Verdana;
+	font-size:10pt;
+	margin:0px;
+}
+.helpitem 
+{
+	font-size:9pt;
+
+}
+.helphead
+{
+	color:#777777;
+	font-weight:bold;
+	text-align:center;
+}
+.help
+{	
+	position:absolute;
+	top:-1000px;
+	overflow:scroll;
+	width:400px;
+	height:400px;
+	border:2px solid black;
+}
+
+
+.mapdiv 
+{
+	background-color:#EEEEEE;	
+}
+
+.headerdiv, .footerdiv
+{
+	margin: 0px;
+	padding: 1px;
+	background-color: #EEEEEE;
+}
+.footerdiv, .MSVE_navAction_background
+{
+	background-color: gray;
+}
+
+.zoombox 
+{
+	background-color:White;
+	color:Blue;	
+}
+
+.infotitle
+{
+	color: #AAAAAA;
+	font-size:medium;
+	font-weight:bold;
+	padding: 1px;
+}
+
+.status
+{
+	background-color: #444444;
+	color: white;
+	padding: 1px;
+	border: 2px solid black;
+	border-top: 2px solid silver;
+	border-left: 2px solid silver;
+	text-indent: 2px;
+}
+
+.footer 
+{
+	font-size:10pt;
+	font-weight:bold;
+	color:White;
+	vertical-align:middle;
+	
+}
+
+
+.buttonselected_false, .buttonselected_true, .button
+{
+	font-size:9pt;
+	background-repeat:no-repeat;
+	padding-left:5px;
+	padding-right:5px;
+	color:Black;
+	background-color:#EEEEEE;
+	border-left:1px solid #FFFFFF;
+	border-top:1px solid #FFFFFF;
+	border-right:1px solid #777777;
+	border-bottom:1px solid #777777;
+}
+.buttonselected_false 
+{
+	padding-left:20px;
+	padding-right:5px;
+	background-image:url("images/buttonselect_false.gif");
+}
+
+.buttonselected_true 
+{
+	padding-left:20px;
+	padding-right:5px;
+	background-image:url("images/buttonselect_true.gif");
+}
+
+.descbody
+{
+	margin:0px;
+	background-repeat:no-repeat;
+	background-image:url("images/bg.jpg");	
+}
+.newdescbody
+{
+}
+.imgx 
+{
+	z-index: 800;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+.newdesc
+{
+	z-index: 200;
+	position:absolute;
+	left:7px;
+	top:0px;
+	font-size:xx-small;
+	font-weight:bold;
+    background-color:#FF0000;    
+    filter:alpha(opacity=80);
+    opacity:.8;
+    width:75px;
+    height:20px;
+}
+.newdesc1
+{
+	color:White;
+	overflow:hidden;
+	position:absolute;
+    filter:alpha(opacity=100);
+    opacity:1;
+	left:10px;
+	top:-2px;
+		
+}
+.newdesc2
+{
+	position:absolute;
+	overflow:hidden;
+	color:white;	
+    filter:alpha(opacity=80);
+    opacity:.8;
+	left:12px;
+	top:8px;
+
+}
+
+.PlaybackTimeline
+{
+	border:1px solid black;
+}
+.TimelineWindow
+{
+	background-image: url
+	border:1px solid black;
+	padding:10px;
+}

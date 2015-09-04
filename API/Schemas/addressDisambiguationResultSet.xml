@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AddressDisambiguationResultSet>
+  <ResolvedAddress>
+    <RefID>FA08A8DD</RefID>
+    <Confidence>99</Confidence>
+    <Address>123 Main Street</Address>
+    <City>Toronto</City>
+    <Region>ON</Region>
+    <Postal>M9A 3W9</Postal>
+    <Country>CANADA</Country>
+    <Latitude>42.1654561</Latitude>
+    <Longitude>-79.16516516</Longitude>
+  </ResolvedAddress>
+</AddressDisambiguationResultSet>

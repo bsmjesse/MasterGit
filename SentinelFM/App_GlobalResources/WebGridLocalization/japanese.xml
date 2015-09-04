@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE NewDataSet [
+]>
+<NewDataSet xmlns="http://tempuri.org/default.xsd">
+	<Localization xmlns="http://tempuri.org/default.xsd" culture="default" description="Default Language">
+		<CommonText>
+			<Ready>Ready.</Ready>
+			<More>Loading more data....</More>
+			<LoadGroup>Loading group...</LoadGroup>
+			<Sort>Sorting column...</Sort>
+			<Group>Grouping column...</Group>
+			<Ungroup>Ungrouping column...</Ungroup>
+			<ChangeGroup>Changing group column...</ChangeGroup>
+			<FilterText>Filtering column...</FilterText>
+			<LoadChild>Loading child rows...</LoadChild>
+			<ColumnChange>Changing columns...</ColumnChange>
+			<Refresh>Refreshing data...</Refresh>
+			<RefreshAll>Refreshing data and structure...</RefreshAll>
+			<RefreshChild>Refreshing child table...</RefreshChild>
+			<AddRow>Adding new row...</AddRow>
+			<UpdateRow>Updating row...</UpdateRow>
+			<DeleteRow>Deleting row...</DeleteRow>
+			<ReadyError>Ready with unhandled error on last request.</ReadyError>
+			<ColumnMove>Moving column...</ColumnMove>
+			<Loaded>Loaded [n] of [total]</Loaded>
+			<ExportText>Exporting...</ExportText>
+			<NoData>There are no rows in this view.</NoData>
+			<NewRowInfo>Please click here to add new row...</NewRowInfo>
+			<GroupByBoxInfo>Drag a column header here to group by that column.</GroupByBoxInfo>
+			<LoadSelfRefChild>Loading self referencing childrows...</LoadSelfRefChild>
+			<CalendarToday>Today</CalendarToday>
+			<CalendarNone>None</CalendarNone>
+		</CommonText>
+		<CommonText>
+			<Ready>Ready.</Ready>
+			<More>データを読み込み中</More>
+			<LoadGroup>グループを読み込み中....</LoadGroup>
+			<Sort>列をソート.....</Sort>
+			<Group>列をグループ化....</Group>
+			<Ungroup>列のグループ化を解除.....</Ungroup>
+			<ChangeGroup>列グループの変更....</ChangeGroup>
+			<FilterText>列のフィルタリング.....</FilterText>
+			<LoadChild>チャイルド行を読み込み中....</LoadChild>
+			<ColumnChange>列を変更....</ColumnChange>
+			<Refresh>データをリフレッシュ中...</Refresh>
+			<RefreshAll>データと構造をリフレッシュ中....</RefreshAll>
+			<RefreshChild>子テーブルをリフレッシュ中....</RefreshChild>
+			<AddRow>行を追加.....</AddRow>
+			<UpdateRow>行を更新....</UpdateRow>
+			<DeleteRow>行を削除....</DeleteRow>
+			<ReadyError>最後に呼ばれて処理されていないエラーにて待機中....</ReadyError>
+			<ColumnMove>列を移動....</ColumnMove>
+			<Loaded>[total]中、[n] を読み込み中....</Loaded>
+			<ExportText>エクスポート中....</ExportText>
+			<NoData>このビューでは行はありません。</NoData>
+			<NewRowInfo>新しい行を追加するには[ここ]をクリックして下さい....</NewRowInfo>
+			<GroupByBoxInfo>この列のヘッダーを、グループ化するためにドラッグしてください。</GroupByBoxInfo>
+			<LoadSelfRefChild>自動参照のチャイルド行を読み込み中....</LoadSelfRefChild>
+			<CalendarToday>今日</CalendarToday>
+			<CalendarNone>None</CalendarNone>
+		</CommonText>
+		<MessageBoxText>
+			<NoChildRow>There are no child rows for this record.</NoChildRow>
+			<InProgress>Please wait while WebGrid is in progress processing request...</InProgress>
+			<UnhandledError>Unhandled exception occurred. See following for details.</UnhandledError>
+			<LoadMoreException>Load more data is only available when there are no group columns in RootTable.</LoadMoreException>
+			<AddNewRow>The new row has been edited. Do you want to add the new row?</AddNewRow>
+			<UpdateRow>The selected row has been edited. Do you want to update the changed row?</UpdateRow>
+			<DeleteRow>Are you sure want to delete this row?</DeleteRow>
+		</MessageBoxText>
+		<MessageBoxText>
+			<NoChildRow>このレコード以降に、チャイルド行はありません。</NoChildRow>
+			<InProgress>WebGridがリクエストを処理中、少々お待ち下さい....</InProgress>
+			<UnhandledError>取り扱えない例外エラーが発生しました。以下の詳細をご覧下さい。</UnhandledError>
+			<LoadMoreException>「さらにデータを読み込む」はルートのテーブル内の列にグループがない場合のみ実行可能です。</LoadMoreException>
+			<AddNewRow>新しい行は編集済みです。新しい行を追加しますか？</AddNewRow>
+			<UpdateRow>選択された行は編集済みです。変更された行の更新を行いますか？</UpdateRow>
+			<DeleteRow>この行を本当に削除してもよろしいでしょうか？</DeleteRow>
+		</MessageBoxText>
+		<Tooltip>
+			<Refresh>Refresh grid data</Refresh>
+			<LoadMore>Load more data</LoadMore>
+			<ExportText>Export grid</ExportText>
+			<Help>WebGrid.NET Client Help</Help>
+		</Tooltip>
+		<Tooltip>
+			<Refresh>グリッドデータをリフレッシュ</Refresh>
+			<LoadMore>さらにデータを読み込む</LoadMore>
+			<ExportText>グリッドをエクスポート</ExportText>
+			<Help>WebGrid .NET クライアントヘルプ</Help>
+		</Tooltip>
+		<Grouping>
+			<Today>Today</Today>
+			<Yesterday>Yesterday</Yesterday>
+			<LastWeek>Last Week</LastWeek>
+			<TwoWeeksAgo>Two Weeks Ago</TwoWeeksAgo>
+			<ThreeWeeksAgo>Three Weeks Ago</ThreeWeeksAgo>
+			<LastMonth>Last Month</LastMonth>
+			<Older>Older</Older>
+		</Grouping>
+		<Grouping>
+			<Today>今日</Today>
+			<Yesterday>昨日</Yesterday>
+			<LastWeek>先週</LastWeek>
+			<TwoWeeksAgo>２週間前</TwoWeeksAgo>
+			<ThreeWeeksAgo>３週間前</ThreeWeeksAgo>
+			<LastMonth>先月</LastMonth>
+			<Older>先々月以前</Older>
+		</Grouping>
+		<ContextMenu>
+			<Column>
+				<SortAsc>Sort Ascending</SortAsc>
+				<SortDesc>Sort Descending</SortDesc>
+				<GroupByThisField>Group By This Field</GroupByThisField>
+				<UngroupField>Ungroup This Field</UngroupField>
+				<GroupByBox>Group By Box</GroupByBox>
+				<RemoveColumn>Remove This Column</RemoveColumn>
+				<BestFit>Best Fit</BestFit>
+				<FilterBar>Filter Bar</FilterBar>
+				<SelectColumns>Select Columns</SelectColumns>
+				<ApplyChanges>Apply Changes</ApplyChanges>
+				<Reset>Reset</Reset>
+			</Column>
+			<Column>
+				<SortAsc>並び替え－昇順</SortAsc>
+				<SortDesc>並び替え－降順</SortDesc>
+				<GroupByThisField>このフィールドをグループ化</GroupByThisField>
+				<UngroupField>このフィールドのグループ化を解除</UngroupField>
+				<GroupByBox>ボックスでグループ化</GroupByBox>
+				<RemoveColumn>列を除去</RemoveColumn>
+				<BestFit>ベストフィット</BestFit>
+				<FilterBar>フィルターバー</FilterBar>
+				<SelectColumns>列を選択</SelectColumns>
+				<ApplyChanges>変更をかける</ApplyChanges>
+				<Reset>リセット</Reset>
+			</Column>
+			<Row>
+				<CopyCell>Copy this cell</CopyCell>
+				<CopyRow>Copy this row</CopyRow>
+				<CopyTable>Copy this table</CopyTable>
+				<Update>Update changes</Update>
+				<Cancel>Cancel changes</Cancel>
+				<ShowChildRows>Show child rows</ShowChildRows>
+				<HideChildRows>Hide child rows</HideChildRows>
+				<Edit>Edit</Edit>
+				<Delete>Delete</Delete>
+				<Expand>Expand</Expand>
+				<Collapse>Collapse</Collapse>
+				<ExpandAll>Expand all</ExpandAll>
+				<CollapseAll>Collapse all</CollapseAll>
+				<PerformAdd>Perform add</PerformAdd>
+				<CancelAdd>Cancel add</CancelAdd>
+				<ApplyFilter>Apply all filters</ApplyFilter>
+				<ClearFilter>Clear all filters</ClearFilter>
+			</Row>
+			<Row>
+				<CopyCell>このセルをコピー</CopyCell>
+				<CopyRow>この行をコピー</CopyRow>
+				<CopyTable>このテーブルをコピー</CopyTable>
+				<Update>変更を反映する</Update>
+				<Cancel>変更をキャンセルする</Cancel>
+				<ShowChildRows>チャイルド行を見せる</ShowChildRows>
+				<HideChildRows>チャイルド行を隠す</HideChildRows>
+				<Edit>編集</Edit>
+				<Delete>削除</Delete>
+				<Expand>展開</Expand>
+				<Collapse>折りたたむ</Collapse>
+				<ExpandAll>全て展開</ExpandAll>
+				<CollapseAll>全て折りたたむ</CollapseAll>
+				<PerformAdd>追加を実施</PerformAdd>
+				<CancelAdd>追加をキャンセル</CancelAdd>
+				<ApplyFilter>全てのフィルターをかける</ApplyFilter>
+				<ClearFilter>全てのフィルターをクリアーする</ClearFilter>
+			</Row>
+			<Filter>
+				<NotSet>Not Set</NotSet>
+				<GTET>Greater Than or Equal To</GTET>
+				<GT>Greater Than</GT>
+				<ET>Equal To</ET>
+				<NET>Not Equal To</NET>
+				<LTET>Less Than or Equal To</LTET>
+				<LT>Less Than</LT>
+				<Like>Like</Like>
+				<NotLike>Not Like</NotLike>
+				<Between>Between</Between>
+				<NotBetween>Not Between</NotBetween>
+				<IsNull>Is Null</IsNull>
+				<NotIsNull>Not Is Null</NotIsNull>
+				<IsEmpty>Is Empty</IsEmpty>
+				<NotIsEmpty>Not Is Empty</NotIsEmpty>
+				<ApplyAll>Apply All Filters</ApplyAll>
+				<Clear>Clear This Filter</Clear>
+				<ClearAll>Clear All Filters</ClearAll>
+			</Filter>
+			<Filter>
+				<NotSet>セットしない</NotSet>
+				<GTET>以上</GTET>
+				<GT>より大きい</GT>
+				<ET>と等しい</ET>
+				<NET>と等しくない</NET>
+				<LTET>以下</LTET>
+				<LT>より小さい</LT>
+				<Like>を含んだ</Like>
+				<NotLike>を含まない</NotLike>
+				<Between>の間</Between>
+				<NotBetween>の間を除く</NotBetween>
+				<IsNull>数値がない</IsNull>
+				<NotIsNull>数値がある</NotIsNull>
+				<IsEmpty>空欄である</IsEmpty>
+				<NotIsEmpty>空欄でない</NotIsEmpty>
+				<ApplyAll>全てのフィルターをかける</ApplyAll>
+				<Clear>このフィルターをクリアーする</Clear>
+				<ClearAll>全てのフィルターをクリアーする</ClearAll>
+			</Filter>
+			<Export>
+				<ExportRoot>Export root table</ExportRoot>
+				<ExportChild>Export selected child table</ExportChild>
+				<Portrait>Portrait</Portrait>
+				<Landscape>Landscape</Landscape>
+				<DoExport>Export now</DoExport>
+			</Export>
+			<Export>
+				<ExportRoot>ルートテーブルをエクスポートする</ExportRoot>
+				<ExportChild>選択した子テーブルをエクスポートする</ExportChild>
+				<Portrait>縦</Portrait>
+				<Landscape>横</Landscape>
+				<DoExport>エクスポートを実施</DoExport>
+			</Export>
+			<Custom description="Add your row custom menu text here">
+				<CustomText1/>
+				<CustomText2/>
+			</Custom>
+			<Custom description="カスタムメニューのためのテキストをこの行に追加して下さい。"/>
+		</ContextMenu>
+	</Localization>
+</NewDataSet>

@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Tickets>
+  <Ticket TicketID="12034">
+    <PlantNumber>1</PlantNumber>
+    <TicketNumber>36251</TicketNumber>
+    <Units>Metric</Units>
+    <TicketID>12034</TicketID>
+    <ExternalRefID></ExternalRefID>
+    <StartDate>2011/12/06</StartDate>
+    <StartTime>06:46:47</StartTime>
+    <TotalProcessTime>466</TotalProcessTime>
+    <LoadSize>6.00</LoadSize>
+    <NumBatches>1</NumBatches>
+    <OrderedWCRatio></OrderedWCRatio>
+    <WaterTrim>0.00</WaterTrim>
+    <Void>NO</Void>
+    <VoidCode></VoidCode>
+    <VoidReason></VoidReason>
+    <VoidNote></VoidNote>
+    <VoidUser></VoidUser>
+    <VoidDate></VoidDate>
+    <LoadNumber>1</LoadNumber>
+    <CumulativeQuantity>6.00</CumulativeQuantity>
+    <OrderedQuantity>6.00</OrderedQuantity>
+    <Tracking>
+      <Loading>2011-12-06 06:46:46</Loading>
+      <LeaveYard>2011-12-06 09:41:52</LeaveYard>
+      <OnJob>2011-12-06 09:41:52</OnJob>
+      <Pour>2011-12-06 09:41:52</Pour>
+      <EndPour>2011-12-06 09:41:52</EndPour>
+      <LeaveJob>2011-12-06 09:41:52</LeaveJob>
+      <ArriveYard>2011-12-06 09:41:52</ArriveYard>
+    </Tracking>
+    <ReturnMixCode></ReturnMixCode>
+    <ReturnLoadSize>0.00</ReturnLoadSize>
+    <ReturnConcreteFromUninvoicedLoad>0</ReturnConcreteFromUninvoicedLoad>
+    <ReturnWater>0</ReturnWater>
+    <MixCode>D30</MixCode>
+    <MixDescription>30 mpa 0@4 controler</MixDescription>
+    <MixClass>20</MixClass>
+    <MixResistance>30</MixResistance>
+    <MixSlump>100</MixSlump>
+    <AllowableWaterAdjustment>0</AllowableWaterAdjustment>
+    <MixTemperature>23</MixTemperature>
+    <MixAir>2.0</MixAir>
+    <MaximumWCRatio>0.00</MaximumWCRatio>
+    <OrderedSlump>100</OrderedSlump>
+    <JobID>6628</JobID>
+    <JobNumber>1323</JobNumber>
+    <ProjectNumber></ProjectNumber>
+    <OrderNumber></OrderNumber>
+    <QuoteNumber></QuoteNumber>
+    <PONumber></PONumber>
+    <ProjectTerms></ProjectTerms>
+    <ProjectUsage></ProjectUsage>
+    <COD>NO</COD>
+    <ProjectDescription>--------</ProjectDescription>
+    <OrderedBy></OrderedBy>
+    <ModifiedBy>berny</ModifiedBy>
+    <DeliverInNiceWeatherOnly>NO</DeliverInNiceWeatherOnly>
+    <DeliveryTruckType></DeliveryTruckType>
+    <DeliveryAddress>Hopital   arriere</DeliveryAddress>
+    <DeliveryCity>BEAUCEVILLE</DeliveryCity>
+    <DeliveryState></DeliveryState>
+    <DeliveryZone></DeliveryZone>
+    <DeliveryLatitude>43.293434</DeliveryLatitude>
+    <DeliveryLongitude>-79.9823454</DeliveryLongitude>
+    <DeliveryRadius>0</DeliveryRadius>
+    <DeliveryZipCode></DeliveryZipCode>
+    <CustomerNumber>1323</CustomerNumber>
+    <CustomerName>Const Resicom 2001inc</CustomerName>
+    <CustomerAddress>545 Boul Renault</CustomerAddress>
+    <CustomerCity>Beauceville</CustomerCity>
+    <CustomerZip>g5x1n3</CustomerZip>
+    <CustomerTel>7746969</CustomerTel>
+    <DateOrdered>2011/12/06</DateOrdered>
+    <FirstLoadExpectedDate>2011/12/06</FirstLoadExpectedDate>
+    <FirstLoadExpectedTime>06:06:10</FirstLoadExpectedTime>
+    <CurrentLoadExpectedDate>2011/12/06</CurrentLoadExpectedDate>
+    <CurrentLoadExpectedTime>06:06:10</CurrentLoadExpectedTime>
+    <Prices>
+      <Item>
+        <Code>D30</Code>
+        <Description>30 mpa 0@4 controler</Description>
+        <Qty>6.00</Qty>
+        <Price>0.00</Price>
+        <Total>0.00</Total>
+        <ApplicableTaxe>all</ApplicableTaxe>
+      </Item>
+      <Item>
+        <Code>CHAUF</Code>
+        <Description>Chauffage</Description>
+        <Qty>6.00</Qty>
+        <Price>0.00</Price>
+        <Total>0.00</Total>
+        <ApplicableTaxe>all</ApplicableTaxe>
+      </Item>
+      <SubTotal>0.00</SubTotal>
+      <Tax1>0.00</Tax1>
+      <Tax2>0.00</Tax2>
+      <Tax1Name>TAX1</Tax1Name>
+      <Tax2Name>TAX2</Tax2Name>
+      <Total>0.00</Total>
+      <TaxCode></TaxCode>
+      <Tax1Percent>5.000</Tax1Percent>
+      <Tax2Percent>8.500</Tax2Percent>
+    </Prices>
+    <TruckNumber>129</TruckNumber>
+    <TruckDriverName>LOUP</TruckDriverName>
+    <TruckDriverInitials></TruckDriverInitials>
+    <TruckLicensePlateNumber>--------</TruckLicensePlateNumber>
+    <PrintedTicket>
+      <Line> ]                                                             2011-12-06</Line>
+      <Line></Line>
+      <Line>                                                                     1323</Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line>    Const Resicom 2001inc                       --------</Line>
+      <Line>    545 Boul Renault                            Hopital   arriere</Line>
+      <Line>    Beauceville                                 BEAUCEVILLE</Line>
+      <Line>    g5x1n3</Line>
+      <Line></Line>
+      <Line>                                                                  06:54</Line>
+      <Line>     6.00            30            20            100 mm</Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line>1 a 4        0.00    X</Line>
+      <Line></Line>
+      <Line></Line>
+      <Line>X            1             6.00        6.00        D30</Line>
+      <Line></Line>
+      <Line></Line>
+      <Line>     153</Line>
+      <Line>                               Chauffage</Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+      <Line></Line>
+    </PrintedTicket>
+    <CalculationComments>
+      <Comment>Question: Le volume est hors tolérance (994.2 l). Continuer?</Comment>
+      <Comment>Réponse: Oui</Comment>
+      <Comment>Déviation d'affaissement trop petite, aucune correction</Comment>
+      <Comment>Affaissement: Aucune correction. Fonction désactivée.</Comment>
+      <Comment>Correction humidité sur 5-20 Vallée 5580 @ 0.75% total, 0.00% absorbtion-&gt; 5622, eau=41.85</Comment>
+      <Comment>Correction humidité sur Sable 6030 @ 2.00% total, 0.00% absorbtion-&gt; 6151, eau=120.60</Comment>
+      <Comment>Calcul de température désactivé.</Comment>
+      <Comment>0.00% d'eau chaude</Comment>
+      <Comment>[EAU GRISE] Aucune compensation car aucune eau grise activée.</Comment>
+      <Comment>ok</Comment>
+    </CalculationComments>
+    <Batcher>-------- --------</Batcher>
+    <Reset>NO</Reset>
+    <MixTimeTarget>0</MixTimeTarget>
+    <MixTimeActual>0</MixTimeActual>
+    <MixAmpsActual>0.000000</MixAmpsActual>
+    <WaterInAggregates>163</WaterInAggregates>
+    <TargetYield>994</TargetYield>
+    <ActualYield>993</ActualYield>
+    <WaterCementRatioTarget>0.47</WaterCementRatioTarget>
+    <WaterCementRatioActual>0.45</WaterCementRatioActual>
+    <ConcreteTemperature>23</ConcreteTemperature>
+    <ExteriorTemperature>25</ExteriorTemperature>
+    <AggregatesRemainingInScales>-25</AggregatesRemainingInScales>
+    <CementsRemainingInScales>25</CementsRemainingInScales>
+    <WaterRemainingInScales>0</WaterRemainingInScales>
+    <PostProcessUserNote></PostProcessUserNote>
+    <Details>
+      <Detail>
+        <Name>SF</Name>
+        <Code>0000</Code>
+        <Target>600.0000</Target>
+        <Actual>625.0000</Actual>
+        <Units>kg</Units>
+        <Moisture>0.0000</Moisture>
+        <Absorption>0.0000</Absorption>
+        <Density>2.98</Density>
+        <Temperature>NA</Temperature>
+        <Trim>100.0</Trim>
+        <MixTarget>99.9999</MixTarget>
+        <MixUnits>kg</MixUnits>
+        <GeneralType>CEMENT</GeneralType>
+        <Class>Cementitious</Class>
+        <Feeder>SILO #3</Feeder>
+        <Rank>1</Rank>
+        <Manual>NO</Manual>
+      </Detail>
+      <Detail>
+        <Name>TYPE-10</Name>
+        <Code>C-0001</Code>
+        <Target>960.0000</Target>
+        <Actual>953.0000</Actual>
+        <Units>kg</Units>
+        <Moisture>0.0000</Moisture>
+        <Absorption>0.0000</Absorption>
+        <Density>3.15</Density>
+        <Temperature>NA</Temperature>
+        <Trim>100.0</Trim>
+        <MixTarget>160.0011</MixTarget>
+        <MixUnits>kg</MixUnits>
+        <GeneralType>CEMENT</GeneralType>
+        <Class>Cementitious</Class>
+        <Feeder>SILO #1</Feeder>
+        <Rank>1</Rank>
+        <Manual>NO</Manual>
+      </Detail>
+      <Detail>
+        <Name>Sable</Name>
+        <Code>0000</Code>
+        <Target>6150.0000</Target>
+        <Actual>6115.0000</Actual>
+        <Units>kg</Units>
+        <Moisture>2.0000</Moisture>
+        <Absorption>0.0000</Absorption>
+        <Density>2.66</Density>
+        <Temperature>NA</Temperature>
+        <Trim>100.0</Trim>
+        <MixTarget>1005.0012</MixTarget>
+        <MixUnits>kg</MixUnits>
+        <GeneralType>AGGREGATE</GeneralType>
+        <Class>Sand</Class>
+        <Feeder>BENNE #2</Feeder>
+        <Rank>2</Rank>
+        <Manual>NO</Manual>
+      </Detail>
+      <Detail>
+        <Name>5-20 Vallée</Name>
+        <Code>G-0002</Code>
+        <Target>5620.0000</Target>
+        <Actual>5560.0000</Actual>
+        <Units>kg</Units>
+        <Moisture>0.7500</Moisture>
+        <Absorption>0.0000</Absorption>
+        <Density>2.68</Density>
+        <Temperature>NA</Temperature>
+        <Trim>100.0</Trim>
+        <MixTarget>930.0002</MixTarget>
+        <MixUnits>kg</MixUnits>
+        <GeneralType>AGGREGATE</GeneralType>
+        <Class>Rock</Class>
+        <Feeder>BENNE #3</Feeder>
+        <Rank>3</Rank>
+        <Manual>NO</Manual>
+      </Detail>
+      <Detail>
+        <Name>COLD WATER</Name>
+        <Code>0000</Code>
+        <Target>678.0000</Target>
+        <Actual>677.0000</Actual>
+        <Units>l</Units>
+        <Moisture>0.0000</Moisture>
+        <Absorption>0.0000</Absorption>
+        <Density>1.00</Density>
+        <Temperature>NA</Temperature>
+        <Trim>100.0</Trim>
+        <MixTarget>140.0000</MixTarget>
+        <MixUnits>l</MixUnits>
+        <GeneralType>WATER</GeneralType>
+        <Class>Water</Class>
+        <Feeder>EAU #1</Feeder>
+        <Rank>1</Rank>
+        <Manual>NO</Manual>
+      </Detail>
+      <Detail>
+        <Name>Daratard</Name>
+        <Code>0000</Code>
+        <Target>2700.0000</Target>
+        <Actual>2650.0000</Actual>
+        <Units>ml</Units>
+        <Moisture>0.0000</Moisture>
+        <Absorption>0.0000</Absorption>
+        <Density>1.00</Density>
+        <Temperature>NA</Temperature>
+        <Trim>100.0</Trim>
+        <MixTarget>450.0000</MixTarget>
+        <MixUnits>ml/m3</MixUnits>
+        <GeneralType>ADMIX</GeneralType>
+        <Class>Retarder</Class>
+        <Feeder>ADJUVANT #2</Feeder>
+        <Rank>0</Rank>
+        <Manual>NO</Manual>
+      </Detail>
+      <Detail>
+        <Name>ADVA</Name>
+        <Code>0000</Code>
+        <Target>8990.0000</Target>
+        <Actual>8989.0000</Actual>
+        <Units>ml</Units>
+        <Moisture>0.0000</Moisture>
+        <Absorption>0.0000</Absorption>
+        <Density>1.00</Density>
+        <Temperature>NA</Temperature>
+        <Trim>100.0</Trim>
+        <MixTarget>1500.0000</MixTarget>
+        <MixUnits>ml/m3</MixUnits>
+        <GeneralType>ADMIX</GeneralType>
+        <Class>Superplasticizer</Class>
+        <Feeder>ADJUVANT #3</Feeder>
+        <Rank>0</Rank>
+        <Manual>NO</Manual>
+      </Detail>
+      <Detail>
+        <Name>FLY ASH</Name>
+        <Code>C-0002</Code>
+        <Target>180.0000</Target>
+        <Actual>152.0000</Actual>
+        <Units>kg</Units>
+        <Moisture>0.0000</Moisture>
+        <Absorption>0.0000</Absorption>
+        <Density>2.49</Density>
+        <Temperature>NA</Temperature>
+        <Trim>100.0</Trim>
+        <MixTarget>29.9995</MixTarget>
+        <MixUnits>kg</MixUnits>
+        <GeneralType>CEMENT</GeneralType>
+        <Class>Cementitious</Class>
+        <Feeder>SILO #5</Feeder>
+        <Rank>2</Rank>
+        <Manual>NO</Manual>
+      </Detail>
+      <Detail>
+        <Name>FILLER</Name>
+        <Code>0000</Code>
+        <Target>180.0000</Target>
+        <Actual>179.0000</Actual>
+        <Units>kg</Units>
+        <Moisture>0.0000</Moisture>
+        <Absorption>0.0000</Absorption>
+        <Density>2.70</Density>
+        <Temperature>NA</Temperature>
+        <Trim>100.0</Trim>
+        <MixTarget>29.9997</MixTarget>
+        <MixUnits>kg</MixUnits>
+        <GeneralType>CEMENT</GeneralType>
+        <Class>Cementitious</Class>
+        <Feeder>SILO #4</Feeder>
+        <Rank>3</Rank>
+        <Manual>NO</Manual>
+      </Detail>
+      <Detail>
+        <Name>Sable</Name>
+        <Code>0000</Code>
+        <Target>0.0000</Target>
+        <Actual>90.0000</Actual>
+        <Units>kg</Units>
+        <Moisture>2.0000</Moisture>
+        <Absorption>0.0000</Absorption>
+        <Density>2.66</Density>
+        <Temperature>NA</Temperature>
+        <Trim>100.0</Trim>
+        <MixTarget>0.0000</MixTarget>
+        <MixUnits>kg</MixUnits>
+        <GeneralType>AGGREGATE</GeneralType>
+        <Class>Sand</Class>
+        <Feeder>BENNE #1</Feeder>
+        <Rank>0</Rank>
+        <Manual>YES</Manual>
+      </Detail>
+    </Details>
+    <Alarms>
+      <Alarm>
+        <AlarmID>15500</AlarmID>
+        <Component>SILO #3</Component>
+        <Code>5</Code>
+        <Description>HORS TOLÉRANCE</Description>
+        <Value>24.000</Value>
+        <Type>Error</Type>
+        <Date>2011/12/06</Date>
+        <Time>06:48:42</Time>
+      </Alarm>
+    </Alarms>
+    <Tares>
+      <Tare>
+        <TareID>39918</TareID>
+        <Component>BALANCE CIMENT #2</Component>
+        <Initial>-1.000</Initial>
+        <Final>14.000</Final>
+        <FillTime>236</FillTime>
+        <EmptyTime>1</EmptyTime>
+      </Tare>
+      <Tare>
+        <TareID>39917</TareID>
+        <Component>BALANCE CIMENT #1</Component>
+        <Initial>0.000</Initial>
+        <Final>10.000</Final>
+        <FillTime>86</FillTime>
+        <EmptyTime>96</EmptyTime>
+      </Tare>
+      <Tare>
+        <TareID>39916</TareID>
+        <Component>BALANCE AGRÉGAT</Component>
+        <Initial>30.000</Initial>
+        <Final>5.000</Final>
+        <FillTime>29</FillTime>
+        <EmptyTime>189</EmptyTime>
+      </Tare>
+      <Tare>
+        <TareID>39915</TareID>
+        <Component>ADJUVANT #3</Component>
+        <Initial>0.000</Initial>
+        <Final>0.000</Final>
+        <FillTime>20</FillTime>
+        <EmptyTime>306</EmptyTime>
+      </Tare>
+      <Tare>
+        <TareID>39914</TareID>
+        <Component>ADJUVANT #2</Component>
+        <Initial>0.000</Initial>
+        <Final>0.000</Final>
+        <FillTime>9</FillTime>
+        <EmptyTime>343</EmptyTime>
+      </Tare>
+    </Tares>
+  </Ticket>
+</Tickets>

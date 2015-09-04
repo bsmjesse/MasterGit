@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_Drivers" targetNamespace="http://tempuri.org/DS_Drivers.xsd" xmlns:mstns="http://tempuri.org/DS_Drivers.xsd" xmlns="http://tempuri.org/DS_Drivers.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_Drivers" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DS_Drivers" msprop:Generator_DataSetName="DS_Drivers">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vlfDriver" msprop:Generator_UserTableName="vlfDriver" msprop:Generator_RowDeletedName="vlfDriverRowDeleted" msprop:Generator_RowChangedName="vlfDriverRowChanged" msprop:Generator_RowClassName="vlfDriverRow" msprop:Generator_RowChangingName="vlfDriverRowChanging" msprop:Generator_RowEvArgName="vlfDriverRowChangeEvent" msprop:Generator_RowEvHandlerName="vlfDriverRowChangeEventHandler" msprop:Generator_TableClassName="vlfDriverDataTable" msprop:Generator_TableVarName="tablevlfDriver" msprop:Generator_RowDeletingName="vlfDriverRowDeleting" msprop:Generator_TablePropName="vlfDriver">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DriverID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_UserColumnName="DriverID" msprop:Generator_ColumnPropNameInRow="DriverID" msprop:Generator_ColumnVarNameInTable="columnDriverID" msprop:Generator_ColumnPropNameInTable="DriverIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="FirstName" msprop:Generator_UserColumnName="FirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" type="xs:string" />
+              <xs:element name="LastName" msprop:Generator_UserColumnName="LastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" type="xs:string" />
+              <xs:element name="License" msprop:Generator_UserColumnName="License" msprop:Generator_ColumnPropNameInRow="License" msprop:Generator_ColumnVarNameInTable="columnLicense" msprop:Generator_ColumnPropNameInTable="LicenseColumn" type="xs:string" />
+              <xs:element name="Class" msprop:Generator_UserColumnName="Class" msprop:Generator_ColumnPropNameInRow="Class" msprop:Generator_ColumnVarNameInTable="columnClass" msprop:Generator_ColumnPropNameInTable="ClassColumn" type="xs:string" />
+              <xs:element name="LicenseIssued" msprop:Generator_UserColumnName="LicenseIssued" msprop:Generator_ColumnPropNameInRow="LicenseIssued" msprop:Generator_ColumnVarNameInTable="columnLicenseIssued" msprop:Generator_ColumnPropNameInTable="LicenseIssuedColumn" type="xs:dateTime" />
+              <xs:element name="LicenseExpired" msprop:Generator_UserColumnName="LicenseExpired" msprop:Generator_ColumnPropNameInRow="LicenseExpired" msprop:Generator_ColumnVarNameInTable="columnLicenseExpired" msprop:Generator_ColumnPropNameInTable="LicenseExpiredColumn" type="xs:dateTime" />
+              <xs:element name="OrganizationId" msprop:Generator_UserColumnName="OrganizationId" msprop:Generator_ColumnPropNameInRow="OrganizationId" msprop:Generator_ColumnVarNameInTable="columnOrganizationId" msprop:Generator_ColumnPropNameInTable="OrganizationIdColumn" type="xs:int" />
+              <xs:element name="Gender" msprop:Generator_UserColumnName="Gender" msprop:Generator_ColumnPropNameInRow="Gender" msprop:Generator_ColumnVarNameInTable="columnGender" msprop:Generator_ColumnPropNameInTable="GenderColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:length value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Height" msprop:Generator_UserColumnName="Height" msprop:Generator_ColumnPropNameInRow="Height" msprop:Generator_ColumnVarNameInTable="columnHeight" msprop:Generator_ColumnPropNameInTable="HeightColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="HomePhone" msprop:Generator_UserColumnName="HomePhone" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="HomePhone" msprop:Generator_ColumnPropNameInTable="HomePhoneColumn" msprop:Generator_ColumnVarNameInTable="columnHomePhone" type="xs:string" minOccurs="0" />
+              <xs:element name="CellPhone" msprop:Generator_UserColumnName="CellPhone" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="CellPhone" msprop:Generator_ColumnPropNameInTable="CellPhoneColumn" msprop:Generator_ColumnVarNameInTable="columnCellPhone" type="xs:string" minOccurs="0" />
+              <xs:element name="AdditionalPhone" msprop:Generator_UserColumnName="AdditionalPhone" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="AdditionalPhone" msprop:Generator_ColumnPropNameInTable="AdditionalPhoneColumn" msprop:Generator_ColumnVarNameInTable="columnAdditionalPhone" type="xs:string" minOccurs="0" />
+              <xs:element name="SMSID" msprop:Generator_UserColumnName="SMSID" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="SMSID" msprop:Generator_ColumnPropNameInTable="SMSIDColumn" msprop:Generator_ColumnVarNameInTable="columnSMSID" type="xs:string" minOccurs="0" />
+              <xs:element name="Email" msprop:Generator_UserColumnName="Email" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnVarNameInTable="columnEmail" type="xs:string" minOccurs="0" />
+              <xs:element name="Address" msprop:Generator_UserColumnName="Address" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_ColumnVarNameInTable="columnAddress" type="xs:string" minOccurs="0" />
+              <xs:element name="City" msprop:Generator_UserColumnName="City" msprop:nullValue="_null" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_ColumnPropNameInRow="City" type="xs:string" minOccurs="0" />
+              <xs:element name="ZipCode" msprop:Generator_UserColumnName="ZipCode" msprop:nullValue="_null" msprop:Generator_ColumnVarNameInTable="columnZipCode" msprop:Generator_ColumnPropNameInTable="ZipCodeColumn" msprop:Generator_ColumnPropNameInRow="ZipCode" type="xs:string" minOccurs="0" />
+              <xs:element name="State" msprop:Generator_UserColumnName="State" msprop:nullValue="_null" msprop:Generator_ColumnVarNameInTable="columnState" msprop:Generator_ColumnPropNameInTable="StateColumn" msprop:Generator_ColumnPropNameInRow="State" type="xs:string" minOccurs="0" />
+              <xs:element name="Country" msprop:Generator_UserColumnName="Country" msprop:nullValue="_null" msprop:Generator_ColumnVarNameInTable="columnCountry" msprop:Generator_ColumnPropNameInTable="CountryColumn" msprop:Generator_ColumnPropNameInRow="Country" type="xs:string" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_UserColumnName="Description" msprop:nullValue="_null" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_ColumnPropNameInRow="Description" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:vlfDriver" />
+      <xs:field xpath="mstns:DriverID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

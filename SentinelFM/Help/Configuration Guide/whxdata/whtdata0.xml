@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<tocdata>
+<item name="Overview of the Configuration Guide" url="Overview_Configuration_Guide.htm" />
+<book name="User Preferences" >
+  <item name="Changing User Preferences" url="Changing_User_Preferences.htm" />
+  <item name="Changing Your Password" url="Changing_Your_Password.htm" />
+</book>
+<book name="Setting Up Fleets" >
+  <item name="Emails for Alarm Notification" url="Setting_Up_Email_Addresses.htm" />
+  <item name="View, Add, Modify or Delete Fleets" url="View,_Add,_Modify_or_Delete_Fleets.htm" />
+  <item name="Assigning Vehicles to Fleets" url="Assign_Vehicles_to_Fleets.htm" />
+  <item name="Assigning Users to Fleets" url="Assign_Users_to_Fleets.htm" />
+</book>
+<book name="Setting Up Vehicles" >
+  <item name="View, Add, Modify or Delete Vehicles" url="Setting_Up_Vehicles.htm" />
+  <item name="Modifying Input Sensor Names" url="Setting_Alarm_Severity_and_Customizing_Sensor_Names.htm" />
+  <item name="Modifying Input Sensor Alarm Severity" url="Setting_Alarm_Severity.htm" />
+  <item name="Modifying Output Names " url="Customizing_Output_Names.htm" />
+</book>
+<book name="Setting Up Users" >
+  <item name="View, Add, Modify or Delete Users" url="View,_Add,_Modify_or_Delete_Users.htm" />
+  <item name="Assigning Users to Access Groups" url="Assigning_Users_to_Access_Groups.htm" />
+</book>
+<book name="Setting Up Landmarks and GeoZones" >
+  <item name="About Landmarks" url="About_Lankmarks.htm" />
+  <item name="Setting Up Landmarks" url="Setting_Up_Landmarks.htm" />
+  <item name="Setting Up GeoZones" url="Setting_Up_Geozones.htm" />
+  <item name="Assigning GeoZones to Vehicles" url="Assigning_GeoZones_to_Vehicles.htm" />
+  <item name="Removing GeoZones from a Vehicle" url="Removing_GeoZones_from_a_Vehicle.htm" />
+  <item name="Changing Severity Levels for GeoZones" url="Changing_Severity_Levels_for_GeoZones.htm" />
+  <item name="Viewing Landmarks and GeoZones" url="Viewing_Landmarks_and_Geozones.htm" />
+  <item name="Checking GeoZone Status in the Box" url="Checking_GeoZone_Status_in_the_Box.htm" />
+</book>
+
+</tocdata>

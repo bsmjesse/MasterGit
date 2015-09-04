@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SAMasterPage.master.cs" Inherits="ScheduleAdherence_SAMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+	<table id="tblCommands" style="LEFT: 8px; POSITION: absolute; TOP: 4px" cellSpacing="0" cellPadding="0" border="0">
+		<TR>
+			<TD>
+                <table id="tblButtons" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <asp:Button ID="cmdSchedule" runat="server" CausesValidation="False" CssClass="confbutton" Text="Schedules"
+                                PostBackUrl="Index.aspx" />
+                        </td>
+                        <td>
+                            <asp:Button ID="cmdStation" runat="server" CssClass="confbutton" CausesValidation="False" Text="Stations/Depots"
+                                 PostBackUrl="frmStationMap.aspx"  >
+                            </asp:Button>
+                        </td>
+                        <td>
+                            <asp:Button ID="cmdReport" runat="server" Text="Report" CssClass="confbutton"
+                                CausesValidation="False" PostBackUrl="frmReport.aspx">
+                            </asp:Button>
+                        </td>
+                        <td id="td_cmdChart" runat="server" visible="false">
+                            <asp:Button ID="cmdChart" runat="server" Text="Live Chart" CssClass="confbutton"
+                                CausesValidation="False" PostBackUrl="frmLiveChart.aspx" >
+                            </asp:Button>
+                        </td>
+                        <td>
+                            <asp:Button ID="cmdReasonCode" runat="server" CssClass="confbutton" CausesValidation="False" Text="Setting" 
+                               PostBackUrl="frmReasonCodeList.aspx">
+                            </asp:Button>
+                        </td>
+                    </tr>
+                </table>
+			</TD>
+		</TR>
+        <tr style="height:20px"><td></td></tr>
+		<tr><td>
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </td></tr>
+     </table>
+    </form>
+</body>
+</html>

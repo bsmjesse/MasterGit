@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Landmark" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="httpws_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://dev2:8080/GeomarkService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://dev2:8080/GeomarkService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dev2:8080/GeomarkService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BsmLandmarkService" />
+      <xsd:import schemaLocation="http://dev2:8080/GeomarkService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Telogis.GeoBase" />
+      <xsd:import schemaLocation="http://dev2:8080/GeomarkService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGeomarkService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetLandmarks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLandmarks" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetLandmarks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLandmarksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetClusterKeyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClusterKeyId" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetClusterKeyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClusterKeyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_UpdateLandmarkCluster_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLandmarkCluster" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_UpdateLandmarkCluster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLandmarkClusterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetLandmarkServiceAndRules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLandmarkServiceAndRules" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetLandmarkServiceAndRules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLandmarkServiceAndRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_DeleteFromSpatialTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFromSpatialTable" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_DeleteFromSpatialTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFromSpatialTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_InLandmark_InputMessage">
+    <wsdl:part name="parameters" element="tns:InLandmark" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_InLandmark_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InLandmarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_InGeoLandmark_InputMessage">
+    <wsdl:part name="parameters" element="tns:InGeoLandmark" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_InGeoLandmark_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InGeoLandmarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetFleets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFleets" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetFleets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFleetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_InGeoLandmarkWithDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:InGeoLandmarkWithDetail" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_InGeoLandmarkWithDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InGeoLandmarkWithDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_PointInLandmark_InputMessage">
+    <wsdl:part name="parameters" element="tns:PointInLandmark" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_PointInLandmark_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PointInLandmarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_ReverseGeoCoder_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReverseGeoCoder" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_ReverseGeoCoder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReverseGeoCoderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetServiceAssignment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceAssignment" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetServiceAssignment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetLandmarkGeometry_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLandmarkGeometry" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetLandmarkGeometry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLandmarkGeometryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetContextRelatedLandmarks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContextRelatedLandmarks" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetContextRelatedLandmarks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContextRelatedLandmarksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_QuerySpeed_InputMessage">
+    <wsdl:part name="parameters" element="tns:QuerySpeed" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_QuerySpeed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QuerySpeedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_NavteqReverseGeoCoder_InputMessage">
+    <wsdl:part name="parameters" element="tns:NavteqReverseGeoCoder" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_NavteqReverseGeoCoder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NavteqReverseGeoCoderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_NavteqReverseGeoCoderWithHeading_InputMessage">
+    <wsdl:part name="parameters" element="tns:NavteqReverseGeoCoderWithHeading" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_NavteqReverseGeoCoderWithHeading_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NavteqReverseGeoCoderWithHeadingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_ReleaseCache_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReleaseCache" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_ReleaseCache_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReleaseCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetPointToLandmarkDistance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointToLandmarkDistance" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetPointToLandmarkDistance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointToLandmarkDistanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_UpdatePostpone_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePostpone" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_UpdatePostpone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePostponeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetPostpone_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostpone" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetPostpone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostponeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGeomarkService">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/GetData" message="tns:IGeomarkService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/GetDataResponse" message="tns:IGeomarkService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLandmarks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/GetLandmarks" message="tns:IGeomarkService_GetLandmarks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/GetLandmarksResponse" message="tns:IGeomarkService_GetLandmarks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClusterKeyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/GetClusterKeyId" message="tns:IGeomarkService_GetClusterKeyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/GetClusterKeyIdResponse" message="tns:IGeomarkService_GetClusterKeyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLandmarkCluster">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/UpdateLandmarkCluster" message="tns:IGeomarkService_UpdateLandmarkCluster_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/UpdateLandmarkClusterResponse" message="tns:IGeomarkService_UpdateLandmarkCluster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLandmarkServiceAndRules">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/GetLandmarkServiceAndRules" message="tns:IGeomarkService_GetLandmarkServiceAndRules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/GetLandmarkServiceAndRulesResponse" message="tns:IGeomarkService_GetLandmarkServiceAndRules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFromSpatialTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/DeleteFromSpatialTable" message="tns:IGeomarkService_DeleteFromSpatialTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/DeleteFromSpatialTableResponse" message="tns:IGeomarkService_DeleteFromSpatialTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InLandmark">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/InLandmark" message="tns:IGeomarkService_InLandmark_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/InLandmarkResponse" message="tns:IGeomarkService_InLandmark_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InGeoLandmark">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/InGeoLandmark" message="tns:IGeomarkService_InGeoLandmark_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/InGeoLandmarkResponse" message="tns:IGeomarkService_InGeoLandmark_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/GetFleets" message="tns:IGeomarkService_GetFleets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/GetFleetsResponse" message="tns:IGeomarkService_GetFleets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InGeoLandmarkWithDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/InGeoLandmarkWithDetail" message="tns:IGeomarkService_InGeoLandmarkWithDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/InGeoLandmarkWithDetailResponse" message="tns:IGeomarkService_InGeoLandmarkWithDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PointInLandmark">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/PointInLandmark" message="tns:IGeomarkService_PointInLandmark_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/PointInLandmarkResponse" message="tns:IGeomarkService_PointInLandmark_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/GetDataUsingDataContract" message="tns:IGeomarkService_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/GetDataUsingDataContractResponse" message="tns:IGeomarkService_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReverseGeoCoder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/ReverseGeoCoder" message="tns:IGeomarkService_ReverseGeoCoder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/ReverseGeoCoderResponse" message="tns:IGeomarkService_ReverseGeoCoder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceAssignment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/GetServiceAssignment" message="tns:IGeomarkService_GetServiceAssignment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/GetServiceAssignmentResponse" message="tns:IGeomarkService_GetServiceAssignment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLandmarkGeometry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/GetLandmarkGeometry" message="tns:IGeomarkService_GetLandmarkGeometry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/GetLandmarkGeometryResponse" message="tns:IGeomarkService_GetLandmarkGeometry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContextRelatedLandmarks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/GetContextRelatedLandmarks" message="tns:IGeomarkService_GetContextRelatedLandmarks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/GetContextRelatedLandmarksResponse" message="tns:IGeomarkService_GetContextRelatedLandmarks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QuerySpeed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/QuerySpeed" message="tns:IGeomarkService_QuerySpeed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/QuerySpeedResponse" message="tns:IGeomarkService_QuerySpeed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NavteqReverseGeoCoder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/NavteqReverseGeoCoder" message="tns:IGeomarkService_NavteqReverseGeoCoder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/NavteqReverseGeoCoderResponse" message="tns:IGeomarkService_NavteqReverseGeoCoder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NavteqReverseGeoCoderWithHeading">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/NavteqReverseGeoCoderWithHeading" message="tns:IGeomarkService_NavteqReverseGeoCoderWithHeading_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/NavteqReverseGeoCoderWithHeadingResponse" message="tns:IGeomarkService_NavteqReverseGeoCoderWithHeading_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseCache">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/ReleaseCache" message="tns:IGeomarkService_ReleaseCache_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/ReleaseCacheResponse" message="tns:IGeomarkService_ReleaseCache_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointToLandmarkDistance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/GetPointToLandmarkDistance" message="tns:IGeomarkService_GetPointToLandmarkDistance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/GetPointToLandmarkDistanceResponse" message="tns:IGeomarkService_GetPointToLandmarkDistance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePostpone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/UpdatePostpone" message="tns:IGeomarkService_UpdatePostpone_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/UpdatePostponeResponse" message="tns:IGeomarkService_UpdatePostpone_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostpone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/GetPostpone" message="tns:IGeomarkService_GetPostpone_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/GetPostponeResponse" message="tns:IGeomarkService_GetPostpone_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="httpws" type="tns:IGeomarkService">
+    <wsp:PolicyReference URI="#httpws_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/GetData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLandmarks">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/GetLandmarks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClusterKeyId">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/GetClusterKeyId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLandmarkCluster">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/UpdateLandmarkCluster" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLandmarkServiceAndRules">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/GetLandmarkServiceAndRules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFromSpatialTable">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/DeleteFromSpatialTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InLandmark">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/InLandmark" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InGeoLandmark">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/InGeoLandmark" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleets">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/GetFleets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InGeoLandmarkWithDetail">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/InGeoLandmarkWithDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PointInLandmark">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/PointInLandmark" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReverseGeoCoder">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/ReverseGeoCoder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceAssignment">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/GetServiceAssignment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLandmarkGeometry">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/GetLandmarkGeometry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContextRelatedLandmarks">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/GetContextRelatedLandmarks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuerySpeed">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/QuerySpeed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NavteqReverseGeoCoder">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/NavteqReverseGeoCoder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NavteqReverseGeoCoderWithHeading">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/NavteqReverseGeoCoderWithHeading" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseCache">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/ReleaseCache" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointToLandmarkDistance">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/GetPointToLandmarkDistance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePostpone">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/UpdatePostpone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostpone">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/GetPostpone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="httpbasic" type="tns:IGeomarkService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLandmarks">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/GetLandmarks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClusterKeyId">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/GetClusterKeyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLandmarkCluster">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/UpdateLandmarkCluster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLandmarkServiceAndRules">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/GetLandmarkServiceAndRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFromSpatialTable">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/DeleteFromSpatialTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InLandmark">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/InLandmark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InGeoLandmark">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/InGeoLandmark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleets">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/GetFleets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InGeoLandmarkWithDetail">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/InGeoLandmarkWithDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PointInLandmark">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/PointInLandmark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReverseGeoCoder">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/ReverseGeoCoder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceAssignment">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/GetServiceAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLandmarkGeometry">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/GetLandmarkGeometry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContextRelatedLandmarks">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/GetContextRelatedLandmarks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuerySpeed">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/QuerySpeed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NavteqReverseGeoCoder">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/NavteqReverseGeoCoder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NavteqReverseGeoCoderWithHeading">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/NavteqReverseGeoCoderWithHeading" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseCache">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/ReleaseCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointToLandmarkDistance">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/GetPointToLandmarkDistance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePostpone">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/UpdatePostpone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostpone">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/GetPostpone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Landmark">
+    <wsdl:port name="httpws" binding="tns:httpws">
+      <soap12:address location="http://dev2:8080/GeomarkService.svc/httpbind" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://dev2:8080/GeomarkService.svc/httpbind</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="httpbasic" binding="tns:httpbasic">
+      <soap:address location="http://dev2:8080/GeomarkService.svc/basicbind" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

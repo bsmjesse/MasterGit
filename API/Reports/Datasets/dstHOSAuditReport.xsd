@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstHOSAuditReport" targetNamespace="http://tempuri.org/dstHOSAuditReport.xsd" xmlns:mstns="http://tempuri.org/dstHOSAuditReport.xsd" xmlns="http://tempuri.org/dstHOSAuditReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstHOSAuditReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Table">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DriverName" type="xs:string" minOccurs="0" />
+              <xs:element name="DriverID" type="xs:string" minOccurs="0" />
+              <xs:element name="ExceptionDateTime" type="xs:string" minOccurs="0" />
+              <xs:element name="Vehicle" type="xs:string" minOccurs="0" />
+              <xs:element name="Trailer" type="xs:string" minOccurs="0" />
+              <xs:element name="EOBR" type="xs:string" minOccurs="0" />
+              <xs:element name="Cycle" type="xs:string" minOccurs="0" />
+              <xs:element name="Exception" type="xs:string" minOccurs="0" />
+              <xs:element name="Hours" type="xs:string" minOccurs="0" />
+              <xs:element name="StartOdometer" type="xs:string" minOccurs="0" />
+              <xs:element name="EndOdometer" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" type="xs:string" minOccurs="0" />
+              <xs:element name="CoDriver" type="xs:string" minOccurs="0" />
+              <xs:element name="CoDriverID" type="xs:string" minOccurs="0" />
+              <xs:element name="Shipping" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

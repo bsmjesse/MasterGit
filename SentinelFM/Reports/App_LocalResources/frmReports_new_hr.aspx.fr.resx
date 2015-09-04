@@ -1,0 +1,1626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BusyPleaseWaitMessage" xml:space="preserve">
+    <value>Veuillez patienter</value>
+  </data>
+  <data name="BusyPreparingMessage" xml:space="preserve">
+    <value>Préparation du rapport en cours</value>
+  </data>
+  <data name="BusyReportResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboDoorPeriodResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboFleet_Item_0" xml:space="preserve">
+    <value>Sélectionner une flotte de véhicules</value>
+  </data>
+  <data name="cboFleetReportFormatResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboFormatResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboFromDayHResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboFromDayMResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboHoursFromResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboHoursToResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboMaintenanceFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboReportsResource1.EmptyMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboReportsResource1.LoadingMessage" xml:space="preserve">
+    <value>Chargement ...</value>
+  </data>
+  <data name="cboReportsResource1.Localization.NoMatches" xml:space="preserve">
+    <value>Aucun resultat</value>
+  </data>
+  <data name="cboReportsResource1.Localization.ShowMoreFormatString" xml:space="preserve">
+    <value>Articles &lt;b&gt;1&lt;/b&gt;-&lt;b&gt;{0}&lt;/b&gt; sur &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data name="cboReportsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboSOSLimitResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboStopSequenceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboToDayHResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboToDayMResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboVehicle_Item_0" xml:space="preserve">
+    <value>Sélectionner un véhicule</value>
+  </data>
+  <data name="cboVehicle_Item_0_EntireFleet" xml:space="preserve">
+    <value>Flotte entière</value>
+  </data>
+  <data name="cboVehicleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboWeekEndFromHResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboWeekEndFromMResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboWeekEndToHResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboWeekEndToMResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDoorResource1.Text" xml:space="preserve">
+    <value>Numéro</value>
+  </data>
+  <data name="chkDoorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDriverDoorExcResource1.Text" xml:space="preserve">
+    <value>Porte du chauffeur</value>
+  </data>
+  <data name="chkDriverDoorExcResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDriverDoorResource1.Text" xml:space="preserve">
+    <value>Chauffeur (15 sec.)/ Infraction 15 sec. porte chauffeur/passager </value>
+  </data>
+  <data name="chkDriverDoorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkExcAVLResource1.Text" xml:space="preserve">
+    <value>État du contrôleur </value>
+  </data>
+  <data name="chkExcAVLResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkExcBatteryResource1.Text" xml:space="preserve">
+    <value>Batterie principale et batterie de soutien</value>
+  </data>
+  <data name="chkExcBatteryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkExcGPSResource1.Text" xml:space="preserve">
+    <value>Antenne GPS secondaire</value>
+  </data>
+  <data name="chkExcGPSResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkExcKeypadResource1.Text" xml:space="preserve">
+    <value>3 tentatives de clavier/carte incorrectes </value>
+  </data>
+  <data name="chkExcKeypadResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkExcLeashResource1.Text" xml:space="preserve">
+    <value>Attache brisée </value>
+  </data>
+  <data name="chkExcLeashResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkExcPanicResource1.Text" xml:space="preserve">
+    <value>Tout événement de panique</value>
+  </data>
+  <data name="chkExcPanicResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkExcTamperResource1.Text" xml:space="preserve">
+    <value>Événements de sabotage</value>
+  </data>
+  <data name="chkExcTamperResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkExtremeAccelerationResource1.Text" xml:space="preserve">
+    <value>Accélération excessive</value>
+  </data>
+  <data name="chkExtremeAccelerationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkExtremeBrakingResource1.Text" xml:space="preserve">
+    <value>Freinage excessif</value>
+  </data>
+  <data name="chkExtremeBrakingResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkHarshAccelerationResource1.Text" xml:space="preserve">
+    <value>Accélération agressive</value>
+  </data>
+  <data name="chkHarshAccelerationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkHarshBrakingResource1.Text" xml:space="preserve">
+    <value>Freinage agressif</value>
+  </data>
+  <data name="chkHarshBrakingResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkHistIncludeCoordinateResource1.Text" xml:space="preserve">
+    <value>Inclure les coordonnées</value>
+  </data>
+  <data name="chkHistIncludeCoordinateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkHistIncludeInvalidGPSResource1.Text" xml:space="preserve">
+    <value>Inclure les positions GPS invalides pour les messages de coordonnées </value>
+  </data>
+  <data name="chkHistIncludeInvalidGPSResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkHistIncludePositionsResource1.Text" xml:space="preserve">
+    <value>Inclure la position</value>
+  </data>
+  <data name="chkHistIncludePositionsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkHistIncludeSensorsResource1.Text" xml:space="preserve">
+    <value>Inclure les capteurs</value>
+  </data>
+  <data name="chkHistIncludeSensorsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkImmobilizationResource1.Text" xml:space="preserve">
+    <value>Événements d'immobilisation du véhicule </value>
+  </data>
+  <data name="chkImmobilizationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkIncCurTARModeResource1.Text" xml:space="preserve">
+    <value>Inclure l'état actuel du mode TAR</value>
+  </data>
+  <data name="chkIncCurTARModeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkIncludeIdleTimeResource1.Text" xml:space="preserve">
+    <value>Inclure le temps d'inactivité</value>
+  </data>
+  <data name="chkIncludeIdleTimeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkIncludePositionResource1.Text" xml:space="preserve">
+    <value>Inclure la position</value>
+  </data>
+  <data name="chkIncludePositionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkIncludeSensorsResource1.Text" xml:space="preserve">
+    <value>Inclure les capteurs</value>
+  </data>
+  <data name="chkIncludeSensorsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkIncludeStreetAddressResource1.Text" xml:space="preserve">
+    <value>Inclure l'adresse </value>
+  </data>
+  <data name="chkIncludeStreetAddressResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkIncludeSummaryResource1.Text" xml:space="preserve">
+    <value>Inclure le sommaire</value>
+  </data>
+  <data name="chkIncludeSummaryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkLeashResource1.Text" xml:space="preserve">
+    <value>50% d'événement d'attaches</value>
+  </data>
+  <data name="chkLeashResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkPassengerDoorExcResource1.Text" xml:space="preserve">
+    <value>Porte du passager</value>
+  </data>
+  <data name="chkPassengerDoorExcResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkRearHopperDoorExcResource1.Text" xml:space="preserve">
+    <value>Porte arrière</value>
+  </data>
+  <data name="chkRearHopperDoorExcResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkSeatBeltViolationResource1.Text" xml:space="preserve">
+    <value>Violation de la ceinture de sécurité</value>
+  </data>
+  <data name="chkSeatBeltViolationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkShowStorePositionResource1.Text" xml:space="preserve">
+    <value>Afficher la position en mémoire</value>
+  </data>
+  <data name="chkShowStorePositionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkSideHopperDoorExcResource1.Text" xml:space="preserve">
+    <value>Porte latérale</value>
+  </data>
+  <data name="chkSideHopperDoorExcResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkSOSModeResource1.Text" xml:space="preserve">
+    <value>Plus que</value>
+  </data>
+  <data name="chkSOSModeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkSpeedViolationResource1.Text" xml:space="preserve">
+    <value>Violation de vitesse</value>
+  </data>
+  <data name="chkSpeedViolationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkTARResource1.Text" xml:space="preserve">
+    <value>Tout événement en mode TAR</value>
+  </data>
+  <data name="chkTARResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkWeekendResource1.Text" xml:space="preserve">
+    <value>Aucune opération les fins de semaine</value>
+  </data>
+  <data name="chkWeekendResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdPreviewFleetMaintenanceReportResource1.Text" xml:space="preserve">
+    <value>Créer</value>
+  </data>
+  <data name="cmdPreviewFleetMaintenanceReportResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdScheduleResource1.Text" xml:space="preserve">
+    <value>Rapport de cédules</value>
+  </data>
+  <data name="cmdScheduleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdShowResource1.Text" xml:space="preserve">
+    <value>Créer</value>
+  </data>
+  <data name="cmdShowResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdViewScheduledResource1.Text" xml:space="preserve">
+    <value>Voir les rapports programmés</value>
+  </data>
+  <data name="cmdViewScheduledResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlDrivers_Item_0" xml:space="preserve">
+    <value>Sélectionner un chauffeur</value>
+  </data>
+  <data name="ddlDrivers_NoAvailable" xml:space="preserve">
+    <value>Aucun chauffeur disponible</value>
+  </data>
+  <data name="ddlDriversResource1.EmptyMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlDriversResource1.LoadingMessage" xml:space="preserve">
+    <value>Chargement...</value>
+  </data>
+  <data name="ddlDriversResource1.Localization.NoMatches" xml:space="preserve">
+    <value>Aucun resultat</value>
+  </data>
+  <data name="ddlDriversResource1.Localization.ShowMoreFormatString" xml:space="preserve">
+    <value>Articles &lt;b&gt;1&lt;/b&gt;-&lt;b&gt;{0}&lt;/b&gt; sur &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data name="ddlDriversResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlGeozones_Item_0" xml:space="preserve">
+    <value>Veuillez sélectionner une Géo-Zone</value>
+  </data>
+  <data name="ddlGeozones_NoAvailable" xml:space="preserve">
+    <value>Aucune Géo-Zone disponible</value>
+  </data>
+  <data name="ddlGeozonesResource1.EmptyMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlGeozonesResource1.LoadingMessage" xml:space="preserve">
+    <value>Chargement...</value>
+  </data>
+  <data name="ddlGeozonesResource1.Localization.NoMatches" xml:space="preserve">
+    <value>Aucun resultat</value>
+  </data>
+  <data name="ddlGeozonesResource1.Localization.ShowMoreFormatString" xml:space="preserve">
+    <value>Articles &lt;b&gt;1&lt;/b&gt;-&lt;b&gt;{0}&lt;/b&gt; sur &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data name="ddlGeozonesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlLandmarks_Item_0" xml:space="preserve">
+    <value>Sélectionner un site</value>
+  </data>
+  <data name="ddlLandmarks_NoAvailable" xml:space="preserve">
+    <value>Aucun site disponible</value>
+  </data>
+  <data name="ddlLandmarksResource1.EmptyMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlLandmarksResource1.LoadingMessage" xml:space="preserve">
+    <value>Chargement...</value>
+  </data>
+  <data name="ddlLandmarksResource1.Localization.NoMatches" xml:space="preserve">
+    <value>Aucun resultat</value>
+  </data>
+  <data name="ddlLandmarksResource1.Localization.ShowMoreFormatString" xml:space="preserve">
+    <value>Articles &lt;b&gt;1&lt;/b&gt;-&lt;b&gt;{0}&lt;/b&gt; sur &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data name="ddlLandmarksResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlReportItemResource1.Text" xml:space="preserve">
+    <value>Rapports Standard</value>
+  </data>
+  <data name="ddlReportItemResource1.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ddlReportItemResource2.Text" xml:space="preserve">
+    <value>Extended Rapports</value>
+  </data>
+  <data name="ddlReportItemResource2.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ddlReportResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Description_AlarmsReport" xml:space="preserve">
+    <value>Ce rapport résume toutes les alarmes de sécurité qui se sont produites dans le système durant la période de temps sélectionnée. Il peut être filtré par date/heure et est généré pour un seul véhicule ou pour une flotte entière.</value>
+  </data>
+  <data name="Description_DriverTripDetailsReport" xml:space="preserve">
+    <value>Rapport détaillé des déplacements du chauffeur</value>
+  </data>
+  <data name="Description_DriverTripSummaryReport" xml:space="preserve">
+    <value>Sommaire des déplacements du chauffeur</value>
+  </data>
+  <data name="Description_FleetMaintenanceReport" xml:space="preserve">
+    <value>Fournit un rapport d'entretien de véhicule icluant les lectures d'odomètre actuelles et si l'entretien a été récemment effectué, est dû ou est en retard.</value>
+  </data>
+  <data name="Description_FleetViolationReport" xml:space="preserve">
+    <value>Fournit un rapport d'occurence de différentes infractions de conduite, incluant :  Violation de vitesse, Accélération agressive, Freinage agressif, Accélération excessive, Freinage excessif et infraction de la ceinture de sécurité.  L'usager peut choisir les violations et la période de temps à rapporter.</value>
+  </data>
+  <data name="Description_FleetViolationSummaryReport" xml:space="preserve">
+    <value>Ce rapport fournit un sommaire des infractions qui ont eu lieu pour une période de temps spécifique en assignant des valeurs de points de démérite configurables pour chaque type d'infraction, incluant : Violation de vitesse, Accélération agressive, Freinage agressif, Accélération excessive, Freinage excessif et infraction de la ceinture de sécurité.  Le type d'infractions à être rapportées et le nombre de points de démérite pour différents types de violations peuvent être spécifiés par l'utilisateur dans l'écran de rapport.  Le rapport multiplie le nombre d'occurences d'infractions par la valeur de points de démérite assignée pour générer un résultat total de points de démérite d'infractions pour chaque véhicule.  Le résultat total est référé par la couleur pour indiquer la sévérité du résultat des points de démérite des infractions</value>
+  </data>
+  <data name="Description_GeozoneSummaryReport" xml:space="preserve">
+    <value>Géo-Zzone rapport de synthèse Description</value>
+  </data>
+  <data name="Description_HistoryReport" xml:space="preserve">
+    <value>Ce rapport résume toutes les activités qui se sont produites dans le système pour un véhicule en particulier durant la période de temps sélectionnée, incluant les mises à jour d'adresse IP, les déclencheurs de capteurs, les commandes, les résultats, les mises à jour de position, les rapports de position cédulés, les textes des messages MDT et les violations de Barrière de Géo-Zone. Ce rapport peut être personnalisé pour inclure/exclure les déclencheurs de capteurs, les coordonnées GPS programmées et les positions GPS invvalides. Ce rapport peut être filtré par date/heure et généré pour un seul véhicule seulement.</value>
+  </data>
+  <data name="Description_IdlingDetailsReport" xml:space="preserve">
+    <value>Ce rapport résume le nombre total d'heures durant lesquelles l'ignition d'un véhicule est en fonction, le nombre total d'heures durant lesquelles l'ignition d'un véhicule est en fonction et le véhicule est en mode ralenti-moteur (véhicule immobile) et le pourcentage de temps durant lequel le véhicule est au ralenti-moteur (temps de ralenti divisé par le temps total d'allumage).  L'usager peut choisir la période de temps à rapporter.  Un rapport peut être généré pour un seul véhicule pour une flotte entière.</value>
+  </data>
+  <data name="Description_IdlingSummaryReport" xml:space="preserve">
+    <value>Un rapport sommaire sur les détails de ralenti-moteur conçu pour une flotte de véhicules pour une période de temps sélectionnée.  Le rapport affiche le nombre total d'heures pour toute la flotte de véhicules durant lesquelles l'ignition du véhicule est en fonction, le nombre total d'heures durant lesquelles l'ignition du véhicule est en fonction et le véhicule est en mode ralenti-moteur (véhicule immobile), le poucentage de temps durant lequel tous les véhicules sont au ralenti-moteur (temps au ralenti divisé par le temps total d'ignition) et la moyenne de temps du ralenti-moteur par véhicule.</value>
+  </data>
+  <data name="Description_InactivityReport" xml:space="preserve">
+    <value>Rapport d'inactivité description:</value>
+  </data>
+  <data name="Description_LandmarkActivityReport" xml:space="preserve">
+    <value>Ce rapport présente un sommaire du temps total utilisé par un véhicule à chaque site, si applicable</value>
+  </data>
+  <data name="Description_LandmarkDetailsReport" xml:space="preserve">
+    <value>Repère le rapport détaillé description:</value>
+  </data>
+  <data name="Description_LandmarkSummaryReport" xml:space="preserve">
+    <value>Repère rapport de synthèse description:</value>
+  </data>
+  <data name="Description_MessagesReport" xml:space="preserve">
+    <value>Ce rapport présente une liste de messages textuels envoyés et reçus par le système durant la période de temps sélectionnée, incluant De, À, direction d'un message, messages textuels et réponses. Il peut être filtré par date/heure et généré pour un seul véhicule ou pour une flotte entière.</value>
+  </data>
+  <data name="Description_OffHoursOperation" xml:space="preserve">
+    <value>Ce rapport présente une liste de tous les véhicules ayant été utilisés après les horaires de travail.</value>
+  </data>
+  <data name="Description_StopReport" xml:space="preserve">
+    <value>Ce rapport présente une liste de tous les arrêts, incluant les temps de ralentis-moteur et indique l'heure d'arrivée, l'adresse, l'heure de départ et la durée de l'arrêt durant la période de temps sélectionnée. Il totalise aussi le nombre d'arrêts et le temps d'arrêt. Ce rapport peut être filtré par date/heure et généré pour un seul véhicule ou une flotte entière.</value>
+  </data>
+  <data name="Description_TripDetailsReport" xml:space="preserve">
+    <value>Ce rapport présente les détails des déplacements du véhicule durant une période de temps spécifiée. Chaque déplacement est déterminé par l'ignition activé/interrompu, représentant le début et la fin du déplacement et inclut l'information sur la position du véhicules et tous les capteurs qui ont été déclenchés. Ce rapport peut être personnalisé pour inclure/exclure l'adresse, les déclencheurs de capteurs, les rapports de position programmés, le temps de ralenti-moteur, la position d'entreposage et le sommaire des déplacements. Il peut aussi être filtré par date/heure et généré pour un seul véhicule ou une flotte entière.</value>
+  </data>
+  <data name="Description_TripSummaryReport" xml:space="preserve">
+    <value>Ce rapport résume chaque voyage déterminé par l'ignition activé/interrompu, représentant l'adresse et l'heure du départ, l'adresse et l'heure d'arrivée, la distance parcourue, le temps des déplacements, le temps de ralentis-moteur et le temps d'arrêt pour chaque voyage. Il totalise aussi le nombre et le temps de déplacements, le temps de ralentis-moteur, le temps d'arrêt et la distance parcourue durant la période de temps sélectionnée. Ce rapport peut être filtré par date/heure et généré pour un seul véhicule ou une flotte entière.</value>
+  </data>
+  <data name="Label1Resource1.Text" xml:space="preserve">
+    <value>Jour</value>
+  </data>
+  <data name="Label1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label2Resource1.Text" xml:space="preserve">
+    <value>Heure</value>
+  </data>
+  <data name="Label2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label3Resource1.Text" xml:space="preserve">
+    <value>Aucune ouverture/ fermeture de l'intérieur  :</value>
+  </data>
+  <data name="Label3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label4Resource1.Text" xml:space="preserve">
+    <value>Jour</value>
+  </data>
+  <data name="Label4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label5Resource1.Text" xml:space="preserve">
+    <value>Heure</value>
+  </data>
+  <data name="Label5Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label6Resource1.Text" xml:space="preserve">
+    <value>Flotte :</value>
+  </data>
+  <data name="Label6Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label7Resource1.Text" xml:space="preserve">
+    <value>Format :</value>
+  </data>
+  <data name="Label7Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label9Resource1.Text" xml:space="preserve">
+    <value>Accélération agressive</value>
+  </data>
+  <data name="Label9Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelReportDescriptionResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelReportDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAccExtremeResource1.Text" xml:space="preserve">
+    <value>Accélération excessive</value>
+  </data>
+  <data name="lblAccExtremeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAlarmReportDescResource1.Text" xml:space="preserve">
+    <value>Ce rapport résume toutes les alarmes de sécurité qui se sont produites dans le système durant la période de temps sélectionnée. Il peut être filtré par date/heure et est généré pour un seul véhicule ou pour une flotte entière.</value>
+  </data>
+  <data name="lblAlarmReportDescResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBrakingExtremeResource1.Text" xml:space="preserve">
+    <value>Freinage excessif</value>
+  </data>
+  <data name="lblBrakingExtremeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBrakingHarshResource1.Text" xml:space="preserve">
+    <value>Freinage agressif</value>
+  </data>
+  <data name="lblBrakingHarshResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDriverCaptionResource1.Text" xml:space="preserve">
+    <value>Pilote:</value>
+  </data>
+  <data name="lblDriverCaptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetMaintenanceReportDescResource1.Text" xml:space="preserve">
+    <value>Fournit un rapport d'entretien de véhicule icluant les lectures d'odomètre actuelles et si l'entretien a été récemment effectué, est dû ou est en retard.</value>
+  </data>
+  <data name="lblFleetMaintenanceReportDescResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetResource1.Text" xml:space="preserve">
+    <value>Flotte :</value>
+  </data>
+  <data name="lblFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetViolationDetailsReportDescResource1.Text" xml:space="preserve">
+    <value>Provides a report on the occurrence of various driving violations including:  Speed Violation, Harsh Acceleration, Harsh Braking, Extreme Acceleration, Extreme Braking and Seat Belt Violation.  The User can choose which violations and period of time on which to report.  </value>
+  </data>
+  <data name="lblFleetViolationDetailsReportDescResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetViolationSummaryReportDescResource1.Text" xml:space="preserve">
+    <value>This report provides a summary of violations that have occurred for a specified period of time by assigning configurable demerit point values for each type of violation including: Speed Violation, Harsh Acceleration, Harsh Braking, Extreme Acceleration, Extreme Braking and Seat Belt Violation.  The type of violations to be reported on and the number of demerit points for different types of violations can be specified by the User in the report screen.  The report multiplies the number of violation occurrences by the assigned demerit point value to generate a total violation demerit score for each vehicle.  The total score is colour coded to indicated the severity of the violation demerit score. </value>
+  </data>
+  <data name="lblFleetViolationSummaryReportDescResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFormatTitleResource1.Text" xml:space="preserve">
+    <value>Format :</value>
+  </data>
+  <data name="lblFormatTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFromTitle2Resource1.Text" xml:space="preserve">
+    <value>De :</value>
+  </data>
+  <data name="lblFromTitle2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFromTitle3Resource1.Text" xml:space="preserve">
+    <value>De :</value>
+  </data>
+  <data name="lblFromTitle3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFromTitleResource1.Text" xml:space="preserve">
+    <value>De :</value>
+  </data>
+  <data name="lblFromTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneCaptionResource1.Text" xml:space="preserve">
+    <value>Geozone:</value>
+  </data>
+  <data name="lblGeozoneCaptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblHistoryReportDescResource1.Text" xml:space="preserve">
+    <value>Ce rapport résume toutes les activités qui se sont produites dans le système pour un véhicule en particulier durant la période de temps sélectionnée, incluant les mises à jour d'adresse IP, les déclencheurs de capteurs, les commandes, les résultats, les mises à jour de position, les rapports de position cédulés, les textes des messages MDT et les violations de Barrière de Géo-Zone. Ce rapport peut être personnalisé pour inclure/exclure les déclencheurs de capteurs, les coordonnées GPS programmées et les positions GPS invvalides. Ce rapport peut être filtré par date/heure et généré pour un seul véhicule seulement.</value>
+  </data>
+  <data name="lblHistoryReportDescResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIdlingDetailsReportDescResource1.Text" xml:space="preserve">
+    <value>This report summarizes the total number of hours that a vehicle ignition is on, the number of hours the vehicle ignition is on and engine is idling (no vehicle movement) and the percentage of time the vehicle is idling (idling time divided by total ignition on time).  The User can choose the period of time on which to report.</value>
+  </data>
+  <data name="lblIdlingDetailsReportDescResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIdlingSummaryReportDescResource1.Text" xml:space="preserve">
+    <value>Un rapport sommaire sur les détails de ralenti-moteur conçu pour une flotte de véhicules pour une période de temps sélectionnée.  Le rapport affiche le nombre total d'heures pour toute la flotte de véhicules durant lesquelles l'ignition du véhicule est en fonction, le nombre total d'heures durant lesquelles l'ignition du véhicule est en fonction et le véhicule est en mode ralenti-moteur (véhicule immobile), le poucentage de temps durant lequel tous les véhicules sont au ralenti-moteur (temps au ralenti divisé par le temps total d'ignition) et la moyenne de temps du ralenti-moteur par véhicule.</value>
+  </data>
+  <data name="lblIdlingSummaryReportDescResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIgnitionResource1.Text" xml:space="preserve">
+    <value>Calculer les déplacements basé sur :</value>
+  </data>
+  <data name="lblIgnitionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLandmarkActivityReportDescResource1.Text" xml:space="preserve">
+    <value>Ce rapport présente un sommaire du temps total utilisé par un véhicule à chaque site, si applicable</value>
+  </data>
+  <data name="lblLandmarkActivityReportDescResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLandmarkCaptionResource1.Text" xml:space="preserve">
+    <value>Repère:</value>
+  </data>
+  <data name="lblLandmarkCaptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessage_Text_InvalidDate" xml:space="preserve">
+    <value>La date identifiée par 'De' doit précéder celle identifiée par 'À'!</value>
+  </data>
+  <data name="lblMessage_Text_SelectVehicle" xml:space="preserve">
+    <value>Sélectionner un véhicule!</value>
+  </data>
+  <data name="lblMessageReportDescriptionResource1.Text" xml:space="preserve">
+    <value>Ce rapport présente une liste de messages textuels envoyés et reçus par le système durant la période de temps sélectionnée, incluant De, À, direction d'un message, messages textuels et réponses. Il peut être filtré par date/heure et généré pour un seul véhicule ou pour une flotte entière.</value>
+  </data>
+  <data name="lblMessageReportDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMonToFriTitleResource1.Text" xml:space="preserve">
+    <value>Lundi au vendredi :</value>
+  </data>
+  <data name="lblMonToFriTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOffHoursReportDescResource1.Text" xml:space="preserve">
+    <value>Ce rapport présente une liste de tous les véhicules ayant été utilisés après les horaires de travail.</value>
+  </data>
+  <data name="lblOffHoursReportDescResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReportDescTitleResource1.Text" xml:space="preserve">
+    <value>Description du rapport :</value>
+  </data>
+  <data name="lblReportDescTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReportFormatResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReportFormatResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReportTitleResource1.Text" xml:space="preserve">
+    <value>Rapport :</value>
+  </data>
+  <data name="lblReportTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSeatBeltResource1.Text" xml:space="preserve">
+    <value>Ceinture de sécurité</value>
+  </data>
+  <data name="lblSeatBeltResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSOSModesTitleResource1.Text" xml:space="preserve">
+    <value>Modes SOS</value>
+  </data>
+  <data name="lblSOSModesTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSpeed120Resource1.Text" xml:space="preserve">
+    <value>Vitesse &gt;</value>
+  </data>
+  <data name="lblSpeed120Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSpeed130Resource1.Text" xml:space="preserve">
+    <value>Vitesse &gt;</value>
+  </data>
+  <data name="lblSpeed130Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSpeed140Resource1.Text" xml:space="preserve">
+    <value>Vitesse &gt;</value>
+  </data>
+  <data name="lblSpeed140Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStopDurationTitleResource1.Text" xml:space="preserve">
+    <value>Durée de l'arrêt :</value>
+  </data>
+  <data name="lblStopDurationTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStopReportDescResource1.Text" xml:space="preserve">
+    <value>Ce rapport présente une liste de tous les arrêts, incluant les temps de ralentis-moteur et indique l'heure d'arrivée, l'adresse, l'heure de départ et la durée de l'arrêt durant la période de temps sélectionnée. Il totalise aussi le nombre d'arrêts et le temps d'arrêt. Ce rapport peut être filtré par date/heure et généré pour un seul véhicule ou une flotte entière.</value>
+  </data>
+  <data name="lblStopReportDescResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblToTitle2Resource1.Text" xml:space="preserve">
+    <value>À :</value>
+  </data>
+  <data name="lblToTitle2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblToTitle3Resource1.Text" xml:space="preserve">
+    <value>À :</value>
+  </data>
+  <data name="lblToTitle3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblToTitleResource1.Text" xml:space="preserve">
+    <value>À :</value>
+  </data>
+  <data name="lblToTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTripReportDescResource1.Text" xml:space="preserve">
+    <value>Ce rapport présente les détails des déplacements du véhicule durant une période de temps spécifiée. Chaque déplacement est déterminé par l'ignition activé/interrompu, représentant le début et la fin du déplacement et inclut l'information sur la position du véhicules et tous les capteurs qui ont été déclenchés. Ce rapport peut être personnalisé pour inclure/exclure l'adresse, les déclencheurs de capteurs, les rapports de position programmés, le temps de ralenti-moteur, la position d'entreposage et le sommaire des déplacements. Il peut aussi être filtré par date/heure et généré pour un seul véhicule ou une flotte entière.</value>
+  </data>
+  <data name="lblTripReportDescResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTripSummaryReportDescResource1.Text" xml:space="preserve">
+    <value>Ce rapport résume chaque voyage déterminé par l'ignition activé/interrompu, représentant l'adresse et l'heure du départ, l'adresse et l'heure d'arrivée, la distance parcourue, le temps des déplacements, le temps de ralentis-moteur et le temps d'arrêt pour chaque voyage. Il totalise aussi le nombre et le temps de déplacements, le temps de ralentis-moteur, le temps d'arrêt et la distance parcourue durant la période de temps sélectionnée. Ce rapport peut être filtré par date/heure et généré pour un seul véhicule ou une flotte entière.</value>
+  </data>
+  <data name="lblTripSummaryReportDescResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleNameResource1.Text" xml:space="preserve">
+    <value>Véhicule :</value>
+  </data>
+  <data name="lblVehicleNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblWeekendTitleResource1.Text" xml:space="preserve">
+    <value>Fin de semaine :</value>
+  </data>
+  <data name="lblWeekendTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblWorkingHoursResource1.Text" xml:space="preserve">
+    <value>Regular Business Hours</value>
+  </data>
+  <data name="lblWorkingHoursResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource1.Text" xml:space="preserve">
+    <value>1 heure</value>
+  </data>
+  <data name="ListItemResource1.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource10.Text" xml:space="preserve">
+    <value>18 heures</value>
+  </data>
+  <data name="ListItemResource10.Value" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="ListItemResource11.Text" xml:space="preserve">
+    <value>1 jour</value>
+  </data>
+  <data name="ListItemResource11.Value" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="ListItemResource12.Text" xml:space="preserve">
+    <value>2 jours</value>
+  </data>
+  <data name="ListItemResource12.Value" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="ListItemResource13.Text" xml:space="preserve">
+    <value>3 jours</value>
+  </data>
+  <data name="ListItemResource13.Value" xml:space="preserve">
+    <value>72</value>
+  </data>
+  <data name="ListItemResource14.Text" xml:space="preserve">
+    <value>Semaine</value>
+  </data>
+  <data name="ListItemResource14.Value" xml:space="preserve">
+    <value>168</value>
+  </data>
+  <data name="ListItemResource15.Text" xml:space="preserve">
+    <value>1 mois</value>
+  </data>
+  <data name="ListItemResource15.Value" xml:space="preserve">
+    <value>730</value>
+  </data>
+  <data name="ListItemResource16.Text" xml:space="preserve">
+    <value>2 mois</value>
+  </data>
+  <data name="ListItemResource16.Value" xml:space="preserve">
+    <value>1460</value>
+  </data>
+  <data name="ListItemResource17.Text" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListItemResource17.Value" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListItemResource18.Text" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="ListItemResource18.Value" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="ListItemResource19.Text" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="ListItemResource19.Value" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="ListItemResource2.Text" xml:space="preserve">
+    <value>2 heures</value>
+  </data>
+  <data name="ListItemResource2.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource20.Text" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="ListItemResource20.Value" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="ListItemResource21.Text" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="ListItemResource21.Value" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="ListItemResource22.Text" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="ListItemResource22.Value" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="ListItemResource23.Text" xml:space="preserve">
+    <value>72</value>
+  </data>
+  <data name="ListItemResource23.Value" xml:space="preserve">
+    <value>72</value>
+  </data>
+  <data name="ListItemResource24.Text" xml:space="preserve">
+    <value>Non filtré</value>
+  </data>
+  <data name="ListItemResource24.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource25.Text" xml:space="preserve">
+    <value>Plus de 5 min</value>
+  </data>
+  <data name="ListItemResource25.Value" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="ListItemResource26.Text" xml:space="preserve">
+    <value>Plus de 10 min</value>
+  </data>
+  <data name="ListItemResource26.Value" xml:space="preserve">
+    <value>600</value>
+  </data>
+  <data name="ListItemResource27.Text" xml:space="preserve">
+    <value>Plus de 15 min</value>
+  </data>
+  <data name="ListItemResource27.Value" xml:space="preserve">
+    <value>900</value>
+  </data>
+  <data name="ListItemResource28.Text" xml:space="preserve">
+    <value>Plus de 30 min</value>
+  </data>
+  <data name="ListItemResource28.Value" xml:space="preserve">
+    <value>1800</value>
+  </data>
+  <data name="ListItemResource29.Text" xml:space="preserve">
+    <value>Plus de 45 min</value>
+  </data>
+  <data name="ListItemResource29.Value" xml:space="preserve">
+    <value>2700</value>
+  </data>
+  <data name="ListItemResource3.Text" xml:space="preserve">
+    <value>3 heures</value>
+  </data>
+  <data name="ListItemResource3.Value" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListItemResource30.Text" xml:space="preserve">
+    <value>Plus de 1 heure</value>
+  </data>
+  <data name="ListItemResource30.Value" xml:space="preserve">
+    <value>3600</value>
+  </data>
+  <data name="ListItemResource31.Text" xml:space="preserve">
+    <value>Plus de 2 heures</value>
+  </data>
+  <data name="ListItemResource31.Value" xml:space="preserve">
+    <value>7200</value>
+  </data>
+  <data name="ListItemResource32.Text" xml:space="preserve">
+    <value>Plus de 12 heures</value>
+  </data>
+  <data name="ListItemResource32.Value" xml:space="preserve">
+    <value>43200</value>
+  </data>
+  <data name="ListItemResource33.Text" xml:space="preserve">
+    <value>Plus de 24 heures</value>
+  </data>
+  <data name="ListItemResource33.Value" xml:space="preserve">
+    <value>86400</value>
+  </data>
+  <data name="ListItemResource34.Text" xml:space="preserve">
+    <value>Plus de 48 heures</value>
+  </data>
+  <data name="ListItemResource34.Value" xml:space="preserve">
+    <value>172800</value>
+  </data>
+  <data name="ListItemResource35.Text" xml:space="preserve">
+    <value>Afficher les arrêts seulement</value>
+  </data>
+  <data name="ListItemResource35.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource36.Text" xml:space="preserve">
+    <value>Afficher les moteurs au ralenti seulement</value>
+  </data>
+  <data name="ListItemResource36.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource37.Text" xml:space="preserve">
+    <value>Afficher les arrêts et les temps de ralentis-moteur</value>
+  </data>
+  <data name="ListItemResource37.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource38.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="ListItemResource38.Value" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="ListItemResource39.Text" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="ListItemResource39.Value" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="ListItemResource4.Text" xml:space="preserve">
+    <value>4 heures</value>
+  </data>
+  <data name="ListItemResource4.Value" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ListItemResource40.Text" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="ListItemResource40.Value" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="ListItemResource41.Text" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="ListItemResource41.Value" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="ListItemResource42.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="ListItemResource42.Value" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="ListItemResource43.Text" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="ListItemResource43.Value" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="ListItemResource44.Text" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="ListItemResource44.Value" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="ListItemResource45.Text" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="ListItemResource45.Value" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="ListItemResource46.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="ListItemResource46.Value" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="ListItemResource47.Text" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="ListItemResource47.Value" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="ListItemResource48.Text" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="ListItemResource48.Value" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="ListItemResource49.Text" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="ListItemResource49.Value" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="ListItemResource5.Text" xml:space="preserve">
+    <value>5 heures</value>
+  </data>
+  <data name="ListItemResource5.Value" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ListItemResource50.Text" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="ListItemResource50.Value" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="ListItemResource51.Text" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="ListItemResource51.Value" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="ListItemResource52.Text" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="ListItemResource52.Value" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="ListItemResource53.Text" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="ListItemResource53.Value" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="ListItemResource54.Text" xml:space="preserve">
+    <value>PDF</value>
+  </data>
+  <data name="ListItemResource54.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource55.Text" xml:space="preserve">
+    <value>Excel</value>
+  </data>
+  <data name="ListItemResource55.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource56.Text" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="ListItemResource56.Value" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListItemResource57.Text" xml:space="preserve">
+    <value>PDF</value>
+  </data>
+  <data name="ListItemResource57.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource58.Text" xml:space="preserve">
+    <value>Excel</value>
+  </data>
+  <data name="ListItemResource58.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource59.Text" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="ListItemResource59.Value" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListItemResource6.Text" xml:space="preserve">
+    <value>6 heures</value>
+  </data>
+  <data name="ListItemResource6.Value" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="ListItemResource60.Text" xml:space="preserve">
+    <value>Allumage</value>
+  </data>
+  <data name="ListItemResource60.Value" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListItemResource61.Text" xml:space="preserve">
+    <value>Alimentation du tracteur</value>
+  </data>
+  <data name="ListItemResource61.Value" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="ListItemResource62.Text" xml:space="preserve">
+    <value>PTO</value>
+  </data>
+  <data name="ListItemResource62.Value" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="ListItemResource7.Text" xml:space="preserve">
+    <value>7 heures</value>
+  </data>
+  <data name="ListItemResource7.Value" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ListItemResource8.Text" xml:space="preserve">
+    <value>8 heures</value>
+  </data>
+  <data name="ListItemResource8.Value" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="ListItemResource9.Text" xml:space="preserve">
+    <value>9 heures</value>
+  </data>
+  <data name="ListItemResource9.Value" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="LoadingPanel1Resource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LoadingPanel1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="optEndTripResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="optStopFilterResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title1" xml:space="preserve">
+    <value>Page sans titre</value>
+  </data>
+  <data name="PageResource2.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadAjaxManager1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadMultiPage1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadMultiPage1Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadPageView1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadPageView2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadPageView3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource1.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource1.DisabledImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource1.HoveredImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource1.ImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource1.NavigateUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource1.SelectedImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource1.Text" xml:space="preserve">
+    <value>Créer un rapport</value>
+  </data>
+  <data name="RadTabResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource1.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RadTabResource2.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource2.DisabledImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource2.HoveredImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource2.ImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource2.NavigateUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource2.SelectedImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource2.Text" xml:space="preserve">
+    <value>Référentiel</value>
+  </data>
+  <data name="RadTabResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource2.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="RadTabResource3.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource3.DisabledImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource3.HoveredImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource3.ImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource3.NavigateUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource3.SelectedImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource3.Text" xml:space="preserve">
+    <value>Voir</value>
+  </data>
+  <data name="RadTabResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource3.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="RadTabStrip1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReportFormatSuggested_Landscape" xml:space="preserve">
+    <value>Format de page suggéré: Paysage.</value>
+  </data>
+  <data name="ReportFormatSuggested_Portrait" xml:space="preserve">
+    <value>Format de page suggéré:  Portrait.</value>
+  </data>
+  <data name="tblIgnitionResource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tblIgnitionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAccExtremeResource1.Text" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="txtAccExtremeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtAccHarshResource1.Text" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="txtAccHarshResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtBrakingExtremeResource1.Text" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="txtBrakingExtremeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtBrakingHarshResource1.Text" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="txtBrakingHarshResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFromResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFromResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSeatBeltResource1.Text" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="txtSeatBeltResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSpeed120Resource1.Text" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="txtSpeed120Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSpeed130Resource1.Text" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="txtSpeed130Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSpeed140Resource1.Text" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="txtSpeed140Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtToResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtToResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valCompareDatesResource1.ErrorMessage" xml:space="preserve">
+    <value>La date identifiée par 'De' doit précéder celle identifiée par 'À'!</value>
+  </data>
+  <data name="valCompareDatesResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valCompareDatesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valDriver" xml:space="preserve">
+    <value>Sélectionner un chauffeur</value>
+  </data>
+  <data name="valFleetMessage" xml:space="preserve">
+    <value>Sélectionner une flotte de véhicules</value>
+  </data>
+  <data name="valFleetResource1.ErrorMessage" xml:space="preserve">
+    <value>Sélectionner une flotte de véhicules</value>
+  </data>
+  <data name="valFleetResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valFromDateResource1.ErrorMessage" xml:space="preserve">
+    <value>Sélectionner un 'De'</value>
+  </data>
+  <data name="valFromDateResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valFromDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valSelectLandmark" xml:space="preserve">
+    <value>S'il vous plaît sélectionner un point de repère</value>
+  </data>
+  <data name="valSelectVehicle" xml:space="preserve">
+    <value>S'il vous plaît sélectionner un véhicule</value>
+  </data>
+  <data name="valSummaryResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valSummaryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valToDateResource1.ErrorMessage" xml:space="preserve">
+    <value>Veuillez sélectionner un À</value>
+  </data>
+  <data name="valToDateResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valToDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPayPeriodResource1.Text" xml:space="preserve">
+    <value>Période:</value>
+  </data>
+  <data name="cmdShowMyReportResource1.Text" xml:space="preserve">
+    <value>Exécuter</value>
+  </data>
+  <data name="cmdShowMyReportUpdateResource1.Text" xml:space="preserve">
+    <value>Exécuter et mettre à jour</value>
+  </data>
+  <data name="ddlReportItemResource3.Text" xml:space="preserve">
+    <value>Mes rapports</value>
+  </data>
+  <data name="lblMessage_Text_ScheduledSuccess" xml:space="preserve">
+    <value>Rapport a été planifiés</value>
+  </data>
+  <data name="resScheduleFailed" xml:space="preserve">
+    <value>Rapport de planification n'a pas</value>
+  </data>
+  <data name="RadPageView4Resource1.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource4.AccessKey1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource4.DisabledImageUrl1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource4.HoveredImageUrl1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource4.ImageUrl1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource4.NavigateUrl1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource4.SelectedImageUrl1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource4.Text" xml:space="preserve">
+    <value>Rapport de cédules</value>
+  </data>
+  <data name="RadTabResource4.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource4.Value1" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="keyvalue_driver" xml:space="preserve">
+    <value>Pilote</value>
+  </data>
+  <data name="keyvalue_enddate" xml:space="preserve">
+    <value>Date de fin</value>
+  </data>
+  <data name="keyvalue_fleet" xml:space="preserve">
+    <value>flotte</value>
+  </data>
+  <data name="keyvalue_geozone" xml:space="preserve">
+    <value>Geozone</value>
+  </data>
+  <data name="keyvalue_landmark" xml:space="preserve">
+    <value>Repère</value>
+  </data>
+  <data name="keyvalue_startdate" xml:space="preserve">
+    <value>Date de début</value>
+  </data>
+  <data name="keyvalue_vehicle" xml:space="preserve">
+    <value>Unité</value>
+  </data>
+  <data name="cboFromDayHResource1.TimeView-HeaderText" xml:space="preserve">
+    <value>Préparateur de temps</value>
+  </data>
+  <data name="cboHoursFromResource1.TimeView-HeaderText" xml:space="preserve">
+    <value>Préparateur de temps</value>
+  </data>
+  <data name="cboHoursToResource1.TimeView-HeaderText" xml:space="preserve">
+    <value>Préparateur de temps</value>
+  </data>
+  <data name="cboToDayHResource1.TimeView-HeaderText" xml:space="preserve">
+    <value>Préparateur de temps</value>
+  </data>
+  <data name="cboWeekEndFromHResource1.TimeView-HeaderText" xml:space="preserve">
+    <value>Préparateur de temps</value>
+  </data>
+  <data name="cboWeekEndToHResource1.TimeView-HeaderText" xml:space="preserve">
+    <value>Préparateur de temps</value>
+  </data>
+  <data name="TimePopupButton.ToolTip" xml:space="preserve">
+    <value>Ouvrez le popup voir l'heure.</value>
+  </data>
+  <data name="chkLocker1Resource.Text" xml:space="preserve">
+    <value>Casier 1</value>
+  </data>
+  <data name="chkLocker2Resource.Text" xml:space="preserve">
+    <value>Casier 2</value>
+  </data>
+  <data name="chkLocker3Resource.Text" xml:space="preserve">
+    <value>Casier 3</value>
+  </data>
+  <data name="chkLocker4Resource.Text" xml:space="preserve">
+    <value>Casier 4</value>
+  </data>
+  <data name="chkLocker5Resource.Text" xml:space="preserve">
+    <value>Casier 5</value>
+  </data>
+  <data name="chkLocker6Resource.Text" xml:space="preserve">
+    <value>Casier 6</value>
+  </data>
+  <data name="chkLocker7Resource.Text" xml:space="preserve">
+    <value>Casier 7</value>
+  </data>
+  <data name="chkLocker8Resource.Text" xml:space="preserve">
+    <value>Casier 8</value>
+  </data>
+  <data name="chkLocker9Resource.Text" xml:space="preserve">
+    <value>Casier 9</value>
+  </data>
+  <data name="MessageRptDateRange" xml:space="preserve">
+    <value>S'il vous plaît diminuer la plage de dates. Un maximum de 31 jours est autorisés</value>
+  </data>
+</root>

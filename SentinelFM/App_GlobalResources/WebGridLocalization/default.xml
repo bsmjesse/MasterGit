@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Localization culture="default" description="Default Language">
+  <CommonText>
+    <Ready>Ready.</Ready>
+    <More>Loading more data...</More>
+    <LoadGroup>Loading group...</LoadGroup>
+    <Sort>Sorting column...</Sort>
+    <Group>Grouping column...</Group>
+    <Ungroup>Ungrouping column...</Ungroup>
+    <ChangeGroup>Changing group column...</ChangeGroup>
+    <FilterText>Filtering column...</FilterText>
+    <LoadChild>Loading child rows...</LoadChild>
+    <ColumnChange>Changing columns...</ColumnChange>
+    <Refresh>Refreshing data...</Refresh>
+    <RefreshAll>Refreshing data and structure...</RefreshAll>
+    <RefreshChild>Refreshing child table...</RefreshChild>
+    <AddRow>Adding new row...</AddRow>
+    <UpdateRow>Updating row...</UpdateRow>
+    <DeleteRow>Deleting row...</DeleteRow>
+    <ReadyError>Unhandled error occurred on last action. Click for more details.</ReadyError>
+    <ColumnMove>Moving column...</ColumnMove>
+    <Loaded>Loaded [n] of [total]</Loaded>
+    <ExportText>Exporting...</ExportText>
+    <NoData>There are no rows in this view.</NoData>
+    <NewRowInfo>Please click here to add new row...</NewRowInfo>
+    <GroupByBoxInfo>Drag a column header here to group by that column.</GroupByBoxInfo>
+    <LoadSelfRefChild>Loading self referencing childrows...</LoadSelfRefChild>
+    <CalendarToday>Today</CalendarToday>
+    <CalendarNone>None</CalendarNone>
+    <Filtered>Filtered</Filtered>
+    <Unfiltered>Unfiltered</Unfiltered>
+    <LoadPreviewRow>Loading preview row...</LoadPreviewRow>
+    <InputRequiredStatus>One or more cells require user input.</InputRequiredStatus>
+    <UpdateSuccess>Record is updated successfully.</UpdateSuccess>
+    <AddSuccess>Record is added successfully.</AddSuccess>
+    <DeleteSuccess>Record is deleted successfully.</DeleteSuccess>
+    <ReadOnlyCell>This cell is read only.</ReadOnlyCell>
+    <ModifiedCell>This cell is modified.</ModifiedCell>
+    <EditedCell>This cell is being edited.</EditedCell>
+    <PagingLoading>Loading page {0}...</PagingLoading>
+    <PagingStatus>Page {0} of {1}</PagingStatus>
+    <PagingPartialGroup>(Record {0}-{1} of {2})</PagingPartialGroup>
+  </CommonText>
+  <MessageBoxText>
+    <NoChildRow>There are no child rows for this record.</NoChildRow>
+    <InProgress>Please wait while WebGrid is in progress processing request...</InProgress>
+    <UnhandledError>Unhandled exception occurred. See following for details.</UnhandledError>
+    <LoadMoreException>Load more data is only available when there are no group columns in RootTable.</LoadMoreException>
+    <AddNewRow>The new row has been edited. Do you want to add the new row?</AddNewRow>
+    <UpdateRow>The selected row has been edited. Do you want to update the changed row?</UpdateRow>
+    <DeleteRow>Are you sure want to delete this row?</DeleteRow>
+  </MessageBoxText>
+  <Tooltip>
+    <Refresh>Refresh grid data</Refresh>
+    <LoadMore>Load more data</LoadMore>
+    <ExportText>Export grid</ExportText>
+    <Help>WebGrid.NET Client Help</Help>
+    <RemoveFilters>Click to remove filters from the records</RemoveFilters>
+    <RestoreFilters>Click to filter the records using the last saved filter</RestoreFilters>
+    <NoFilter>There is no current filter</NoFilter>
+    <InputRequired>This cell requires user input</InputRequired>
+    <PagingFirst>First Page</PagingFirst>
+    <PagingPrev>Previous Page</PagingPrev>
+    <PagingNext>Next Page</PagingNext>
+    <PagingLast>Last Page</PagingLast>
+    <PagingGoTo>Goto Page</PagingGoTo>
+    <PagingSlider>Drag or click on here to change page view</PagingSlider>
+    <GridView>Swith to Grid View</GridView>
+    <PivotChartView>Switch to PivotChart View</PivotChartView>
+  </Tooltip>
+  <Grouping>
+    <Today>Today</Today>
+    <Yesterday>Yesterday</Yesterday>
+    <LastWeek>Last Week</LastWeek>
+    <TwoWeeksAgo>Two Weeks Ago</TwoWeeksAgo>
+    <ThreeWeeksAgo>Three Weeks Ago</ThreeWeeksAgo>
+    <LastMonth>Last Month</LastMonth>
+    <Older>Older</Older>
+  </Grouping>
+  <ContextMenu>
+    <Column>
+      <SortAsc>Sort Ascending</SortAsc>
+      <SortDesc>Sort Descending</SortDesc>
+      <GroupByThisField>Group By This Field</GroupByThisField>
+      <UngroupField>Ungroup This Field</UngroupField>
+      <GroupByBox>Group By Box</GroupByBox>
+      <RemoveColumn>Remove This Column</RemoveColumn>
+      <BestFit>Best Fit</BestFit>
+      <FilterBar>Filter Bar</FilterBar>
+      <SelectColumns>Select Columns</SelectColumns>
+      <ApplyChanges>Apply Changes</ApplyChanges>
+      <Reset>Reset</Reset>
+      <FreezePane>Freeze Pane</FreezePane>
+      <UnfreezePane>Unfreeze Pane</UnfreezePane>
+      <SortAscText>Sort A to Z</SortAscText>
+      <SortAscNumber>Sort Smallest to Largest</SortAscNumber>
+      <SortAscDate>Sort Oldest to Newest</SortAscDate>
+      <SortAscBool>Sort Unchecked to Checked</SortAscBool>
+      <SortDescText>Sort Z to A</SortDescText>
+      <SortDescNumber>Sort Largest to Smallest</SortDescNumber>
+      <SortDescDate>Sort Newest to Oldest</SortDescDate>
+      <SortDescBool>Sort Checked to Unchecked</SortDescBool>
+      <ClearFilter>Clear Filter</ClearFilter>
+      <TextFilters>Text Filters</TextFilters>
+      <NumberFilters>Number Filters</NumberFilters>
+      <DateFilters>Date Filters</DateFilters>
+      <BoolFilters>Filters</BoolFilters>
+    </Column>
+    <Row>
+      <CopyCell>Copy this Cell</CopyCell>
+      <CopyRow>Copy this Row</CopyRow>
+      <CopyTable>Copy this Table</CopyTable>
+      <Update>Update Changes</Update>
+      <Cancel>Cancel Changes</Cancel>
+      <ShowChildRows>Show Child Rows</ShowChildRows>
+      <HideChildRows>Hide Child Rows</HideChildRows>
+      <Edit>Edit</Edit>
+      <Delete>Delete</Delete>
+      <Expand>Expand</Expand>
+      <Collapse>Collapse</Collapse>
+      <ExpandAll>Expand All</ExpandAll>
+      <CollapseAll>Collapse All</CollapseAll>
+      <PerformAdd>Perform Add</PerformAdd>
+      <CancelAdd>Cancel Add</CancelAdd>
+      <ApplyFilter>Apply All Filters</ApplyFilter>
+      <ClearFilter>Clear All Filters</ClearFilter>
+      <AddNewRow>Add New Row</AddNewRow>
+      <PasteToNewRow>Paste from Clipboard</PasteToNewRow>
+      <GotoFilterRow>Goto Filter Row</GotoFilterRow>
+      <ClearFilterCell>Clear Filter from This Column</ClearFilterCell>
+      <Refresh>Refresh Grid</Refresh>
+      <LoadMore>Load More Data</LoadMore>
+      <Export>Export Data</Export>
+      <Help>Show Client Help</Help>
+    </Row>
+    <FilterSuggest>
+      <ET>Equals {0}</ET>
+      <NET>Does Not Equal {0}</NET>
+      <Contain>Contains {0}</Contain>
+      <NotContain>Does Not Contain {0}</NotContain>
+      <LTET>Less Than or Equal To {0}</LTET>
+      <GTET>Greater Than or Equal To {0}</GTET>
+      <OnBefore>On or Before {0}</OnBefore>
+      <OnAfter>On or After {0}</OnAfter>
+      <Checked>Is Checked (True)</Checked>
+      <NotChecked>Is Not Checked (False)</NotChecked>
+      <Tomorrow>Tomorrow</Tomorrow>
+      <Today>Today</Today>
+      <Yesterday>Yesterday</Yesterday>
+      <NextWeek>Next Week</NextWeek>
+      <ThisWeek>This Week</ThisWeek>
+      <LastWeek>Last Week</LastWeek>
+      <NextMonth>Next Month</NextMonth>
+      <ThisMonth>This Month</ThisMonth>
+      <LastMonth>Last Month</LastMonth>
+      <Past>Past</Past>
+      <Future>Future</Future>
+      <Blank>Blank</Blank>
+    </FilterSuggest>
+    <Filter>
+      <NotSet>Not Set</NotSet>
+      <GTET>Greater Than or Equals To</GTET>
+      <GT>Greater Than</GT>
+      <ET>Equals To</ET>
+      <NET>Does Not Equal To</NET>
+      <LTET>Less Than or Equals To</LTET>
+      <LT>Less Than</LT>
+      <Like>Like</Like>
+      <NotLike>Does Not Like</NotLike>
+      <Contain>Contains</Contain>
+      <NotContain>Does Not Contain</NotContain>
+      <Between>Is Between</Between>
+      <NotBetween>Is Not Between</NotBetween>
+      <IsNull>Is Null</IsNull>
+      <NotIsNull>Is Not Null</NotIsNull>
+      <IsEmpty>Is Empty</IsEmpty>
+      <NotIsEmpty>Is Not Empty</NotIsEmpty>
+      <ApplyAll>Apply All Filters</ApplyAll>
+      <Clear>Clear This Filter</Clear>
+      <ClearAll>Clear All Filters</ClearAll>
+    </Filter>
+    <Export>
+      <ExportRoot>Export root table</ExportRoot>
+      <ExportChild>Export selected child table</ExportChild>
+      <Portrait>Portrait</Portrait>
+      <Landscape>Landscape</Landscape>
+      <DoExport>Export now</DoExport>
+    </Export>
+    <Paging>
+      <PageFormat>Page {0}</PageFormat>
+    </Paging>
+    <Custom description="Add your row custom menu text here">
+      <CustomText1>
+      </CustomText1>
+      <CustomText2>
+      </CustomText2>
+    </Custom>
+  </ContextMenu>
+  <Charting>
+    <Loading>Loading Chart...</Loading>
+    <DropFilterField>Drop Filter Fields Here</DropFilterField>
+    <DropDataField>Drop Data Fields Here</DropDataField>
+    <DropSeriesField>Drop Series Fields Here</DropSeriesField>
+    <DropCategoryField>Drop Category Fields Here</DropCategoryField>
+    <DropXData>Drop X Data Fields Here</DropXData>
+    <DropYData>Drop Y Data Fields Here</DropYData>
+    <DropBubbleData>Drop Bubble Data Fields Here</DropBubbleData>
+    <DropHighData>Drop High Data Fields Here</DropHighData>
+    <DropLowData>Drop Low Data Fields Here</DropLowData>
+    <DropOpenData>Drop Open Data Fields Here</DropOpenData>
+    <DropCloseData>Drop Close Data Fields Here</DropCloseData>
+    <DropThetaData>Drop Theta Data Fields Here</DropThetaData>
+    <DropRadiusData>Drop Radius Data Fields Here</DropRadiusData>
+    <ShowHideRibbon>Show / Hide</ShowHideRibbon>
+    <FilterSortRibbon><![CDATA[Filter & Sort]]></FilterSortRibbon>
+    <ChartRibbon>Chart</ChartRibbon>    
+    <TitlesRibbon>Titles</TitlesRibbon>
+
+    <FieldListButton><![CDATA[Field<br/>List]]></FieldListButton>
+    <DropZoneButton>Drop Zone</DropZoneButton>
+    <LegendButton>Legend</LegendButton>
+    <AutoFilterButton><![CDATA[Auto<br/>Filter]]></AutoFilterButton>
+    <AscendingButton>Ascending</AscendingButton>
+    <DescendingButton>Descending</DescendingButton>
+    <ChartTypeButton><![CDATA[Chart<br/>Type]]></ChartTypeButton>
+    <SwitchRowColumnButton><![CDATA[Switch Row & Column]]></SwitchRowColumnButton>
+    <UpdateButton>Update</UpdateButton>
+    
+    <TitleXAxis>X Axis</TitleXAxis>
+    <TitleYAxis>Y Axis</TitleYAxis>
+    <TitleZAxis>Z Axis</TitleZAxis>
+    
+  </Charting>
+</Localization>

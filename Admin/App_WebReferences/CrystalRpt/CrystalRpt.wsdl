@@ -1,0 +1,3738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.sentinelfm.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.sentinelfm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.sentinelfm.com">
+      <s:element name="TripDetailsReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TripDetailsReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TripDetailsReportResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TripSummaryReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TripSummaryReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TripSummaryReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TripFleetSummaryReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TripFleetSummaryReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TripFleetSummaryReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TripFleetDetailsReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TripFleetDetailsReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TripFleetDetailsReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TripFleetDetailsReportOneByOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TripFleetDetailsReportOneByOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TripFleetDetailsReportOneByOneResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TripFleetSummaryReportOneByOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TripFleetSummaryReportOneByOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TripFleetSummaryReportOneByOneResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StopReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StopReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StopReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StopFleetReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StopFleetReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StopFleetReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlarmsReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlarmsReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AlarmsReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlarmsFleetReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlarmsFleetReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AlarmsFleetReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HistoryReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DclId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HistoryReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HistoryReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExceptionReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExceptionReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExceptionReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExceptionFleetReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExceptionFleetReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExceptionFleetReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MessagesReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MessagesReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MessagesReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MessagesFleetReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MessagesFleetReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MessagesFleetReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtilizationReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtilizationReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UtilizationReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtilizationSummaryReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtilizationSummaryReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UtilizationSummaryReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtilizationByVehicleTypeReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtilizationByVehicleTypeReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UtilizationByVehicleTypeReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtilizationWeeklyReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtilizationWeeklyReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UtilizationWeeklyReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtilizationDailyDetailReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtilizationDailyDetailReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UtilizationDailyDetailReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtilizationDailyFleetReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UtilizationDailyFleetReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UtilizationDailyFleetReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OffHoursReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OffHoursReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OffHoursReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OffHoursFleetReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OffHoursFleetReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OffHoursFleetReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LandmarkActivityReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LandmarkActivityReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LandmarkActivityReportResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LandmarkFleetActivityReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LandmarkFleetActivityReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LandmarkFleetActivityReportResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViolationReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViolationReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ViolationReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdlingDetailReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdlingDetailReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdlingDetailReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdlingSummaryOrgReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdlingSummaryOrgReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdlingSummaryOrgReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdlingSummaryReportByOrgId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrgId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IdlingSummaryReportByOrgIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdlingSummaryReportByOrgIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViolationReportWithScore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViolationReportWithScoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ViolationReportWithScoreResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FleetMaintenaceReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FleetMaintenaceReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FleetMaintenaceReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LandmarkFleetReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LandmarkFleetReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LandmarkFleetReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LandmarkVehicleReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LandmarkVehicleReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LandmarkVehicleReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LandmarkVehicleDetailsReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LandmarkVehicleDetailsReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LandmarkVehicleDetailsReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LandmarkFleetDetailsReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LandmarkFleetDetailsReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LandmarkFleetDetailsReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeozoneFleetReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeozoneFleetReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GeozoneFleetReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeozoneFleetDetailsReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeozoneFleetDetailsReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GeozoneFleetDetailsReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeozoneDetailsVehicleReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeozoneDetailsVehicleReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GeozoneDetailsVehicleReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeozoneVehicleReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeozoneVehicleReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GeozoneVehicleReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InactivityReport4Vehicle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InactivityReport4VehicleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InactivityReport4VehicleResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InactivityReport4Fleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InactivityReport4FleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InactivityReport4FleetResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DriverTripDetailsReportOneByOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DriverTripDetailsReportOneByOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DriverTripDetailsReportOneByOneResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DriverTripSummaryReportOneByOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DriverTripSummaryReportOneByOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DriverTripSummaryReportOneByOneResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DriverViolationReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DriverViolationReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DriverViolationReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DriverViolationSummaryReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DriverViolationSummaryReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DriverViolationSummaryReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FuelTransactionHistReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrganizationId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FuelTransactionHistReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FuelTransactionHistReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StateMileageReportPerFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Summary" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StateMileageReportPerFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StateMileageReportPerFleetResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StateMileageSummaryReportPerFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Summary" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StateMileageSummaryReportPerFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StateMileageSummaryReportPerFleetResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StateMileageReportPerVehicle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="licensePlate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Summary" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StateMileageReportPerVehicleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StateMileageReportPerVehicleResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedDailyVehicleUtilizationReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="VehicleId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cost" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedDailyVehicleUtilizationReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetExtendedDailyVehicleUtilizationReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedDailyFleetUtilizationReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cost" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedDailyFleetUtilizationReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetExtendedDailyFleetUtilizationReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedSpeedViolationsReportForFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedSpeedViolationsReportForFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetExtendedSpeedViolationsReportForFleetResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedSpeedViolationsReportForFleets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FleetIds" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Type" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ColorFilter" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetExtendedSpeedViolationsReportForFleetsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetExtendedSpeedViolationsReportForFleetsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedSpeedViolationsDetailsReportForFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedSpeedViolationsDetailsReportForFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetExtendedSpeedViolationsDetailsReportForFleetResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedSpeedViolationsDetailsReportForFleets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FleetIds" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Type" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ColorFilter" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedSpeedViolationsDetailsReportForFleetsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetExtendedSpeedViolationsDetailsReportForFleetsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCNFleetUtilizationReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cost" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCNFleetUtilizationReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCNFleetUtilizationReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCNFleetsUtilizationReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FleetIds" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cost" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="ColorFilter" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCNFleetsUtilizationReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCNFleetsUtilizationReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedMonthlyFleetSummary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedMonthlyFleetSummaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetExtendedMonthlyFleetSummaryResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedMonthlyAverageDaysUtilized">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedMonthlyAverageDaysUtilizedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetExtendedMonthlyAverageDaysUtilizedResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedMonthlyServiceHrsUtilized">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedMonthlyServiceHrsUtilizedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetExtendedMonthlyServiceHrsUtilizedResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedMonthlyEngineOnHrsUtilized">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedMonthlyEngineOnHrsUtilizedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetExtendedMonthlyEngineOnHrsUtilizedResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedAverageTravelledDistance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedAverageTravelledDistanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetExtendedAverageTravelledDistanceResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedMonthlyUnnecessaryIdlingHrsUtilized">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedMonthlyUnnecessaryIdlingHrsUtilizedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetExtendedMonthlyUnnecessaryIdlingHrsUtilizedResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedUnnecessaryIdlingFuelCosts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cost" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtendedUnnecessaryIdlingFuelCostsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetExtendedUnnecessaryIdlingFuelCostsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivitySummaryReportPerOrganization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrgId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorNum" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivitySummaryReportPerOrganizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetActivitySummaryReportPerOrganizationResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTripSummaryTotalsReportperOrganization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrgId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorNum" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTripSummaryTotalsReportperOrganizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTripSummaryTotalsReportperOrganizationResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivitySummaryReportPerVehicle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorNum" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivitySummaryReportPerVehicleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetActivitySummaryReportPerVehicleResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTripSummaryTotalsReportperVehicle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorNum" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTripSummaryTotalsReportperVehicleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTripSummaryTotalsReportperVehicleResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeAtLandmarkReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeAtLandmarkReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTimeAtLandmarkReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeAtLandmarkFleetReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeAtLandmarkFleetReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTimeAtLandmarkFleetReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTripsSummaryReportByLicensePlate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicensePlate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorNum" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTripsSummaryReportByLicensePlateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTripsSummaryReportByLicensePlateResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesStatusReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrgId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rFormat" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesStatusReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesStatusReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReportPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TripDetailsReportSoapIn">
+    <wsdl:part name="parameters" element="tns:TripDetailsReport" />
+  </wsdl:message>
+  <wsdl:message name="TripDetailsReportSoapOut">
+    <wsdl:part name="parameters" element="tns:TripDetailsReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="TripSummaryReportSoapIn">
+    <wsdl:part name="parameters" element="tns:TripSummaryReport" />
+  </wsdl:message>
+  <wsdl:message name="TripSummaryReportSoapOut">
+    <wsdl:part name="parameters" element="tns:TripSummaryReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="TripFleetSummaryReportSoapIn">
+    <wsdl:part name="parameters" element="tns:TripFleetSummaryReport" />
+  </wsdl:message>
+  <wsdl:message name="TripFleetSummaryReportSoapOut">
+    <wsdl:part name="parameters" element="tns:TripFleetSummaryReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="TripFleetDetailsReportSoapIn">
+    <wsdl:part name="parameters" element="tns:TripFleetDetailsReport" />
+  </wsdl:message>
+  <wsdl:message name="TripFleetDetailsReportSoapOut">
+    <wsdl:part name="parameters" element="tns:TripFleetDetailsReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="TripFleetDetailsReportOneByOneSoapIn">
+    <wsdl:part name="parameters" element="tns:TripFleetDetailsReportOneByOne" />
+  </wsdl:message>
+  <wsdl:message name="TripFleetDetailsReportOneByOneSoapOut">
+    <wsdl:part name="parameters" element="tns:TripFleetDetailsReportOneByOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="TripFleetSummaryReportOneByOneSoapIn">
+    <wsdl:part name="parameters" element="tns:TripFleetSummaryReportOneByOne" />
+  </wsdl:message>
+  <wsdl:message name="TripFleetSummaryReportOneByOneSoapOut">
+    <wsdl:part name="parameters" element="tns:TripFleetSummaryReportOneByOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="StopReportSoapIn">
+    <wsdl:part name="parameters" element="tns:StopReport" />
+  </wsdl:message>
+  <wsdl:message name="StopReportSoapOut">
+    <wsdl:part name="parameters" element="tns:StopReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="StopFleetReportSoapIn">
+    <wsdl:part name="parameters" element="tns:StopFleetReport" />
+  </wsdl:message>
+  <wsdl:message name="StopFleetReportSoapOut">
+    <wsdl:part name="parameters" element="tns:StopFleetReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlarmsReportSoapIn">
+    <wsdl:part name="parameters" element="tns:AlarmsReport" />
+  </wsdl:message>
+  <wsdl:message name="AlarmsReportSoapOut">
+    <wsdl:part name="parameters" element="tns:AlarmsReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlarmsFleetReportSoapIn">
+    <wsdl:part name="parameters" element="tns:AlarmsFleetReport" />
+  </wsdl:message>
+  <wsdl:message name="AlarmsFleetReportSoapOut">
+    <wsdl:part name="parameters" element="tns:AlarmsFleetReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="HistoryReportSoapIn">
+    <wsdl:part name="parameters" element="tns:HistoryReport" />
+  </wsdl:message>
+  <wsdl:message name="HistoryReportSoapOut">
+    <wsdl:part name="parameters" element="tns:HistoryReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExceptionReportSoapIn">
+    <wsdl:part name="parameters" element="tns:ExceptionReport" />
+  </wsdl:message>
+  <wsdl:message name="ExceptionReportSoapOut">
+    <wsdl:part name="parameters" element="tns:ExceptionReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExceptionFleetReportSoapIn">
+    <wsdl:part name="parameters" element="tns:ExceptionFleetReport" />
+  </wsdl:message>
+  <wsdl:message name="ExceptionFleetReportSoapOut">
+    <wsdl:part name="parameters" element="tns:ExceptionFleetReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="MessagesReportSoapIn">
+    <wsdl:part name="parameters" element="tns:MessagesReport" />
+  </wsdl:message>
+  <wsdl:message name="MessagesReportSoapOut">
+    <wsdl:part name="parameters" element="tns:MessagesReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="MessagesFleetReportSoapIn">
+    <wsdl:part name="parameters" element="tns:MessagesFleetReport" />
+  </wsdl:message>
+  <wsdl:message name="MessagesFleetReportSoapOut">
+    <wsdl:part name="parameters" element="tns:MessagesFleetReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="UtilizationReportSoapIn">
+    <wsdl:part name="parameters" element="tns:UtilizationReport" />
+  </wsdl:message>
+  <wsdl:message name="UtilizationReportSoapOut">
+    <wsdl:part name="parameters" element="tns:UtilizationReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="UtilizationSummaryReportSoapIn">
+    <wsdl:part name="parameters" element="tns:UtilizationSummaryReport" />
+  </wsdl:message>
+  <wsdl:message name="UtilizationSummaryReportSoapOut">
+    <wsdl:part name="parameters" element="tns:UtilizationSummaryReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="UtilizationByVehicleTypeReportSoapIn">
+    <wsdl:part name="parameters" element="tns:UtilizationByVehicleTypeReport" />
+  </wsdl:message>
+  <wsdl:message name="UtilizationByVehicleTypeReportSoapOut">
+    <wsdl:part name="parameters" element="tns:UtilizationByVehicleTypeReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="UtilizationWeeklyReportSoapIn">
+    <wsdl:part name="parameters" element="tns:UtilizationWeeklyReport" />
+  </wsdl:message>
+  <wsdl:message name="UtilizationWeeklyReportSoapOut">
+    <wsdl:part name="parameters" element="tns:UtilizationWeeklyReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="UtilizationDailyDetailReportSoapIn">
+    <wsdl:part name="parameters" element="tns:UtilizationDailyDetailReport" />
+  </wsdl:message>
+  <wsdl:message name="UtilizationDailyDetailReportSoapOut">
+    <wsdl:part name="parameters" element="tns:UtilizationDailyDetailReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="UtilizationDailyFleetReportSoapIn">
+    <wsdl:part name="parameters" element="tns:UtilizationDailyFleetReport" />
+  </wsdl:message>
+  <wsdl:message name="UtilizationDailyFleetReportSoapOut">
+    <wsdl:part name="parameters" element="tns:UtilizationDailyFleetReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="OffHoursReportSoapIn">
+    <wsdl:part name="parameters" element="tns:OffHoursReport" />
+  </wsdl:message>
+  <wsdl:message name="OffHoursReportSoapOut">
+    <wsdl:part name="parameters" element="tns:OffHoursReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="OffHoursFleetReportSoapIn">
+    <wsdl:part name="parameters" element="tns:OffHoursFleetReport" />
+  </wsdl:message>
+  <wsdl:message name="OffHoursFleetReportSoapOut">
+    <wsdl:part name="parameters" element="tns:OffHoursFleetReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="LandmarkActivityReportSoapIn">
+    <wsdl:part name="parameters" element="tns:LandmarkActivityReport" />
+  </wsdl:message>
+  <wsdl:message name="LandmarkActivityReportSoapOut">
+    <wsdl:part name="parameters" element="tns:LandmarkActivityReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="LandmarkFleetActivityReportSoapIn">
+    <wsdl:part name="parameters" element="tns:LandmarkFleetActivityReport" />
+  </wsdl:message>
+  <wsdl:message name="LandmarkFleetActivityReportSoapOut">
+    <wsdl:part name="parameters" element="tns:LandmarkFleetActivityReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViolationReportSoapIn">
+    <wsdl:part name="parameters" element="tns:ViolationReport" />
+  </wsdl:message>
+  <wsdl:message name="ViolationReportSoapOut">
+    <wsdl:part name="parameters" element="tns:ViolationReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IdlingDetailReportSoapIn">
+    <wsdl:part name="parameters" element="tns:IdlingDetailReport" />
+  </wsdl:message>
+  <wsdl:message name="IdlingDetailReportSoapOut">
+    <wsdl:part name="parameters" element="tns:IdlingDetailReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IdlingSummaryOrgReportSoapIn">
+    <wsdl:part name="parameters" element="tns:IdlingSummaryOrgReport" />
+  </wsdl:message>
+  <wsdl:message name="IdlingSummaryOrgReportSoapOut">
+    <wsdl:part name="parameters" element="tns:IdlingSummaryOrgReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IdlingSummaryReportByOrgIdSoapIn">
+    <wsdl:part name="parameters" element="tns:IdlingSummaryReportByOrgId" />
+  </wsdl:message>
+  <wsdl:message name="IdlingSummaryReportByOrgIdSoapOut">
+    <wsdl:part name="parameters" element="tns:IdlingSummaryReportByOrgIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViolationReportWithScoreSoapIn">
+    <wsdl:part name="parameters" element="tns:ViolationReportWithScore" />
+  </wsdl:message>
+  <wsdl:message name="ViolationReportWithScoreSoapOut">
+    <wsdl:part name="parameters" element="tns:ViolationReportWithScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="FleetMaintenaceReportSoapIn">
+    <wsdl:part name="parameters" element="tns:FleetMaintenaceReport" />
+  </wsdl:message>
+  <wsdl:message name="FleetMaintenaceReportSoapOut">
+    <wsdl:part name="parameters" element="tns:FleetMaintenaceReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="LandmarkFleetReportSoapIn">
+    <wsdl:part name="parameters" element="tns:LandmarkFleetReport" />
+  </wsdl:message>
+  <wsdl:message name="LandmarkFleetReportSoapOut">
+    <wsdl:part name="parameters" element="tns:LandmarkFleetReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="LandmarkVehicleReportSoapIn">
+    <wsdl:part name="parameters" element="tns:LandmarkVehicleReport" />
+  </wsdl:message>
+  <wsdl:message name="LandmarkVehicleReportSoapOut">
+    <wsdl:part name="parameters" element="tns:LandmarkVehicleReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="LandmarkVehicleDetailsReportSoapIn">
+    <wsdl:part name="parameters" element="tns:LandmarkVehicleDetailsReport" />
+  </wsdl:message>
+  <wsdl:message name="LandmarkVehicleDetailsReportSoapOut">
+    <wsdl:part name="parameters" element="tns:LandmarkVehicleDetailsReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="LandmarkFleetDetailsReportSoapIn">
+    <wsdl:part name="parameters" element="tns:LandmarkFleetDetailsReport" />
+  </wsdl:message>
+  <wsdl:message name="LandmarkFleetDetailsReportSoapOut">
+    <wsdl:part name="parameters" element="tns:LandmarkFleetDetailsReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeozoneFleetReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GeozoneFleetReport" />
+  </wsdl:message>
+  <wsdl:message name="GeozoneFleetReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GeozoneFleetReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeozoneFleetDetailsReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GeozoneFleetDetailsReport" />
+  </wsdl:message>
+  <wsdl:message name="GeozoneFleetDetailsReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GeozoneFleetDetailsReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeozoneDetailsVehicleReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GeozoneDetailsVehicleReport" />
+  </wsdl:message>
+  <wsdl:message name="GeozoneDetailsVehicleReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GeozoneDetailsVehicleReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeozoneVehicleReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GeozoneVehicleReport" />
+  </wsdl:message>
+  <wsdl:message name="GeozoneVehicleReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GeozoneVehicleReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="InactivityReport4VehicleSoapIn">
+    <wsdl:part name="parameters" element="tns:InactivityReport4Vehicle" />
+  </wsdl:message>
+  <wsdl:message name="InactivityReport4VehicleSoapOut">
+    <wsdl:part name="parameters" element="tns:InactivityReport4VehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="InactivityReport4FleetSoapIn">
+    <wsdl:part name="parameters" element="tns:InactivityReport4Fleet" />
+  </wsdl:message>
+  <wsdl:message name="InactivityReport4FleetSoapOut">
+    <wsdl:part name="parameters" element="tns:InactivityReport4FleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="DriverTripDetailsReportOneByOneSoapIn">
+    <wsdl:part name="parameters" element="tns:DriverTripDetailsReportOneByOne" />
+  </wsdl:message>
+  <wsdl:message name="DriverTripDetailsReportOneByOneSoapOut">
+    <wsdl:part name="parameters" element="tns:DriverTripDetailsReportOneByOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="DriverTripSummaryReportOneByOneSoapIn">
+    <wsdl:part name="parameters" element="tns:DriverTripSummaryReportOneByOne" />
+  </wsdl:message>
+  <wsdl:message name="DriverTripSummaryReportOneByOneSoapOut">
+    <wsdl:part name="parameters" element="tns:DriverTripSummaryReportOneByOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="DriverViolationReportSoapIn">
+    <wsdl:part name="parameters" element="tns:DriverViolationReport" />
+  </wsdl:message>
+  <wsdl:message name="DriverViolationReportSoapOut">
+    <wsdl:part name="parameters" element="tns:DriverViolationReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="DriverViolationSummaryReportSoapIn">
+    <wsdl:part name="parameters" element="tns:DriverViolationSummaryReport" />
+  </wsdl:message>
+  <wsdl:message name="DriverViolationSummaryReportSoapOut">
+    <wsdl:part name="parameters" element="tns:DriverViolationSummaryReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="FuelTransactionHistReportSoapIn">
+    <wsdl:part name="parameters" element="tns:FuelTransactionHistReport" />
+  </wsdl:message>
+  <wsdl:message name="FuelTransactionHistReportSoapOut">
+    <wsdl:part name="parameters" element="tns:FuelTransactionHistReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="StateMileageReportPerFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:StateMileageReportPerFleet" />
+  </wsdl:message>
+  <wsdl:message name="StateMileageReportPerFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:StateMileageReportPerFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="StateMileageSummaryReportPerFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:StateMileageSummaryReportPerFleet" />
+  </wsdl:message>
+  <wsdl:message name="StateMileageSummaryReportPerFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:StateMileageSummaryReportPerFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="StateMileageReportPerVehicleSoapIn">
+    <wsdl:part name="parameters" element="tns:StateMileageReportPerVehicle" />
+  </wsdl:message>
+  <wsdl:message name="StateMileageReportPerVehicleSoapOut">
+    <wsdl:part name="parameters" element="tns:StateMileageReportPerVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedDailyVehicleUtilizationReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExtendedDailyVehicleUtilizationReport" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedDailyVehicleUtilizationReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExtendedDailyVehicleUtilizationReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedDailyFleetUtilizationReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExtendedDailyFleetUtilizationReport" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedDailyFleetUtilizationReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExtendedDailyFleetUtilizationReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedSpeedViolationsReportForFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExtendedSpeedViolationsReportForFleet" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedSpeedViolationsReportForFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExtendedSpeedViolationsReportForFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedSpeedViolationsReportForFleetsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExtendedSpeedViolationsReportForFleets" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedSpeedViolationsReportForFleetsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExtendedSpeedViolationsReportForFleetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedSpeedViolationsDetailsReportForFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExtendedSpeedViolationsDetailsReportForFleet" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedSpeedViolationsDetailsReportForFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExtendedSpeedViolationsDetailsReportForFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedSpeedViolationsDetailsReportForFleetsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExtendedSpeedViolationsDetailsReportForFleets" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedSpeedViolationsDetailsReportForFleetsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExtendedSpeedViolationsDetailsReportForFleetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCNFleetUtilizationReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCNFleetUtilizationReport" />
+  </wsdl:message>
+  <wsdl:message name="GetCNFleetUtilizationReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCNFleetUtilizationReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCNFleetsUtilizationReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCNFleetsUtilizationReport" />
+  </wsdl:message>
+  <wsdl:message name="GetCNFleetsUtilizationReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCNFleetsUtilizationReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedMonthlyFleetSummarySoapIn">
+    <wsdl:part name="parameters" element="tns:GetExtendedMonthlyFleetSummary" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedMonthlyFleetSummarySoapOut">
+    <wsdl:part name="parameters" element="tns:GetExtendedMonthlyFleetSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedMonthlyAverageDaysUtilizedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExtendedMonthlyAverageDaysUtilized" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedMonthlyAverageDaysUtilizedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExtendedMonthlyAverageDaysUtilizedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedMonthlyServiceHrsUtilizedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExtendedMonthlyServiceHrsUtilized" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedMonthlyServiceHrsUtilizedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExtendedMonthlyServiceHrsUtilizedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedMonthlyEngineOnHrsUtilizedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExtendedMonthlyEngineOnHrsUtilized" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedMonthlyEngineOnHrsUtilizedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExtendedMonthlyEngineOnHrsUtilizedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedAverageTravelledDistanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExtendedAverageTravelledDistance" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedAverageTravelledDistanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExtendedAverageTravelledDistanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedMonthlyUnnecessaryIdlingHrsUtilizedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExtendedMonthlyUnnecessaryIdlingHrsUtilized" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedMonthlyUnnecessaryIdlingHrsUtilizedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExtendedMonthlyUnnecessaryIdlingHrsUtilizedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedUnnecessaryIdlingFuelCostsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExtendedUnnecessaryIdlingFuelCosts" />
+  </wsdl:message>
+  <wsdl:message name="GetExtendedUnnecessaryIdlingFuelCostsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExtendedUnnecessaryIdlingFuelCostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitySummaryReportPerOrganizationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActivitySummaryReportPerOrganization" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitySummaryReportPerOrganizationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActivitySummaryReportPerOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTripSummaryTotalsReportperOrganizationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTripSummaryTotalsReportperOrganization" />
+  </wsdl:message>
+  <wsdl:message name="GetTripSummaryTotalsReportperOrganizationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTripSummaryTotalsReportperOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitySummaryReportPerVehicleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActivitySummaryReportPerVehicle" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitySummaryReportPerVehicleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActivitySummaryReportPerVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTripSummaryTotalsReportperVehicleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTripSummaryTotalsReportperVehicle" />
+  </wsdl:message>
+  <wsdl:message name="GetTripSummaryTotalsReportperVehicleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTripSummaryTotalsReportperVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeAtLandmarkReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimeAtLandmarkReport" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeAtLandmarkReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeAtLandmarkReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeAtLandmarkFleetReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimeAtLandmarkFleetReport" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeAtLandmarkFleetReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeAtLandmarkFleetReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTripsSummaryReportByLicensePlateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTripsSummaryReportByLicensePlate" />
+  </wsdl:message>
+  <wsdl:message name="GetTripsSummaryReportByLicensePlateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTripsSummaryReportByLicensePlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesStatusReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesStatusReport" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesStatusReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesStatusReportResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CrystalRptSoap">
+    <wsdl:operation name="TripDetailsReport">
+      <wsdl:input message="tns:TripDetailsReportSoapIn" />
+      <wsdl:output message="tns:TripDetailsReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TripSummaryReport">
+      <wsdl:input message="tns:TripSummaryReportSoapIn" />
+      <wsdl:output message="tns:TripSummaryReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TripFleetSummaryReport">
+      <wsdl:input message="tns:TripFleetSummaryReportSoapIn" />
+      <wsdl:output message="tns:TripFleetSummaryReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TripFleetDetailsReport">
+      <wsdl:input message="tns:TripFleetDetailsReportSoapIn" />
+      <wsdl:output message="tns:TripFleetDetailsReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TripFleetDetailsReportOneByOne">
+      <wsdl:input message="tns:TripFleetDetailsReportOneByOneSoapIn" />
+      <wsdl:output message="tns:TripFleetDetailsReportOneByOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TripFleetSummaryReportOneByOne">
+      <wsdl:input message="tns:TripFleetSummaryReportOneByOneSoapIn" />
+      <wsdl:output message="tns:TripFleetSummaryReportOneByOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StopReport">
+      <wsdl:input message="tns:StopReportSoapIn" />
+      <wsdl:output message="tns:StopReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StopFleetReport">
+      <wsdl:input message="tns:StopFleetReportSoapIn" />
+      <wsdl:output message="tns:StopFleetReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlarmsReport">
+      <wsdl:input message="tns:AlarmsReportSoapIn" />
+      <wsdl:output message="tns:AlarmsReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlarmsFleetReport">
+      <wsdl:input message="tns:AlarmsFleetReportSoapIn" />
+      <wsdl:output message="tns:AlarmsFleetReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HistoryReport">
+      <wsdl:input message="tns:HistoryReportSoapIn" />
+      <wsdl:output message="tns:HistoryReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExceptionReport">
+      <wsdl:input message="tns:ExceptionReportSoapIn" />
+      <wsdl:output message="tns:ExceptionReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExceptionFleetReport">
+      <wsdl:input message="tns:ExceptionFleetReportSoapIn" />
+      <wsdl:output message="tns:ExceptionFleetReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MessagesReport">
+      <wsdl:input message="tns:MessagesReportSoapIn" />
+      <wsdl:output message="tns:MessagesReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MessagesFleetReport">
+      <wsdl:input message="tns:MessagesFleetReportSoapIn" />
+      <wsdl:output message="tns:MessagesFleetReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationReport">
+      <wsdl:input message="tns:UtilizationReportSoapIn" />
+      <wsdl:output message="tns:UtilizationReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationSummaryReport">
+      <wsdl:input message="tns:UtilizationSummaryReportSoapIn" />
+      <wsdl:output message="tns:UtilizationSummaryReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationByVehicleTypeReport">
+      <wsdl:input message="tns:UtilizationByVehicleTypeReportSoapIn" />
+      <wsdl:output message="tns:UtilizationByVehicleTypeReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationWeeklyReport">
+      <wsdl:input message="tns:UtilizationWeeklyReportSoapIn" />
+      <wsdl:output message="tns:UtilizationWeeklyReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationDailyDetailReport">
+      <wsdl:input message="tns:UtilizationDailyDetailReportSoapIn" />
+      <wsdl:output message="tns:UtilizationDailyDetailReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationDailyFleetReport">
+      <wsdl:input message="tns:UtilizationDailyFleetReportSoapIn" />
+      <wsdl:output message="tns:UtilizationDailyFleetReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OffHoursReport">
+      <wsdl:input message="tns:OffHoursReportSoapIn" />
+      <wsdl:output message="tns:OffHoursReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OffHoursFleetReport">
+      <wsdl:input message="tns:OffHoursFleetReportSoapIn" />
+      <wsdl:output message="tns:OffHoursFleetReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkActivityReport">
+      <wsdl:input message="tns:LandmarkActivityReportSoapIn" />
+      <wsdl:output message="tns:LandmarkActivityReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkFleetActivityReport">
+      <wsdl:input message="tns:LandmarkFleetActivityReportSoapIn" />
+      <wsdl:output message="tns:LandmarkFleetActivityReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViolationReport">
+      <wsdl:input message="tns:ViolationReportSoapIn" />
+      <wsdl:output message="tns:ViolationReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IdlingDetailReport">
+      <wsdl:input message="tns:IdlingDetailReportSoapIn" />
+      <wsdl:output message="tns:IdlingDetailReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IdlingSummaryOrgReport">
+      <wsdl:input message="tns:IdlingSummaryOrgReportSoapIn" />
+      <wsdl:output message="tns:IdlingSummaryOrgReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IdlingSummaryReportByOrgId">
+      <wsdl:input message="tns:IdlingSummaryReportByOrgIdSoapIn" />
+      <wsdl:output message="tns:IdlingSummaryReportByOrgIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViolationReportWithScore">
+      <wsdl:input message="tns:ViolationReportWithScoreSoapIn" />
+      <wsdl:output message="tns:ViolationReportWithScoreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FleetMaintenaceReport">
+      <wsdl:input message="tns:FleetMaintenaceReportSoapIn" />
+      <wsdl:output message="tns:FleetMaintenaceReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkFleetReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get landmark summary report for fleet</wsdl:documentation>
+      <wsdl:input message="tns:LandmarkFleetReportSoapIn" />
+      <wsdl:output message="tns:LandmarkFleetReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkVehicleReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get landmark summary report for vehicle</wsdl:documentation>
+      <wsdl:input message="tns:LandmarkVehicleReportSoapIn" />
+      <wsdl:output message="tns:LandmarkVehicleReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkVehicleDetailsReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get landmark details report for vehicle</wsdl:documentation>
+      <wsdl:input message="tns:LandmarkVehicleDetailsReportSoapIn" />
+      <wsdl:output message="tns:LandmarkVehicleDetailsReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkFleetDetailsReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get landmark details report for fleet</wsdl:documentation>
+      <wsdl:input message="tns:LandmarkFleetDetailsReportSoapIn" />
+      <wsdl:output message="tns:LandmarkFleetDetailsReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeozoneFleetReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Geozone report for fleet</wsdl:documentation>
+      <wsdl:input message="tns:GeozoneFleetReportSoapIn" />
+      <wsdl:output message="tns:GeozoneFleetReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeozoneFleetDetailsReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Geozone report for fleet</wsdl:documentation>
+      <wsdl:input message="tns:GeozoneFleetDetailsReportSoapIn" />
+      <wsdl:output message="tns:GeozoneFleetDetailsReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeozoneDetailsVehicleReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Geozone Details report for vehicle</wsdl:documentation>
+      <wsdl:input message="tns:GeozoneDetailsVehicleReportSoapIn" />
+      <wsdl:output message="tns:GeozoneDetailsVehicleReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeozoneVehicleReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get summary geozone report for vehicle</wsdl:documentation>
+      <wsdl:input message="tns:GeozoneVehicleReportSoapIn" />
+      <wsdl:output message="tns:GeozoneVehicleReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InactivityReport4Vehicle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Vehicle Inactivity Report</wsdl:documentation>
+      <wsdl:input message="tns:InactivityReport4VehicleSoapIn" />
+      <wsdl:output message="tns:InactivityReport4VehicleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InactivityReport4Fleet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fleet Inactivity Report</wsdl:documentation>
+      <wsdl:input message="tns:InactivityReport4FleetSoapIn" />
+      <wsdl:output message="tns:InactivityReport4FleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DriverTripDetailsReportOneByOne">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Driver Trip Details Report one by one</wsdl:documentation>
+      <wsdl:input message="tns:DriverTripDetailsReportOneByOneSoapIn" />
+      <wsdl:output message="tns:DriverTripDetailsReportOneByOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DriverTripSummaryReportOneByOne">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Driver Trip Summary Report one by one</wsdl:documentation>
+      <wsdl:input message="tns:DriverTripSummaryReportOneByOneSoapIn" />
+      <wsdl:output message="tns:DriverTripSummaryReportOneByOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DriverViolationReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Driver Violation Report</wsdl:documentation>
+      <wsdl:input message="tns:DriverViolationReportSoapIn" />
+      <wsdl:output message="tns:DriverViolationReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DriverViolationSummaryReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Driver Violation Summary Report</wsdl:documentation>
+      <wsdl:input message="tns:DriverViolationSummaryReportSoapIn" />
+      <wsdl:output message="tns:DriverViolationSummaryReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FuelTransactionHistReport">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Fuel Transaction History Report</wsdl:documentation>
+      <wsdl:input message="tns:FuelTransactionHistReportSoapIn" />
+      <wsdl:output message="tns:FuelTransactionHistReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StateMileageReportPerFleet">
+      <wsdl:input message="tns:StateMileageReportPerFleetSoapIn" />
+      <wsdl:output message="tns:StateMileageReportPerFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StateMileageSummaryReportPerFleet">
+      <wsdl:input message="tns:StateMileageSummaryReportPerFleetSoapIn" />
+      <wsdl:output message="tns:StateMileageSummaryReportPerFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StateMileageReportPerVehicle">
+      <wsdl:input message="tns:StateMileageReportPerVehicleSoapIn" />
+      <wsdl:output message="tns:StateMileageReportPerVehicleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedDailyVehicleUtilizationReport">
+      <wsdl:input message="tns:GetExtendedDailyVehicleUtilizationReportSoapIn" />
+      <wsdl:output message="tns:GetExtendedDailyVehicleUtilizationReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedDailyFleetUtilizationReport">
+      <wsdl:input message="tns:GetExtendedDailyFleetUtilizationReportSoapIn" />
+      <wsdl:output message="tns:GetExtendedDailyFleetUtilizationReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedSpeedViolationsReportForFleet">
+      <wsdl:input message="tns:GetExtendedSpeedViolationsReportForFleetSoapIn" />
+      <wsdl:output message="tns:GetExtendedSpeedViolationsReportForFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedSpeedViolationsReportForFleets">
+      <wsdl:input message="tns:GetExtendedSpeedViolationsReportForFleetsSoapIn" />
+      <wsdl:output message="tns:GetExtendedSpeedViolationsReportForFleetsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedSpeedViolationsDetailsReportForFleet">
+      <wsdl:input message="tns:GetExtendedSpeedViolationsDetailsReportForFleetSoapIn" />
+      <wsdl:output message="tns:GetExtendedSpeedViolationsDetailsReportForFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedSpeedViolationsDetailsReportForFleets">
+      <wsdl:input message="tns:GetExtendedSpeedViolationsDetailsReportForFleetsSoapIn" />
+      <wsdl:output message="tns:GetExtendedSpeedViolationsDetailsReportForFleetsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCNFleetUtilizationReport">
+      <wsdl:input message="tns:GetCNFleetUtilizationReportSoapIn" />
+      <wsdl:output message="tns:GetCNFleetUtilizationReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCNFleetsUtilizationReport">
+      <wsdl:input message="tns:GetCNFleetsUtilizationReportSoapIn" />
+      <wsdl:output message="tns:GetCNFleetsUtilizationReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedMonthlyFleetSummary">
+      <wsdl:input message="tns:GetExtendedMonthlyFleetSummarySoapIn" />
+      <wsdl:output message="tns:GetExtendedMonthlyFleetSummarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedMonthlyAverageDaysUtilized">
+      <wsdl:input message="tns:GetExtendedMonthlyAverageDaysUtilizedSoapIn" />
+      <wsdl:output message="tns:GetExtendedMonthlyAverageDaysUtilizedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedMonthlyServiceHrsUtilized">
+      <wsdl:input message="tns:GetExtendedMonthlyServiceHrsUtilizedSoapIn" />
+      <wsdl:output message="tns:GetExtendedMonthlyServiceHrsUtilizedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedMonthlyEngineOnHrsUtilized">
+      <wsdl:input message="tns:GetExtendedMonthlyEngineOnHrsUtilizedSoapIn" />
+      <wsdl:output message="tns:GetExtendedMonthlyEngineOnHrsUtilizedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedAverageTravelledDistance">
+      <wsdl:input message="tns:GetExtendedAverageTravelledDistanceSoapIn" />
+      <wsdl:output message="tns:GetExtendedAverageTravelledDistanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedMonthlyUnnecessaryIdlingHrsUtilized">
+      <wsdl:input message="tns:GetExtendedMonthlyUnnecessaryIdlingHrsUtilizedSoapIn" />
+      <wsdl:output message="tns:GetExtendedMonthlyUnnecessaryIdlingHrsUtilizedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedUnnecessaryIdlingFuelCosts">
+      <wsdl:input message="tns:GetExtendedUnnecessaryIdlingFuelCostsSoapIn" />
+      <wsdl:output message="tns:GetExtendedUnnecessaryIdlingFuelCostsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitySummaryReportPerOrganization">
+      <wsdl:input message="tns:GetActivitySummaryReportPerOrganizationSoapIn" />
+      <wsdl:output message="tns:GetActivitySummaryReportPerOrganizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTripSummaryTotalsReportperOrganization">
+      <wsdl:input message="tns:GetTripSummaryTotalsReportperOrganizationSoapIn" />
+      <wsdl:output message="tns:GetTripSummaryTotalsReportperOrganizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitySummaryReportPerVehicle">
+      <wsdl:input message="tns:GetActivitySummaryReportPerVehicleSoapIn" />
+      <wsdl:output message="tns:GetActivitySummaryReportPerVehicleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTripSummaryTotalsReportperVehicle">
+      <wsdl:input message="tns:GetTripSummaryTotalsReportperVehicleSoapIn" />
+      <wsdl:output message="tns:GetTripSummaryTotalsReportperVehicleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeAtLandmarkReport">
+      <wsdl:input message="tns:GetTimeAtLandmarkReportSoapIn" />
+      <wsdl:output message="tns:GetTimeAtLandmarkReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeAtLandmarkFleetReport">
+      <wsdl:input message="tns:GetTimeAtLandmarkFleetReportSoapIn" />
+      <wsdl:output message="tns:GetTimeAtLandmarkFleetReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTripsSummaryReportByLicensePlate">
+      <wsdl:input message="tns:GetTripsSummaryReportByLicensePlateSoapIn" />
+      <wsdl:output message="tns:GetTripsSummaryReportByLicensePlateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesStatusReport">
+      <wsdl:input message="tns:GetVehiclesStatusReportSoapIn" />
+      <wsdl:output message="tns:GetVehiclesStatusReportSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CrystalRptSoap" type="tns:CrystalRptSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TripDetailsReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/TripDetailsReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TripSummaryReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/TripSummaryReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TripFleetSummaryReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/TripFleetSummaryReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TripFleetDetailsReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/TripFleetDetailsReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TripFleetDetailsReportOneByOne">
+      <soap:operation soapAction="http://www.sentinelfm.com/TripFleetDetailsReportOneByOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TripFleetSummaryReportOneByOne">
+      <soap:operation soapAction="http://www.sentinelfm.com/TripFleetSummaryReportOneByOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/StopReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopFleetReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/StopFleetReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlarmsReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/AlarmsReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlarmsFleetReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/AlarmsFleetReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistoryReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/HistoryReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExceptionReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/ExceptionReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExceptionFleetReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/ExceptionFleetReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MessagesReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/MessagesReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MessagesFleetReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/MessagesFleetReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/UtilizationReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationSummaryReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/UtilizationSummaryReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationByVehicleTypeReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/UtilizationByVehicleTypeReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationWeeklyReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/UtilizationWeeklyReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationDailyDetailReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/UtilizationDailyDetailReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationDailyFleetReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/UtilizationDailyFleetReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OffHoursReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/OffHoursReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OffHoursFleetReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/OffHoursFleetReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkActivityReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/LandmarkActivityReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkFleetActivityReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/LandmarkFleetActivityReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViolationReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/ViolationReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdlingDetailReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/IdlingDetailReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdlingSummaryOrgReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/IdlingSummaryOrgReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdlingSummaryReportByOrgId">
+      <soap:operation soapAction="http://www.sentinelfm.com/IdlingSummaryReportByOrgId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViolationReportWithScore">
+      <soap:operation soapAction="http://www.sentinelfm.com/ViolationReportWithScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FleetMaintenaceReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/FleetMaintenaceReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkFleetReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/LandmarkFleetReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkVehicleReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/LandmarkVehicleReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkVehicleDetailsReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/LandmarkVehicleDetailsReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkFleetDetailsReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/LandmarkFleetDetailsReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeozoneFleetReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/GeozoneFleetReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeozoneFleetDetailsReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/GeozoneFleetDetailsReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeozoneDetailsVehicleReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/GeozoneDetailsVehicleReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeozoneVehicleReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/GeozoneVehicleReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactivityReport4Vehicle">
+      <soap:operation soapAction="http://www.sentinelfm.com/InactivityReport4Vehicle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactivityReport4Fleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/InactivityReport4Fleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DriverTripDetailsReportOneByOne">
+      <soap:operation soapAction="http://www.sentinelfm.com/DriverTripDetailsReportOneByOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DriverTripSummaryReportOneByOne">
+      <soap:operation soapAction="http://www.sentinelfm.com/DriverTripSummaryReportOneByOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DriverViolationReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/DriverViolationReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DriverViolationSummaryReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/DriverViolationSummaryReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FuelTransactionHistReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/FuelTransactionHistReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StateMileageReportPerFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/StateMileageReportPerFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StateMileageSummaryReportPerFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/StateMileageSummaryReportPerFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StateMileageReportPerVehicle">
+      <soap:operation soapAction="http://www.sentinelfm.com/StateMileageReportPerVehicle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedDailyVehicleUtilizationReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetExtendedDailyVehicleUtilizationReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedDailyFleetUtilizationReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetExtendedDailyFleetUtilizationReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedSpeedViolationsReportForFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetExtendedSpeedViolationsReportForFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedSpeedViolationsReportForFleets">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetExtendedSpeedViolationsReportForFleets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedSpeedViolationsDetailsReportForFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetExtendedSpeedViolationsDetailsReportForFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedSpeedViolationsDetailsReportForFleets">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetExtendedSpeedViolationsDetailsReportForFleets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCNFleetUtilizationReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetCNFleetUtilizationReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCNFleetsUtilizationReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetCNFleetsUtilizationReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedMonthlyFleetSummary">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetExtendedMonthlyFleetSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedMonthlyAverageDaysUtilized">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetExtendedMonthlyAverageDaysUtilized" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedMonthlyServiceHrsUtilized">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetExtendedMonthlyServiceHrsUtilized" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedMonthlyEngineOnHrsUtilized">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetExtendedMonthlyEngineOnHrsUtilized" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedAverageTravelledDistance">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetExtendedAverageTravelledDistance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedMonthlyUnnecessaryIdlingHrsUtilized">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetExtendedMonthlyUnnecessaryIdlingHrsUtilized" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedUnnecessaryIdlingFuelCosts">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetExtendedUnnecessaryIdlingFuelCosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitySummaryReportPerOrganization">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetActivitySummaryReportPerOrganization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTripSummaryTotalsReportperOrganization">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetTripSummaryTotalsReportperOrganization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitySummaryReportPerVehicle">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetActivitySummaryReportPerVehicle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTripSummaryTotalsReportperVehicle">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetTripSummaryTotalsReportperVehicle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeAtLandmarkReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetTimeAtLandmarkReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeAtLandmarkFleetReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetTimeAtLandmarkFleetReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTripsSummaryReportByLicensePlate">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetTripsSummaryReportByLicensePlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesStatusReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesStatusReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CrystalRptSoap12" type="tns:CrystalRptSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TripDetailsReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/TripDetailsReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TripSummaryReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/TripSummaryReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TripFleetSummaryReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/TripFleetSummaryReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TripFleetDetailsReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/TripFleetDetailsReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TripFleetDetailsReportOneByOne">
+      <soap12:operation soapAction="http://www.sentinelfm.com/TripFleetDetailsReportOneByOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TripFleetSummaryReportOneByOne">
+      <soap12:operation soapAction="http://www.sentinelfm.com/TripFleetSummaryReportOneByOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/StopReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopFleetReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/StopFleetReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlarmsReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AlarmsReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlarmsFleetReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AlarmsFleetReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistoryReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/HistoryReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExceptionReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/ExceptionReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExceptionFleetReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/ExceptionFleetReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MessagesReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/MessagesReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MessagesFleetReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/MessagesFleetReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UtilizationReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationSummaryReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UtilizationSummaryReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationByVehicleTypeReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UtilizationByVehicleTypeReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationWeeklyReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UtilizationWeeklyReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationDailyDetailReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UtilizationDailyDetailReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtilizationDailyFleetReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UtilizationDailyFleetReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OffHoursReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/OffHoursReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OffHoursFleetReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/OffHoursFleetReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkActivityReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/LandmarkActivityReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkFleetActivityReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/LandmarkFleetActivityReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViolationReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/ViolationReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdlingDetailReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/IdlingDetailReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdlingSummaryOrgReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/IdlingSummaryOrgReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IdlingSummaryReportByOrgId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/IdlingSummaryReportByOrgId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViolationReportWithScore">
+      <soap12:operation soapAction="http://www.sentinelfm.com/ViolationReportWithScore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FleetMaintenaceReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/FleetMaintenaceReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkFleetReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/LandmarkFleetReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkVehicleReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/LandmarkVehicleReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkVehicleDetailsReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/LandmarkVehicleDetailsReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LandmarkFleetDetailsReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/LandmarkFleetDetailsReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeozoneFleetReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GeozoneFleetReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeozoneFleetDetailsReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GeozoneFleetDetailsReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeozoneDetailsVehicleReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GeozoneDetailsVehicleReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeozoneVehicleReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GeozoneVehicleReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactivityReport4Vehicle">
+      <soap12:operation soapAction="http://www.sentinelfm.com/InactivityReport4Vehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InactivityReport4Fleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/InactivityReport4Fleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DriverTripDetailsReportOneByOne">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DriverTripDetailsReportOneByOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DriverTripSummaryReportOneByOne">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DriverTripSummaryReportOneByOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DriverViolationReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DriverViolationReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DriverViolationSummaryReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DriverViolationSummaryReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FuelTransactionHistReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/FuelTransactionHistReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StateMileageReportPerFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/StateMileageReportPerFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StateMileageSummaryReportPerFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/StateMileageSummaryReportPerFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StateMileageReportPerVehicle">
+      <soap12:operation soapAction="http://www.sentinelfm.com/StateMileageReportPerVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedDailyVehicleUtilizationReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetExtendedDailyVehicleUtilizationReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedDailyFleetUtilizationReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetExtendedDailyFleetUtilizationReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedSpeedViolationsReportForFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetExtendedSpeedViolationsReportForFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedSpeedViolationsReportForFleets">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetExtendedSpeedViolationsReportForFleets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedSpeedViolationsDetailsReportForFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetExtendedSpeedViolationsDetailsReportForFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedSpeedViolationsDetailsReportForFleets">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetExtendedSpeedViolationsDetailsReportForFleets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCNFleetUtilizationReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetCNFleetUtilizationReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCNFleetsUtilizationReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetCNFleetsUtilizationReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedMonthlyFleetSummary">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetExtendedMonthlyFleetSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedMonthlyAverageDaysUtilized">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetExtendedMonthlyAverageDaysUtilized" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedMonthlyServiceHrsUtilized">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetExtendedMonthlyServiceHrsUtilized" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedMonthlyEngineOnHrsUtilized">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetExtendedMonthlyEngineOnHrsUtilized" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedAverageTravelledDistance">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetExtendedAverageTravelledDistance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedMonthlyUnnecessaryIdlingHrsUtilized">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetExtendedMonthlyUnnecessaryIdlingHrsUtilized" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtendedUnnecessaryIdlingFuelCosts">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetExtendedUnnecessaryIdlingFuelCosts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitySummaryReportPerOrganization">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetActivitySummaryReportPerOrganization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTripSummaryTotalsReportperOrganization">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetTripSummaryTotalsReportperOrganization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitySummaryReportPerVehicle">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetActivitySummaryReportPerVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTripSummaryTotalsReportperVehicle">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetTripSummaryTotalsReportperVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeAtLandmarkReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetTimeAtLandmarkReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeAtLandmarkFleetReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetTimeAtLandmarkFleetReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTripsSummaryReportByLicensePlate">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetTripsSummaryReportByLicensePlate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesStatusReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesStatusReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CrystalRpt">
+    <wsdl:port name="CrystalRptSoap" binding="tns:CrystalRptSoap">
+      <soap:address location="http://192.168.9.10/ASIReports/Interfaces/CrystalRpt.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CrystalRptSoap12" binding="tns:CrystalRptSoap12">
+      <soap12:address location="http://192.168.9.10/ASIReports/Interfaces/CrystalRpt.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

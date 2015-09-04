@@ -1,0 +1,213 @@
+﻿        .AlarmRotatingClient,
+        .MessageRotatingClient
+        {
+            scrollbar-face-color: #ffffff;
+            scrollbar-highlight-color: #ffffff;
+            scrollbar-shadow-color: #ffffff;
+            scrollbar-3dlight-color: #ffffff;
+            scrollbar-arrow-color: #ffffff;
+            scrollbar-darkshadow-color: #ffffff;
+        }
+ 
+        .AlarmRotatingClient A
+        {
+            font-size: 12px;
+            color: #0000aa;
+            font-family: Verdana;
+            text-decoration: none;
+        }
+        .AlarmRotatingClient A:link
+        {
+            font-size: 12px;
+            color: #0000aa;
+            font-family: Verdana;
+            text-decoration: none;
+        }
+        .AlarmRotatingClient A:visited
+        {
+            font-size: 12px;
+            color: #0000aa;
+            font-family: Verdana;
+            text-decoration: none;
+        }
+        .AlarmRotatingClient A:active
+        {
+            font-size: 12px;
+            color: #0000aa;
+            font-family: Verdana;
+            text-decoration: none;
+        }
+        .AlarmRotatingClient A:hover
+        {
+            font-size: 13px;
+            color: #ff0000;
+            font-family: Verdana;
+            text-decoration: none;
+        }
+        
+        .AlarmRotatingClient P,
+        .MessageRotatingClient p
+        {
+            font-size: 11px;
+            color: #000000;
+            font-family: Verdana;
+        }
+        
+        .AlarmRotatingClient TR,
+        .MessageRotatingClient TR
+        {
+            font-size: 11px;
+            color: #000000;
+            font-family: Verdana;
+        }
+        .AlarmRotatingClient TD,
+        .MessageRotatingClient TD
+        {
+            font-size: 11px;
+            color: #000000;
+            font-family: Verdana;
+        }
+        .AlarmRotatingClient UL,
+        .MessageRotatingClient UL
+        {
+            font-size: 11px;
+            color: #000000;
+            font-family: Verdana;
+        }
+        .AlarmRotatingClient LI,
+        .MessageRotatingClient LI
+        {
+            font-size: 11px;
+            color: #000000;
+            font-family: Verdana;
+        }
+        .AlarmRotatingClient FORM,
+        .MessageRotatingClient FORM
+        {
+            margin: 5px;
+        }
+        .AlarmRotatingClient .header1
+        {
+            padding-right: 2px;
+            padding-left: 2px;
+            font-size: 13px;
+            background: #4682b4;
+            padding-bottom: 2px;
+            margin: 0px;
+            color: #ffffff;
+            padding-top: 2px;
+            font-family: Verdana;
+        }
+        .AlarmRotatingClient H1
+        {
+            padding-right: 2px;
+            padding-left: 2px;
+            font-size: 13px;
+            background: #4682b4;
+            padding-bottom: 2px;
+            margin: 0px;
+            color: #ffffff;
+            padding-top: 2px;
+            font-family: Verdana;
+        }
+        .AlarmRotatingClient .header2
+        {
+            font-size: 12px;
+            background: #dbeaf5;
+            color: #000000;
+            font-family: Verdana;
+        }
+        .AlarmRotatingClient H2
+        {
+            font-size: 12px;
+            background: #dbeaf5;
+            color: #000000;
+            font-family: Verdana;
+        }
+        .AlarmRotatingClient .intd,
+        .MessageRotatingClient .intd
+        {
+            padding-left: 15px;
+            font-size: 11px;
+            color: #000000;
+            font-family: Verdana;
+        }
+        
+        .MessageRotatingClient A 
+        { 
+          FONT-SIZE: 11px; 
+          COLOR: #0000aa;
+          FONT-FAMILY: Tahoma, Verdana;
+          TEXT-DECORATION: none 
+        }
+        .MessageRotatingClient A:link 
+        { 
+          FONT-SIZE: 11px;
+          COLOR: #0000aa; 
+          FONT-FAMILY: Tahoma, Verdana; 
+          TEXT-DECORATION: none
+        }
+        .MessageRotatingClient A:visited 
+        {
+          FONT-SIZE: 11px; 
+          COLOR: #0000aa;
+          FONT-FAMILY: Tahoma, Verdana; 
+          TEXT-DECORATION: none 
+        } 
+        .MessageRotatingClient A:active 
+        { 
+          FONT-SIZE: 11px; 
+          COLOR: #0000aa; 
+          FONT-FAMILY: Tahoma, Verdana; 
+          TEXT-DECORATION: none 
+        } 
+       .MessageRotatingClient A:hover 
+        { 
+          FONT-SIZE: 12px;
+          COLOR: #ff0000; 
+          FONT-FAMILY: Tahoma, Verdana; 
+          TEXT-DECORATION: none 
+        } 
+
+       .MessageRotatingClient .header1 
+        { 
+           PADDING-RIGHT: 2px; 
+           PADDING-LEFT: 2px; 
+           FONT-WEIGHT: bold; 
+           FONT-SIZE: 13px; 
+           BACKGROUND: #4682b4; 
+           PADDING-BOTTOM: 2px; 
+           MARGIN: 0px; 
+           COLOR: #ffffff; 
+           PADDING-TOP: 2px; 
+           FONT-FAMILY: Tahoma, Verdana 
+        } 
+       .MessageRotatingClient  H1 
+        { 
+           PADDING-RIGHT: 2px; 
+           PADDING-LEFT: 2px; 
+           FONT-WEIGHT: bold; 
+           FONT-SIZE: 13px; 
+           BACKGROUND: #4682b4; 
+           PADDING-BOTTOM: 2px; 
+           MARGIN: 0px; 
+           COLOR: #ffffff; 
+           PADDING-TOP: 2px; 
+           FONT-FAMILY: Tahoma, Verdana 
+        } 
+        .MessageRotatingClient  .header2
+         { 
+            FONT-WEIGHT: bold; 
+            FONT-SIZE: 12px; 
+            BACKGROUND: #dbeaf5; 
+            COLOR: #000000; 
+            FONT-FAMILY: Tahoma, Verdana 
+         }
+        .MessageRotatingClient H2 
+         { 
+             FONT-WEIGHT: bold; 
+             FONT-SIZE: 12px; 
+             BACKGROUND: #dbeaf5; 
+             COLOR: #000000; 
+             FONT-FAMILY: Tahoma, Verdana 
+          } 

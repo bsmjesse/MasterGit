@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage_MasterPage"  %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript" src="../Scripts/Telerik_AddIn.js"></script>
+    <link href="~/MasterPage/MasterPage.css" type="text/css" rel="stylesheet"></link>
+</head>
+<body >
+    <form id="form1" runat="server">
+    <telerik:RadScriptManager runat="server" ID="RadScriptManager1" AsyncPostBackTimeout="300">
+        <Scripts>
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js" />
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" />
+        </Scripts>
+    </telerik:RadScriptManager>
+<div id="ParentDivElement" style="height: 100%;padding-top:2px;"> 
+               <telerik:RadSplitter ID="RadsplitterMenu" runat="server"   Skin="Hay" Orientation="Vertical" VisibleDuringInit="false"
+            OnClientLoad="ResizeSplitter" >
+                <telerik:RadPane ID="RadpaneLeft" runat="server" Width="125px"
+                    OnClientCollapsed="RadpaneLeftResizing"
+                    OnClientExpanded="RadpaneLeftResizing" OnClientResized="RadpaneLeftResizing" >
+  <telerik:RadPanelBar Skin="Office2007" CssClass="formtext" runat="server" ID="radSideMenu" 
+                    OnClientItemExpand = "OnMenuItemExpand" 
+                    Width="125px" >
+                </telerik:RadPanelBar>
+                </telerik:RadPane>
+                <telerik:RadSplitBar ID="RadsplitbarMenu" runat="server" CollapseMode="Forward"  />
+                <telerik:RadPane ID="RadpaneContent" runat="server"  Scrolling="None" 
+                     >
+                <asp:Panel ID="pnlMenu" runat ="server" style="height:100%"  >
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+                </asp:ContentPlaceHolder>
+                </asp:Panel>
+                </telerik:RadPane>
+                </telerik:RadSplitter>
+</div>
+            <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
+        <script type="text/javascript">
+            function RadpaneLeftResizing(sender,args)
+            {
+                <%= resizeScript %>;
+            }
+
+
+            var minWidth = 800; 
+            var minHeight = 600; 
+  
+ 
+  
+            function ResizeSplitter() { 
+                var splitter = $find("<%=RadsplitterMenu.ClientID %>"); 
+                if (!splitter) return; 
+                var viewport = $telerik.getViewPortSize(); 
+                var widthToSet = viewport.width > minWidth ? viewport.width : minWidth; 
+                var heightToSet = viewport.height > minHeight ? viewport.height : minHeight; 
+                splitter.set_width(widthToSet); 
+                splitter.set_height(heightToSet); 
+                var wrapper = $get("ParentDivElement"); 
+            } 
+
+            $telerik.$(window).resize(function () {
+                ResizeSplitter();
+                <%= resizeScript %>
+            });
+
+            $telerik.$(document).ready(
+              function() {
+                 $telerik.$('#<%= radSideMenu.ClientID %>').find("ul").find("ul").find("li").css("border-bottom", "1px solid gray");
+              }
+            )
+
+
+            function OnMenuItemExpand(sender, eventArgs)
+            {
+               var item = $telerik.$(eventArgs.get_item().get_element());
+               item.find("li").css("border-bottom", "1px solid gray");
+            }
+
+        </script>
+        </telerik:RadCodeBlock>
+
+    </form>
+</body>
+</html>

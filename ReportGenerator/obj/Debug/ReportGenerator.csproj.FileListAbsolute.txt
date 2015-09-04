@@ -1,0 +1,6 @@
+C:\Builds\SentinelFM\Main\BIN\ReportGenerator.dll
+C:\Builds\SentinelFM\Main\BIN\ReportGenerator.pdb
+C:\Builds\SentinelFM\Main\BIN\ReportGenerator.xml
+C:\Builds\SentinelFM\Main\ReportGenerator\obj\Debug\ReportGenerator.csprojResolveAssemblyReference.cache
+C:\Builds\SentinelFM\Main\ReportGenerator\obj\Debug\ReportGenerator.dll
+C:\Builds\SentinelFM\Main\ReportGenerator\obj\Debug\ReportGenerator.pdb

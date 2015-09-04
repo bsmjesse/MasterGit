@@ -1,0 +1,2109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.sentinelfm.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.sentinelfm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.sentinelfm.com">
+      <s:element name="GetAllStateProvinces">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllStateProvincesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAllStateProvincesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllVehicleTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllVehicleTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAllVehicleTypesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxMsgInTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxMsgInTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBoxMsgInTypesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxMsgInTypesByLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxMsgInTypesByLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBoxMsgInTypesByLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIconsInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIconsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetIconsInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMakesInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMakesInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAllMakesInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetModelsInfoByMakeId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="makeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetModelsInfoByMakeIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetModelsInfoByMakeIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSheduledTasksHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSheduledTasksHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSheduledTasksHistoryResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSystemUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgFr" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="systemUpdateType" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="severity" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="FontColor" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FontBold" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSystemUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddSystemUpdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSystemUpdateTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgFr" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="systemUpdateType" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="severity" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="FontColor" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FontBold" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSystemUpdateTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSystemUpdateTableResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSystemUpdates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="systemUpdateType" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSystemUpdatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSystemUpdatesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFullInfoSystemUpdates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="systemUpdateType" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFullInfoSystemUpdatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFullInfoSystemUpdatesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSystemUpdatesByLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="systemUpdateType" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSystemUpdatesByLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSystemUpdatesByLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSystemUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSystemUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteSystemUpdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConfigurationModuleTypesInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConfigurationModuleTypesInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetConfigurationModuleTypesInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConfigurationModuleTypeId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="moduleTypeName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="moduleTypeId" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConfigurationModuleTypeIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetConfigurationModuleTypeIdResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="moduleTypeId" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConfigurationValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="moduleTypeId" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="cfgGroupId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="keyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keyValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConfigurationValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetConfigurationValueResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="keyValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetComputerModulesInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="moduleTypeId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="computerIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetComputerModulesInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetComputerModulesInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateModuleStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="moduleTypeId" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="enable" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateModuleStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateModuleStatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteModule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="moduleId" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteModuleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteModuleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommModesInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommModesInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCommModesInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllFirmwareInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllFirmwareInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAllFirmwareInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserControls">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserControlsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserControlsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserReports">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserReportsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserReportsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserReportsByLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserReportsByLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserReportsByLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserReportsByCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="category" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserReportsByCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserReportsByCategoryResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupSecurityFullInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userGroupId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupSecurityFullInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetGroupSecurityFullInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllGroupSecurityFullInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllGroupSecurityFullInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAllGroupSecurityFullInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAuditGroupInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAuditGroupInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAuditGroupInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMapUserUsage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mapTypeId" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="mapId" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMapUserUsageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddMapUserUsageResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrganizationMapUsageInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="mapId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="usageYear" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="usageMonth" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrganizationMapUsageInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetOrganizationMapUsageInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMapTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMapTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMapTypesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxGeoCodeEngineInfoXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxGeoCodeEngineInfoXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBoxGeoCodeEngineInfoXMLResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxMapEngineInfoXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxMapEngineInfoXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBoxMapEngineInfoXMLResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGeoCodeEngineInfoXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGeoCodeEngineInfoXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserGeoCodeEngineInfoXMLResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserMapEngineInfoXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserMapEngineInfoXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserMapEngineInfoXMLResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatitudeLongitudeByLSD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="specialAddress" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="latitude" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="longitude" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatitudeLongitudeByLSDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLatitudeLongitudeByLSDResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="latitude" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="longitude" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcknowledgeNotification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="notificationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="typeId" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcknowledgeNotificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AcknowledgeNotificationResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LocalizationData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyField" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldGroup" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LocalizationDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LocalizationDataResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstallJob_Add">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtModified" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstallJob_AddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InstallJob_AddResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstallJob_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstallJob_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InstallJob_UpdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstallJob_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="jobId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstallJob_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InstallJob_DeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstallJobs_GetAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstallJobs_GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InstallJobs_GetAllResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstallJob_Get">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="jobId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstallJob_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InstallJob_GetResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLogData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ModuleIds" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgFilter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topMsgs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLogDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLogDataResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllStateProvincesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllStateProvinces" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStateProvincesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllStateProvincesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllVehicleTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllVehicleTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetAllVehicleTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllVehicleTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxMsgInTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBoxMsgInTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxMsgInTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBoxMsgInTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxMsgInTypesByLangSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBoxMsgInTypesByLang" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxMsgInTypesByLangSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBoxMsgInTypesByLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIconsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIconsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetIconsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIconsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMakesInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMakesInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMakesInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMakesInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetModelsInfoByMakeIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetModelsInfoByMakeId" />
+  </wsdl:message>
+  <wsdl:message name="GetModelsInfoByMakeIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetModelsInfoByMakeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSheduledTasksHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetSheduledTasksHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetSheduledTasksHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetSheduledTasksHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSystemUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:AddSystemUpdate" />
+  </wsdl:message>
+  <wsdl:message name="AddSystemUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:AddSystemUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSystemUpdateTableSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSystemUpdateTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSystemUpdateTableSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSystemUpdateTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemUpdatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSystemUpdates" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemUpdatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSystemUpdatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFullInfoSystemUpdatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFullInfoSystemUpdates" />
+  </wsdl:message>
+  <wsdl:message name="GetFullInfoSystemUpdatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFullInfoSystemUpdatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemUpdatesByLangSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSystemUpdatesByLang" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemUpdatesByLangSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSystemUpdatesByLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSystemUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSystemUpdate" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSystemUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSystemUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConfigurationModuleTypesInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConfigurationModuleTypesInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetConfigurationModuleTypesInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConfigurationModuleTypesInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConfigurationModuleTypeIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConfigurationModuleTypeId" />
+  </wsdl:message>
+  <wsdl:message name="GetConfigurationModuleTypeIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConfigurationModuleTypeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConfigurationValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConfigurationValue" />
+  </wsdl:message>
+  <wsdl:message name="GetConfigurationValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConfigurationValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetComputerModulesInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetComputerModulesInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetComputerModulesInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetComputerModulesInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateModuleStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateModuleStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateModuleStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateModuleStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteModuleSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteModule" />
+  </wsdl:message>
+  <wsdl:message name="DeleteModuleSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteModuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCommModesInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCommModesInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCommModesInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCommModesInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllFirmwareInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllFirmwareInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllFirmwareInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllFirmwareInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserControlsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserControls" />
+  </wsdl:message>
+  <wsdl:message name="GetUserControlsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserControlsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserReportsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserReports" />
+  </wsdl:message>
+  <wsdl:message name="GetUserReportsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserReportsByLangSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserReportsByLang" />
+  </wsdl:message>
+  <wsdl:message name="GetUserReportsByLangSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserReportsByLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserReportsByCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserReportsByCategory" />
+  </wsdl:message>
+  <wsdl:message name="GetUserReportsByCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserReportsByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupSecurityFullInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupSecurityFullInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupSecurityFullInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupSecurityFullInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllGroupSecurityFullInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllGroupSecurityFullInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllGroupSecurityFullInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllGroupSecurityFullInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAuditGroupInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAuditGroupInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAuditGroupInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAuditGroupInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMapUserUsageSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMapUserUsage" />
+  </wsdl:message>
+  <wsdl:message name="AddMapUserUsageSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMapUserUsageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrganizationMapUsageInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrganizationMapUsageInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetOrganizationMapUsageInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrganizationMapUsageInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMapTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMapTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetMapTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMapTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxGeoCodeEngineInfoXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBoxGeoCodeEngineInfoXML" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxGeoCodeEngineInfoXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBoxGeoCodeEngineInfoXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxMapEngineInfoXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBoxMapEngineInfoXML" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxMapEngineInfoXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBoxMapEngineInfoXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGeoCodeEngineInfoXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserGeoCodeEngineInfoXML" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGeoCodeEngineInfoXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserGeoCodeEngineInfoXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserMapEngineInfoXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserMapEngineInfoXML" />
+  </wsdl:message>
+  <wsdl:message name="GetUserMapEngineInfoXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserMapEngineInfoXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLatitudeLongitudeByLSDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLatitudeLongitudeByLSD" />
+  </wsdl:message>
+  <wsdl:message name="GetLatitudeLongitudeByLSDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLatitudeLongitudeByLSDResponse" />
+  </wsdl:message>
+  <wsdl:message name="AcknowledgeNotificationSoapIn">
+    <wsdl:part name="parameters" element="tns:AcknowledgeNotification" />
+  </wsdl:message>
+  <wsdl:message name="AcknowledgeNotificationSoapOut">
+    <wsdl:part name="parameters" element="tns:AcknowledgeNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="LocalizationDataSoapIn">
+    <wsdl:part name="parameters" element="tns:LocalizationData" />
+  </wsdl:message>
+  <wsdl:message name="LocalizationDataSoapOut">
+    <wsdl:part name="parameters" element="tns:LocalizationDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="InstallJob_AddSoapIn">
+    <wsdl:part name="parameters" element="tns:InstallJob_Add" />
+  </wsdl:message>
+  <wsdl:message name="InstallJob_AddSoapOut">
+    <wsdl:part name="parameters" element="tns:InstallJob_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="InstallJob_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:InstallJob_Update" />
+  </wsdl:message>
+  <wsdl:message name="InstallJob_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:InstallJob_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="InstallJob_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:InstallJob_Delete" />
+  </wsdl:message>
+  <wsdl:message name="InstallJob_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:InstallJob_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="InstallJobs_GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:InstallJobs_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="InstallJobs_GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:InstallJobs_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="InstallJob_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:InstallJob_Get" />
+  </wsdl:message>
+  <wsdl:message name="InstallJob_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:InstallJob_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLogDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLogData" />
+  </wsdl:message>
+  <wsdl:message name="GetLogDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLogDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DBSystemSoap">
+    <wsdl:operation name="GetAllStateProvinces">
+      <wsdl:input message="tns:GetAllStateProvincesSoapIn" />
+      <wsdl:output message="tns:GetAllStateProvincesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVehicleTypes">
+      <wsdl:input message="tns:GetAllVehicleTypesSoapIn" />
+      <wsdl:output message="tns:GetAllVehicleTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxMsgInTypes">
+      <wsdl:input message="tns:GetBoxMsgInTypesSoapIn" />
+      <wsdl:output message="tns:GetBoxMsgInTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxMsgInTypesByLang">
+      <wsdl:input message="tns:GetBoxMsgInTypesByLangSoapIn" />
+      <wsdl:output message="tns:GetBoxMsgInTypesByLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIconsInfo">
+      <wsdl:input message="tns:GetIconsInfoSoapIn" />
+      <wsdl:output message="tns:GetIconsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMakesInfo">
+      <wsdl:input message="tns:GetAllMakesInfoSoapIn" />
+      <wsdl:output message="tns:GetAllMakesInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfoByMakeId">
+      <wsdl:input message="tns:GetModelsInfoByMakeIdSoapIn" />
+      <wsdl:output message="tns:GetModelsInfoByMakeIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSheduledTasksHistory">
+      <wsdl:input message="tns:GetSheduledTasksHistorySoapIn" />
+      <wsdl:output message="tns:GetSheduledTasksHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemUpdate">
+      <wsdl:input message="tns:AddSystemUpdateSoapIn" />
+      <wsdl:output message="tns:AddSystemUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSystemUpdateTable">
+      <wsdl:input message="tns:UpdateSystemUpdateTableSoapIn" />
+      <wsdl:output message="tns:UpdateSystemUpdateTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemUpdates">
+      <wsdl:input message="tns:GetSystemUpdatesSoapIn" />
+      <wsdl:output message="tns:GetSystemUpdatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFullInfoSystemUpdates">
+      <wsdl:input message="tns:GetFullInfoSystemUpdatesSoapIn" />
+      <wsdl:output message="tns:GetFullInfoSystemUpdatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemUpdatesByLang">
+      <wsdl:input message="tns:GetSystemUpdatesByLangSoapIn" />
+      <wsdl:output message="tns:GetSystemUpdatesByLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSystemUpdate">
+      <wsdl:input message="tns:DeleteSystemUpdateSoapIn" />
+      <wsdl:output message="tns:DeleteSystemUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigurationModuleTypesInfo">
+      <wsdl:input message="tns:GetConfigurationModuleTypesInfoSoapIn" />
+      <wsdl:output message="tns:GetConfigurationModuleTypesInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigurationModuleTypeId">
+      <wsdl:input message="tns:GetConfigurationModuleTypeIdSoapIn" />
+      <wsdl:output message="tns:GetConfigurationModuleTypeIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigurationValue">
+      <wsdl:input message="tns:GetConfigurationValueSoapIn" />
+      <wsdl:output message="tns:GetConfigurationValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComputerModulesInfo">
+      <wsdl:input message="tns:GetComputerModulesInfoSoapIn" />
+      <wsdl:output message="tns:GetComputerModulesInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateModuleStatus">
+      <wsdl:input message="tns:UpdateModuleStatusSoapIn" />
+      <wsdl:output message="tns:UpdateModuleStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteModule">
+      <wsdl:input message="tns:DeleteModuleSoapIn" />
+      <wsdl:output message="tns:DeleteModuleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCommModesInfo">
+      <wsdl:input message="tns:GetCommModesInfoSoapIn" />
+      <wsdl:output message="tns:GetCommModesInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFirmwareInfo">
+      <wsdl:input message="tns:GetAllFirmwareInfoSoapIn" />
+      <wsdl:output message="tns:GetAllFirmwareInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserControls">
+      <wsdl:input message="tns:GetUserControlsSoapIn" />
+      <wsdl:output message="tns:GetUserControlsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserReports">
+      <wsdl:input message="tns:GetUserReportsSoapIn" />
+      <wsdl:output message="tns:GetUserReportsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserReportsByLang">
+      <wsdl:input message="tns:GetUserReportsByLangSoapIn" />
+      <wsdl:output message="tns:GetUserReportsByLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserReportsByCategory">
+      <wsdl:input message="tns:GetUserReportsByCategorySoapIn" />
+      <wsdl:output message="tns:GetUserReportsByCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupSecurityFullInfo">
+      <wsdl:input message="tns:GetGroupSecurityFullInfoSoapIn" />
+      <wsdl:output message="tns:GetGroupSecurityFullInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroupSecurityFullInfo">
+      <wsdl:input message="tns:GetAllGroupSecurityFullInfoSoapIn" />
+      <wsdl:output message="tns:GetAllGroupSecurityFullInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuditGroupInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Audit Groups</wsdl:documentation>
+      <wsdl:input message="tns:GetAuditGroupInfoSoapIn" />
+      <wsdl:output message="tns:GetAuditGroupInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMapUserUsage">
+      <wsdl:input message="tns:AddMapUserUsageSoapIn" />
+      <wsdl:output message="tns:AddMapUserUsageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationMapUsageInfo">
+      <wsdl:input message="tns:GetOrganizationMapUsageInfoSoapIn" />
+      <wsdl:output message="tns:GetOrganizationMapUsageInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMapTypes">
+      <wsdl:input message="tns:GetMapTypesSoapIn" />
+      <wsdl:output message="tns:GetMapTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxGeoCodeEngineInfoXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves box geocode engine info. XML File format :[GeoCodeId],[Path]</wsdl:documentation>
+      <wsdl:input message="tns:GetBoxGeoCodeEngineInfoXMLSoapIn" />
+      <wsdl:output message="tns:GetBoxGeoCodeEngineInfoXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxMapEngineInfoXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves box map engine info. XML File format :[MapId],[Path],[ExternalPath]</wsdl:documentation>
+      <wsdl:input message="tns:GetBoxMapEngineInfoXMLSoapIn" />
+      <wsdl:output message="tns:GetBoxMapEngineInfoXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGeoCodeEngineInfoXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves user geocode engine info. XML File format :[GeoCodeId],[Path]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserGeoCodeEngineInfoXMLSoapIn" />
+      <wsdl:output message="tns:GetUserGeoCodeEngineInfoXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMapEngineInfoXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves user map engine info. XML File format :[MapId],[Path],[ExternalPath]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserMapEngineInfoXMLSoapIn" />
+      <wsdl:output message="tns:GetUserMapEngineInfoXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatitudeLongitudeByLSD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Lat/Long for LSD maps. The specialAddress should be in the format meridian-township-range-section-quarter in the format above </wsdl:documentation>
+      <wsdl:input message="tns:GetLatitudeLongitudeByLSDSoapIn" />
+      <wsdl:output message="tns:GetLatitudeLongitudeByLSDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcknowledgeNotification">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Acknowledge Notification</wsdl:documentation>
+      <wsdl:input message="tns:AcknowledgeNotificationSoapIn" />
+      <wsdl:output message="tns:AcknowledgeNotificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LocalizationData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">LocalizationData</wsdl:documentation>
+      <wsdl:input message="tns:LocalizationDataSoapIn" />
+      <wsdl:output message="tns:LocalizationDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InstallJob_Add">
+      <wsdl:input message="tns:InstallJob_AddSoapIn" />
+      <wsdl:output message="tns:InstallJob_AddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InstallJob_Update">
+      <wsdl:input message="tns:InstallJob_UpdateSoapIn" />
+      <wsdl:output message="tns:InstallJob_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InstallJob_Delete">
+      <wsdl:input message="tns:InstallJob_DeleteSoapIn" />
+      <wsdl:output message="tns:InstallJob_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InstallJobs_GetAll">
+      <wsdl:input message="tns:InstallJobs_GetAllSoapIn" />
+      <wsdl:output message="tns:InstallJobs_GetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InstallJob_Get">
+      <wsdl:input message="tns:InstallJob_GetSoapIn" />
+      <wsdl:output message="tns:InstallJob_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Log Data from MySQL</wsdl:documentation>
+      <wsdl:input message="tns:GetLogDataSoapIn" />
+      <wsdl:output message="tns:GetLogDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DBSystemSoap" type="tns:DBSystemSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllStateProvinces">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAllStateProvinces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVehicleTypes">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAllVehicleTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxMsgInTypes">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetBoxMsgInTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxMsgInTypesByLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetBoxMsgInTypesByLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIconsInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetIconsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMakesInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAllMakesInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfoByMakeId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetModelsInfoByMakeId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSheduledTasksHistory">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetSheduledTasksHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemUpdate">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddSystemUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSystemUpdateTable">
+      <soap:operation soapAction="http://www.sentinelfm.com/UpdateSystemUpdateTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemUpdates">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetSystemUpdates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFullInfoSystemUpdates">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFullInfoSystemUpdates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemUpdatesByLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetSystemUpdatesByLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSystemUpdate">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteSystemUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigurationModuleTypesInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetConfigurationModuleTypesInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigurationModuleTypeId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetConfigurationModuleTypeId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigurationValue">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetConfigurationValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComputerModulesInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetComputerModulesInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateModuleStatus">
+      <soap:operation soapAction="http://www.sentinelfm.com/UpdateModuleStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteModule">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteModule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommModesInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetCommModesInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFirmwareInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAllFirmwareInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserControls">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserControls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserReports">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserReports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserReportsByLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserReportsByLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserReportsByCategory">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserReportsByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupSecurityFullInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetGroupSecurityFullInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroupSecurityFullInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAllGroupSecurityFullInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuditGroupInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAuditGroupInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMapUserUsage">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddMapUserUsage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationMapUsageInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetOrganizationMapUsageInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMapTypes">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetMapTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxGeoCodeEngineInfoXML">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetBoxGeoCodeEngineInfoXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxMapEngineInfoXML">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetBoxMapEngineInfoXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGeoCodeEngineInfoXML">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserGeoCodeEngineInfoXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMapEngineInfoXML">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserMapEngineInfoXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatitudeLongitudeByLSD">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetLatitudeLongitudeByLSD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcknowledgeNotification">
+      <soap:operation soapAction="http://www.sentinelfm.com/AcknowledgeNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LocalizationData">
+      <soap:operation soapAction="http://www.sentinelfm.com/LocalizationData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstallJob_Add">
+      <soap:operation soapAction="http://www.sentinelfm.com/InstallJob_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstallJob_Update">
+      <soap:operation soapAction="http://www.sentinelfm.com/InstallJob_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstallJob_Delete">
+      <soap:operation soapAction="http://www.sentinelfm.com/InstallJob_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstallJobs_GetAll">
+      <soap:operation soapAction="http://www.sentinelfm.com/InstallJobs_GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstallJob_Get">
+      <soap:operation soapAction="http://www.sentinelfm.com/InstallJob_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogData">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetLogData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DBSystemSoap12" type="tns:DBSystemSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllStateProvinces">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAllStateProvinces" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVehicleTypes">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAllVehicleTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxMsgInTypes">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetBoxMsgInTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxMsgInTypesByLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetBoxMsgInTypesByLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIconsInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetIconsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMakesInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAllMakesInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsInfoByMakeId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetModelsInfoByMakeId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSheduledTasksHistory">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetSheduledTasksHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemUpdate">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddSystemUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSystemUpdateTable">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UpdateSystemUpdateTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemUpdates">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetSystemUpdates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFullInfoSystemUpdates">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFullInfoSystemUpdates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemUpdatesByLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetSystemUpdatesByLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSystemUpdate">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteSystemUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigurationModuleTypesInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetConfigurationModuleTypesInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigurationModuleTypeId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetConfigurationModuleTypeId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigurationValue">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetConfigurationValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComputerModulesInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetComputerModulesInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateModuleStatus">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UpdateModuleStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteModule">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteModule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommModesInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetCommModesInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFirmwareInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAllFirmwareInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserControls">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserControls" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserReports">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserReports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserReportsByLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserReportsByLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserReportsByCategory">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserReportsByCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupSecurityFullInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetGroupSecurityFullInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroupSecurityFullInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAllGroupSecurityFullInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuditGroupInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAuditGroupInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMapUserUsage">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddMapUserUsage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationMapUsageInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetOrganizationMapUsageInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMapTypes">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetMapTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxGeoCodeEngineInfoXML">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetBoxGeoCodeEngineInfoXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxMapEngineInfoXML">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetBoxMapEngineInfoXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGeoCodeEngineInfoXML">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserGeoCodeEngineInfoXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMapEngineInfoXML">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserMapEngineInfoXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatitudeLongitudeByLSD">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetLatitudeLongitudeByLSD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcknowledgeNotification">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AcknowledgeNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LocalizationData">
+      <soap12:operation soapAction="http://www.sentinelfm.com/LocalizationData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstallJob_Add">
+      <soap12:operation soapAction="http://www.sentinelfm.com/InstallJob_Add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstallJob_Update">
+      <soap12:operation soapAction="http://www.sentinelfm.com/InstallJob_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstallJob_Delete">
+      <soap12:operation soapAction="http://www.sentinelfm.com/InstallJob_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstallJobs_GetAll">
+      <soap12:operation soapAction="http://www.sentinelfm.com/InstallJobs_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstallJob_Get">
+      <soap12:operation soapAction="http://www.sentinelfm.com/InstallJob_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogData">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetLogData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DBSystem">
+    <wsdl:port name="DBSystemSoap" binding="tns:DBSystemSoap">
+      <soap:address location="http://localhost/ASI/Interfaces/DBSystem.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DBSystemSoap12" binding="tns:DBSystemSoap12">
+      <soap12:address location="http://localhost/ASI/Interfaces/DBSystem.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="StateMileage" targetNamespace="http://tempuri.org/StateMileage.xsd" xmlns:mstns="http://tempuri.org/StateMileage.xsd" xmlns="http://tempuri.org/StateMileage.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="StateMileage" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="StateMileage" msprop:Generator_DataSetName="StateMileage">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="rpt_FleetMileage" msprop:Generator_UserTableName="rpt_FleetMileage" msprop:Generator_RowDeletedName="rpt_FleetMileageRowDeleted" msprop:Generator_RowChangedName="rpt_FleetMileageRowChanged" msprop:Generator_RowClassName="rpt_FleetMileageRow" msprop:Generator_RowChangingName="rpt_FleetMileageRowChanging" msprop:Generator_RowEvArgName="rpt_FleetMileageRowChangeEvent" msprop:Generator_RowEvHandlerName="rpt_FleetMileageRowChangeEventHandler" msprop:Generator_TableClassName="rpt_FleetMileageDataTable" msprop:Generator_TableVarName="tablerpt_FleetMileage" msprop:Generator_RowDeletingName="rpt_FleetMileageRowDeleting" msprop:Generator_TablePropName="rpt_FleetMileage">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" type="xs:string" minOccurs="0" />
+              <xs:element name="State" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="Mileage" type="xs:int" default="0" minOccurs="0" />
+			  <xs:element name="StateId" type="xs:int" default="0" minOccurs="0" />
+			  <xs:element name="Country" type="xs:string" minOccurs="0" />
+              <xs:element name="Fuel" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

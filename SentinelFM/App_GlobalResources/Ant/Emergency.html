@@ -1,0 +1,96 @@
+﻿
+<html >
+<head >
+    <title></title>
+    <style type="text/css">
+        #TextArea1
+        {
+            height: 122px;
+            width: 339px;
+        }
+        #txtMessage
+        {
+            height: 148px;
+            width: 509px;
+        }
+        #Button1
+        {
+            height: 70px;
+            width: 286px;
+        }
+        #lblMessage
+        {
+            width: 466px;
+        }
+    </style>
+</head>
+<body style="width:800px">
+    <div style="margin-top:10px">
+        <table>
+           <tr>
+              <td style="font-weight: bold; font-size: 14px;">
+                 <span style="font-weight:bold;">Message</span> (<span id="messageCharactersLeft">220</span> characters left)
+              </td>
+           </tr>
+           <tr>
+              <td>
+                 
+                  <textarea id="txtMessage" onkeypress="textRemaining();" onkeyup="textRemaining();" ></textarea></td>
+           </tr>
+           <tr>
+             <td>
+                  <label style="font-size: 14px;">* Message text cannot exceed 220 characters.</label>
+             </td>
+           </tr>
+           <tr>
+             <td>
+                            <table class="formtext" id="tblSchedule">
+			<tbody><tr>
+				<td style="height: 21px">
+                                            <span id="lblKeepTry">Keep trying for:</span></td>
+				<td style="height: 21px">
+                                        </td>
+				<td style="height: 21px">
+                                            <select class="RegularText" id="cboSchPeriod" onchange="javascript:setTimeout('__doPostBack(\'cboSchPeriod\',\'\')', 0)" name="cboSchPeriod">
+					<option value="0" selected="selected">No Retry</option>
+					<option value="900">15 Min</option>
+					<option value="1800">30 Min</option>
+					<option value="3600">1 Hour</option>
+					<option value="7200">2 Hours</option>
+					<option value="10800">3 Hours</option>
+					<option value="21600">6 Hours</option>
+					<option value="43200">12 Hours</option>
+					<option value="86400">24 Hours</option>
+					<option value="172800">48 Hours</option>
+					<option value="259200">72 Hours</option>
+
+				</select></td>
+			</tr>
+			<tr>
+				<td style="height: 21px">
+                                            <span id="lblRetryEveryTitle">Retry every:</span></td>
+				<td style="height: 21px">
+                                        </td>
+				<td style="height: 21px">
+                                            <select class="RegularText" id="cboSchInterval" onchange="javascript:setTimeout('__doPostBack(\'cboSchInterval\',\'\')', 0)" name="cboSchInterval">
+					<option value="0" selected="selected">No Retry</option>
+					<option value="60">1 min</option>
+					<option value="300">5 min</option>
+					<option value="600">10 min</option>
+
+				</select></td>
+			</tr>
+		</tbody></table>
+             </td>
+           </tr>
+           <tr>
+              <td align="center" style="margin-top:10px">
+                  
+                  <input id="MessageSendButton" 
+                      style="font-size: xx-large; font-weight: bold; background-color: #FF0000; width: 283px;margin-top:10px" 
+                      type="button" value="Emergency" /></td>
+           </tr>
+        </table>
+    </div>
+</body>
+</html>

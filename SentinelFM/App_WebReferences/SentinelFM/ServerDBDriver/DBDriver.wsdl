@@ -1,0 +1,1685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.sentinelfm.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.sentinelfm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.sentinelfm.com">
+      <s:element name="AddDriver">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlDriver" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDriverResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddDriverResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDrivers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlDrivers" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDriversResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddDriversResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDriver">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDriverResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteDriverResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDriver">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlDriver" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDriverResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateDriverResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriver">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriverResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDriverResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDrivers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDriversResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAllDriversResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignDriver">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignDriverResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AssignDriverResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignDriverByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="assgnDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignDriverByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AssignDriverByDateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignDrivers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignDriversResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AssignDriversResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDriverAssignment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDriverAssignmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteDriverAssignmentResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDriverAssignments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDriverAssignmentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteDriverAssignmentsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriverAssignment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriverAssignmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDriverAssignmentResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriverAssignments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriverAssignmentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDriverAssignmentsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnassignedDrivers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnassignedDriversResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUnassignedDriversResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAssignedDrivers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAssignedDriversResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAssignedDriversResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHoursOfServiceStateTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHoursOfServiceStateTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetHoursOfServiceStateTypesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHoursOfServiceRules">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHoursOfServiceRulesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetHoursOfServiceRulesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAssignmentHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDt" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDt" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAssignmentHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddAssignmentHistoryResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriverAssignmentHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriverAssignmentHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDriverAssignmentHistoryResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriverAssignmentHistoryByDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriverAssignmentHistoryByDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDriverAssignmentHistoryByDatesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleAssignmentHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleAssignmentHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleAssignmentHistoryResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleAssignmentHistoryByDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleAssignmentHistoryByDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleAssignmentHistoryByDatesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriverVehicleAssignmentHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriverVehicleAssignmentHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDriverVehicleAssignmentHistoryResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriverVehicleAssignmentHistoryByDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriverVehicleAssignmentHistoryByDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDriverVehicleAssignmentHistoryByDatesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddHoursOfService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="timestamp" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="state" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="cycle" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsSecondDay" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsCalculated" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsSignedOff" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ruleId" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="newServiceId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddHoursOfServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddHoursOfServiceResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newServiceId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableHOS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="hoursOfServiceId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="changedByServiceId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableHOSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DisableHOSResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateHOSentry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="timestamp" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="stateTypeId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="existingHoursOfServiceId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="flagOverride" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateHOSentryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateHOSentryResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="existingHoursOfServiceId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="flagOverride" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHOSbyDateTime_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHOSbyDateTime_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetHOSbyDateTime_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHOSbyDateTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHOSbyDateTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetHOSbyDateTimeResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHOSnotificationsByDateTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHOSnotificationsByDateTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetHOSnotificationsByDateTimeResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriversListByUserFleetAssigment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriversListByUserFleetAssigmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDriversListByUserFleetAssigmentResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignHOSDriver">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignHOSDriverResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AssignHOSDriverResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteHOSDriverAssignment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteHOSDriverAssignmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteHOSDriverAssignmentResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDriverMsg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgBody" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDateTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDriverMsgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddDriverMsgResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriverMsgs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="driverId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="toDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDriverMsgsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDriverMsgsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddDriverSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDriver" />
+  </wsdl:message>
+  <wsdl:message name="AddDriverSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDriverResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDriversSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDrivers" />
+  </wsdl:message>
+  <wsdl:message name="AddDriversSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDriversResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDriverSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDriver" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDriverSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDriverResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDriverSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDriver" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDriverSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDriverResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDriverSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDriver" />
+  </wsdl:message>
+  <wsdl:message name="GetDriverSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDriverResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDriversSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllDrivers" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDriversSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllDriversResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssignDriverSoapIn">
+    <wsdl:part name="parameters" element="tns:AssignDriver" />
+  </wsdl:message>
+  <wsdl:message name="AssignDriverSoapOut">
+    <wsdl:part name="parameters" element="tns:AssignDriverResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssignDriverByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:AssignDriverByDate" />
+  </wsdl:message>
+  <wsdl:message name="AssignDriverByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:AssignDriverByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssignDriversSoapIn">
+    <wsdl:part name="parameters" element="tns:AssignDrivers" />
+  </wsdl:message>
+  <wsdl:message name="AssignDriversSoapOut">
+    <wsdl:part name="parameters" element="tns:AssignDriversResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDriverAssignmentSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDriverAssignment" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDriverAssignmentSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDriverAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDriverAssignmentsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDriverAssignments" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDriverAssignmentsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDriverAssignmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDriverAssignmentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDriverAssignment" />
+  </wsdl:message>
+  <wsdl:message name="GetDriverAssignmentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDriverAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDriverAssignmentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDriverAssignments" />
+  </wsdl:message>
+  <wsdl:message name="GetDriverAssignmentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDriverAssignmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnassignedDriversSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnassignedDrivers" />
+  </wsdl:message>
+  <wsdl:message name="GetUnassignedDriversSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnassignedDriversResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAssignedDriversSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAssignedDrivers" />
+  </wsdl:message>
+  <wsdl:message name="GetAssignedDriversSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAssignedDriversResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHoursOfServiceStateTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHoursOfServiceStateTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetHoursOfServiceStateTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHoursOfServiceStateTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHoursOfServiceRulesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHoursOfServiceRules" />
+  </wsdl:message>
+  <wsdl:message name="GetHoursOfServiceRulesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHoursOfServiceRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAssignmentHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:AddAssignmentHistory" />
+  </wsdl:message>
+  <wsdl:message name="AddAssignmentHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:AddAssignmentHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDriverAssignmentHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetDriverAssignmentHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetDriverAssignmentHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetDriverAssignmentHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDriverAssignmentHistoryByDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDriverAssignmentHistoryByDates" />
+  </wsdl:message>
+  <wsdl:message name="GetDriverAssignmentHistoryByDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDriverAssignmentHistoryByDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAssignmentHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleAssignmentHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAssignmentHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleAssignmentHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAssignmentHistoryByDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleAssignmentHistoryByDates" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAssignmentHistoryByDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleAssignmentHistoryByDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDriverVehicleAssignmentHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetDriverVehicleAssignmentHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetDriverVehicleAssignmentHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetDriverVehicleAssignmentHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDriverVehicleAssignmentHistoryByDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDriverVehicleAssignmentHistoryByDates" />
+  </wsdl:message>
+  <wsdl:message name="GetDriverVehicleAssignmentHistoryByDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDriverVehicleAssignmentHistoryByDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddHoursOfServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:AddHoursOfService" />
+  </wsdl:message>
+  <wsdl:message name="AddHoursOfServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:AddHoursOfServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableHOSSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableHOS" />
+  </wsdl:message>
+  <wsdl:message name="DisableHOSSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableHOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateHOSentrySoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateHOSentry" />
+  </wsdl:message>
+  <wsdl:message name="ValidateHOSentrySoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateHOSentryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHOSbyDateTime_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHOSbyDateTime_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetHOSbyDateTime_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHOSbyDateTime_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHOSbyDateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHOSbyDateTime" />
+  </wsdl:message>
+  <wsdl:message name="GetHOSbyDateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHOSbyDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHOSnotificationsByDateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHOSnotificationsByDateTime" />
+  </wsdl:message>
+  <wsdl:message name="GetHOSnotificationsByDateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHOSnotificationsByDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDriversListByUserFleetAssigmentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDriversListByUserFleetAssigment" />
+  </wsdl:message>
+  <wsdl:message name="GetDriversListByUserFleetAssigmentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDriversListByUserFleetAssigmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssignHOSDriverSoapIn">
+    <wsdl:part name="parameters" element="tns:AssignHOSDriver" />
+  </wsdl:message>
+  <wsdl:message name="AssignHOSDriverSoapOut">
+    <wsdl:part name="parameters" element="tns:AssignHOSDriverResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHOSDriverAssignmentSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteHOSDriverAssignment" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHOSDriverAssignmentSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteHOSDriverAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDriverMsgSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDriverMsg" />
+  </wsdl:message>
+  <wsdl:message name="AddDriverMsgSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDriverMsgResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDriverMsgsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDriverMsgs" />
+  </wsdl:message>
+  <wsdl:message name="GetDriverMsgsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDriverMsgsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DBDriverSoap">
+    <wsdl:operation name="AddDriver">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a new driver</wsdl:documentation>
+      <wsdl:input message="tns:AddDriverSoapIn" />
+      <wsdl:output message="tns:AddDriverSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDrivers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add collection of drivers</wsdl:documentation>
+      <wsdl:input message="tns:AddDriversSoapIn" />
+      <wsdl:output message="tns:AddDriversSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDriver">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a driver</wsdl:documentation>
+      <wsdl:input message="tns:DeleteDriverSoapIn" />
+      <wsdl:output message="tns:DeleteDriverSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDriver">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a driver</wsdl:documentation>
+      <wsdl:input message="tns:UpdateDriverSoapIn" />
+      <wsdl:output message="tns:UpdateDriverSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDriver">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a driver</wsdl:documentation>
+      <wsdl:input message="tns:GetDriverSoapIn" />
+      <wsdl:output message="tns:GetDriverSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDrivers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get all drivers for organization</wsdl:documentation>
+      <wsdl:input message="tns:GetAllDriversSoapIn" />
+      <wsdl:output message="tns:GetAllDriversSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignDriver">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a new driver assignment</wsdl:documentation>
+      <wsdl:input message="tns:AssignDriverSoapIn" />
+      <wsdl:output message="tns:AssignDriverSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignDriverByDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a new driver assignment</wsdl:documentation>
+      <wsdl:input message="tns:AssignDriverByDateSoapIn" />
+      <wsdl:output message="tns:AssignDriverByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignDrivers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add collection of drivers assignments</wsdl:documentation>
+      <wsdl:input message="tns:AssignDriversSoapIn" />
+      <wsdl:output message="tns:AssignDriversSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDriverAssignment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a driver assignment</wsdl:documentation>
+      <wsdl:input message="tns:DeleteDriverAssignmentSoapIn" />
+      <wsdl:output message="tns:DeleteDriverAssignmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDriverAssignments">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete all driver assignments</wsdl:documentation>
+      <wsdl:input message="tns:DeleteDriverAssignmentsSoapIn" />
+      <wsdl:output message="tns:DeleteDriverAssignmentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverAssignment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get driver assignment</wsdl:documentation>
+      <wsdl:input message="tns:GetDriverAssignmentSoapIn" />
+      <wsdl:output message="tns:GetDriverAssignmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverAssignments">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get all driver assignments</wsdl:documentation>
+      <wsdl:input message="tns:GetDriverAssignmentsSoapIn" />
+      <wsdl:output message="tns:GetDriverAssignmentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnassignedDrivers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get unassigned drivers for organization</wsdl:documentation>
+      <wsdl:input message="tns:GetUnassignedDriversSoapIn" />
+      <wsdl:output message="tns:GetUnassignedDriversSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignedDrivers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get assigned drivers for organization</wsdl:documentation>
+      <wsdl:input message="tns:GetAssignedDriversSoapIn" />
+      <wsdl:output message="tns:GetAssignedDriversSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHoursOfServiceStateTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get hours of service state types</wsdl:documentation>
+      <wsdl:input message="tns:GetHoursOfServiceStateTypesSoapIn" />
+      <wsdl:output message="tns:GetHoursOfServiceStateTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHoursOfServiceRules">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get hours of service rules</wsdl:documentation>
+      <wsdl:input message="tns:GetHoursOfServiceRulesSoapIn" />
+      <wsdl:output message="tns:GetHoursOfServiceRulesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAssignmentHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add driver - vehicle assignment history</wsdl:documentation>
+      <wsdl:input message="tns:AddAssignmentHistorySoapIn" />
+      <wsdl:output message="tns:AddAssignmentHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverAssignmentHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get driver assignment history</wsdl:documentation>
+      <wsdl:input message="tns:GetDriverAssignmentHistorySoapIn" />
+      <wsdl:output message="tns:GetDriverAssignmentHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverAssignmentHistoryByDates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get driver assignment history with dates</wsdl:documentation>
+      <wsdl:input message="tns:GetDriverAssignmentHistoryByDatesSoapIn" />
+      <wsdl:output message="tns:GetDriverAssignmentHistoryByDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAssignmentHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get vehicle assignment history</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleAssignmentHistorySoapIn" />
+      <wsdl:output message="tns:GetVehicleAssignmentHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAssignmentHistoryByDates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get vehicle assignment history</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleAssignmentHistoryByDatesSoapIn" />
+      <wsdl:output message="tns:GetVehicleAssignmentHistoryByDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverVehicleAssignmentHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get driver - vehicle assignment history</wsdl:documentation>
+      <wsdl:input message="tns:GetDriverVehicleAssignmentHistorySoapIn" />
+      <wsdl:output message="tns:GetDriverVehicleAssignmentHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverVehicleAssignmentHistoryByDates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get driver - vehicle assignment history</wsdl:documentation>
+      <wsdl:input message="tns:GetDriverVehicleAssignmentHistoryByDatesSoapIn" />
+      <wsdl:output message="tns:GetDriverVehicleAssignmentHistoryByDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHoursOfService">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a new Hours of Service</wsdl:documentation>
+      <wsdl:input message="tns:AddHoursOfServiceSoapIn" />
+      <wsdl:output message="tns:AddHoursOfServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableHOS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Disable HOS record</wsdl:documentation>
+      <wsdl:input message="tns:DisableHOSSoapIn" />
+      <wsdl:output message="tns:DisableHOSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateHOSentry">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate HOS entry. Check if time/state exists or overlap</wsdl:documentation>
+      <wsdl:input message="tns:ValidateHOSentrySoapIn" />
+      <wsdl:output message="tns:ValidateHOSentrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHOSbyDateTime_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Hours of Service for driver based on DateTime</wsdl:documentation>
+      <wsdl:input message="tns:GetHOSbyDateTime_NewTZSoapIn" />
+      <wsdl:output message="tns:GetHOSbyDateTime_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHOSbyDateTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Hours of Service for driver based on DateTime</wsdl:documentation>
+      <wsdl:input message="tns:GetHOSbyDateTimeSoapIn" />
+      <wsdl:output message="tns:GetHOSbyDateTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHOSnotificationsByDateTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a Hours of Service notifications for driver based on DateTime</wsdl:documentation>
+      <wsdl:input message="tns:GetHOSnotificationsByDateTimeSoapIn" />
+      <wsdl:output message="tns:GetHOSnotificationsByDateTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDriversListByUserFleetAssigment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a drivers list by user-fleet assigmnent</wsdl:documentation>
+      <wsdl:input message="tns:GetDriversListByUserFleetAssigmentSoapIn" />
+      <wsdl:output message="tns:GetDriversListByUserFleetAssigmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignHOSDriver">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a new driver assignment to HOS and Sentinel</wsdl:documentation>
+      <wsdl:input message="tns:AssignHOSDriverSoapIn" />
+      <wsdl:output message="tns:AssignHOSDriverSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHOSDriverAssignment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a driver assignment from HOS as well as Sentinel</wsdl:documentation>
+      <wsdl:input message="tns:DeleteHOSDriverAssignmentSoapIn" />
+      <wsdl:output message="tns:DeleteHOSDriverAssignmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDriverMsg">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a Driver text message</wsdl:documentation>
+      <wsdl:input message="tns:AddDriverMsgSoapIn" />
+      <wsdl:output message="tns:AddDriverMsgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverMsgs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a drivers text messages</wsdl:documentation>
+      <wsdl:input message="tns:GetDriverMsgsSoapIn" />
+      <wsdl:output message="tns:GetDriverMsgsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DBDriverSoap" type="tns:DBDriverSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddDriver">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddDriver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDrivers">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddDrivers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDriver">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteDriver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDriver">
+      <soap:operation soapAction="http://www.sentinelfm.com/UpdateDriver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriver">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDriver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDrivers">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAllDrivers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignDriver">
+      <soap:operation soapAction="http://www.sentinelfm.com/AssignDriver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignDriverByDate">
+      <soap:operation soapAction="http://www.sentinelfm.com/AssignDriverByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignDrivers">
+      <soap:operation soapAction="http://www.sentinelfm.com/AssignDrivers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDriverAssignment">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteDriverAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDriverAssignments">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteDriverAssignments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverAssignment">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDriverAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverAssignments">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDriverAssignments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnassignedDrivers">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUnassignedDrivers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignedDrivers">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAssignedDrivers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHoursOfServiceStateTypes">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetHoursOfServiceStateTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHoursOfServiceRules">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetHoursOfServiceRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAssignmentHistory">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddAssignmentHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverAssignmentHistory">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDriverAssignmentHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverAssignmentHistoryByDates">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDriverAssignmentHistoryByDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAssignmentHistory">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleAssignmentHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAssignmentHistoryByDates">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleAssignmentHistoryByDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverVehicleAssignmentHistory">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDriverVehicleAssignmentHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverVehicleAssignmentHistoryByDates">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDriverVehicleAssignmentHistoryByDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHoursOfService">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddHoursOfService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableHOS">
+      <soap:operation soapAction="http://www.sentinelfm.com/DisableHOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateHOSentry">
+      <soap:operation soapAction="http://www.sentinelfm.com/ValidateHOSentry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHOSbyDateTime_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetHOSbyDateTime_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHOSbyDateTime">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetHOSbyDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHOSnotificationsByDateTime">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetHOSnotificationsByDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriversListByUserFleetAssigment">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDriversListByUserFleetAssigment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignHOSDriver">
+      <soap:operation soapAction="http://www.sentinelfm.com/AssignHOSDriver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHOSDriverAssignment">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteHOSDriverAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDriverMsg">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddDriverMsg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverMsgs">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDriverMsgs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DBDriverSoap12" type="tns:DBDriverSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddDriver">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddDriver" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDrivers">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddDrivers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDriver">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteDriver" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDriver">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UpdateDriver" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriver">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDriver" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDrivers">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAllDrivers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignDriver">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AssignDriver" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignDriverByDate">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AssignDriverByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignDrivers">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AssignDrivers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDriverAssignment">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteDriverAssignment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDriverAssignments">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteDriverAssignments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverAssignment">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDriverAssignment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverAssignments">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDriverAssignments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnassignedDrivers">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUnassignedDrivers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignedDrivers">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAssignedDrivers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHoursOfServiceStateTypes">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetHoursOfServiceStateTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHoursOfServiceRules">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetHoursOfServiceRules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAssignmentHistory">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddAssignmentHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverAssignmentHistory">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDriverAssignmentHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverAssignmentHistoryByDates">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDriverAssignmentHistoryByDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAssignmentHistory">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleAssignmentHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAssignmentHistoryByDates">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleAssignmentHistoryByDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverVehicleAssignmentHistory">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDriverVehicleAssignmentHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverVehicleAssignmentHistoryByDates">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDriverVehicleAssignmentHistoryByDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHoursOfService">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddHoursOfService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableHOS">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DisableHOS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateHOSentry">
+      <soap12:operation soapAction="http://www.sentinelfm.com/ValidateHOSentry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHOSbyDateTime_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetHOSbyDateTime_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHOSbyDateTime">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetHOSbyDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHOSnotificationsByDateTime">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetHOSnotificationsByDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriversListByUserFleetAssigment">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDriversListByUserFleetAssigment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignHOSDriver">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AssignHOSDriver" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHOSDriverAssignment">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteHOSDriverAssignment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDriverMsg">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddDriverMsg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDriverMsgs">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDriverMsgs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DBDriver">
+    <wsdl:port name="DBDriverSoap" binding="tns:DBDriverSoap">
+      <soap:address location="http://localhost:53931/Interfaces/DBDriver.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DBDriverSoap12" binding="tns:DBDriverSoap12">
+      <soap12:address location="http://localhost:53931/Interfaces/DBDriver.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

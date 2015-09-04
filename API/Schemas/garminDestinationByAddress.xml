@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GarminDestinations>
+  <UID>1944</UID>
+  <SID>09243509809345609</SID>
+  <GarminDestinationByAddress>
+    <RefID>1000</RefID>
+    <UnitName>Truck 0000</UnitName>
+    <StopIndex>0</StopIndex>
+    <Text>Some Text Here</Text>
+    <Address>123 Main Street</Address>
+    <City>Toronto</City>
+    <Region>ON</Region>
+    <Postal>M9A 3W9</Postal>
+    <Country>CANADA</Country>
+    <DeliveryTimeStamp>2011-11-15T01:22:35-4:00</DeliveryTimeStamp>
+    <RetryIntervalInMinutes>5</RetryIntervalInMinutes>
+    <LifetimeInMinutes>-1</LifetimeInMinutes>
+  </GarminDestinationByAddress>
+</GarminDestinations>

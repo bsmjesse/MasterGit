@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstTripSummaryReportPerVehicle" targetNamespace="http://tempuri.org/dstLandmarksReport.xsd" xmlns:mstns="http://tempuri.org/dstLandmarksReport.xsd" xmlns="http://tempuri.org/dstLandmarksReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstTripSummaryReportPerVehicle" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TripSummaryReportPerVehicle">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VehicleId" type="xs:int" minOccurs="0" />
+              <xs:element name="Description" type="xs:string" minOccurs="0" />
+              <xs:element name="DepartureTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ArrivalTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="_From" type="xs:string" minOccurs="0" />
+              <xs:element name="_To" type="xs:string" minOccurs="0" />
+              <xs:element name="Duration" type="xs:int" minOccurs="0" />
+              <xs:element name="StartOdometer" type="xs:int" minOccurs="0" />
+              <xs:element name="Distance" type="xs:float" minOccurs="0" />
+              <xs:element name="StopDuration" type="xs:float" minOccurs="0" />
+              <xs:element name="IdlingTime" type="xs:int" minOccurs="0" />
+              <xs:element name="FuelConsumed" type="xs:float" minOccurs="0" />
+              <xs:element name="MaxSpeed" type="xs:float" minOccurs="0" />
+              <xs:element name="TotalHarshAcceleration" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalHarshBraking" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalExtremeAcceleration" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalExtremeBraking" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalSeatBelt" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalSpeeding" type="xs:int" minOccurs="0" />
+              <xs:element name="LicensePlate" type="xs:string" minOccurs="0" />
+              <xs:element name="VIN" type="xs:string" minOccurs="0" />
+              <xs:element name="Color" type="xs:string" minOccurs="0" />
+              <xs:element name="Make" type="xs:string" minOccurs="0" />
+              <xs:element name="Model" type="xs:string" minOccurs="0" />
+              <xs:element name="Year" type="xs:short" minOccurs="0" />
+              <xs:element name="BoxId" type="xs:int" minOccurs="0" />
+              <xs:element name="Driver" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

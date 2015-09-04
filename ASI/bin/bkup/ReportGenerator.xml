@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReportGenerator</name>
+    </assembly>
+    <members>
+        <member name="T:VLF.Reports.ReportGenerator">
+            <summary>
+            Generates strong-type dataset for report
+            </summary>
+        </member>
+        <member name="M:VLF.Reports.ReportGenerator.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="connectionString"></param>
+        </member>
+        <member name="M:VLF.Reports.ReportGenerator.Dispose">
+            <summary>
+            Destructor
+            </summary>
+        </member>
+        <member name="M:VLF.Reports.ReportGenerator.GetXml(VLF.Reports.ReportTemplate.ReportTypes,System.String,System.Int32,System.String,System.Boolean@,System.Int32@,System.Boolean@,System.Int32@)">
+            <summary>
+            Get strong-type dataset as XML.
+            </summary>
+            <param name="repType"></param>
+            <param name="xmlParams"></param>
+            <param name="userId"></param>
+            <param name="requestOverflowed"></param>
+            <param name="totalSqlRecords"></param>
+            <param name="outMaxOverflowed"></param>
+            <param name="outMaxRecords"></param>
+            <returns>XML</returns>
+            <exception cref="T:VLF.ERR.DASDbConnectionClosed">Thrown if connection to database has been closed.</exception>
+            <exception cref="T:VLF.ERR.DASException">Thrown in all other exception cases.</exception>
+        </member>
+        <member name="M:VLF.Reports.ReportGenerator.GetSystemReport(VLF.Reports.ReportTemplate.ReportTypes,System.String,System.Int32)">
+            <summary>
+            Get strong-type dataset as XML.
+            </summary>
+            <param name="repType"></param>
+            <param name="xmlParams"></param>
+            <param name="userId"></param>
+            <returns>XML</returns>
+            <exception cref="T:VLF.ERR.DASDbConnectionClosed">Thrown if connection to database has been closed.</exception>
+            <exception cref="T:VLF.ERR.DASException">Thrown in all other exception cases.</exception>
+        </member>
+        <member name="M:VLF.Reports.ReportGenerator.GetSensorReportForFleet(System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+                    extract the usage for a specific sensor for all vehicles in a fleet during two dates
+            </summary>
+            <param name="fleetId"></param>
+            <param name="userId"></param>
+            <param name="sensorId"></param>
+            <param name="dtFrom"></param>
+            <param name="dtTo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VLF.Reports.ReportGenerator.GetSensorReportForFleet2(System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+                    extract the usage for a specific sensor for all vehicles in a fleet during two dates
+            </summary>
+            <param name="fleetId"></param>
+            <param name="userId"></param>
+            <param name="sensorId"></param>
+            <param name="dtFrom"></param>
+            <param name="dtTo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VLF.Reports.ReportGenerator.GetActivityReportForFleet(System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+                    extract the usage for all vehicles from a fleet during two dates
+            </summary>
+            <param name="fleetId"></param>
+            <param name="userId"></param>
+            <param name="dtFrom"></param>
+            <param name="dtTo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VLF.Reports.ReportGenerator.GetActiveVehiclesPerDay(System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+                       run sp_GetActiveVehiclesPerDay which takes into consideration the user preferences
+            </summary>
+            <param name="fleetId"></param>
+            <param name="userId"></param>
+            <param name="dtFrom"></param>
+            <param name="dtTo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VLF.Reports.ReportGenerator.GetViolationReportForFleet(System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="fleetId"></param>
+            <param name="userId"></param>
+            <param name="maskViolations">
+                  combination of CT_VIOLATION_SEATBELT | CT_VIOLATION_SPEED 
+            </param>
+            <param name="dtFrom"></param>
+            <param name="dtTo"></param>
+            <returns>
+            is the XML description for 
+               [VehicleDescription], [DateTime], [Duration], [Description]
+                     where description will be 
+                           HARSHBRAKING                                    
+                           HARSHACCELERATION   
+                           EXTREMEACCELERATION 
+                           EXTREMEBRAKING      
+                           SEATBELT            
+                           SPEED               
+            </returns>
+        </member>
+        <member name="T:VLF.Reports.ReportTemplate">
+            <summary>
+            Defines parameters for all reports
+            </summary>
+        </member>
+        <member name="M:VLF.Reports.ReportTemplate.PairFindValue(System.String,System.String)">
+            <summary>
+            Finds value of specified key in the given string
+            string may contain other records as well;
+            string format should be:
+            [key]=[value];
+            </summary>
+            <param name="key">key to look for</param>
+            <param name="src"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

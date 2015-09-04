@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.sentinelfm.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.sentinelfm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.sentinelfm.com">
+      <s:element name="GetCurrentAlarmsXML_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userTimeZone" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentAlarmsXML_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCurrentAlarmsXML_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentAlarmsXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userTimeZone" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentAlarmsXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCurrentAlarmsXMLResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmsShortInfoXMLByLang_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userTimeZone" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmsShortInfoXMLByLang_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAlarmsShortInfoXMLByLang_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmsShortInfoXMLByLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userTimeZone" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmsShortInfoXMLByLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAlarmsShortInfoXMLByLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentAlarmsXMLByLang_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userTimeZone" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentAlarmsXMLByLang_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCurrentAlarmsXMLByLang_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentAlarmsXMLByLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userTimeZone" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentAlarmsXMLByLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCurrentAlarmsXMLByLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmsXML_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="toDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmsXML_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAlarmsXML_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmsXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="toDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmsXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAlarmsXMLResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentAlarmInfoXML_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="alarmId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentAlarmInfoXML_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCurrentAlarmInfoXML_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentAlarmInfoXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="alarmId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentAlarmInfoXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCurrentAlarmInfoXMLResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptCurrentAlarmWithNotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="alarmId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptCurrentAlarmWithNotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AcceptCurrentAlarmWithNotesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmSeverityXMLByLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmSeverityXMLByLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAlarmSeverityXMLByLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptCurrentAlarm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="alarmId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptCurrentAlarmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AcceptCurrentAlarmResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TakeOverAlarm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="alarmId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TakeOverAlarmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TakeOverAlarmResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloseCurrentAlarm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="alarmId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloseCurrentAlarmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CloseCurrentAlarmResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloseCurrentAlarmWithNotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="alarmId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloseCurrentAlarmWithNotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CloseCurrentAlarmWithNotesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmsShortInfoCheckSum_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userTimeZone" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="checksum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmsShortInfoCheckSum_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAlarmsShortInfoCheckSum_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="checksum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmsShortInfoCheckSum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userTimeZone" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="checksum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmsShortInfoCheckSumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAlarmsShortInfoCheckSumResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="checksum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCurrentAlarmsXML_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentAlarmsXML_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAlarmsXML_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentAlarmsXML_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAlarmsXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentAlarmsXML" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAlarmsXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentAlarmsXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmsShortInfoXMLByLang_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAlarmsShortInfoXMLByLang_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmsShortInfoXMLByLang_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAlarmsShortInfoXMLByLang_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmsShortInfoXMLByLangSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAlarmsShortInfoXMLByLang" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmsShortInfoXMLByLangSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAlarmsShortInfoXMLByLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAlarmsXMLByLang_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentAlarmsXMLByLang_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAlarmsXMLByLang_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentAlarmsXMLByLang_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAlarmsXMLByLangSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentAlarmsXMLByLang" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAlarmsXMLByLangSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentAlarmsXMLByLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmsXML_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAlarmsXML_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmsXML_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAlarmsXML_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmsXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAlarmsXML" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmsXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAlarmsXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAlarmInfoXML_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentAlarmInfoXML_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAlarmInfoXML_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentAlarmInfoXML_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAlarmInfoXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentAlarmInfoXML" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentAlarmInfoXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentAlarmInfoXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="AcceptCurrentAlarmWithNotesSoapIn">
+    <wsdl:part name="parameters" element="tns:AcceptCurrentAlarmWithNotes" />
+  </wsdl:message>
+  <wsdl:message name="AcceptCurrentAlarmWithNotesSoapOut">
+    <wsdl:part name="parameters" element="tns:AcceptCurrentAlarmWithNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmSeverityXMLByLangSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAlarmSeverityXMLByLang" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmSeverityXMLByLangSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAlarmSeverityXMLByLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="AcceptCurrentAlarmSoapIn">
+    <wsdl:part name="parameters" element="tns:AcceptCurrentAlarm" />
+  </wsdl:message>
+  <wsdl:message name="AcceptCurrentAlarmSoapOut">
+    <wsdl:part name="parameters" element="tns:AcceptCurrentAlarmResponse" />
+  </wsdl:message>
+  <wsdl:message name="TakeOverAlarmSoapIn">
+    <wsdl:part name="parameters" element="tns:TakeOverAlarm" />
+  </wsdl:message>
+  <wsdl:message name="TakeOverAlarmSoapOut">
+    <wsdl:part name="parameters" element="tns:TakeOverAlarmResponse" />
+  </wsdl:message>
+  <wsdl:message name="CloseCurrentAlarmSoapIn">
+    <wsdl:part name="parameters" element="tns:CloseCurrentAlarm" />
+  </wsdl:message>
+  <wsdl:message name="CloseCurrentAlarmSoapOut">
+    <wsdl:part name="parameters" element="tns:CloseCurrentAlarmResponse" />
+  </wsdl:message>
+  <wsdl:message name="CloseCurrentAlarmWithNotesSoapIn">
+    <wsdl:part name="parameters" element="tns:CloseCurrentAlarmWithNotes" />
+  </wsdl:message>
+  <wsdl:message name="CloseCurrentAlarmWithNotesSoapOut">
+    <wsdl:part name="parameters" element="tns:CloseCurrentAlarmWithNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmsShortInfoCheckSum_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAlarmsShortInfoCheckSum_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmsShortInfoCheckSum_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAlarmsShortInfoCheckSum_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmsShortInfoCheckSumSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAlarmsShortInfoCheckSum" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmsShortInfoCheckSumSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAlarmsShortInfoCheckSumResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AlarmsSoap">
+    <wsdl:operation name="GetCurrentAlarmsXML_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Alarms List</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrentAlarmsXML_NewTZSoapIn" />
+      <wsdl:output message="tns:GetCurrentAlarmsXML_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAlarmsXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Alarms List</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrentAlarmsXMLSoapIn" />
+      <wsdl:output message="tns:GetCurrentAlarmsXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsShortInfoXMLByLang_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Alarms List</wsdl:documentation>
+      <wsdl:input message="tns:GetAlarmsShortInfoXMLByLang_NewTZSoapIn" />
+      <wsdl:output message="tns:GetAlarmsShortInfoXMLByLang_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsShortInfoXMLByLang">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Alarms List</wsdl:documentation>
+      <wsdl:input message="tns:GetAlarmsShortInfoXMLByLangSoapIn" />
+      <wsdl:output message="tns:GetAlarmsShortInfoXMLByLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAlarmsXMLByLang_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Alarms List</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrentAlarmsXMLByLang_NewTZSoapIn" />
+      <wsdl:output message="tns:GetCurrentAlarmsXMLByLang_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAlarmsXMLByLang">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Alarms List</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrentAlarmsXMLByLangSoapIn" />
+      <wsdl:output message="tns:GetCurrentAlarmsXMLByLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsXML_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Alarms List based on DateTime range</wsdl:documentation>
+      <wsdl:input message="tns:GetAlarmsXML_NewTZSoapIn" />
+      <wsdl:output message="tns:GetAlarmsXML_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Alarms List based on DateTime range</wsdl:documentation>
+      <wsdl:input message="tns:GetAlarmsXMLSoapIn" />
+      <wsdl:output message="tns:GetAlarmsXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAlarmInfoXML_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns current alarm full info by Alarm ID.</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrentAlarmInfoXML_NewTZSoapIn" />
+      <wsdl:output message="tns:GetCurrentAlarmInfoXML_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAlarmInfoXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns current alarm full info by Alarm ID.</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrentAlarmInfoXMLSoapIn" />
+      <wsdl:output message="tns:GetCurrentAlarmInfoXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptCurrentAlarmWithNotes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accept alarm by Alarm ID.</wsdl:documentation>
+      <wsdl:input message="tns:AcceptCurrentAlarmWithNotesSoapIn" />
+      <wsdl:output message="tns:AcceptCurrentAlarmWithNotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmSeverityXMLByLang">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Alarms Severity</wsdl:documentation>
+      <wsdl:input message="tns:GetAlarmSeverityXMLByLangSoapIn" />
+      <wsdl:output message="tns:GetAlarmSeverityXMLByLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptCurrentAlarm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accept alarm by Alarm ID.</wsdl:documentation>
+      <wsdl:input message="tns:AcceptCurrentAlarmSoapIn" />
+      <wsdl:output message="tns:AcceptCurrentAlarmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TakeOverAlarm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Take over accepted alarm.</wsdl:documentation>
+      <wsdl:input message="tns:TakeOverAlarmSoapIn" />
+      <wsdl:output message="tns:TakeOverAlarmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseCurrentAlarm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Close alarm.</wsdl:documentation>
+      <wsdl:input message="tns:CloseCurrentAlarmSoapIn" />
+      <wsdl:output message="tns:CloseCurrentAlarmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseCurrentAlarmWithNotes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Close alarm with reason or extra information.</wsdl:documentation>
+      <wsdl:input message="tns:CloseCurrentAlarmWithNotesSoapIn" />
+      <wsdl:output message="tns:CloseCurrentAlarmWithNotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsShortInfoCheckSum_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Alarms Short Info CheckSum</wsdl:documentation>
+      <wsdl:input message="tns:GetAlarmsShortInfoCheckSum_NewTZSoapIn" />
+      <wsdl:output message="tns:GetAlarmsShortInfoCheckSum_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsShortInfoCheckSum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Alarms Short Info CheckSum</wsdl:documentation>
+      <wsdl:input message="tns:GetAlarmsShortInfoCheckSumSoapIn" />
+      <wsdl:output message="tns:GetAlarmsShortInfoCheckSumSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AlarmsSoap" type="tns:AlarmsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCurrentAlarmsXML_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetCurrentAlarmsXML_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAlarmsXML">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetCurrentAlarmsXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsShortInfoXMLByLang_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAlarmsShortInfoXMLByLang_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsShortInfoXMLByLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAlarmsShortInfoXMLByLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAlarmsXMLByLang_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetCurrentAlarmsXMLByLang_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAlarmsXMLByLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetCurrentAlarmsXMLByLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsXML_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAlarmsXML_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsXML">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAlarmsXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAlarmInfoXML_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetCurrentAlarmInfoXML_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAlarmInfoXML">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetCurrentAlarmInfoXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptCurrentAlarmWithNotes">
+      <soap:operation soapAction="http://www.sentinelfm.com/AcceptCurrentAlarmWithNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmSeverityXMLByLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAlarmSeverityXMLByLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptCurrentAlarm">
+      <soap:operation soapAction="http://www.sentinelfm.com/AcceptCurrentAlarm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TakeOverAlarm">
+      <soap:operation soapAction="http://www.sentinelfm.com/TakeOverAlarm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseCurrentAlarm">
+      <soap:operation soapAction="http://www.sentinelfm.com/CloseCurrentAlarm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseCurrentAlarmWithNotes">
+      <soap:operation soapAction="http://www.sentinelfm.com/CloseCurrentAlarmWithNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsShortInfoCheckSum_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAlarmsShortInfoCheckSum_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsShortInfoCheckSum">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAlarmsShortInfoCheckSum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AlarmsSoap12" type="tns:AlarmsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCurrentAlarmsXML_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetCurrentAlarmsXML_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAlarmsXML">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetCurrentAlarmsXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsShortInfoXMLByLang_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAlarmsShortInfoXMLByLang_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsShortInfoXMLByLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAlarmsShortInfoXMLByLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAlarmsXMLByLang_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetCurrentAlarmsXMLByLang_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAlarmsXMLByLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetCurrentAlarmsXMLByLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsXML_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAlarmsXML_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsXML">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAlarmsXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAlarmInfoXML_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetCurrentAlarmInfoXML_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentAlarmInfoXML">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetCurrentAlarmInfoXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptCurrentAlarmWithNotes">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AcceptCurrentAlarmWithNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmSeverityXMLByLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAlarmSeverityXMLByLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptCurrentAlarm">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AcceptCurrentAlarm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TakeOverAlarm">
+      <soap12:operation soapAction="http://www.sentinelfm.com/TakeOverAlarm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseCurrentAlarm">
+      <soap12:operation soapAction="http://www.sentinelfm.com/CloseCurrentAlarm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseCurrentAlarmWithNotes">
+      <soap12:operation soapAction="http://www.sentinelfm.com/CloseCurrentAlarmWithNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsShortInfoCheckSum_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAlarmsShortInfoCheckSum_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmsShortInfoCheckSum">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAlarmsShortInfoCheckSum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Alarms">
+    <wsdl:port name="AlarmsSoap" binding="tns:AlarmsSoap">
+      <soap:address location="http://localhost:53931/Interfaces/Alarms.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AlarmsSoap12" binding="tns:AlarmsSoap12">
+      <soap12:address location="http://localhost:53931/Interfaces/Alarms.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

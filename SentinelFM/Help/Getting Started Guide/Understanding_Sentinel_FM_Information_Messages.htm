@@ -1,0 +1,198 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Understanding Sentinel FM Information Messages</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="default_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='default.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+h1.whs1 { font-size:14pt; color:#008000; margin-bottom:0pt; }
+hr.whs2 { float:alignleft; color:#008000; }
+p.whs3 { font-size:10pt; }
+table.whs4 { x-cell-content-align:top; width:90%; border-spacing:0px; }
+col.whs5 { width:38.452%; }
+col.whs6 { width:61.548%; }
+tr.whs7 { x-cell-content-align:top; }
+td.whs8 { width:38.452%; padding-right:10px; padding-left:10px; border-left-color:#000000; border-left-style:Solid; border-top-style:Solid; border-top-color:#000000; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-right-width:1px; border-left-width:1px; border-top-width:1px; border-bottom-width:1px; background-color:#008000; }
+p.whs9 { font-weight:bold; font-size:10pt; color:#ffffff; }
+td.whs10 { width:61.548%; padding-right:10px; padding-left:10px; border-top-style:Solid; border-top-color:#000000; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-top-width:1px; border-bottom-width:1px; border-right-width:1px; background-color:#008000; }
+td.whs11 { width:38.452%; padding-right:10px; padding-left:10px; border-left-width:1px; border-left-color:#000000; border-left-style:Solid; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; }
+td.whs12 { width:61.548%; padding-right:10px; padding-left:10px; x-cell-content-align:center; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; }
+td.whs13 { width:38.452%; border-left-width:1px; border-left-color:#000000; border-left-style:Solid; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+td.whs14 { width:61.548%; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; x-cell-content-align:center; }
+td.whs15 { width:61.548%; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+td.whs16 { width:38.452%; padding-right:10px; padding-left:10px; border-left-style:Solid; border-left-color:#000000; border-left-width:1px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; }
+td.whs17 { width:61.548%; padding-right:10px; padding-left:10px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "h1.whs1 {margin-bottom:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null;
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Understanding Sentinel FM Information Messages");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("Getting_Started_Guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1 class="whs1">Understanding Sentinel-FM Information
+ Messages</h1>
+
+
+<hr align="left" color="#008000" class="whs2">
+
+
+<p class="whs3">The following table explains messages that
+ you may see on the Sentinel-FM screen:</p>
+
+<p>&nbsp;</p>
+
+<table x-use-null-cells cellspacing="0" width="90%" class="whs4">
+<col class="whs5">
+<col class="whs6">
+
+<tr valign="top" class="whs7">
+<td bgcolor="#008000" width="38.452%" class="whs8">
+<p class="whs9">Wording of message</td>
+<td bgcolor="#008000" width="61.548%" class="whs10">
+<p class="whs9">What it means</td></tr>
+
+<tr valign="top" class="whs7">
+<td width="38.452%" class="whs11">
+<p class="whs3">Communication with Vehicle(s): [Name of vehicle]
+ is not available at this time. Displaying last known position.</td>
+<td rowspan="2" colspan="1" valign="middle" width="61.548%" class="whs12">
+<p class="whs3">The wireless network on the vehicle side may
+ have no link or no coverage or bad signal quality at that time. </td></tr>
+
+<tr valign="top" class="whs7">
+<td colspan="1" rowspan="1" width="38.452%" class="whs13">
+<p class="whs3">Communication with Vehicle(s): [Name of vehicle]
+ is not available at this time and your message was not sent to them.</td>
+</tr>
+
+<tr valign="top" class="whs7">
+<td colspan="1" rowspan="1" width="38.452%" class="whs13">
+<p class="whs3">GPS Position for Vehicle(s): [Name of vehicle]
+ is not valid. Displaying last known position.</td>
+<td colspan="1" rowspan="2" valign="middle" width="61.548%" class="whs14">
+<p class="whs3">GPS module in the box can not “see” enough
+ GPS satellites to calculate the position, for instance, if the vehicle
+ is in an area with many tall buildings, in an underground garage, or in
+ a forest.</td></tr>
+
+<tr valign="top" class="whs7">
+<td colspan="1" rowspan="1" width="38.452%" class="whs13">
+<p class="whs3">No Valid GPS Data</td>
+</tr>
+
+<tr valign="top" class="whs7">
+<td width="38.452%" class="whs13">
+<p class="whs3">Address Resolution in Progress</td>
+<td width="61.548%" class="whs15">
+<p class="whs3">The vehicle position coordinates are currently
+ being resolved into an address or a landmark.</td></tr>
+
+<tr valign="top" class="whs7">
+<td colspan="1" rowspan="1" width="38.452%" class="whs16">
+<p class="whs3">No GPS Data</td>
+<td colspan="1" rowspan="1" width="61.548%" class="whs17">
+<p class="whs3">No GPS data is provided in the specific message.</td></tr>
+
+<tr valign="top" class="whs7">
+<td colspan="1" rowspan="1" width="38.452%" class="whs16">
+<p class="whs3">Position information for vehicle(s): <span
+ style="font-style: italic;"><I>name</I></span> considered old according to parameter
+ set in User Preferences</td>
+<td colspan="1" rowspan="1" width="61.548%" class="whs17">
+<p class="whs3">The GPS position for selected vehicle in the
+ database is older then the number of days, hours and minutes set for &quot;Consider
+ position old after&quot; setting in User Preferences. </td></tr>
+
+<tr valign="top" class="whs7">
+<td colspan="1" rowspan="1" width="38.452%" class="whs16">
+<p class="whs3">Lat: [data], Lon: [data]</td>
+<td colspan="1" rowspan="1" width="61.548%" class="whs17">
+<p class="whs3">There is no street address available at the
+ position. The system shows the latitude and longitude of the position.
+ </td></tr>
+</table>
+
+<p class="whs3">&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+
+<!--SALMAN-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="../ValidateHelp.js"></script>
+<!--SALMAN-->
+
+</body>
+</html>

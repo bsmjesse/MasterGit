@@ -1,0 +1,9 @@
+<asp:GridView runat="server" BackColor="White" BorderColor="ControlLight" BorderStyle="Ridge" BorderWidth="2px" CellPadding="2" CellSpacing="0">
+   <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
+   <SelectedRowStyle BackColor="SlateGray" Font-Bold="True" ForeColor="White" />
+   <PagerStyle BackColor="#C6C3C6" Font-Size="11px" ForeColor="Black" HorizontalAlign="Right" />
+   <AlternatingRowStyle BackColor="Beige" CssClass="gridtext" />
+   <RowStyle BackColor="White" CssClass="gridtext" />
+   <EmptyDataRowStyle CssClass="errortext" Font-Bold="True" />
+   <HeaderStyle BackColor="gray" Font-Bold="True" Font-Names="Arial,Helvetica,sans-serif" Font-Size="11px" ForeColor="White" />
+</asp:GridView>

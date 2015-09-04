@@ -1,0 +1,208 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Setting_Alarm_Severity_and_Customizing_Sensor_Names</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="SentinelFMStyleSheet_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='SentinelFMStyleSheet.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+h1.whs1 { margin-bottom:0pt; }
+hr.whs2 { float:alignleft; color:#008000; }
+p.whs3 { font-style:italic; border-left-width:1px; border-left-style:Solid; border-top-width:1px; border-top-style:Solid; border-right-width:1px; border-right-style:Solid; border-bottom-width:1px; border-bottom-style:Solid; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; }
+img_whs4 { border:none; width:16px; height:16px; float:none; border-style:none; }
+img_whs5 { border:none; width:15px; height:16px; float:none; border-style:none; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "h1.whs1 {margin-bottom:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Setting Up Vehicles\nModifying Input Sensor Names");
+addAvenueInfo("Setting Up Vehicle Information","Setting_Up_Vehicles.htm","Customizing_Output_Names.htm");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("SentinelFM_ConfigurationGuide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1 class="whs1">&nbsp;Modifying 
+ Input Sensor Names</h1>
+
+
+<hr align="left" color="#008000" class="whs2">
+
+
+<p>A variety of sensors (or &quot;inputs&quot;) can monitor changes to 
+ various parameters in a vehicle. &nbsp;Physical 
+ sensors are wires that are physically connected to different parts of 
+ a vehicle's electrical system that sense particular conditions, for instance, 
+ whether the ignition of a vehicle is on or off. &nbsp;Each 
+ physical sensor has an &quot;Action On&quot; and an &quot;Action Off&quot; 
+ state that can trigger an alarm. &nbsp;&nbsp;The 
+ name of each physical sensor as well as the name and alarm severity of 
+ its &quot;Action On&quot; and &quot;Action Off&quot; states can be configured 
+ by a User. &nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>There are also several standard virtual sensors that monitor changes 
+ to various vehicle parameters through the software in the in-vehicle unit. 
+ &nbsp;These virtual 
+ sensors can trigger an alarm if a change in the sensor is detected. For 
+ example, an alarm can also be triggered by a vehicle that has a GeoZone 
+ assigned to it. For details on GeoZones, see <a href="Setting_Up_Geozones.htm">Setting 
+ Up GeoZones</a>. The alarm severity of these virtual sensors can be configured 
+ by a User. &nbsp;&nbsp;</p>
+
+<h2>Descriptive Names for Physical Sensors </h2>
+
+<p>Once physical sensors are installed in a vehicle, their functions do 
+ not change, but a User can change the names for the sensors to ones that 
+ are more descriptive. A User can also change the names for the On/Off 
+ actions of the sensor. Common names for sensors might be, for instance, 
+ &quot;Door&quot;, &quot;Ignition&quot;, or &quot;Panic Button&quot;. For 
+ a panic button, a User could name the On/Off actions &quot;enabled&quot; 
+ and &quot;disabled&quot; or &quot;on&quot; and &quot;off&quot;. &nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="whs3"><SPAN style="font-style: italic; padding-left: 4px; padding-right: 4px; padding-top: 2px; padding-bottom: 2px; "><I><span style="font-weight: bold;"><B>Note:</B></span> 
+ &nbsp;You cannot 
+ add or delete sensors; you can only enter and change information for the 
+ ones that have been installed and configured by BSM Wireless.</I></SPAN></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>To modify the physical sensor names for an existing vehicle:</p>
+
+<p>&nbsp;</p>
+
+<ol>
+	
+	<li style="margin-left: -20px;"
+		class=kadov-p-CNumberedList><p class=NumberedList
+										style="margin-bottom: 6px;">From 
+ any Sentinel-FM page, click the <span style="font-weight: bold;"><B>Configuration 
+ </B></span>hyperlink<span style="font-weight: bold;"> <B></B></span>on the top of 
+ the screen. On the <span style="font-weight: bold;"><B>Vehicles</B></span> tab, 
+ choose the <span style="font-weight: bold;"><B>Sensors/Alarms/Messages</B></span> 
+ sub tab, and choose a fleet, then a vehicle. Wait for the list of sensors 
+ to appear. </p></li>
+	
+	<li style="margin-left: -20px;"
+		class=kadov-p-CNumberedList><p class=NumberedList
+										style="margin-bottom: 6px;">To 
+ change the names of a sensor, click the edit icon (<img src="images/edit_icon.gif" x-maintain-ratio="TRUE" width="16px" height="16px" border="0" class="img_whs4">) in the 
+ row for that sensor.</p></li>
+	
+	<li style="margin-left: -20px;"
+		class=kadov-p-CNumberedList><p class=NumberedList
+										style="margin-bottom: 6px;">Make 
+ changes in the following fields:</p></li>
+	
+	<li class=kadov-p-CBullet2><p class=Bullet2
+									style="margin-bottom: 0px;">In the<span 
+ style="font-weight: bold;"><B> Sensor</B></span> field, view the name of the 
+ sensor. If necessary, modify the name to a more descriptive one.</p></li>
+	
+	<li class=kadov-p-CBullet2><p class=Bullet2
+									style="margin-bottom: 0px;">In the 
+ <span style="font-weight: bold;"><B>Action On - Name</B></span> field, view the 
+ action that may trigger a warning or an alarm for this sensor. If necessary, 
+ modify the name to a more descriptive one.</p></li>
+	
+	<li class=kadov-p-CBullet2><p class=Bullet2
+									style="margin-bottom: 0px;">In the 
+ <span style="font-weight: bold;"><B>Action Off - Name </B></span>&nbsp;field, 
+ view the normal state for this sensor. If necessary, modify the name to 
+ a more descriptive one.</p></li>
+</ol>
+
+<ol start=4>
+	
+	<li style="margin-left: -20px;"
+		class=kadov-p-CNumberedList><p class=NumberedList
+										style="margin-bottom: 6px;">Click 
+ the check (<img src="images/check_confirm_icon.gif" x-maintain-ratio="TRUE" width="15px" height="16px" border="0" class="img_whs5">) to save.</p></li>
+</ol>
+
+<p class=NumberedList
+	style="margin-bottom: 6px;">&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+
+<!--SALMAN-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="../ValidateHelp.js"></script>
+<!--SALMAN-->
+
+</body>
+</html>

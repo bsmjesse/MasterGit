@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.sentinelfm.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.sentinelfm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.sentinelfm.com">
+      <s:element name="GetXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="repType" type="tns:ReportTypes" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalSqlRecords" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxRecords" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ReportTypes">
+        <s:restriction base="s:string">
+          <s:enumeration value="WaypointsReport" />
+          <s:enumeration value="DetailedTrip" />
+          <s:enumeration value="Trip" />
+          <s:enumeration value="TripActivity" />
+          <s:enumeration value="FleetDetailedTrip" />
+          <s:enumeration value="FleetTrip" />
+          <s:enumeration value="Alarm" />
+          <s:enumeration value="FleetAlarms" />
+          <s:enumeration value="OrganizationSystemUsage" />
+          <s:enumeration value="Stop" />
+          <s:enumeration value="FleetStop" />
+          <s:enumeration value="BoxSystemUsage" />
+          <s:enumeration value="Exception" />
+          <s:enumeration value="HistoryReport" />
+          <s:enumeration value="MessagesReport" />
+          <s:enumeration value="FleetException" />
+          <s:enumeration value="SystemUsageExceptionReportForAllOrganizations" />
+          <s:enumeration value="Latency" />
+          <s:enumeration value="StopByLandmark" />
+          <s:enumeration value="FleetStopByLandmark" />
+          <s:enumeration value="OffHoursReport" />
+          <s:enumeration value="FleetOffHoursReport" />
+          <s:enumeration value="FleetMaintenanceReport" />
+          <s:enumeration value="SensorForVehicleReport" />
+          <s:enumeration value="SensorForFleetReport" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetXmlResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalSqlRecords" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxRecords" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXmlByLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="repType" type="tns:ReportTypes" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalSqlRecords" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxRecords" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXmlByLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetXmlByLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalSqlRecords" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxOverflowed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="outMaxRecords" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSystemReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="repType" type="tns:ReportTypes" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSystemReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSystemReportResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSensorReportForFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtTo" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSensorReportForFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSensorReportForFleetResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivityReportForFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sensorId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtTo" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivityReportForFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetActivityReportForFleetResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportsName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="guiId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportsNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportsNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertSecheduledReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="periodStart" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="periodEnd" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="deliveryDeadLine" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlParams" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emails" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reportType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="statusDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliveryPeriod" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleet" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertSecheduledReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertSecheduledReportResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSecheduledReports">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSecheduledReportsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSecheduledReportsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSecheduledReportsByStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSecheduledReportsByStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSecheduledReportsByStatusResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSecheduledReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="reportID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSecheduledReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteSecheduledReportResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateScheuledReportDatesAndURL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="reportID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newDelivery" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="newFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="newTo" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateScheuledReportDatesAndURLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateScheuledReportDatesAndURLResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetViolationReportForFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maskViolations" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtTo" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="speed" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetViolationReportForFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetViolationReportForFleetResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetViolationReportForFleetByLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maskViolations" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtTo" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="speed" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetViolationReportForFleetByLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetViolationReportForFleetByLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveVehiclesPerDay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtTo" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveVehiclesPerDayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetActiveVehiclesPerDayResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetViolationReportForFleetWithScore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maskViolations" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtTo" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ViolationPoints" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetViolationReportForFleetWithScoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetViolationReportForFleetWithScoreResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTripsSummaryDataByLicensePlate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="licensePlate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorNum" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtTo" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTripsSummaryDataByLicensePlateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTripsSummaryDataByLicensePlateResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReportSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlSchedule" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReportScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddReportScheduleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduledReportsByUserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduledReportsByUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetScheduledReportsByUserIDResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteScheduledReportByReportID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reportid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteScheduledReportByReportIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteScheduledReportByReportIDResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportFilesByUserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportFilesByUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetReportFilesByUserIDResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportFilesByReportID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="reportId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportFilesByReportIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetReportFilesByReportIDResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteReportFileByRowID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rowid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteReportFileByRowIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteReportFileByRowIDResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetXml" />
+  </wsdl:message>
+  <wsdl:message name="GetXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetXmlByLangSoapIn">
+    <wsdl:part name="parameters" element="tns:GetXmlByLang" />
+  </wsdl:message>
+  <wsdl:message name="GetXmlByLangSoapOut">
+    <wsdl:part name="parameters" element="tns:GetXmlByLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemReportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSystemReport" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemReportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSystemReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSensorReportForFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSensorReportForFleet" />
+  </wsdl:message>
+  <wsdl:message name="GetSensorReportForFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSensorReportForFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActivityReportForFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActivityReportForFleet" />
+  </wsdl:message>
+  <wsdl:message name="GetActivityReportForFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActivityReportForFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportsName" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportsNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertSecheduledReportSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertSecheduledReport" />
+  </wsdl:message>
+  <wsdl:message name="InsertSecheduledReportSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertSecheduledReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSecheduledReportsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSecheduledReports" />
+  </wsdl:message>
+  <wsdl:message name="GetSecheduledReportsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSecheduledReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSecheduledReportsByStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSecheduledReportsByStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetSecheduledReportsByStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSecheduledReportsByStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSecheduledReportSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSecheduledReport" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSecheduledReportSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSecheduledReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateScheuledReportDatesAndURLSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateScheuledReportDatesAndURL" />
+  </wsdl:message>
+  <wsdl:message name="UpdateScheuledReportDatesAndURLSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateScheuledReportDatesAndURLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetViolationReportForFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetViolationReportForFleet" />
+  </wsdl:message>
+  <wsdl:message name="GetViolationReportForFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetViolationReportForFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetViolationReportForFleetByLangSoapIn">
+    <wsdl:part name="parameters" element="tns:GetViolationReportForFleetByLang" />
+  </wsdl:message>
+  <wsdl:message name="GetViolationReportForFleetByLangSoapOut">
+    <wsdl:part name="parameters" element="tns:GetViolationReportForFleetByLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveVehiclesPerDaySoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveVehiclesPerDay" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveVehiclesPerDaySoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveVehiclesPerDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetViolationReportForFleetWithScoreSoapIn">
+    <wsdl:part name="parameters" element="tns:GetViolationReportForFleetWithScore" />
+  </wsdl:message>
+  <wsdl:message name="GetViolationReportForFleetWithScoreSoapOut">
+    <wsdl:part name="parameters" element="tns:GetViolationReportForFleetWithScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTripsSummaryDataByLicensePlateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTripsSummaryDataByLicensePlate" />
+  </wsdl:message>
+  <wsdl:message name="GetTripsSummaryDataByLicensePlateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTripsSummaryDataByLicensePlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddReportScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:AddReportSchedule" />
+  </wsdl:message>
+  <wsdl:message name="AddReportScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:AddReportScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledReportsByUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScheduledReportsByUserID" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduledReportsByUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduledReportsByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteScheduledReportByReportIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteScheduledReportByReportID" />
+  </wsdl:message>
+  <wsdl:message name="DeleteScheduledReportByReportIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteScheduledReportByReportIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReportFilesByUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportFilesByUserID" />
+  </wsdl:message>
+  <wsdl:message name="GetReportFilesByUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportFilesByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReportFilesByReportIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportFilesByReportID" />
+  </wsdl:message>
+  <wsdl:message name="GetReportFilesByReportIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportFilesByReportIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteReportFileByRowIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteReportFileByRowID" />
+  </wsdl:message>
+  <wsdl:message name="DeleteReportFileByRowIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteReportFileByRowIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ReportsSoap">
+    <wsdl:operation name="GetXml">
+      <wsdl:input message="tns:GetXmlSoapIn" />
+      <wsdl:output message="tns:GetXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXmlByLang">
+      <wsdl:input message="tns:GetXmlByLangSoapIn" />
+      <wsdl:output message="tns:GetXmlByLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemReport">
+      <wsdl:input message="tns:GetSystemReportSoapIn" />
+      <wsdl:output message="tns:GetSystemReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorReportForFleet">
+      <wsdl:input message="tns:GetSensorReportForFleetSoapIn" />
+      <wsdl:output message="tns:GetSensorReportForFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivityReportForFleet">
+      <wsdl:input message="tns:GetActivityReportForFleetSoapIn" />
+      <wsdl:output message="tns:GetActivityReportForFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsName">
+      <wsdl:input message="tns:GetReportsNameSoapIn" />
+      <wsdl:output message="tns:GetReportsNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSecheduledReport">
+      <wsdl:input message="tns:InsertSecheduledReportSoapIn" />
+      <wsdl:output message="tns:InsertSecheduledReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecheduledReports">
+      <wsdl:input message="tns:GetSecheduledReportsSoapIn" />
+      <wsdl:output message="tns:GetSecheduledReportsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecheduledReportsByStatus">
+      <wsdl:input message="tns:GetSecheduledReportsByStatusSoapIn" />
+      <wsdl:output message="tns:GetSecheduledReportsByStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSecheduledReport">
+      <wsdl:input message="tns:DeleteSecheduledReportSoapIn" />
+      <wsdl:output message="tns:DeleteSecheduledReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateScheuledReportDatesAndURL">
+      <wsdl:input message="tns:UpdateScheuledReportDatesAndURLSoapIn" />
+      <wsdl:output message="tns:UpdateScheuledReportDatesAndURLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationReportForFleet">
+      <wsdl:input message="tns:GetViolationReportForFleetSoapIn" />
+      <wsdl:output message="tns:GetViolationReportForFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationReportForFleetByLang">
+      <wsdl:input message="tns:GetViolationReportForFleetByLangSoapIn" />
+      <wsdl:output message="tns:GetViolationReportForFleetByLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveVehiclesPerDay">
+      <wsdl:input message="tns:GetActiveVehiclesPerDaySoapIn" />
+      <wsdl:output message="tns:GetActiveVehiclesPerDaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationReportForFleetWithScore">
+      <wsdl:input message="tns:GetViolationReportForFleetWithScoreSoapIn" />
+      <wsdl:output message="tns:GetViolationReportForFleetWithScoreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTripsSummaryDataByLicensePlate">
+      <wsdl:input message="tns:GetTripsSummaryDataByLicensePlateSoapIn" />
+      <wsdl:output message="tns:GetTripsSummaryDataByLicensePlateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddReportSchedule">
+      <wsdl:input message="tns:AddReportScheduleSoapIn" />
+      <wsdl:output message="tns:AddReportScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledReportsByUserID">
+      <wsdl:input message="tns:GetScheduledReportsByUserIDSoapIn" />
+      <wsdl:output message="tns:GetScheduledReportsByUserIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteScheduledReportByReportID">
+      <wsdl:input message="tns:DeleteScheduledReportByReportIDSoapIn" />
+      <wsdl:output message="tns:DeleteScheduledReportByReportIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportFilesByUserID">
+      <wsdl:input message="tns:GetReportFilesByUserIDSoapIn" />
+      <wsdl:output message="tns:GetReportFilesByUserIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportFilesByReportID">
+      <wsdl:input message="tns:GetReportFilesByReportIDSoapIn" />
+      <wsdl:output message="tns:GetReportFilesByReportIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReportFileByRowID">
+      <wsdl:input message="tns:DeleteReportFileByRowIDSoapIn" />
+      <wsdl:output message="tns:DeleteReportFileByRowIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ReportsSoap" type="tns:ReportsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetXml">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXmlByLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetXmlByLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetSystemReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorReportForFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetSensorReportForFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivityReportForFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetActivityReportForFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsName">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetReportsName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSecheduledReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/InsertSecheduledReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecheduledReports">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetSecheduledReports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecheduledReportsByStatus">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetSecheduledReportsByStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSecheduledReport">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteSecheduledReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateScheuledReportDatesAndURL">
+      <soap:operation soapAction="http://www.sentinelfm.com/UpdateScheuledReportDatesAndURL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationReportForFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetViolationReportForFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationReportForFleetByLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetViolationReportForFleetByLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveVehiclesPerDay">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetActiveVehiclesPerDay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationReportForFleetWithScore">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetViolationReportForFleetWithScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTripsSummaryDataByLicensePlate">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetTripsSummaryDataByLicensePlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReportSchedule">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddReportSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledReportsByUserID">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetScheduledReportsByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteScheduledReportByReportID">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteScheduledReportByReportID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportFilesByUserID">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetReportFilesByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportFilesByReportID">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetReportFilesByReportID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReportFileByRowID">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteReportFileByRowID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ReportsSoap12" type="tns:ReportsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetXml">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXmlByLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetXmlByLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetSystemReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorReportForFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetSensorReportForFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivityReportForFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetActivityReportForFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsName">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetReportsName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSecheduledReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/InsertSecheduledReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecheduledReports">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetSecheduledReports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecheduledReportsByStatus">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetSecheduledReportsByStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSecheduledReport">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteSecheduledReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateScheuledReportDatesAndURL">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UpdateScheuledReportDatesAndURL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationReportForFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetViolationReportForFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationReportForFleetByLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetViolationReportForFleetByLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveVehiclesPerDay">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetActiveVehiclesPerDay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationReportForFleetWithScore">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetViolationReportForFleetWithScore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTripsSummaryDataByLicensePlate">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetTripsSummaryDataByLicensePlate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReportSchedule">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddReportSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduledReportsByUserID">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetScheduledReportsByUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteScheduledReportByReportID">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteScheduledReportByReportID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportFilesByUserID">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetReportFilesByUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportFilesByReportID">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetReportFilesByReportID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReportFileByRowID">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteReportFileByRowID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Reports">
+    <wsdl:port name="ReportsSoap" binding="tns:ReportsSoap">
+      <soap:address location="http://192.168.9.10/ASIReports/Interfaces/Reports.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ReportsSoap12" binding="tns:ReportsSoap12">
+      <soap12:address location="http://192.168.9.10/ASIReports/Interfaces/Reports.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

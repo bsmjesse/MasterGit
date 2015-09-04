@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MsgInHistory" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="MsgInHistory" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VehicleStatusHistory">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BoxId" type="xs:int" minOccurs="0" />
+              <xs:element name="VehicleId" type="xs:int" minOccurs="0" />
+               <xs:element name="LicensePlate" type="xs:string" minOccurs="0" />
+               <xs:element name="Description" type="xs:string" minOccurs="0" />
+              <xs:element name="DateTimeReceived" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DclId" type="xs:short" minOccurs="0" />
+              <xs:element name="BoxMsgInTypeId" type="xs:short" minOccurs="0" />
+              <xs:element name="BoxMsgInTypeName" type="xs:string" minOccurs="0" />
+              <xs:element name="BoxProtocolTypeId" type="xs:short" minOccurs="0" />
+              <xs:element name="BoxProtocolTypeName" type="xs:string" minOccurs="0" />
+              <xs:element name="CommInfo1" type="xs:string" minOccurs="0" />
+              <xs:element name="CommInfo2" type="xs:string" minOccurs="0" />
+              <xs:element name="ValidGps" type="xs:string" minOccurs="0" />
+              <xs:element name="Latitude" type="xs:string" minOccurs="0" />
+              <xs:element name="Longitude" type="xs:string" minOccurs="0" />
+              <xs:element name="Heading" type="xs:string" minOccurs="0" />
+              <xs:element name="SensorMask" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomProp" type="xs:string" minOccurs="0" />
+              <xs:element name="BlobDataSize" type="xs:string" minOccurs="0" />
+              <xs:element name="SequenceNum" type="xs:int" minOccurs="0" />
+              <xs:element name="StreetAddress" type="xs:string" minOccurs="0" />
+              <xs:element name="OriginDateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Speed" type="xs:string" minOccurs="0" />
+              <xs:element name="BoxArmed" type="xs:string" minOccurs="0" />
+              <xs:element name="MsgDirection" type="xs:int" minOccurs="0" />
+              <xs:element name="Acknowledged" type="xs:string" minOccurs="0" />
+              <xs:element name="Scheduled" type="xs:string" minOccurs="0" />
+              <xs:element name="MsgDetails" type="xs:string" minOccurs="0" />
+              <xs:element name="Driver" type="xs:string" minOccurs="0" />
+              <xs:element name="DriverHIDCard" type="xs:string" minOccurs="0" />
+              <xs:element name="RoadSpeed" type="xs:string" minOccurs="0" />
+              <xs:element name="RPM" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

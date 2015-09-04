@@ -1,0 +1,850 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BoxIdResource1.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoxIdResource1.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoxIdResource1.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoxIdResource1.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="BoxIdResource1.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="BoxIdResource1.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoxIdResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoxIdResource1.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoxIdResource1.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoxIdResource1.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoxIdResource1.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoxIdResource1.HeaderText" xml:space="preserve">
+    <value>Box ID</value>
+  </data>
+  <data name="BoxIdResource1.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BoxIdResource1.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BoxIdResource1.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboVehicleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdFlatFileResource1.Text" xml:space="preserve">
+    <value>Flat File</value>
+  </data>
+  <data name="cmdFlatFileResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdViewAllDataResource1.Text" xml:space="preserve">
+    <value>View History</value>
+  </data>
+  <data name="cmdViewAllDataResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DescriptionResource3.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DescriptionResource3.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DescriptionResource3.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DescriptionResource3.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="DescriptionResource3.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="DescriptionResource3.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DescriptionResource3.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DescriptionResource3.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DescriptionResource3.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DescriptionResource3.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DescriptionResource3.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DescriptionResource3.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DescriptionResource3.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DescriptionResource3.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="DescriptionResource3.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.BackImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.ClientSettings.ClientMessages.ColumnResizeTooltipFormatString" xml:space="preserve">
+    <value>Width: &lt;strong&gt;{0}&lt;/strong&gt; &lt;em&gt;pixels&lt;/em&gt;</value>
+  </data>
+  <data name="dgFuelResource1.ClientSettings.ClientMessages.DragToGroupOrReorder" xml:space="preserve">
+    <value>Drag to group or reorder</value>
+  </data>
+  <data name="dgFuelResource1.ClientSettings.ClientMessages.DragToResize" xml:space="preserve">
+    <value>Drag to resize</value>
+  </data>
+  <data name="dgFuelResource1.ClientSettings.ClientMessages.DropHereToReorder" xml:space="preserve">
+    <value>Drop here to reorder</value>
+  </data>
+  <data name="dgFuelResource1.ClientSettings.ClientMessages.PagerTooltipFormatString" xml:space="preserve">
+    <value>Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;</value>
+  </data>
+  <data name="dgFuelResource1.FilterMenu.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.GroupingSettings.CollapseTooltip" xml:space="preserve">
+    <value>Collapse group</value>
+  </data>
+  <data name="dgFuelResource1.GroupingSettings.ExpandTooltip" xml:space="preserve">
+    <value>Expand group</value>
+  </data>
+  <data name="dgFuelResource1.GroupingSettings.GroupByFieldsSeparator" xml:space="preserve">
+    <value>; </value>
+  </data>
+  <data name="dgFuelResource1.GroupingSettings.GroupContinuedFormatString" xml:space="preserve">
+    <value>... group continued from the previous page. </value>
+  </data>
+  <data name="dgFuelResource1.GroupingSettings.GroupContinuesFormatString" xml:space="preserve">
+    <value> Group continues on the next page.</value>
+  </data>
+  <data name="dgFuelResource1.GroupingSettings.GroupSplitDisplayFormat" xml:space="preserve">
+    <value>Showing {0} of {1} items.</value>
+  </data>
+  <data name="dgFuelResource1.GroupingSettings.GroupSplitFormat" xml:space="preserve">
+    <value> ({0})</value>
+  </data>
+  <data name="dgFuelResource1.GroupingSettings.UnGroupButtonTooltip" xml:space="preserve">
+    <value>Click here to ungroup</value>
+  </data>
+  <data name="dgFuelResource1.GroupingSettings.UnGroupTooltip" xml:space="preserve">
+    <value>Drag out of the bar to ungroup</value>
+  </data>
+  <data name="dgFuelResource1.GroupPanel.Text" xml:space="preserve">
+    <value>Drag a column header and drop it here to group by that column</value>
+  </data>
+  <data name="dgFuelResource1.GroupPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.HeaderContextMenu.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.HierarchySettings.CollapseTooltip" xml:space="preserve">
+    <value>Collapse</value>
+  </data>
+  <data name="dgFuelResource1.HierarchySettings.ExpandTooltip" xml:space="preserve">
+    <value>Expand</value>
+  </data>
+  <data name="dgFuelResource1.HierarchySettings.SelfCollapseTooltip" xml:space="preserve">
+    <value>Self reference collapse</value>
+  </data>
+  <data name="dgFuelResource1.HierarchySettings.SelfExpandTooltip" xml:space="preserve">
+    <value>Self reference expand</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.CommandItemSettings.AddNewRecordImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.CommandItemSettings.AddNewRecordText" xml:space="preserve">
+    <value>Add new record</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.CommandItemSettings.ExportToCsvImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.CommandItemSettings.ExportToCsvText" xml:space="preserve">
+    <value>Export to CSV</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.CommandItemSettings.ExportToExcelImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.CommandItemSettings.ExportToExcelText" xml:space="preserve">
+    <value>Export to Excel</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.CommandItemSettings.ExportToPdfImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.CommandItemSettings.ExportToPdfText" xml:space="preserve">
+    <value>Export to Pdf</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.CommandItemSettings.ExportToWordImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.CommandItemSettings.ExportToWordText" xml:space="preserve">
+    <value>Export to Word</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.CommandItemSettings.RefreshImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.CommandItemSettings.RefreshText" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.EditFormSettings.CaptionFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.EditFormSettings.InsertCaption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.ExpandCollapseColumn.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.ExpandCollapseColumn.CollapseImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.ExpandCollapseColumn.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.ExpandCollapseColumn.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.ExpandCollapseColumn.ExpandImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.ExpandCollapseColumn.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.ExpandCollapseColumn.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.ExpandCollapseColumn.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.ExpandCollapseColumn.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.ExpandCollapseColumn.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.ExpandCollapseColumn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.ExpandCollapseColumn.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.ExpandCollapseColumn.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.FilterExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.NoDetailRecordsText" xml:space="preserve">
+    <value>No child records to display.</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.NoMasterRecordsText" xml:space="preserve">
+    <value>No records to display.</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.PagerStyle.FirstPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.PagerStyle.FirstPageToolTip" xml:space="preserve">
+    <value>First Page</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.PagerStyle.LastPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.PagerStyle.LastPageToolTip" xml:space="preserve">
+    <value>Last Page</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.PagerStyle.NextPagesToolTip" xml:space="preserve">
+    <value>Next Pages</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.PagerStyle.NextPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.PagerStyle.NextPageToolTip" xml:space="preserve">
+    <value>Next Page</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.PagerStyle.PagerTextFormat" xml:space="preserve">
+    <value>Change page: {4} &amp;nbsp;Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;, items &lt;strong&gt;{2}&lt;/strong&gt; to &lt;strong&gt;{3}&lt;/strong&gt; of &lt;strong&gt;{5}&lt;/strong&gt;.</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.PagerStyle.PageSizeLabelText" xml:space="preserve">
+    <value>Page size:</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.PagerStyle.PrevPagesToolTip" xml:space="preserve">
+    <value>Previous Pages</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.PagerStyle.PrevPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.PagerStyle.PrevPageToolTip" xml:space="preserve">
+    <value>Previous Page</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.RowIndicatorColumn.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.RowIndicatorColumn.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.RowIndicatorColumn.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="dgFuelResource1.MasterTableView.RowIndicatorColumn.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.RowIndicatorColumn.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.RowIndicatorColumn.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.RowIndicatorColumn.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.RowIndicatorColumn.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.RowIndicatorColumn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.RowIndicatorColumn.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.RowIndicatorColumn.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.Summary" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.MasterTableView.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.PagerStyle.FirstPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.PagerStyle.FirstPageToolTip" xml:space="preserve">
+    <value>First Page</value>
+  </data>
+  <data name="dgFuelResource1.PagerStyle.LastPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.PagerStyle.LastPageToolTip" xml:space="preserve">
+    <value>Last Page</value>
+  </data>
+  <data name="dgFuelResource1.PagerStyle.NextPagesToolTip" xml:space="preserve">
+    <value>Next Pages</value>
+  </data>
+  <data name="dgFuelResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.PagerStyle.NextPageToolTip" xml:space="preserve">
+    <value>Next Page</value>
+  </data>
+  <data name="dgFuelResource1.PagerStyle.PagerTextFormat" xml:space="preserve">
+    <value>Change page: {4} &amp;nbsp;Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;, items &lt;strong&gt;{2}&lt;/strong&gt; to &lt;strong&gt;{3}&lt;/strong&gt; of &lt;strong&gt;{5}&lt;/strong&gt;.</value>
+  </data>
+  <data name="dgFuelResource1.PagerStyle.PageSizeLabelText" xml:space="preserve">
+    <value>Page size:</value>
+  </data>
+  <data name="dgFuelResource1.PagerStyle.PrevPagesToolTip" xml:space="preserve">
+    <value>Previous Pages</value>
+  </data>
+  <data name="dgFuelResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFuelResource1.PagerStyle.PrevPageToolTip" xml:space="preserve">
+    <value>Previous Page</value>
+  </data>
+  <data name="dgFuelResource1.SortingSettings.SortedAscToolTip" xml:space="preserve">
+    <value>Sorted asc</value>
+  </data>
+  <data name="dgFuelResource1.SortingSettings.SortedDescToolTip" xml:space="preserve">
+    <value>Sorted desc</value>
+  </data>
+  <data name="dgFuelResource1.SortingSettings.SortToolTip" xml:space="preserve">
+    <value>Click here to sort</value>
+  </data>
+  <data name="dgFuelResource1.StatusBarSettings.LoadingText" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="dgFuelResource1.StatusBarSettings.ReadyText" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="dgFuelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DriverNameResource2.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DriverNameResource2.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DriverNameResource2.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DriverNameResource2.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="DriverNameResource2.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="DriverNameResource2.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DriverNameResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DriverNameResource2.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DriverNameResource2.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DriverNameResource2.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DriverNameResource2.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DriverNameResource2.HeaderText" xml:space="preserve">
+    <value>Driver</value>
+  </data>
+  <data name="DriverNameResource2.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DriverNameResource2.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="DriverNameResource2.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EventDateTimeResource1.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EventDateTimeResource1.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EventDateTimeResource1.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EventDateTimeResource1.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="EventDateTimeResource1.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="EventDateTimeResource1.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EventDateTimeResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EventDateTimeResource1.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EventDateTimeResource1.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EventDateTimeResource1.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EventDateTimeResource1.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EventDateTimeResource1.HeaderText" xml:space="preserve">
+    <value>Original Time</value>
+  </data>
+  <data name="EventDateTimeResource1.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EventDateTimeResource1.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EventDateTimeResource1.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetResource1.Text" xml:space="preserve">
+    <value>Fleet:</value>
+  </data>
+  <data name="lblFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFromTitleResource1.Text" xml:space="preserve">
+    <value>From:</value>
+  </data>
+  <data name="lblFromTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblToTitleResource1.Text" xml:space="preserve">
+    <value>To:</value>
+  </data>
+  <data name="lblToTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleNameResource1.Text" xml:space="preserve">
+    <value>Vehicle:</value>
+  </data>
+  <data name="lblVehicleNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MdtDateTimeResource2.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MdtDateTimeResource2.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MdtDateTimeResource2.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MdtDateTimeResource2.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="MdtDateTimeResource2.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="MdtDateTimeResource2.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MdtDateTimeResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MdtDateTimeResource2.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MdtDateTimeResource2.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MdtDateTimeResource2.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MdtDateTimeResource2.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MdtDateTimeResource2.HeaderText" xml:space="preserve">
+    <value>MDT Time</value>
+  </data>
+  <data name="MdtDateTimeResource2.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MdtDateTimeResource2.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="MdtDateTimeResource2.SortExpression" xml:space="preserve">
+    <value>MdtDateTime</value>
+  </data>
+  <data name="OdometerResource2.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OdometerResource2.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OdometerResource2.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OdometerResource2.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="OdometerResource2.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="OdometerResource2.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OdometerResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OdometerResource2.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OdometerResource2.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OdometerResource2.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OdometerResource2.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OdometerResource2.HeaderText" xml:space="preserve">
+    <value>Odometer</value>
+  </data>
+  <data name="OdometerResource2.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OdometerResource2.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="OdometerResource2.SortExpression" xml:space="preserve">
+    <value>Odometer</value>
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadAjaxManager1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFromResource2.Calendar.CellDayFormat" xml:space="preserve">
+    <value>%d</value>
+  </data>
+  <data name="txtFromResource2.Calendar.ColumnHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFromResource2.Calendar.ColumnHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFromResource2.Calendar.DateRangeSeparator" xml:space="preserve">
+    <value> - </value>
+  </data>
+  <data name="txtFromResource2.Calendar.DayCellToolTipFormat" xml:space="preserve">
+    <value>dddd, MMMM dd, yyyy</value>
+  </data>
+  <data name="txtFromResource2.Calendar.FastNavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFromResource2.Calendar.FastNavigationNextText" xml:space="preserve">
+    <value>&amp;gt;&amp;gt;</value>
+  </data>
+  <data name="txtFromResource2.Calendar.FastNavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFromResource2.Calendar.FastNavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;&amp;lt;</value>
+  </data>
+  <data name="txtFromResource2.Calendar.FastNavigationSettings.CancelButtonCaption" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="txtFromResource2.Calendar.FastNavigationSettings.DateIsOutOfRangeMessage" xml:space="preserve">
+    <value>Date is out of range.</value>
+  </data>
+  <data name="txtFromResource2.Calendar.FastNavigationSettings.OkButtonCaption" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="txtFromResource2.Calendar.FastNavigationSettings.TodayButtonCaption" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="txtFromResource2.Calendar.NavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFromResource2.Calendar.NavigationNextText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="txtFromResource2.Calendar.NavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFromResource2.Calendar.NavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="txtFromResource2.Calendar.RowHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFromResource2.Calendar.RowHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFromResource2.Calendar.TitleFormat" xml:space="preserve">
+    <value>MMMM yyyy</value>
+  </data>
+  <data name="txtFromResource2.Calendar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFromResource2.Calendar.ViewSelectorImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFromResource2.Calendar.ViewSelectorText" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="txtFromResource2.DateInput.Label" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFromResource2.DateInput.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtFromResource2.DatePopupButton.ToolTip" xml:space="preserve">
+    <value>Open the calendar popup.</value>
+  </data>
+  <data name="txtFromResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboFleet_Item_0" xml:space="preserve">
+    <value>Select a Fleet</value>
+  </data>
+  <data name="cboVehicle_Item_0_EntireFleet" xml:space="preserve">
+    <value>Entire Fleet</value>
+  </data>
+  <data name="Error_Load" xml:space="preserve">
+    <value>Failed to load data</value>
+  </data>
+  <data name="valFleetResource1.ErrorMessage" xml:space="preserve">
+    <value>Please select a Fleet</value>
+  </data>
+  <data name="DateError1" xml:space="preserve">
+    <value>The from date should be earlier than the to date.</value>
+  </data>
+  <data name="DateError2" xml:space="preserve">
+    <value>You cannot view data for more than one month.</value>
+  </data>
+  <data name="SelectDriver" xml:space="preserve">
+    <value>Select a driver</value>
+  </data>
+  <data name="SelectDriverPrompt" xml:space="preserve">
+    <value>Please select a driver.</value>
+  </data>
+  <data name="SelectVehicle" xml:space="preserve">
+    <value>Select a vehicle</value>
+  </data>
+  <data name="SelectVehiclePrompt" xml:space="preserve">
+    <value>Please select a vehicle or a driver.</value>
+  </data>
+  <data name="DateError3" xml:space="preserve">
+    <value>You cannot create flat file for more than {0} days.</value>
+  </data>
+</root>

@@ -1,0 +1,10 @@
+C:\Builds\SentinelFM\Main\BIN\ERRSecurity.dll
+C:\Builds\SentinelFM\Main\BIN\ERRSecurity.pdb
+C:\Builds\SentinelFM\Main\BIN\fr\ERRSecurity.resources.dll
+C:\Builds\SentinelFM\Main\ERRSecurity\obj\Debug\ERRSecurity.csprojResolveAssemblyReference.cache
+C:\Builds\SentinelFM\Main\ERRSecurity\obj\Debug\VLF.ERRSecurity.Resources.ERRSecurityConst.resources
+C:\Builds\SentinelFM\Main\ERRSecurity\obj\Debug\VLF.ERRSecurity.Resources.ERRSecurityConst.fr.resources
+C:\Builds\SentinelFM\Main\ERRSecurity\obj\Debug\ERRSecurity.csproj.GenerateResource.Cache
+C:\Builds\SentinelFM\Main\ERRSecurity\obj\Debug\fr\ERRSecurity.resources.dll
+C:\Builds\SentinelFM\Main\ERRSecurity\obj\Debug\ERRSecurity.dll
+C:\Builds\SentinelFM\Main\ERRSecurity\obj\Debug\ERRSecurity.pdb

@@ -1,0 +1,498 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Viewing Sensors and Sending Outputs or Commands</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="SentinelFMStyleSheet_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='SentinelFMStyleSheet.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+h1.whs1 { margin-bottom:0pt; }
+hr.whs2 { float:alignleft; color:#008000; }
+p.whs3 { font-size:10pt; }
+img_whs4 { border:none; float:none; width:402px; height:237px; border-style:none; }
+img_whs5 { border:none; width:413px; height:172px; float:none; border-style:none; }
+p.whs6 { font-size:11pt; }
+table.whs7 { x-cell-content-align:top; width:100%; border-spacing:0px; }
+col.whs8 { width:18.096%; }
+col.whs9 { width:81.904%; }
+tr.whs10 { x-cell-content-align:top; }
+td.whs11 { width:18.096%; padding-right:10px; padding-left:10px; border-left-style:Solid; border-left-color:#000000; border-top-color:#000000; border-top-style:Solid; border-right-style:Solid; border-right-color:#000000; border-bottom-color:#000000; border-bottom-style:Solid; border-right-width:1px; border-left-width:1px; border-top-width:1px; border-bottom-width:1px; background-color:#008000; }
+p.whs12 { font-weight:bold; color:#ffffff; font-size:10pt; }
+td.whs13 { width:81.904%; padding-right:10px; padding-left:10px; border-top-color:#000000; border-top-style:Solid; border-right-style:Solid; border-right-color:#000000; border-bottom-color:#000000; border-bottom-style:Solid; border-top-width:1px; border-bottom-width:1px; border-right-width:1px; background-color:#008000; }
+td.whs14 { width:18.096%; padding-right:10px; padding-left:10px; border-left-style:Solid; border-left-color:#000000; border-left-width:1px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; }
+td.whs15 { width:81.904%; padding-right:10px; padding-left:10px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; }
+td.whs16 { width:18.096%; border-left-width:1px; border-left-color:#000000; border-left-style:Solid; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+td.whs17 { width:81.904%; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+td.whs18 { width:18.096%; padding-right:10px; padding-left:10px; border-left-width:1px; border-left-color:#000000; border-left-style:Solid; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; }
+td.whs19 { width:81.904%; padding-right:10px; padding-left:10px; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; }
+ul.whs20 { list-style:disc; }
+p.whs21 { margin-left:40px; font-size:11pt; }
+p.whs22 { margin-left:0px; }
+ol.whs23 { list-style:decimal; }
+p.whs24 { margin-bottom:4.5pt; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "h1.whs1 {margin-bottom:1pt; }";
+  strNSS += "p.whs22 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Working with the Map Page\nSensors, Outputs and Commands");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("User_Guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1 class="whs1">Sensors, Outputs and Commands</h1>
+
+
+<hr align="left" color="#008000" class="whs2">
+
+
+<h2>Sensors</h2>
+
+<p class="whs3">Several<span style="font-style: italic;"><I> sensors</I></span> 
+ (or &quot;inputs&quot;) can be attached to different parts of a vehicle. 
+ Sensors are wires connected to the vehicle blackbox that sense a particular 
+ condition, for instance, whether the door of a vehicle has been opened 
+ or closed. Each sensor has an &quot;Action Off&quot; and an &quot;Action 
+ On&quot; state that can trigger a warning or an alarm. &nbsp;An 
+ organization defines the sensors, the conditions they will sense, and 
+ the actions that will trigger a warning or alarm. &nbsp;Information 
+ from the sensors is detected by the <a href="../Getting Started Guide/How_Sentinel_FM_Works.htm"
+										style="font-size: 10pt;">vehicle 
+ box</a> and then transmitted through wireless communication to the Sentinel-FM 
+ servers, where it can be monitored by a User. (For details about alarms, 
+ and how to change sensor names, see <a href="../Configuration Guide/Setting_Alarm_Severity_and_Customizing_Sensor_Names.htm"
+										style="font-size: 10pt;">Modifying 
+ Sensor Names and &nbsp;Alarm 
+ Severity</a>)</p>
+
+<p class="whs3">&nbsp;</p>
+
+<p class="whs3">At any time, a User of the Sentinel-FM system 
+ can view the status of a variety of different sensors depending on what 
+ has been installed and configured in a particular vehicle (see example 
+ below).</p>
+
+<p class="whs3">&nbsp;</p>
+
+<p class="whs3"><img src="SENSORS.GIF" x-maintain-ratio="TRUE" width="402px" height="237px" border="0" class="img_whs4"></p>
+
+<h2>Outputs </h2>
+
+<p class="whs3">Similar to input sensors, several <span style="font-style: italic;"><I>outputs</I></span> 
+ can be attached to different parts of a vehicle. &nbsp;A 
+ User can &quot;send an output&quot;, that is, send a command from the 
+ Sentinel-FM Server to the box in the vehicle that triggers an action in 
+ that vehicle. For instance, an output can enable or disable the ignition 
+ of a vehicle, unlock a door, or honk a horn, depending on how an organization 
+ chooses to have the outputs installed. An organization can define the 
+ outputs and the actions they will perform (see example below). To change 
+ output names, see <a href="../Configuration Guide/Customizing_Output_Names.htm"
+						style="font-size: 10pt;">Modifying Output Names</a>.</p>
+
+<p class="whs3">&nbsp;</p>
+
+<p class="whs3"><img src="OUTPUT.GIF" x-maintain-ratio="TRUE" width="413px" height="172px" border="0" class="img_whs5"></p>
+
+&nbsp;
+
+<h2>Commands</h2>
+
+<p class="whs3">With a <span style="font-style: italic;"><I>command</I></span>, 
+ instead of triggering actions via output wires connected to different 
+ to parts of a vehicle, a User sends a command from the Sentinel-FM server 
+ that controls the software inside the box or that gets information from 
+ the box. Users can use commands, for example, to arm and disarm the alarm/warning 
+ functions of the box. (For details on alarms, see <a href="Working_with_Alarms.htm"
+														style="font-size: 10pt;">Working 
+ with Alarms</a>.)</p>
+
+<p class="whs6">&nbsp;</p>
+
+<p class="whs6"><span style="font-size: 10pt;"><font size=2 style="font-size:10pt;">While sensors 
+ and outputs are installed according to the requirements of each organization, 
+ commands are preset. The following table shows commonly available commands 
+ and their functions:</font></span> </p>
+
+<p class="whs6">&nbsp;</p>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs7">
+<script language='JavaScript'><!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4)) document.write("</table><table x-use-null-cells cellspacing='0' width='100%' border='1' bordercolor='black' bordercolorlight='black' bordercolordark='black'>");
+//--></script>
+<col class="whs8">
+<col class="whs9">
+
+<tr valign="top" class="whs10">
+<td bgcolor="#008000" width="18.096%" class="whs11">
+<p class="whs12">Name of command</td>
+<td bgcolor="#008000" width="81.904%" class="whs13">
+<p class="whs12">What it does</td></tr>
+
+<tr valign="top" class="whs10">
+<td width="18.096%" class="whs14">
+<p class="whs3">Arm</td>
+<td width="81.904%" class="whs15">
+<p class="whs3">Arms the alarm and warning functions of the 
+ box. The box must be armed for warnings and critical alarms to work.*</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs16">
+<p class="whs3">Box Hard Reset</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs17">
+<p class="whs3">Resets box in vehicle. &nbsp;Similar 
+ to removing power from the box.</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs16">
+<p class="whs3">Box Reset</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs17">
+<p class="whs3">Resets box firmware in vehicle.</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs16">
+<p class="whs3">Change Box ID</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs17">
+<p class="whs3">Allows User to change the ID that has been 
+ assigned to a box</td></tr>
+
+<tr valign="top" class="whs10">
+<td width="18.096%" class="whs16">
+<p class="whs3">Disarm</td>
+<td width="81.904%" class="whs17">
+<p class="whs3">Disarms the alarm and warning functions of 
+ the box. When the box is disarmed, warnings and critical alarms do not 
+ work.*</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs14">
+<p class="whs3">Clear Memory</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs15">
+<p class="whs3">If a vehicle is out of wireless range, messages 
+ are stored in the box's internal memory until wireless coverage is available. 
+ If the vehicle is out of range for an extended period of time, a significant 
+ number of messages might collect that would require excessive air time 
+ to be transmitted. In such cases, use Clear Memory to delete all messages.</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs18">
+<p class="whs3">Get Box Setup</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs19">
+<p class="whs3">Queries a box for its setup parameters such 
+ as:</p>
+<ul type="disc" class="whs20">
+	
+	<li class=kadov-p><p class="whs3">Reporting Interval</p></li>
+	
+	<li class=kadov-p><p class="whs3">Speed Threshold</p></li>
+	
+	<li class=kadov-p><p class="whs3">Geofence (enabled/disabled)</p></li>
+	
+	<li class=kadov-p><p class="whs3">Communication mode</p></li>
+	
+	<li class=kadov-p><p class="whs3">Trace period</p></li>
+	
+	<li class=kadov-p><p class="whs3">Trace interval</p></li>
+	
+	<li class=kadov-p><p class="whs3">Enabled sensors</p></li>
+</ul>
+<p class="whs3">&nbsp;</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs18">
+<p class="whs3">Get Box Status</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs19">
+<p class="whs3">Gives information about the current status 
+ of the box, with the following fields:</p>
+<ul type="disc" class="whs20">
+	
+	<li class=kadov-p><p class="whs3">Armed (on/off)</p></li>
+	
+	<li class=kadov-p><p class="whs3">Main Battery (in volts)</p></li>
+	
+	<li class=kadov-p><p class="whs3">Backup Battery (in volts)</p></li>
+	
+	<li class=kadov-p><p class="whs3">S.N. (serial number)</p></li>
+	
+	<li class=kadov-p><p class="whs3">Firmware version (version 
+ of software inside box)</p></li>
+	
+	<li class=kadov-p><p class="whs3">Memory usage (percent 
+ used)</p></li>
+	
+	<li class=kadov-p><p class="whs3">List of sensors and their 
+ status</p></li>
+</ul></td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs14">
+<p class="whs3">Get Key Fob Status</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs15">
+<p class="whs3">Queries whether the key fob is enabled or disabled</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs14">
+<p class="whs3">Get VCR Off Delay</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs15">
+<p class="whs3">Queries the VCR off Delay status</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs14">
+<p class="whs3">Key Fob Disable</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs15">
+<p class="whs3">Disables the use of the keyfob</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs14">
+<p class="whs3">Key Fob Enable</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs15">
+<p class="whs3">Enables the use of the keyfob</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs14">
+<p class="whs3">Set Enabled Sensor</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs15">
+<p class="whs3">Allows User to set enabled sensors</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs14">
+<p class="whs3">Set Fence</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs15">
+<p class="whs3">Allows User to set geofence (leash) around 
+ a vehicle. &nbsp;Geofence 
+ can be set to disabled or to a variety of preset distances ranging from 
+ 200 feet to 2000 feet..</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs14">
+<p class="whs3">Set Report Interval</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs15">
+<p class="whs3">Allows a User to specify how often a black 
+ box should automatically report in its position. &nbsp;Report 
+ interval can be set to disabled or to a variety of preset frequencies 
+ ranging from 30 seconds to 24 hours.</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs14">
+<p class="whs3">Set Speed Threshold</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs15">
+<p class="whs3">Allows a User to specify at what speed a speed 
+ threshold alarm should be triggered. &nbsp;Speed 
+ threshold can be set to disabled or to a variety of preset speeds ranging 
+ from 50mph to 90mph.</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs14">
+<p class="whs3">Set Trace</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs15">
+<p class="whs3">Allows a User to set trace period and trace 
+ interval and specify which sensors should trigger trace mode. &nbsp;Sensors 
+ can trigger trace mode when turned on or when turned off or both.</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs14">
+<p class="whs3">Set VCR Off Delay</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs15">
+<p class="whs3">Allows a User to set VCR off delay time. &nbsp;Delay 
+ time can be set to disabled or to a variety of preset times ranging from 
+ 0 minutes to 8 hours.</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs14">
+<p class="whs3">Setup</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs15">
+<p class="whs3">Allows a User to set a variety of parameters 
+ in a black box including:</p>
+<p class="whs3">&nbsp;</p>
+<ul type="disc" class="whs20">
+	
+	<li class=kadov-p><p class="whs3">Reporting Interval</p></li>
+	
+	<li class=kadov-p><p class="whs3">Speed Threshold</p></li>
+	
+	<li class=kadov-p><p class="whs3">Geofence (enabled/disabled)</p></li>
+	
+	<li class=kadov-p><p class="whs3">Communication mode</p></li>
+	
+	<li class=kadov-p><p class="whs3">Trace period</p></li>
+	
+	<li class=kadov-p><p class="whs3">Trace interval</p></li>
+	
+	<li class=kadov-p><p class="whs3">Enabled sensors</p></li>
+</ul>
+<p class="whs3">&nbsp;</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs14">
+<p class="whs3">Start Trace Mode</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs15">
+<p class="whs3">Allows a User to send a command to start trace 
+ mode immediately</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs14">
+<p class="whs3">Stop Trace Mode</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs15">
+<p class="whs3">Allows a User to send a command to stop trace 
+ mode immediately</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="18.096%" class="whs14">
+<p class="whs3">Update Position</td>
+<td colspan="1" rowspan="1" width="81.904%" class="whs15">
+<p class="whs3">Same as Update Position in the Map screen. 
+ For details, see <a href="Displaying_Vehicles_on_the_Map_Screen.htm"
+					style="font-size: 10pt;">Displaying Vehicles on the 
+ Map Screen</a>.</td></tr>
+<script language='JavaScript'><!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4)) document.write("</table></table><table>");
+//--></script>
+</table>
+
+<p class="whs21">&nbsp;</p>
+
+<p class="whs22">*Note: The Arm and Disarm commands can also 
+ be activated by the driver's key fob. To see whether the box of a vehicle 
+ is armed or disarmed, view the <span style="font-weight: bold;"><B>Armed</B></span> 
+ column for the vehicle in the Map screen vehicle grid.</p>
+
+<h2>Viewing Sensors, and Sending Outputs or Commands</h2>
+
+<p class="whs3">To work with sensors, outputs, and commands 
+ for a vehicle:</p>
+
+<p class="whs3">&nbsp;</p>
+
+<ol type="1" class="whs23">
+	
+	<li class=kadov-p><p class="whs24">On the <a href="../Getting Started Guide/The_Map_Screen.htm"
+	style="font-size: 10pt;">Map screen</a>, in the vehicle grid, find 
+ the vehicle to be managed. &nbsp;For 
+ details, see <a href="Displaying_Vehicles_on_the_Map_Screen.htm"
+				style="font-size: 10pt;">Displaying Vehicles on the Map 
+ Screen</a>.</p></li>
+	
+	<li class=kadov-p><p class="whs24">In the <span style="font-weight: bold;"><B>Commands 
+ / Info</B></span> column of the vehicle grid click on the <span style="font-weight: bold;"><B>Description</B></span> 
+ hyperlink for the vehicle to be managed and &nbsp;select 
+ the <span style="font-weight: bold;"><B>Commands</B></span> tab.</p></li>
+	
+	<li class=kadov-p><p class="whs24">The installed sensors 
+ for the selected vehicle and their current status will be displayed </p></li>
+	
+	<li class=kadov-p><p class="whs24">To send outputs 
+ or commands:</p></li>
+</ol>
+
+<ul>
+	
+	<ul>
+		
+		<li style="list-style: disc;"
+			type=disc
+			class=kadov-p><p class="whs24">From the <span 
+ style="font-weight: bold;"><B>Output</B></span> list, choose an output to send, 
+ and click <span style="font-weight: bold;"><B>Send Output</B></span>.</p></li>
+		
+		<li style="list-style: disc;"
+			type=disc
+			class=kadov-p><p class="whs24">From the <span 
+ style="font-weight: bold;"><B>Command </B></span>list, choose a command to send, 
+ and click <span style="font-weight: bold;"><B>Send Command</B></span>.</p></li>
+		
+		<li style="list-style: disc;"
+			type=disc
+			class=kadov-p><p class="whs24">To allow communication 
+ via a secondary wireless communication network if the primary one is not 
+ successful, enable the <span style="font-weight: bold;"><B>Dual Communication 
+ Mode</B></span> checkbox.</p></li>
+	</ul>
+</ul>
+
+<ol start="4" type="1" class="whs23">
+	
+	<li class=kadov-p><p class="whs24">To determine if 
+ a output or command was successful view the acknowledgment -- either &quot;Output 
+ Successful&quot; or &quot;Command Successful&quot; should be observed.</p></li>
+	
+	<li class=kadov-p><p class="whs24">Click <span style="font-weight: bold;"><B>Close</B></span>.</p></li>
+</ol>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+
+<!--SALMAN-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="../ValidateHelp.js"></script>
+<!--SALMAN-->
+
+</body>
+</html>

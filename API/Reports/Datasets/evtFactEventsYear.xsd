@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstActivitySummaryReportPerFleet" targetNamespace="http://tempuri.org/dstLandmarksReport.xsd" xmlns:mstns="http://tempuri.org/dstLandmarksReport.xsd" xmlns="http://tempuri.org/dstLandmarksReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstActivitySummaryReportPerFleet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dstActivitySummaryReportPerFleet" msprop:Generator_DataSetName="dstActivitySummaryReportPerFleet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="FactEvents" msprop:Generator_UserTableName="FactEvents" msprop:Generator_RowDeletedName="FactEventsRowDeleted" msprop:Generator_TableClassName="FactEventsDataTable" msprop:Generator_RowChangedName="FactEventsRowChanged" msprop:Generator_RowDeletingName="FactEventsRowDeleting" msprop:Generator_RowChangingName="FactEventsRowChanging" msprop:Generator_RowEvArgName="FactEventsRowChangeEvent" msprop:Generator_RowClassName="FactEventsRow" msprop:Generator_RowEvHandlerName="FactEventsRowChangeEventHandler" msprop:Generator_TablePropName="FactEvents" msprop:Generator_TableVarName="tableFactEvents">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="description" msprop:Generator_UserColumnName="description" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInTable="descriptionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="idling" msprop:Generator_UserColumnName="idling" msprop:Generator_ColumnPropNameInRow="idling" msprop:Generator_ColumnVarNameInTable="columnidling" msprop:Generator_ColumnPropNameInTable="idlingColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="engine" msprop:Generator_UserColumnName="engine" msprop:Generator_ColumnPropNameInRow="engine" msprop:Generator_ColumnVarNameInTable="columnengine" msprop:Generator_ColumnPropNameInTable="engineColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="idleFuel" msprop:Generator_UserColumnName="perc" msprop:Generator_ColumnPropNameInRow="perc" msprop:Generator_ColumnVarNameInTable="columnperc" msprop:Generator_ColumnPropNameInTable="percColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="fuel" type="xs:double" minOccurs="0" />
+              <xs:element name="ptoFuel" type="xs:double" minOccurs="0" />
+              <xs:element name="pto" type="xs:double" minOccurs="0" />
+              <xs:element name="distance" type="xs:double" minOccurs="0" />
+              <xs:element name="idlingYear" type="xs:double" minOccurs="0" />
+              <xs:element name="engineYear" type="xs:double" minOccurs="0" />
+              <xs:element name="IdleFuelYear" type="xs:double" minOccurs="0" />
+              <xs:element name="fuelYear" type="xs:double" minOccurs="0" />
+              <xs:element name="ptoFuelYear" type="xs:double" minOccurs="0" />
+              <xs:element name="ptoYear" type="xs:double" minOccurs="0" />
+              <xs:element name="distanceYear" type="xs:double" minOccurs="0" />
+              <xs:element name="EquipmentName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ButtonColumnResource1.Text" xml:space="preserve">
+    <value>&lt;img src=../images/edit.gif border=0&gt;</value>
+  </data>
+  <data name="ButtonColumnResource2.Text" xml:space="preserve">
+    <value>&lt;img src=../images/delete.gif border=0&gt;</value>
+  </data>
+  <data name="ButtonColumnResource3.Text" xml:space="preserve">
+    <value>Sélectionner</value>
+  </data>
+  <data name="cboCountryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboTimeZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDayLightResource1.Text" xml:space="preserve">
+    <value>Ajustement automatique de l'heure avancée</value>
+  </data>
+  <data name="chkDayLightResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCancelLandmarkResource1.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="cmdCancelLandmarkResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdGeoZoneResource1.Text" xml:space="preserve">
+    <value>Géo-Barrières</value>
+  </data>
+  <data name="cmdGeoZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdLandMarkAddResource1.Text" xml:space="preserve">
+    <value>Ajouter un Site</value>
+  </data>
+  <data name="cmdLandMarkAddResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdLandmarkResource1.Text" xml:space="preserve">
+    <value>Sites</value>
+  </data>
+  <data name="cmdLandmarkResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdMapResource1.Text" xml:space="preserve">
+    <value>Carte</value>
+  </data>
+  <data name="cmdMapResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSaveLandmarkResource1.Text" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="cmdSaveLandmarkResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdVehicleGeoZoneResource1.Text" xml:space="preserve">
+    <value>Assigner des véhicules à des Géo-Barrières</value>
+  </data>
+  <data name="cmdVehicleGeoZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAddressResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAddressResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgAddressResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgAddressResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgLandmarks_ContactPhoneNum" xml:space="preserve">
+    <value>Numéro de téléphone du contact</value>
+  </data>
+  <data name="dgLandmarks_DeleteConfirmation" xml:space="preserve">
+    <value>Êtes-vous certain de vouloir supprimer?</value>
+  </data>
+  <data name="dgLandmarks_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="dgLandmarks_Email" xml:space="preserve">
+    <value>Courriel</value>
+  </data>
+  <data name="dgLandmarks_Item_Delete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="dgLandmarks_Item_Edit" xml:space="preserve">
+    <value>Éditer</value>
+  </data>
+  <data name="dgLandmarks_Item_Radius" xml:space="preserve">
+    <value>Rayon</value>
+  </data>
+  <data name="dgLandmarks_LandmarkName" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="dgLandmarks_Latitude" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="dgLandmarks_Longitude" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="dgLandmarks_Radius" xml:space="preserve">
+    <value>Rayon</value>
+  </data>
+  <data name="dgLandmarks_StreetAddress" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="dgLandmarksResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgLandmarksResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgLandmarksResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgLandmarksResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HyperLinkColumnResource1.Text" xml:space="preserve">
+    <value>Visualise la carte</value>
+  </data>
+  <data name="lblAddMessage_Text_AddressNotFoundError" xml:space="preserve">
+    <value>Adresse introuvable!</value>
+  </data>
+  <data name="lblAddMessage_Text_InvalidAddressError" xml:space="preserve">
+    <value>Adresse invalide.</value>
+  </data>
+  <data name="lblAddMessage_Text_InvalidLatitudeError" xml:space="preserve">
+    <value>Latitude invalide.</value>
+  </data>
+  <data name="lblAddMessage_Text_InvalidLongitudeError" xml:space="preserve">
+    <value>Longitude invalide.</value>
+  </data>
+  <data name="lblAddMessage_Text_SelectAddressAndSave" xml:space="preserve">
+    <value>Sélectionner une adresse et cliquer sur enregistrer !</value>
+  </data>
+  <data name="lblAddMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAddMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCityTitleResource1.Text" xml:space="preserve">
+    <value>Ville :</value>
+  </data>
+  <data name="lblCityTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblContactNameTitleResource1.Text" xml:space="preserve">
+    <value>Nom du contact :</value>
+  </data>
+  <data name="lblContactNameTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCountryTitleResource1.Text" xml:space="preserve">
+    <value>Pays</value>
+  </data>
+  <data name="lblCountryTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmailTitleResource1.Text" xml:space="preserve">
+    <value>Courriel :</value>
+  </data>
+  <data name="lblEmailTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLandmarkDescriptionTitleResource1.Text" xml:space="preserve">
+    <value>Description du Site :</value>
+  </data>
+  <data name="lblLandmarkDescriptionTitleResource1.Text1" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="lblLandmarkDescriptionTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLandmarkDescriptionTitleResource1.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLandmarkNameTitleResource1.Text" xml:space="preserve">
+    <value>Nom du Site :</value>
+  </data>
+  <data name="lblLandmarkNameTitleResource1.Text1" xml:space="preserve">
+    <value>Site :</value>
+  </data>
+  <data name="lblLandmarkNameTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLandmarkNameTitleResource1.ToolTip1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessage_Text_AddLandmarkFailed" xml:space="preserve">
+    <value>Impossible d'ajouter un Site</value>
+  </data>
+  <data name="lblMessage_Text_AddLandmarkSuccess" xml:space="preserve">
+    <value>L'ajout de la Géo-barrière a réussi</value>
+  </data>
+  <data name="lblMessage_Text_DeleteLandmarkSuccess" xml:space="preserve">
+    <value>Site supprimé !</value>
+  </data>
+  <data name="lblMessage_Text_LandmarkAlreadyExistsError" xml:space="preserve">
+    <value>Le nom et coordonnées de ce Site existe déjà dans la base de données</value>
+  </data>
+  <data name="lblMessage_Text_UpdateLandmarkFailedError" xml:space="preserve">
+    <value>La mise à jour du Site a échoué.</value>
+  </data>
+  <data name="lblMessage_Text_UpdateLandmarkSuccess" xml:space="preserve">
+    <value>L'ajout de cette Géo-Barrière a réussi</value>
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPhoneTitleResource1.Text" xml:space="preserve">
+    <value>Numéro de téléphone</value>
+  </data>
+  <data name="lblPhoneTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRadiusTitleResource1.Text" xml:space="preserve">
+    <value>Rayon</value>
+  </data>
+  <data name="lblRadiusTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStateProvinceTitleResource1.Text" xml:space="preserve">
+    <value>État (Prov.) :</value>
+  </data>
+  <data name="lblStateProvinceTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStreetTitleResource1.Text" xml:space="preserve">
+    <value>Rue :</value>
+  </data>
+  <data name="lblStreetTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTimeZoneTitleResource1.Text" xml:space="preserve">
+    <value>Fuseau horaire :</value>
+  </data>
+  <data name="lblTimeZoneTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnitResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnitResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblViewMapTitleResource1.Text" xml:space="preserve">
+    <value>Afficher la carte</value>
+  </data>
+  <data name="lblViewMapTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblXResource1.Text" xml:space="preserve">
+    <value>Latitude (nord est positif) :</value>
+  </data>
+  <data name="lblXResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblYResource1.Text" xml:space="preserve">
+    <value>Longitude (ouest est négatif) :</value>
+  </data>
+  <data name="lblYResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource1.Text" xml:space="preserve">
+    <value>Selon l'adresse </value>
+  </data>
+  <data name="ListItemResource1.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource2.Text" xml:space="preserve">
+    <value>Selon les coordonnées ou la carte</value>
+  </data>
+  <data name="ListItemResource2.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource3.Text" xml:space="preserve">
+    <value>É.-U.</value>
+  </data>
+  <data name="ListItemResource3.Value" xml:space="preserve">
+    <value>É.-U.</value>
+  </data>
+  <data name="ListItemResource4.Text" xml:space="preserve">
+    <value>Canada</value>
+  </data>
+  <data name="ListItemResource4.Value" xml:space="preserve">
+    <value>Canada</value>
+  </data>
+  <data name="lstAddOptionsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="txtCityResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtContactNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtContactNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEmailResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEmailResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLandmarkDescResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLandmarkDescResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLandmarkNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLandmarkNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPhoneResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPhoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRadiusResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRadiusResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStreetResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStreetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtXResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtXResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtYResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtYResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValAddressResource1.ErrorMessage" xml:space="preserve">
+    <value>Entrer une adresse </value>
+  </data>
+  <data name="ValAddressResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="ValAddressResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valEmailResource1.ErrorMessage" xml:space="preserve">
+    <value>Entrer une adresse courriel valide</value>
+  </data>
+  <data name="valEmailResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valEmailResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValidationSummary1Resource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValidationSummary1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valLandmarkResource1.ErrorMessage" xml:space="preserve">
+    <value>Entrer un nom de Site</value>
+  </data>
+  <data name="valLandmarkResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valLandmarkResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valRadiusResource1.ErrorMessage" xml:space="preserve">
+    <value>Entrer un rayon.</value>
+  </data>
+  <data name="valRadiusResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valRadiusResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valRangeLongResource1.ErrorMessage" xml:space="preserve">
+    <value>La longitude est erronnée.</value>
+  </data>
+  <data name="valRangeLongResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valRangeLongResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valRangeRadiusResource1.ErrorMessage" xml:space="preserve">
+    <value>Entrer un rayon adéquat.</value>
+  </data>
+  <data name="valRangeRadiusResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valRangeRadiusResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valRangLatResource1.ErrorMessage" xml:space="preserve">
+    <value>La latitude est erronnée.</value>
+  </data>
+  <data name="valRangLatResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valRangLatResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valXResource1.ErrorMessage" xml:space="preserve">
+    <value>Entrer une latitude</value>
+  </data>
+  <data name="valXResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valXResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valYResource1.ErrorMessage" xml:space="preserve">
+    <value>Entrer une longitude</value>
+  </data>
+  <data name="valYResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valYResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>

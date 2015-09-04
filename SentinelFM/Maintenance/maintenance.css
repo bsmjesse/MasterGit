@@ -1,0 +1,25 @@
+﻿
+   .style1
+        {
+            width: 87px;
+        }
+        .style2
+        {
+            width: 188px;
+        }
+        .RegularText
+        {
+            margin-left: 0px;
+        }
+        .style3
+        {
+            width: 47px;
+        }
+        .trLine
+        {
+            border-bottom: 1px solid gray !important;
+        }
+        .servicesTable
+        {
+            padding: 1px !important;
+        }

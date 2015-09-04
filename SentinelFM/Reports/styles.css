@@ -1,0 +1,51 @@
+﻿
+.multiPage
+{
+	border: 1px solid #828282;
+	padding: 0px 10px 25px:10px;
+	overflow: auto;
+}
+
+
+.MyModalPanel
+{
+	position: absolute;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background: #DEEFCE no-repeat center center; /*#dff3ff */
+}
+
+.formtextGreenBold
+{
+    color:Green;
+    font-family: verdana; 
+    font-size: 13px;
+    font-weight: bold;
+}        
+.formtextGreen
+{
+    font-family: verdana; 
+    font-size: 12px;
+    color:Green;
+}  
+
+.loadingStyle
+{
+    background-color:Green; 
+    color:White; 
+    font-weight:bold; 
+    width :120px; 
+    height:15px; 
+    font-size:14px
+}
+
+.inLineDisplay
+{
+    display:inline;
+}
+

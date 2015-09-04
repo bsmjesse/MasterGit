@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageFiles>
+  <LanguageFile name="Default" filename="default.xml" culture="en-US" />
+  <LanguageFile name="Français (France)" filename="wglang_fr-FR.xml" culture="fr-FR">
+  </LanguageFile>
+    <LanguageFile name="French (France)" filename="wglang_fr-FR.xml" culture="fr-FR">
+  </LanguageFile>
+  <LanguageFile name="Spanish (Uruguay)" filename="wglang_es-UY.xml" culture="es-UY">
+  </LanguageFile>
+  <LanguageFile name="Spanish (Mexico)" filename="wglang_es-MX.xml" culture="es-MX">
+  </LanguageFile>
+  <LanguageFile name="Spanish (Spain)" filename="wglang_es-ES.xml" culture="es-ES">
+  </LanguageFile>
+  <LanguageFile name="Spanish (Guatemala)" filename="wglang_es-GT.xml" culture="es-GT">
+  </LanguageFile>
+  <LanguageFile name="Spanish (Costa Rica)" filename="wglang_es-CR.xml" culture="es-CR">
+  </LanguageFile>
+  <LanguageFile name="Spanish (Argentina)" filename="wglang_es-AR.xml" culture="es-AR">
+  </LanguageFile>
+  <LanguageFile name="Spanish (Ecuador)" filename="wglang_es-EC.xml" culture="es-EC">
+  </LanguageFile>
+  <LanguageFile name="Spanish (Bolivia)" filename="wglang_es-BO.xml" culture="es-BO">
+  </LanguageFile>
+  <LanguageFile name="Spanish (Nicaragua)" filename="wglang_es-NI.xml" culture="es-NI">
+  </LanguageFile>
+  <LanguageFile name="Spanish (Puerto Rico)" filename="wglang_es-PR.xml" culture="es-PR">
+  </LanguageFile>
+  <LanguageFile name="Chinese (Taiwan)" filename="wglang_zh-TW.xml" culture="zh-TW">
+  </LanguageFile>
+  <LanguageFile name="Chinese (People's Republic of China)" filename="wglang_zh-CN.xml" culture="zh-CN">
+  </LanguageFile>
+  <LanguageFile name="Chinese (Hong Kong S.A.R.)" filename="wglang_zh-HK.xml" culture="zh-HK">
+  </LanguageFile>
+  <LanguageFile name="Chinese (Singapore)" filename="wglang_zh-SG.xml" culture="zh-SG">
+  </LanguageFile>
+  <LanguageFile name="Portuguese (Brazil)" filename="wglang_pt-BR.xml" culture="pt-BR">
+  </LanguageFile>
+  <LanguageFile name="German (Germany)" filename="wglang_de-DE.xml" culture="de-DE">
+  </LanguageFile>
+  <LanguageFile name="Italian (Italy)" filename="wglang_it-IT.xml" culture="it-IT">
+  </LanguageFile>
+  <LanguageFile name="Norwegian (Bokmål) (Norway)" filename="wglang_nb-NO.xml" culture="nb-NO">
+  </LanguageFile>
+  <LanguageFile name="Japanese (Japan)" filename="wglang_ja-JP.xml" culture="ja-JP">
+  </LanguageFile>
+  <LanguageFile name="Korean (Korea)" filename="wglang_ko-KR.xml" culture="ko-KR">
+  </LanguageFile>
+</LanguageFiles>

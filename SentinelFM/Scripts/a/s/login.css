@@ -1,0 +1,29 @@
+﻿body
+{
+	font-family: Tahoma;
+	font-size: 8pt;
+	color: Black;
+}
+.StandardLabel
+{
+	color: #009800;
+	font-variant: small-caps;
+	font-weight: bolder;
+}
+
+.StandardInput
+{
+	width: 200px;
+	color: Black;
+}
+.CollapseContainer
+{
+	display: none;
+}
+.CollapseContainer2
+{
+	display: inline-block;
+	position: absolute;
+	left: -1000px;
+	top: -1000px;
+}

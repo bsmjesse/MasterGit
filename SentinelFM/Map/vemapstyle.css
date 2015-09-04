@@ -1,0 +1,41 @@
+.caption
+{
+	font-family: Arial;
+	font-size: 7pt;
+	text-align: right;
+	color: Red;
+}
+
+.value
+{
+	font-family: Arial;
+	font-size: 7pt;
+	padding-left: 2px;
+	color: Black;
+	font-weight: bold;
+}
+.minput
+{
+	width: 250px;
+	color: Blue;
+}
+
+.mapdiv
+{
+	font-family: Arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color:White;
+	background-color: Green;
+
+}
+.mapcontrolbox
+{
+	background-color:#cccccc;
+	border:1px solid Green;
+	font-family: Arial;
+	font-size: 6pt;
+	font-weight: bold;
+	color: Green;
+
+}

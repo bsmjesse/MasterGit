@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BoxSettings" targetNamespace="http://tempuri.org/BoxSettings.xsd" xmlns:mstns="http://tempuri.org/BoxSettings.xsd" xmlns="http://tempuri.org/BoxSettings.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BoxSettings" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="BoxSettings" msprop:Generator_UserDSName="BoxSettings">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="rpt_BoxSettings" msprop:Generator_UserTableName="rpt_BoxSettings" msprop:Generator_RowEvArgName="rpt_BoxSettingsRowChangeEvent" msprop:Generator_TableVarName="tablerpt_BoxSettings" msprop:Generator_TablePropName="rpt_BoxSettings" msprop:Generator_RowDeletingName="rpt_BoxSettingsRowDeleting" msprop:Generator_RowChangingName="rpt_BoxSettingsRowChanging" msprop:Generator_RowDeletedName="rpt_BoxSettingsRowDeleted" msprop:Generator_TableClassName="rpt_BoxSettingsDataTable" msprop:Generator_RowChangedName="rpt_BoxSettingsRowChanged" msprop:Generator_RowEvHandlerName="rpt_BoxSettingsRowChangeEventHandler" msprop:Generator_RowClassName="rpt_BoxSettingsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OrganizationName" type="xs:string" minOccurs="0" />
+              <xs:element name="BoxId" type="xs:int" minOccurs="0" />
+              <xs:element name="VehicleID" type="xs:long" minOccurs="0" />
+              <xs:element name="Description" type="xs:string" minOccurs="0" />
+              <xs:element name="_x005B_S.N_x005D_" type="xs:string" minOccurs="0" />
+              <xs:element name="_x005B_SIM_x002F_ESN_x005D_" type="xs:string" minOccurs="0" />
+              <xs:element name="FirmwareVersion" type="xs:string" minOccurs="0" />
+              <xs:element name="UpperBoardVersion" type="xs:string" minOccurs="0" />
+              <xs:element name="GPSFrequency" type="xs:short" minOccurs="0" />
+              <xs:element name="_x005B_Speed_x0020_Threshold_x005D_" type="xs:short" minOccurs="0" />
+              <xs:element name="GeoFence" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Idle" type="xs:float" minOccurs="0" />
+              <xs:element name="CommunicationMode" type="xs:string" minOccurs="0" />
+              <xs:element name="HarshAcceleration" type="xs:boolean" minOccurs="0" />
+              <xs:element name="HarshBraking" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ExtremeAcceleration" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ExtremeBraking" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Armed" type="xs:boolean" minOccurs="0" />
+              <xs:element name="MainBattery" type="xs:float" minOccurs="0" />
+              <xs:element name="BackupBattery" type="xs:float" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

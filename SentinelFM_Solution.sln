@@ -1,0 +1,173 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SentinelFM", "SentinelFM", "{0A7AC609-AB6B-4F7D-84B1-46A321888D2E}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{9D89EC88-D7F0-4994-9BAD-328264E99DE0}|CLS.dll;{AA24C24E-F232-467B-9C14-98F68A759BB6}|ERR.dll;{F55C9D2C-0511-4DD7-AB4B-C5F8BBD4F367}|ERRSecurity.dll;{855c12a6-f58c-4c7c-ad9c-a5fc7336c779}|ReportGenerator.dll;{DF1CEBAD-22D6-437C-B5B8-45604E5AD673}|LocalizationLayer.dll;{5ff72f5e-e9c9-440c-a3e2-ca0238aa0277}|PatchDB.dll;{c4ec9848-818e-4af3-b14b-37b397369327}|PatchLogic.dll;{9fb45c16-82de-4ad2-87ab-1e87e1107a3f}|DasDb.dll;{7ec7bd8b-bcc9-49bb-b6db-37dc22c2b412}|DasLogic.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/SentinelFM"
+		Debug.AspNetCompiler.PhysicalPath = "SentinelFM\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\SentinelFM\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/SentinelFM"
+		Release.AspNetCompiler.PhysicalPath = "SentinelFM\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\SentinelFM\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "58717"
+		SlnRelativePath = "SentinelFM\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DasDb", "DasDb\DasDb.csproj", "{9FB45C16-82DE-4AD2-87AB-1E87E1107A3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DasLogic", "DasLogic\DasLogic.csproj", "{7EC7BD8B-BCC9-49BB-B6DB-37DC22C2B412}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLS", "CLS\CLS.csproj", "{9D89EC88-D7F0-4994-9BAD-328264E99DE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERRSecurity", "ERRSecurity\ERRSecurity.csproj", "{F55C9D2C-0511-4DD7-AB4B-C5F8BBD4F367}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERR", "ERR\ERR.csproj", "{AA24C24E-F232-467B-9C14-98F68A759BB6}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ASI", "ASI", "{9B4A9375-D630-4021-BDB0-FF3778C9F643}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{9D89EC88-D7F0-4994-9BAD-328264E99DE0}|CLS.dll;{AA24C24E-F232-467B-9C14-98F68A759BB6}|ERR.dll;{F55C9D2C-0511-4DD7-AB4B-C5F8BBD4F367}|ERRSecurity.dll;{9FB45C16-82DE-4AD2-87AB-1E87E1107A3F}|DasDb.dll;{7EC7BD8B-BCC9-49BB-B6DB-37DC22C2B412}|DasLogic.dll;{855C12A6-F58C-4C7C-AD9C-A5FC7336C779}|ReportGenerator.dll;{DF1CEBAD-22D6-437C-B5B8-45604E5AD673}|LocalizationLayer.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/ASI"
+		Debug.AspNetCompiler.PhysicalPath = "ASI\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\ASI\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/ASI"
+		Release.AspNetCompiler.PhysicalPath = "ASI\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\ASI\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53931"
+		SlnRelativePath = "ASI\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportGenerator", "ReportGenerator\ReportGenerator.csproj", "{855C12A6-F58C-4C7C-AD9C-A5FC7336C779}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizationLayer", "LocalizationLayer\LocalizationLayer.csproj", "{DF1CEBAD-22D6-437C-B5B8-45604E5AD673}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatchDB", "PatchDB\PatchDB.csproj", "{5FF72F5E-E9C9-440C-A3E2-CA0238AA0277}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatchLogic", "PatchLogic\PatchLogic.csproj", "{C4EC9848-818E-4AF3-B14B-37B397369327}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tor-tfs:8080/tfs/bsmcollection
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = SentinelFM
+		SccProjectName1 = SentinelFM
+		SccLocalPath1 = SentinelFM
+		SccProjectEnlistmentChoice1 = 2
+		SccProjectUniqueName2 = DasDb\\DasDb.csproj
+		SccProjectName2 = DasDb
+		SccLocalPath2 = DasDb
+		SccProjectUniqueName3 = DasLogic\\DasLogic.csproj
+		SccProjectName3 = DasLogic
+		SccLocalPath3 = DasLogic
+		SccProjectUniqueName4 = CLS\\CLS.csproj
+		SccProjectName4 = CLS
+		SccLocalPath4 = CLS
+		SccProjectUniqueName5 = ERRSecurity\\ERRSecurity.csproj
+		SccProjectName5 = ERRSecurity
+		SccLocalPath5 = ERRSecurity
+		SccProjectUniqueName6 = ERR\\ERR.csproj
+		SccProjectName6 = ERR
+		SccLocalPath6 = ERR
+		SccWebProject7 = true
+		SccProjectUniqueName7 = ASI
+		SccProjectName7 = ASI
+		SccLocalPath7 = ASI
+		SccProjectEnlistmentChoice7 = 2
+		SccProjectUniqueName8 = ReportGenerator\\ReportGenerator.csproj
+		SccProjectName8 = ReportGenerator
+		SccLocalPath8 = ReportGenerator
+		SccProjectUniqueName9 = LocalizationLayer\\LocalizationLayer.csproj
+		SccProjectName9 = LocalizationLayer
+		SccLocalPath9 = LocalizationLayer
+		SccProjectUniqueName10 = PatchDB\\PatchDB.csproj
+		SccProjectName10 = PatchDB
+		SccLocalPath10 = PatchDB
+		SccProjectUniqueName11 = PatchLogic\\PatchLogic.csproj
+		SccProjectName11 = PatchLogic
+		SccLocalPath11 = PatchLogic
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A7AC609-AB6B-4F7D-84B1-46A321888D2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A7AC609-AB6B-4F7D-84B1-46A321888D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A7AC609-AB6B-4F7D-84B1-46A321888D2E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A7AC609-AB6B-4F7D-84B1-46A321888D2E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{9FB45C16-82DE-4AD2-87AB-1E87E1107A3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB45C16-82DE-4AD2-87AB-1E87E1107A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB45C16-82DE-4AD2-87AB-1E87E1107A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB45C16-82DE-4AD2-87AB-1E87E1107A3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EC7BD8B-BCC9-49BB-B6DB-37DC22C2B412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC7BD8B-BCC9-49BB-B6DB-37DC22C2B412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EC7BD8B-BCC9-49BB-B6DB-37DC22C2B412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EC7BD8B-BCC9-49BB-B6DB-37DC22C2B412}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D89EC88-D7F0-4994-9BAD-328264E99DE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D89EC88-D7F0-4994-9BAD-328264E99DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D89EC88-D7F0-4994-9BAD-328264E99DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D89EC88-D7F0-4994-9BAD-328264E99DE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F55C9D2C-0511-4DD7-AB4B-C5F8BBD4F367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F55C9D2C-0511-4DD7-AB4B-C5F8BBD4F367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F55C9D2C-0511-4DD7-AB4B-C5F8BBD4F367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F55C9D2C-0511-4DD7-AB4B-C5F8BBD4F367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA24C24E-F232-467B-9C14-98F68A759BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA24C24E-F232-467B-9C14-98F68A759BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA24C24E-F232-467B-9C14-98F68A759BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA24C24E-F232-467B-9C14-98F68A759BB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B4A9375-D630-4021-BDB0-FF3778C9F643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B4A9375-D630-4021-BDB0-FF3778C9F643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B4A9375-D630-4021-BDB0-FF3778C9F643}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B4A9375-D630-4021-BDB0-FF3778C9F643}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{855C12A6-F58C-4C7C-AD9C-A5FC7336C779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{855C12A6-F58C-4C7C-AD9C-A5FC7336C779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{855C12A6-F58C-4C7C-AD9C-A5FC7336C779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{855C12A6-F58C-4C7C-AD9C-A5FC7336C779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF1CEBAD-22D6-437C-B5B8-45604E5AD673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF1CEBAD-22D6-437C-B5B8-45604E5AD673}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF1CEBAD-22D6-437C-B5B8-45604E5AD673}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF1CEBAD-22D6-437C-B5B8-45604E5AD673}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FF72F5E-E9C9-440C-A3E2-CA0238AA0277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FF72F5E-E9C9-440C-A3E2-CA0238AA0277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FF72F5E-E9C9-440C-A3E2-CA0238AA0277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FF72F5E-E9C9-440C-A3E2-CA0238AA0277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4EC9848-818E-4AF3-B14B-37B397369327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4EC9848-818E-4AF3-B14B-37B397369327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4EC9848-818E-4AF3-B14B-37B397369327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4EC9848-818E-4AF3-B14B-37B397369327}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

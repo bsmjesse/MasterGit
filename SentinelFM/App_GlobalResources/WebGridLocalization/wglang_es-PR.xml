@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Localization culture="es-PR" description="">
+  <CommonText>
+    <Ready>Listo.</Ready>
+    <More>Cargando datos...</More>
+    <LoadGroup>Cargando grupo...</LoadGroup>
+    <Sort>Ordendando columna...</Sort>
+    <Group>Agrupando columna...</Group>
+    <Ungroup>Desagrupando columna...</Ungroup>
+    <ChangeGroup>Cambiando agrupación de columna...</ChangeGroup>
+    <FilterText>Filtrando columna...</FilterText>
+    <LoadChild>Cargando filas vinculadas...</LoadChild>
+    <ColumnChange>Cambiando columnas...</ColumnChange>
+    <Refresh>Recargando datos...</Refresh>
+    <RefreshAll>Recargando datos y estructura...</RefreshAll>
+    <RefreshChild>Recargando tabla vinculada...</RefreshChild>
+    <AddRow>Agregando fila...</AddRow>
+    <UpdateRow>Actualizando fila...</UpdateRow>
+    <DeleteRow>Borrando fila...</DeleteRow>
+    <ReadyError>Listo, pero con errores no tratados tras la última solicitud.</ReadyError>
+    <ColumnMove>Moviendo columna...</ColumnMove>
+    <Loaded>[n] de [total] fueron cargados</Loaded>
+    <ExportText>Exportando...</ExportText>
+    <NoData>No hay filas para visualizar.</NoData>
+    <NewRowInfo>Haga click aquí para agregar una fila...</NewRowInfo>
+    <GroupByBoxInfo>Arrastre un cabezal de columna hasta acú para agrupar por ese campo.</GroupByBoxInfo>
+    <LoadSelfRefChild>Cargando filas autovinculadas...</LoadSelfRefChild>
+    <CalendarToday>Hoy</CalendarToday>
+    <CalendarNone>Ninguno</CalendarNone>
+  </CommonText>
+  <MessageBoxText>
+    <NoChildRow>No hay tablas vinculadas a este registro.</NoChildRow>
+    <InProgress>Por favor espere mientras WebGrid procesa su solicitud...</InProgress>
+    <UnhandledError>Ocurrió una excepción no manejada por el sistema. Detalles a continuación.</UnhandledError>
+    <LoadMoreException>Cargar mas datos solo funciona cuando no hay columnas agrupadas en la tabla raíz.</LoadMoreException>
+    <AddNewRow>Desea agregar a la tabla la fila recién ingresada ?</AddNewRow>
+    <UpdateRow>La fila seleccionada fue modificada. Desea grabar los cambios ?</UpdateRow>
+    <DeleteRow>Está seguro que desea eliminar esta fila ?</DeleteRow>
+  </MessageBoxText>
+  <Tooltip>
+    <Refresh>Recargar los datos en la grilla</Refresh>
+    <LoadMore>Cargar más datos</LoadMore>
+    <ExportText>Exportar la grilla</ExportText>
+    <Help>Ayuda para el Cliente de WebGrid.NET</Help>
+  </Tooltip>
+  <Grouping>
+    <Today>Hoy</Today>
+    <Yesterday>Ayer</Yesterday>
+    <LastWeek>La semana pasada</LastWeek>
+    <TwoWeeksAgo>Hace dos semanas</TwoWeeksAgo>
+    <ThreeWeeksAgo>Hace tres semanas</ThreeWeeksAgo>
+    <LastMonth>El mes pasado</LastMonth>
+    <Older>Anteriores</Older>
+  </Grouping>
+  <ContextMenu>
+    <Column>
+      <SortAsc>Orden Ascendente</SortAsc>
+      <SortDesc>Orden Descendente</SortDesc>
+      <GroupByThisField>Agrupar por este Campo</GroupByThisField>
+      <UngroupField>Desagrupar este Campo</UngroupField>
+      <GroupByBox>Agrupar según contenido del cuadro superior</GroupByBox>
+      <RemoveColumn>Borrar esta columna</RemoveColumn>
+      <BestFit>Ancho de columna para que encajen los datos</BestFit>
+      <FilterBar>Barra de Filtrado</FilterBar>
+      <SelectColumns>Seleccionar Columnas</SelectColumns>
+      <ApplyChanges>Guardar los Cambios</ApplyChanges>
+      <Reset>Restaurar valores iniciales</Reset>
+    </Column>
+    <Row>
+      <CopyCell>Copiar esta celda</CopyCell>
+      <CopyRow>Copiar esta fila</CopyRow>
+      <CopyTable>Copiar esta tabla</CopyTable>
+      <Update>Guardar Cambios</Update>
+      <Cancel>Cancelar</Cancel>
+      <ShowChildRows>Ver filas dependientes</ShowChildRows>
+      <HideChildRows>Ocultar filas dependientes</HideChildRows>
+      <Edit>Modificar</Edit>
+      <Delete>Eliminar</Delete>
+      <Expand>Expandir</Expand>
+      <Collapse>Colapsar</Collapse>
+      <ExpandAll>Expandir todo</ExpandAll>
+      <CollapseAll>Colapsar todo</CollapseAll>
+      <PerformAdd>Efectuar el alta</PerformAdd>
+      <CancelAdd>Cancelar el alta</CancelAdd>
+      <ApplyFilter>Aplicar todos los filtros</ApplyFilter>
+      <ClearFilter>Suprimir el filtrado</ClearFilter>
+    </Row>
+    <Filter>
+      <NotSet>No definido</NotSet>
+      <GTET>Mayor o igual que</GTET>
+      <GT>Mayor que</GT>
+      <ET>Igual que</ET>
+      <NET>No igual que</NET>
+      <LTET>Menor o igual que</LTET>
+      <LT>Menor que</LT>
+      <Like>Como</Like>
+      <NotLike>No es Como</NotLike>
+      <Between>Entre</Between>
+      <NotBetween>No Entre</NotBetween>
+      <IsNull>es Nulo</IsNull>
+      <NotIsNull>No es Nulo</NotIsNull>
+      <IsEmpty>está Vacio</IsEmpty>
+      <NotIsEmpty>No está Vacio</NotIsEmpty>
+      <ApplyAll>Aplicar todos los Filtros</ApplyAll>
+      <Clear>Eliminar este Filtro</Clear>
+      <ClearAll>Eliminar todos los Filtros</ClearAll>
+    </Filter>
+    <Export>
+      <ExportRoot>Exportar la tabla Raíz</ExportRoot>
+      <ExportChild>Exportar la tabla vinculada que está seleccionada</ExportChild>
+      <Portrait>Vertical</Portrait>
+      <Landscape>Apaisado</Landscape>
+      <DoExport>Exportar ahora</DoExport>
+    </Export>
+    <Custom description="Agregar aquí su menú personalizado">
+      <CustomText1>
+      </CustomText1>
+      <CustomText2>
+      </CustomText2>
+    </Custom>
+  </ContextMenu>
+</Localization>

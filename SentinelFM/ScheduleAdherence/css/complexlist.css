@@ -1,0 +1,45 @@
+﻿
+.exlist { margin:0;border:0;border-bottom:1px solid #e4e6fc;padding:0; clear:both; }
+.exlist_Schedule:hover {
+	background:#BFFFD2;
+	border-top:1px solid lightblue; border-right:1px solid #6c96ec; border-bottom:1px solid #6c96ec; border-left:1px solid lightblue;
+}
+
+.exlist_current
+{
+    background:#56FF8B;
+}
+.extable_current
+{
+    color:Blue;
+}
+.extable_uncompleted
+{
+    border:1px solid Red;
+}
+.exlist a { text-decoration:none; color:#00c; }
+.exlist a img { border:0; }
+.exlist-head { margin:0;border:0;border-top:1px solid #ADFFC8;padding:6px 0 6px 10px; clear:both;}
+.exlist-head0 { margin:0;border:0;border-top:1px solid #ADFFC8;padding:6px 0 6px 0; clear:both;}
+.exlist-head-title { padding-left:6px; font-weight:bold;  }
+.exlist-body { margin:0;border:0;padding:0 2em 2em 2em;clear:both;}
+.exlist-body-section { margin-bottom:5px;border:0;padding:1px;  }
+.exlist-body-section th { background:#ADFFC8; color:#000; }
+.exlist-alt { background:#f3f3f9; }
+.exlist-alt-body { background:#f3f3f9; }
+.exlist_hidden { margin:0;border:0;padding:0; display:none; }
+.InstanceRow{margin:0;border:0;border-top:1px solid #ADFFC8;}
+.extable {margin:0;border:0;border-bottom:1px solid #e4e6fc;padding:0; clear:both;}
+.extable:hover {
+	background:#BFFFD2;
+}
+
+.tableRow {margin:10;border:1;padding:0;}
+.tableRow:hover {
+	background:#BFFFD2;
+	border-top:1px solid lightblue; border-right:1px solid #6c96ec; border-bottom:1px solid #6c96ec; border-left:1px solid lightblue;
+}
+.tableRow td { border-left:1px solid #C5C5C5; border-right:1px solid #C5C5C5; padding-left:10px; padding-right:10px;}
+.tableRow th { border-left:1px solid #C5C5C5; border-right:1px solid #C5C5C5; padding-left:10px; padding-right:10px; background-color:#EDEEEF;}
+
+.extable td { border-left:1px solid #BFFFD2; border-right:1px solid #BFFFD2;}

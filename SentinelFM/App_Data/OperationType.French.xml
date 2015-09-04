@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<OperationTypes>
+	<OperationType id ="0" description="Aucune" />
+	<OperationType id ="1" description="Odomètre basé" />
+	<OperationType id ="2" description="Moteur heures basé"/>
+	<OperationType id ="3" description="Fondés sur le temps (jours)"/>
+</OperationTypes>

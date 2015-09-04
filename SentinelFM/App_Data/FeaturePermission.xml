@@ -1,0 +1,112 @@
+<FeaturePermission>
+	<Feature>
+		<Name>LandmarkFleetAssignment</Name>
+		<Organization>480; 952; 999952;999954;999956</Organization>
+		<UserGroup>1; 2; 7</UserGroup>
+		<User>962; 11967</User>
+	</Feature>
+	<Feature>
+		<Name>GeozoneFleetAssignment</Name>
+		<Organization>480; 952; 999952; 999954;999956</Organization>
+		<UserGroup>1; 2; 7</UserGroup>
+		<User>962; 11967</User>
+	</Feature>	
+	<Feature>
+		<Name>ExcludeFromLandmarkProcessing</Name>
+		<Organization>480; 952; 999952; 999954</Organization>
+		<UserGroup></UserGroup>
+		<User></User>
+	</Feature>
+	<Feature>
+		<Name>ViolationTabAtNewMapPage</Name>
+		<Organization>480; 951</Organization>
+		<UserGroup></UserGroup>
+		<User></User>
+	</Feature>
+	<Feature>
+		<Name>CallTimer</Name>
+		<Organization>480; 952; 999952;999954</Organization>
+		<UserGroup>1; 2; 7</UserGroup>
+		<User>962; 11967</User>
+	</Feature>
+	<Feature>
+		<Name>MapAddressHistorySearch</Name>
+		<Organization></Organization>
+		<UserGroup>1; 2</UserGroup>
+		<User></User>
+	</Feature>
+	<Feature>
+		<Name>RouteAssignment</Name>
+		<Organization>480; 952</Organization>
+		<UserGroup>1; 2</UserGroup>
+		<User></User>
+	</Feature>
+	<Feature>
+		<Name>MutipleUserHierarchyAssignment</Name>
+		<Organization>1000026; 999956; 951; 1000076; 999981; 1000182</Organization>
+		<UserGroup></UserGroup>
+		<User></User>
+	</Feature>
+  <Feature>
+    <Name>LoadOrganizationHierarchyByUserHierarchyAssignment</Name>
+    <Organization>999763; 999955; 999956; 999957; 480; 999988; 1000026</Organization>
+    <UserGroup></UserGroup>
+    <User></User>
+  </Feature>
+<Feature>
+    <Name>ShowMultiColor</Name>
+    <Organization>1000041,1000088,1000056,1000148,1000144,999646,1000164,1000141</Organization>
+    <UserGroup></UserGroup>
+    <User></User>
+  </Feature>
+  <Feature>
+    <Name>ShowEngineHours</Name>
+    <Organization>1000152,1000169,1000170</Organization>
+    <UserGroup></UserGroup>
+    <User></User>
+  </Feature>
+  <Feature>
+    <Name>ShowOdometer</Name>
+    <Organization>1000065,489,999700,999981,1000083,1000120,711,1000163,999988,875,1000114</Organization>
+    <UserGroup></UserGroup>
+    <User></User>
+  </Feature>
+  <Feature>
+    <Name>ShowPTO</Name>
+    <Organization>999746</Organization>
+    <UserGroup></UserGroup>
+    <User></User>
+  </Feature>
+  <Feature>
+    <Name>NotReportedforXDays</Name>
+    <Organization>951</Organization>
+    <UserGroup>3</UserGroup>
+    <User>3</User>
+  </Feature>
+  <Feature>
+    <Name>HideSendToSelectedFleet</Name>
+    <Organization>999700</Organization>
+    <UserGroup></UserGroup>
+    <User></User>
+  </Feature>
+  <Feature>
+    <Name>EventIdForShowHideScheduleTime</Name>
+    <Organization>999988,951</Organization>
+    <UserGroup>-2</UserGroup>
+    <User></User>
+  </Feature>
+  <Feature>
+    <Name>EnableEditManagerName</Name>
+    <Organization>951</Organization>
+    <UserGroup></UserGroup>
+    <User></User>
+  </Feature>
+ <Feature>
+    <Name>ShowTemperatureType</Name>
+    <Organization>1000047,1000053,1000173</Organization>
+    <UserGroup></UserGroup>
+    <User></User>
+  </Feature>
+</FeaturePermission>
+
+

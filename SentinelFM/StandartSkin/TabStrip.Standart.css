@@ -1,0 +1,141 @@
+.RadTabStrip_Standart .rtsLI,
+.RadTabStrip_Standart .rtsLink
+{
+	color: #000;
+	font: 12px/26px "Segoe UI", Arial, sans-serif;
+	margin-top :5px;
+	
+}
+
+.RadTabStripLeft_Standart .rtsSeparator,
+.RadTabStripRight_Standart .rtsSeparator
+{
+	background: #817F61;
+}
+
+/* <disabled tabs> */
+.RadTabStrip_Standart .rtsDisabled
+{
+	color: #666;
+}
+/* </disabled tabs> */
+
+/* <scrolling arrows> */
+.RadTabStrip_Standart .rtsNextArrow,
+.RadTabStrip_Standart .rtsPrevArrow,
+.RadTabStrip_Standart .rtsPrevArrowDisabled,
+.RadTabStrip_Standart .rtsNextArrowDisabled
+{
+	background-image: url('TabStrip/TabStripStates.png');
+}
+/* </scrolling arrows> */
+
+/* <tab backgrounds> */
+
+.RadTabStripTop_Standart .rtsLevel { background-color: transparent; }
+
+.RadTabStripTop_Standart .rtsLink,
+.RadTabStripTop_Standart .rtsOut,
+.RadTabStripBottom_Standart .rtsLink,
+.RadTabStripBottom_Standart .rtsOut,
+.RadTabStripTop_Standart_Baseline .rtsLevel,
+.RadTabStripBottom_Standart_Baseline .rtsLevel { background-image: url('TabStrip/TabStripStates.png'); }
+
+.RadTabStripLeft_Standart .rtsLink,
+.RadTabStripRight_Standart .rtsLink { background-image: url('TabStrip/TabStripVStates.png'); }
+
+.RadTabStripLeft_Standart .rtsLast .rtsLink,
+.RadTabStripRight_Standart .rtsLast .rtsLink
+{
+	border-bottom: 1px solid #898C95;
+}
+
+.RadTabStripRight_Standart .rtsLink,
+.RadTabStripRight_Standart .rtsLI .rtsDisabled:hover { background-position: 100% 0; }
+.RadTabStripRight_Standart .rtsLink:hover { background-position: 100% -200px; }
+.RadTabStripRight_Standart .rtsSelected,
+.RadTabStripRight_Standart .rtsSelected:hover { background-position: 100% -400px; }
+/* </tab backgrounds> */
+
+
+/* <background positioning: tabs with hovers> */
+
+/* <orientation: top> */
+
+.RadTabStripTop_Standart .rtsLink { background-position: 0 0; }
+.RadTabStripTop_Standart .rtsOut { background-position: 100% 0; }
+
+.RadTabStripTop_Standart .rtsLink:hover { background-position: 0 -52px; }
+.RadTabStripTop_Standart .rtsLink:hover .rtsOut { background-position: 100% -52px; }
+
+.RadTabStripTop_Standart .rtsSelected,
+.RadTabStripTop_Standart .rtsSelected:hover { background-position: 0 -26px; }
+.RadTabStripTop_Standart .rtsSelected .rtsOut,
+.RadTabStripTop_Standart .rtsSelected:hover .rtsOut { background-position: 100% -26px; }
+
+.RadTabStripTop_Standart .rtsDisabled:hover { background-position: 0 0; }
+.RadTabStripTop_Standart .rtsDisabled:hover .rtsOut { background-position: 100% 0; }
+
+.RadTabStripTop_Standart_Baseline .rtsLevel { background-position: 0 100%; background-repeat: repeat-x; }
+
+/* </orientation: top> */
+
+/* <orientation: bottom> */
+
+.RadTabStripBottom_Standart .rtsLink { background-position: 0 -182px; }
+.RadTabStripBottom_Standart .rtsOut { background-position: 100% -182px; }
+
+.RadTabStripBottom_Standart .rtsLink:hover { background-position: 0 -130px; }
+.RadTabStripBottom_Standart .rtsLink:hover .rtsOut { background-position: 100% -130px; }
+
+.RadTabStripBottom_Standart .rtsSelected,
+.RadTabStripBottom_Standart .rtsSelected:hover { background-position: 0 -156px; }
+.RadTabStripBottom_Standart .rtsSelected .rtsOut,
+.RadTabStripBottom_Standart .rtsSelected:hover .rtsOut { background-position: 100% -156px; }
+
+.RadTabStripBottom_Standart .rtsDisabled:hover { background-position: 0 -182px; }
+.RadTabStripBottom_Standart .rtsDisabled:hover .rtsOut { background-position: 100% -182px; }
+
+.RadTabStripBottom_Standart_Baseline .rtsLevel { background-position: 0 -599px; background-repeat: repeat-x; }
+
+/* </orientation: bottom> */
+
+/* <orientation: right> */
+
+.RadTabStripRight_Standart .rtsUL .rtsLink,
+.RadTabStripRight_Standart .rtsUL .rtsLI .rtsDisabled:hover { background-position: 100% 0; text-align: left; }
+.RadTabStripRight_Standart .rtsUL .rtsLink:hover { background-position: 100% -200px; }
+.RadTabStripRight_Standart .rtsUL .rtsSelected,
+.RadTabStripRight_Standart .rtsUL .rtsSelected:hover { background-position: 100% -400px; }
+
+/* </orientation: right> */
+
+/* </background positioning: tabs with hovers> */
+
+/* <simplistic sub-item styles> */
+
+.RadTabStrip_Standart_SimpleSubItems .rtsLevel2,
+.RadTabStrip_Standart_SimpleSubItems .rtsLevel3,
+.RadTabStrip_Standart_SimpleSubItems .rtsLevel4 { background: #fff; }
+
+.RadTabStrip_Standart_SimpleSubItems .rtsLevel2 .rtsSelected,
+.RadTabStrip_Standart_SimpleSubItems .rtsLevel3 .rtsSelected,
+.RadTabStrip_Standart_SimpleSubItems .rtsLevel4 .rtsSelected
+{
+	text-decoration: underline;
+}
+
+.RadTabStrip_Standart_SimpleSubItems .rtsLevel2 .rtsLink,
+.RadTabStrip_Standart_SimpleSubItems .rtsLevel2 .rtsOut,
+.RadTabStrip_Standart_SimpleSubItems .rtsLevel2 .rtsIn,
+.RadTabStrip_Standart_SimpleSubItems .rtsLevel3 .rtsLink,
+.RadTabStrip_Standart_SimpleSubItems .rtsLevel3 .rtsOut,
+.RadTabStrip_Standart_SimpleSubItems .rtsLevel3 .rtsIn,
+.RadTabStrip_Standart_SimpleSubItems .rtsLevel4 .rtsLink,
+.RadTabStrip_Standart_SimpleSubItems .rtsLevel4 .rtsOut,
+.RadTabStrip_Standart_SimpleSubItems .rtsLevel4 .rtsIn
+{
+	background: none;
+}
+
+/* </simplistic sub-item styles> */

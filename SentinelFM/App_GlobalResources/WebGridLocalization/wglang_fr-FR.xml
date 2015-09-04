@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Localization culture="fr-FR" description="Fred">
+  <CommonText>
+    <Ready>Prêt</Ready>
+    <More>Chargement de données supplémentaires...</More>
+    <LoadGroup>Chargement groupe...</LoadGroup>
+    <Sort>Tri en cours...</Sort>
+    <Group>Regroupement en cours...</Group>
+    <Ungroup>Suppression regroupement...</Ungroup>
+    <ChangeGroup>Modification du regroupement...</ChangeGroup>
+    <FilterText>Filtre de la colone...</FilterText>
+    <LoadChild>Chargement des lignes enfants...</LoadChild>
+    <ColumnChange>Changement des colonnes...</ColumnChange>
+    <Refresh>Actualisation des données...</Refresh>
+    <RefreshAll>Actualisation des données et structure...</RefreshAll>
+    <RefreshChild>Actualisation de la table enfant...</RefreshChild>
+    <AddRow>Ajout d'une nouvelle ligne...</AddRow>
+    <UpdateRow>Mise à jour de la ligne...</UpdateRow>
+    <DeleteRow>Suppression de la ligne...</DeleteRow>
+    <ReadyError>Prêt avec une erreur non gérée lors de la dernière requête.</ReadyError>
+    <ColumnMove>Déplacement de la colonne...</ColumnMove>
+    <Loaded>Chargé [n] sur [total]</Loaded>
+    <ExportText>Export...</ExportText>
+    <NoData>Pas de lignes dans cette vue</NoData>
+    <NewRowInfo>Cliquez ici pour ajouter une nouvelle ligne...</NewRowInfo>
+    <GroupByBoxInfo>Faites glisser l'en-tête d'une colonne pour regrouper par cette colonne.</GroupByBoxInfo>
+    <LoadSelfRefChild>Chargement des lignes enfants (self reference)...</LoadSelfRefChild>
+    <CalendarToday>Aujourd'hui</CalendarToday>
+    <CalendarNone>Aucun</CalendarNone>
+  </CommonText>
+  <MessageBoxText>
+    <NoChildRow>Pas de lignes enfants pour cet enregistrement.</NoChildRow>
+    <InProgress>SVP Attendez que WebGrid finisse de traiter la requête en cours...</InProgress>
+    <UnhandledError>Une exception non gérée est intervenue. Voir la suite pour plus de détails.</UnhandledError>
+    <LoadMoreException>Le chargement de plus de données n'a pas d'effet quand il a des colonnes regroupée dans la table racine.</LoadMoreException>
+    <AddNewRow>La nouvelle ligne a été modifiée. Désirez-vous ajouter la nouvelle ligne?</AddNewRow>
+    <UpdateRow>La ligne sélectionnée a été modifiée. Désirez-vous mettre à jour cette ligne?</UpdateRow>
+    <DeleteRow>Confirmez vous la suppression de la ligne?</DeleteRow>
+  </MessageBoxText>
+  <Tooltip>
+    <Refresh>Rafraichir les données</Refresh>
+    <LoadMore>Charger plus de données</LoadMore>
+    <ExportText>Exporter la grille</ExportText>
+    <Help>WebGrid.NET Aide</Help>
+  </Tooltip>
+  <Grouping>
+    <Today>Aujourd'hui</Today>
+    <Yesterday>Hier</Yesterday>
+    <LastWeek>Semaine dernière</LastWeek>
+    <TwoWeeksAgo>Il y a deux semaines</TwoWeeksAgo>
+    <ThreeWeeksAgo>Il y a trois semaines</ThreeWeeksAgo>
+    <LastMonth>Mois dernier</LastMonth>
+    <Older>Plus ancien</Older>
+  </Grouping>
+  <ContextMenu>
+    <Column>
+      <SortAsc>Tri croissant</SortAsc>
+      <SortDesc>Tri décroissant</SortDesc>
+      <GroupByThisField>Regrouper par ce champ</GroupByThisField>
+      <UngroupField>Ne pas regrouper par ce champ</UngroupField>
+      <GroupByBox>Boîte de regroupement</GroupByBox>
+      <RemoveColumn>Supprimer la colonne</RemoveColumn>
+      <BestFit>Ajuster la taille</BestFit>
+      <FilterBar>Barre de Filtre</FilterBar>
+      <SelectColumns>Sélecteur de champs</SelectColumns>
+      <ApplyChanges>Appliquer les changements</ApplyChanges>
+      <Reset>Réinitialiser</Reset>
+    </Column>
+    <Row>
+      <CopyCell>Copier la cellule</CopyCell>
+      <CopyRow>Copier la ligne</CopyRow>
+      <CopyTable>Copier latable</CopyTable>
+      <Update>Enregistrer les changements</Update>
+      <Cancel>Annuler les changements</Cancel>
+      <ShowChildRows>Afficher les lignes enfants</ShowChildRows>
+      <HideChildRows>Masquer les lignes enfants</HideChildRows>
+      <Edit>Editer</Edit>
+      <Delete>Supprimer</Delete>
+      <Expand>Développer</Expand>
+      <Collapse>Réduire</Collapse>
+      <ExpandAll>Développer tout</ExpandAll>
+      <CollapseAll>Réduire tout</CollapseAll>
+      <PerformAdd>Effectuer l'ajout</PerformAdd>
+      <CancelAdd>Annuler l'ajout</CancelAdd>
+      <ApplyFilter>Appliquer tous les filtres</ApplyFilter>
+      <ClearFilter>Effacer tous les filtres</ClearFilter>
+    </Row>
+    <Filter>
+      <NotSet>Not Set</NotSet>
+      <GTET>Supérieur ou égal à</GTET>
+      <GT>Supérieur à</GT>
+      <ET>Egal à</ET>
+      <NET>Différent de</NET>
+      <LTET>Inférieur ou égal à</LTET>
+      <LT>Inférieur à</LT>
+      <Like>Comme</Like>
+      <NotLike>Pas comme</NotLike>
+      <Between>Entre</Between>
+      <NotBetween>Pas entre</NotBetween>
+      <IsNull>Est nul</IsNull>
+      <NotIsNull>N'est pas nul</NotIsNull>
+      <IsEmpty>Est vide</IsEmpty>
+      <NotIsEmpty>N'est pas vide</NotIsEmpty>
+      <ApplyAll>Appliquer tous les filtres</ApplyAll>
+      <Clear>Effacer ce filtre</Clear>
+      <ClearAll>Effacer tous les filtres</ClearAll>
+    </Filter>
+    <Export>
+      <ExportRoot>Exporter la table racine</ExportRoot>
+      <ExportChild>Exporter la table enfant sélectionnée</ExportChild>
+      <Portrait>Portrait</Portrait>
+      <Landscape>Paysage</Landscape>
+      <DoExport>Exporter maintenant</DoExport>
+    </Export>
+    <Custom description="Add your row custom menu text here">
+      <CustomText1>
+      </CustomText1>
+      <CustomText2>
+      </CustomText2>
+    </Custom>
+  </ContextMenu>
+</Localization>

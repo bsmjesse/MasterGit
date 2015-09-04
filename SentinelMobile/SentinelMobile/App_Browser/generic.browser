@@ -1,0 +1,12 @@
+<browsers>
+  <browser refID="Mozilla" >
+    <capabilities>
+      <capability name="cookies"  value="true" />
+    </capabilities>
+  </browser>
+  <browser refID="Default">
+      <capabilities>
+        <capability name="cookies" value="true" />
+      </capabilities>
+    </browser>
+</browsers>

@@ -1,0 +1,1170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="afterPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Alarms" xml:space="preserve">
+    <value>Alarmes</value>
+  </data>
+  <data name="beforePageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Dispatch" xml:space="preserve">
+    <value>Dispatch(fr)</value>
+  </data>
+  <data name="GeozoneLandmarks" xml:space="preserve">
+    <value>Géozone/sites</value>
+  </data>
+  <data name="Label10Resource1.Text" xml:space="preserve">
+    <value>(Tapez au moins 3 caractères pour la recherche)</value>
+    <comment>Type in at least 3 characters to search</comment>
+  </data>
+  <data name="Label10Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label8Resource1.Text" xml:space="preserve">
+    <value>Recherche : </value>
+  </data>
+  <data name="Label8Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>Messages</value>
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Liste des véhicules</value>
+    <comment>Vehicle List</comment>
+  </data>
+  <data name="VehiclePagerDisplayMsg" xml:space="preserve">
+    <value>Afficher les véhicules {0} - {1} de {2}</value>
+  </data>
+  <data name="VehiclePagerEmptyMsg" xml:space="preserve">
+    <value>Aucun véhicule à afficher</value>
+  </data>
+  <data name="Vehicles" xml:space="preserve">
+    <value>Véhicules</value>
+  </data>
+  <data name="Acknowledged" xml:space="preserve">
+    <value>Rec</value>
+    <comment>Ack</comment>
+  </data>
+  <data name="alarmgrid.columns.AlarmDescription" xml:space="preserve">
+    <value>Description de l’alarme</value>
+    <comment>Alarm Description</comment>
+  </data>
+  <data name="alarmgrid.columns.AlarmId" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>Number</comment>
+  </data>
+  <data name="alarmgrid.columns.AlarmLevel" xml:space="preserve">
+    <value>Priorité de l’alarme</value>
+    <comment>Alarm Priority</comment>
+  </data>
+  <data name="alarmgrid.columns.TimeCreated" xml:space="preserve">
+    <value>Temps d’alarme</value>
+    <comment>Alarm Time</comment>
+  </data>
+  <data name="alarmgrid.columns.vehicleDescription" xml:space="preserve">
+    <value>Description du véhicule</value>
+    <comment>Vehicle Description</comment>
+  </data>
+  <data name="alarmgrid.EmptyText" xml:space="preserve">
+    <value>Aucune alarme à afficher</value>
+    <comment>No alarms to display</comment>
+  </data>
+  <data name="alarmsPager.displayMsg" xml:space="preserve">
+    <value>Visualisation des alarmes {0} - {1} de {2}</value>
+    <comment>Displaying alarms {0} - {1} of {2}</comment>
+  </data>
+  <data name="alarmsPager.emptyMsg" xml:space="preserve">
+    <value>Aucune alarme à afficher</value>
+    <comment>No alarms to display</comment>
+  </data>
+  <data name="allRoutesBtn.Text" xml:space="preserve">
+    <value>Routes</value>
+    <comment>All Routes</comment>
+  </data>
+  <data name="AutoSync.ToolTip" xml:space="preserve">
+    <value>Actualiser la carte et grille automatique</value>
+    <comment>Refresh the map and grid automatically</comment>
+  </data>
+  <data name="btmHistorySearch.Text" xml:space="preserve">
+    <value>Recherche avancée</value>
+    <comment>Advanced Search</comment>
+  </data>
+  <data name="btnHistoryLegend.Text" xml:space="preserve">
+    <value>Légende</value>
+    <comment>Map Legend</comment>
+  </data>
+  <data name="btnHistoryMapAll.Text" xml:space="preserve">
+    <value>Visualiser tout</value>
+    <comment>Map All</comment>
+  </data>
+  <data name="btnHistoryMapit.Text" xml:space="preserve">
+    <value>Visualiser</value>
+    <comment>Map It</comment>
+  </data>
+  <data name="btnHistoryMapit.ToolTip" xml:space="preserve">
+    <value>Plan des documents historique sélectionnés</value>
+    <comment>Map the selected history records</comment>
+  </data>
+  <data name="btnHistorySearch.Tooltip" xml:space="preserve">
+    <value>Historique de la recherche</value>
+    <comment>Search History</comment>
+  </data>
+  <data name="btnSubmit.Alert" xml:space="preserve">
+    <value>Une erreur</value>
+    <comment>some error</comment>
+  </data>
+  <data name="btnSubmit.Message" xml:space="preserve">
+    <value>S'il vous plaît sélectionner un véhicule ...</value>
+    <comment>Please select a vehicle...</comment>
+  </data>
+  <data name="btnSubmitAlert.Title" xml:space="preserve">
+    <value>Manqué</value>
+    <comment>Failed</comment>
+  </data>
+  <data name="ClearAllButton.Text" xml:space="preserve">
+    <value>Effacer tout</value>
+    <comment>ClearAll</comment>
+  </data>
+  <data name="ClearAllButton.ToolTip" xml:space="preserve">
+    <value>Effacer tous véhicules sélectionnés</value>
+    <comment>Clear all selected vehicles</comment>
+  </data>
+  <data name="ClearAllMenu.Text" xml:space="preserve">
+    <value>Effacer tout</value>
+    <comment>ClearAll</comment>
+  </data>
+  <data name="ClearAllMenu.ToolTip" xml:space="preserve">
+    <value>Effacer tous véhicules sélectionnés</value>
+    <comment>Clear all selected vehicles</comment>
+  </data>
+  <data name="ClearSearchBtn.Text" xml:space="preserve">
+    <value>Effacer recherche</value>
+    <comment>Clear Search</comment>
+  </data>
+  <data name="ClearSearchBtn.ToolTip" xml:space="preserve">
+    <value>Masquer / Afficher l'étiquette</value>
+    <comment>Hide/Show Label</comment>
+  </data>
+  <data name="ComboBox.ToolTip" xml:space="preserve">
+    <value>Sélectionnez pour véhicules</value>
+    <comment>Select a vehicles</comment>
+  </data>
+  <data name="DemomapButton.Text" xml:space="preserve">
+    <value>Démo ouverte de calque</value>
+    <comment>Demo open layer map</comment>
+  </data>
+  <data name="DemomapButton.ToolTip" xml:space="preserve">
+    <value>Démo ouverte de calque sans suivi de véhicules</value>
+    <comment>Demo open layer map without tracking vehicle</comment>
+  </data>
+  <data name="dockedItems.Actions.Text" xml:space="preserve">
+    <value>Actions</value>
+    <comment>Actions</comment>
+  </data>
+  <data name="dockedItems.Export.Text" xml:space="preserve">
+    <value>Importer</value>
+    <comment>Export</comment>
+  </data>
+  <data name="exportHisotryAddressToCsvButton.Text" xml:space="preserve">
+    <value>Exporter au format CSV</value>
+    <comment>Export To CSV</comment>
+  </data>
+  <data name="exportHistoryAddressToExcel2003Button.Text" xml:space="preserve">
+    <value>Exporter vers Excel2003</value>
+    <comment>Export To Excel2003</comment>
+  </data>
+  <data name="exportHistoryAddressToExcel2007Button.Text" xml:space="preserve">
+    <value>Exporter vers Excel2007</value>
+    <comment>Export To Excel2007</comment>
+  </data>
+  <data name="ExportHistoryStopToCsvButton.Text" xml:space="preserve">
+    <value>Exporter au format CSV</value>
+    <comment>Export To CSV</comment>
+  </data>
+  <data name="exportHistoryStopToExcel2003Button.Text" xml:space="preserve">
+    <value>Exporter vers Excel2003</value>
+    <comment>Export To Excel2003</comment>
+  </data>
+  <data name="exportHistoryStopToExcel2007Button.Text" xml:space="preserve">
+    <value>Exporter vers Excel2007</value>
+    <comment>Export To Excel2007</comment>
+  </data>
+  <data name="ExportHistoryToCsvButton.Text" xml:space="preserve">
+    <value>Exporter au format CSV</value>
+    <comment>Export To CSV</comment>
+  </data>
+  <data name="ExportHistoryToExcel2003Button.Text" xml:space="preserve">
+    <value>Exporter vers Excel2003</value>
+    <comment>Export To Excel2003</comment>
+  </data>
+  <data name="ExportHistoryToExcel2007Button.Text" xml:space="preserve">
+    <value>Exporter vers Excel2007</value>
+    <comment>Export To Excel2007</comment>
+  </data>
+  <data name="exportHistoryTripToCsvButton.Text" xml:space="preserve">
+    <value>Exporter au format CSV</value>
+    <comment>Export To CSV</comment>
+  </data>
+  <data name="exportHistoryTripToExcel2003Button.Text" xml:space="preserve">
+    <value>Exporter vers Excel2003</value>
+    <comment>Export To Excel2003</comment>
+  </data>
+  <data name="exportHistoryTripToExcel2007Button.Text" xml:space="preserve">
+    <value>Exporter vers Excel2007</value>
+    <comment>Export To Excel2007</comment>
+  </data>
+  <data name="ExportToCsvButton.Text" xml:space="preserve">
+    <value>Exporter au format CSV</value>
+    <comment>Export To CSV</comment>
+  </data>
+  <data name="ExportToCsvButton.ToolTip" xml:space="preserve">
+    <value>Importer</value>
+    <comment>Export</comment>
+  </data>
+  <data name="ExportToExcel2003Button.Text" xml:space="preserve">
+    <value>Exporter vers Excel2003</value>
+    <comment>Export To Excel2003</comment>
+  </data>
+  <data name="ExportToExcel2007Button.Text" xml:space="preserve">
+    <value>Exporter vers Excel2007</value>
+    <comment>Export To Excel2007</comment>
+  </data>
+  <data name="FeedbackButton.Text" xml:space="preserve">
+    <value>Réaction</value>
+    <comment>Feedback</comment>
+  </data>
+  <data name="FeedbackButton.ToolTip" xml:space="preserve">
+    <value>Vous voulez améliorer notre carte s'il vous plaît fournir des informations ..</value>
+    <comment>Want to improve our map please provide feedback..</comment>
+  </data>
+  <data name="Finditmenu.Text" xml:space="preserve">
+    <value>Trouvez-le</value>
+    <comment>FindIt</comment>
+  </data>
+  <data name="FindItMenu.ToolTip" xml:space="preserve">
+    <value>Plan du véhicule sélectionné</value>
+    <comment>Map the selected vehicle</comment>
+  </data>
+  <data name="FindVehiclesDriversButton.Text" xml:space="preserve">
+    <value>Trouver Véhicules / Pilotes</value>
+    <comment>Find Vehicles/Drivers</comment>
+  </data>
+  <data name="FindVehiclesDriversButton.ToolTip" xml:space="preserve">
+    <value>Trouver Véhicules / Pilotes</value>
+    <comment>Find Vehicles/Drivers</comment>
+  </data>
+  <data name="fleetButton.Openwindow.Message" xml:space="preserve">
+    <value>Sélectionner une  flotte</value>
+    <comment>Select a fleet</comment>
+  </data>
+  <data name="FleetButton.ToolTip" xml:space="preserve">
+    <value>Sélectionner une  flotte</value>
+    <comment>Select a fleet</comment>
+  </data>
+  <data name="fleetDefault.Text" xml:space="preserve">
+    <value>Tous les véhicules ...</value>
+    <comment>All Vehicles...</comment>
+  </data>
+  <data name="geolandmarkgrid.columns.name" xml:space="preserve">
+    <value>Nom</value>
+    <comment>Name</comment>
+  </data>
+  <data name="geolandmarkgrid.columns.Type" xml:space="preserve">
+    <value>Type</value>
+    <comment>Type</comment>
+  </data>
+  <data name="geolandmarkgrid.emptyText" xml:space="preserve">
+    <value>Pas GeoZone / Monuments à afficher</value>
+    <comment>No Geozone/Landmarks to display</comment>
+  </data>
+  <data name="geolandmarkgrid.setTitle" xml:space="preserve">
+    <value>Chargement en cours ...</value>
+    <comment>Loading...</comment>
+  </data>
+  <data name="geozonegrid.columns.desc" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="geozonegrid.columns.Direction" xml:space="preserve">
+    <value>Direction</value>
+    <comment>Direction</comment>
+  </data>
+  <data name="geozonegrid.columns.SeverityName" xml:space="preserve">
+    <value>Sévérité</value>
+    <comment>Severity</comment>
+  </data>
+  <data name="geozonegrid.emptyText" xml:space="preserve">
+    <value>Aucunes géozones à afficher</value>
+    <comment>No Geozones to display</comment>
+  </data>
+  <data name="GeoZoneGrid.Title" xml:space="preserve">
+    <value>Géozones</value>
+    <comment>Geozones</comment>
+  </data>
+  <data name="hidtoryDetailsGrid.Acknowledged" xml:space="preserve">
+    <value>Rec</value>
+    <comment>Ack</comment>
+  </data>
+  <data name="hidtoryDetailsGrid.BoxId" xml:space="preserve">
+    <value>ID Unité</value>
+    <comment>Unit ID</comment>
+  </data>
+  <data name="hidtoryDetailsGrid.BoxMsgInTypeName" xml:space="preserve">
+    <value>Message</value>
+    <comment>Message</comment>
+  </data>
+  <data name="hidtoryDetailsGrid.Description" xml:space="preserve">
+    <value>Véhicule</value>
+    <comment>Vehicle</comment>
+  </data>
+  <data name="hidtoryDetailsGrid.EmptyText" xml:space="preserve">
+    <value>Aucun historique à afficher</value>
+    <comment>No History to display</comment>
+  </data>
+  <data name="hidtoryDetailsGrid.MsgDetails" xml:space="preserve">
+    <value>Détails du message</value>
+    <comment>MsgDetails</comment>
+  </data>
+  <data name="hidtoryDetailsGrid.OriginDateTime" xml:space="preserve">
+    <value>Date / Heure</value>
+    <comment>Date/Time</comment>
+  </data>
+  <data name="hidtoryDetailsGrid.Speed" xml:space="preserve">
+    <value>Vitesse</value>
+    <comment>Speed</comment>
+  </data>
+  <data name="hidtoryDetailsGrid.StreetAddress" xml:space="preserve">
+    <value>Adresse</value>
+    <comment>Address</comment>
+  </data>
+  <data name="historyAddressGrid.haDateTime" xml:space="preserve">
+    <value>Date / Heure</value>
+    <comment>Date/Time</comment>
+  </data>
+  <data name="historyAddressGrid.haDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="historyAddressGrid.haDetails" xml:space="preserve">
+    <value>Détails</value>
+    <comment>Details</comment>
+  </data>
+  <data name="historyAddressGrid.haUnitID" xml:space="preserve">
+    <value>ID de l'unité</value>
+    <comment>UnitID</comment>
+  </data>
+  <data name="HistoryAddressGrid.Title" xml:space="preserve">
+    <value>Résultat de la recherche</value>
+    <comment>Search Result</comment>
+  </data>
+  <data name="historyByLocation.name" xml:space="preserve">
+    <value>Histoire par emplacement</value>
+    <comment>historyByLocation</comment>
+  </data>
+  <data name="HistoryComboBox.ToolTip" xml:space="preserve">
+    <value>Électionnez un mode de Comm</value>
+    <comment>Select a Comm Mode</comment>
+  </data>
+  <data name="historyCommModes.displayField" xml:space="preserve">
+    <value>ModeCommNom</value>
+    <comment>CommModeName</comment>
+  </data>
+  <data name="historyCommModes.EmptyText" xml:space="preserve">
+    <value>Chargement en cours ...</value>
+    <comment>Loading...</comment>
+  </data>
+  <data name="historyCommModes.name" xml:space="preserve">
+    <value>ModeHistoireComm</value>
+    <comment>historyCommMode</comment>
+  </data>
+  <data name="historyCommModes.Store" xml:space="preserve">
+    <value>ModeHistoireCommMagasin</value>
+    <comment>historyCommModeStore</comment>
+  </data>
+  <data name="historyDateFrom.fieldLabel" xml:space="preserve">
+    <value>De</value>
+    <comment>From</comment>
+  </data>
+  <data name="historyDateFrom.name" xml:space="preserve">
+    <value>De l'histoire date</value>
+    <comment>historyDateFrom</comment>
+  </data>
+  <data name="historyDateTo.fieldLabel" xml:space="preserve">
+    <value>À</value>
+    <comment>To</comment>
+  </data>
+  <data name="historyDateTo.name" xml:space="preserve">
+    <value>Date de l'histoire Pour</value>
+    <comment>historyDateTo</comment>
+  </data>
+  <data name="historyFleetButton.Openwindow.Message" xml:space="preserve">
+    <value>Sélectionnez une flotte</value>
+    <comment>Select a fleet</comment>
+  </data>
+  <data name="historyFleetButton.setText" xml:space="preserve">
+    <value>Tous les véhicules</value>
+    <comment>All Vehicles</comment>
+  </data>
+  <data name="HistoryFleetButton.ToolTip" xml:space="preserve">
+    <value>Sélectionnez une flotte</value>
+    <comment>Select a fleet</comment>
+  </data>
+  <data name="historyForm.Alert.Message" xml:space="preserve">
+    <value>Une erreur</value>
+    <comment>some error</comment>
+  </data>
+  <data name="historyForm.Alert.Title" xml:space="preserve">
+    <value>Manqué</value>
+    <comment>Failed</comment>
+  </data>
+  <data name="historyForm.EmptyText" xml:space="preserve">
+    <value>Aucun historique à afficher</value>
+    <comment>No History to display</comment>
+  </data>
+  <data name="historygrid.alert.Message" xml:space="preserve">
+    <value>Une erreur</value>
+    <comment>some error</comment>
+  </data>
+  <data name="historygrid.alert.Title" xml:space="preserve">
+    <value>Manqué</value>
+    <comment>Failed</comment>
+  </data>
+  <data name="historygrid.BoxId" xml:space="preserve">
+    <value>ID Unité</value>
+    <comment>Unit ID</comment>
+  </data>
+  <data name="historygrid.BoxMsgInTypeName" xml:space="preserve">
+    <value>Message</value>
+    <comment>Message</comment>
+  </data>
+  <data name="historygrid.Description" xml:space="preserve">
+    <value>Véhicule</value>
+    <comment>Vehicle</comment>
+  </data>
+  <data name="historygrid.EmptyText" xml:space="preserve">
+    <value>Aucun historique à afficher</value>
+    <comment>No History to display</comment>
+  </data>
+  <data name="historygrid.emptyText2" xml:space="preserve">
+    <value>Chargement en cours ...</value>
+    <comment>loading...</comment>
+  </data>
+  <data name="historygrid.MsgDetails" xml:space="preserve">
+    <value>Détails des messages</value>
+    <comment>MsgDetails</comment>
+  </data>
+  <data name="historygrid.OriginDateTime" xml:space="preserve">
+    <value>Date / Heure</value>
+    <comment>Date/Time</comment>
+  </data>
+  <data name="historygrid.Speed" xml:space="preserve">
+    <value>Vitesse</value>
+    <comment>Speed</comment>
+  </data>
+  <data name="historygrid.StreetAddress" xml:space="preserve">
+    <value>Adresse</value>
+    <comment>Address</comment>
+  </data>
+  <data name="historyGridForm.Item" xml:space="preserve">
+    <value>Tous les véhicules</value>
+    <comment>All Vehicles</comment>
+  </data>
+  <data name="HistoryGridForm.Title" xml:space="preserve">
+    <value>Historique</value>
+    <comment>History</comment>
+  </data>
+  <data name="historyHiddenFleet.name" xml:space="preserve">
+    <value>l'histoire de la flotte</value>
+    <comment>historyFleet</comment>
+  </data>
+  <data name="HistoryLoactionForm.Title" xml:space="preserve">
+    <value>Localisation</value>
+    <comment>Location</comment>
+  </data>
+  <data name="historyMessageCheckBox.boxLabel" xml:space="preserve">
+    <value>Dernier message seulement</value>
+    <comment>Last message only</comment>
+  </data>
+  <data name="historyMessageList.displayField" xml:space="preserve">
+    <value>En Msg Box Type Nom</value>
+    <comment>BoxMsgInTypeName</comment>
+  </data>
+  <data name="historyMessageList.name" xml:space="preserve">
+    <value>l'histoire Liste des messages</value>
+    <comment>historyMessageList</comment>
+  </data>
+  <data name="HistoryOrganizationHierarchyButton.ToolTip" xml:space="preserve">
+    <value>organisation hiérarchique</value>
+    <comment>Organization Hierarchy</comment>
+  </data>
+  <data name="historyPager.alert" xml:space="preserve">
+    <value>S'il vous plaît sélectionner un véhicule ...</value>
+    <comment>Please select a vehicle...</comment>
+  </data>
+  <data name="historyPager.displayMsg" xml:space="preserve">
+    <value>Résultats historiques {0} - {1} de {2}</value>
+    <comment>Displaying histories {0} - {1} of {2}</comment>
+  </data>
+  <data name="historyPager.emptyMsg" xml:space="preserve">
+    <value>Pas histoires à afficher</value>
+    <comment>No histories to display</comment>
+  </data>
+  <data name="historyStopGrid.ArrivalDateTime" xml:space="preserve">
+    <value>arrivée</value>
+    <comment>Arrival</comment>
+  </data>
+  <data name="historyStopGrid.DepartureDateTime" xml:space="preserve">
+    <value>départ</value>
+    <comment>Departure</comment>
+  </data>
+  <data name="historyStopGrid.EmptyText" xml:space="preserve">
+    <value>Aucun historique à afficher</value>
+    <comment>No History to display</comment>
+  </data>
+  <data name="historyStopGrid.Location" xml:space="preserve">
+    <value>Adresse</value>
+    <comment>Address</comment>
+  </data>
+  <data name="historyStopGrid.Remarks" xml:space="preserve">
+    <value>Statut</value>
+    <comment>Status</comment>
+  </data>
+  <data name="historyStopGrid.StopDuration" xml:space="preserve">
+    <value>durée</value>
+    <comment>Duration</comment>
+  </data>
+  <data name="historyTimeFrom.name" xml:space="preserve">
+    <value>De l'histoire Heure</value>
+    <comment>historyTimeFrom</comment>
+  </data>
+  <data name="historyTimeTo.name" xml:space="preserve">
+    <value>Temps Pour l'histoire</value>
+    <comment>historyTimeTo</comment>
+  </data>
+  <data name="historyTripGrid.ArrivalTime" xml:space="preserve">
+    <value>arrivée</value>
+    <comment>Arrival</comment>
+  </data>
+  <data name="historyTripGrid.DepartureTime" xml:space="preserve">
+    <value>départ</value>
+    <comment>Departure</comment>
+  </data>
+  <data name="historyTripGrid.Description" xml:space="preserve">
+    <value>description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="historyTripGrid.Duration" xml:space="preserve">
+    <value>durée</value>
+    <comment>Duration</comment>
+  </data>
+  <data name="historyTripGrid.EmptyText" xml:space="preserve">
+    <value>Aucun historique à afficher</value>
+    <comment>No History to display</comment>
+  </data>
+  <data name="historyTripGrid.FuelConsumed" xml:space="preserve">
+    <value>Le carburant consommé</value>
+    <comment>Fuel Consumed</comment>
+  </data>
+  <data name="historyTripGrid._From" xml:space="preserve">
+    <value>De</value>
+    <comment>From</comment>
+  </data>
+  <data name="historyTripGrid._To" xml:space="preserve">
+    <value>À</value>
+    <comment>To</comment>
+  </data>
+  <data name="historyTripRadios.boxLabel1" xml:space="preserve">
+    <value>Ignition</value>
+    <comment>Ignition</comment>
+  </data>
+  <data name="historyTripRadios.boxLabel2" xml:space="preserve">
+    <value>Tractor Power</value>
+    <comment>Tractor Power</comment>
+  </data>
+  <data name="historyTripRadios.boxLabel3" xml:space="preserve">
+    <value>Prise de mouvement (PDM)</value>
+    <comment>PTO</comment>
+  </data>
+  <data name="historyTripRadios.html" xml:space="preserve">
+    <value>Calculer le trajet par :</value>
+    <comment>Calculate Trips based on:</comment>
+  </data>
+  <data name="HistoryTripRadios.Title" xml:space="preserve">
+    <value>Trajet</value>
+    <comment>Trip</comment>
+  </data>
+  <data name="historyType.emptyText" xml:space="preserve">
+    <value>Choisissez le nombre ...</value>
+    <comment>Choose number...</comment>
+  </data>
+  <data name="historyType.fieldLabel" xml:space="preserve">
+    <value>Type</value>
+    <comment>Type</comment>
+  </data>
+  <data name="historyType.name" xml:space="preserve">
+    <value>tapez l'histoire</value>
+    <comment>historyType</comment>
+  </data>
+  <data name="HistoryVehicleList.Description1" xml:space="preserve">
+    <value>Sélectionner un véhicule</value>
+    <comment>Select a Vehicle</comment>
+  </data>
+  <data name="HistoryVehicleList.Description2" xml:space="preserve">
+    <value>Toute la flotte</value>
+    <comment>Entire Fleet</comment>
+  </data>
+  <data name="historyVehicles.displayField" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="historyVehicles.EmptyText" xml:space="preserve">
+    <value>Chargement en cours ...</value>
+    <comment>Loading...</comment>
+  </data>
+  <data name="historyVehicles.fieldLabel" xml:space="preserve">
+    <value>Véhicule</value>
+    <comment>Vehicle</comment>
+  </data>
+  <data name="historyVehicles.name" xml:space="preserve">
+    <value>L'histoire des véhicules</value>
+    <comment>historyVehicle</comment>
+  </data>
+  <data name="labelonoffButton.labelonoff.HideLabel" xml:space="preserve">
+    <value>Cacher l’étiquette</value>
+    <comment>Hide Label</comment>
+  </data>
+  <data name="labelonoffButton.labelonoff.ShowLabel" xml:space="preserve">
+    <value>Montrer l’étiquette</value>
+    <comment>Show Label</comment>
+  </data>
+  <data name="LabelonoffButton.ToolTip" xml:space="preserve">
+    <value>Cacher/montrer étiquette</value>
+    <comment>Hide/Show Label</comment>
+  </data>
+  <data name="landmarkgrid.ContactPhoneNum" xml:space="preserve">
+    <value>Téléphone</value>
+    <comment>Contact Phone</comment>
+  </data>
+  <data name="landmarkgrid.desc" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="landmarkgrid.Email" xml:space="preserve">
+    <value>Courriel</value>
+    <comment>Email</comment>
+  </data>
+  <data name="landmarkgrid.emptyText" xml:space="preserve">
+    <value>Monuments pas à afficher</value>
+    <comment>No Landmarks to display</comment>
+  </data>
+  <data name="landmarkgrid.name" xml:space="preserve">
+    <value>Site</value>
+    <comment>Landmark</comment>
+  </data>
+  <data name="landmarkgrid.radius" xml:space="preserve">
+    <value>Rayon (m)</value>
+    <comment>Radius (m)</comment>
+  </data>
+  <data name="landmarkgrid.StreetAddress" xml:space="preserve">
+    <value>Adresse</value>
+    <comment>Street Address</comment>
+  </data>
+  <data name="LandmarkGrid.Title" xml:space="preserve">
+    <value>Sites</value>
+    <comment>Landmarks</comment>
+  </data>
+  <data name="LegendButton.Text" xml:space="preserve">
+    <value>Légende</value>
+    <comment>Legend</comment>
+  </data>
+  <data name="LegendButton.ToolTip" xml:space="preserve">
+    <value>Légende de Date/temps</value>
+    <comment>Legend of Date/Time Color</comment>
+  </data>
+  <data name="loadingMask.Message" xml:space="preserve">
+    <value>Chargement en cours ...</value>
+    <comment>Loading...</comment>
+  </data>
+  <data name="mapitButton.Text" xml:space="preserve">
+    <value>Trouvez-le</value>
+    <comment>FindIt</comment>
+  </data>
+  <data name="MapitButton.ToolTip" xml:space="preserve">
+    <value>Plan du véhicule sélectionné</value>
+    <comment>Map the selected vehicle</comment>
+  </data>
+  <data name="messagegrid.columns.Acknowledged" xml:space="preserve">
+    <value>Confirmation</value>
+    <comment>Acknowledged</comment>
+  </data>
+  <data name="messagegrid.columns.Description" xml:space="preserve">
+    <value>De</value>
+    <comment>From</comment>
+  </data>
+  <data name="messagegrid.columns.MessageId" xml:space="preserve">
+    <value>ID du message</value>
+    <comment>MessageId</comment>
+  </data>
+  <data name="messagegrid.columns.MsgBody" xml:space="preserve">
+    <value>Contenu du message</value>
+    <comment>Message Body</comment>
+  </data>
+  <data name="messagegrid.columns.MsgDateTime" xml:space="preserve">
+    <value>Date/Temps</value>
+    <comment>Date/Time</comment>
+  </data>
+  <data name="messagegrid.emptyText" xml:space="preserve">
+    <value>Aucun message à afficher</value>
+    <comment>No messages to display</comment>
+  </data>
+  <data name="messagesPager.displayMsg" xml:space="preserve">
+    <value>Affichage des messages {0} - {1} de {2}</value>
+    <comment>Displaying messages {0} - {1} of {2}</comment>
+  </data>
+  <data name="messagesPager.emptyMsg" xml:space="preserve">
+    <value>Aucun message à afficher</value>
+    <comment>No messages to display</comment>
+  </data>
+  <data name="OrganizationHierarchyButton.ToolTip" xml:space="preserve">
+    <value>organisation hiérarchique</value>
+    <comment>Organization Hierarchy</comment>
+  </data>
+  <data name="ResClearAllMenuText" xml:space="preserve">
+    <value>ToutEffacer</value>
+    <comment>ClearAll</comment>
+  </data>
+  <data name="searchingMask.Message" xml:space="preserve">
+    <value>Recherche en cours ...</value>
+    <comment>Searching...</comment>
+  </data>
+  <data name="SearchMapButton.Text" xml:space="preserve">
+    <value>Recherche</value>
+    <comment>Search</comment>
+  </data>
+  <data name="SearchMapButton.ToolTip" xml:space="preserve">
+    <value>Recherche</value>
+    <comment>Search</comment>
+  </data>
+  <data name="SendmessageButton.Text" xml:space="preserve">
+    <value>Envoyer le message</value>
+    <comment>Send Message</comment>
+  </data>
+  <data name="SendmessageButton.ToolTip" xml:space="preserve">
+    <value>Envoyer le message</value>
+    <comment>Send Message</comment>
+  </data>
+  <data name="Streetview.alert.Message" xml:space="preserve">
+    <value>S'il vous plaît sélectionnez 1 seul véhicule pour une vue de la rue.</value>
+    <comment>Please select only 1 vehicle for street view.</comment>
+  </data>
+  <data name="Streetview.alert.Title" xml:space="preserve">
+    <value>Vue sur la rue</value>
+    <comment>Streetview</comment>
+  </data>
+  <data name="streetViewButton.Openwindow.Message" xml:space="preserve">
+    <value>Vue sur la rue</value>
+    <comment>Streetview</comment>
+  </data>
+  <data name="StreetViewButton.Text" xml:space="preserve">
+    <value>Vue sur la rue</value>
+    <comment>Street view</comment>
+  </data>
+  <data name="StreetViewButton.ToolTip" xml:space="preserve">
+    <value>Google Vue sur la rue</value>
+    <comment>Google street view</comment>
+  </data>
+  <data name="StreetViewMenu.Text" xml:space="preserve">
+    <value>Vue sur la rue</value>
+    <comment>Streetview</comment>
+  </data>
+  <data name="StreetViewMenu.ToolTip" xml:space="preserve">
+    <value>Google Vue sur la rue</value>
+    <comment>Google street view</comment>
+  </data>
+  <data name="trackitButton.Openwindow.Message" xml:space="preserve">
+    <value>Véhicules Titres</value>
+    <comment>Track Vehicles</comment>
+  </data>
+  <data name="TrackitButton.Text" xml:space="preserve">
+    <value>SuivreElle</value>
+    <comment>Track It</comment>
+  </data>
+  <data name="TrackitButton.ToolTip" xml:space="preserve">
+    <value>Suivre véhicule sélectionné sur la carte séparée</value>
+    <comment>Track selected vehicle on separate map</comment>
+  </data>
+  <data name="trackitmenu.Openwindow.Message" xml:space="preserve">
+    <value>Véhicules Titres</value>
+    <comment>Track Vehicles</comment>
+  </data>
+  <data name="Trackitmenu.Text" xml:space="preserve">
+    <value>Suivre</value>
+    <comment>TrackIt</comment>
+  </data>
+  <data name="TrackTtMenu.ToolTip" xml:space="preserve">
+    <value>Suivre véhicule sélectionné sur la carte séparée</value>
+    <comment>Track selected vehicle on separate map</comment>
+  </data>
+  <data name="TrackVehicles.Title" xml:space="preserve">
+    <value>Véhicules Titres</value>
+    <comment>Track Vehicles</comment>
+  </data>
+  <data name="updatePositionButton.Text" xml:space="preserve">
+    <value>Mise à jour de la position</value>
+    <comment>Update Position</comment>
+  </data>
+  <data name="UpdatePositionButton.ToolTip" xml:space="preserve">
+    <value>Carte véhicule sélectionné sur la carte</value>
+    <comment>Map selected vehicle on map</comment>
+  </data>
+  <data name="UpdatePositionMenu.Text" xml:space="preserve">
+    <value>Mise à jour de la position</value>
+    <comment>Update Position</comment>
+  </data>
+  <data name="UpdatePositionMenu.ToolTip" xml:space="preserve">
+    <value>Carte véhicule sélectionné sur la carte</value>
+    <comment>Map selected vehicle on map</comment>
+  </data>
+  <data name="UpdatePositionReceived.MessageBox.Title" xml:space="preserve">
+    <value>Mise à jour de l'état de la commande de position</value>
+    <comment>UpdatePosition Command Status</comment>
+  </data>
+  <data name="vehiclegeozoneassignmentButton.Text" xml:space="preserve">
+    <value>Assignation Véhicule-Géozone</value>
+    <comment>Vehicle-Geozone Assignment</comment>
+  </data>
+  <data name="VehicleGeozoneAssignmentButton.ToolTip" xml:space="preserve">
+    <value>Assignation Véhicule-Géozone</value>
+    <comment>Vehicle-Geozone Assignment</comment>
+  </data>
+  <data name="vgAddress.Text" xml:space="preserve">
+    <value>Adresse</value>
+    <comment>Address</comment>
+  </data>
+  <data name="vgArmed.Text" xml:space="preserve">
+    <value>Armé</value>
+    <comment>Armed</comment>
+  </data>
+  <data name="vgDateTime.Text" xml:space="preserve">
+    <value>Date/Temps</value>
+    <comment>Date/Time</comment>
+  </data>
+  <data name="vgDescription.Text" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="vgDriver.Text" xml:space="preserve">
+    <value>Chauffeur</value>
+    <comment>Driver</comment>
+  </data>
+  <data name="vgHistory.Text" xml:space="preserve">
+    <value>Historique</value>
+    <comment>History</comment>
+  </data>
+  <data name="vgIsRouteAssigned.Text" xml:space="preserve">
+    <value>Route assignée</value>
+    <comment>Route Assigned</comment>
+  </data>
+  <data name="vgSpeed.Text" xml:space="preserve">
+    <value>Vitesse</value>
+    <comment>Speed</comment>
+  </data>
+  <data name="vgStatus.Text" xml:space="preserve">
+    <value>Statut</value>
+    <comment>Status</comment>
+  </data>
+  <data name="vgUnitID.Text" xml:space="preserve">
+    <value>ID Unité</value>
+    <comment>UnitID</comment>
+  </data>
+  <data name="SubmitBtn.Text" xml:space="preserve">
+    <value>Visionner</value>
+    <comment>View</comment>
+  </data>
+  <data name="HistoryLink.Text" xml:space="preserve">
+    <value>Historique</value>
+    <comment>History</comment>
+  </data>
+  <data name="historyLocation.Text" xml:space="preserve">
+    <value>Adresse</value>
+    <comment>Address</comment>
+  </data>
+  <data name="historyType_values_0.Text" xml:space="preserve">
+    <value>Chemin de véhicule</value>
+    <comment>Vehicle Path</comment>
+  </data>
+  <data name="historyType_values_1.Text" xml:space="preserve">
+    <value>Trajet du véhicule</value>
+    <comment>Stop and Idle Sequence</comment>
+  </data>
+  <data name="historyType_values_2.Text" xml:space="preserve">
+    <value>Séquence d’arrêt &amp; ralenti</value>
+    <comment>Stop Sequence</comment>
+  </data>
+  <data name="historyType_values_3.Text" xml:space="preserve">
+    <value>Séquence au ralenti</value>
+    <comment>Idle Sequence</comment>
+  </data>
+  <data name="historyType_values_4.Text" xml:space="preserve">
+    <value>Rapport du voyage</value>
+    <comment>Trip Report</comment>
+  </data>
+  <data name="MenuFilter.Text" xml:space="preserve">
+    <value>Filtres</value>
+    <comment>Filters</comment>
+  </data>
+  <data name="btnVehicleonoffHideDetails.Text" xml:space="preserve">
+    <value>Cacher les détails</value>
+    <comment>Hide Details</comment>
+  </data>
+  <data name="btnVehicleonoffShowDetails.Text" xml:space="preserve">
+    <value>Voir les détails</value>
+    <comment>Show Details</comment>
+  </data>
+  <data name="btnVehicleonoffTooltip.Text" xml:space="preserve">
+    <value>Masquer / Afficher les véhicules</value>
+    <comment>Hide/Show Vehicles</comment>
+  </data>
+  <data name="historyCommModeName.Text" xml:space="preserve">
+    <value>TOUT</value>
+    <comment>ALL</comment>
+  </data>
+  <data name="txtButtonTitleFleet.Text" xml:space="preserve">
+    <value>Flotte:</value>
+    <comment>Fleet</comment>
+  </data>
+  <data name="txtButtonTitleHierarchy.Text" xml:space="preserve">
+    <value>Hiérarchie:</value>
+    <comment>Hierarchy</comment>
+  </data>
+  <data name="geozonegrid.columns.Geozone" xml:space="preserve">
+    <value>Géozone</value>
+    <comment>Geozone</comment>
+  </data>
+  <data name="RouteAssignedNo.Text" xml:space="preserve">
+    <value>Non</value>
+    <comment>No</comment>
+  </data>
+  <data name="RouteAssignedYes.Text" xml:space="preserve">
+    <value>Oui</value>
+    <comment>Yes</comment>
+  </data>
+  <data name="GeozoneGridColumnsCurrentAssignment.Text" xml:space="preserve">
+    <value>Assignation courante</value>
+    <comment>Current Assignment</comment>
+  </data>
+  <data name="vgDriverCardNumber.Text" xml:space="preserve">
+    <value>Chauffeur ID</value>
+  </data>
+  <data name="vgField1.Text" xml:space="preserve">
+    <value>Field1</value>
+  </data>
+  <data name="vgField2.Text" xml:space="preserve">
+    <value>Field2</value>
+  </data>
+  <data name="vgField3.Text" xml:space="preserve">
+    <value>Field3</value>
+  </data>
+  <data name="vgField4.Text" xml:space="preserve">
+    <value>Field4</value>
+  </data>
+  <data name="vgField5.Text" xml:space="preserve">
+    <value>Field5</value>
+  </data>
+  <data name="vgModelYear.Text" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="vgMakeName.Text" xml:space="preserve">
+    <value>Make</value>
+  </data>
+  <data name="vgModelName.Text" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="vgVehicleTypeName.Text" xml:space="preserve">
+    <value>Vehicle Type</value>
+  </data>
+  <data name="vgLicensePlate.Text" xml:space="preserve">
+    <value>License Plate</value>
+  </data>
+  <data name="vgVinNum.Text" xml:space="preserve">
+    <value>Vin #</value>
+  </data>
+  <data name="vgManagerName.Text" xml:space="preserve">
+    <value>Manager Name</value>
+  </data>
+  <data name="vgManagerEmployeeId.Text" xml:space="preserve">
+    <value>Manager Employee ID</value>
+  </data>
+  <data name="vgStateProvince.Text" xml:space="preserve">
+    <value>State/Province</value>
+  </data>
+  <data name="MultipleHierarchy.Text" xml:space="preserve">
+    <value>Plusieurs hiérarchies</value>
+  </data>
+  <data name="cvVehicleColorText" xml:space="preserve">
+    <value>Couleur</value>
+  </data>
+  <data name="vgEngineHours.Text" xml:space="preserve">
+    <value>Engine Hours</value>
+  </data>
+  <data name="vgOdometer.Text" xml:space="preserve">
+    <value>Odometer</value>
+  </data>
+  <data name="HisTripColors.Text" xml:space="preserve">
+    <value>Legend of Trip Colors</value>
+  </data>
+  <data name="HisTripColorsButton.Text" xml:space="preserve">
+    <value>Trip Colors</value>
+  </data>
+  <data name="btnHistorySendCMD.Text" xml:space="preserve">
+    <value>Envoyer une commande</value>
+  </data>
+  <data name="btnHistorySendCMD.ToolTip" xml:space="preserve">
+    <value>Envoyer une commande</value>
+  </data>
+  <data name="Addressresolutioninprogress" xml:space="preserve">
+    <value>Obtention d’adresse en cours</value>
+  </data>
+  <data name="ResolveAddressToolTips" xml:space="preserve">
+    <value>Obtenir</value>
+  </data>
+  <data name="Resolving" xml:space="preserve">
+    <value>Obtention en cours…</value>
+  </data>
+  <data name="landmarkgrid.CategoryName" xml:space="preserve">
+    <value>catégorie</value>
+    <comment>Category</comment>
+  </data>
+  <data name="Text_False" xml:space="preserve">
+    <value>Faux</value>
+  </data>
+  <data name="Text_NA" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="Text_True" xml:space="preserve">
+    <value>Vrai</value>
+  </data>
+  <data name="ValidGPS" xml:space="preserve">
+    <value>GPS valide</value>
+  </data>
+</root>

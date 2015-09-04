@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cboFleet_Item_0" xml:space="preserve">
+    <value>Sélectionnez un parc de véhicules</value>
+  </data>
+  <data name="cboFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboSchIntervalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboSchPeriodResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboVehicle_Item_0" xml:space="preserve">
+    <value>Tout le parc de véhicules</value>
+  </data>
+  <data name="cboVehicle_Item_01" xml:space="preserve">
+    <value>Sélectionnez un véhicule</value>
+  </data>
+  <data name="cboVehicleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddResponseResource1.Text" xml:space="preserve">
+    <value>Ajouter à la liste de réponse</value>
+  </data>
+  <data name="cmdAddResponseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCancelSendResource1.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="cmdCancelSendResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCloseResource1.Text" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="cmdCloseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdRemoveResource1.Text" xml:space="preserve">
+    <value>Supprimer de la liste de réponse</value>
+  </data>
+  <data name="cmdRemoveResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSendResource1.Text" xml:space="preserve">
+    <value>Message d'envoi</value>
+  </data>
+  <data name="cmdSendResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWaitResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWaitResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label1Resource1.Text" xml:space="preserve">
+    <value>* Le texte du message ne peut pas dépasser 230 caractères.</value>
+  </data>
+  <data name="Label1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label2Resource1.Text" xml:space="preserve">
+    <value>* Chaque réponse ne peut pas dépasser 40 caractères.</value>
+  </data>
+  <data name="Label2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label3Resource1.Text" xml:space="preserve">
+    <value>* Maximum de 4 lignes permises.</value>
+  </data>
+  <data name="Label3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCharactersLeftTitleResource1.Text" xml:space="preserve">
+    <value>Caractères disponibles</value>
+  </data>
+  <data name="lblCharactersLeftTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCommandStatus_Text_MessageQueued" xml:space="preserve">
+    <value>Message en séquence</value>
+  </data>
+  <data name="lblCommandStatus_Text_MessageSuccess" xml:space="preserve">
+    <value>Votre message a été envoyé avec succès.</value>
+  </data>
+  <data name="lblCommandStatus_Text_MessageSuccessOtherMode" xml:space="preserve">
+    <value>Votre message a été envoyé avec succès par</value>
+  </data>
+  <data name="lblCommandStatusResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCommandStatusResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetTitleResource1.Text" xml:space="preserve">
+    <value>Parc :</value>
+  </data>
+  <data name="lblFleetTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblKeepTryResource1.Text" xml:space="preserve">
+    <value>Continuez d'essayer de :</value>
+  </data>
+  <data name="lblKeepTryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessage_Text_EmptyResponseError" xml:space="preserve">
+    <value>Veuillez entrer une réponse.</value>
+  </data>
+  <data name="lblMessage_Text_InvalidScheduledPeriodIntervalError" xml:space="preserve">
+    <value>Veuillez vérifier la période ou l'intervalle programmé</value>
+  </data>
+  <data name="lblMessage_Text_SendFailedError" xml:space="preserve">
+    <value>Échec d'envoi du message.</value>
+  </data>
+  <data name="lblMessage_Text_TooManyLinesError" xml:space="preserve">
+    <value>Maximumde 4 lignes permises.</value>
+  </data>
+  <data name="lblMessage_Text_TooManyResponseError" xml:space="preserve">
+    <value>Maximum de 6 réponses permises.</value>
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageTextTitleResource1.Text" xml:space="preserve">
+    <value>Texte du message</value>
+  </data>
+  <data name="lblMessageTextTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPleaseWaitMsgResource1.Text" xml:space="preserve">
+    <value>Veuillez patienter...</value>
+  </data>
+  <data name="lblPleaseWaitMsgResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblResponseListTitleResource1.Text" xml:space="preserve">
+    <value>Liste de réponse :</value>
+  </data>
+  <data name="lblResponseListTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRetryEveryTitleResource1.Text" xml:space="preserve">
+    <value>Essayer de nouveau chaque :</value>
+  </data>
+  <data name="lblRetryEveryTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSendingMessageMsgResource1.Text" xml:space="preserve">
+    <value>Envoi de message...</value>
+  </data>
+  <data name="lblSendingMessageMsgResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblToTitleResource1.Text" xml:space="preserve">
+    <value>À :</value>
+  </data>
+  <data name="lblToTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleNameResource1.Text" xml:space="preserve">
+    <value>Véhicule :</value>
+  </data>
+  <data name="lblVehicleNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource1.Text" xml:space="preserve">
+    <value>Mode principal          </value>
+  </data>
+  <data name="ListItemResource1.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource10.Text" xml:space="preserve">
+    <value>5 min</value>
+  </data>
+  <data name="ListItemResource10.Value" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="ListItemResource11.Text" xml:space="preserve">
+    <value>10 min</value>
+  </data>
+  <data name="ListItemResource11.Value" xml:space="preserve">
+    <value>600</value>
+  </data>
+  <data name="ListItemResource2.Text" xml:space="preserve">
+    <value>Mode double communication</value>
+  </data>
+  <data name="ListItemResource2.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource3.Text" xml:space="preserve">
+    <value>Pas de nouvel essai</value>
+  </data>
+  <data name="ListItemResource3.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource4.Text" xml:space="preserve">
+    <value>15 Min</value>
+  </data>
+  <data name="ListItemResource4.Value" xml:space="preserve">
+    <value>900</value>
+  </data>
+  <data name="ListItemResource5.Text" xml:space="preserve">
+    <value>30 Min</value>
+  </data>
+  <data name="ListItemResource5.Value" xml:space="preserve">
+    <value>1800</value>
+  </data>
+  <data name="ListItemResource6.Text" xml:space="preserve">
+    <value>1 heure</value>
+  </data>
+  <data name="ListItemResource6.Value" xml:space="preserve">
+    <value>3600</value>
+  </data>
+  <data name="ListItemResource7.Text" xml:space="preserve">
+    <value>2 heures</value>
+  </data>
+  <data name="ListItemResource7.Value" xml:space="preserve">
+    <value>7200</value>
+  </data>
+  <data name="ListItemResource8.Text" xml:space="preserve">
+    <value>Pas de nouvel essai</value>
+  </data>
+  <data name="ListItemResource8.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource9.Text" xml:space="preserve">
+    <value>1 min</value>
+  </data>
+  <data name="ListItemResource9.Value" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="lslResponseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="optCommModeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Nouveau message</value>
+  </data>
+  <data name="SentinelFMSession_MessageText_CommunicationWithVehicles" xml:space="preserve">
+    <value>La communication avec le(s) véhicule(s)</value>
+  </data>
+  <data name="SentinelFMSession_MessageText_NoCommunication" xml:space="preserve">
+    <value>n'est pas disponible en ce moment et votre message ne lui a pas été envoyé...</value>
+  </data>
+  <data name="txtMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtResponseResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtResponseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valFleetResource1.ErrorMessage" xml:space="preserve">
+    <value>Veuillez sélectionner un parc de véhicules</value>
+  </data>
+  <data name="valFleetResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValidationSummary1Resource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValidationSummary1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valMessageResource1.ErrorMessage" xml:space="preserve">
+    <value>Veuillez entrer un message :</value>
+  </data>
+  <data name="valMessageResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOhTitleResource1.Text" xml:space="preserve">
+    <value>Hiérarchie:</value>
+  </data>
+  <data name="lblOhTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>
