@@ -622,7 +622,8 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
 
 
         bool enableTimer = false;
-        if ((sn.User.UserGroupId == 1 || sn.User.UserGroupId == 2 || sn.User.UserGroupId == 7 || sn.UserID == 11967) && (sn.User.OrganizationId == 480 || sn.User.OrganizationId == 952 || sn.User.OrganizationId == 999952 || sn.User.OrganizationId == 999954)) //Hgi and Security Administrator user 
+        //if ((sn.User.UserGroupId == 1 || sn.User.UserGroupId == 2 || sn.User.UserGroupId == 7 || sn.UserID == 11967) && (sn.User.OrganizationId == 480 || sn.User.OrganizationId == 952 || sn.User.OrganizationId == 999952 || sn.User.OrganizationId == 999954)) //Hgi and Security Administrator user 
+        if (sn.User.ControlEnable(sn, 102))
         {
             enableTimer = true;
         }
@@ -707,7 +708,7 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
 
 
                     SentinelFM.ServerDBUser.DBUser _dbu = new SentinelFM.ServerDBUser.DBUser();
-                    int result = _dbu.RecordUserAction("Landmark", sn.UserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Create landmark", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + landmarkName + " Created By: " + sn.UserID);
+                    int result = _dbu.RecordUserAction("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Add", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + landmarkName + " Added By: " + sn.LoginUserID);
 
                 }
                 else
@@ -784,7 +785,7 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                     }
 
                     SentinelFM.ServerDBUser.DBUser _dbu = new SentinelFM.ServerDBUser.DBUser();
-                    int result = _dbu.RecordUserAction("Landmark", sn.UserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Edit landmark", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + landmarkName + " Edited By: " + sn.UserID);
+                    int result = _dbu.RecordUserAction("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Edit", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + landmarkName + " Updated By: " + sn.LoginUserID);
                 }
 
                 _r.status = 200;
@@ -895,12 +896,13 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
     {
         SentinelFMSession sn = null;
         sn = (SentinelFMSession)Session["SentinelFMSession"];
-
+        SentinelFM.ServerDBUser.DBUser _dbu = new SentinelFM.ServerDBUser.DBUser();
         clsUtility objUtil;
         objUtil = new clsUtility(sn);
-        
+        int result = 0;
         _results _r = new _results();
-
+        int landmarkid = 0;
+        
         if (sn == null || sn.User == null || String.IsNullOrEmpty(sn.UserName) || sn.UserID <= 0)
         {
             _r.status = 500;
@@ -940,7 +942,8 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
 
 
         bool enableTimer = false;
-        if ((sn.User.UserGroupId == 1 || sn.User.UserGroupId == 2 || sn.User.UserGroupId == 7 || sn.UserID == 11967) && (sn.User.OrganizationId == 480 || sn.User.OrganizationId == 952 || sn.User.OrganizationId == 999952 || sn.User.OrganizationId == 999954)) //Hgi and Security Administrator user 
+        //if ((sn.User.UserGroupId == 1 || sn.User.UserGroupId == 2 || sn.User.UserGroupId == 7 || sn.UserID == 11967) && (sn.User.OrganizationId == 480 || sn.User.OrganizationId == 952 || sn.User.OrganizationId == 999952 || sn.User.OrganizationId == 999954)) //Hgi and Security Administrator user 
+        if (sn.User.ControlEnable(sn, 102))
         {
             enableTimer = true;            
         }
@@ -1011,7 +1014,7 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                 {
                     _r.message = "Sucessfully created: " + landmarkName;
                     _r.isNew = 1;
-                    int landmarkid = patchLandPointMgr.PatchVlfLandmarkPointSet_Add(sn.User.OrganizationId, landmarkName,
+                    landmarkid = patchLandPointMgr.PatchVlfLandmarkPointSet_Add(sn.User.OrganizationId, landmarkName,
                                  Convert.ToDouble(txtY), Convert.ToDouble(txtX),
                                  txtLandmarkDesc,
                                  txtContactName,
@@ -1023,9 +1026,7 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                                  pointSets, sn.UserID, isPublic, selectedLandmarkCategoryId
                                  );
 
-
-                    SentinelFM.ServerDBUser.DBUser _dbu = new SentinelFM.ServerDBUser.DBUser();
-                    int result = _dbu.RecordUserAction("Landmark", sn.UserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Create landmark", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + landmarkName + " Created By: " + sn.UserID);
+                    result = _dbu.RecordUserAction("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Add", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + landmarkName + " Added By: " + sn.LoginUserID);
                   
                 }
                 else
@@ -1039,6 +1040,10 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                         {
                             newCategoryId = selectedLandmarkCategoryId;
                         }
+
+                        landmarkid = patchLandPointMgr.PatchGetLandmarkIdByLandmarkName(sn.User.OrganizationId, landmarkName);
+
+                        result = _dbu.RecordInitialValues("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Edit", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + txtLandmarkDesc + " Updated By: " + sn.LoginUserID);
                         
                         patchLandPointMgr.PatchVlfLandmarkMetaData_Update(sn.User.OrganizationId, oldLandmarkName,
                                 landmarkName,
@@ -1053,9 +1058,15 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                                 sn.UserID, isPublic,
                                 newCategoryId
                                 );
+
+                        result = _dbu.RecordUserAction("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Edit", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + landmarkName + " Updated By: " + sn.LoginUserID);
                     }
                     else
                     {
+                        landmarkid = patchLandPointMgr.PatchGetLandmarkIdByLandmarkName(sn.User.OrganizationId, landmarkName);
+
+                        result = _dbu.RecordInitialValues("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Edit", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + txtLandmarkDesc + " Updated By: " + sn.LoginUserID);
+                        
                         patchLandPointMgr.PatchVlfLandmarkPointSet_Update(sn.User.OrganizationId, oldLandmarkName,
                                     landmarkName,
                                     Convert.ToDouble(txtY), Convert.ToDouble(txtX),
@@ -1068,10 +1079,13 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                                     Convert.ToInt16(cboTimeZone), DayLightSaving, chkDayLight, strAddress,
                                     pointSets, sn.UserID, isPublic
                                     );
+
+                        
+                        result = _dbu.RecordUserAction("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Edit", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + landmarkName + " Updated By: " + sn.LoginUserID);
                         
                     }
 
-                    int landmarkid = patchLandPointMgr.PatchGetLandmarkIdByLandmarkName(sn.User.OrganizationId, landmarkName);
+                    
                     _patchServices.DeleteAssignmentByLandmarkId(sn.User.OrganizationId, landmarkid);
 
                     if (updatedAppliedServices.Trim() != string.Empty)
@@ -1100,9 +1114,6 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                             }
                         }
                     }
-
-                    SentinelFM.ServerDBUser.DBUser _dbu = new SentinelFM.ServerDBUser.DBUser();
-                    int result = _dbu.RecordUserAction("Landmark", sn.UserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Edit landmark", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + landmarkName + " Edited By: " + sn.UserID);
                 }
 
                 _r.status = 200;
@@ -1211,7 +1222,10 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
     {
         SentinelFMSession sn = null;
         sn = (SentinelFMSession)Session["SentinelFMSession"];
-
+        int result = 0;
+        int _landmarkid = 0;
+        SentinelFM.ServerDBUser.DBUser _dbu = new SentinelFM.ServerDBUser.DBUser();
+        VLF.PATCH.Logic.PatchLandmark _landmark = new VLF.PATCH.Logic.PatchLandmark(sConnectionString);
         clsUtility objUtil;
         objUtil = new clsUtility(sn);
 
@@ -1286,6 +1300,11 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                     
                     try
                     {
+                        _landmarkid = _landmark.GetLandmarkIdByLandmarkName(sn.User.OrganizationId, oid);
+                        
+                        //check if landmark audit log already exists in the AuditLogs table
+                        result = _dbu.RecordInitialValues("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + _landmarkid.ToString(), "Edit", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + txtLandmarkDesc + " Updated By: " + sn.LoginUserID);
+                        
                         landPointMgr.vlfLandmarkPointSet_Update_NewTZ(sn.User.OrganizationId, oid,
                                         oid,
                                         Convert.ToDouble(txtY), Convert.ToDouble(txtX),
@@ -1299,6 +1318,9 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                                         pointSets, true, -10
                                      );
 
+                        //update AuditLogs table with update
+                        result = _dbu.RecordUserAction("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + _landmarkid.ToString(), "Edit", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + txtLandmarkDesc + " Updated By: " + sn.LoginUserID);
+                        
                         _r.status = 200;
                         _r.objectType = "Landmark";
                         sn.DsLandMarks = null;
@@ -1348,6 +1370,11 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                     
                     try
                     {
+                        _landmarkid = _landmark.GetLandmarkIdByLandmarkName(sn.User.OrganizationId, txtLandmarkDesc);
+                        
+                        //check if landmark audit log already exists in the AuditLogs table
+                        result = _dbu.RecordInitialValues("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + _landmarkid.ToString(), "Edit", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + txtLandmarkDesc + " Updated By: " + sn.LoginUserID);
+                        
                         landPointMgr.vlfLandmarkPointSet_Update_NewTZ(sn.User.OrganizationId, oid,
                                         oid,
                                         Convert.ToDouble(txtY), Convert.ToDouble(txtX),
@@ -1361,9 +1388,12 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                                         pointSets, true, -10
                                      );
 
+                        //update AuditLogs table with update
+                        result = _dbu.RecordUserAction("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + _landmarkid.ToString(), "Edit", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + txtLandmarkDesc + " Updated By: " + sn.LoginUserID);
+                        
                         _r.status = 200;
                         _r.objectType = "Landmark";
-                        sn.DsLandMarks = null;
+                        sn.DsLandMarks = null;    
                     }
                     catch (Exception ex)
                     {
@@ -1648,14 +1678,14 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                 else
                 {
                     _r.status = 500;
-                }                
+                }
 
-                int result = _dbu.RecordUserAction("Landmark", sn.UserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Delete landmark", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + oid + "; Postgis deleted " + rsd.ToString() + "; Deleted By: " + sn.UserID);                
+                int result = _dbu.RecordUserAction("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Delete", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + oid + "; Deleted By: " + sn.LoginUserID);                
                 _r.message = "Sucessfully deleted the landmark.";
             }
             catch (Exception ex)
             {
-                _dbu.RecordUserAction("Landmark", sn.UserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Delete landmark", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + oid + " Exception:" + ex.ToString() + "; Deleted By: " + sn.UserID);
+                //_dbu.RecordUserAction("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Delete", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + oid + " Exception:" + ex.ToString() + "; Deleted By: " + sn.LoginUserID);
                 _r.status = 500;
             }
         }

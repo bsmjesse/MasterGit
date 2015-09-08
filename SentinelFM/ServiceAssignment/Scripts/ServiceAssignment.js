@@ -15,7 +15,19 @@ g(document).ready(function () {
         DeleteAllValue();
     });    
     CreateFcTable();
-    
+    $("#sltInsertPlaceholder").html($('#sltInsertPlaceholder option').sort(function (x, y) {        
+        return $(x).text() < $(y).text() ? -1 : 1;
+
+    }));
+
+    $("#sltInsertPlaceholder").get(0).selectedIndex = 0;
+
+    $("#sltSubjectPlaceholder").html($('#sltSubjectPlaceholder option').sort(function (x, y) {
+        return $(x).text() < $(y).text() ? -1 : 1;
+
+    }));
+
+    $("#sltSubjectPlaceholder").get(0).selectedIndex = 0;
     g('#btnCreateRule').on("click", function() {                
         DeleteAllValue();
         g('#btnAddRule').click();
@@ -693,7 +705,7 @@ function RendOutService() {
     {
         g('#chkActive').removeAttr('checked');
     }
-    g('#chkReportable').prop('checked', configuredServices[selectedConfiguredRules].IsReportable == 'True' ? true : false);
+    g('#chkReportable').prop('checked', configuredServices[selectedConfiguredRules].IsReportable == '1' ? true : false);
     g('#expiredDate').datepicker("setDate", new Date(configuredServices[selectedConfiguredRules].ExpiredDate));
     
     var configuredRules = configuredRuleStr.split(';');

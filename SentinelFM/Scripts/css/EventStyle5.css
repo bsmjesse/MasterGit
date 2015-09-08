@@ -127,12 +127,14 @@
     color: black;   
 }
 
-.scheduleCombo {  
+.scheduleCombo {
+    margin-left: 20px;
     margin-top: 10px;
     border: 1px solid #B8B8B8;
-    display: block;
+    display: none;
     color: black;
 }
+
 .scheduleDelivery {
     margin-left: 20px;
     margin-top: 10px;
@@ -150,7 +152,6 @@
 .scheduleSubmitBtn {
     height: 25px;
     margin-left: 120px;
-    margin-bottom: 10px;
     padding: 5px 5px 30px 5px;
     border: none;
     Color: #B8B8B8;
@@ -159,8 +160,7 @@
 
 .scheduleCloseBtn {
     height: 25px;
-    margin-left: 5px; 
-    margin-bottom: 10px;  
+    margin-left: 5px;   
     padding: 1px 5px 30px 5px;
     border: none;
     Color: #B8B8B8;
@@ -188,7 +188,6 @@
      background-color:black;
       border: 2px solid #F5CC26;
       color:#B8B8B8;
-      height:auto;
 }
 
 .scheduleCheckbox .x-form-radio {

@@ -4094,7 +4094,7 @@ Ext.onReady(function () {
                     }
                     else {
                         if (!re.test(Ext.getCmp("ScheduleEmail").getValue())) {
-                            Ext.Msg.alert("Warning", 'Please Enter a Valid Email Id.');
+                            Ext.Msg.alert("Warning", 'Multiple email should be separated by comma (,) or semicolon (;)');
                             return;
                         }
                     }

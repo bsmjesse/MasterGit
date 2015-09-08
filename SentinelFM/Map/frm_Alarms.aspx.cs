@@ -30,14 +30,11 @@ namespace SentinelFM
       public string errorLoad = "Failed to load data.";
       public string errorCancel = "Failed to cancel.";
       public string SourcePage = "";
-      public float TimeZoneVal;
 
       protected void Page_Load(object sender, System.EventArgs e)
       {
          try
          {
-                 
-             TimeZoneVal = Convert.ToSingle(sn.User.NewFloatTimeZone + sn.User.DayLightSaving);
 
              ////Clear IIS cache
              //Response.Cache.SetCacheability(HttpCacheability.NoCache);

@@ -823,6 +823,8 @@ namespace SentinelFM
                     break;
 
                 case "1":       // Trip Summary Report (CR)
+                case "10075":   // Trip Summary Report of Vehicles (RS)
+                case "10082":   // Trip Summary Report of Drivers (RS)
                     this.lblTripSummaryReportDesc.Visible = true;
                     this.chkShowStorePosition.Visible = true;
                     this.tblIgnition.Visible = true;
@@ -1361,8 +1363,7 @@ namespace SentinelFM
                     lblRoadSpeedDelta.Visible = false;
                     break;
 
-                case "10075":   // Trip Summary Report of Vehicles (RS)
-                case "10082":   // Trip Summary Report of Drivers (RS)
+                //case "10075":   //Trip Summary Report (RS)
                 case "10098":   // Trip Summary Report with Vehicle Driver - switch by chkShowDriver
                     this.lblTripSummaryReportDesc.Visible = true;
                     this.chkShowStorePosition.Visible = true;
@@ -1442,10 +1443,6 @@ namespace SentinelFM
                 case "10109":   // Tamper Activity Summary Report
                     break;
 
-                //case "10110":   // Rag and Fatigue Manage Report 
-                //    this.tblRFViolationWeightPoint.Visible = true;
-                //    break;
-                    
                 default:
                     break;
             }
@@ -1726,8 +1723,8 @@ namespace SentinelFM
             #region Preprocesses
 
             StringBuilder sbp = new StringBuilder();
-            char delimitor = '\t';
-            //string delimitor = ", ";
+            //char delimitor = '\t';
+            string delimitor = ", ";
 
             ReportID = Math.Abs(ReportID);
 
@@ -1747,9 +1744,6 @@ namespace SentinelFM
                     case 10002:             // Activity Summary Report - Standard
                     case 10048:             // Activity Summary Report - Hierarchy Cost Centre
                         ReportID = 10107;   // Activity Summary Report - Driver
-                        break;
-                    case 10075:             // Trip Summary Report
-                        ReportID = 10082;   // Trip Summary Report of Individual Driver
                         break;
                 }
             }
@@ -1811,12 +1805,14 @@ namespace SentinelFM
             sn.Report.GuiId = (Int16) ReportID;
             sn.Report.XmlParams = "";
             sn.Report.ReportFormat = Convert.ToInt32(this.cboFormat.SelectedItem.Value);
-            sn.Report.ReportType = cboReports.SelectedItem.Value;
 
             // Basic parameters
             sbp.Append("reportid: " + ReportID.ToString() + delimitor);                          // this.cboReports.SelectedItem.Value + ", ");
             sbp.Append("reportformat: " + cboFormat.SelectedItem.Text + delimitor);              // PDF; EXCEL; WORD;....   .SelectedValue.ToString()
             sbp.Append("reportformatcode: " + cboFormat.SelectedItem.Value + delimitor);         // 1;   2;     3;   ....   .SelectedValue.ToString()
+
+            sn.Report.ReportType = cboReports.SelectedItem.Value;
+
             // Application Logon User
             sbp.Append("userid: " + sn.UserID + delimitor);
 
@@ -2059,6 +2055,16 @@ namespace SentinelFM
                 sbp.Append("landmarkid: " + this.rcbServiceLandmarkList.SelectedValue + delimitor);
             #endregion
 
+            //Show Store Position
+            if (chkShowStorePosition.Visible)
+                sbp.Append("incaddress: " + ((chkShowStorePosition.Checked)? "1" : "0") + delimitor);
+            // Stop & Idling in seconds: 5:300 | 10:600 | ......
+            if (cboStopSequence.Visible)
+                sbp.Append("minduration: " + cboStopSequence.SelectedItem.Value.ToString() + delimitor);
+            // Stop & Idling: 0:Stop | 1:Idling | 2:Both
+            if (optStopFilter.Visible)
+                sbp.Append("remark: " + optStopFilter.SelectedItem.Value.ToString() + delimitor);
+
             #region Trip Report 
             //Trip sensor = {3:Ignition | 11:Tractor Power | 8:PTO}
             if (optEndTrip.Visible && optEndTrip.Enabled)
@@ -2085,18 +2091,6 @@ namespace SentinelFM
             //chkHistIncludePositions
             #endregion
 
-            // Assistance parameters
-            #region Assistance Parameters
-            //Show Store Position
-            if (chkShowStorePosition.Visible)
-                sbp.Append("incaddress: " + ((chkShowStorePosition.Checked) ? "1" : "0") + delimitor);
-            // Stop & Idling in seconds: 5:300 | 10:600 | ......
-            if (cboStopSequence.Visible)
-                sbp.Append("minduration: " + cboStopSequence.SelectedItem.Value.ToString() + delimitor);
-            // Stop & Idling: 0:Stop | 1:Idling | 2:Both
-            if (optStopFilter.Visible)
-                sbp.Append("remark: " + optStopFilter.SelectedItem.Value.ToString() + delimitor);
-
             // sensorNum = 3 (default)
             if (this.optEndTrip.Visible && this.optEndTrip.Enabled)
             {
@@ -2114,8 +2108,6 @@ namespace SentinelFM
 
             if(this.trObservationTime.Visible && this.cboObservationTime.Enabled)
                 sbp.Append("reporttime: " + this.cboObservationTime.SelectedDate.Value.ToString("hh:mm:ss tt") + delimitor);
-            
-            #endregion 
 
             if (sbp.Length > 0)
                 return "{" + sbp.ToString() + "}";
@@ -2557,7 +2549,6 @@ namespace SentinelFM
 
             }
         }
-
         /// <summary>
         /// Get user reports dataset from session, if not valid - use web method
         /// </summary>
@@ -4214,10 +4205,6 @@ namespace SentinelFM
         /// </summary>
         /// <param name="iResult"></param>
         private void wsCallback(IAsyncResult iResult) { }
-
-        private string GetControlObjectValue_int(string objValue, string defValue) {
-                return (this.isNumeric(objValue))? objValue: defValue;
-        }
 
         /// <summary>
         /// Get violation mask integer number 

@@ -494,7 +494,8 @@ namespace SentinelFM
                     }
                     else
                     {
-                        this.cboCommand.DataSource = dt;                        
+                        //this.cboCommand.DataSource = dt;
+                        this.cboCommand.DataSource = ds;
                         this.cboCommand.DataBind();
                     }
                 }
@@ -1314,7 +1315,7 @@ namespace SentinelFM
                             break;
 
                         case (Int32)VLF.CLS.Def.Enums.CommandType.Reefer_Change_Set_Point:
-                           Int32 Temperature = 0;
+                            Int32 Temperature = 0;
                             
                             if (sn.User.TemperatureZone != "")
                             {

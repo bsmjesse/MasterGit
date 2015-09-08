@@ -36,6 +36,8 @@ namespace SentinelFM
 
         protected SentinelFMSession sn = null;
         VLF.DAS.Logic.LandmarkPointSetManager landPointMgr;
+
+        public bool isShowControl = true;
         
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,6 +46,12 @@ namespace SentinelFM
             landPointMgr = new VLF.DAS.Logic.LandmarkPointSetManager(sConnectionString);
             
             string FormName = Request.QueryString["FormName"];
+            string isSC = Request.QueryString["ShowControl"];
+            if (!string.IsNullOrEmpty(isSC))
+            {
+                bool.TryParse(isSC, out isShowControl);
+            }
+
             if (!string.IsNullOrEmpty(FormName))
             {
                 if (FormName == "Landmark")

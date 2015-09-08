@@ -27,10 +27,6 @@ namespace SentinelFM
         public string errresValidStartDate = string.Empty;
         public string errresFillEndDate = string.Empty;
         public string errdateValidatorResource1 = string.Empty;
-        public string errEmailLengthValidatorResource1 = string.Empty;       
-        public string errEmailValidatoreWithEmailTextResource1 = string.Empty;
-        public string errInvalidEmailTextResource1 = string.Empty;
-        public string errValidEmailValidatoreResource1 = string.Empty;
         public string ContentWidth = "280";
         public string WindowWidth = "500";
         protected void Page_Load(object sender, EventArgs e)
@@ -97,22 +93,18 @@ namespace SentinelFM
 
             }
 
-
+            
             try //For date client validation
             {
                 Hours = (-sn.User.TimeZone - sn.User.DayLightSaving).ToString();
             }
             catch (Exception ex)
             { }
-            // cvDate.ValidationGroup = "vgSchedule";
+           // cvDate.ValidationGroup = "vgSchedule";
             errresFillStartDate = this.GetLocalResourceObject("resFillStartDate").ToString();
             errresValidStartDate = this.GetLocalResourceObject("resValidStartDate").ToString();
             errresFillEndDate = this.GetLocalResourceObject("resFillEndDate").ToString();
             errdateValidatorResource1 = this.GetLocalResourceObject("dateValidatorResource1").ToString();
-            errEmailLengthValidatorResource1 = this.GetLocalResourceObject("emailLengthValidatorResource1").ToString();           
-            errEmailValidatoreWithEmailTextResource1 = this.GetLocalResourceObject("emailValidatoreWithEmailTextResource1").ToString();
-            errInvalidEmailTextResource1 = this.GetLocalResourceObject("InvalidEmailTextResource1").ToString();
-            errValidEmailValidatoreResource1 = this.GetLocalResourceObject("validEmailValidatoreResource1").ToString();
 
         }
 
@@ -256,15 +248,15 @@ namespace SentinelFM
 
         protected void btnOneTimeReport_Click(object sender, EventArgs e)
         {
-            ClientScript.RegisterStartupScript(Page.GetType(), "mykey", "returnToParent('1');", true);
-            return;
+                ClientScript.RegisterStartupScript(Page.GetType(), "mykey", "returnToParent('1');", true);
+                return;
         }
 
         protected void btnMyReport_Click(object sender, EventArgs e)
         {
             sn.Report.XmlDOC = clsAsynGenerateReport.MakePair("ReportName", txtMyReportName.Text.Trim()) + clsAsynGenerateReport.MakePair("ReportDescription", txtMyReportDesc.Text.Trim());
-            ClientScript.RegisterStartupScript(Page.GetType(), "mykey", "returnToParent('3');", true);
-            return;
+                ClientScript.RegisterStartupScript(Page.GetType(), "mykey", "returnToParent('3');", true);
+                return;
         }
         /// <summary>
         /// Select delivery method
@@ -317,7 +309,7 @@ namespace SentinelFM
             if (date < System.DateTime.Now)
             {
                 lblDateValidation.Text = this.GetLocalResourceObject("resValidStartDate").ToString();// "Start Report Life time should be greater that current date/time";
-                txtFrom.SelectedDate = null;
+                txtFrom.SelectedDate  = null;
                 txtFrom.Focus();
                 return false;
             }
@@ -364,19 +356,13 @@ namespace SentinelFM
                 txtEmail.Enabled = false;
                 txtEmail.Visible = false;
                 lblEmail.Visible = false;
-                EmailSuggestions.Visible = false;
-                //lblSuggestionMultipleEmail.Visible = false;
-                //lblSuggestionEmailLength.Visible = false;
             }
             else
             {
                 txtEmail.Enabled = true;
                 lblEmail.Visible = true;
                 txtEmail.Visible = true;
-                EmailSuggestions.Visible = true;
-               // lblSuggestionMultipleEmail.Visible = true;
-               // lblSuggestionEmailLength.Visible = true;
             }
         }
-    }
+}
 }

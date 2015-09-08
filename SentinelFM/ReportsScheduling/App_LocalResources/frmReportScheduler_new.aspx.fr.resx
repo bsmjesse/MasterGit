@@ -714,13 +714,25 @@
   <data name="rvMyReportNameResource1.ErrorMessage" xml:space="preserve">
     <value>S'il vous plaît remplir mon nom de rapport</value>
   </data>
-  <data name="lblEmailLengthValidatorResource1.Text" xml:space="preserve">
+  <data name="emailLengthValidatorResource1.ErrorMessage" xml:space="preserve">
     <value>Texte de l'email ne doit pas dépasser 8000 caractères par</value>
   </data>
-  <data name="lblEmailLengthValidatorResource1.ToolTip" xml:space="preserve">
+  <data name="emailLengthValidatorResource1" xml:space="preserve">
+    <value>Texte de l'email ne doit pas dépasser 8000 caractères par</value>
+  </data>
+  <data name="emailLengthValidatorResource1.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="lblMultipleEmailValidatorResource1.ToolTip" xml:space="preserve">
+  <data name="emailLengthValidatorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="multipleEmailValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value>E-mail doivent être séparés par une virgule ( , ) ou point-virgule ( ; )</value>
+  </data>
+  <data name="multipleEmailValidatorResource1" xml:space="preserve">
+    <value>E-mail doivent être séparés par une virgule ( , ) ou point-virgule ( ; )</value>
+  </data>
+  <data name="multipleEmailValidatorResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="emailValidatoreWithEmailTextResource1" xml:space="preserve">
@@ -747,8 +759,8 @@
   <data name="InvalidEmailTextResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="lblMultipleEmailValidatorResource1.Text" xml:space="preserve">
-    <value>E-mail doivent être séparés par une virgule ( , ) ou point-virgule ( ; )</value>
+  <data name="multipleEmailValidatorResource1.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="validEmailValidatoreResource1" xml:space="preserve">
     <value>S'il vous plaît Entrez un email valide Id</value>
@@ -760,18 +772,6 @@
     <value />
   </data>
   <data name="validEmailValidatoreResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="emailLengthValidatorResource1" xml:space="preserve">
-    <value>Multiple email should be separated by comma (,) or semicolon (;) and Email text should not exceed by 8000 characters</value>
-  </data>
-  <data name="emailLengthValidatorResource1.ErrorMessage" xml:space="preserve">
-    <value>Multiple email should be separated by comma (,) or semicolon (;) and Email text should not exceed by 8000 characters</value>
-  </data>
-  <data name="emailLengthValidatorResource1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="emailLengthValidatorResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
 </root>

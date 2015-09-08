@@ -6,11 +6,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    
     <title></title>
-    <link href="../Reports/styles.css" rel="stylesheet" type="text/css" />    
-   
-    
+    <link href="../Reports/styles.css" rel="stylesheet" type="text/css" />
     </head>
 <body>
     <form id="form1" runat="server">
@@ -247,59 +244,30 @@
                                                 </tr>
                                                 <tr>
                                                     <td colspan="2">
-                                                        <table id="tblEmail" runat="server" >
+                                                        <table id="tblEmail" runat="server">
                                                             <tr>
                                                                 <td style="width: 100px">
                                                                     <asp:Label ID="lblEmail" runat="server" meta:resourcekey="lblEmailResource1" Text="Email:" CssClass="formtext"></asp:Label>
                                                                 </td>
-                                                                <td style="width: 660px;">
-                                                                    <asp:TextBox ID="txtEmail" runat="server" CssClass="formtext" Width="220px" meta:resourcekey="txtEmailResource1" ></asp:TextBox>
+                                                                <td style="width: 209px">
+                                                                    <asp:TextBox ID="txtEmail" runat="server" CssClass="formtext" Width="220px" meta:resourcekey="txtEmailResource1"></asp:TextBox>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td style="width: 276px;">
+                                                                <td style="width: 276px;" colspan="2">
                                                                     <asp:RequiredFieldValidator ID="reqEmailValidator" runat="server" Display ="None" ValidationGroup ="vgSchedule"  ErrorMessage="Please fill in e-mail address"
                                                                         ControlToValidate="txtEmail" CssClass="errortext" meta:resourcekey="reqEmailValidatorResource1"></asp:RequiredFieldValidator>
                                                                     <%--<asp:CustomValidator ID="cvEmail" Display ="None" ValidationGroup ="vgSchedule" runat="server" CssClass="errortext" 
                                                                         ErrorMessage="" EnableClientScript="true" ControlToValidate="txtEmail" ClientValidationFunction="validate" meta:resourcekey="reqEmailValidatorResource1"/>       --%>
-                                                                    <%--<asp:RegularExpressionValidator ID="emailValidator" runat="server" ControlToValidate="txtEmail" Display ="None" ValidationGroup ="vgSchedule"
+                                                                    <asp:RegularExpressionValidator ID="emailValidator" runat="server" ControlToValidate="txtEmail" Display ="None" ValidationGroup ="vgSchedule"
                                                                         CssClass="errortext" ErrorMessage="Please enter valid e-mail address" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*?(\s*[,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*?)*"
-                                                                        meta:resourcekey="emailValidatorResource1" ></asp:RegularExpressionValidator>--%>
-                                                                    <asp:CustomValidator ID="CustomValidator1" runat="server"  ClientValidationFunction="validateEmail" EnableClientScript="true" ValidationGroup = "vgSchedule" 
-                                                           ErrorMessage="" CssClass="formtext"/>
+                                                                        meta:resourcekey="emailValidatorResource1"></asp:RegularExpressionValidator>
                                                                         
                                                                 </td>
                                                             </tr>
                                                         </table>
                                                     </td>
                                                 </tr>
-
-                                                <tr>
-
-                                                    <td style="width: 100%" colspan="2">
-                                                        <div id="EmailSuggestions" runat="server" align="left">
-                                                            <ul style=" list-style-type:inherit; "   >
-                                                                <li style="color:blue; ">
-                                                         <asp:Label ID="lblSuggestionMultipleEmail" runat="server" meta:resourcekey="lblMultipleEmailValidatorResource1" Text="Multiple email should be separated by comma (,) or semicolon (;)." CssClass="formtext"
-                                                            Width="220px" ForeColor="Blue"  ></asp:Label>
-                                                                   
-                                                                    </li>
-                                                                <li style="color:blue">
-                                                                     <asp:Label ID="lblSuggestionEmailLength" runat="server" meta:resourcekey="lblEmailLengthValidatorResource1" Text=" Email text should not exceed by 8000 characters." CssClass="formtext"
-                                                            Width="220px" Visible="True" ForeColor ="blue"></asp:Label>
-                                                                    </li>
-                                                                </ul>
-
-                                                        </div>
-                                                        
-                                                        </td>
-                                                    </tr>
-                                                    <%--<tr>
-                                                    <td style="width: 100%" colspan="2">
-                                                        <asp:Label ID="lblSuggestionEmailLength" runat="server" meta:resourcekey="errEmailLengthValidatorResource1" Text=" Email text should not exceed by 8000 characters." CssClass="formtext"
-                                                            Width="277px" Visible="True" ForeColor ="blue"></asp:Label>
-                                                        </td>
-                                                    </tr>--%>
                                                 <tr>
                                                     <td style="width: 100%" colspan="2">
                                                         <asp:Label ID="lblNote" runat="server" meta:resourcekey="lblNoteResource1" Text="Note: Report will be delivered  within 4 hours after the scheduled time." CssClass="formtext"
@@ -638,54 +606,6 @@
                         alert(selected.value);
                     }
                     return;
-                }
-
-                function validateEmail(sender, args)
-                {                    
-                    var email = document.getElementById("txtEmail").value;
-                    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                    if (email.length != 0) {
-                    if (email.length > 8000)
-                    {
-                        args.IsValid = false;
-                        sender.errormessage = "<%= errEmailLengthValidatorResource1%>";                       
-                        return;
-                        
-                    }
-
-                   
-                        if (email.indexOf(';') > -1) {
-                            email = email.replace(/;/g, ",");
-                        }
-
-                        if (email.indexOf(',') > -1) {
-
-                            if (email != '') {
-                                result = email.split(',');
-
-                                for (var i = 0; i < result.length; i++) {
-                                    if (result[i] != '') {
-
-                                        if (!re.test(result[i])) {
-                                            args.IsValid = false;
-                                            sender.errormessage = "<%=errEmailValidatoreWithEmailTextResource1 %>" + " " + result[i] + " " + "<%= errInvalidEmailTextResource1 %>";
-                                            return;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        else {
-                            if (!re.test(email)) {
-                                args.IsValid = false;
-                                sender.errormessage =  "<%= errValidEmailValidatoreResource1%>";
-                                return;
-                            }
-                        }
-                    }
-                   
-                    
-                    
                 }
 
             </script>

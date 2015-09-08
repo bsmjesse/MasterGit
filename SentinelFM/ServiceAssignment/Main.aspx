@@ -540,6 +540,8 @@
                                 <option value="[ASSIGNED_FLEET]">Fleet Node Code</option>
 				                <option value="[FORMATTED_DATETIME]">Formatted Datetime</option>
 						<option value="[SERVICE_DURATION]">Event Duration</option>
+                                <option value="[PREVIOUS_STARTDATE]">Previous Start Time</option>
+								<option value="[IDLING_DURATION]">Idling Duration</option>
                             </select>
                         </div>
                     </td>
@@ -608,6 +610,8 @@
                                 <option value="[ASSIGNED_FLEET]">Fleet Node Code</option>
 				                <option value="[FORMATTED_DATETIME]">Formatted Datetime</option>                  
 						<option value="[SERVICE_DURATION]">Event Duration</option>
+                                <option value="[PREVIOUS_STARTDATE]">Previous Start Time</option>
+								<option value="[IDLING_DURATION]">Idling Duration</option>
                             </select>
                         </div>
                     </td>

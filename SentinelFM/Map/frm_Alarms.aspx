@@ -94,7 +94,6 @@
 
  <script language="javascript"> 
      
-     var timezone = '<%=TimeZoneVal %>';
      //rraj added for date time format issue
      var userDate ='<%=sn.User.DateFormat %>';
      var userTime ='<%=sn.User.TimeFormat %>';

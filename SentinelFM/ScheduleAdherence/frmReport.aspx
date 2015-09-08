@@ -73,8 +73,7 @@
         var DefaultRoute = "<%=DefaultRoute %>";
         var DefaultVehicle = "<%=DefaultVehicle %>";
         var DefaultStation = "<%=DefaultStation %>";
-        var userDate = '<%=sn.User.DateFormat %>';
-        var CusDateFormat = userDate;
+
    </script>
 </head>
 <body ng-controller="ReportCtrl" class="formtext">
@@ -133,17 +132,11 @@
             <th>Condition:</th>
             <td>Start Date:</td>
             <td style="width:150px">
-                <input type="text" id="StartDate" datepicker-popup="mediumDate" ng-model="StartDate" is-open="StartOpened"  />
-                <script>
-                    document.getElementById('StartDate').setAttribute("datepicker-popup", CusDateFormat);
-                    </script>
+                <input type="text" datepicker-popup="mediumDate" ng-model="StartDate" is-open="StartOpened"  />
             </td>
             <td>End Date:</td>
             <td colspan="5">
-                <input type="text"  id="EndDate" datepicker-popup="mediumDate" ng-model="EndDate" is-open="EndOpened"/>
-                 <script>
-                     document.getElementById('EndDate').setAttribute("datepicker-popup", CusDateFormat);
-                    </script>
+                <input type="text" datepicker-popup="mediumDate" ng-model="EndDate" is-open="EndOpened"/>
             </td>
         </tr>
         <tr>

@@ -15,7 +15,6 @@ Ext.onReady(function () {
     var DIAsoundPresent = false;
     var newPosition = 10;
     var statusColorString = '#00C000';
-    var TimeZone = timezone;
 
     Ext.define('Alarm', {
         extend: 'Ext.data.Model',
@@ -201,43 +200,31 @@ Ext.onReady(function () {
     };
 
     function updateStatus() {
-        var c , UTCDateTime,DateToDiplay;
         var currentTime = new Date();
-        var TimeZoneOffset = TimeZone;
-        
-        UTCDateTime = currentTime.getTime() + (currentTime.getTimezoneOffset() * 60000);       
-       
-        DateToDiplay = new Date(UTCDateTime + (3600000 * TimeZoneOffset));
         //        sprite.show(true);
         //        drawComponent.surface.setText(sprite, ' Checked alarms at : ' + currentTime);
-        
+        var c;
         if (userDateFormat == 'm/d/Y') {
-            c = s(DateToDiplay.getMonth() + 1) + '/' +
-            s(DateToDiplay.getDate()) + '/' +
-            DateToDiplay.getFullYear() + ' ' +
+            c = s(currentTime.getMonth() + 1) + '/' +
+            s(currentTime.getDate()) + '/' +
+            currentTime.getFullYear() + ' ' +
 
-            s(DateToDiplay.getHours()) + ':' +
-            s(DateToDiplay.getMinutes()) + ':' +
-            s(DateToDiplay.getSeconds());
+            s(currentTime.getHours()) + ':' +
+            s(currentTime.getMinutes()) + ':' +
+            s(currentTime.getSeconds());
         }
-        else {          
-            
+        else
+        {
+            c = s(currentTime.getDate()) + '/' +
+                        s(currentTime.getMonth() + 1) + '/' +
+                        currentTime.getFullYear() + ' ' +
 
-            c = s(DateToDiplay.getDate()) + '/' +
-                        s(DateToDiplay.getMonth() + 1) + '/' +
-                        DateToDiplay.getFullYear() + ' ' +
-
-                        s(DateToDiplay.getHours()) + ':' +
-                        s(DateToDiplay.getMinutes()) + ':' +
-                        s(DateToDiplay.getSeconds());         
-           
-           
-           
+                        s(currentTime.getHours()) + ':' +
+                        s(currentTime.getMinutes()) + ':' +
+                        s(currentTime.getSeconds());
         }
-        
         $('#lastalarmchecked').css('background-color', 'green').html(c);
         setTimeout(function () { $('#lastalarmchecked').css('background-color', 'white'); }, 500);
-     
 
         //    
         //         // Animate the circles across
@@ -260,8 +247,6 @@ Ext.onReady(function () {
         //            }
         //        });    
     }
-
-
 
 
     /**
@@ -290,13 +275,11 @@ Ext.onReady(function () {
                 resultSet = operation.getResultSet(),
                 records = operation.getRecords(),
                 successful = operation.wasSuccessful();
-          
 
             store.loading = false;
             soundPresent = false;
             TIAsoundPresent = false;
             DIAsoundPresent = false;
-
 
             if (operation.response.responseText.replace(/^\s+|\s+$/g, "") == "") {
                 updateStatus();
