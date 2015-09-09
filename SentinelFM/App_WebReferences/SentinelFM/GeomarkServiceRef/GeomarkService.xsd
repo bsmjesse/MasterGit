@@ -1,64 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://dev2:8080/GeomarkService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BsmLandmarkService" />
-  <xs:complexType name="ArrayOfKeyValueOfintArrayOfKeyValueOfstringstringty7Ep6D1">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Telogis.GeoBase" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Telogis.GeoBase" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.9.95/GeomarkService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="LatLon">
     <xs:annotation>
       <xs:appinfo>
-        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
       </xs:appinfo>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfintArrayOfKeyValueOfstringstringty7Ep6D1">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="Key" type="xs:int" />
-            <xs:element name="Value" nillable="true" type="tns:ArrayOfKeyValueOfstringstring" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
+      <xs:element name="_x" type="xs:unsignedInt" />
+      <xs:element name="_y" type="xs:unsignedInt" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfKeyValueOfintArrayOfKeyValueOfstringstringty7Ep6D1" nillable="true" type="tns:ArrayOfKeyValueOfintArrayOfKeyValueOfstringstringty7Ep6D1" />
-  <xs:complexType name="ArrayOfKeyValueOfstringstring">
-    <xs:annotation>
-      <xs:appinfo>
-        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
-      </xs:appinfo>
-    </xs:annotation>
+  <xs:element name="LatLon" nillable="true" type="tns:LatLon" />
+  <xs:complexType name="ArrayOfLatLon">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringstring">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="Key" nillable="true" type="xs:string" />
-            <xs:element name="Value" nillable="true" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LatLon" type="tns:LatLon" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfKeyValueOfstringstring" nillable="true" type="tns:ArrayOfKeyValueOfstringstring" />
-  <xs:complexType name="ArrayOfint">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="int" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfint" nillable="true" type="tns:ArrayOfint" />
-  <xs:complexType name="ArrayOfKeyValueOflongLandmarkInfoiOYzyKks">
-    <xs:annotation>
-      <xs:appinfo>
-        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongLandmarkInfoiOYzyKks">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="Key" type="xs:long" />
-            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BsmLandmarkService" name="Value" nillable="true" type="q1:LandmarkInfo" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfKeyValueOflongLandmarkInfoiOYzyKks" nillable="true" type="tns:ArrayOfKeyValueOflongLandmarkInfoiOYzyKks" />
+  <xs:element name="ArrayOfLatLon" nillable="true" type="tns:ArrayOfLatLon" />
 </xs:schema>

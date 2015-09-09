@@ -6,31 +6,30 @@
     <title></title> 
     <meta content="C#" name="CODE_LANGUAGE"/>
     <meta content="JavaScript" name="vs_defaultClientScript"/>
-     
-</head>
-<body style="margin-top: 0px; margin-left: 0px; margin-bottom:0px;  margin-right: 0px; width: 100%;">
     <script language="javascript" type="text/javascript">
 
-        function keepMeAlive(imgName) {
+       function keepMeAlive(imgName) {
             myImg = document.getElementById(imgName);
             if (myImg) myImg.src = myImg.src.replace(/\?.*$/, '?' + Math.random());
-        }
+       }
 
-        
-            function Contact() { 
-                var mypage='<%=strContactUs%>';
-		    var myname='ContactUs';
-		    var w=300;
-		    var h=200;
-		    var winl = (screen.width - w) / 2; 
-		    var wint = (screen.height - h) / 2;
-		    winprops = 'height=' + h + ',width=' + w + ',top=' + wint + ',left=' + winl + 'location=0,status=0,scrollbars=0,toolbar=0,menubar=0,';
-		    win = window.open(mypage, myname, winprops) 
-		    if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); } 
+        //window.setInterval("keepMeAlive('keepAliveIMG')", 100000); 
+
+	<!--
+		function Contact() { 
+			var mypage='<%=strContactUs%>';
+			var myname='ContactUs';
+			var w=300;
+			var h=200;
+			var winl = (screen.width - w) / 2; 
+			var wint = (screen.height - h) / 2;
+			winprops = 'height=' + h + ',width=' + w + ',top=' + wint + ',left=' + winl + 'location=0,status=0,scrollbars=0,toolbar=0,menubar=0,';
+			win = window.open(mypage, myname, winprops) 
+			if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); } 
 		} 
+	   //setTimeout('location.reload(true)','<%=sn.User.AlarmRefreshFrequency%>')
 
-
-        function downlandGuide() {
+       function downlandGuide() {
             var mypage = './Help/Guide de l\'usager Sentinel v.3.pdf';
             var myname = '';
             var w = 1000;
@@ -46,8 +45,10 @@
             window.top.location.href = '/gotomobile.aspx';
         }
 
-    
+	   //-->
     </script>     
+</head>
+<body style="margin-top: 0px; margin-left: 0px; margin-bottom:0px;  margin-right: 0px; width: 100%;">
     <form id="frmMenu" runat="server" method="post"  >
         <table border="0" class="hbg"  cellpadding="0" cellspacing="0"  style="width: 100%;">
             <tr>

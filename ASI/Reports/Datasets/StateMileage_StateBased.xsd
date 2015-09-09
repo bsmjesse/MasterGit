@@ -23,7 +23,6 @@
               <xs:element name="Mileage" type="xs:int" default="0" minOccurs="0" />
 			  <xs:element name="StateId" type="xs:int" default="0" minOccurs="0" />
 			  <xs:element name="Country" type="xs:string" minOccurs="0" />
-              <xs:element name="Fuel" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

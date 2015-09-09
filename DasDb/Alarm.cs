@@ -1170,6 +1170,59 @@ namespace VLF.DAS.DB
 			}
 			return sqlDataSet;
 		}
+
+        protected DataSet GetAlarmInfoByNew(string searchFieldName, int searchFieldValue)
+        {
+            DataSet sqlDataSet = null;
+            try
+            {
+                //Prepares SQL statement
+                string sql = "DECLARE @ResolveLandmark int SET @ResolveLandmark=0 SELECT vlfAlarm.AlarmId,vlfAlarm.DateTimeCreated,vlfAlarm.BoxId," +
+                            "vlfAlarm.AlarmType,vlfAlarm.AlarmLevel,vlfAlarm.DateTimeAck," +
+                            "vlfAlarm.DateTimeClosed,vlfAlarm.UserId," +
+                            "ISNULL(vlfAlarm.[Description],' ') AS AlarmDescription," +
+                            "ISNULL(vlfVehicleAssignment.LicensePlate,' ') AS LicensePlate," +
+                            "ISNULL(vlfVehicleAssignment.VehicleId,-1) AS VehicleId," +
+                            "ISNULL(CASE WHEN @ResolveLandmark=0 then vlfMsgInHst.StreetAddress ELSE CASE WHEN vlfMsgInHst.NearestLandmark IS NULL then vlfMsgInHst.StreetAddress ELSE vlfMsgInHst.NearestLandmark END END,'" + VLF.CLS.Def.Const.addressNA + "') AS StreetAddress," +
+                            "ISNULL(vlfMsgInHst.ValidGPS,1) AS ValidGPS," +
+                            "ISNULL(vlfVehicleInfo.Description,' ') as vehicleDescription," +
+                            "ISNULL(UserName,' ') AS UserName," +
+                    //"ISNULL(vlfMsgInHst.Latitude,0) AS Latitude,"+
+                    //"ISNULL(vlfMsgInHst.Longitude,0) AS Longitude,"+
+                            "ISNULL(vlfAlarm.Lat,0) AS Latitude," +
+                            "ISNULL(vlfAlarm.Long,0) AS Longitude," +
+                            "ISNULL(vlfMsgInHst.Speed,0) AS Speed," +
+                            "ISNULL(vlfMsgInHst.Heading,0) AS Heading," +
+                            "ISNULL(vlfMsgInHst.SensorMask,0) AS SensorMask," +
+                            "ISNULL(vlfMsgInHst.IsArmed,0) AS IsArmed," +
+                            "vlfAlarm.BoxId," +
+                            "ISNULL(vlfMsgInHst.CustomProp,' ') AS CustomProp," +
+                            "ISNULL(AlarmLandmarkID,' ') AS AlarmLandmarkID" +
+                            " FROM vlfAlarm LEFT JOIN vlfUser ON vlfAlarm.UserId=vlfUser.UserId" +
+                            " LEFT JOIN vlfVehicleAssignment ON vlfAlarm.BoxId=vlfVehicleAssignment.BoxId" +
+                            " LEFT JOIN vlfVehicleInfo ON vlfVehicleAssignment.VehicleId = vlfVehicleInfo.VehicleId" +
+                            " LEFT JOIN vlfMsgInHst with (nolock) ON vlfAlarm.BoxId=vlfMsgInHst.BoxId" +
+                            " AND vlfAlarm.DateTimeCreated=vlfMsgInHst.OriginDateTime" +
+                            " WHERE " + searchFieldName + "=" + searchFieldValue;
+                //Executes SQL statement
+                sqlDataSet = sqlExec.SQLExecuteDataset(sql);
+            }
+            catch (SqlException objException)
+            {
+                string prefixMsg = "Unable to retrieve info by " + searchFieldName + "=" + searchFieldValue + ". ";
+                Util.ProcessDbException(prefixMsg, objException);
+            }
+            catch (DASDbConnectionClosed exCnn)
+            {
+                throw new DASDbConnectionClosed(exCnn.Message);
+            }
+            catch (Exception objException)
+            {
+                string prefixMsg = "Unable to retrieve info by " + searchFieldName + "=" + searchFieldValue + ". ";
+                throw new DASException(prefixMsg + " " + objException.Message);
+            }
+            return sqlDataSet;
+        }
 		#endregion
 	}
 }

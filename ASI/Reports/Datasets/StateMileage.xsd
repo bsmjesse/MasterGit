@@ -3,37 +3,36 @@
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-        <Connections />
-        <Tables />
-        <Sources />
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="StateMileage" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="StateMileage" msprop:Generator_UserDSName="StateMileage">
+  <xs:element name="StateMileage" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="StateMileage" msprop:Generator_DataSetName="StateMileage">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="rpt_VehicleMileage" msprop:Generator_UserTableName="rpt_VehicleMileage" msprop:Generator_RowEvArgName="rpt_VehicleMileageRowChangeEvent" msprop:Generator_TableVarName="tablerpt_VehicleMileage" msprop:Generator_TablePropName="rpt_VehicleMileage" msprop:Generator_RowDeletingName="rpt_VehicleMileageRowDeleting" msprop:Generator_RowChangingName="rpt_VehicleMileageRowChanging" msprop:Generator_RowDeletedName="rpt_VehicleMileageRowDeleted" msprop:Generator_TableClassName="rpt_VehicleMileageDataTable" msprop:Generator_RowChangedName="rpt_VehicleMileageRowChanged" msprop:Generator_RowEvHandlerName="rpt_VehicleMileageRowChangeEventHandler" msprop:Generator_RowClassName="rpt_VehicleMileageRow">
+        <xs:element name="rpt_VehicleMileage" msprop:Generator_UserTableName="rpt_VehicleMileage" msprop:Generator_RowDeletedName="rpt_VehicleMileageRowDeleted" msprop:Generator_RowChangedName="rpt_VehicleMileageRowChanged" msprop:Generator_RowClassName="rpt_VehicleMileageRow" msprop:Generator_RowChangingName="rpt_VehicleMileageRowChanging" msprop:Generator_RowEvArgName="rpt_VehicleMileageRowChangeEvent" msprop:Generator_RowEvHandlerName="rpt_VehicleMileageRowChangeEventHandler" msprop:Generator_TableClassName="rpt_VehicleMileageDataTable" msprop:Generator_TableVarName="tablerpt_VehicleMileage" msprop:Generator_RowDeletingName="rpt_VehicleMileageRowDeleting" msprop:Generator_TablePropName="rpt_VehicleMileage">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="VehicleId" type="xs:int" minOccurs="0" />
-              <xs:element name="VehicleDescription" type="xs:string" minOccurs="0" />
-              <xs:element name="LicensePlate" type="xs:string" minOccurs="0" />
-              <xs:element name="State" type="xs:string" minOccurs="0" />
-              <xs:element name="Mileage" type="xs:int" minOccurs="0" />
-              <xs:element name="StartDateTime" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="EndDateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VehicleId"  type="xs:int" minOccurs="0" />
+              <xs:element name="VehicleDescription"  type="xs:string" minOccurs="0" />
+              <xs:element name="LicensePlate"  type="xs:string" minOccurs="0" />
+              <xs:element name="State"  type="xs:string" minOccurs="0" />
+              <xs:element name="Mileage"  type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="rpt_FleetMileage" msprop:Generator_UserTableName="rpt_FleetMileage" msprop:Generator_RowEvArgName="rpt_FleetMileageRowChangeEvent" msprop:Generator_TableVarName="tablerpt_FleetMileage" msprop:Generator_TablePropName="rpt_FleetMileage" msprop:Generator_RowDeletingName="rpt_FleetMileageRowDeleting" msprop:Generator_RowChangingName="rpt_FleetMileageRowChanging" msprop:Generator_RowDeletedName="rpt_FleetMileageRowDeleted" msprop:Generator_TableClassName="rpt_FleetMileageDataTable" msprop:Generator_RowChangedName="rpt_FleetMileageRowChanged" msprop:Generator_RowEvHandlerName="rpt_FleetMileageRowChangeEventHandler" msprop:Generator_RowClassName="rpt_FleetMileageRow">
+        <xs:element name="rpt_FleetMileage" msprop:Generator_UserTableName="rpt_FleetMileage" msprop:Generator_RowDeletedName="rpt_FleetMileageRowDeleted" msprop:Generator_RowChangedName="rpt_FleetMileageRowChanged" msprop:Generator_RowClassName="rpt_FleetMileageRow" msprop:Generator_RowChangingName="rpt_FleetMileageRowChanging" msprop:Generator_RowEvArgName="rpt_FleetMileageRowChangeEvent" msprop:Generator_RowEvHandlerName="rpt_FleetMileageRowChangeEventHandler" msprop:Generator_TableClassName="rpt_FleetMileageDataTable" msprop:Generator_TableVarName="tablerpt_FleetMileage" msprop:Generator_RowDeletingName="rpt_FleetMileageRowDeleting" msprop:Generator_TablePropName="rpt_FleetMileage">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Description" type="xs:string" minOccurs="0" />
-              <xs:element name="State" type="xs:string" default="" minOccurs="0" />
-              <xs:element name="Mileage" type="xs:int" default="0" minOccurs="0" />
-              <xs:element name="StartDateTime" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="EndDateTime" type="xs:dateTime" minOccurs="0" />
-            </xs:sequence>
+				<xs:element name="Description" type="xs:string" minOccurs="0" />
+				<xs:element name="State"  type="xs:string" default="" minOccurs="0" />
+				<xs:element name="Mileage" type="xs:int" default="0" minOccurs="0" />
+			</xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>

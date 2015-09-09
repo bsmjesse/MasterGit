@@ -3,3 +3,8 @@ C:\Builds\SentinelFM\Main\BIN\CLS.pdb
 C:\Builds\SentinelFM\Main\CLS\obj\Debug\CLS.csprojResolveAssemblyReference.cache
 C:\Builds\SentinelFM\Main\CLS\obj\Debug\CLS.dll
 C:\Builds\SentinelFM\Main\CLS\obj\Debug\CLS.pdb
+C:\Builds\SentinelFM\Master\CLS\obj\Debug\CLS.csprojResolveAssemblyReference.cache
+C:\Builds\SentinelFM\Master\CLS\obj\Debug\CLS.dll
+C:\Builds\SentinelFM\Master\CLS\obj\Debug\CLS.pdb
+C:\Builds\SentinelFM\Master\BIN\CLS.dll
+C:\Builds\SentinelFM\Master\BIN\CLS.pdb

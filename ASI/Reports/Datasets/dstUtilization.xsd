@@ -99,20 +99,6 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-
-        <xs:element name="rpt_FuelConsumption">
-          <xs:complexType>
-            <xs:sequence>
-              
-              <xs:element name="VehicleId" type="xs:integer" minOccurs="0" />
-              <xs:element name="BoxId" type="xs:integer" minOccurs="0" />
-              <xs:element name="FuelConsumedPTO" type="xs:float" minOccurs="0" />
-              <xs:element name="FuelConsumedIdling" type="xs:float" minOccurs="0" />
-              
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        
       </xs:choice>
     </xs:complexType>
   </xs:element>

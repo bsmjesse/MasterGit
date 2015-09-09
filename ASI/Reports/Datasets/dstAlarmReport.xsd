@@ -1,78 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="dstAlarmReport" targetNamespace="http://tempuri.org/dstAlarmReport.xsd" xmlns:mstns="http://tempuri.org/dstAlarmReport.xsd" xmlns="http://tempuri.org/dstAlarmReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
-  <xs:annotation>
-    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-        <Connections />
-        <Tables />
-        <Sources />
-      </DataSource>
-    </xs:appinfo>
-  </xs:annotation>
-  <xs:element name="dstAlarmReport" msdata:IsDataSet="true" msdata:Locale="en-US">
-    <xs:complexType>
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="rpt_AlarmReport">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="DateTimeCreated" type="xs:string" minOccurs="0" />
-              <xs:element name="AlarmType" type="xs:string" minOccurs="0" />
-              <xs:element name="AlarmSeverity" type="xs:integer" minOccurs="0" />
-              <xs:element name="AlarmSeverityName" type="xs:string" minOccurs="0" />
-              <xs:element name="Description" type="xs:string" minOccurs="0" />
-              <xs:element name="DateTimeAck" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="DateTimeClosed" type="xs:string" minOccurs="0" />
-              <xs:element name="BoxId" type="xs:integer" minOccurs="0" />
-              <xs:element name="OriginDateTime" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="BoxMsgInTypeName" type="xs:string" minOccurs="0" />
-              <xs:element name="StreetAddress" type="xs:string" minOccurs="0" />
-              <xs:element name="UserName" type="xs:string" minOccurs="0" />
-              <xs:element name="DriverLicense" type="xs:string" minOccurs="0" />
-              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
-              <xs:element name="LastName" type="xs:string" minOccurs="0" />
-              <xs:element name="VehicleId" type="xs:int" minOccurs="0" />
-              <xs:element name="AlarmTypeMsg" type="xs:string" minOccurs="0" />
-              <xs:element name="Notes" type="xs:string" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="rpt_VechicleInfo">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="LicensePlate" type="xs:string" minOccurs="0" />
-              <xs:element name="BoxId" type="xs:integer" minOccurs="0" />
-              <xs:element name="VehicleId" type="xs:integer" minOccurs="0" />
-              <xs:element name="VinNum" type="xs:string" minOccurs="0" />
-              <xs:element name="MakeModelId" type="xs:integer" minOccurs="0" />
-              <xs:element name="MakeName" type="xs:string" minOccurs="0" />
-              <xs:element name="ModelName" type="xs:string" minOccurs="0" />
-              <xs:element name="VehicleTypeName" type="xs:string" minOccurs="0" />
-              <xs:element name="StateProvince" type="xs:string" minOccurs="0" />
-              <xs:element name="ModelYear" type="xs:integer" minOccurs="0" />
-              <xs:element name="Color" type="xs:string" minOccurs="0" />
-              <xs:element name="Description" type="xs:string" minOccurs="0" />
-              <xs:element name="CostPerMile" type="xs:float" minOccurs="0" />
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="dstAlarmReport" targetNamespace="http://tempuri.org/dstAlarmReport.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/dstAlarmReport.xsd" xmlns:mstns="http://tempuri.org/dstAlarmReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="dstAlarmReport" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="rpt_AlarmReport">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DateTimeCreated" type="xs:dateTime" minOccurs="0" />
+							<xs:element name="AlarmType" type="xs:string" minOccurs="0" />
+							<xs:element name="AlarmSeverity" type="xs:integer" minOccurs="0" />
+							<xs:element name="AlarmSeverityName" type="xs:string" minOccurs="0" />
+							<xs:element name="Description" type="xs:string" minOccurs="0" />
+							<xs:element name="DateTimeAck" type="xs:dateTime" minOccurs="0" />
+							<xs:element name="DateTimeClosed" type="xs:dateTime" minOccurs="0" />
+							<xs:element name="BoxId" type="xs:integer" minOccurs="0" />
+							<xs:element name="OriginDateTime" type="xs:dateTime" minOccurs="0" />
+							<xs:element name="BoxMsgInTypeName" type="xs:string" minOccurs="0" />
+							<xs:element name="StreetAddress" type="xs:string" minOccurs="0" />
+							<xs:element name="UserName" type="xs:string" minOccurs="0" />
+							<xs:element name="DriverLicense" type="xs:string" minOccurs="0" />
+							<xs:element name="FirstName" type="xs:string" minOccurs="0" />
+							<xs:element name="LastName" type="xs:string" minOccurs="0" />
+							<xs:element name="VehicleId" type="xs:int" minOccurs="0" />
+							<xs:element name="AlarmTypeMsg" type="xs:string" minOccurs="0" />
+
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="rpt_VechicleInfo">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LicensePlate" type="xs:string" minOccurs="0" />
+							<xs:element name="BoxId" type="xs:integer" minOccurs="0" />
+							<xs:element name="VehicleId" type="xs:integer" minOccurs="0" />
+							<xs:element name="VinNum" type="xs:string" minOccurs="0" />
+							<xs:element name="MakeModelId" type="xs:integer" minOccurs="0" />
+							<xs:element name="MakeName" type="xs:string" minOccurs="0" />
+							<xs:element name="ModelName" type="xs:string" minOccurs="0" />
+							<xs:element name="VehicleTypeName" type="xs:string" minOccurs="0" />
+							<xs:element name="StateProvince" type="xs:string" minOccurs="0" />
+							<xs:element name="ModelYear" type="xs:integer" minOccurs="0" />
+							<xs:element name="Color" type="xs:string" minOccurs="0" />
+							<xs:element name="Description" type="xs:string" minOccurs="0" />
+							<xs:element name="CostPerMile" type="xs:float" minOccurs="0" />
               <xs:element name="Field1" type="xs:string" minOccurs="0" />
               <xs:element name="Field2" type="xs:string" minOccurs="0" />
               <xs:element name="Field3" type="xs:string" minOccurs="0" />
               <xs:element name="Field4" type="xs:string" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="rpt_DriverInfo">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="AssignedDateTime" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="PersonId" type="xs:string" minOccurs="0" />
-              <xs:element name="DriverLicense" type="xs:string" minOccurs="0" />
-              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
-              <xs:element name="LastName" type="xs:string" minOccurs="0" />
-              <xs:element name="Description" type="xs:string" minOccurs="0" />
-              <xs:element name="BoxId" type="xs:integer" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:choice>
-    </xs:complexType>
-  </xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="rpt_DriverInfo">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="AssignedDateTime" type="xs:dateTime" minOccurs="0" />
+							<xs:element name="PersonId" type="xs:string" minOccurs="0" />
+							<xs:element name="DriverLicense" type="xs:string" minOccurs="0" />
+							<xs:element name="FirstName" type="xs:string" minOccurs="0" />
+							<xs:element name="LastName" type="xs:string" minOccurs="0" />
+							<xs:element name="Description" type="xs:string" minOccurs="0" />
+							<xs:element name="BoxId" type="xs:integer" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>

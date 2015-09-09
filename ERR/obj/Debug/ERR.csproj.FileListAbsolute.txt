@@ -3,3 +3,7 @@ C:\Builds\SentinelFM\Main\BIN\ERR.pdb
 C:\Builds\SentinelFM\Main\ERR\obj\Debug\ERR.dll
 C:\Builds\SentinelFM\Main\ERR\obj\Debug\ERR.pdb
 C:\Builds\SentinelFM\Main\ERR\obj\Debug\ERR.csprojResolveAssemblyReference.cache
+C:\Builds\SentinelFM\Master\BIN\ERR.dll
+C:\Builds\SentinelFM\Master\BIN\ERR.pdb
+C:\Builds\SentinelFM\Master\ERR\obj\Debug\ERR.dll
+C:\Builds\SentinelFM\Master\ERR\obj\Debug\ERR.pdb

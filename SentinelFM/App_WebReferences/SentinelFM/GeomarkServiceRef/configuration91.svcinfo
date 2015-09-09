@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="D0BVB5u+TD9L69A2h0dmdfhqpsc=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="kgWsom9iJ7bt3U31CJhz5WzV9P8=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="httpbasic1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="httpbasic">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>httpbasic1</serializedValue>
+          <serializedValue>httpbasic</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -110,10 +110,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="httpws1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="httpws">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>httpws1</serializedValue>
+          <serializedValue>httpws</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -236,10 +236,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="httpws" contract="SentinelFM.GeomarkServiceRef.IGeomarkService" bindingType="wsHttpBinding" address="http://dev2:8080/GeomarkService.svc/httpbind" bindingConfiguration="httpws1">
+    <endpoint name="httpws" contract="SentinelFM.GeomarkServiceRef.IGeomarkService" bindingType="wsHttpBinding" address="http://192.168.9.95/GeomarkService.svc/httpbind" bindingConfiguration="httpws">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://dev2:8080/GeomarkService.svc/httpbind</serializedValue>
+          <serializedValue>http://192.168.9.95/GeomarkService.svc/httpbind</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -248,7 +248,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>httpws1</serializedValue>
+          <serializedValue>httpws</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>SentinelFM.GeomarkServiceRef.IGeomarkService</serializedValue>
@@ -321,10 +321,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="httpbasic" contract="SentinelFM.GeomarkServiceRef.IGeomarkService" bindingType="basicHttpBinding" address="http://dev2:8080/GeomarkService.svc/basicbind" bindingConfiguration="httpbasic1">
+    <endpoint name="httpbasic" contract="SentinelFM.GeomarkServiceRef.IGeomarkService" bindingType="basicHttpBinding" address="http://192.168.9.95/GeomarkService.svc/basicbind" bindingConfiguration="httpbasic">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://dev2:8080/GeomarkService.svc/basicbind</serializedValue>
+          <serializedValue>http://192.168.9.95/GeomarkService.svc/basicbind</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -333,7 +333,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>httpbasic1</serializedValue>
+          <serializedValue>httpbasic</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>SentinelFM.GeomarkServiceRef.IGeomarkService</serializedValue>

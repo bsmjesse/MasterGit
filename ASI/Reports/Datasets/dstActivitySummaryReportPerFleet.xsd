@@ -32,12 +32,7 @@
 				<xs:element name="FuelConsumed" type="xs:float" minOccurs="0" />
 				<xs:element name="MaxSpeed" type="xs:int" minOccurs="0" />
 				<xs:element name="StopMin" type="xs:int" minOccurs="0" />
-                <xs:element name="PTOFuel" type="xs:float" minOccurs="0" />
-                <xs:element name="IdlingFuel" type="xs:float" minOccurs="0" />
-                <xs:element name="factor" type="xs:float" minOccurs="0" />
-               
-                
-            </xs:sequence>
+			</xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>

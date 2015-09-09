@@ -8,3 +8,13 @@ C:\Builds\SentinelFM\Main\DasDb\obj\Debug\DasDb.csproj.GenerateResource.Cache
 C:\Builds\SentinelFM\Main\DasDb\obj\Debug\fr\DasDb.resources.dll
 C:\Builds\SentinelFM\Main\DasDb\obj\Debug\DasDb.dll
 C:\Builds\SentinelFM\Main\DasDb\obj\Debug\DasDb.pdb
+C:\Builds\SentinelFM\Master\BIN\DasDb.dll
+C:\Builds\SentinelFM\Master\BIN\DasDb.pdb
+C:\Builds\SentinelFM\Master\BIN\fr\DasDb.resources.dll
+C:\Builds\SentinelFM\Master\DasDb\obj\Debug\DasDb.csprojResolveAssemblyReference.cache
+C:\Builds\SentinelFM\Master\DasDb\obj\Debug\VLF.DAS.DB.Resources.Const.resources
+C:\Builds\SentinelFM\Master\DasDb\obj\Debug\VLF.DAS.DB.Resources.Const.fr.resources
+C:\Builds\SentinelFM\Master\DasDb\obj\Debug\DasDb.csproj.GenerateResource.Cache
+C:\Builds\SentinelFM\Master\DasDb\obj\Debug\fr\DasDb.resources.dll
+C:\Builds\SentinelFM\Master\DasDb\obj\Debug\DasDb.dll
+C:\Builds\SentinelFM\Master\DasDb\obj\Debug\DasDb.pdb

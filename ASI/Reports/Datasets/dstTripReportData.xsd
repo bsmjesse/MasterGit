@@ -3,9 +3,12 @@
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-        <Connections />
-        <Tables />
-        <Sources />
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
@@ -96,7 +99,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TripIndex" type="xs:integer" minOccurs="0" />
-              <xs:element name="Summary" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Summary" type="xs:string" minOccurs="0" />
               <xs:element name="Remarks" type="xs:string" minOccurs="0" />
               <xs:element name="BoxId" type="xs:integer" minOccurs="0" />
               <xs:element name="Latitude" type="xs:double" minOccurs="0" />
@@ -170,19 +173,19 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="rpt_TripFuel">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="TripIndex" type="xs:integer" minOccurs="0" />
-              <xs:element name="Summary" type="xs:float" minOccurs="0" />
-              <xs:element name="Remarks" type="xs:string" minOccurs="0" />
-              <xs:element name="BoxId" type="xs:integer" minOccurs="0" />
-              <xs:element name="Latitude" type="xs:double" minOccurs="0" />
-              <xs:element name="Longitude" type="xs:double" minOccurs="0" />
-              <xs:element name="VehicleId" type="xs:integer" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
+		 <xs:element name="rpt_TripFuel">
+			  <xs:complexType>
+				  <xs:sequence>
+					  <xs:element name="TripIndex" type="xs:integer" minOccurs="0" />
+					  <xs:element name="Summary" type="xs:float" minOccurs="0" />
+					  <xs:element name="Remarks" type="xs:string" minOccurs="0" />
+					  <xs:element name="BoxId" type="xs:integer" minOccurs="0" />
+					  <xs:element name="Latitude" type="xs:double" minOccurs="0" />
+					  <xs:element name="Longitude" type="xs:double" minOccurs="0" />
+					  <xs:element name="VehicleId" type="xs:integer" minOccurs="0" />
+				  </xs:sequence>
+			  </xs:complexType>
+		  </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

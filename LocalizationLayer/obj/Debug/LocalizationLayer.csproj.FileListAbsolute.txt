@@ -8,3 +8,13 @@ C:\Builds\SentinelFM\Main\LocalizationLayer\obj\Debug\LocalizationLayer.csproj.G
 C:\Builds\SentinelFM\Main\LocalizationLayer\obj\Debug\fr\LocalizationLayer.resources.dll
 C:\Builds\SentinelFM\Main\LocalizationLayer\obj\Debug\LocalizationLayer.dll
 C:\Builds\SentinelFM\Main\LocalizationLayer\obj\Debug\LocalizationLayer.pdb
+C:\Builds\SentinelFM\Master\BIN\LocalizationLayer.dll
+C:\Builds\SentinelFM\Master\BIN\LocalizationLayer.pdb
+C:\Builds\SentinelFM\Master\BIN\fr\LocalizationLayer.resources.dll
+C:\Builds\SentinelFM\Master\LocalizationLayer\obj\Debug\LocalizationLayer.csprojResolveAssemblyReference.cache
+C:\Builds\SentinelFM\Master\LocalizationLayer\obj\Debug\LocalizationLayer.Const.resources
+C:\Builds\SentinelFM\Master\LocalizationLayer\obj\Debug\LocalizationLayer.Const.fr.resources
+C:\Builds\SentinelFM\Master\LocalizationLayer\obj\Debug\LocalizationLayer.csproj.GenerateResource.Cache
+C:\Builds\SentinelFM\Master\LocalizationLayer\obj\Debug\fr\LocalizationLayer.resources.dll
+C:\Builds\SentinelFM\Master\LocalizationLayer\obj\Debug\LocalizationLayer.dll
+C:\Builds\SentinelFM\Master\LocalizationLayer\obj\Debug\LocalizationLayer.pdb

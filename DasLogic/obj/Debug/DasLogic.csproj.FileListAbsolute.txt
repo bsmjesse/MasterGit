@@ -3,3 +3,8 @@ C:\Builds\SentinelFM\Main\BIN\DasLogic.pdb
 C:\Builds\SentinelFM\Main\DasLogic\obj\Debug\DasLogic.csprojResolveAssemblyReference.cache
 C:\Builds\SentinelFM\Main\DasLogic\obj\Debug\DasLogic.dll
 C:\Builds\SentinelFM\Main\DasLogic\obj\Debug\DasLogic.pdb
+C:\Builds\SentinelFM\Master\BIN\DasLogic.dll
+C:\Builds\SentinelFM\Master\BIN\DasLogic.pdb
+C:\Builds\SentinelFM\Master\DasLogic\obj\Debug\DasLogic.csprojResolveAssemblyReference.cache
+C:\Builds\SentinelFM\Master\DasLogic\obj\Debug\DasLogic.dll
+C:\Builds\SentinelFM\Master\DasLogic\obj\Debug\DasLogic.pdb

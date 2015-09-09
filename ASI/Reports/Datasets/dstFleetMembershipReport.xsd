@@ -26,7 +26,6 @@
               <xs:element name="VehicleEmail" type="xs:string" minOccurs="0" />
               <xs:element name="FleetsByUser" type="xs:string" minOccurs="0" />
               <xs:element name="NotificationEmails4Vehicle" type="xs:string" minOccurs="0" />
-              <xs:element name="Comments" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
