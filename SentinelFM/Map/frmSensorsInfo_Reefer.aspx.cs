@@ -1362,7 +1362,7 @@ namespace SentinelFM
                             else
                             {
                                 //if (!CheckIfNumberic(this.txtTemp.Text))
-                                if (!CheckIfNumberic(this.txtbxcelsius.Text) || CheckIfNumberic(this.txtbxfahrenheit.Text))
+                                if (!CheckIfNumberic(this.txtbxcelsius.Text) || !CheckIfNumberic(this.txtbxfahrenheit.Text))
                                 {
                                     this.lblMessage.Visible = true;
                                     this.lblMessage.Text = "Invalid Temperature";

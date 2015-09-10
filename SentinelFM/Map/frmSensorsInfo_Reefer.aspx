@@ -18,7 +18,7 @@
             if (keyCode == 16) 
                 isShift = true; 
             
-            var isnumeric = ((keyCode >= 48 && keyCode <= 57 || keyCode == 8 ||
+            var isnumeric = ((keyCode >= 48 && keyCode <= 57 || keyCode == 8 || keyCode == 173 || keyCode == 189 || keyCode == 190 || keyCode == 110 ||
                   (keyCode >= 96 && keyCode <= 105)) && isShift == false);
             
             if (isnumeric == true)
