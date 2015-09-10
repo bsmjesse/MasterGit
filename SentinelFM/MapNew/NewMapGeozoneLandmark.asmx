@@ -54,10 +54,24 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
     {
         public int OperationState { get; set; }
         public string OperationStateDisplayText { get; set; }
+        public string name { get; set; }
         public string FleetName { get; set; }
         public int Percentage { get; set; }
         public string PercentageDisplayText { get; set; }
         public int NumberOfVehicles { get; set; }
+        public int y { get; set; }
+    }
+    
+    public class ManagerVehiclesAvailabilityModel
+    {
+        public string name {get; set;}
+        public int numAvailable {get;set;}
+        public int numUnavailable {get;set;}
+        public double percAvailable {get;set;}
+        public double percUnavailable {get;set;}
+        public int numTotal {get;set;}
+        public int x { get; set; }
+        public double y { get; set; }
     }
 
 
@@ -70,6 +84,9 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
 
         SentinelFMSession sn = (SentinelFMSession)Session["SentinelFMSession"];
         string fleetName = "";
+
+        clsUtility objUtil;
+        objUtil = new clsUtility(sn);
 
 
         try
@@ -90,7 +107,8 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
             {
                 FleetName = fleetName,
                 OperationState = 100,
-                OperationStateDisplayText = "Available"
+                OperationStateDisplayText = "Available",
+                name = "Available"
 
             };
 
@@ -98,25 +116,49 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
             {
                 FleetName = fleetName,
                 OperationState = 200,
-                OperationStateDisplayText = "Unavailable"
+                OperationStateDisplayText = "Unavailable",
+                name = "Unavailable"
             };
 
+            string xml = "";
 
-            DataTable oneDataTable = sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"];
-            int totalNumberOfRecords = oneDataTable.Rows.Count;
+            SentinelFM.ServerDBVehicle.DBVehicle dbv = new SentinelFM.ServerDBVehicle.DBVehicle();
+            if (objUtil.ErrCheck(dbv.GetVehicleAvailabilityByManagerForDashboard(sn.UserID, sn.User.OrganizationId, FleetId, sn.SecId, ref xml), false))
+                if (objUtil.ErrCheck(dbv.GetVehicleAvailabilityByManagerForDashboard(sn.UserID, sn.User.OrganizationId, FleetId, sn.SecId, ref xml), true))
+                {
+                    
+                }
 
-            int availableCount = oneDataTable.AsEnumerable()
-                   .Count(row => row.Field<int>("OperationalState") == 100);
+            if (xml != "")
+            {
+                DataSet dsAvailability = new DataSet();
+                
+                System.IO.StringReader strrXML = new System.IO.StringReader(xml);
+                string strPath = Server.MapPath("../Datasets/VehicleAvailabilityByManager.xsd");
+                dsAvailability.ReadXmlSchema(strPath);
+                dsAvailability.ReadXml(strrXML);
 
-            availablePieModel.NumberOfVehicles = availableCount;
-            availablePieModel.Percentage = (int) Math.Round( ((availableCount / (double)totalNumberOfRecords) * 100), 0);
-            unavailablePieModel.NumberOfVehicles = totalNumberOfRecords - availableCount;
-            unavailablePieModel.Percentage = 100 - availablePieModel.Percentage;
+                if (dsAvailability.Tables[0].Rows.Count > 0)
+                {
+                    int totalNumberOfRecords = dsAvailability.Tables[0].AsEnumerable()
+                           .Sum(x => x.Field<int>("Total"));
 
-            availablePieModel.PercentageDisplayText = string.Format("{0}%", availablePieModel.Percentage.ToString());
-            unavailablePieModel.PercentageDisplayText = string.Format("{0}%", unavailablePieModel.Percentage.ToString());
-            rvList.Add(availablePieModel);
-            rvList.Add(unavailablePieModel);
+                    int availableCount = dsAvailability.Tables[0].AsEnumerable()
+                           .Sum(x => x.Field<int>("NumberOfAvailable"));
+
+                    availablePieModel.NumberOfVehicles = availableCount;
+                    availablePieModel.y = availableCount;
+                    availablePieModel.Percentage = (int)Math.Round(((availableCount / (double)totalNumberOfRecords) * 100), 0);
+                    unavailablePieModel.NumberOfVehicles = totalNumberOfRecords - availableCount;
+                    unavailablePieModel.y = totalNumberOfRecords - availableCount;
+                    unavailablePieModel.Percentage = 100 - availablePieModel.Percentage;
+
+                    availablePieModel.PercentageDisplayText = string.Format("{0}%", availablePieModel.Percentage.ToString());
+                    unavailablePieModel.PercentageDisplayText = string.Format("{0}%", unavailablePieModel.Percentage.ToString());
+                    rvList.Add(availablePieModel);
+                    rvList.Add(unavailablePieModel);
+                }
+            }
         }
         catch (Exception Ex)
         {
@@ -134,67 +176,67 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
     [ScriptMethod(ResponseFormat = ResponseFormat.Xml, UseHttpGet = false, XmlSerializeString = false)]
     public XmlDocument GetManagerVehiclesAvailability(int FleetId)
     {
-        
+
         SentinelFMSession sn = (SentinelFMSession)Session["SentinelFMSession"];
+        clsUtility objUtil;
+        objUtil = new clsUtility(sn);
+        
         XmlDocument xmlDoc = new XmlDocument();
         DataSet ds = new DataSet("Fleet");
 
         try
         {
-            DataTable oneDataTable = sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].DefaultView.ToTable();
+            string xml = "";
 
-            var query = from row in oneDataTable.AsEnumerable()
-                        group row by row.Field<string>("ManagerName") into vs
-                        select new
-                        {
-                            ManagerName = vs.Key,
-                            NumAvailable = vs.Count(row => row.Field<int>("OperationalState") == 100),
-                            NumUnavailable = vs.Count(row => row.Field<int>("OperationalState") == 200),
-                            PercAvailable = vs.Count(row => row.Field<int>("OperationalState") == 100) * 1.0 / (vs.Count(row => (row.Field<int>("OperationalState") == 100 || row.Field<int>("OperationalState") == 200)) * 1.0) * 100,
-                            PercUnavailable = vs.Count(row => row.Field<int>("OperationalState") == 200) * 1.0 / (vs.Count(row => (row.Field<int>("OperationalState") == 100 || row.Field<int>("OperationalState") == 200)) * 1.0) * 100,
-                            NumTotal = vs.Count( row => ( row.Field<int>("OperationalState") == 100 || row.Field<int>("OperationalState") == 200))
-                        };
+            SentinelFM.ServerDBVehicle.DBVehicle dbv = new SentinelFM.ServerDBVehicle.DBVehicle();
+            if (objUtil.ErrCheck(dbv.GetVehicleAvailabilityByManagerForDashboard(sn.UserID, sn.User.OrganizationId, FleetId, sn.SecId, ref xml), false))
+                if (objUtil.ErrCheck(dbv.GetVehicleAvailabilityByManagerForDashboard(sn.UserID, sn.User.OrganizationId, FleetId, sn.SecId, ref xml), true))
+                {
+                    
+                }
 
-            //DataTable dt = ds.Tables.Add("ManagerVehiclesAvailability");
-            DataTable dt = new DataTable();
-            
-            dt.Columns.Add(new DataColumn("ManagerName", Type.GetType("System.String")));
-            dt.Columns.Add(new DataColumn("NumAvailable", Type.GetType("System.Int32")));
-            dt.Columns.Add(new DataColumn("NumUnavailable", Type.GetType("System.Int32")));
-            dt.Columns.Add(new DataColumn("PercAvailable", Type.GetType("System.Double")));
-            dt.Columns.Add(new DataColumn("PercUnavailable", Type.GetType("System.Double")));
-            dt.Columns.Add(new DataColumn("NumTotal", Type.GetType("System.Int32")));
-            
-            foreach (var vehicle in query)
+            if (xml != "")
             {
-                DataRow newRow = dt.NewRow();
+                DataSet dsAvailability = new DataSet();
 
-                newRow["ManagerName"] = string.IsNullOrEmpty(vehicle.ManagerName) ? "Unassigned" : vehicle.ManagerName;
-                newRow["NumAvailable"] = vehicle.NumAvailable;
-                newRow["NumUnavailable"] = vehicle.NumUnavailable;
-                newRow["PercAvailable"] = vehicle.PercAvailable;
-                newRow["PercUnavailable"] = vehicle.PercUnavailable;
-                newRow["NumTotal"] = vehicle.NumTotal;
+                System.IO.StringReader strrXML = new System.IO.StringReader(xml);
+                string strPath = Server.MapPath("../Datasets/VehicleAvailabilityByManager.xsd");
+                dsAvailability.ReadXmlSchema(strPath);
+                dsAvailability.ReadXml(strrXML);
 
-                dt.Rows.Add(newRow);
+                dsAvailability.Tables[0].Columns.Add(new DataColumn("PercAvailable", Type.GetType("System.Double")));
+                dsAvailability.Tables[0].Columns.Add(new DataColumn("PercUnavailable", Type.GetType("System.Double")));
+                
+                foreach (DataRow dr in dsAvailability.Tables[0].Rows)
+                {
+                    if (dr["ManagerName"].ToString().Trim() == "")
+                    {
+                        dr["ManagerName"] = "Unassigned";
+                    }
+                    dr["PercAvailable"] = (Convert.ToDouble(dr["NumberOfAvailable"]) / Convert.ToDouble(dr["Total"])) * 100d;
+                    dr["PercUnavailable"] = (Convert.ToDouble(dr["NumberOfUnavailable"]) / Convert.ToDouble(dr["Total"])) * 100d;
+                    dsAvailability.Tables[0].AcceptChanges();
+                }
+
+
+                DataView dv = dsAvailability.Tables[0].DefaultView;
+                dv.Sort = "ManagerName";
+                DataTable sortedTable = dv.ToTable();
+                sortedTable.TableName = "ManagerVehiclesAvailability";
+                ds.Tables.Add(sortedTable);
+
+                xmlDoc.LoadXml(ds.GetXml());
+
+                XmlNode newElem = xmlDoc.CreateNode("element", "totalCount", "");
+                newElem.InnerText = ds.Tables["ManagerVehiclesAvailability"].Rows.Count.ToString();
+                XmlElement root = xmlDoc.DocumentElement;
+                root.AppendChild(newElem);
+                
             }
-
-            DataView dv = dt.DefaultView;
-            dv.Sort = "ManagerName";
-            DataTable sortedTable = dv.ToTable();
-            sortedTable.TableName = "ManagerVehiclesAvailability";
-            ds.Tables.Add(sortedTable);
-
-            xmlDoc.LoadXml(ds.GetXml());
-
-            XmlNode newElem = xmlDoc.CreateNode("element", "totalCount", "");
-            newElem.InnerText = ds.Tables["ManagerVehiclesAvailability"].Rows.Count.ToString();
-            XmlElement root = xmlDoc.DocumentElement;
-            root.AppendChild(newElem);
-
-            return xmlDoc; 
             
-            
+            return xmlDoc;
+
+
         }
         catch (Exception Ex)
         {
@@ -203,10 +245,112 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                 Ex.Message.ToString() + " User ID: " + sn.UserID.ToString() + ", Fleet ID:" + FleetId.ToString() +
                 ", Method: GetManagerVehiclesAvailability() in NewMapGeozoneLandmark.asmx"));
             System.Diagnostics.StackTrace trace = new System.Diagnostics.StackTrace(Ex, true);
-            xmlDoc.LoadXml("<Fleet><ManagerVehiclesAvailability></ManagerVehiclesAvailability></Fleet>");            
+            xmlDoc.LoadXml("<Fleet><ManagerVehiclesAvailability></ManagerVehiclesAvailability></Fleet>");
             return xmlDoc;
         }
+
+    }
+
+    [WebMethod(EnableSession = true)]
+    [ScriptMethod(ResponseFormat = ResponseFormat.Json, UseHttpGet = false, XmlSerializeString = false)]
+    public string GetManagerVehiclesAvailabilityJSON(int FleetId)
+    {
+
+        SentinelFMSession sn = (SentinelFMSession)Session["SentinelFMSession"];
+        clsUtility objUtil;
+        objUtil = new clsUtility(sn);
         
+        XmlDocument xmlDoc = new XmlDocument();
+        DataSet ds = new DataSet("Fleet");
+
+        List<ManagerVehiclesAvailabilityModel> series1 = new List<ManagerVehiclesAvailabilityModel>();
+        List<ManagerVehiclesAvailabilityModel> series2 = new List<ManagerVehiclesAvailabilityModel>();
+        List<ManagerVehiclesAvailabilityModel> series3 = new List<ManagerVehiclesAvailabilityModel>();
+
+        Dictionary<string, List<ManagerVehiclesAvailabilityModel>> returnList = new Dictionary<string, List<ManagerVehiclesAvailabilityModel>>();
+
+        try
+        {
+            string xml = "";
+
+            SentinelFM.ServerDBVehicle.DBVehicle dbv = new SentinelFM.ServerDBVehicle.DBVehicle();
+            if (objUtil.ErrCheck(dbv.GetVehicleAvailabilityByManagerForDashboard(sn.UserID, sn.User.OrganizationId, FleetId, sn.SecId, ref xml), false))
+                if (objUtil.ErrCheck(dbv.GetVehicleAvailabilityByManagerForDashboard(sn.UserID, sn.User.OrganizationId, FleetId, sn.SecId, ref xml), true))
+                {
+                    
+                }
+
+            if (xml != "")
+            {
+                DataSet dsAvailability = new DataSet();
+
+                System.IO.StringReader strrXML = new System.IO.StringReader(xml);
+                string strPath = Server.MapPath("../Datasets/VehicleAvailabilityByManager.xsd");
+                dsAvailability.ReadXmlSchema(strPath);
+                dsAvailability.ReadXml(strrXML);
+
+                dsAvailability.Tables[0].Columns.Add(new DataColumn("PercAvailable", Type.GetType("System.Double")));
+                dsAvailability.Tables[0].Columns.Add(new DataColumn("PercUnavailable", Type.GetType("System.Double")));
+
+                foreach (DataRow dr in dsAvailability.Tables[0].Rows)
+                {
+                    if (dr["ManagerName"].ToString().Trim() == "")
+                    {
+                        dr["ManagerName"] = "Unassigned";
+                    }
+                    dr["PercAvailable"] = (Convert.ToDouble(dr["NumberOfAvailable"]) / Convert.ToDouble(dr["Total"])) * 100d;
+                    dr["PercUnavailable"] = (Convert.ToDouble(dr["NumberOfUnavailable"]) / Convert.ToDouble(dr["Total"])) * 100d;
+                    dsAvailability.Tables[0].AcceptChanges();
+                }
+
+
+                DataView dv = dsAvailability.Tables[0].DefaultView;
+                dv.Sort = "ManagerName";
+                DataTable sortedTable = dv.ToTable();
+
+                int x = 1;
+
+                foreach (DataRow dr in sortedTable.Rows)
+                {
+                    ManagerVehiclesAvailabilityModel mva = new ManagerVehiclesAvailabilityModel();
+                    mva.name = dr["ManagerName"].ToString().Trim();
+                    mva.numAvailable = Convert.ToInt32(dr["NumberOfAvailable"]);
+                    mva.numUnavailable = Convert.ToInt32(dr["NumberOfUnavailable"]);
+                    mva.percAvailable = Convert.ToDouble(dr["PercAvailable"]);
+                    mva.percUnavailable = Convert.ToDouble(dr["PercUnavailable"]);
+                    mva.numTotal = Convert.ToInt32(dr["Total"]);
+                    mva.x = x;
+                    mva.y = mva.percAvailable;
+
+                    x++;
+
+                    if (mva.percAvailable >= 90)
+                        series1.Add(mva);
+                    else if (mva.percAvailable < 90 && mva.percAvailable >= 75)
+                        series2.Add(mva);
+                    else
+                        series3.Add(mva);
+
+                }
+
+                returnList.Add("series1", series1);
+                returnList.Add("series2", series2);
+                returnList.Add("series3", series3);
+            }
+
+        }
+        catch (Exception Ex)
+        {
+            System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError,
+                VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error,
+                Ex.Message.ToString() + " User ID: " + sn.UserID.ToString() + ", Fleet ID:" + FleetId.ToString() +
+                ", Method: GetManagerVehiclesAvailability() in NewMapGeozoneLandmark.asmx"));
+            System.Diagnostics.StackTrace trace = new System.Diagnostics.StackTrace(Ex, true);            
+        }
+
+        JavaScriptSerializer js = new JavaScriptSerializer();
+        js.MaxJsonLength = int.MaxValue;
+        return js.Serialize(returnList);         
     }
     
 
@@ -902,7 +1046,7 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
         int result = 0;
         _results _r = new _results();
         int landmarkid = 0;
-        
+
         if (sn == null || sn.User == null || String.IsNullOrEmpty(sn.UserName) || sn.UserID <= 0)
         {
             _r.status = 500;
@@ -945,9 +1089,9 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
         //if ((sn.User.UserGroupId == 1 || sn.User.UserGroupId == 2 || sn.User.UserGroupId == 7 || sn.UserID == 11967) && (sn.User.OrganizationId == 480 || sn.User.OrganizationId == 952 || sn.User.OrganizationId == 999952 || sn.User.OrganizationId == 999954)) //Hgi and Security Administrator user 
         if (sn.User.ControlEnable(sn, 102))
         {
-            enableTimer = true;            
+            enableTimer = true;
         }
-        
+
         string pointSets = HttpUtility.HtmlDecode(HttpContext.Current.Request["pointSets"]);
         string centerPoint = HttpUtility.HtmlDecode(HttpContext.Current.Request["centerPoint"]);
 
@@ -961,7 +1105,7 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
             //landPointMgr = new VLF.DAS.Logic.LandmarkPointSetManager(sConnectionString);
             patchLandPointMgr = new VLF.PATCH.Logic.PatchLandmarkPointSet(sConnectionString);
             _patchServices = new VLF.PATCH.Logic.PatchServices(sConnectionString);
-            
+
             string oldLandmarkName = HttpUtility.HtmlDecode(HttpContext.Current.Request["oldLandmarkName"]);
             string landmarkName = HttpUtility.HtmlDecode(HttpContext.Current.Request["txtLandmarkName"]);
             string txtX = HttpUtility.HtmlDecode(HttpContext.Current.Request["txtX"]);
@@ -1005,8 +1149,8 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                 return new JavaScriptSerializer().Serialize(_r);
             }
 
-            if (radius > 0) 
-                pointSets = string.Empty;            
+            if (radius > 0)
+                pointSets = string.Empty;
 
             try
             {
@@ -1027,7 +1171,7 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                                  );
 
                     result = _dbu.RecordUserAction("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Add", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + landmarkName + " Added By: " + sn.LoginUserID);
-                  
+
                 }
                 else
                 {
@@ -1044,7 +1188,7 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                         landmarkid = patchLandPointMgr.PatchGetLandmarkIdByLandmarkName(sn.User.OrganizationId, landmarkName);
 
                         result = _dbu.RecordInitialValues("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Edit", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + txtLandmarkDesc + " Updated By: " + sn.LoginUserID);
-                        
+
                         patchLandPointMgr.PatchVlfLandmarkMetaData_Update(sn.User.OrganizationId, oldLandmarkName,
                                 landmarkName,
                                 Convert.ToDouble(txtY), Convert.ToDouble(txtX),
@@ -1066,7 +1210,7 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                         landmarkid = patchLandPointMgr.PatchGetLandmarkIdByLandmarkName(sn.User.OrganizationId, landmarkName);
 
                         result = _dbu.RecordInitialValues("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Edit", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + txtLandmarkDesc + " Updated By: " + sn.LoginUserID);
-                        
+
                         patchLandPointMgr.PatchVlfLandmarkPointSet_Update(sn.User.OrganizationId, oldLandmarkName,
                                     landmarkName,
                                     Convert.ToDouble(txtY), Convert.ToDouble(txtX),
@@ -1080,17 +1224,17 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                                     pointSets, sn.UserID, isPublic
                                     );
 
-                        
+
                         result = _dbu.RecordUserAction("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Edit", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + landmarkName + " Updated By: " + sn.LoginUserID);
-                        
+
                     }
 
-                    
+
                     _patchServices.DeleteAssignmentByLandmarkId(sn.User.OrganizationId, landmarkid);
 
                     if (updatedAppliedServices.Trim() != string.Empty)
                     {
-                        
+
                         string[] servicelist = updatedAppliedServices.Trim().Split(new string[] { "==++==" }, StringSplitOptions.None);
                         string toadd = string.Empty;
                         foreach (string s in servicelist)
@@ -1110,7 +1254,7 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                                 }
 
                                 _patchServices.AssignServiceToLandmark(sn.User.OrganizationId, landmarkid, serviceid, recepients, subjects);
-                                
+
                             }
                         }
                     }
@@ -1138,7 +1282,7 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                 int landmarkId = _lankmark.GetLandmarkIdByLandmarkName(sn.User.OrganizationId, landmarkName);
                 if (landmarkId > 0)
                 {
-                    VLF.PATCH.Logic.PatchServices _ps = new VLF.PATCH.Logic.PatchServices(sConnectionString);   
+                    VLF.PATCH.Logic.PatchServices _ps = new VLF.PATCH.Logic.PatchServices(sConnectionString);
                     _ps.DeleteHardcodedCallTimerServices(sn.User.OrganizationId, landmarkId);
 
                     if (serviceConfigId > 0)
@@ -1295,16 +1439,16 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                     if (centerpoint.Trim() != "" && centerpoint.Split(',').Length > 1)
                     {
                         txtX = centerpoint.Split(',')[1];
-                        txtY = centerpoint.Split(',')[0];                        
+                        txtY = centerpoint.Split(',')[0];
                     }
-                    
+
                     try
                     {
                         _landmarkid = _landmark.GetLandmarkIdByLandmarkName(sn.User.OrganizationId, oid);
-                        
+
                         //check if landmark audit log already exists in the AuditLogs table
                         result = _dbu.RecordInitialValues("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + _landmarkid.ToString(), "Edit", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + txtLandmarkDesc + " Updated By: " + sn.LoginUserID);
-                        
+
                         landPointMgr.vlfLandmarkPointSet_Update_NewTZ(sn.User.OrganizationId, oid,
                                         oid,
                                         Convert.ToDouble(txtY), Convert.ToDouble(txtX),
@@ -1320,7 +1464,7 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
 
                         //update AuditLogs table with update
                         result = _dbu.RecordUserAction("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + _landmarkid.ToString(), "Edit", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + txtLandmarkDesc + " Updated By: " + sn.LoginUserID);
-                        
+
                         _r.status = 200;
                         _r.objectType = "Landmark";
                         sn.DsLandMarks = null;
@@ -1367,14 +1511,14 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                         txtY = centerpoint.Split(',')[0];
                         int.TryParse(newradius, out radius);
                     }
-                    
+
                     try
                     {
                         _landmarkid = _landmark.GetLandmarkIdByLandmarkName(sn.User.OrganizationId, txtLandmarkDesc);
-                        
+
                         //check if landmark audit log already exists in the AuditLogs table
                         result = _dbu.RecordInitialValues("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + _landmarkid.ToString(), "Edit", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + txtLandmarkDesc + " Updated By: " + sn.LoginUserID);
-                        
+
                         landPointMgr.vlfLandmarkPointSet_Update_NewTZ(sn.User.OrganizationId, oid,
                                         oid,
                                         Convert.ToDouble(txtY), Convert.ToDouble(txtX),
@@ -1390,10 +1534,10 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
 
                         //update AuditLogs table with update
                         result = _dbu.RecordUserAction("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + _landmarkid.ToString(), "Edit", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + txtLandmarkDesc + " Updated By: " + sn.LoginUserID);
-                        
+
                         _r.status = 200;
                         _r.objectType = "Landmark";
-                        sn.DsLandMarks = null;    
+                        sn.DsLandMarks = null;
                     }
                     catch (Exception ex)
                     {
@@ -1678,7 +1822,7 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                 else
                 {
                     _r.status = 500;
-                }
+                }                
 
                 int result = _dbu.RecordUserAction("Landmark", sn.LoginUserID, sn.User.OrganizationId, "vlfLandmark", "LandmarkId=" + landmarkid.ToString(), "Delete", this.Context.Request.UserHostAddress, "MapNew/NewMapGeozoneLandmark.asmx", "Landmark " + oid + "; Deleted By: " + sn.LoginUserID);                
                 _r.message = "Sucessfully deleted the landmark.";
