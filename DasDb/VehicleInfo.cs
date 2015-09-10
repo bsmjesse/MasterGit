@@ -167,6 +167,39 @@ namespace VLF.DAS.DB
             return resultSet;
         }
 
+        public DataSet GetVehicleAvailabilityByManagerForDashboard(int userId, int orgId, int fleetId)
+        {
+            DataSet resultSet = null;
+            string prefixMsg = "";
+            try
+            {
+
+                prefixMsg = "GetVehicleAvailabilityByManagerForDashboard->Unable to get info for userid  = " + userId.ToString() + ". ";
+                SqlParameter[] sqlParams = new SqlParameter[3];
+                sqlParams[0] = new SqlParameter("@OrganizationId", orgId);
+                sqlParams[1] = new SqlParameter("@UserId", userId);
+                sqlParams[2] = new SqlParameter("@FleetId", fleetId);
+
+                // SQL statement
+                string sql = "[GetVehicleAvailabilityByManagerForDashboard]";
+                //Executes SQL statement
+                resultSet = sqlExec.SPExecuteDataset(sql, sqlParams);
+
+            }
+            catch (SqlException objException)
+            {
+                Util.ProcessDbException(prefixMsg, objException);
+            }
+            catch (DASDbConnectionClosed exCnn)
+            {
+                throw new DASDbConnectionClosed(exCnn.Message);
+            }
+            catch (Exception objException)
+            {
+                throw new DASException(prefixMsg + " " + objException.Message);
+            }
+            return resultSet;
+        }
 
         // Changes for TimeZone Feature start
         /// <summary>

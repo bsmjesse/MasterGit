@@ -1138,6 +1138,25 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetVehicleAvailabilityByManagerForDashboard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleAvailabilityByManagerForDashboardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleAvailabilityByManagerForDashboardResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetVehicleDeviceStatuses">
         <s:complexType>
           <s:sequence>
@@ -3008,6 +3027,12 @@
   <wsdl:message name="GetPostedSpeedServiceConfigurationSoapOut">
     <wsdl:part name="parameters" element="tns:GetPostedSpeedServiceConfigurationResponse" />
   </wsdl:message>
+  <wsdl:message name="GetVehicleAvailabilityByManagerForDashboardSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleAvailabilityByManagerForDashboard" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAvailabilityByManagerForDashboardSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleAvailabilityByManagerForDashboardResponse" />
+  </wsdl:message>
   <wsdl:message name="GetVehicleDeviceStatusesSoapIn">
     <wsdl:part name="parameters" element="tns:GetVehicleDeviceStatuses" />
   </wsdl:message>
@@ -3760,6 +3785,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns ServiceConfigId and ServiceName (PostSpeedOver*).</wsdl:documentation>
       <wsdl:input message="tns:GetPostedSpeedServiceConfigurationSoapIn" />
       <wsdl:output message="tns:GetPostedSpeedServiceConfigurationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAvailabilityByManagerForDashboard">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Vehicle Availability By Manager For Dashboard.</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleAvailabilityByManagerForDashboardSoapIn" />
+      <wsdl:output message="tns:GetVehicleAvailabilityByManagerForDashboardSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetVehicleDeviceStatuses">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles statuses. XML Format: [VehicleDeviceStatusID],[VehicleDeviceStatus]</wsdl:documentation>
@@ -4666,6 +4696,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetPostedSpeedServiceConfiguration">
       <soap:operation soapAction="http://www.sentinelfm.com/GetPostedSpeedServiceConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAvailabilityByManagerForDashboard">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleAvailabilityByManagerForDashboard" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -5884,6 +5923,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetPostedSpeedServiceConfiguration">
       <soap12:operation soapAction="http://www.sentinelfm.com/GetPostedSpeedServiceConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAvailabilityByManagerForDashboard">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleAvailabilityByManagerForDashboard" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
