@@ -5430,6 +5430,41 @@ namespace VLF.ASI.Interfaces
             }
         }
 
+        [WebMethod(Description = "Returns Vehicle Availability By Manager For Dashboard.")]
+        public int GetVehicleAvailabilityByManagerForDashboard(Int32 userId, Int32 orgId, Int32 fleetId, string SID, ref string xml)
+        {
+            DateTime dtNow = DateTime.Now;
+            try
+            {
+                Log(">> GetVehicleAvailabilityByManagerForDashboard(uId={0})", userId);
+
+                DataSet ds = new DataSet();
+                using (VLF.DAS.Logic.Vehicle vehicle = new VLF.DAS.Logic.Vehicle(LoginManager.GetConnnectionString(userId)))
+                {
+                    ds = vehicle.GetVehicleAvailabilityByManagerForDashboard(userId, orgId, fleetId);
+                }
+
+                if (!Util.IsDataSetValid(ds))
+                {
+                    xml = "";
+                    return (int)InterfaceError.NoError;
+                }
+                else
+                {
+                    xml = ds.GetXml();
+                }
+
+                LogFinal("<< GetVehicleAvailabilityByManagerForDashboard(uId={0}, tSpan={1})", userId, DateTime.Now.Subtract(dtNow).TotalMilliseconds);
+
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                LogException("<< GetVehicleAvailabilityByManagerForDashboard: uId={0}, EXC={1}, tSpan={2}", userId, Ex.Message, DateTime.Now.Subtract(dtNow).TotalMilliseconds);
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
+
         private bool ValidateUserPostedSpeedServiceConfiguration(int userId, string SID)
         {
             bool ret = false;

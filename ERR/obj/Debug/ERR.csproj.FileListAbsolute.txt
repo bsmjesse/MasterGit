@@ -7,3 +7,8 @@ C:\Builds\SentinelFM\Master\BIN\ERR.dll
 C:\Builds\SentinelFM\Master\BIN\ERR.pdb
 C:\Builds\SentinelFM\Master\ERR\obj\Debug\ERR.dll
 C:\Builds\SentinelFM\Master\ERR\obj\Debug\ERR.pdb
+C:\tfs\SentinelFM\HotFixes\BIN\ERR.dll
+C:\tfs\SentinelFM\HotFixes\BIN\ERR.pdb
+C:\tfs\SentinelFM\HotFixes\ERR\obj\Debug\ERR.csprojResolveAssemblyReference.cache
+C:\tfs\SentinelFM\HotFixes\ERR\obj\Debug\ERR.dll
+C:\tfs\SentinelFM\HotFixes\ERR\obj\Debug\ERR.pdb

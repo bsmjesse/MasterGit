@@ -260,7 +260,7 @@ namespace VLF.DAS.DB
 			try
 			{
 				// 1. Prepares SQL statement
-				string sql = "SELECT FleetId,FleetName,vlfOrganization.OrganizationId,vlfFleet.Description,OrganizationName FROM vlfOrganization,vlfFleet"+
+				string sql = "SELECT FleetId,FleetName,vlfOrganization.OrganizationId,vlfFleet.Description,OrganizationName, NodeCode FROM vlfOrganization,vlfFleet"+
 					" WHERE FleetId=" + fleetId +
 					" AND vlfFleet.OrganizationId=vlfOrganization.OrganizationId" +
 					" ORDER BY FleetName";

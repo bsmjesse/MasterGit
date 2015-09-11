@@ -2277,6 +2277,20 @@ namespace VLF.DAS.Logic
           return dsResult;
       }
 
+      public DataSet GetVehicleAvailabilityByManagerForDashboard(int userId, int orgId, int fleetId)
+      {
+          DataSet dsResult = vehicleInfo.GetVehicleAvailabilityByManagerForDashboard(userId, orgId, fleetId);
+          if (dsResult != null)
+          {
+              if (dsResult.Tables.Count > 0)
+              {
+                  dsResult.Tables[0].TableName = "ManagerVehiclesAvailability";
+              }
+              dsResult.DataSetName = "Fleet";
+          }
+          return dsResult;
+      }
+
       public DataSet GetServiceConfigurationsByLandmarkAndVehicle(int orgId, long vehicleId, long landmarkId)
       {
           DataSet dsResult = vehicleInfo.GetServiceConfigurationsByLandmarkAndVehicle(orgId, vehicleId, landmarkId);
@@ -2604,5 +2618,6 @@ namespace VLF.DAS.Logic
        {
            return vehicleInfo.UpdateVehicleDeviceStatus(VehicleDeviceStatusID, StatusDate, AuthorizationNo, VehicleId, UserId, Address, Latitude, Longitude); 
        }
+
    }
 }
