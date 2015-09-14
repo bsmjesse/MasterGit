@@ -8,3 +8,8 @@ C:\Builds\SentinelFM\Master\BIN\DasLogic.pdb
 C:\Builds\SentinelFM\Master\DasLogic\obj\Debug\DasLogic.csprojResolveAssemblyReference.cache
 C:\Builds\SentinelFM\Master\DasLogic\obj\Debug\DasLogic.dll
 C:\Builds\SentinelFM\Master\DasLogic\obj\Debug\DasLogic.pdb
+C:\tfs\SentinelFM\HotFixes\BIN\DasLogic.dll
+C:\tfs\SentinelFM\HotFixes\BIN\DasLogic.pdb
+C:\tfs\SentinelFM\HotFixes\DasLogic\obj\Debug\DasLogic.csprojResolveAssemblyReference.cache
+C:\tfs\SentinelFM\HotFixes\DasLogic\obj\Debug\DasLogic.dll
+C:\tfs\SentinelFM\HotFixes\DasLogic\obj\Debug\DasLogic.pdb
