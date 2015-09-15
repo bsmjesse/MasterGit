@@ -386,12 +386,20 @@ namespace SentinelFM
             string IpAddr = "";
             try
             {
-                if (HttpContext.Current.Request.UserHostAddress.Trim() != "")
-                    IpAddr = HttpContext.Current.Request.UserHostAddress.Trim();
-                else if (HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].Trim() != "")
-                    IpAddr = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].Trim();
-                else if (HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"].Trim() != "")
-                    IpAddr = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"].Trim();
+
+                var cfg = (System.Web.Configuration.CompilationSection)ConfigurationManager.GetSection("system.web/compilation");
+                if (cfg.Debug && Request.QueryString["ipTest"] != null)
+                    IpAddr = Request.QueryString["ipTest"];
+                else
+                { 
+                    if (HttpContext.Current.Request.UserHostAddress.Trim() != "")
+                        IpAddr = HttpContext.Current.Request.UserHostAddress.Trim();
+                    else if (HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].Trim() != "")
+                        IpAddr = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].Trim();
+                    else if (HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"].Trim() != "")
+                        IpAddr = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"].Trim();
+                }
+              
 
 
             }
