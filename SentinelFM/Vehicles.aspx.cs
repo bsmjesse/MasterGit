@@ -2047,6 +2047,7 @@ namespace SentinelFM
                     {
                         sortedTable = sortedTable.Select(" VehicleDeviceStatusID <> 3 ").CopyToDataTable();
                     }
+                    sortedTable = sortedTable.Select(" Latitude <> 0 AND Latitude <> 90 AND Latitude <> -90 ").CopyToDataTable();
                     sortedTable = getIcon(sortedTable);
                     DataView view = new System.Data.DataView(sortedTable);
                     sortedTable = view.ToTable("VehiclesLastKnownPositionInformation", false, "BoxId","OriginDateTime","Latitude","Longitude","Description","Driver","icon","ImagePath");

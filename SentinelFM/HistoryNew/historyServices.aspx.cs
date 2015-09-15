@@ -26,7 +26,7 @@ namespace SentinelFM
     {
         protected SentinelFMSession sn = null;
 
-        protected clsUtility objUtil;
+        protected clsUtility objUtil;        
 
         public string _xml = "";
 
@@ -39,11 +39,15 @@ namespace SentinelFM
 
         public bool MutipleUserHierarchyAssignment;
 
+        private string sConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
                 MutipleUserHierarchyAssignment = clsPermission.FeaturePermissionCheck(sn, "MutipleUserHierarchyAssignment");
+
+                sConnectionString = ConfigurationManager.ConnectionStrings["SentinelFMConnection"].ConnectionString;
 
                 sn = (SentinelFMSession)Session["SentinelFMSession"];
                 emptyCommMode = "<Box><BoxConfigInfo></BoxConfigInfo></Box>";
@@ -1486,6 +1490,8 @@ namespace SentinelFM
         }
         private void ProcessHistoryData(ref DataSet dsHistory)
         {
+            Dictionary<long, int> vehicleEngineHourOffset = new Dictionary<long, int>();
+
             bool ShowMultiColor = clsPermission.FeaturePermissionCheck(sn, "ShowMultiColor");
             DataSet dbtemp = null;
             if (ShowMultiColor)
@@ -1690,6 +1696,31 @@ namespace SentinelFM
                     + ";Air Temp:" + VLF.CLS.Util.PairFindValue("AirTemperature", tmpSpreaderData) + ";Road Temp:" + VLF.CLS.Util.PairFindValue("RoadTemperature", tmpSpreaderData) + ";Solid Rate Set Point:" + VLF.CLS.Util.PairFindValue("SolidRateSetpoint", tmpSpreaderData)
                     + ";Liquid Rate Set Point:" + VLF.CLS.Util.PairFindValue("LiquidRateSetpoint", tmpSpreaderData) + ";Spreading Width Set Point:" + VLF.CLS.Util.PairFindValue("SpreadingWidthSetpoint", tmpSpreaderData)
                     + ";Gate Position:" + VLF.CLS.Util.PairFindValue("GatePosition", tmpSpreaderData) + ";Solid Material:" + VLF.CLS.Util.PairFindValue("SolidMaterial", tmpSpreaderData) + ";Liquid Material:" + VLF.CLS.Util.PairFindValue("LiquidMaterial", tmpSpreaderData);
+                }
+
+                if (VLF.CLS.Util.PairFindValue("TERT", rowItem["CustomProp"].ToString().Trim()) != "")
+                {
+                    int tert = 0;
+                    int.TryParse(VLF.CLS.Util.PairFindValue("TERT", rowItem["CustomProp"].ToString().Trim()), out tert);
+
+                    long vehicleId = 0;
+                    long.TryParse(rowItem["VehicleId"].ToString(), out vehicleId);
+
+                    double engineHours = 0d;
+
+                    if (!vehicleEngineHourOffset.ContainsKey(vehicleId)) 
+                    {
+                        VLF.DAS.Logic.Vehicle _v = new VLF.DAS.Logic.Vehicle(sConnectionString);
+                        int _vehHrsEngineOffset = _v.GetVehicleEngineHourOffset(vehicleId);
+                        vehicleEngineHourOffset.Add(vehicleId, _vehHrsEngineOffset);
+                    }
+
+                    engineHours = (tert - vehicleEngineHourOffset[vehicleId]) / 3600.0d;
+
+                    if (engineHours >= 0)
+                    {
+                        rowItem["MsgDetails"] += (rowItem["MsgDetails"].ToString().Trim() == "" ? "" : "; ") + "Engine Hours: " + engineHours.ToString("N2");
+                    }
                 }
 
                 if (sn.User.UserGroupId == 1)

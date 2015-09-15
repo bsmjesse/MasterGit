@@ -2618,5 +2618,10 @@ namespace VLF.DAS.Logic
        {
            return vehicleInfo.UpdateVehicleDeviceStatus(VehicleDeviceStatusID, StatusDate, AuthorizationNo, VehicleId, UserId, Address, Latitude, Longitude); 
        }
+
+       public int GetVehicleEngineHourOffset(long vehicleId)
+       {
+           return vehicleInfo.GetVehicleEngineHourOffset(vehicleId);
+       }
    }
 }

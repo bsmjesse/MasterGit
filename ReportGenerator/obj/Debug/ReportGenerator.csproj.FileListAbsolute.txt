@@ -10,3 +10,9 @@ C:\Builds\SentinelFM\Master\BIN\ReportGenerator.xml
 C:\Builds\SentinelFM\Master\ReportGenerator\obj\Debug\ReportGenerator.csprojResolveAssemblyReference.cache
 C:\Builds\SentinelFM\Master\ReportGenerator\obj\Debug\ReportGenerator.dll
 C:\Builds\SentinelFM\Master\ReportGenerator\obj\Debug\ReportGenerator.pdb
+C:\tfs\SentinelFM\HotFixes\BIN\ReportGenerator.dll
+C:\tfs\SentinelFM\HotFixes\BIN\ReportGenerator.pdb
+C:\tfs\SentinelFM\HotFixes\BIN\ReportGenerator.xml
+C:\tfs\SentinelFM\HotFixes\ReportGenerator\obj\Debug\ReportGenerator.csprojResolveAssemblyReference.cache
+C:\tfs\SentinelFM\HotFixes\ReportGenerator\obj\Debug\ReportGenerator.dll
+C:\tfs\SentinelFM\HotFixes\ReportGenerator\obj\Debug\ReportGenerator.pdb
