@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstActivityInLandmark" targetNamespace="http://tempuri.org/dstLandmarksReport.xsd" xmlns:mstns="http://tempuri.org/dstLandmarksReport.xsd" xmlns="http://tempuri.org/dstLandmarksReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstActivityInLandmark" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Table">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BoxId" type="xs:int" minOccurs="0" />
+              <xs:element name="VehicleId" type="xs:int" minOccurs="0" />
+              <xs:element name="Description" type="xs:string" minOccurs="0" />
+              <xs:element name="LandmarkName" type="xs:string" minOccurs="0" />
+              <xs:element name="Start" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Finish" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ActivityId" type="xs:short" minOccurs="0" />
+              <xs:element name="ActivityName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

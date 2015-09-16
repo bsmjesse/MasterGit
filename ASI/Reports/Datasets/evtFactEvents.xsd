@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstActivitySummaryReportPerFleet" targetNamespace="http://tempuri.org/dstLandmarksReport.xsd" xmlns:mstns="http://tempuri.org/dstLandmarksReport.xsd" xmlns="http://tempuri.org/dstLandmarksReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstActivitySummaryReportPerFleet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dstActivitySummaryReportPerFleet" msprop:Generator_DataSetName="dstActivitySummaryReportPerFleet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="FactEvents" msprop:Generator_TableClassName="FactEventsDataTable" msprop:Generator_TableVarName="tableFactEvents" msprop:Generator_TablePropName="FactEvents" msprop:Generator_RowDeletingName="FactEventsRowDeleting" msprop:Generator_UserTableName="FactEvents" msprop:Generator_RowChangingName="FactEventsRowChanging" msprop:Generator_RowEvHandlerName="FactEventsRowChangeEventHandler" msprop:Generator_RowDeletedName="FactEventsRowDeleted" msprop:Generator_RowEvArgName="FactEventsRowChangeEvent" msprop:Generator_RowChangedName="FactEventsRowChanged" msprop:Generator_RowClassName="FactEventsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description" type="xs:string" minOccurs="0" />
+              <xs:element name="idling" msprop:Generator_ColumnVarNameInTable="columnidling" msprop:Generator_ColumnPropNameInRow="idling" msprop:Generator_ColumnPropNameInTable="idlingColumn" msprop:Generator_UserColumnName="idling" type="xs:double" minOccurs="0" />
+              <xs:element name="engine" msprop:Generator_ColumnVarNameInTable="columnengine" msprop:Generator_ColumnPropNameInRow="engine" msprop:Generator_ColumnPropNameInTable="engineColumn" msprop:Generator_UserColumnName="engine" type="xs:double" minOccurs="0" />
+              <xs:element name="perc" msprop:Generator_ColumnVarNameInTable="columnperc" msprop:Generator_ColumnPropNameInRow="perc" msprop:Generator_ColumnPropNameInTable="percColumn" msprop:Generator_UserColumnName="perc" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalIdling" msprop:Generator_ColumnVarNameInTable="columnTotalIdling" msprop:Generator_ColumnPropNameInRow="TotalIdling" msprop:Generator_ColumnPropNameInTable="TotalIdlingColumn" msprop:Generator_UserColumnName="TotalIdling" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalEngine" msprop:Generator_ColumnVarNameInTable="columnTotalEngine" msprop:Generator_ColumnPropNameInRow="TotalEngine" msprop:Generator_ColumnPropNameInTable="TotalEngineColumn" msprop:Generator_UserColumnName="TotalEngine" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalIdleFuel" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalFuel" type="xs:double" minOccurs="0" />
+              <xs:element name="idleFuel" type="xs:double" minOccurs="0" />
+              <xs:element name="fuel" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalPTOFuel" type="xs:double" minOccurs="0" />
+              <xs:element name="ptoFuel" type="xs:double" minOccurs="0" />
+              <xs:element name="pto" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalPTO" type="xs:double" minOccurs="0" />
+              <xs:element name="DriverName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
