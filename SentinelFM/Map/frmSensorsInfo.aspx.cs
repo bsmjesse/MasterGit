@@ -34,7 +34,7 @@ namespace SentinelFM
         private int boxModel;
         string sConnectionString = ConfigurationManager.ConnectionStrings["SentinelFMConnection"].ConnectionString;
         private Dictionary<string, string> wifiCmdDictionary = new Dictionary<string, string>();
-        private bool HideSendToSelectedFleet = false;
+      
 
 
         protected void Page_Load(object sender, System.EventArgs e)
@@ -43,7 +43,7 @@ namespace SentinelFM
             {
                 cboTARPeriod.Enabled = true;
                 this.boxModel = BoxProfileHelper.GetBoxMainBoardModelByBoxId(sn.Cmd.BoxId);
-                HideSendToSelectedFleet = clsPermission.FeaturePermissionCheck(sn, "HideSendToSelectedFleet");
+             
 
 
 
@@ -634,13 +634,8 @@ namespace SentinelFM
                         this.lblOdometer.Visible = false;
                         this.cboMesUnits.Visible = true;
                         this.lblUnit.Visible = false;
-                        if (HideSendToSelectedFleet)
-                        {
-                            chkSendToFleet.Enabled = false;
-                            chkSendToFleet.ForeColor = Color.Gray;
-
-                        }
-
+                        this.chkSendToFleet.Enabled = false;
+                        this.chkSendToFleet.ForeColor = Color.Gray;
                         break;
                     case (Int32)VLF.CLS.Def.Enums.CommandType.WiFiUpgrade:
                         this.tblWiFiUpgrade.Visible = true;
@@ -4252,12 +4247,9 @@ namespace SentinelFM
             chkSendToFleet.ForeColor = Color.Black;
             if (Convert.ToInt32(this.cboCommand.SelectedItem.Value) == 59)
             {
-                if (HideSendToSelectedFleet)
-                {
                     chkSendToFleet.Enabled = false;
                     chkSendToFleet.ForeColor = Color.Gray;
 
-                }
             }
         }
 

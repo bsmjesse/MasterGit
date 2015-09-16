@@ -82,13 +82,7 @@
     <Organization>951</Organization>
     <UserGroup>3</UserGroup>
     <User>3</User>
-  </Feature>
-  <Feature>
-    <Name>HideSendToSelectedFleet</Name>
-    <Organization>999700</Organization>
-    <UserGroup></UserGroup>
-    <User></User>
-  </Feature>
+  </Feature>  
   <Feature>
     <Name>EventIdForShowHideScheduleTime</Name>
     <Organization>999988,951</Organization>
