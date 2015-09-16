@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BoxGeozone" targetNamespace="http://tempuri.org/BoxGeozone.xsd" xmlns:mstns="http://tempuri.org/BoxGeozone.xsd" xmlns="http://tempuri.org/BoxGeozone.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BoxGeozone" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="BoxGeozone" msprop:Generator_UserDSName="BoxGeozone">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="rpt_BoxGeozone" msprop:Generator_TableClassName="rpt_BoxGeozoneDataTable" msprop:Generator_TableVarName="tablerpt_BoxGeozone" msprop:Generator_TablePropName="rpt_BoxGeozone" msprop:Generator_RowDeletingName="rpt_BoxGeozoneRowDeleting" msprop:Generator_RowChangingName="rpt_BoxGeozoneRowChanging" msprop:Generator_RowEvHandlerName="rpt_BoxGeozoneRowChangeEventHandler" msprop:Generator_RowDeletedName="rpt_BoxGeozoneRowDeleted" msprop:Generator_UserTableName="rpt_BoxGeozone" msprop:Generator_RowChangedName="rpt_BoxGeozoneRowChanged" msprop:Generator_RowEvArgName="rpt_BoxGeozoneRowChangeEvent" msprop:Generator_RowClassName="rpt_BoxGeozoneRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VehicleId" msdata:Caption="Description" msprop:Generator_ColumnVarNameInTable="columnVehicleId" msprop:Generator_ColumnPropNameInRow="VehicleId" msprop:Generator_ColumnPropNameInTable="VehicleIdColumn" msprop:Generator_UserColumnName="VehicleId" type="xs:long" minOccurs="0" />
+              <xs:element name="Description" msdata:Caption="State" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="BoxId" msdata:Caption="Mileage" msprop:Generator_ColumnVarNameInTable="columnBoxId" msprop:Generator_ColumnPropNameInRow="BoxId" msprop:Generator_ColumnPropNameInTable="BoxIdColumn" msprop:Generator_UserColumnName="BoxId" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="GeozoneNo" msdata:Caption="StartDateTime" msprop:Generator_ColumnVarNameInTable="columnGeozoneNo" msprop:Generator_ColumnPropNameInRow="GeozoneNo" msprop:Generator_ColumnPropNameInTable="GeozoneNoColumn" msprop:Generator_UserColumnName="GeozoneNo" type="xs:long" minOccurs="0" />
+              <xs:element name="GeozoneName" msdata:Caption="EndDateTime" msprop:Generator_ColumnVarNameInTable="columnGeozoneName" msprop:Generator_ColumnPropNameInRow="GeozoneName" msprop:Generator_ColumnPropNameInTable="GeozoneNameColumn" msprop:Generator_UserColumnName="GeozoneName" type="xs:string" minOccurs="0" />
+              <xs:element name="SyncDate" msprop:Generator_ColumnVarNameInTable="columnSyncDate" msprop:Generator_ColumnPropNameInRow="SyncDate" msprop:Generator_ColumnPropNameInTable="SyncDateColumn" msprop:Generator_UserColumnName="SyncDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
