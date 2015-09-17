@@ -144,6 +144,7 @@ namespace SentinelFM
         protected void dgOrganizations_SelectedIndexChanged(object sender, EventArgs e)
         {
             int LoginUserID = 0;
+            string IpAddr = String.Empty;
 
             try
             {
@@ -159,6 +160,18 @@ namespace SentinelFM
                 string Email = string.Empty;
                 bool isDisclaimer = false;
 
+                var cfg = (System.Web.Configuration.CompilationSection)ConfigurationManager.GetSection("system.web/compilation");
+                if (cfg.Debug && Request.QueryString["ipTest"] != null)
+                    IpAddr = Request.QueryString["ipTest"];
+                else
+                {
+                    if (HttpContext.Current.Request.UserHostAddress.Trim() != "")
+                        IpAddr = HttpContext.Current.Request.UserHostAddress.Trim();
+                    else if (HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].Trim() != "")
+                        IpAddr = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].Trim();
+                    else if (HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"].Trim() != "")
+                        IpAddr = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"].Trim();
+                }
 
                 Int32 organizationId = Convert.ToInt32(dgOrganizations.DataKeys[dgOrganizations.SelectedIndex]);
                 ServerDBOrganization.DBOrganization dbo = new ServerDBOrganization.DBOrganization();
@@ -170,9 +183,11 @@ namespace SentinelFM
                         return;
                     }
 
-                SecurityManager.SecurityManager sec = new SecurityManager.SecurityManager();
-                int errCode = sec.LoginMD5Extended("", userName, hashPassword, "", ref uid, ref secId, ref superOrganizationId, ref Email, ref isDisclaimer);
                 LoginUserID = Convert.ToInt32(Session["loginUserID"]);
+
+                SecurityManager.SecurityManager sec = new SecurityManager.SecurityManager();
+                int errCode = sec.LoginMD5ExtendedSuperUser(userName, hashPassword, IpAddr, LoginUserID, ref uid, ref secId, ref superOrganizationId, ref Email, ref isDisclaimer);
+                
                 SentinelFMSession sn = new SentinelFMSession();
                 Session.Remove("SentinelFMSession");
 
@@ -214,18 +229,12 @@ namespace SentinelFM
                     else { Response.Redirect("frmMain_Top.aspx"); }
                 }
                 else { Response.Redirect("frmMain_Top.aspx"); }
-
-                
-
-
-
             }
             catch (NullReferenceException Ex)
             {
                 System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.StackTrace.ToString()));
                 RedirectToLogin();
             }
-
             catch (Exception Ex)
             {
                 System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.Message.ToString() + " User:" + sn.UserID.ToString() + " Form:" + Page.GetType().Name));
