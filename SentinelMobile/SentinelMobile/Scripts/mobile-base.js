@@ -96,6 +96,7 @@ var init = function (onSelectFeatureFunction) {
                 //    name: "Bing Aerial + Labels",
                 //    transitionEffect: 'resize'
                 //}),
+                new OpenLayers.Layer.Navteq("Map View", "normal.day", "v5HljYEynPujgUUkNmny", "x14y1MmQaoSerjNQKGsABw"),
                 new OpenLayers.Layer.Google(
                       ResourceGoogleStreets,//"Google Streets",
                       {
