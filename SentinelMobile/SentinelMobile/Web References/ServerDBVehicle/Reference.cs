@@ -29,6 +29,74 @@ namespace SentinelMobile.ServerDBVehicle {
     [System.Web.Services.WebServiceBindingAttribute(Name="DBVehicleSoap", Namespace="http://www.sentinelfm.com")]
     public partial class DBVehicle : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback VehicleMaintenance_UpdateEngineHoursOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback VehicleMaintenance_GetInfoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetMDTInfoByTypeIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetDTCCodesDescriptionOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetBoxId4BBOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetVehicleExtraServiceHistoryByVehicleIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback VehicleExtraServiceHistory_Add_UpdateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetJ1708CodesVehicleFleetOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetBoxExtraInfoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetStateMileagePerVehicleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AddMdtOTAOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetPostedSpeedServiceConfigurationOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetAllUnassignedToVehicleGeozonesInfoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SetGeozoneSeverityOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback DeleteGeozoneFromVehicleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback DeleteGeozoneFromVehicleByVehicleIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AddGeozoneToVehicleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetMaxGeozonesByVehicleIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetCommInfoByBoxIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetBoxConfigInfoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetActiveVehicleCfgInfoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetLastCommunicationByBoxIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetLastBoxCommunicationInfoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetVehicleLastKnownPositionInfoByBoxIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UpdateBoxFeaturesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetBoxConfigFeaturesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetCommInfoByBoxAndFwChnlOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetDefaultCommInfoByFwChnlOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetLastControllerStatusFromHistoryByLicensePlateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetLastControllerStatusFromHistoryByBoxIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetLastTARModeFromHistoryByLicensePlateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetLastTARModeFromHistoryByBoxIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetLastKeyFobStatusFromHistoryByLicensePlateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetLastKeyFobStatusFromHistoryByBoxIdOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetLastVCROffDelayFromHistoryByLicensePlateOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetLastVCROffDelayFromHistoryByBoxIdOperationCompleted;
@@ -108,30 +176,6 @@ namespace SentinelMobile.ServerDBVehicle {
         private System.Threading.SendOrPostCallback VehicleMaintenancePlanHistory_GetAllOperationCompleted;
         
         private System.Threading.SendOrPostCallback VehicleOperationTypes_GetOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback VehicleMaintenance_UpdateEngineHoursOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback VehicleMaintenance_GetInfoOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetMDTInfoByTypeIdOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetDTCCodesDescriptionOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetBoxId4BBOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetVehicleExtraServiceHistoryByVehicleIdOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback VehicleExtraServiceHistory_Add_UpdateOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetJ1708CodesVehicleFleetOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetBoxExtraInfoOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetStateMileagePerVehicleOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback AddMdtOTAOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetPostedSpeedServiceConfigurationOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetVehicleInfoXMLOperationCompleted;
         
@@ -239,50 +283,6 @@ namespace SentinelMobile.ServerDBVehicle {
         
         private System.Threading.SendOrPostCallback GetAllAssignedGeozonesToVehicleOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetAllUnassignedToVehicleGeozonesInfoOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback SetGeozoneSeverityOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback DeleteGeozoneFromVehicleOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback DeleteGeozoneFromVehicleByVehicleIdOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback AddGeozoneToVehicleOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetMaxGeozonesByVehicleIdOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetCommInfoByBoxIdOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetBoxConfigInfoOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetActiveVehicleCfgInfoOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetLastCommunicationByBoxIdOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetLastBoxCommunicationInfoOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetVehicleLastKnownPositionInfoByBoxIdOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback UpdateBoxFeaturesOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetBoxConfigFeaturesOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetCommInfoByBoxAndFwChnlOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetDefaultCommInfoByFwChnlOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetLastControllerStatusFromHistoryByLicensePlateOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetLastControllerStatusFromHistoryByBoxIdOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetLastTARModeFromHistoryByLicensePlateOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetLastTARModeFromHistoryByBoxIdOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetLastKeyFobStatusFromHistoryByLicensePlateOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetLastKeyFobStatusFromHistoryByBoxIdOperationCompleted;
-        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -320,6 +320,108 @@ namespace SentinelMobile.ServerDBVehicle {
                 this.useDefaultCredentialsSetExplicitly = true;
             }
         }
+        
+        /// <remarks/>
+        public event VehicleMaintenance_UpdateEngineHoursCompletedEventHandler VehicleMaintenance_UpdateEngineHoursCompleted;
+        
+        /// <remarks/>
+        public event VehicleMaintenance_GetInfoCompletedEventHandler VehicleMaintenance_GetInfoCompleted;
+        
+        /// <remarks/>
+        public event GetMDTInfoByTypeIdCompletedEventHandler GetMDTInfoByTypeIdCompleted;
+        
+        /// <remarks/>
+        public event GetDTCCodesDescriptionCompletedEventHandler GetDTCCodesDescriptionCompleted;
+        
+        /// <remarks/>
+        public event GetBoxId4BBCompletedEventHandler GetBoxId4BBCompleted;
+        
+        /// <remarks/>
+        public event GetVehicleExtraServiceHistoryByVehicleIdCompletedEventHandler GetVehicleExtraServiceHistoryByVehicleIdCompleted;
+        
+        /// <remarks/>
+        public event VehicleExtraServiceHistory_Add_UpdateCompletedEventHandler VehicleExtraServiceHistory_Add_UpdateCompleted;
+        
+        /// <remarks/>
+        public event GetJ1708CodesVehicleFleetCompletedEventHandler GetJ1708CodesVehicleFleetCompleted;
+        
+        /// <remarks/>
+        public event GetBoxExtraInfoCompletedEventHandler GetBoxExtraInfoCompleted;
+        
+        /// <remarks/>
+        public event GetStateMileagePerVehicleCompletedEventHandler GetStateMileagePerVehicleCompleted;
+        
+        /// <remarks/>
+        public event AddMdtOTACompletedEventHandler AddMdtOTACompleted;
+        
+        /// <remarks/>
+        public event GetPostedSpeedServiceConfigurationCompletedEventHandler GetPostedSpeedServiceConfigurationCompleted;
+        
+        /// <remarks/>
+        public event GetAllUnassignedToVehicleGeozonesInfoCompletedEventHandler GetAllUnassignedToVehicleGeozonesInfoCompleted;
+        
+        /// <remarks/>
+        public event SetGeozoneSeverityCompletedEventHandler SetGeozoneSeverityCompleted;
+        
+        /// <remarks/>
+        public event DeleteGeozoneFromVehicleCompletedEventHandler DeleteGeozoneFromVehicleCompleted;
+        
+        /// <remarks/>
+        public event DeleteGeozoneFromVehicleByVehicleIdCompletedEventHandler DeleteGeozoneFromVehicleByVehicleIdCompleted;
+        
+        /// <remarks/>
+        public event AddGeozoneToVehicleCompletedEventHandler AddGeozoneToVehicleCompleted;
+        
+        /// <remarks/>
+        public event GetMaxGeozonesByVehicleIdCompletedEventHandler GetMaxGeozonesByVehicleIdCompleted;
+        
+        /// <remarks/>
+        public event GetCommInfoByBoxIdCompletedEventHandler GetCommInfoByBoxIdCompleted;
+        
+        /// <remarks/>
+        public event GetBoxConfigInfoCompletedEventHandler GetBoxConfigInfoCompleted;
+        
+        /// <remarks/>
+        public event GetActiveVehicleCfgInfoCompletedEventHandler GetActiveVehicleCfgInfoCompleted;
+        
+        /// <remarks/>
+        public event GetLastCommunicationByBoxIdCompletedEventHandler GetLastCommunicationByBoxIdCompleted;
+        
+        /// <remarks/>
+        public event GetLastBoxCommunicationInfoCompletedEventHandler GetLastBoxCommunicationInfoCompleted;
+        
+        /// <remarks/>
+        public event GetVehicleLastKnownPositionInfoByBoxIdCompletedEventHandler GetVehicleLastKnownPositionInfoByBoxIdCompleted;
+        
+        /// <remarks/>
+        public event UpdateBoxFeaturesCompletedEventHandler UpdateBoxFeaturesCompleted;
+        
+        /// <remarks/>
+        public event GetBoxConfigFeaturesCompletedEventHandler GetBoxConfigFeaturesCompleted;
+        
+        /// <remarks/>
+        public event GetCommInfoByBoxAndFwChnlCompletedEventHandler GetCommInfoByBoxAndFwChnlCompleted;
+        
+        /// <remarks/>
+        public event GetDefaultCommInfoByFwChnlCompletedEventHandler GetDefaultCommInfoByFwChnlCompleted;
+        
+        /// <remarks/>
+        public event GetLastControllerStatusFromHistoryByLicensePlateCompletedEventHandler GetLastControllerStatusFromHistoryByLicensePlateCompleted;
+        
+        /// <remarks/>
+        public event GetLastControllerStatusFromHistoryByBoxIdCompletedEventHandler GetLastControllerStatusFromHistoryByBoxIdCompleted;
+        
+        /// <remarks/>
+        public event GetLastTARModeFromHistoryByLicensePlateCompletedEventHandler GetLastTARModeFromHistoryByLicensePlateCompleted;
+        
+        /// <remarks/>
+        public event GetLastTARModeFromHistoryByBoxIdCompletedEventHandler GetLastTARModeFromHistoryByBoxIdCompleted;
+        
+        /// <remarks/>
+        public event GetLastKeyFobStatusFromHistoryByLicensePlateCompletedEventHandler GetLastKeyFobStatusFromHistoryByLicensePlateCompleted;
+        
+        /// <remarks/>
+        public event GetLastKeyFobStatusFromHistoryByBoxIdCompletedEventHandler GetLastKeyFobStatusFromHistoryByBoxIdCompleted;
         
         /// <remarks/>
         public event GetLastVCROffDelayFromHistoryByLicensePlateCompletedEventHandler GetLastVCROffDelayFromHistoryByLicensePlateCompleted;
@@ -440,42 +542,6 @@ namespace SentinelMobile.ServerDBVehicle {
         
         /// <remarks/>
         public event VehicleOperationTypes_GetCompletedEventHandler VehicleOperationTypes_GetCompleted;
-        
-        /// <remarks/>
-        public event VehicleMaintenance_UpdateEngineHoursCompletedEventHandler VehicleMaintenance_UpdateEngineHoursCompleted;
-        
-        /// <remarks/>
-        public event VehicleMaintenance_GetInfoCompletedEventHandler VehicleMaintenance_GetInfoCompleted;
-        
-        /// <remarks/>
-        public event GetMDTInfoByTypeIdCompletedEventHandler GetMDTInfoByTypeIdCompleted;
-        
-        /// <remarks/>
-        public event GetDTCCodesDescriptionCompletedEventHandler GetDTCCodesDescriptionCompleted;
-        
-        /// <remarks/>
-        public event GetBoxId4BBCompletedEventHandler GetBoxId4BBCompleted;
-        
-        /// <remarks/>
-        public event GetVehicleExtraServiceHistoryByVehicleIdCompletedEventHandler GetVehicleExtraServiceHistoryByVehicleIdCompleted;
-        
-        /// <remarks/>
-        public event VehicleExtraServiceHistory_Add_UpdateCompletedEventHandler VehicleExtraServiceHistory_Add_UpdateCompleted;
-        
-        /// <remarks/>
-        public event GetJ1708CodesVehicleFleetCompletedEventHandler GetJ1708CodesVehicleFleetCompleted;
-        
-        /// <remarks/>
-        public event GetBoxExtraInfoCompletedEventHandler GetBoxExtraInfoCompleted;
-        
-        /// <remarks/>
-        public event GetStateMileagePerVehicleCompletedEventHandler GetStateMileagePerVehicleCompleted;
-        
-        /// <remarks/>
-        public event AddMdtOTACompletedEventHandler AddMdtOTACompleted;
-        
-        /// <remarks/>
-        public event GetPostedSpeedServiceConfigurationCompletedEventHandler GetPostedSpeedServiceConfigurationCompleted;
         
         /// <remarks/>
         public event GetVehicleInfoXMLCompletedEventHandler GetVehicleInfoXMLCompleted;
@@ -637,70 +703,1338 @@ namespace SentinelMobile.ServerDBVehicle {
         public event GetAllAssignedGeozonesToVehicleCompletedEventHandler GetAllAssignedGeozonesToVehicleCompleted;
         
         /// <remarks/>
-        public event GetAllUnassignedToVehicleGeozonesInfoCompletedEventHandler GetAllUnassignedToVehicleGeozonesInfoCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/VehicleMaintenance_UpdateEngineHours", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int VehicleMaintenance_UpdateEngineHours(int userId, string SID, long vehicleId, int engineHours) {
+            object[] results = this.Invoke("VehicleMaintenance_UpdateEngineHours", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        engineHours});
+            return ((int)(results[0]));
+        }
         
         /// <remarks/>
-        public event SetGeozoneSeverityCompletedEventHandler SetGeozoneSeverityCompleted;
+        public void VehicleMaintenance_UpdateEngineHoursAsync(int userId, string SID, long vehicleId, int engineHours) {
+            this.VehicleMaintenance_UpdateEngineHoursAsync(userId, SID, vehicleId, engineHours, null);
+        }
         
         /// <remarks/>
-        public event DeleteGeozoneFromVehicleCompletedEventHandler DeleteGeozoneFromVehicleCompleted;
+        public void VehicleMaintenance_UpdateEngineHoursAsync(int userId, string SID, long vehicleId, int engineHours, object userState) {
+            if ((this.VehicleMaintenance_UpdateEngineHoursOperationCompleted == null)) {
+                this.VehicleMaintenance_UpdateEngineHoursOperationCompleted = new System.Threading.SendOrPostCallback(this.OnVehicleMaintenance_UpdateEngineHoursOperationCompleted);
+            }
+            this.InvokeAsync("VehicleMaintenance_UpdateEngineHours", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        engineHours}, this.VehicleMaintenance_UpdateEngineHoursOperationCompleted, userState);
+        }
+        
+        private void OnVehicleMaintenance_UpdateEngineHoursOperationCompleted(object arg) {
+            if ((this.VehicleMaintenance_UpdateEngineHoursCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.VehicleMaintenance_UpdateEngineHoursCompleted(this, new VehicleMaintenance_UpdateEngineHoursCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
-        public event DeleteGeozoneFromVehicleByVehicleIdCompletedEventHandler DeleteGeozoneFromVehicleByVehicleIdCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/VehicleMaintenance_GetInfo", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int VehicleMaintenance_GetInfo(int userId, string SID, long vehicleId, bool includeNotInit, ref string xml) {
+            object[] results = this.Invoke("VehicleMaintenance_GetInfo", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        includeNotInit,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
         
         /// <remarks/>
-        public event AddGeozoneToVehicleCompletedEventHandler AddGeozoneToVehicleCompleted;
+        public void VehicleMaintenance_GetInfoAsync(int userId, string SID, long vehicleId, bool includeNotInit, string xml) {
+            this.VehicleMaintenance_GetInfoAsync(userId, SID, vehicleId, includeNotInit, xml, null);
+        }
         
         /// <remarks/>
-        public event GetMaxGeozonesByVehicleIdCompletedEventHandler GetMaxGeozonesByVehicleIdCompleted;
+        public void VehicleMaintenance_GetInfoAsync(int userId, string SID, long vehicleId, bool includeNotInit, string xml, object userState) {
+            if ((this.VehicleMaintenance_GetInfoOperationCompleted == null)) {
+                this.VehicleMaintenance_GetInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnVehicleMaintenance_GetInfoOperationCompleted);
+            }
+            this.InvokeAsync("VehicleMaintenance_GetInfo", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        includeNotInit,
+                        xml}, this.VehicleMaintenance_GetInfoOperationCompleted, userState);
+        }
+        
+        private void OnVehicleMaintenance_GetInfoOperationCompleted(object arg) {
+            if ((this.VehicleMaintenance_GetInfoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.VehicleMaintenance_GetInfoCompleted(this, new VehicleMaintenance_GetInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
-        public event GetCommInfoByBoxIdCompletedEventHandler GetCommInfoByBoxIdCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetMDTInfoByTypeId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetMDTInfoByTypeId(int userId, string SID, int MdtTypeId, ref string xml) {
+            object[] results = this.Invoke("GetMDTInfoByTypeId", new object[] {
+                        userId,
+                        SID,
+                        MdtTypeId,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
         
         /// <remarks/>
-        public event GetBoxConfigInfoCompletedEventHandler GetBoxConfigInfoCompleted;
+        public void GetMDTInfoByTypeIdAsync(int userId, string SID, int MdtTypeId, string xml) {
+            this.GetMDTInfoByTypeIdAsync(userId, SID, MdtTypeId, xml, null);
+        }
         
         /// <remarks/>
-        public event GetActiveVehicleCfgInfoCompletedEventHandler GetActiveVehicleCfgInfoCompleted;
+        public void GetMDTInfoByTypeIdAsync(int userId, string SID, int MdtTypeId, string xml, object userState) {
+            if ((this.GetMDTInfoByTypeIdOperationCompleted == null)) {
+                this.GetMDTInfoByTypeIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetMDTInfoByTypeIdOperationCompleted);
+            }
+            this.InvokeAsync("GetMDTInfoByTypeId", new object[] {
+                        userId,
+                        SID,
+                        MdtTypeId,
+                        xml}, this.GetMDTInfoByTypeIdOperationCompleted, userState);
+        }
+        
+        private void OnGetMDTInfoByTypeIdOperationCompleted(object arg) {
+            if ((this.GetMDTInfoByTypeIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetMDTInfoByTypeIdCompleted(this, new GetMDTInfoByTypeIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
-        public event GetLastCommunicationByBoxIdCompletedEventHandler GetLastCommunicationByBoxIdCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetDTCCodesDescription", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetDTCCodesDescription(int userId, string SID, ref string xml) {
+            object[] results = this.Invoke("GetDTCCodesDescription", new object[] {
+                        userId,
+                        SID,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
         
         /// <remarks/>
-        public event GetLastBoxCommunicationInfoCompletedEventHandler GetLastBoxCommunicationInfoCompleted;
+        public void GetDTCCodesDescriptionAsync(int userId, string SID, string xml) {
+            this.GetDTCCodesDescriptionAsync(userId, SID, xml, null);
+        }
         
         /// <remarks/>
-        public event GetVehicleLastKnownPositionInfoByBoxIdCompletedEventHandler GetVehicleLastKnownPositionInfoByBoxIdCompleted;
+        public void GetDTCCodesDescriptionAsync(int userId, string SID, string xml, object userState) {
+            if ((this.GetDTCCodesDescriptionOperationCompleted == null)) {
+                this.GetDTCCodesDescriptionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDTCCodesDescriptionOperationCompleted);
+            }
+            this.InvokeAsync("GetDTCCodesDescription", new object[] {
+                        userId,
+                        SID,
+                        xml}, this.GetDTCCodesDescriptionOperationCompleted, userState);
+        }
+        
+        private void OnGetDTCCodesDescriptionOperationCompleted(object arg) {
+            if ((this.GetDTCCodesDescriptionCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetDTCCodesDescriptionCompleted(this, new GetDTCCodesDescriptionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
-        public event UpdateBoxFeaturesCompletedEventHandler UpdateBoxFeaturesCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetBoxId4BB", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetBoxId4BB(int userId, string SID, string PIN, ref int boxId) {
+            object[] results = this.Invoke("GetBoxId4BB", new object[] {
+                        userId,
+                        SID,
+                        PIN,
+                        boxId});
+            boxId = ((int)(results[1]));
+            return ((int)(results[0]));
+        }
         
         /// <remarks/>
-        public event GetBoxConfigFeaturesCompletedEventHandler GetBoxConfigFeaturesCompleted;
+        public void GetBoxId4BBAsync(int userId, string SID, string PIN, int boxId) {
+            this.GetBoxId4BBAsync(userId, SID, PIN, boxId, null);
+        }
         
         /// <remarks/>
-        public event GetCommInfoByBoxAndFwChnlCompletedEventHandler GetCommInfoByBoxAndFwChnlCompleted;
+        public void GetBoxId4BBAsync(int userId, string SID, string PIN, int boxId, object userState) {
+            if ((this.GetBoxId4BBOperationCompleted == null)) {
+                this.GetBoxId4BBOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetBoxId4BBOperationCompleted);
+            }
+            this.InvokeAsync("GetBoxId4BB", new object[] {
+                        userId,
+                        SID,
+                        PIN,
+                        boxId}, this.GetBoxId4BBOperationCompleted, userState);
+        }
+        
+        private void OnGetBoxId4BBOperationCompleted(object arg) {
+            if ((this.GetBoxId4BBCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetBoxId4BBCompleted(this, new GetBoxId4BBCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
-        public event GetDefaultCommInfoByFwChnlCompletedEventHandler GetDefaultCommInfoByFwChnlCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetVehicleExtraServiceHistoryByVehicleId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetVehicleExtraServiceHistoryByVehicleId(int userId, string SID, long vehicleId, ref string xml) {
+            object[] results = this.Invoke("GetVehicleExtraServiceHistoryByVehicleId", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
         
         /// <remarks/>
-        public event GetLastControllerStatusFromHistoryByLicensePlateCompletedEventHandler GetLastControllerStatusFromHistoryByLicensePlateCompleted;
+        public void GetVehicleExtraServiceHistoryByVehicleIdAsync(int userId, string SID, long vehicleId, string xml) {
+            this.GetVehicleExtraServiceHistoryByVehicleIdAsync(userId, SID, vehicleId, xml, null);
+        }
         
         /// <remarks/>
-        public event GetLastControllerStatusFromHistoryByBoxIdCompletedEventHandler GetLastControllerStatusFromHistoryByBoxIdCompleted;
+        public void GetVehicleExtraServiceHistoryByVehicleIdAsync(int userId, string SID, long vehicleId, string xml, object userState) {
+            if ((this.GetVehicleExtraServiceHistoryByVehicleIdOperationCompleted == null)) {
+                this.GetVehicleExtraServiceHistoryByVehicleIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetVehicleExtraServiceHistoryByVehicleIdOperationCompleted);
+            }
+            this.InvokeAsync("GetVehicleExtraServiceHistoryByVehicleId", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        xml}, this.GetVehicleExtraServiceHistoryByVehicleIdOperationCompleted, userState);
+        }
+        
+        private void OnGetVehicleExtraServiceHistoryByVehicleIdOperationCompleted(object arg) {
+            if ((this.GetVehicleExtraServiceHistoryByVehicleIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetVehicleExtraServiceHistoryByVehicleIdCompleted(this, new GetVehicleExtraServiceHistoryByVehicleIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
-        public event GetLastTARModeFromHistoryByLicensePlateCompletedEventHandler GetLastTARModeFromHistoryByLicensePlateCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/VehicleExtraServiceHistory_Add_Update", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int VehicleExtraServiceHistory_Add_Update(
+                    int userId, 
+                    string SID, 
+                    long VehicleId, 
+                    string Field1, 
+                    string Field2, 
+                    string Field3, 
+                    string Field4, 
+                    string Field5, 
+                    string Field6, 
+                    string Field7, 
+                    string Field8, 
+                    string Field9, 
+                    string Field10, 
+                    string Field11, 
+                    string Field12, 
+                    string Field13, 
+                    string Field14, 
+                    string Field15, 
+                    string Field16) {
+            object[] results = this.Invoke("VehicleExtraServiceHistory_Add_Update", new object[] {
+                        userId,
+                        SID,
+                        VehicleId,
+                        Field1,
+                        Field2,
+                        Field3,
+                        Field4,
+                        Field5,
+                        Field6,
+                        Field7,
+                        Field8,
+                        Field9,
+                        Field10,
+                        Field11,
+                        Field12,
+                        Field13,
+                        Field14,
+                        Field15,
+                        Field16});
+            return ((int)(results[0]));
+        }
         
         /// <remarks/>
-        public event GetLastTARModeFromHistoryByBoxIdCompletedEventHandler GetLastTARModeFromHistoryByBoxIdCompleted;
+        public void VehicleExtraServiceHistory_Add_UpdateAsync(
+                    int userId, 
+                    string SID, 
+                    long VehicleId, 
+                    string Field1, 
+                    string Field2, 
+                    string Field3, 
+                    string Field4, 
+                    string Field5, 
+                    string Field6, 
+                    string Field7, 
+                    string Field8, 
+                    string Field9, 
+                    string Field10, 
+                    string Field11, 
+                    string Field12, 
+                    string Field13, 
+                    string Field14, 
+                    string Field15, 
+                    string Field16) {
+            this.VehicleExtraServiceHistory_Add_UpdateAsync(userId, SID, VehicleId, Field1, Field2, Field3, Field4, Field5, Field6, Field7, Field8, Field9, Field10, Field11, Field12, Field13, Field14, Field15, Field16, null);
+        }
         
         /// <remarks/>
-        public event GetLastKeyFobStatusFromHistoryByLicensePlateCompletedEventHandler GetLastKeyFobStatusFromHistoryByLicensePlateCompleted;
+        public void VehicleExtraServiceHistory_Add_UpdateAsync(
+                    int userId, 
+                    string SID, 
+                    long VehicleId, 
+                    string Field1, 
+                    string Field2, 
+                    string Field3, 
+                    string Field4, 
+                    string Field5, 
+                    string Field6, 
+                    string Field7, 
+                    string Field8, 
+                    string Field9, 
+                    string Field10, 
+                    string Field11, 
+                    string Field12, 
+                    string Field13, 
+                    string Field14, 
+                    string Field15, 
+                    string Field16, 
+                    object userState) {
+            if ((this.VehicleExtraServiceHistory_Add_UpdateOperationCompleted == null)) {
+                this.VehicleExtraServiceHistory_Add_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnVehicleExtraServiceHistory_Add_UpdateOperationCompleted);
+            }
+            this.InvokeAsync("VehicleExtraServiceHistory_Add_Update", new object[] {
+                        userId,
+                        SID,
+                        VehicleId,
+                        Field1,
+                        Field2,
+                        Field3,
+                        Field4,
+                        Field5,
+                        Field6,
+                        Field7,
+                        Field8,
+                        Field9,
+                        Field10,
+                        Field11,
+                        Field12,
+                        Field13,
+                        Field14,
+                        Field15,
+                        Field16}, this.VehicleExtraServiceHistory_Add_UpdateOperationCompleted, userState);
+        }
+        
+        private void OnVehicleExtraServiceHistory_Add_UpdateOperationCompleted(object arg) {
+            if ((this.VehicleExtraServiceHistory_Add_UpdateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.VehicleExtraServiceHistory_Add_UpdateCompleted(this, new VehicleExtraServiceHistory_Add_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
-        public event GetLastKeyFobStatusFromHistoryByBoxIdCompletedEventHandler GetLastKeyFobStatusFromHistoryByBoxIdCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetJ1708CodesVehicleFleet", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetJ1708CodesVehicleFleet(int userId, string SID, int vehicleId, int fleetId, System.DateTime from, System.DateTime to, string lang, ref string xml) {
+            object[] results = this.Invoke("GetJ1708CodesVehicleFleet", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        fleetId,
+                        from,
+                        to,
+                        lang,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetJ1708CodesVehicleFleetAsync(int userId, string SID, int vehicleId, int fleetId, System.DateTime from, System.DateTime to, string lang, string xml) {
+            this.GetJ1708CodesVehicleFleetAsync(userId, SID, vehicleId, fleetId, from, to, lang, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetJ1708CodesVehicleFleetAsync(int userId, string SID, int vehicleId, int fleetId, System.DateTime from, System.DateTime to, string lang, string xml, object userState) {
+            if ((this.GetJ1708CodesVehicleFleetOperationCompleted == null)) {
+                this.GetJ1708CodesVehicleFleetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetJ1708CodesVehicleFleetOperationCompleted);
+            }
+            this.InvokeAsync("GetJ1708CodesVehicleFleet", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        fleetId,
+                        from,
+                        to,
+                        lang,
+                        xml}, this.GetJ1708CodesVehicleFleetOperationCompleted, userState);
+        }
+        
+        private void OnGetJ1708CodesVehicleFleetOperationCompleted(object arg) {
+            if ((this.GetJ1708CodesVehicleFleetCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetJ1708CodesVehicleFleetCompleted(this, new GetJ1708CodesVehicleFleetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetBoxExtraInfo", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetBoxExtraInfo(int userId, string SID, long vehicleId, ref string xml) {
+            object[] results = this.Invoke("GetBoxExtraInfo", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetBoxExtraInfoAsync(int userId, string SID, long vehicleId, string xml) {
+            this.GetBoxExtraInfoAsync(userId, SID, vehicleId, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetBoxExtraInfoAsync(int userId, string SID, long vehicleId, string xml, object userState) {
+            if ((this.GetBoxExtraInfoOperationCompleted == null)) {
+                this.GetBoxExtraInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetBoxExtraInfoOperationCompleted);
+            }
+            this.InvokeAsync("GetBoxExtraInfo", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        xml}, this.GetBoxExtraInfoOperationCompleted, userState);
+        }
+        
+        private void OnGetBoxExtraInfoOperationCompleted(object arg) {
+            if ((this.GetBoxExtraInfoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetBoxExtraInfoCompleted(this, new GetBoxExtraInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetStateMileagePerVehicle", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetStateMileagePerVehicle(int userId, string SID, string licensePlate, string FromDate, string ToDate, ref string xml) {
+            object[] results = this.Invoke("GetStateMileagePerVehicle", new object[] {
+                        userId,
+                        SID,
+                        licensePlate,
+                        FromDate,
+                        ToDate,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetStateMileagePerVehicleAsync(int userId, string SID, string licensePlate, string FromDate, string ToDate, string xml) {
+            this.GetStateMileagePerVehicleAsync(userId, SID, licensePlate, FromDate, ToDate, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetStateMileagePerVehicleAsync(int userId, string SID, string licensePlate, string FromDate, string ToDate, string xml, object userState) {
+            if ((this.GetStateMileagePerVehicleOperationCompleted == null)) {
+                this.GetStateMileagePerVehicleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetStateMileagePerVehicleOperationCompleted);
+            }
+            this.InvokeAsync("GetStateMileagePerVehicle", new object[] {
+                        userId,
+                        SID,
+                        licensePlate,
+                        FromDate,
+                        ToDate,
+                        xml}, this.GetStateMileagePerVehicleOperationCompleted, userState);
+        }
+        
+        private void OnGetStateMileagePerVehicleOperationCompleted(object arg) {
+            if ((this.GetStateMileagePerVehicleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetStateMileagePerVehicleCompleted(this, new GetStateMileagePerVehicleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/AddMdtOTA", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int AddMdtOTA(int userId, string SID, int boxId, short typeId, string customProp) {
+            object[] results = this.Invoke("AddMdtOTA", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        typeId,
+                        customProp});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AddMdtOTAAsync(int userId, string SID, int boxId, short typeId, string customProp) {
+            this.AddMdtOTAAsync(userId, SID, boxId, typeId, customProp, null);
+        }
+        
+        /// <remarks/>
+        public void AddMdtOTAAsync(int userId, string SID, int boxId, short typeId, string customProp, object userState) {
+            if ((this.AddMdtOTAOperationCompleted == null)) {
+                this.AddMdtOTAOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddMdtOTAOperationCompleted);
+            }
+            this.InvokeAsync("AddMdtOTA", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        typeId,
+                        customProp}, this.AddMdtOTAOperationCompleted, userState);
+        }
+        
+        private void OnAddMdtOTAOperationCompleted(object arg) {
+            if ((this.AddMdtOTACompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AddMdtOTACompleted(this, new AddMdtOTACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetPostedSpeedServiceConfiguration", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetPostedSpeedServiceConfiguration(int userId, string SID, ref string xml) {
+            object[] results = this.Invoke("GetPostedSpeedServiceConfiguration", new object[] {
+                        userId,
+                        SID,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetPostedSpeedServiceConfigurationAsync(int userId, string SID, string xml) {
+            this.GetPostedSpeedServiceConfigurationAsync(userId, SID, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetPostedSpeedServiceConfigurationAsync(int userId, string SID, string xml, object userState) {
+            if ((this.GetPostedSpeedServiceConfigurationOperationCompleted == null)) {
+                this.GetPostedSpeedServiceConfigurationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetPostedSpeedServiceConfigurationOperationCompleted);
+            }
+            this.InvokeAsync("GetPostedSpeedServiceConfiguration", new object[] {
+                        userId,
+                        SID,
+                        xml}, this.GetPostedSpeedServiceConfigurationOperationCompleted, userState);
+        }
+        
+        private void OnGetPostedSpeedServiceConfigurationOperationCompleted(object arg) {
+            if ((this.GetPostedSpeedServiceConfigurationCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetPostedSpeedServiceConfigurationCompleted(this, new GetPostedSpeedServiceConfigurationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetAllUnassignedToVehicleGeozonesInfo", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetAllUnassignedToVehicleGeozonesInfo(int userId, string SID, long vehicleId, ref string xml) {
+            object[] results = this.Invoke("GetAllUnassignedToVehicleGeozonesInfo", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetAllUnassignedToVehicleGeozonesInfoAsync(int userId, string SID, long vehicleId, string xml) {
+            this.GetAllUnassignedToVehicleGeozonesInfoAsync(userId, SID, vehicleId, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetAllUnassignedToVehicleGeozonesInfoAsync(int userId, string SID, long vehicleId, string xml, object userState) {
+            if ((this.GetAllUnassignedToVehicleGeozonesInfoOperationCompleted == null)) {
+                this.GetAllUnassignedToVehicleGeozonesInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAllUnassignedToVehicleGeozonesInfoOperationCompleted);
+            }
+            this.InvokeAsync("GetAllUnassignedToVehicleGeozonesInfo", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        xml}, this.GetAllUnassignedToVehicleGeozonesInfoOperationCompleted, userState);
+        }
+        
+        private void OnGetAllUnassignedToVehicleGeozonesInfoOperationCompleted(object arg) {
+            if ((this.GetAllUnassignedToVehicleGeozonesInfoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetAllUnassignedToVehicleGeozonesInfoCompleted(this, new GetAllUnassignedToVehicleGeozonesInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/SetGeozoneSeverity", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int SetGeozoneSeverity(int organizationId, int userId, string SID, long vehicleId, short geozoneId, short severityId) {
+            object[] results = this.Invoke("SetGeozoneSeverity", new object[] {
+                        organizationId,
+                        userId,
+                        SID,
+                        vehicleId,
+                        geozoneId,
+                        severityId});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SetGeozoneSeverityAsync(int organizationId, int userId, string SID, long vehicleId, short geozoneId, short severityId) {
+            this.SetGeozoneSeverityAsync(organizationId, userId, SID, vehicleId, geozoneId, severityId, null);
+        }
+        
+        /// <remarks/>
+        public void SetGeozoneSeverityAsync(int organizationId, int userId, string SID, long vehicleId, short geozoneId, short severityId, object userState) {
+            if ((this.SetGeozoneSeverityOperationCompleted == null)) {
+                this.SetGeozoneSeverityOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSetGeozoneSeverityOperationCompleted);
+            }
+            this.InvokeAsync("SetGeozoneSeverity", new object[] {
+                        organizationId,
+                        userId,
+                        SID,
+                        vehicleId,
+                        geozoneId,
+                        severityId}, this.SetGeozoneSeverityOperationCompleted, userState);
+        }
+        
+        private void OnSetGeozoneSeverityOperationCompleted(object arg) {
+            if ((this.SetGeozoneSeverityCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SetGeozoneSeverityCompleted(this, new SetGeozoneSeverityCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/DeleteGeozoneFromVehicle", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int DeleteGeozoneFromVehicle(int userId, string SID, int boxId, short geozoneId, ref int rowsAffected) {
+            object[] results = this.Invoke("DeleteGeozoneFromVehicle", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        geozoneId,
+                        rowsAffected});
+            rowsAffected = ((int)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void DeleteGeozoneFromVehicleAsync(int userId, string SID, int boxId, short geozoneId, int rowsAffected) {
+            this.DeleteGeozoneFromVehicleAsync(userId, SID, boxId, geozoneId, rowsAffected, null);
+        }
+        
+        /// <remarks/>
+        public void DeleteGeozoneFromVehicleAsync(int userId, string SID, int boxId, short geozoneId, int rowsAffected, object userState) {
+            if ((this.DeleteGeozoneFromVehicleOperationCompleted == null)) {
+                this.DeleteGeozoneFromVehicleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDeleteGeozoneFromVehicleOperationCompleted);
+            }
+            this.InvokeAsync("DeleteGeozoneFromVehicle", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        geozoneId,
+                        rowsAffected}, this.DeleteGeozoneFromVehicleOperationCompleted, userState);
+        }
+        
+        private void OnDeleteGeozoneFromVehicleOperationCompleted(object arg) {
+            if ((this.DeleteGeozoneFromVehicleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DeleteGeozoneFromVehicleCompleted(this, new DeleteGeozoneFromVehicleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/DeleteGeozoneFromVehicleByVehicleId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int DeleteGeozoneFromVehicleByVehicleId(int userId, string SID, int vehicleId, short geozoneId, ref int rowsAffected) {
+            object[] results = this.Invoke("DeleteGeozoneFromVehicleByVehicleId", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        geozoneId,
+                        rowsAffected});
+            rowsAffected = ((int)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void DeleteGeozoneFromVehicleByVehicleIdAsync(int userId, string SID, int vehicleId, short geozoneId, int rowsAffected) {
+            this.DeleteGeozoneFromVehicleByVehicleIdAsync(userId, SID, vehicleId, geozoneId, rowsAffected, null);
+        }
+        
+        /// <remarks/>
+        public void DeleteGeozoneFromVehicleByVehicleIdAsync(int userId, string SID, int vehicleId, short geozoneId, int rowsAffected, object userState) {
+            if ((this.DeleteGeozoneFromVehicleByVehicleIdOperationCompleted == null)) {
+                this.DeleteGeozoneFromVehicleByVehicleIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDeleteGeozoneFromVehicleByVehicleIdOperationCompleted);
+            }
+            this.InvokeAsync("DeleteGeozoneFromVehicleByVehicleId", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        geozoneId,
+                        rowsAffected}, this.DeleteGeozoneFromVehicleByVehicleIdOperationCompleted, userState);
+        }
+        
+        private void OnDeleteGeozoneFromVehicleByVehicleIdOperationCompleted(object arg) {
+            if ((this.DeleteGeozoneFromVehicleByVehicleIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DeleteGeozoneFromVehicleByVehicleIdCompleted(this, new DeleteGeozoneFromVehicleByVehicleIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/AddGeozoneToVehicle", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int AddGeozoneToVehicle(int userId, string SID, int vehicleId, short geozoneId, short severityId, int speed) {
+            object[] results = this.Invoke("AddGeozoneToVehicle", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        geozoneId,
+                        severityId,
+                        speed});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AddGeozoneToVehicleAsync(int userId, string SID, int vehicleId, short geozoneId, short severityId, int speed) {
+            this.AddGeozoneToVehicleAsync(userId, SID, vehicleId, geozoneId, severityId, speed, null);
+        }
+        
+        /// <remarks/>
+        public void AddGeozoneToVehicleAsync(int userId, string SID, int vehicleId, short geozoneId, short severityId, int speed, object userState) {
+            if ((this.AddGeozoneToVehicleOperationCompleted == null)) {
+                this.AddGeozoneToVehicleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddGeozoneToVehicleOperationCompleted);
+            }
+            this.InvokeAsync("AddGeozoneToVehicle", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        geozoneId,
+                        severityId,
+                        speed}, this.AddGeozoneToVehicleOperationCompleted, userState);
+        }
+        
+        private void OnAddGeozoneToVehicleOperationCompleted(object arg) {
+            if ((this.AddGeozoneToVehicleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AddGeozoneToVehicleCompleted(this, new AddGeozoneToVehicleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetMaxGeozonesByVehicleId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetMaxGeozonesByVehicleId(int userId, string SID, long vehicleId, ref int maxGeozones) {
+            object[] results = this.Invoke("GetMaxGeozonesByVehicleId", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        maxGeozones});
+            maxGeozones = ((int)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetMaxGeozonesByVehicleIdAsync(int userId, string SID, long vehicleId, int maxGeozones) {
+            this.GetMaxGeozonesByVehicleIdAsync(userId, SID, vehicleId, maxGeozones, null);
+        }
+        
+        /// <remarks/>
+        public void GetMaxGeozonesByVehicleIdAsync(int userId, string SID, long vehicleId, int maxGeozones, object userState) {
+            if ((this.GetMaxGeozonesByVehicleIdOperationCompleted == null)) {
+                this.GetMaxGeozonesByVehicleIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetMaxGeozonesByVehicleIdOperationCompleted);
+            }
+            this.InvokeAsync("GetMaxGeozonesByVehicleId", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        maxGeozones}, this.GetMaxGeozonesByVehicleIdOperationCompleted, userState);
+        }
+        
+        private void OnGetMaxGeozonesByVehicleIdOperationCompleted(object arg) {
+            if ((this.GetMaxGeozonesByVehicleIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetMaxGeozonesByVehicleIdCompleted(this, new GetMaxGeozonesByVehicleIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetCommInfoByBoxId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetCommInfoByBoxId(int userId, string SID, int boxId, ref string xml) {
+            object[] results = this.Invoke("GetCommInfoByBoxId", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetCommInfoByBoxIdAsync(int userId, string SID, int boxId, string xml) {
+            this.GetCommInfoByBoxIdAsync(userId, SID, boxId, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetCommInfoByBoxIdAsync(int userId, string SID, int boxId, string xml, object userState) {
+            if ((this.GetCommInfoByBoxIdOperationCompleted == null)) {
+                this.GetCommInfoByBoxIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCommInfoByBoxIdOperationCompleted);
+            }
+            this.InvokeAsync("GetCommInfoByBoxId", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        xml}, this.GetCommInfoByBoxIdOperationCompleted, userState);
+        }
+        
+        private void OnGetCommInfoByBoxIdOperationCompleted(object arg) {
+            if ((this.GetCommInfoByBoxIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetCommInfoByBoxIdCompleted(this, new GetCommInfoByBoxIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetBoxConfigInfo", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetBoxConfigInfo(int userId, string SID, int boxId, ref string xml) {
+            object[] results = this.Invoke("GetBoxConfigInfo", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetBoxConfigInfoAsync(int userId, string SID, int boxId, string xml) {
+            this.GetBoxConfigInfoAsync(userId, SID, boxId, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetBoxConfigInfoAsync(int userId, string SID, int boxId, string xml, object userState) {
+            if ((this.GetBoxConfigInfoOperationCompleted == null)) {
+                this.GetBoxConfigInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetBoxConfigInfoOperationCompleted);
+            }
+            this.InvokeAsync("GetBoxConfigInfo", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        xml}, this.GetBoxConfigInfoOperationCompleted, userState);
+        }
+        
+        private void OnGetBoxConfigInfoOperationCompleted(object arg) {
+            if ((this.GetBoxConfigInfoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetBoxConfigInfoCompleted(this, new GetBoxConfigInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetActiveVehicleCfgInfo", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetActiveVehicleCfgInfo(int userId, string SID, long vehicleId, ref string xml) {
+            object[] results = this.Invoke("GetActiveVehicleCfgInfo", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetActiveVehicleCfgInfoAsync(int userId, string SID, long vehicleId, string xml) {
+            this.GetActiveVehicleCfgInfoAsync(userId, SID, vehicleId, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetActiveVehicleCfgInfoAsync(int userId, string SID, long vehicleId, string xml, object userState) {
+            if ((this.GetActiveVehicleCfgInfoOperationCompleted == null)) {
+                this.GetActiveVehicleCfgInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetActiveVehicleCfgInfoOperationCompleted);
+            }
+            this.InvokeAsync("GetActiveVehicleCfgInfo", new object[] {
+                        userId,
+                        SID,
+                        vehicleId,
+                        xml}, this.GetActiveVehicleCfgInfoOperationCompleted, userState);
+        }
+        
+        private void OnGetActiveVehicleCfgInfoOperationCompleted(object arg) {
+            if ((this.GetActiveVehicleCfgInfoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetActiveVehicleCfgInfoCompleted(this, new GetActiveVehicleCfgInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastCommunicationByBoxId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetLastCommunicationByBoxId(int userId, string SID, int boxId, ref System.DateTime dtLastCommunicated) {
+            object[] results = this.Invoke("GetLastCommunicationByBoxId", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        dtLastCommunicated});
+            dtLastCommunicated = ((System.DateTime)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetLastCommunicationByBoxIdAsync(int userId, string SID, int boxId, System.DateTime dtLastCommunicated) {
+            this.GetLastCommunicationByBoxIdAsync(userId, SID, boxId, dtLastCommunicated, null);
+        }
+        
+        /// <remarks/>
+        public void GetLastCommunicationByBoxIdAsync(int userId, string SID, int boxId, System.DateTime dtLastCommunicated, object userState) {
+            if ((this.GetLastCommunicationByBoxIdOperationCompleted == null)) {
+                this.GetLastCommunicationByBoxIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLastCommunicationByBoxIdOperationCompleted);
+            }
+            this.InvokeAsync("GetLastCommunicationByBoxId", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        dtLastCommunicated}, this.GetLastCommunicationByBoxIdOperationCompleted, userState);
+        }
+        
+        private void OnGetLastCommunicationByBoxIdOperationCompleted(object arg) {
+            if ((this.GetLastCommunicationByBoxIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetLastCommunicationByBoxIdCompleted(this, new GetLastCommunicationByBoxIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastBoxCommunicationInfo", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetLastBoxCommunicationInfo(int userId, string SID, int boxId, ref string xml) {
+            object[] results = this.Invoke("GetLastBoxCommunicationInfo", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetLastBoxCommunicationInfoAsync(int userId, string SID, int boxId, string xml) {
+            this.GetLastBoxCommunicationInfoAsync(userId, SID, boxId, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetLastBoxCommunicationInfoAsync(int userId, string SID, int boxId, string xml, object userState) {
+            if ((this.GetLastBoxCommunicationInfoOperationCompleted == null)) {
+                this.GetLastBoxCommunicationInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLastBoxCommunicationInfoOperationCompleted);
+            }
+            this.InvokeAsync("GetLastBoxCommunicationInfo", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        xml}, this.GetLastBoxCommunicationInfoOperationCompleted, userState);
+        }
+        
+        private void OnGetLastBoxCommunicationInfoOperationCompleted(object arg) {
+            if ((this.GetLastBoxCommunicationInfoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetLastBoxCommunicationInfoCompleted(this, new GetLastBoxCommunicationInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetVehicleLastKnownPositionInfoByBoxId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetVehicleLastKnownPositionInfoByBoxId(int userId, string SID, int boxId, string language, ref string xml) {
+            object[] results = this.Invoke("GetVehicleLastKnownPositionInfoByBoxId", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        language,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetVehicleLastKnownPositionInfoByBoxIdAsync(int userId, string SID, int boxId, string language, string xml) {
+            this.GetVehicleLastKnownPositionInfoByBoxIdAsync(userId, SID, boxId, language, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetVehicleLastKnownPositionInfoByBoxIdAsync(int userId, string SID, int boxId, string language, string xml, object userState) {
+            if ((this.GetVehicleLastKnownPositionInfoByBoxIdOperationCompleted == null)) {
+                this.GetVehicleLastKnownPositionInfoByBoxIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetVehicleLastKnownPositionInfoByBoxIdOperationCompleted);
+            }
+            this.InvokeAsync("GetVehicleLastKnownPositionInfoByBoxId", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        language,
+                        xml}, this.GetVehicleLastKnownPositionInfoByBoxIdOperationCompleted, userState);
+        }
+        
+        private void OnGetVehicleLastKnownPositionInfoByBoxIdOperationCompleted(object arg) {
+            if ((this.GetVehicleLastKnownPositionInfoByBoxIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetVehicleLastKnownPositionInfoByBoxIdCompleted(this, new GetVehicleLastKnownPositionInfoByBoxIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/UpdateBoxFeatures", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int UpdateBoxFeatures(int userId, string SID, int boxId, long mask) {
+            object[] results = this.Invoke("UpdateBoxFeatures", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        mask});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void UpdateBoxFeaturesAsync(int userId, string SID, int boxId, long mask) {
+            this.UpdateBoxFeaturesAsync(userId, SID, boxId, mask, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateBoxFeaturesAsync(int userId, string SID, int boxId, long mask, object userState) {
+            if ((this.UpdateBoxFeaturesOperationCompleted == null)) {
+                this.UpdateBoxFeaturesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateBoxFeaturesOperationCompleted);
+            }
+            this.InvokeAsync("UpdateBoxFeatures", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        mask}, this.UpdateBoxFeaturesOperationCompleted, userState);
+        }
+        
+        private void OnUpdateBoxFeaturesOperationCompleted(object arg) {
+            if ((this.UpdateBoxFeaturesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateBoxFeaturesCompleted(this, new UpdateBoxFeaturesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetBoxConfigFeatures", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetBoxConfigFeatures(int userId, string SID, int boxId, ref string xml) {
+            object[] results = this.Invoke("GetBoxConfigFeatures", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetBoxConfigFeaturesAsync(int userId, string SID, int boxId, string xml) {
+            this.GetBoxConfigFeaturesAsync(userId, SID, boxId, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetBoxConfigFeaturesAsync(int userId, string SID, int boxId, string xml, object userState) {
+            if ((this.GetBoxConfigFeaturesOperationCompleted == null)) {
+                this.GetBoxConfigFeaturesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetBoxConfigFeaturesOperationCompleted);
+            }
+            this.InvokeAsync("GetBoxConfigFeatures", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        xml}, this.GetBoxConfigFeaturesOperationCompleted, userState);
+        }
+        
+        private void OnGetBoxConfigFeaturesOperationCompleted(object arg) {
+            if ((this.GetBoxConfigFeaturesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetBoxConfigFeaturesCompleted(this, new GetBoxConfigFeaturesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetCommInfoByBoxAndFwChnl", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetCommInfoByBoxAndFwChnl(int userId, string SID, int boxId, short fwChnlId, ref string xml) {
+            object[] results = this.Invoke("GetCommInfoByBoxAndFwChnl", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        fwChnlId,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetCommInfoByBoxAndFwChnlAsync(int userId, string SID, int boxId, short fwChnlId, string xml) {
+            this.GetCommInfoByBoxAndFwChnlAsync(userId, SID, boxId, fwChnlId, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetCommInfoByBoxAndFwChnlAsync(int userId, string SID, int boxId, short fwChnlId, string xml, object userState) {
+            if ((this.GetCommInfoByBoxAndFwChnlOperationCompleted == null)) {
+                this.GetCommInfoByBoxAndFwChnlOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCommInfoByBoxAndFwChnlOperationCompleted);
+            }
+            this.InvokeAsync("GetCommInfoByBoxAndFwChnl", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        fwChnlId,
+                        xml}, this.GetCommInfoByBoxAndFwChnlOperationCompleted, userState);
+        }
+        
+        private void OnGetCommInfoByBoxAndFwChnlOperationCompleted(object arg) {
+            if ((this.GetCommInfoByBoxAndFwChnlCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetCommInfoByBoxAndFwChnlCompleted(this, new GetCommInfoByBoxAndFwChnlCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetDefaultCommInfoByFwChnl", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetDefaultCommInfoByFwChnl(int userId, string SID, short fwChnlId, ref string xml) {
+            object[] results = this.Invoke("GetDefaultCommInfoByFwChnl", new object[] {
+                        userId,
+                        SID,
+                        fwChnlId,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetDefaultCommInfoByFwChnlAsync(int userId, string SID, short fwChnlId, string xml) {
+            this.GetDefaultCommInfoByFwChnlAsync(userId, SID, fwChnlId, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetDefaultCommInfoByFwChnlAsync(int userId, string SID, short fwChnlId, string xml, object userState) {
+            if ((this.GetDefaultCommInfoByFwChnlOperationCompleted == null)) {
+                this.GetDefaultCommInfoByFwChnlOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDefaultCommInfoByFwChnlOperationCompleted);
+            }
+            this.InvokeAsync("GetDefaultCommInfoByFwChnl", new object[] {
+                        userId,
+                        SID,
+                        fwChnlId,
+                        xml}, this.GetDefaultCommInfoByFwChnlOperationCompleted, userState);
+        }
+        
+        private void OnGetDefaultCommInfoByFwChnlOperationCompleted(object arg) {
+            if ((this.GetDefaultCommInfoByFwChnlCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetDefaultCommInfoByFwChnlCompleted(this, new GetDefaultCommInfoByFwChnlCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastControllerStatusFromHistoryByLicensePlate", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetLastControllerStatusFromHistoryByLicensePlate(int userId, string SID, string licensePlate, ref string xml) {
+            object[] results = this.Invoke("GetLastControllerStatusFromHistoryByLicensePlate", new object[] {
+                        userId,
+                        SID,
+                        licensePlate,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetLastControllerStatusFromHistoryByLicensePlateAsync(int userId, string SID, string licensePlate, string xml) {
+            this.GetLastControllerStatusFromHistoryByLicensePlateAsync(userId, SID, licensePlate, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetLastControllerStatusFromHistoryByLicensePlateAsync(int userId, string SID, string licensePlate, string xml, object userState) {
+            if ((this.GetLastControllerStatusFromHistoryByLicensePlateOperationCompleted == null)) {
+                this.GetLastControllerStatusFromHistoryByLicensePlateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLastControllerStatusFromHistoryByLicensePlateOperationCompleted);
+            }
+            this.InvokeAsync("GetLastControllerStatusFromHistoryByLicensePlate", new object[] {
+                        userId,
+                        SID,
+                        licensePlate,
+                        xml}, this.GetLastControllerStatusFromHistoryByLicensePlateOperationCompleted, userState);
+        }
+        
+        private void OnGetLastControllerStatusFromHistoryByLicensePlateOperationCompleted(object arg) {
+            if ((this.GetLastControllerStatusFromHistoryByLicensePlateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetLastControllerStatusFromHistoryByLicensePlateCompleted(this, new GetLastControllerStatusFromHistoryByLicensePlateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastControllerStatusFromHistoryByBoxId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetLastControllerStatusFromHistoryByBoxId(int userId, string SID, int boxId, ref string xml) {
+            object[] results = this.Invoke("GetLastControllerStatusFromHistoryByBoxId", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetLastControllerStatusFromHistoryByBoxIdAsync(int userId, string SID, int boxId, string xml) {
+            this.GetLastControllerStatusFromHistoryByBoxIdAsync(userId, SID, boxId, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetLastControllerStatusFromHistoryByBoxIdAsync(int userId, string SID, int boxId, string xml, object userState) {
+            if ((this.GetLastControllerStatusFromHistoryByBoxIdOperationCompleted == null)) {
+                this.GetLastControllerStatusFromHistoryByBoxIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLastControllerStatusFromHistoryByBoxIdOperationCompleted);
+            }
+            this.InvokeAsync("GetLastControllerStatusFromHistoryByBoxId", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        xml}, this.GetLastControllerStatusFromHistoryByBoxIdOperationCompleted, userState);
+        }
+        
+        private void OnGetLastControllerStatusFromHistoryByBoxIdOperationCompleted(object arg) {
+            if ((this.GetLastControllerStatusFromHistoryByBoxIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetLastControllerStatusFromHistoryByBoxIdCompleted(this, new GetLastControllerStatusFromHistoryByBoxIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastTARModeFromHistoryByLicensePlate", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetLastTARModeFromHistoryByLicensePlate(int userId, string SID, string licensePlate, ref string xml) {
+            object[] results = this.Invoke("GetLastTARModeFromHistoryByLicensePlate", new object[] {
+                        userId,
+                        SID,
+                        licensePlate,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetLastTARModeFromHistoryByLicensePlateAsync(int userId, string SID, string licensePlate, string xml) {
+            this.GetLastTARModeFromHistoryByLicensePlateAsync(userId, SID, licensePlate, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetLastTARModeFromHistoryByLicensePlateAsync(int userId, string SID, string licensePlate, string xml, object userState) {
+            if ((this.GetLastTARModeFromHistoryByLicensePlateOperationCompleted == null)) {
+                this.GetLastTARModeFromHistoryByLicensePlateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLastTARModeFromHistoryByLicensePlateOperationCompleted);
+            }
+            this.InvokeAsync("GetLastTARModeFromHistoryByLicensePlate", new object[] {
+                        userId,
+                        SID,
+                        licensePlate,
+                        xml}, this.GetLastTARModeFromHistoryByLicensePlateOperationCompleted, userState);
+        }
+        
+        private void OnGetLastTARModeFromHistoryByLicensePlateOperationCompleted(object arg) {
+            if ((this.GetLastTARModeFromHistoryByLicensePlateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetLastTARModeFromHistoryByLicensePlateCompleted(this, new GetLastTARModeFromHistoryByLicensePlateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastTARModeFromHistoryByBoxId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetLastTARModeFromHistoryByBoxId(int userId, string SID, int boxId, ref string xml) {
+            object[] results = this.Invoke("GetLastTARModeFromHistoryByBoxId", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetLastTARModeFromHistoryByBoxIdAsync(int userId, string SID, int boxId, string xml) {
+            this.GetLastTARModeFromHistoryByBoxIdAsync(userId, SID, boxId, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetLastTARModeFromHistoryByBoxIdAsync(int userId, string SID, int boxId, string xml, object userState) {
+            if ((this.GetLastTARModeFromHistoryByBoxIdOperationCompleted == null)) {
+                this.GetLastTARModeFromHistoryByBoxIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLastTARModeFromHistoryByBoxIdOperationCompleted);
+            }
+            this.InvokeAsync("GetLastTARModeFromHistoryByBoxId", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        xml}, this.GetLastTARModeFromHistoryByBoxIdOperationCompleted, userState);
+        }
+        
+        private void OnGetLastTARModeFromHistoryByBoxIdOperationCompleted(object arg) {
+            if ((this.GetLastTARModeFromHistoryByBoxIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetLastTARModeFromHistoryByBoxIdCompleted(this, new GetLastTARModeFromHistoryByBoxIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastKeyFobStatusFromHistoryByLicensePlate", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetLastKeyFobStatusFromHistoryByLicensePlate(int userId, string SID, string licensePlate, ref string xml) {
+            object[] results = this.Invoke("GetLastKeyFobStatusFromHistoryByLicensePlate", new object[] {
+                        userId,
+                        SID,
+                        licensePlate,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetLastKeyFobStatusFromHistoryByLicensePlateAsync(int userId, string SID, string licensePlate, string xml) {
+            this.GetLastKeyFobStatusFromHistoryByLicensePlateAsync(userId, SID, licensePlate, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetLastKeyFobStatusFromHistoryByLicensePlateAsync(int userId, string SID, string licensePlate, string xml, object userState) {
+            if ((this.GetLastKeyFobStatusFromHistoryByLicensePlateOperationCompleted == null)) {
+                this.GetLastKeyFobStatusFromHistoryByLicensePlateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLastKeyFobStatusFromHistoryByLicensePlateOperationCompleted);
+            }
+            this.InvokeAsync("GetLastKeyFobStatusFromHistoryByLicensePlate", new object[] {
+                        userId,
+                        SID,
+                        licensePlate,
+                        xml}, this.GetLastKeyFobStatusFromHistoryByLicensePlateOperationCompleted, userState);
+        }
+        
+        private void OnGetLastKeyFobStatusFromHistoryByLicensePlateOperationCompleted(object arg) {
+            if ((this.GetLastKeyFobStatusFromHistoryByLicensePlateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetLastKeyFobStatusFromHistoryByLicensePlateCompleted(this, new GetLastKeyFobStatusFromHistoryByLicensePlateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastKeyFobStatusFromHistoryByBoxId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetLastKeyFobStatusFromHistoryByBoxId(int userId, string SID, int boxId, ref string xml) {
+            object[] results = this.Invoke("GetLastKeyFobStatusFromHistoryByBoxId", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        xml});
+            xml = ((string)(results[1]));
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetLastKeyFobStatusFromHistoryByBoxIdAsync(int userId, string SID, int boxId, string xml) {
+            this.GetLastKeyFobStatusFromHistoryByBoxIdAsync(userId, SID, boxId, xml, null);
+        }
+        
+        /// <remarks/>
+        public void GetLastKeyFobStatusFromHistoryByBoxIdAsync(int userId, string SID, int boxId, string xml, object userState) {
+            if ((this.GetLastKeyFobStatusFromHistoryByBoxIdOperationCompleted == null)) {
+                this.GetLastKeyFobStatusFromHistoryByBoxIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLastKeyFobStatusFromHistoryByBoxIdOperationCompleted);
+            }
+            this.InvokeAsync("GetLastKeyFobStatusFromHistoryByBoxId", new object[] {
+                        userId,
+                        SID,
+                        boxId,
+                        xml}, this.GetLastKeyFobStatusFromHistoryByBoxIdOperationCompleted, userState);
+        }
+        
+        private void OnGetLastKeyFobStatusFromHistoryByBoxIdOperationCompleted(object arg) {
+            if ((this.GetLastKeyFobStatusFromHistoryByBoxIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetLastKeyFobStatusFromHistoryByBoxIdCompleted(this, new GetLastKeyFobStatusFromHistoryByBoxIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastVCROffDelayFromHistoryByLicensePlate", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -2310,535 +3644,6 @@ namespace SentinelMobile.ServerDBVehicle {
             if ((this.VehicleOperationTypes_GetCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.VehicleOperationTypes_GetCompleted(this, new VehicleOperationTypes_GetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/VehicleMaintenance_UpdateEngineHours", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int VehicleMaintenance_UpdateEngineHours(int userId, string SID, long vehicleId, int engineHours) {
-            object[] results = this.Invoke("VehicleMaintenance_UpdateEngineHours", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        engineHours});
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void VehicleMaintenance_UpdateEngineHoursAsync(int userId, string SID, long vehicleId, int engineHours) {
-            this.VehicleMaintenance_UpdateEngineHoursAsync(userId, SID, vehicleId, engineHours, null);
-        }
-        
-        /// <remarks/>
-        public void VehicleMaintenance_UpdateEngineHoursAsync(int userId, string SID, long vehicleId, int engineHours, object userState) {
-            if ((this.VehicleMaintenance_UpdateEngineHoursOperationCompleted == null)) {
-                this.VehicleMaintenance_UpdateEngineHoursOperationCompleted = new System.Threading.SendOrPostCallback(this.OnVehicleMaintenance_UpdateEngineHoursOperationCompleted);
-            }
-            this.InvokeAsync("VehicleMaintenance_UpdateEngineHours", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        engineHours}, this.VehicleMaintenance_UpdateEngineHoursOperationCompleted, userState);
-        }
-        
-        private void OnVehicleMaintenance_UpdateEngineHoursOperationCompleted(object arg) {
-            if ((this.VehicleMaintenance_UpdateEngineHoursCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.VehicleMaintenance_UpdateEngineHoursCompleted(this, new VehicleMaintenance_UpdateEngineHoursCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/VehicleMaintenance_GetInfo", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int VehicleMaintenance_GetInfo(int userId, string SID, long vehicleId, bool includeNotInit, ref string xml) {
-            object[] results = this.Invoke("VehicleMaintenance_GetInfo", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        includeNotInit,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void VehicleMaintenance_GetInfoAsync(int userId, string SID, long vehicleId, bool includeNotInit, string xml) {
-            this.VehicleMaintenance_GetInfoAsync(userId, SID, vehicleId, includeNotInit, xml, null);
-        }
-        
-        /// <remarks/>
-        public void VehicleMaintenance_GetInfoAsync(int userId, string SID, long vehicleId, bool includeNotInit, string xml, object userState) {
-            if ((this.VehicleMaintenance_GetInfoOperationCompleted == null)) {
-                this.VehicleMaintenance_GetInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnVehicleMaintenance_GetInfoOperationCompleted);
-            }
-            this.InvokeAsync("VehicleMaintenance_GetInfo", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        includeNotInit,
-                        xml}, this.VehicleMaintenance_GetInfoOperationCompleted, userState);
-        }
-        
-        private void OnVehicleMaintenance_GetInfoOperationCompleted(object arg) {
-            if ((this.VehicleMaintenance_GetInfoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.VehicleMaintenance_GetInfoCompleted(this, new VehicleMaintenance_GetInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetMDTInfoByTypeId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetMDTInfoByTypeId(int userId, string SID, int MdtTypeId, ref string xml) {
-            object[] results = this.Invoke("GetMDTInfoByTypeId", new object[] {
-                        userId,
-                        SID,
-                        MdtTypeId,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetMDTInfoByTypeIdAsync(int userId, string SID, int MdtTypeId, string xml) {
-            this.GetMDTInfoByTypeIdAsync(userId, SID, MdtTypeId, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetMDTInfoByTypeIdAsync(int userId, string SID, int MdtTypeId, string xml, object userState) {
-            if ((this.GetMDTInfoByTypeIdOperationCompleted == null)) {
-                this.GetMDTInfoByTypeIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetMDTInfoByTypeIdOperationCompleted);
-            }
-            this.InvokeAsync("GetMDTInfoByTypeId", new object[] {
-                        userId,
-                        SID,
-                        MdtTypeId,
-                        xml}, this.GetMDTInfoByTypeIdOperationCompleted, userState);
-        }
-        
-        private void OnGetMDTInfoByTypeIdOperationCompleted(object arg) {
-            if ((this.GetMDTInfoByTypeIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetMDTInfoByTypeIdCompleted(this, new GetMDTInfoByTypeIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetDTCCodesDescription", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetDTCCodesDescription(int userId, string SID, ref string xml) {
-            object[] results = this.Invoke("GetDTCCodesDescription", new object[] {
-                        userId,
-                        SID,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetDTCCodesDescriptionAsync(int userId, string SID, string xml) {
-            this.GetDTCCodesDescriptionAsync(userId, SID, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetDTCCodesDescriptionAsync(int userId, string SID, string xml, object userState) {
-            if ((this.GetDTCCodesDescriptionOperationCompleted == null)) {
-                this.GetDTCCodesDescriptionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDTCCodesDescriptionOperationCompleted);
-            }
-            this.InvokeAsync("GetDTCCodesDescription", new object[] {
-                        userId,
-                        SID,
-                        xml}, this.GetDTCCodesDescriptionOperationCompleted, userState);
-        }
-        
-        private void OnGetDTCCodesDescriptionOperationCompleted(object arg) {
-            if ((this.GetDTCCodesDescriptionCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetDTCCodesDescriptionCompleted(this, new GetDTCCodesDescriptionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetBoxId4BB", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetBoxId4BB(int userId, string SID, string PIN, ref int boxId) {
-            object[] results = this.Invoke("GetBoxId4BB", new object[] {
-                        userId,
-                        SID,
-                        PIN,
-                        boxId});
-            boxId = ((int)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetBoxId4BBAsync(int userId, string SID, string PIN, int boxId) {
-            this.GetBoxId4BBAsync(userId, SID, PIN, boxId, null);
-        }
-        
-        /// <remarks/>
-        public void GetBoxId4BBAsync(int userId, string SID, string PIN, int boxId, object userState) {
-            if ((this.GetBoxId4BBOperationCompleted == null)) {
-                this.GetBoxId4BBOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetBoxId4BBOperationCompleted);
-            }
-            this.InvokeAsync("GetBoxId4BB", new object[] {
-                        userId,
-                        SID,
-                        PIN,
-                        boxId}, this.GetBoxId4BBOperationCompleted, userState);
-        }
-        
-        private void OnGetBoxId4BBOperationCompleted(object arg) {
-            if ((this.GetBoxId4BBCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetBoxId4BBCompleted(this, new GetBoxId4BBCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetVehicleExtraServiceHistoryByVehicleId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetVehicleExtraServiceHistoryByVehicleId(int userId, string SID, long vehicleId, ref string xml) {
-            object[] results = this.Invoke("GetVehicleExtraServiceHistoryByVehicleId", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetVehicleExtraServiceHistoryByVehicleIdAsync(int userId, string SID, long vehicleId, string xml) {
-            this.GetVehicleExtraServiceHistoryByVehicleIdAsync(userId, SID, vehicleId, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetVehicleExtraServiceHistoryByVehicleIdAsync(int userId, string SID, long vehicleId, string xml, object userState) {
-            if ((this.GetVehicleExtraServiceHistoryByVehicleIdOperationCompleted == null)) {
-                this.GetVehicleExtraServiceHistoryByVehicleIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetVehicleExtraServiceHistoryByVehicleIdOperationCompleted);
-            }
-            this.InvokeAsync("GetVehicleExtraServiceHistoryByVehicleId", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        xml}, this.GetVehicleExtraServiceHistoryByVehicleIdOperationCompleted, userState);
-        }
-        
-        private void OnGetVehicleExtraServiceHistoryByVehicleIdOperationCompleted(object arg) {
-            if ((this.GetVehicleExtraServiceHistoryByVehicleIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetVehicleExtraServiceHistoryByVehicleIdCompleted(this, new GetVehicleExtraServiceHistoryByVehicleIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/VehicleExtraServiceHistory_Add_Update", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int VehicleExtraServiceHistory_Add_Update(
-                    int userId, 
-                    string SID, 
-                    long VehicleId, 
-                    string Field1, 
-                    string Field2, 
-                    string Field3, 
-                    string Field4, 
-                    string Field5, 
-                    string Field6, 
-                    string Field7, 
-                    string Field8, 
-                    string Field9, 
-                    string Field10, 
-                    string Field11, 
-                    string Field12, 
-                    string Field13, 
-                    string Field14, 
-                    string Field15, 
-                    string Field16) {
-            object[] results = this.Invoke("VehicleExtraServiceHistory_Add_Update", new object[] {
-                        userId,
-                        SID,
-                        VehicleId,
-                        Field1,
-                        Field2,
-                        Field3,
-                        Field4,
-                        Field5,
-                        Field6,
-                        Field7,
-                        Field8,
-                        Field9,
-                        Field10,
-                        Field11,
-                        Field12,
-                        Field13,
-                        Field14,
-                        Field15,
-                        Field16});
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void VehicleExtraServiceHistory_Add_UpdateAsync(
-                    int userId, 
-                    string SID, 
-                    long VehicleId, 
-                    string Field1, 
-                    string Field2, 
-                    string Field3, 
-                    string Field4, 
-                    string Field5, 
-                    string Field6, 
-                    string Field7, 
-                    string Field8, 
-                    string Field9, 
-                    string Field10, 
-                    string Field11, 
-                    string Field12, 
-                    string Field13, 
-                    string Field14, 
-                    string Field15, 
-                    string Field16) {
-            this.VehicleExtraServiceHistory_Add_UpdateAsync(userId, SID, VehicleId, Field1, Field2, Field3, Field4, Field5, Field6, Field7, Field8, Field9, Field10, Field11, Field12, Field13, Field14, Field15, Field16, null);
-        }
-        
-        /// <remarks/>
-        public void VehicleExtraServiceHistory_Add_UpdateAsync(
-                    int userId, 
-                    string SID, 
-                    long VehicleId, 
-                    string Field1, 
-                    string Field2, 
-                    string Field3, 
-                    string Field4, 
-                    string Field5, 
-                    string Field6, 
-                    string Field7, 
-                    string Field8, 
-                    string Field9, 
-                    string Field10, 
-                    string Field11, 
-                    string Field12, 
-                    string Field13, 
-                    string Field14, 
-                    string Field15, 
-                    string Field16, 
-                    object userState) {
-            if ((this.VehicleExtraServiceHistory_Add_UpdateOperationCompleted == null)) {
-                this.VehicleExtraServiceHistory_Add_UpdateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnVehicleExtraServiceHistory_Add_UpdateOperationCompleted);
-            }
-            this.InvokeAsync("VehicleExtraServiceHistory_Add_Update", new object[] {
-                        userId,
-                        SID,
-                        VehicleId,
-                        Field1,
-                        Field2,
-                        Field3,
-                        Field4,
-                        Field5,
-                        Field6,
-                        Field7,
-                        Field8,
-                        Field9,
-                        Field10,
-                        Field11,
-                        Field12,
-                        Field13,
-                        Field14,
-                        Field15,
-                        Field16}, this.VehicleExtraServiceHistory_Add_UpdateOperationCompleted, userState);
-        }
-        
-        private void OnVehicleExtraServiceHistory_Add_UpdateOperationCompleted(object arg) {
-            if ((this.VehicleExtraServiceHistory_Add_UpdateCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.VehicleExtraServiceHistory_Add_UpdateCompleted(this, new VehicleExtraServiceHistory_Add_UpdateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetJ1708CodesVehicleFleet", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetJ1708CodesVehicleFleet(int userId, string SID, int vehicleId, int fleetId, System.DateTime from, System.DateTime to, string lang, ref string xml) {
-            object[] results = this.Invoke("GetJ1708CodesVehicleFleet", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        fleetId,
-                        from,
-                        to,
-                        lang,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetJ1708CodesVehicleFleetAsync(int userId, string SID, int vehicleId, int fleetId, System.DateTime from, System.DateTime to, string lang, string xml) {
-            this.GetJ1708CodesVehicleFleetAsync(userId, SID, vehicleId, fleetId, from, to, lang, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetJ1708CodesVehicleFleetAsync(int userId, string SID, int vehicleId, int fleetId, System.DateTime from, System.DateTime to, string lang, string xml, object userState) {
-            if ((this.GetJ1708CodesVehicleFleetOperationCompleted == null)) {
-                this.GetJ1708CodesVehicleFleetOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetJ1708CodesVehicleFleetOperationCompleted);
-            }
-            this.InvokeAsync("GetJ1708CodesVehicleFleet", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        fleetId,
-                        from,
-                        to,
-                        lang,
-                        xml}, this.GetJ1708CodesVehicleFleetOperationCompleted, userState);
-        }
-        
-        private void OnGetJ1708CodesVehicleFleetOperationCompleted(object arg) {
-            if ((this.GetJ1708CodesVehicleFleetCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetJ1708CodesVehicleFleetCompleted(this, new GetJ1708CodesVehicleFleetCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetBoxExtraInfo", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetBoxExtraInfo(int userId, string SID, long vehicleId, ref string xml) {
-            object[] results = this.Invoke("GetBoxExtraInfo", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetBoxExtraInfoAsync(int userId, string SID, long vehicleId, string xml) {
-            this.GetBoxExtraInfoAsync(userId, SID, vehicleId, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetBoxExtraInfoAsync(int userId, string SID, long vehicleId, string xml, object userState) {
-            if ((this.GetBoxExtraInfoOperationCompleted == null)) {
-                this.GetBoxExtraInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetBoxExtraInfoOperationCompleted);
-            }
-            this.InvokeAsync("GetBoxExtraInfo", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        xml}, this.GetBoxExtraInfoOperationCompleted, userState);
-        }
-        
-        private void OnGetBoxExtraInfoOperationCompleted(object arg) {
-            if ((this.GetBoxExtraInfoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetBoxExtraInfoCompleted(this, new GetBoxExtraInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetStateMileagePerVehicle", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetStateMileagePerVehicle(int userId, string SID, string licensePlate, string FromDate, string ToDate, ref string xml) {
-            object[] results = this.Invoke("GetStateMileagePerVehicle", new object[] {
-                        userId,
-                        SID,
-                        licensePlate,
-                        FromDate,
-                        ToDate,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetStateMileagePerVehicleAsync(int userId, string SID, string licensePlate, string FromDate, string ToDate, string xml) {
-            this.GetStateMileagePerVehicleAsync(userId, SID, licensePlate, FromDate, ToDate, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetStateMileagePerVehicleAsync(int userId, string SID, string licensePlate, string FromDate, string ToDate, string xml, object userState) {
-            if ((this.GetStateMileagePerVehicleOperationCompleted == null)) {
-                this.GetStateMileagePerVehicleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetStateMileagePerVehicleOperationCompleted);
-            }
-            this.InvokeAsync("GetStateMileagePerVehicle", new object[] {
-                        userId,
-                        SID,
-                        licensePlate,
-                        FromDate,
-                        ToDate,
-                        xml}, this.GetStateMileagePerVehicleOperationCompleted, userState);
-        }
-        
-        private void OnGetStateMileagePerVehicleOperationCompleted(object arg) {
-            if ((this.GetStateMileagePerVehicleCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetStateMileagePerVehicleCompleted(this, new GetStateMileagePerVehicleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/AddMdtOTA", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int AddMdtOTA(int userId, string SID, int boxId, short typeId, string customProp) {
-            object[] results = this.Invoke("AddMdtOTA", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        typeId,
-                        customProp});
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void AddMdtOTAAsync(int userId, string SID, int boxId, short typeId, string customProp) {
-            this.AddMdtOTAAsync(userId, SID, boxId, typeId, customProp, null);
-        }
-        
-        /// <remarks/>
-        public void AddMdtOTAAsync(int userId, string SID, int boxId, short typeId, string customProp, object userState) {
-            if ((this.AddMdtOTAOperationCompleted == null)) {
-                this.AddMdtOTAOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddMdtOTAOperationCompleted);
-            }
-            this.InvokeAsync("AddMdtOTA", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        typeId,
-                        customProp}, this.AddMdtOTAOperationCompleted, userState);
-        }
-        
-        private void OnAddMdtOTAOperationCompleted(object arg) {
-            if ((this.AddMdtOTACompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.AddMdtOTACompleted(this, new AddMdtOTACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetPostedSpeedServiceConfiguration", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetPostedSpeedServiceConfiguration(int userId, string SID, ref string xml) {
-            object[] results = this.Invoke("GetPostedSpeedServiceConfiguration", new object[] {
-                        userId,
-                        SID,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetPostedSpeedServiceConfigurationAsync(int userId, string SID, string xml) {
-            this.GetPostedSpeedServiceConfigurationAsync(userId, SID, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetPostedSpeedServiceConfigurationAsync(int userId, string SID, string xml, object userState) {
-            if ((this.GetPostedSpeedServiceConfigurationOperationCompleted == null)) {
-                this.GetPostedSpeedServiceConfigurationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetPostedSpeedServiceConfigurationOperationCompleted);
-            }
-            this.InvokeAsync("GetPostedSpeedServiceConfiguration", new object[] {
-                        userId,
-                        SID,
-                        xml}, this.GetPostedSpeedServiceConfigurationOperationCompleted, userState);
-        }
-        
-        private void OnGetPostedSpeedServiceConfigurationOperationCompleted(object arg) {
-            if ((this.GetPostedSpeedServiceConfigurationCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetPostedSpeedServiceConfigurationCompleted(this, new GetPostedSpeedServiceConfigurationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -5155,811 +5960,6 @@ namespace SentinelMobile.ServerDBVehicle {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetAllUnassignedToVehicleGeozonesInfo", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetAllUnassignedToVehicleGeozonesInfo(int userId, string SID, long vehicleId, ref string xml) {
-            object[] results = this.Invoke("GetAllUnassignedToVehicleGeozonesInfo", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetAllUnassignedToVehicleGeozonesInfoAsync(int userId, string SID, long vehicleId, string xml) {
-            this.GetAllUnassignedToVehicleGeozonesInfoAsync(userId, SID, vehicleId, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetAllUnassignedToVehicleGeozonesInfoAsync(int userId, string SID, long vehicleId, string xml, object userState) {
-            if ((this.GetAllUnassignedToVehicleGeozonesInfoOperationCompleted == null)) {
-                this.GetAllUnassignedToVehicleGeozonesInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAllUnassignedToVehicleGeozonesInfoOperationCompleted);
-            }
-            this.InvokeAsync("GetAllUnassignedToVehicleGeozonesInfo", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        xml}, this.GetAllUnassignedToVehicleGeozonesInfoOperationCompleted, userState);
-        }
-        
-        private void OnGetAllUnassignedToVehicleGeozonesInfoOperationCompleted(object arg) {
-            if ((this.GetAllUnassignedToVehicleGeozonesInfoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetAllUnassignedToVehicleGeozonesInfoCompleted(this, new GetAllUnassignedToVehicleGeozonesInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/SetGeozoneSeverity", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int SetGeozoneSeverity(int organizationId, int userId, string SID, long vehicleId, short geozoneId, short severityId) {
-            object[] results = this.Invoke("SetGeozoneSeverity", new object[] {
-                        organizationId,
-                        userId,
-                        SID,
-                        vehicleId,
-                        geozoneId,
-                        severityId});
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void SetGeozoneSeverityAsync(int organizationId, int userId, string SID, long vehicleId, short geozoneId, short severityId) {
-            this.SetGeozoneSeverityAsync(organizationId, userId, SID, vehicleId, geozoneId, severityId, null);
-        }
-        
-        /// <remarks/>
-        public void SetGeozoneSeverityAsync(int organizationId, int userId, string SID, long vehicleId, short geozoneId, short severityId, object userState) {
-            if ((this.SetGeozoneSeverityOperationCompleted == null)) {
-                this.SetGeozoneSeverityOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSetGeozoneSeverityOperationCompleted);
-            }
-            this.InvokeAsync("SetGeozoneSeverity", new object[] {
-                        organizationId,
-                        userId,
-                        SID,
-                        vehicleId,
-                        geozoneId,
-                        severityId}, this.SetGeozoneSeverityOperationCompleted, userState);
-        }
-        
-        private void OnSetGeozoneSeverityOperationCompleted(object arg) {
-            if ((this.SetGeozoneSeverityCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SetGeozoneSeverityCompleted(this, new SetGeozoneSeverityCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/DeleteGeozoneFromVehicle", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int DeleteGeozoneFromVehicle(int userId, string SID, int boxId, short geozoneId, ref int rowsAffected) {
-            object[] results = this.Invoke("DeleteGeozoneFromVehicle", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        geozoneId,
-                        rowsAffected});
-            rowsAffected = ((int)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void DeleteGeozoneFromVehicleAsync(int userId, string SID, int boxId, short geozoneId, int rowsAffected) {
-            this.DeleteGeozoneFromVehicleAsync(userId, SID, boxId, geozoneId, rowsAffected, null);
-        }
-        
-        /// <remarks/>
-        public void DeleteGeozoneFromVehicleAsync(int userId, string SID, int boxId, short geozoneId, int rowsAffected, object userState) {
-            if ((this.DeleteGeozoneFromVehicleOperationCompleted == null)) {
-                this.DeleteGeozoneFromVehicleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDeleteGeozoneFromVehicleOperationCompleted);
-            }
-            this.InvokeAsync("DeleteGeozoneFromVehicle", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        geozoneId,
-                        rowsAffected}, this.DeleteGeozoneFromVehicleOperationCompleted, userState);
-        }
-        
-        private void OnDeleteGeozoneFromVehicleOperationCompleted(object arg) {
-            if ((this.DeleteGeozoneFromVehicleCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.DeleteGeozoneFromVehicleCompleted(this, new DeleteGeozoneFromVehicleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/DeleteGeozoneFromVehicleByVehicleId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int DeleteGeozoneFromVehicleByVehicleId(int userId, string SID, int vehicleId, short geozoneId, ref int rowsAffected) {
-            object[] results = this.Invoke("DeleteGeozoneFromVehicleByVehicleId", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        geozoneId,
-                        rowsAffected});
-            rowsAffected = ((int)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void DeleteGeozoneFromVehicleByVehicleIdAsync(int userId, string SID, int vehicleId, short geozoneId, int rowsAffected) {
-            this.DeleteGeozoneFromVehicleByVehicleIdAsync(userId, SID, vehicleId, geozoneId, rowsAffected, null);
-        }
-        
-        /// <remarks/>
-        public void DeleteGeozoneFromVehicleByVehicleIdAsync(int userId, string SID, int vehicleId, short geozoneId, int rowsAffected, object userState) {
-            if ((this.DeleteGeozoneFromVehicleByVehicleIdOperationCompleted == null)) {
-                this.DeleteGeozoneFromVehicleByVehicleIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDeleteGeozoneFromVehicleByVehicleIdOperationCompleted);
-            }
-            this.InvokeAsync("DeleteGeozoneFromVehicleByVehicleId", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        geozoneId,
-                        rowsAffected}, this.DeleteGeozoneFromVehicleByVehicleIdOperationCompleted, userState);
-        }
-        
-        private void OnDeleteGeozoneFromVehicleByVehicleIdOperationCompleted(object arg) {
-            if ((this.DeleteGeozoneFromVehicleByVehicleIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.DeleteGeozoneFromVehicleByVehicleIdCompleted(this, new DeleteGeozoneFromVehicleByVehicleIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/AddGeozoneToVehicle", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int AddGeozoneToVehicle(int userId, string SID, int vehicleId, short geozoneId, short severityId, int speed) {
-            object[] results = this.Invoke("AddGeozoneToVehicle", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        geozoneId,
-                        severityId,
-                        speed});
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void AddGeozoneToVehicleAsync(int userId, string SID, int vehicleId, short geozoneId, short severityId, int speed) {
-            this.AddGeozoneToVehicleAsync(userId, SID, vehicleId, geozoneId, severityId, speed, null);
-        }
-        
-        /// <remarks/>
-        public void AddGeozoneToVehicleAsync(int userId, string SID, int vehicleId, short geozoneId, short severityId, int speed, object userState) {
-            if ((this.AddGeozoneToVehicleOperationCompleted == null)) {
-                this.AddGeozoneToVehicleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddGeozoneToVehicleOperationCompleted);
-            }
-            this.InvokeAsync("AddGeozoneToVehicle", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        geozoneId,
-                        severityId,
-                        speed}, this.AddGeozoneToVehicleOperationCompleted, userState);
-        }
-        
-        private void OnAddGeozoneToVehicleOperationCompleted(object arg) {
-            if ((this.AddGeozoneToVehicleCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.AddGeozoneToVehicleCompleted(this, new AddGeozoneToVehicleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetMaxGeozonesByVehicleId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetMaxGeozonesByVehicleId(int userId, string SID, long vehicleId, ref int maxGeozones) {
-            object[] results = this.Invoke("GetMaxGeozonesByVehicleId", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        maxGeozones});
-            maxGeozones = ((int)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetMaxGeozonesByVehicleIdAsync(int userId, string SID, long vehicleId, int maxGeozones) {
-            this.GetMaxGeozonesByVehicleIdAsync(userId, SID, vehicleId, maxGeozones, null);
-        }
-        
-        /// <remarks/>
-        public void GetMaxGeozonesByVehicleIdAsync(int userId, string SID, long vehicleId, int maxGeozones, object userState) {
-            if ((this.GetMaxGeozonesByVehicleIdOperationCompleted == null)) {
-                this.GetMaxGeozonesByVehicleIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetMaxGeozonesByVehicleIdOperationCompleted);
-            }
-            this.InvokeAsync("GetMaxGeozonesByVehicleId", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        maxGeozones}, this.GetMaxGeozonesByVehicleIdOperationCompleted, userState);
-        }
-        
-        private void OnGetMaxGeozonesByVehicleIdOperationCompleted(object arg) {
-            if ((this.GetMaxGeozonesByVehicleIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetMaxGeozonesByVehicleIdCompleted(this, new GetMaxGeozonesByVehicleIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetCommInfoByBoxId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetCommInfoByBoxId(int userId, string SID, int boxId, ref string xml) {
-            object[] results = this.Invoke("GetCommInfoByBoxId", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetCommInfoByBoxIdAsync(int userId, string SID, int boxId, string xml) {
-            this.GetCommInfoByBoxIdAsync(userId, SID, boxId, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetCommInfoByBoxIdAsync(int userId, string SID, int boxId, string xml, object userState) {
-            if ((this.GetCommInfoByBoxIdOperationCompleted == null)) {
-                this.GetCommInfoByBoxIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCommInfoByBoxIdOperationCompleted);
-            }
-            this.InvokeAsync("GetCommInfoByBoxId", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        xml}, this.GetCommInfoByBoxIdOperationCompleted, userState);
-        }
-        
-        private void OnGetCommInfoByBoxIdOperationCompleted(object arg) {
-            if ((this.GetCommInfoByBoxIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetCommInfoByBoxIdCompleted(this, new GetCommInfoByBoxIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetBoxConfigInfo", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetBoxConfigInfo(int userId, string SID, int boxId, ref string xml) {
-            object[] results = this.Invoke("GetBoxConfigInfo", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetBoxConfigInfoAsync(int userId, string SID, int boxId, string xml) {
-            this.GetBoxConfigInfoAsync(userId, SID, boxId, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetBoxConfigInfoAsync(int userId, string SID, int boxId, string xml, object userState) {
-            if ((this.GetBoxConfigInfoOperationCompleted == null)) {
-                this.GetBoxConfigInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetBoxConfigInfoOperationCompleted);
-            }
-            this.InvokeAsync("GetBoxConfigInfo", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        xml}, this.GetBoxConfigInfoOperationCompleted, userState);
-        }
-        
-        private void OnGetBoxConfigInfoOperationCompleted(object arg) {
-            if ((this.GetBoxConfigInfoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetBoxConfigInfoCompleted(this, new GetBoxConfigInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetActiveVehicleCfgInfo", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetActiveVehicleCfgInfo(int userId, string SID, long vehicleId, ref string xml) {
-            object[] results = this.Invoke("GetActiveVehicleCfgInfo", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetActiveVehicleCfgInfoAsync(int userId, string SID, long vehicleId, string xml) {
-            this.GetActiveVehicleCfgInfoAsync(userId, SID, vehicleId, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetActiveVehicleCfgInfoAsync(int userId, string SID, long vehicleId, string xml, object userState) {
-            if ((this.GetActiveVehicleCfgInfoOperationCompleted == null)) {
-                this.GetActiveVehicleCfgInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetActiveVehicleCfgInfoOperationCompleted);
-            }
-            this.InvokeAsync("GetActiveVehicleCfgInfo", new object[] {
-                        userId,
-                        SID,
-                        vehicleId,
-                        xml}, this.GetActiveVehicleCfgInfoOperationCompleted, userState);
-        }
-        
-        private void OnGetActiveVehicleCfgInfoOperationCompleted(object arg) {
-            if ((this.GetActiveVehicleCfgInfoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetActiveVehicleCfgInfoCompleted(this, new GetActiveVehicleCfgInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastCommunicationByBoxId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetLastCommunicationByBoxId(int userId, string SID, int boxId, ref System.DateTime dtLastCommunicated) {
-            object[] results = this.Invoke("GetLastCommunicationByBoxId", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        dtLastCommunicated});
-            dtLastCommunicated = ((System.DateTime)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetLastCommunicationByBoxIdAsync(int userId, string SID, int boxId, System.DateTime dtLastCommunicated) {
-            this.GetLastCommunicationByBoxIdAsync(userId, SID, boxId, dtLastCommunicated, null);
-        }
-        
-        /// <remarks/>
-        public void GetLastCommunicationByBoxIdAsync(int userId, string SID, int boxId, System.DateTime dtLastCommunicated, object userState) {
-            if ((this.GetLastCommunicationByBoxIdOperationCompleted == null)) {
-                this.GetLastCommunicationByBoxIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLastCommunicationByBoxIdOperationCompleted);
-            }
-            this.InvokeAsync("GetLastCommunicationByBoxId", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        dtLastCommunicated}, this.GetLastCommunicationByBoxIdOperationCompleted, userState);
-        }
-        
-        private void OnGetLastCommunicationByBoxIdOperationCompleted(object arg) {
-            if ((this.GetLastCommunicationByBoxIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetLastCommunicationByBoxIdCompleted(this, new GetLastCommunicationByBoxIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastBoxCommunicationInfo", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetLastBoxCommunicationInfo(int userId, string SID, int boxId, ref string xml) {
-            object[] results = this.Invoke("GetLastBoxCommunicationInfo", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetLastBoxCommunicationInfoAsync(int userId, string SID, int boxId, string xml) {
-            this.GetLastBoxCommunicationInfoAsync(userId, SID, boxId, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetLastBoxCommunicationInfoAsync(int userId, string SID, int boxId, string xml, object userState) {
-            if ((this.GetLastBoxCommunicationInfoOperationCompleted == null)) {
-                this.GetLastBoxCommunicationInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLastBoxCommunicationInfoOperationCompleted);
-            }
-            this.InvokeAsync("GetLastBoxCommunicationInfo", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        xml}, this.GetLastBoxCommunicationInfoOperationCompleted, userState);
-        }
-        
-        private void OnGetLastBoxCommunicationInfoOperationCompleted(object arg) {
-            if ((this.GetLastBoxCommunicationInfoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetLastBoxCommunicationInfoCompleted(this, new GetLastBoxCommunicationInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetVehicleLastKnownPositionInfoByBoxId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetVehicleLastKnownPositionInfoByBoxId(int userId, string SID, int boxId, string language, ref string xml) {
-            object[] results = this.Invoke("GetVehicleLastKnownPositionInfoByBoxId", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        language,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetVehicleLastKnownPositionInfoByBoxIdAsync(int userId, string SID, int boxId, string language, string xml) {
-            this.GetVehicleLastKnownPositionInfoByBoxIdAsync(userId, SID, boxId, language, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetVehicleLastKnownPositionInfoByBoxIdAsync(int userId, string SID, int boxId, string language, string xml, object userState) {
-            if ((this.GetVehicleLastKnownPositionInfoByBoxIdOperationCompleted == null)) {
-                this.GetVehicleLastKnownPositionInfoByBoxIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetVehicleLastKnownPositionInfoByBoxIdOperationCompleted);
-            }
-            this.InvokeAsync("GetVehicleLastKnownPositionInfoByBoxId", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        language,
-                        xml}, this.GetVehicleLastKnownPositionInfoByBoxIdOperationCompleted, userState);
-        }
-        
-        private void OnGetVehicleLastKnownPositionInfoByBoxIdOperationCompleted(object arg) {
-            if ((this.GetVehicleLastKnownPositionInfoByBoxIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetVehicleLastKnownPositionInfoByBoxIdCompleted(this, new GetVehicleLastKnownPositionInfoByBoxIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/UpdateBoxFeatures", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int UpdateBoxFeatures(int userId, string SID, int boxId, long mask) {
-            object[] results = this.Invoke("UpdateBoxFeatures", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        mask});
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void UpdateBoxFeaturesAsync(int userId, string SID, int boxId, long mask) {
-            this.UpdateBoxFeaturesAsync(userId, SID, boxId, mask, null);
-        }
-        
-        /// <remarks/>
-        public void UpdateBoxFeaturesAsync(int userId, string SID, int boxId, long mask, object userState) {
-            if ((this.UpdateBoxFeaturesOperationCompleted == null)) {
-                this.UpdateBoxFeaturesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateBoxFeaturesOperationCompleted);
-            }
-            this.InvokeAsync("UpdateBoxFeatures", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        mask}, this.UpdateBoxFeaturesOperationCompleted, userState);
-        }
-        
-        private void OnUpdateBoxFeaturesOperationCompleted(object arg) {
-            if ((this.UpdateBoxFeaturesCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.UpdateBoxFeaturesCompleted(this, new UpdateBoxFeaturesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetBoxConfigFeatures", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetBoxConfigFeatures(int userId, string SID, int boxId, ref string xml) {
-            object[] results = this.Invoke("GetBoxConfigFeatures", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetBoxConfigFeaturesAsync(int userId, string SID, int boxId, string xml) {
-            this.GetBoxConfigFeaturesAsync(userId, SID, boxId, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetBoxConfigFeaturesAsync(int userId, string SID, int boxId, string xml, object userState) {
-            if ((this.GetBoxConfigFeaturesOperationCompleted == null)) {
-                this.GetBoxConfigFeaturesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetBoxConfigFeaturesOperationCompleted);
-            }
-            this.InvokeAsync("GetBoxConfigFeatures", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        xml}, this.GetBoxConfigFeaturesOperationCompleted, userState);
-        }
-        
-        private void OnGetBoxConfigFeaturesOperationCompleted(object arg) {
-            if ((this.GetBoxConfigFeaturesCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetBoxConfigFeaturesCompleted(this, new GetBoxConfigFeaturesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetCommInfoByBoxAndFwChnl", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetCommInfoByBoxAndFwChnl(int userId, string SID, int boxId, short fwChnlId, ref string xml) {
-            object[] results = this.Invoke("GetCommInfoByBoxAndFwChnl", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        fwChnlId,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetCommInfoByBoxAndFwChnlAsync(int userId, string SID, int boxId, short fwChnlId, string xml) {
-            this.GetCommInfoByBoxAndFwChnlAsync(userId, SID, boxId, fwChnlId, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetCommInfoByBoxAndFwChnlAsync(int userId, string SID, int boxId, short fwChnlId, string xml, object userState) {
-            if ((this.GetCommInfoByBoxAndFwChnlOperationCompleted == null)) {
-                this.GetCommInfoByBoxAndFwChnlOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCommInfoByBoxAndFwChnlOperationCompleted);
-            }
-            this.InvokeAsync("GetCommInfoByBoxAndFwChnl", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        fwChnlId,
-                        xml}, this.GetCommInfoByBoxAndFwChnlOperationCompleted, userState);
-        }
-        
-        private void OnGetCommInfoByBoxAndFwChnlOperationCompleted(object arg) {
-            if ((this.GetCommInfoByBoxAndFwChnlCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetCommInfoByBoxAndFwChnlCompleted(this, new GetCommInfoByBoxAndFwChnlCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetDefaultCommInfoByFwChnl", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetDefaultCommInfoByFwChnl(int userId, string SID, short fwChnlId, ref string xml) {
-            object[] results = this.Invoke("GetDefaultCommInfoByFwChnl", new object[] {
-                        userId,
-                        SID,
-                        fwChnlId,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetDefaultCommInfoByFwChnlAsync(int userId, string SID, short fwChnlId, string xml) {
-            this.GetDefaultCommInfoByFwChnlAsync(userId, SID, fwChnlId, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetDefaultCommInfoByFwChnlAsync(int userId, string SID, short fwChnlId, string xml, object userState) {
-            if ((this.GetDefaultCommInfoByFwChnlOperationCompleted == null)) {
-                this.GetDefaultCommInfoByFwChnlOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDefaultCommInfoByFwChnlOperationCompleted);
-            }
-            this.InvokeAsync("GetDefaultCommInfoByFwChnl", new object[] {
-                        userId,
-                        SID,
-                        fwChnlId,
-                        xml}, this.GetDefaultCommInfoByFwChnlOperationCompleted, userState);
-        }
-        
-        private void OnGetDefaultCommInfoByFwChnlOperationCompleted(object arg) {
-            if ((this.GetDefaultCommInfoByFwChnlCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetDefaultCommInfoByFwChnlCompleted(this, new GetDefaultCommInfoByFwChnlCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastControllerStatusFromHistoryByLicensePlate", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetLastControllerStatusFromHistoryByLicensePlate(int userId, string SID, string licensePlate, ref string xml) {
-            object[] results = this.Invoke("GetLastControllerStatusFromHistoryByLicensePlate", new object[] {
-                        userId,
-                        SID,
-                        licensePlate,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetLastControllerStatusFromHistoryByLicensePlateAsync(int userId, string SID, string licensePlate, string xml) {
-            this.GetLastControllerStatusFromHistoryByLicensePlateAsync(userId, SID, licensePlate, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetLastControllerStatusFromHistoryByLicensePlateAsync(int userId, string SID, string licensePlate, string xml, object userState) {
-            if ((this.GetLastControllerStatusFromHistoryByLicensePlateOperationCompleted == null)) {
-                this.GetLastControllerStatusFromHistoryByLicensePlateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLastControllerStatusFromHistoryByLicensePlateOperationCompleted);
-            }
-            this.InvokeAsync("GetLastControllerStatusFromHistoryByLicensePlate", new object[] {
-                        userId,
-                        SID,
-                        licensePlate,
-                        xml}, this.GetLastControllerStatusFromHistoryByLicensePlateOperationCompleted, userState);
-        }
-        
-        private void OnGetLastControllerStatusFromHistoryByLicensePlateOperationCompleted(object arg) {
-            if ((this.GetLastControllerStatusFromHistoryByLicensePlateCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetLastControllerStatusFromHistoryByLicensePlateCompleted(this, new GetLastControllerStatusFromHistoryByLicensePlateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastControllerStatusFromHistoryByBoxId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetLastControllerStatusFromHistoryByBoxId(int userId, string SID, int boxId, ref string xml) {
-            object[] results = this.Invoke("GetLastControllerStatusFromHistoryByBoxId", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetLastControllerStatusFromHistoryByBoxIdAsync(int userId, string SID, int boxId, string xml) {
-            this.GetLastControllerStatusFromHistoryByBoxIdAsync(userId, SID, boxId, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetLastControllerStatusFromHistoryByBoxIdAsync(int userId, string SID, int boxId, string xml, object userState) {
-            if ((this.GetLastControllerStatusFromHistoryByBoxIdOperationCompleted == null)) {
-                this.GetLastControllerStatusFromHistoryByBoxIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLastControllerStatusFromHistoryByBoxIdOperationCompleted);
-            }
-            this.InvokeAsync("GetLastControllerStatusFromHistoryByBoxId", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        xml}, this.GetLastControllerStatusFromHistoryByBoxIdOperationCompleted, userState);
-        }
-        
-        private void OnGetLastControllerStatusFromHistoryByBoxIdOperationCompleted(object arg) {
-            if ((this.GetLastControllerStatusFromHistoryByBoxIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetLastControllerStatusFromHistoryByBoxIdCompleted(this, new GetLastControllerStatusFromHistoryByBoxIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastTARModeFromHistoryByLicensePlate", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetLastTARModeFromHistoryByLicensePlate(int userId, string SID, string licensePlate, ref string xml) {
-            object[] results = this.Invoke("GetLastTARModeFromHistoryByLicensePlate", new object[] {
-                        userId,
-                        SID,
-                        licensePlate,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetLastTARModeFromHistoryByLicensePlateAsync(int userId, string SID, string licensePlate, string xml) {
-            this.GetLastTARModeFromHistoryByLicensePlateAsync(userId, SID, licensePlate, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetLastTARModeFromHistoryByLicensePlateAsync(int userId, string SID, string licensePlate, string xml, object userState) {
-            if ((this.GetLastTARModeFromHistoryByLicensePlateOperationCompleted == null)) {
-                this.GetLastTARModeFromHistoryByLicensePlateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLastTARModeFromHistoryByLicensePlateOperationCompleted);
-            }
-            this.InvokeAsync("GetLastTARModeFromHistoryByLicensePlate", new object[] {
-                        userId,
-                        SID,
-                        licensePlate,
-                        xml}, this.GetLastTARModeFromHistoryByLicensePlateOperationCompleted, userState);
-        }
-        
-        private void OnGetLastTARModeFromHistoryByLicensePlateOperationCompleted(object arg) {
-            if ((this.GetLastTARModeFromHistoryByLicensePlateCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetLastTARModeFromHistoryByLicensePlateCompleted(this, new GetLastTARModeFromHistoryByLicensePlateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastTARModeFromHistoryByBoxId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetLastTARModeFromHistoryByBoxId(int userId, string SID, int boxId, ref string xml) {
-            object[] results = this.Invoke("GetLastTARModeFromHistoryByBoxId", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetLastTARModeFromHistoryByBoxIdAsync(int userId, string SID, int boxId, string xml) {
-            this.GetLastTARModeFromHistoryByBoxIdAsync(userId, SID, boxId, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetLastTARModeFromHistoryByBoxIdAsync(int userId, string SID, int boxId, string xml, object userState) {
-            if ((this.GetLastTARModeFromHistoryByBoxIdOperationCompleted == null)) {
-                this.GetLastTARModeFromHistoryByBoxIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLastTARModeFromHistoryByBoxIdOperationCompleted);
-            }
-            this.InvokeAsync("GetLastTARModeFromHistoryByBoxId", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        xml}, this.GetLastTARModeFromHistoryByBoxIdOperationCompleted, userState);
-        }
-        
-        private void OnGetLastTARModeFromHistoryByBoxIdOperationCompleted(object arg) {
-            if ((this.GetLastTARModeFromHistoryByBoxIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetLastTARModeFromHistoryByBoxIdCompleted(this, new GetLastTARModeFromHistoryByBoxIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastKeyFobStatusFromHistoryByLicensePlate", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetLastKeyFobStatusFromHistoryByLicensePlate(int userId, string SID, string licensePlate, ref string xml) {
-            object[] results = this.Invoke("GetLastKeyFobStatusFromHistoryByLicensePlate", new object[] {
-                        userId,
-                        SID,
-                        licensePlate,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetLastKeyFobStatusFromHistoryByLicensePlateAsync(int userId, string SID, string licensePlate, string xml) {
-            this.GetLastKeyFobStatusFromHistoryByLicensePlateAsync(userId, SID, licensePlate, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetLastKeyFobStatusFromHistoryByLicensePlateAsync(int userId, string SID, string licensePlate, string xml, object userState) {
-            if ((this.GetLastKeyFobStatusFromHistoryByLicensePlateOperationCompleted == null)) {
-                this.GetLastKeyFobStatusFromHistoryByLicensePlateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLastKeyFobStatusFromHistoryByLicensePlateOperationCompleted);
-            }
-            this.InvokeAsync("GetLastKeyFobStatusFromHistoryByLicensePlate", new object[] {
-                        userId,
-                        SID,
-                        licensePlate,
-                        xml}, this.GetLastKeyFobStatusFromHistoryByLicensePlateOperationCompleted, userState);
-        }
-        
-        private void OnGetLastKeyFobStatusFromHistoryByLicensePlateOperationCompleted(object arg) {
-            if ((this.GetLastKeyFobStatusFromHistoryByLicensePlateCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetLastKeyFobStatusFromHistoryByLicensePlateCompleted(this, new GetLastKeyFobStatusFromHistoryByLicensePlateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.sentinelfm.com/GetLastKeyFobStatusFromHistoryByBoxId", RequestNamespace="http://www.sentinelfm.com", ResponseNamespace="http://www.sentinelfm.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetLastKeyFobStatusFromHistoryByBoxId(int userId, string SID, int boxId, ref string xml) {
-            object[] results = this.Invoke("GetLastKeyFobStatusFromHistoryByBoxId", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        xml});
-            xml = ((string)(results[1]));
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetLastKeyFobStatusFromHistoryByBoxIdAsync(int userId, string SID, int boxId, string xml) {
-            this.GetLastKeyFobStatusFromHistoryByBoxIdAsync(userId, SID, boxId, xml, null);
-        }
-        
-        /// <remarks/>
-        public void GetLastKeyFobStatusFromHistoryByBoxIdAsync(int userId, string SID, int boxId, string xml, object userState) {
-            if ((this.GetLastKeyFobStatusFromHistoryByBoxIdOperationCompleted == null)) {
-                this.GetLastKeyFobStatusFromHistoryByBoxIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetLastKeyFobStatusFromHistoryByBoxIdOperationCompleted);
-            }
-            this.InvokeAsync("GetLastKeyFobStatusFromHistoryByBoxId", new object[] {
-                        userId,
-                        SID,
-                        boxId,
-                        xml}, this.GetLastKeyFobStatusFromHistoryByBoxIdOperationCompleted, userState);
-        }
-        
-        private void OnGetLastKeyFobStatusFromHistoryByBoxIdOperationCompleted(object arg) {
-            if ((this.GetLastKeyFobStatusFromHistoryByBoxIdCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetLastKeyFobStatusFromHistoryByBoxIdCompleted(this, new GetLastKeyFobStatusFromHistoryByBoxIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -5975,6 +5975,1114 @@ namespace SentinelMobile.ServerDBVehicle {
                 return true;
             }
             return false;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void VehicleMaintenance_UpdateEngineHoursCompletedEventHandler(object sender, VehicleMaintenance_UpdateEngineHoursCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class VehicleMaintenance_UpdateEngineHoursCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal VehicleMaintenance_UpdateEngineHoursCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void VehicleMaintenance_GetInfoCompletedEventHandler(object sender, VehicleMaintenance_GetInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class VehicleMaintenance_GetInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal VehicleMaintenance_GetInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetMDTInfoByTypeIdCompletedEventHandler(object sender, GetMDTInfoByTypeIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetMDTInfoByTypeIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetMDTInfoByTypeIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetDTCCodesDescriptionCompletedEventHandler(object sender, GetDTCCodesDescriptionCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetDTCCodesDescriptionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetDTCCodesDescriptionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetBoxId4BBCompletedEventHandler(object sender, GetBoxId4BBCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetBoxId4BBCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetBoxId4BBCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public int boxId {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetVehicleExtraServiceHistoryByVehicleIdCompletedEventHandler(object sender, GetVehicleExtraServiceHistoryByVehicleIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetVehicleExtraServiceHistoryByVehicleIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetVehicleExtraServiceHistoryByVehicleIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void VehicleExtraServiceHistory_Add_UpdateCompletedEventHandler(object sender, VehicleExtraServiceHistory_Add_UpdateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class VehicleExtraServiceHistory_Add_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal VehicleExtraServiceHistory_Add_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetJ1708CodesVehicleFleetCompletedEventHandler(object sender, GetJ1708CodesVehicleFleetCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetJ1708CodesVehicleFleetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetJ1708CodesVehicleFleetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetBoxExtraInfoCompletedEventHandler(object sender, GetBoxExtraInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetBoxExtraInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetBoxExtraInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetStateMileagePerVehicleCompletedEventHandler(object sender, GetStateMileagePerVehicleCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetStateMileagePerVehicleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetStateMileagePerVehicleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void AddMdtOTACompletedEventHandler(object sender, AddMdtOTACompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AddMdtOTACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AddMdtOTACompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetPostedSpeedServiceConfigurationCompletedEventHandler(object sender, GetPostedSpeedServiceConfigurationCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetPostedSpeedServiceConfigurationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetPostedSpeedServiceConfigurationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetAllUnassignedToVehicleGeozonesInfoCompletedEventHandler(object sender, GetAllUnassignedToVehicleGeozonesInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetAllUnassignedToVehicleGeozonesInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetAllUnassignedToVehicleGeozonesInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void SetGeozoneSeverityCompletedEventHandler(object sender, SetGeozoneSeverityCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SetGeozoneSeverityCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SetGeozoneSeverityCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void DeleteGeozoneFromVehicleCompletedEventHandler(object sender, DeleteGeozoneFromVehicleCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DeleteGeozoneFromVehicleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal DeleteGeozoneFromVehicleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public int rowsAffected {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void DeleteGeozoneFromVehicleByVehicleIdCompletedEventHandler(object sender, DeleteGeozoneFromVehicleByVehicleIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DeleteGeozoneFromVehicleByVehicleIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal DeleteGeozoneFromVehicleByVehicleIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public int rowsAffected {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void AddGeozoneToVehicleCompletedEventHandler(object sender, AddGeozoneToVehicleCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AddGeozoneToVehicleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AddGeozoneToVehicleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetMaxGeozonesByVehicleIdCompletedEventHandler(object sender, GetMaxGeozonesByVehicleIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetMaxGeozonesByVehicleIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetMaxGeozonesByVehicleIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public int maxGeozones {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetCommInfoByBoxIdCompletedEventHandler(object sender, GetCommInfoByBoxIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCommInfoByBoxIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCommInfoByBoxIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetBoxConfigInfoCompletedEventHandler(object sender, GetBoxConfigInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetBoxConfigInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetBoxConfigInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetActiveVehicleCfgInfoCompletedEventHandler(object sender, GetActiveVehicleCfgInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetActiveVehicleCfgInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetActiveVehicleCfgInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetLastCommunicationByBoxIdCompletedEventHandler(object sender, GetLastCommunicationByBoxIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetLastCommunicationByBoxIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetLastCommunicationByBoxIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime dtLastCommunicated {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.DateTime)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetLastBoxCommunicationInfoCompletedEventHandler(object sender, GetLastBoxCommunicationInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetLastBoxCommunicationInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetLastBoxCommunicationInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetVehicleLastKnownPositionInfoByBoxIdCompletedEventHandler(object sender, GetVehicleLastKnownPositionInfoByBoxIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetVehicleLastKnownPositionInfoByBoxIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetVehicleLastKnownPositionInfoByBoxIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void UpdateBoxFeaturesCompletedEventHandler(object sender, UpdateBoxFeaturesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class UpdateBoxFeaturesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal UpdateBoxFeaturesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetBoxConfigFeaturesCompletedEventHandler(object sender, GetBoxConfigFeaturesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetBoxConfigFeaturesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetBoxConfigFeaturesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetCommInfoByBoxAndFwChnlCompletedEventHandler(object sender, GetCommInfoByBoxAndFwChnlCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCommInfoByBoxAndFwChnlCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCommInfoByBoxAndFwChnlCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetDefaultCommInfoByFwChnlCompletedEventHandler(object sender, GetDefaultCommInfoByFwChnlCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetDefaultCommInfoByFwChnlCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetDefaultCommInfoByFwChnlCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetLastControllerStatusFromHistoryByLicensePlateCompletedEventHandler(object sender, GetLastControllerStatusFromHistoryByLicensePlateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetLastControllerStatusFromHistoryByLicensePlateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetLastControllerStatusFromHistoryByLicensePlateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetLastControllerStatusFromHistoryByBoxIdCompletedEventHandler(object sender, GetLastControllerStatusFromHistoryByBoxIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetLastControllerStatusFromHistoryByBoxIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetLastControllerStatusFromHistoryByBoxIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetLastTARModeFromHistoryByLicensePlateCompletedEventHandler(object sender, GetLastTARModeFromHistoryByLicensePlateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetLastTARModeFromHistoryByLicensePlateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetLastTARModeFromHistoryByLicensePlateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetLastTARModeFromHistoryByBoxIdCompletedEventHandler(object sender, GetLastTARModeFromHistoryByBoxIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetLastTARModeFromHistoryByBoxIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetLastTARModeFromHistoryByBoxIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetLastKeyFobStatusFromHistoryByLicensePlateCompletedEventHandler(object sender, GetLastKeyFobStatusFromHistoryByLicensePlateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetLastKeyFobStatusFromHistoryByLicensePlateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetLastKeyFobStatusFromHistoryByLicensePlateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetLastKeyFobStatusFromHistoryByBoxIdCompletedEventHandler(object sender, GetLastKeyFobStatusFromHistoryByBoxIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetLastKeyFobStatusFromHistoryByBoxIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetLastKeyFobStatusFromHistoryByBoxIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string xml {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
         }
     }
     
@@ -7211,390 +8319,6 @@ namespace SentinelMobile.ServerDBVehicle {
         
         /// <remarks/>
         public string xmlString {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void VehicleMaintenance_UpdateEngineHoursCompletedEventHandler(object sender, VehicleMaintenance_UpdateEngineHoursCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class VehicleMaintenance_UpdateEngineHoursCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal VehicleMaintenance_UpdateEngineHoursCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void VehicleMaintenance_GetInfoCompletedEventHandler(object sender, VehicleMaintenance_GetInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class VehicleMaintenance_GetInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal VehicleMaintenance_GetInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetMDTInfoByTypeIdCompletedEventHandler(object sender, GetMDTInfoByTypeIdCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetMDTInfoByTypeIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetMDTInfoByTypeIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetDTCCodesDescriptionCompletedEventHandler(object sender, GetDTCCodesDescriptionCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetDTCCodesDescriptionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetDTCCodesDescriptionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetBoxId4BBCompletedEventHandler(object sender, GetBoxId4BBCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetBoxId4BBCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetBoxId4BBCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int boxId {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetVehicleExtraServiceHistoryByVehicleIdCompletedEventHandler(object sender, GetVehicleExtraServiceHistoryByVehicleIdCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetVehicleExtraServiceHistoryByVehicleIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetVehicleExtraServiceHistoryByVehicleIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void VehicleExtraServiceHistory_Add_UpdateCompletedEventHandler(object sender, VehicleExtraServiceHistory_Add_UpdateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class VehicleExtraServiceHistory_Add_UpdateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal VehicleExtraServiceHistory_Add_UpdateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetJ1708CodesVehicleFleetCompletedEventHandler(object sender, GetJ1708CodesVehicleFleetCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetJ1708CodesVehicleFleetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetJ1708CodesVehicleFleetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetBoxExtraInfoCompletedEventHandler(object sender, GetBoxExtraInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetBoxExtraInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetBoxExtraInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetStateMileagePerVehicleCompletedEventHandler(object sender, GetStateMileagePerVehicleCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetStateMileagePerVehicleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetStateMileagePerVehicleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void AddMdtOTACompletedEventHandler(object sender, AddMdtOTACompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class AddMdtOTACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal AddMdtOTACompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetPostedSpeedServiceConfigurationCompletedEventHandler(object sender, GetPostedSpeedServiceConfigurationCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetPostedSpeedServiceConfigurationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetPostedSpeedServiceConfigurationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[1]));
@@ -9223,730 +9947,6 @@ namespace SentinelMobile.ServerDBVehicle {
         private object[] results;
         
         internal GetAllAssignedGeozonesToVehicleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetAllUnassignedToVehicleGeozonesInfoCompletedEventHandler(object sender, GetAllUnassignedToVehicleGeozonesInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetAllUnassignedToVehicleGeozonesInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetAllUnassignedToVehicleGeozonesInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void SetGeozoneSeverityCompletedEventHandler(object sender, SetGeozoneSeverityCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SetGeozoneSeverityCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SetGeozoneSeverityCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void DeleteGeozoneFromVehicleCompletedEventHandler(object sender, DeleteGeozoneFromVehicleCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class DeleteGeozoneFromVehicleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal DeleteGeozoneFromVehicleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int rowsAffected {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void DeleteGeozoneFromVehicleByVehicleIdCompletedEventHandler(object sender, DeleteGeozoneFromVehicleByVehicleIdCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class DeleteGeozoneFromVehicleByVehicleIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal DeleteGeozoneFromVehicleByVehicleIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int rowsAffected {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void AddGeozoneToVehicleCompletedEventHandler(object sender, AddGeozoneToVehicleCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class AddGeozoneToVehicleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal AddGeozoneToVehicleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetMaxGeozonesByVehicleIdCompletedEventHandler(object sender, GetMaxGeozonesByVehicleIdCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetMaxGeozonesByVehicleIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetMaxGeozonesByVehicleIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public int maxGeozones {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetCommInfoByBoxIdCompletedEventHandler(object sender, GetCommInfoByBoxIdCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetCommInfoByBoxIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetCommInfoByBoxIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetBoxConfigInfoCompletedEventHandler(object sender, GetBoxConfigInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetBoxConfigInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetBoxConfigInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetActiveVehicleCfgInfoCompletedEventHandler(object sender, GetActiveVehicleCfgInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetActiveVehicleCfgInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetActiveVehicleCfgInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetLastCommunicationByBoxIdCompletedEventHandler(object sender, GetLastCommunicationByBoxIdCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetLastCommunicationByBoxIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetLastCommunicationByBoxIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime dtLastCommunicated {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.DateTime)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetLastBoxCommunicationInfoCompletedEventHandler(object sender, GetLastBoxCommunicationInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetLastBoxCommunicationInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetLastBoxCommunicationInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetVehicleLastKnownPositionInfoByBoxIdCompletedEventHandler(object sender, GetVehicleLastKnownPositionInfoByBoxIdCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetVehicleLastKnownPositionInfoByBoxIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetVehicleLastKnownPositionInfoByBoxIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void UpdateBoxFeaturesCompletedEventHandler(object sender, UpdateBoxFeaturesCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class UpdateBoxFeaturesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal UpdateBoxFeaturesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetBoxConfigFeaturesCompletedEventHandler(object sender, GetBoxConfigFeaturesCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetBoxConfigFeaturesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetBoxConfigFeaturesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetCommInfoByBoxAndFwChnlCompletedEventHandler(object sender, GetCommInfoByBoxAndFwChnlCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetCommInfoByBoxAndFwChnlCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetCommInfoByBoxAndFwChnlCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetDefaultCommInfoByFwChnlCompletedEventHandler(object sender, GetDefaultCommInfoByFwChnlCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetDefaultCommInfoByFwChnlCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetDefaultCommInfoByFwChnlCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetLastControllerStatusFromHistoryByLicensePlateCompletedEventHandler(object sender, GetLastControllerStatusFromHistoryByLicensePlateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetLastControllerStatusFromHistoryByLicensePlateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetLastControllerStatusFromHistoryByLicensePlateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetLastControllerStatusFromHistoryByBoxIdCompletedEventHandler(object sender, GetLastControllerStatusFromHistoryByBoxIdCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetLastControllerStatusFromHistoryByBoxIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetLastControllerStatusFromHistoryByBoxIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetLastTARModeFromHistoryByLicensePlateCompletedEventHandler(object sender, GetLastTARModeFromHistoryByLicensePlateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetLastTARModeFromHistoryByLicensePlateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetLastTARModeFromHistoryByLicensePlateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetLastTARModeFromHistoryByBoxIdCompletedEventHandler(object sender, GetLastTARModeFromHistoryByBoxIdCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetLastTARModeFromHistoryByBoxIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetLastTARModeFromHistoryByBoxIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetLastKeyFobStatusFromHistoryByLicensePlateCompletedEventHandler(object sender, GetLastKeyFobStatusFromHistoryByLicensePlateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetLastKeyFobStatusFromHistoryByLicensePlateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetLastKeyFobStatusFromHistoryByLicensePlateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public string xml {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void GetLastKeyFobStatusFromHistoryByBoxIdCompletedEventHandler(object sender, GetLastKeyFobStatusFromHistoryByBoxIdCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetLastKeyFobStatusFromHistoryByBoxIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetLastKeyFobStatusFromHistoryByBoxIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

@@ -1,0 +1,1406 @@
+﻿@{
+    ViewBag.Title = "FleetView";
+    ViewBag.HasLeftPanel = true;
+    Layout = "~/Views/Shared/_MapLayout.cshtml";  
+}
+
+@section Header {
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="@Url.Content("~/Scripts/Openlayers/OpenLayers-2.13.1/theme/default/style.css?v=20140812")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/style.mobile-jq.css?v=2013071902")" type="text/css" />
+    <script src="//maps.googleapis.com/maps/api/js?v=3&client=gme-bsmwirelessinc&sensor=true&libraries=places"></script>
+    <!--<script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places" type="text/javascript"></script>-->
+    <!--<script src="//maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>-->
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Openlayers/OpenLayers-2.13.1/OpenLayers-20140819.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Openlayers/OpenLayers-2.13.1/lib/deprecated.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/mobile-base.js?v=" + ViewBag.LastUpdatedmobilebaseFile)"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/mobile-jq.js?v=" + ViewBag.LastUpdatedmobilejqFile)"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Openlayers/navteqlayer.js?v=20140408")"></script>
+    
+    <style type="text/css">
+        .ui-panel-inner {
+            padding: 0;
+        }
+
+        .ui-listview-filter {
+            margin: 0 !important;
+        }
+
+        #navigation .ui-btn-icon-notext {
+            display: block;
+            padding: 7px 6px 7px 8px;
+        }
+
+        .ui-controlgroup#navigation .ui-btn-icon-notext {
+            height: 24px;
+            width: 24px;
+        }
+
+        .ui-controlgroup#navigation .ui-btn-icon-notext .ui-btn-inner {
+            height: 20px;
+            padding: 2px 1px 2px 3px;
+        }
+
+        .searchcontain div.ui-input-text {
+            width: 70% !important;
+            margin-left: 10px !important;
+            display: inline-block;
+        }
+
+        #searchCriteria div.ui-input-text {
+            width: 50px !important;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        #searchCriteria-popup .ui-select {
+            width: auto !important;
+            display: inline !important;
+        }
+
+        #searchCriteriaHeader .ui-title, #popupHeader .ui-title {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .historyCriteriaTitle, .historyCriteriaDate, .historyCriteriaTime {
+            margin-left: 5px;
+        }
+        
+        .historyCriteriaDate, .historyCriteriaTime {
+            display: inline-block;
+        }
+
+        .historyCriteriaTitle {
+            display: block;
+        }
+
+        .historyCriteriaDate div.ui-input-text {
+            width: 140px !important;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .historyCriteriaTime div.ui-input-text {
+            width: 110px !important;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        #configContent div.ui-input-text {
+            width: 170px !important;
+            display: inline-block;
+            vertical-align: middle;            
+        }
+
+        #vehicleInfoContent div.ui-input-text {
+            width: 180px !important;
+            display: inline-block;
+            vertical-align: middle;            
+        }
+
+        #vehicleInfoContent div.ui-select {
+            display: inline-block !important;
+            width: 180px !important;
+        }
+
+        .pac-item {
+            font-size: 16px !important;
+            padding: 2px 4px !important; 
+        }
+
+        .ui-title {
+            margin: 0.6em 0.6em 0.8em !important;
+        }
+
+        .textboxError {
+            border: 1px solid red !important;
+        }
+
+        .configPageItem {
+            border-bottom: 1px solid #cccccc;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+
+        .ui-btn-hidden {
+            display: none !important;
+        }
+
+        .sendemailinput div.ui-input-text {
+            width: 270px !important;
+        }
+
+        #vehicleInfoVINSetting div.ui-input-text {
+            width: 270px !important;
+        }
+
+        #sensorInfoNameConfig {
+            padding: 10px;
+        }
+
+        #sensorInfoNameSetting {
+            width: 320px !important;
+            display: inline-block;
+            padding: 10px;
+        }
+
+        #sensorInfoDescriptionDiv {
+            width: 420px !important;
+            display: inline-block;
+            padding: 10px;
+        }
+    </style>    
+
+    <script type="text/javascript">
+
+        var IsAuthorizedPath = "@Url.Content("~/Home/IsAuthorized/")";
+
+        window.onload = function () {
+            $.ajax({
+                url: IsAuthorizedPath,
+                success: function (result) {
+                    if(result.IsAuthorized == 0) {                        
+                        location.replace('@Url.Content("~/Account/Login/")');
+                        return;
+                    }
+                },
+                error: function (msg) {
+                }
+            });
+        }
+
+        window.onunload = function () { };
+        var baseLayer = '';
+        var setBaseLayer = false;
+        
+    </script>
+}
+
+@section LeftPanel {
+    <div data-role="panel" id="left-panel" data-theme="b" style="background:#555555">
+       @Html.Partial("_leftMenu", new SentinelMobile.Models.LeftMenu("mappage"))
+    </div><!-- /panel -->    
+}
+
+@section Popup {
+    <!--<div id="popup" data-role="popup" data-overlay-theme="a" data-theme="c" style="max-width:400px;" class="ui-corner-all">
+        <div data-position="inline" data-theme="d" data-role="header" id="popupHeader">
+            <h1>Vehicle Info</h1>
+        </div>
+        <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+            <ul id="details-list" data-role="listview">
+            </ul>
+            <div id="vehicleinfo" data-role="vehicleinfo" style="margin:20px;">
+            </div>
+            <a href="javascript:void(0)" onclick="$('#popup').popup('close');" data-role="button" data-theme="d" style="margin:40px 90px 20px 90px;">@SentinelMobile.Resources.Resources.OK</a>
+        </div>        
+    </div>-->
+    <div data-role="popup" id="popup" data-overlay-theme="a" data-theme="c" data-history="false" style="max-width:400px;min-width:280px;">
+		<div data-role="header" data-theme="a" class="ui-corner-top" id="popupHeader">
+			<h1 id="popupTitle">Feature Info</h1>
+			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">@SentinelMobile.Resources.Resources.Close</a>
+		</div>
+		<div id="featureInfo" data-role="content" data-theme="d" class="ui-corner-bottom ui-content" style="overflow: auto">
+            <div id="vehicleinfo" data-role="vehicleinfo" style="margin:20px;">
+            </div>
+            <!--
+            <div data-role="fieldcontain" >
+				<label for="txtDate">Date:</label>
+				<input name="txtDate" placeholder="Date From" id="txtDate" type="text" data-role="datebox" data-options='{"mode":"datebox", "zindex":"2000"}'  />
+            </div>-->
+		</div>
+		<div data-role="footer" data-theme="c">
+			<!--<div data-role="controlgroup" data-type="horizontal" style="text-align: center;">-->
+			<a id="historyBtn" data-role="button" data-corners="true" data-iconshadow="false" data-theme="c" onclick="showhistory(this);" href="javascript:void(0)" rel="">@SentinelMobile.Resources.Resources.History</a>
+            <a id="followBtn" data-role="button" data-corners="true" data-iconshadow="false" data-theme="c" onclick="follow(this);" href="javascript:void(0)" rel="">@SentinelMobile.Resources.Resources.Follow</a>
+            <a id="configBtn" data-role="button" data-corners="true" data-iconshadow="false" data-theme="c" onclick="config(this);" href="javascript:void(0)" rel="">@SentinelMobile.Resources.Resources.Config</a>
+            @*<a id="vehicleInfoBtn" data-role="button" data-corners="true" data-iconshadow="false" data-theme="c" onclick="vehicleInfo(this);" href="javascript:void(0)" rel="">@SentinelMobile.Resources.Resources.Info</a>*@
+				<!--<a id="commandBtn" data-role="button" data-corners="false" data-iconshadow="false" data-theme="c">Command</a>
+				<a id="messageBtn" data-role="button" data-corners="false" data-iconshadow="false" data-theme="c">Message</a>-->
+			<!--</div>-->
+		</div>
+	</div>
+}
+
+@section HeaderLeftButtons {
+    <a href="#left-panel" data-role="button" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Menu</a>
+    <!--<a href="~/" data-role="button" data-icon="home" data-iconpos="notext" data-direction="reverse" data-inline="true">Home</a>-->
+}
+
+@section scripts {
+    @if (ViewBag.SelectedBoxId != null && ViewBag.SelectedVehicles.Count > 0)
+    {
+        <script type="text/javascript">
+
+            var iniVehicle = {
+                lon: @ViewBag.SelectedVehicles[0].Longitude,
+                lat: @ViewBag.SelectedVehicles[0].Latitude,
+                attributes: { 
+                    BoxId: @ViewBag.SelectedVehicles[0].BoxId, 
+                    OriginDateTime: '@ViewBag.SelectedVehicles[0].OriginDateTime', 
+                    Speed: '@ViewBag.SelectedVehicles[0].Speed Km/h', 
+                    Status: '@ViewBag.SelectedVehicles[0].VehicleStatus', 
+                    Location: '@ViewBag.SelectedVehicles[0].StreetAddress', 
+                    Description: '@ViewBag.SelectedVehicles[0].Description.Replace("'", "\\'")', 
+                    MyHeading:'@ViewBag.SelectedVehicles[0].MyHeading'
+                }
+            };            
+        </script>
+    }
+    else
+    {
+        <script type="text/javascript">
+            var iniVehicle = null;
+        </script>
+    }
+    
+    <script type="text/javascript">
+        var currentVehicleListPageIndex = 1;
+        var currentFleetListPageIndex = 1;
+        var rootPath = "@Url.Content("~/")";
+        var loadVehicleByFleetPath = "@Url.Content("~/Home/_vehicleList/")";
+        var searchVehicleByFleetPath = "@Url.Content("~/Home/_searchVehicleList/")";
+        var loadFleetPath = "@Url.Content("~/Home/_fleetList/")";
+        var VehicleListPageLazyLoading = false;
+        var VehicleListPageLoadingFinished = false;
+        var FleetListPageLazyLoading = false;
+        var FleetListPageLoadingFinished = false;
+        var CurrentFleetId = @ViewBag.FleetId;
+        var SearchMode = 0;
+        var CurrentSearchString = '';
+        var FleetSearchMode = 0;
+        var FleetCurrentSearchString = '';
+        var PreviousPage = 'vehicleList';
+        var EnableConfigPage = @ViewBag.EnableConfigPage.ToString().ToLower();
+
+        var SelectedLanguage = '@ViewBag.SelectedLanguage';
+
+        var ResourceDate = '@SentinelMobile.Resources.Resources.Date';
+        var ResourceLocation = '@SentinelMobile.Resources.Resources.Location';
+        var ResourceSpeed = '@SentinelMobile.Resources.Resources.Speed';
+        var ResourceStatus = '@SentinelMobile.Resources.Resources.Status';
+        var ResourceDirection = '@SentinelMobile.Resources.Resources.Direction';
+        var ResourceBaseLayers = '@SentinelMobile.Resources.Resources.BaseLayers';
+        var ResourceGoogleStreets = '@SentinelMobile.Resources.Resources.GoogleStreets';
+        var ResourceGoogleHybrid = '@SentinelMobile.Resources.Resources.GoogleHybrid';
+        var ResourceGoogleSatellite = '@SentinelMobile.Resources.Resources.GoogleSatellite';
+        var ResourceOverlayLayers = '@SentinelMobile.Resources.Resources.OverlayLayers';
+        var ResourceLandmarkGeozone = '@Html.Raw(SentinelMobile.Resources.Resources.LandmarkGeozone)';
+        var ResourceVehicles = '@Html.Raw(SentinelMobile.Resources.Resources.Vehicles)';
+        var ResourceFollow = '@Html.Raw(SentinelMobile.Resources.Resources.Follow)';
+        var ResourceUnfollow = '@Html.Raw(SentinelMobile.Resources.Resources.Unfollow)';
+        var ResourceMessage = '@Html.Raw(SentinelMobile.Resources.Resources.Message)';
+        var ResourceHistory = '@Html.Raw(SentinelMobile.Resources.Resources.History)';
+        var ResourceOdometer = '@Html.Raw(SentinelMobile.Resources.Resources.Odometer)';
+        var ResourceFuel = '@Html.Raw(SentinelMobile.Resources.Resources.Fuel)';
+        var ResourceGpsValid = '@Html.Raw(SentinelMobile.Resources.Resources.GpsValid)';
+        var ResourceGpsInvalid = '@Html.Raw(SentinelMobile.Resources.Resources.GpsInvalid)';
+        var ResourceRPM = '@Html.Raw(SentinelMobile.Resources.Resources.RPM)';
+        var ResourceRun = '@Html.Raw(SentinelMobile.Resources.Resources.Run)';
+
+        var ResourceSuccessfullySaved = '@Html.Raw(SentinelMobile.Resources.Resources.SuccessfullySaved)';
+        var ResourceFailedToSave = '@Html.Raw(SentinelMobile.Resources.Resources.FailedToSave)';
+        var ResourceFailedToSendEmail = '@Html.Raw(SentinelMobile.Resources.Resources.FailedToSendEmail)';
+        var ResourceSuccessfullySendEmail = '@Html.Raw(SentinelMobile.Resources.Resources.SuccessfullySendEmail)';
+
+        var ResourceVehicleName = '@Html.Raw(SentinelMobile.Resources.Resources.VehicleName)';
+        var ResourceVin = '@Html.Raw(SentinelMobile.Resources.Resources.VIN)';
+        var ResourceLicensePlace = '@Html.Raw(SentinelMobile.Resources.Resources.LicensePlate)';
+        var ResourceVehicleType = '@Html.Raw(SentinelMobile.Resources.Resources.VehicleType)';
+        var ResourceMake = '@Html.Raw(SentinelMobile.Resources.Resources.Make)';
+        var ResourceModel = '@Html.Raw(SentinelMobile.Resources.Resources.Model)';
+        var ResourceYear = '@Html.Raw(SentinelMobile.Resources.Resources.Year)';
+        var ResourceColor = '@Html.Raw(SentinelMobile.Resources.Resources.Color)';
+        var ResourceStateProvince = '@Html.Raw(@SentinelMobile.Resources.Resources.StateProvince)';
+
+        var ResourceVIN17Characters = '@Html.Raw(SentinelMobile.Resources.Resources.VIN17Characters)';
+        var ResourceFuelType = '@Html.Raw(@SentinelMobile.Resources.Resources.FuelType)';
+        var ResourceEngineDisplacement = '@Html.Raw(@SentinelMobile.Resources.Resources.EngineDisplacement)';
+        var ResourceVolumeEfficency = '@Html.Raw(@SentinelMobile.Resources.Resources.VolumeEfficency)';
+        var ResourceAirFuelRatiox10 = '@Html.Raw(@SentinelMobile.Resources.Resources.AirFuelRatiox10)';
+        var ResourceSendingSecondECMSeatbeltOdometer = '@Html.Raw(@SentinelMobile.Resources.Resources.SendingSecondECMSeatbeltOdometer)';
+        var ResourceSendingThirdECMSeatbeltOdometer = '@Html.Raw(@SentinelMobile.Resources.Resources.SendingThirdECMSeatbeltOdometer)';
+        var ResourceInvalidEmailAddress = '@Html.Raw(@SentinelMobile.Resources.Resources.InvalidEmailAddress)';
+        var ResourceInstallerNotEmpty = '@Html.Raw(@SentinelMobile.Resources.Resources.InstallerNotEmpty)';
+        var ResourceEmailToNotEmpty = '@Html.Raw(@SentinelMobile.Resources.Resources.EmailToNotEmpty)';
+        var ResourceEmailSubjectNotEmpty = '@Html.Raw(@SentinelMobile.Resources.Resources.EmailSubjectNotEmpty)';
+        var ResourceEmailBodyNotEmpty = '@Html.Raw(@SentinelMobile.Resources.Resources.EmailBodyNotEmpty)';
+        var ResourceSuccessfullySwapVehicle = '@Html.Raw(@SentinelMobile.Resources.Resources.SuccessfullySwapVehicle)';
+        var ResourceFailedToSwapVehicle = '@Html.Raw(@SentinelMobile.Resources.Resources.FailedToSwapVehicle)';
+        var ResourceOldBoxId = '@Html.Raw(@SentinelMobile.Resources.Resources.OldBoxId)';
+        var ResourceNewBoxId = '@Html.Raw(@SentinelMobile.Resources.Resources.NewBoxId)';
+        var BoxLocationNotEmpty = '@Html.Raw(@SentinelMobile.Resources.Resources.BoxLocationNotEmpty)';
+        var CellAntennaLocationNotEmpty = '@Html.Raw(@SentinelMobile.Resources.Resources.CellAntennaLocationNotEmpty)';
+        var ECMNotEmpty = '@Html.Raw(@SentinelMobile.Resources.Resources.ECMNotEmpty)';
+        var GPSAntennaLocationNotEmpty = '@Html.Raw(@SentinelMobile.Resources.Resources.GPSAntennaLocationNotEmpty)';
+        var IgnitionSourceNotEmpty = '@Html.Raw(@SentinelMobile.Resources.Resources.IgnitionSourceNotEmpty)';
+        var InstallerOrganizationNotEmpty = '@Html.Raw(@SentinelMobile.Resources.Resources.InstallerOrganizationNotEmpty)';
+        var InstallerPhoneNotEmpty = '@Html.Raw(@SentinelMobile.Resources.Resources.InstallerPhoneNotEmpty)';
+        var OrganizationNotEmpty = '@Html.Raw(@SentinelMobile.Resources.Resources.OrganizationNotEmpty)';
+        var PowerSourceNotEmpty = '@Html.Raw(@SentinelMobile.Resources.Resources.PowerSourceNotEmpty)';
+
+        var FleetPageIni = false;
+        var FleetType = '@ViewBag.FleetType.ToLower()';
+
+        var FollowingBoxId = "";
+        var FollowingVehicleId = 0;
+        var FollowingLicensePlate = "";
+        var FollowingVehicleName = "";
+        var FollowingVehicleOdometer = "";
+        var FollowingVehicleOdometerUnits = "";
+        var FollowingVehicleFuelType = "";
+        var FollowingVehicleEngineDisplacement = 3000;
+        var FollowIntervalId;
+        var FollowInterval = 10000;
+        var FollowMaxRecords = 200;
+        var LoadFollowingData = false;
+
+        var HistoryBoxId = "";
+        var HistoryVehicleId = 0;
+        var LoadingHistoryData = false;
+
+        var ConfigBoxId = '';
+        var ConfigVehicleId = 0;
+        var ConfigLicensePlate = '';
+
+        //var emailrecipients = "test@bsmwireless.com; test1@bsmwireless.com";
+        var emailrecipients = "@ViewBag.EmailRecipients";//"test@bsmwireless.com";
+        var emailsubject = "";
+        var emailcontent = "";
+        var UserFullName = "@ViewBag.UserFullName";
+        var UserName = "@ViewBag.UserName";
+
+        var OrganizationName = '@Html.Raw(ViewBag.OrganziationName.Replace("'", "\\'"))';        
+        var OrganizationId = "@ViewBag.OrganizationId";   
+        $(document).ready(function(){
+            //$('#vehicleList').page();
+            
+            //loadVehicleByFleet(CurrentFleetId);
+
+            //alert(IPAddress);
+
+            $(window).bind('scrollstop', function () {        
+                if($.mobile.activePage.attr('id')=='vehicleList' && isAtBottom() && !VehicleListPageLazyLoading && !VehicleListPageLoadingFinished)
+                {
+                    //VehicleListPageLazyLoading = true;
+                    loadVehicleByFleet(CurrentFleetId, currentVehicleListPageIndex++);
+                }                
+                else if($.mobile.activePage.attr('id')=='fleetPage' && isAtBottom() && !FleetListPageLazyLoading && !FleetListPageLoadingFinished)
+                {                    
+                    //FleetListPageLazyLoading = true;
+                    loadFleets(CurrentFleetId, currentFleetListPageIndex++);
+                }     
+            });
+
+            $('.searchcontain .ui-input-clear').live('tap', function () {
+                if(SearchMode == 1)
+                {
+                    CurrentSearchString = '';
+                    SearchMode = 0;
+                    loadVehicleByFleet(CurrentFleetId, 1);
+                }
+            });  
+            
+            setCookie('language','@ViewBag.DefaultLanguage',30);
+
+            jQuery.extend(jQuery.mobile.datebox.prototype.options, {
+                useLang: SelectedLanguage
+            });
+
+            OpenLayers.IMAGE_RELOAD_ATTEMPTS = 5;
+            
+        });
+
+        function setCookie(c_name, value, exdays) {
+            var exdate = new Date();
+            exdate.setDate(exdate.getDate() + exdays);
+            var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString()) + "; path=@Url.Content("~")";
+            document.cookie = c_name + "=" + c_value;     
+            
+            c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString()) + "; path=@Url.Content("~")" + "Account/";
+            document.cookie = c_name + "=" + c_value;
+        }
+        
+    </script>
+    
+}
+
+@section vehicleListPage {
+    <div data-role="page" id="vehicleList" data-title="@SentinelMobile.Resources.Resources.Vehicles">
+            <div data-role="header" data-theme="h" id="vehicleListHeader" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+            <!--<div data-role="header" data-theme="h" id="vehicleListHeader" class="fixedheader">-->
+                <h2>@ViewBag.FleetName</h2>
+                <div data-role="controlgroup" data-type="horizontal" class="ui-btn-left">
+                        <a href="#vehicleListLeftpanel" data-role="button" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Menu</a>
+                </div>
+                <div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
+                    <a href="#" data-role="button" data-icon="refresh" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true" onclick="loadVehicleByFleet(CurrentFleetId, 1, false, true);">@SentinelMobile.Resources.Resources.Refresh</a>
+                    <a href="#fleetPage" data-role="button" data-icon="gear" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Fleets</a>                
+                </div>
+                
+            </div>
+            <!--<div data-role="content" id="fleetviewhome" style="padding-top:48px;">-->
+            <div data-role="content" id="fleetviewhome" style="padding-top:0;">
+                <div id="listviewwrapper">
+                    <div data-role="fieldcontain" class="searchcontain">
+                        <input name="vehicleListSearch" data-theme="d" id="vehicleListSearch" value="" data-clear-btn="true" type="text" placeholder="@SentinelMobile.Resources.Resources.SearchVehicles...">
+                        <a style="float:right;margin-top:2px;margin-right:10px;" href="javascript:void(0)" onclick="searchVehicleList(CurrentFleetId);" data-role="button" data-icon="search" data-iconpos="notext" id="btnSearchVehicleList">@SentinelMobile.Resources.Resources.Search</a>
+                    </div>
+                    <!--<ul data-role="listview" data-filter="true" data-scroll="true" data-filter-placeholder="Search" id="ulVehicleList">-->
+                <ul data-role="listview" data-filter="false" data-inset="false" data-theme="d" data-icon="false" data-filter-placeholder="@SentinelMobile.Resources.Resources.Search..." class="jqm-list jqm-home-list" id="ulVehicleList"></ul>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+		        <div data-role="navbar" data-grid="c">
+			        <ul>
+				        <!--<li><a href="~/Home/FleetViewHome" id="menu" data-icon="bars" data-role="button" data-position-to="window" data-transition="flow" data-ajax="false">Vehicles</a></li>-->
+                        <li><a href="#vehicleList" id="menuvl" data-icon="bars" data-role="button" data-rel="dialog" data-transition="none">@SentinelMobile.Resources.Resources.Vehicles</a></li>
+                        <li><a href="javascript:void(0)" onclick="$.mobile.changePage('#mappage');mapSelectedVehicle();" id="layersvl" data-icon="layers" data-role="button" data-rel="dialog" data-transition="none">@SentinelMobile.Resources.Resources.Map</a></li>				    
+                        <li><a href="javascript:void(0)" onclick="$.mobile.changePage('#searchpage');PreviousPage = 'vehicleList';" id="searchvl" data-icon="search" data-role="button" data-transition="none">@SentinelMobile.Resources.Resources.Search</a></li>				                            				    
+			        </ul>
+		        </div>
+	        </div>
+            <div data-role="panel" id="vehicleListLeftpanel" style="background:#555555">
+                @Html.Partial("_leftMenu")                
+            </div><!-- /panel -->            
+    </div>
+}
+
+@section fleetPage
+{
+    <div data-role="page" id="fleetPage">
+        <div data-theme="g" data-role="header" data-position="fixed" data-tap-toggle="false">
+            <h1>@ViewBag.FleetPageTitle</h1>            
+            <a href="#vehicleList" data-role="button" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Close</a>
+        </div>
+        <div data-role="content">
+            <div data-role="fieldcontain" data-theme="d" class="searchcontain">
+                <input name="fleetSearch" data-theme="d" id="fleetSearch" value="" data-clear-btn="true" type="text" placeholder="@ViewBag.FleetPageSearchPlaceHolder" autocomplete="off">
+                <a style="float:right;margin-top:2px;margin-right:10px;" href="javascript:void(0)" onclick="loadFleets(CurrentFleetId, 1);" data-role="button" data-icon="search" data-iconpos="notext" id="btnSearchFleetList">@SentinelMobile.Resources.Resources.SearchFleets</a>
+            </div>
+            <!--<div data-role="fieldcontain" data-theme="d">
+                <input type="search" name="fleetSearch" id="fleetSearch"
+                        value="" placeholder="@SentinelMobile.Resources.Resources.SearchFleets"
+                        autocomplete="off"  data-theme="d"/>
+            </div>-->
+            <ul data-role="listview" data-filter="false" data-inset="false" data-theme="d" data-icon="false" class="jqm-list jqm-home-list" id="ulFleetPage"></ul>
+            <div id="listviewmsg" data-theme="d"></div>
+        </div>
+    </div>
+}
+
+@section searchPage
+{
+    <div data-role="page" id="searchpage" data-theme="d">
+        <div data-role="header" data-theme="h">
+            <h1>@SentinelMobile.Resources.Resources.Search</h1>
+            <a href="javascript:void(0)" onclick="$.mobile.changePage('#' + PreviousPage);" data-role="button" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Close</a>
+            <div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
+                <a href="javascript:void(0)" onclick="$('#searchCriteria').popup(); $('#searchCriteria').popup('open');" data-role="button" data-icon="gear" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Criteria</a>                
+            </div>
+        </div>
+        <div data-role="content" data-theme="d" id="searchContent">
+            <div data-role="fieldcontain" data-theme="d" class="searchcontain">
+                <input type="text" name="query" id="query" data-clear-btn="true" 
+                        value="" placeholder="@SentinelMobile.Resources.Resources.SearchForClosestVehicles"
+                       autocomplete="off" data-theme="d" />
+                <a style="float:right;margin-top:2px;margin-right:10px;" href="javascript:void(0)" onclick="getLonLatOfAddressAndFindClosestVehicles();" data-role="button" data-icon="search" data-iconpos="notext" id="btnClosestVehicles">@SentinelMobile.Resources.Resources.Search</a>
+            </div>
+            <ul data-role="listview" data-filter="false" data-inset="false" data-theme="d" data-icon="false" class="jqm-list jqm-home-list" id="search_results"></ul>
+            <!--<ul data-role="listview" data-inset="true" id="search_results" data-theme="d"></ul>-->
+        </div>
+
+        <div id="searchCriteria" data-role="popup" data-overlay-theme="a" data-theme="c" style="width:300px;height:230px" class="ui-corner-all">
+            <div data-position="inline" data-theme="d" data-role="header" id="searchCriteriaHeader">
+                <h1>@SentinelMobile.Resources.Resources.SearchCriteria</h1>
+            </div>
+            <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+                <div data-role="fieldcontain" style="margin-left:10px;">
+                    @System.Text.RegularExpressions.Regex.Split(SentinelMobile.Resources.Resources.Closestnumvehicles, "%num%")[0]
+                    <select id="selSearchNumVehicles" name="selSearchNumVehicles" data-inline="true" data-theme="e">
+                        <option value="10" selected="selected">10</option>  
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                    @System.Text.RegularExpressions.Regex.Split(SentinelMobile.Resources.Resources.Closestnumvehicles, "%num%")[1]
+                    <br /><br />
+                    @SentinelMobile.Resources.Resources.SearchRadius
+                    <select id="selSearchRadius" name="selSearchNumVehicles" data-inline="true" data-theme="e">
+                        <option value="1" selected="selected">1</option>  
+                        <option value="5" selected="selected">5</option>
+                        <option value="10">10</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                    <!--<input type="text" name="selSearchRadius" id="selSearchRadius" data-clear-btn="false"
+                        value="5" autocomplete="off"  data-theme="e"/>-->
+                    km
+                    
+                </div>
+                <div class="ui-btn-left" style="margin:20px auto;clear:both;display:block;width:180px;"> 
+                    <a href="javascript:void(0)" onclick="setSearchCriteria();" data-role="button" data-inline="true" data-rel="back" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.OK</a>
+                    <a href="javascript:void(0)" data-role="button" data-inline="true" data-rel="back" data-theme="c">@SentinelMobile.Resources.Resources.Cancel</a>    				
+                </div>                
+            </div>        
+        </div>
+    </div>
+}
+
+@section followPage
+{
+    <div data-role="page" id="followpage" data-theme="d" data-title="@SentinelMobile.Resources.Resources.Follow">
+        <div data-role="header" data-position="fixed" data-theme="h">
+            <h1 id="followPageTitle">@SentinelMobile.Resources.Resources.Follow</h1>
+            <a href="javascript:void(0)" onclick="$.mobile.changePage('#mappage');" data-role="button" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Close</a>
+            <div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
+                <a href="javascript:void(0)" onclick="$.mobile.changePage('#sendEmailPage');" data-role="button" data-icon="mail" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Email</a>
+                <!--<a id="emailfollowpage" href="mailto:email@address.com?subject=This is the Subject&amp;body=This is the content of the email." data-role="button" data-icon="forward" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Email</a>                -->
+                <!--<a id="emailfollowpage" href="mailto:test@bsmwireless.com; test1@bsmwireless.com?subject=follow&amp;body=" data-role="button" data-icon="forward" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Email</a>-->
+            </div>
+        </div>
+        <div data-role="content" data-theme="d" id="followContent">
+            <ul data-role="listview" data-filter="false" data-inset="false" data-theme="d" data-icon="false" class="jqm-list jqm-home-list" id="follow_results"></ul>
+            <!--<ul data-role="listview" data-inset="true" id="search_results" data-theme="d"></ul>-->
+        </div>
+        
+    </div>
+}
+
+@section historyPage
+{
+    <div data-role="page" id="historypage" data-theme="d" data-title="@SentinelMobile.Resources.Resources.History">
+        <div data-role="header" data-position="fixed" data-theme="h">
+            <h1 id="historyPageTitle">@SentinelMobile.Resources.Resources.History</h1>
+            <a href="javascript:void(0)" onclick="$.mobile.changePage('#mappage');" data-role="button" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Close</a>
+            <div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
+                <a href="javascript:void(0)" onclick="$('#historyClear').popup(); $('#historyClear').popup('open');" data-role="button" data-icon="trash" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Clear</a>                
+                <a href="javascript:void(0)" onclick="$('#historyCriteria').popup(); $('#historyCriteria').popup('open');" data-role="button" data-icon="gear" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Criteria</a>                
+            </div>
+        </div>
+        <div data-role="content" data-theme="d" id="historyContent">
+            <ul data-role="listview" data-filter="false" data-inset="false" data-theme="d" data-icon="false" class="jqm-list jqm-home-list" id="history_results"></ul>
+            <!--<ul data-role="listview" data-inset="true" id="search_results" data-theme="d"></ul>-->
+        </div>
+
+        <div id="historyCriteria" data-role="popup" data-overlay-theme="a" data-theme="c" style="width:300px;" class="ui-corner-all">
+            <div data-position="inline" data-theme="d" data-role="header" id="historyCriteriaHeader">
+                <h1>@SentinelMobile.Resources.Resources.Search</h1>
+            </div>
+            <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+                <div data-role="fieldcontain" style="margin-left:5px;">
+                    <div class="historyCriteriaTitle">@SentinelMobile.Resources.Resources.From:</div>
+                    <div class="historyCriteriaDate">
+					    <input name="txtFromDate" id="txtFromDate" type="text" data-inline="true" data-role="datebox" data-options='{"mode":"flipbox","zindex":"2000"}' value="@DateTime.Now.AddHours(-2).ToUniversalTime().AddHours(ViewBag.TimeZone + ViewBag.DayLightSaving).ToString(SentinelMobile.Resources.Resources.DateFormat)" />
+                    </div>
+                    <div class="historyCriteriaTime">
+                        <input name="txtFromTime" id="txtFromTime" type="text" data-inline="true" data-role="datebox" data-options='{"mode":"timeflipbox","zindex":"2000", "timeFormatOverride":12}' value="@DateTime.Now.AddHours(-2).ToUniversalTime().AddHours(ViewBag.TimeZone + ViewBag.DayLightSaving).ToString(SentinelMobile.Resources.Resources.TimeFormat)" />
+                    </div>
+
+                    <div class="historyCriteriaTitle" style="margin-top: 10px;">@SentinelMobile.Resources.Resources.To:</div>
+                    <div class="historyCriteriaDate">
+					    <input name="txtToDate" id="txtToDate" type="text" data-inline="true" data-role="datebox" data-options='{"mode":"flipbox","zindex":"2000"}' value="@DateTime.Now.AddDays(1).ToString(SentinelMobile.Resources.Resources.DateFormat)" />
+                    </div>
+                    <div class="historyCriteriaTime">
+                        <input name="txtToTime" id="txtToTime" type="text" data-inline="true" data-role="datebox" data-options='{"mode":"timeflipbox","zindex":"2000", "timeFormatOverride":12}' value="@Convert.ToDateTime("00:00").ToString(SentinelMobile.Resources.Resources.TimeFormat)" />
+                    </div>
+
+                    
+
+                    <div id="historySearchMsg"></div>
+                    
+                </div>
+                <!--<div class="ui-btn-left" style="margin:20px auto;clear:both;display:block;width:180px;"> 
+                    <a href="javascript:void(0)" onclick="searchHistory();" data-role="button" data-inline="true" data-rel="back" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.OK</a>
+                    <a href="javascript:void(0)" data-role="button" data-inline="true" data-rel="back" data-theme="c">@SentinelMobile.Resources.Resources.Cancel</a>    				
+                </div>-->
+            </div>
+            
+            <div data-role="footer" data-theme="c">
+			    <div data-role="controlgroup" data-type="horizontal">
+                    <a href="javascript:void(0)" onclick="searchHistory();" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.OK</a>
+                    <a href="javascript:void(0)" data-role="button" data-inline="true" data-rel="back" data-theme="c">@SentinelMobile.Resources.Resources.Cancel</a>
+                </div>                
+		    </div>    
+        </div>        
+
+        <div id="historyClear" data-role="popup" data-overlay-theme="a" data-theme="c" style="width:300px;" class="ui-corner-all">
+            <div data-position="inline" data-theme="d" data-role="header" id="historyClearHeader">
+                <h1>@SentinelMobile.Resources.Resources.Clear</h1>
+            </div>
+            <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+                <div style="padding:20px;">
+                    @SentinelMobile.Resources.Resources.HistoryClearMsg
+                </div>
+            </div>
+            
+            <div data-role="footer" data-theme="c">
+			    <div data-role="controlgroup" data-type="horizontal">
+                    <a href="javascript:void(0)" onclick="clearHistory();$('#historyClear').popup('close');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.OK</a>
+                    <a href="javascript:void(0)" data-role="button" data-inline="true" data-rel="back" data-theme="c">@SentinelMobile.Resources.Resources.Cancel</a>
+                </div>                
+		    </div>    
+        </div>
+    </div>
+}
+
+
+@section vehicleConfigPage
+{
+    <div data-role="page" id="vehicleConfigPage" data-theme="d">
+    @*<div data-role="page" id="vehicleConfigPage" data-theme="d" data-title="@SentinelMobile.Resources.Resources.Config">*@
+        <div data-role="header" data-position="fixed" data-theme="h">
+            <h1 id="vehicleConfigPageTitle">@SentinelMobile.Resources.Resources.Config</h1>
+            <a href="javascript:void(0)" onclick="$.mobile.changePage('#mappage');" data-role="button" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Close</a>            
+        </div>
+        
+        
+    </div>
+}
+
+@section vehicleInfoPage
+{
+    <div data-role="page" id="vehicleInfoPage" data-theme="d" data-title="@SentinelMobile.Resources.Resources.Config">
+        <div data-role="header" data-position="fixed" data-theme="h" data-tap-toggle="false">
+            <h1 id="configPageTitle">@SentinelMobile.Resources.Resources.Config</h1>
+            <a href="javascript:void(0)" onclick="$.mobile.changePage('#mappage');" data-role="button" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Close</a>            
+        </div>
+        @if (ViewBag.EnableConfigPage)
+        {
+        <div data-role="content" data-theme="d" id="configContent" style="padding-left: 10px;">
+            <div id="vehicleNameSettingConfig" class="configPageItem">
+                <form id="formVehicleInfo" name="formVehicleInfo">
+                    <input type="hidden" id="vehicleInfoOldLicense" name="vehicleInfoOldLicense" />
+                    <input type="hidden" id="vehicleInfoCost" name="vehicleInfoCost" />
+                    @*<input type="hidden" id="vehicleInfoDescription" name="vehicleInfoDescription" />*@
+                    <input type="hidden" id="vehicleInfoVehicleId" name="vehicleInfoVehicleId" />
+                    <input type="hidden" id="vehicleInfoBoxId" name="vehicleInfoBoxId" />
+                    <input type="hidden" id="vehicleInfoIconTypeId" name="vehicleInfoIconTypeId" />
+                    <input type="hidden" id="vehicleInfoEmail" name="vehicleInfoEmail" />
+                    <input type="hidden" id="vehicleInfoPhone" name="vehicleInfoPhone" />
+                    <input type="hidden" id="vehicleInfoTimeZone" name="vehicleInfoTimeZone" />
+                    <input type="hidden" id="vehicleInfoAutoAdjustDayLightSaving" name="vehicleInfoAutoAdjustDayLightSaving" />
+                    <input type="hidden" id="vehicleInfoFuelType" name="vehicleInfoFuelType" />
+                    <input type="hidden" id="vehicleInfoNotify" name="vehicleInfoNotify" />
+                    <input type="hidden" id="vehicleInfoWarning" name="vehicleInfoWarning" />
+                    <input type="hidden" id="vehicleInfoCritical" name="vehicleInfoCritical" />
+                    <input type="hidden" id="vehicleInfoMaintenance" name="vehicleInfoMaintenance" />
+                    <input type="hidden" id="vehicleInfoServiceConfigID" name="vehicleInfoServiceConfigID" />
+                    <div data-role="content" data-theme="d" id="vehicleInfoContent" style="padding-left: 10px;">
+                        <div id="vehicleInfoNameConfig" class="vehicleInfoPageItem">
+                            <div id="vehicleInfoNameSetting">
+                                <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.VehicleName</span>
+                                    <input type="text" name="vehicleInfoDescription" id="vehicleInfoDescription" data-clear-btn="false" autocomplete="off" data-theme="e" />
+                                <a href="javascript:void(0)" id="swapBtn" class="configButton" onclick="swapVehicle();" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Swap</a>
+                                <div id="vehicleInfoNameMsg" class="configPageMsg"></div>
+                            </div>
+                        </div>
+                        <div id="vehicleInfoBoxConfig" class="vehicleInfoPageItem">
+                            <div id="vehicleInfoBoxSetting">
+                                <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.Box</span>
+                                <select id="selVehiceInfoBox" name="selVehiceInfoBox" data-inline="true" data-theme="e">  
+                                    <option></option>                                  
+                                </select>
+                                <div id="vehicleInfoBoxMsg" class="configPageMsg"></div>
+                            </div>
+                        </div>
+                        <div id="vehicleInfoVINConfig" class="vehicleInfoPageItem">
+                            <div id="vehicleInfoVINSetting">
+                                <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.VIN:</span>
+                                    <input type="text" name="vehicleInfoVIN" id="vehicleInfoVIN" data-clear-btn="false" autocomplete="off" data-theme="e" class="input_capital alphanumeric" maxlength="17" />
+                                <div id="vehicleInfoVINMsg" class="configPageMsg"></div>           
+                            </div>
+                        </div>
+
+                        <div id="vehicleInfoLicensePlateConfig" class="vehicleInfoPageItem">
+                            <div id="vehicleInfoLicensePlateSetting">
+                                <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.LicensePlate:</span>
+                                    <input type="text" name="vehicleInfoLicensePlate" id="vehicleInfoLicensePlate" data-clear-btn="false" autocomplete="off" data-theme="e" class="input_capital alphanumeric" />
+                                <div id="vehicleInfoLicensePlateMsg" class="configPageMsg"></div> 
+                            </div>
+                        </div>
+            
+                        <div id="vehicleInfoVehicleTypeConfig" class="vehicleInfoPageItem">
+                            <div id="vehicleInfoVehicleTypeSetting">
+                                <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.VehicleType:</span>
+                                <select id="selVehiceInfoVehicleType" name="selVehiceInfoVehicleType" data-inline="true" data-theme="e">
+                                    <option value="-1">@SentinelMobile.Resources.Resources.Loading</option>                        
+                                </select>
+                            </div>                
+                        </div>
+
+                        <div id="vehicleInfoMakeConfig" class="vehicleInfoPageItem">
+                            <div id="vehicleInfoMakeSetting">
+                                <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.Make:</span>
+                                <select id="selVehiceInfoMake" name="selVehiceInfoMake" data-inline="true" data-theme="e" onchange="loadModelInfo(false);disableSetSeatbeltOdometerBtn();">
+                                    <option value="-1">@SentinelMobile.Resources.Resources.Loading</option>                        
+                                </select>
+                            </div>                
+                        </div>
+
+                        <div id="vehicleInfoModelConfig" class="vehicleInfoPageItem">
+                            <div id="vehicleInfoModelSetting">
+                                <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.Model:</span>
+                                <select id="selVehiceInfoModel" name="selVehiceInfoModel" data-inline="true" data-theme="e" onchange="disableSetSeatbeltOdometerBtn();">
+                                    <option value="-1">@SentinelMobile.Resources.Resources.Loading</option>                        
+                                </select>
+                            </div>                
+                        </div>
+
+                        <div id="vehicleInfoYearConfig" class="vehicleInfoPageItem">
+                            <div id="vehicleInfoYearSetting">
+                                <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.Year:</span>
+                                    <input type="text" name="vehicleInfoYear" id="vehicleInfoYear" data-clear-btn="false" autocomplete="off" data-theme="e" onchange="disableSetSeatbeltOdometerBtn();" />
+                            </div>                
+                        </div>
+
+                        <div id="vehicleInfoColorConfig" class="vehicleInfoPageItem">
+                            <div id="vehicleInfoColorSetting">
+                                <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.Color:</span>
+                                    <input type="text" name="vehicleInfoColor" id="vehicleInfoColor" data-clear-btn="false" autocomplete="off" data-theme="e" />
+                            </div>                
+                        </div>
+
+                        <div id="vehicleInfoVehicleStateProvince" class="vehicleInfoPageItem">
+                            <div id="vehicleInfoStateProvinceSetting">
+                                <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.StateProvince:</span>
+                                <select id="vehicleInfoProvince" name="vehicleInfoProvince" data-inline="true" data-theme="e">
+                                    <option value="-1">@SentinelMobile.Resources.Resources.Loading</option>                        
+                                </select>
+                            </div>                
+                        </div>
+
+                        <div id="vehicleInfoMsg" class="vehicleInfoMsg"></div><br />
+                        <a href="javascript:void(0)" id="vehicleInfoSaveBtn" class="configButton" onclick="saveVehicleInfo();" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Set</a>
+                        <a href="javascript:void(0)" id="vehicleInfoSetSeatbeltOdometerBtn" class="configButton ui-disabled" onclick="sendCommand('setSeatbeltOdometer');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.SetSeatbeltOdometer</a>
+                        <div id="setSeatbeltOdometerWaiting" style="display:none;margin-top:10px;">
+                            @SentinelMobile.Resources.Resources.PleaseWait
+                        </div>
+                        <div id="setSeatbeltOdometerMsg" class="configPageMsg"></div>
+                    </div>
+                </form>
+
+                <!--<div id="vehicleNameSetting">
+                    <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.VehicleName</span> <br />
+                    <input type="text" name="configVehicleName" id="configVehicleName" data-clear-btn="false" autocomplete="off"  data-theme="e"/>
+                    <a href="javascript:void(0)" id="configVehicleNameBtn" class="configButton" onclick="configVehicleName();" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Set</a>
+                </div>-->
+                <div id="vehicleNameSettingWaiting" style="display:none;margin-top:10px;">
+                    <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                    @SentinelMobile.Resources.Resources.PleaseWait
+                </div>
+                <div id="vehicleNameSettingMsg" class="configPageMsg"></div>
+            </div>
+
+            <div id="configOdometerConfig" class="configPageItem">
+                <div id="configOdometerDiv">
+                    <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.Odometer</span> <br />
+                    <table style="width:100%">
+                            <tr>
+                                <td style="width:180px"><input type="text" name="configOdometer" id="configOdometer" data-clear-btn="false" autocomplete="off" data-theme="e" /></td>
+                                <td>
+                                    <select id="selMesUnits" name="selMesUnits" data-inline="true" data-theme="e">
+                        <option value="1" selected="selected">km</option>  
+                        <option value="0.6214">Mi</option>                        
+                                    </select>
+                                </td>
+                    </tr>
+                    </table>
+                    <a href="javascript:void(0)" id="configOdometerBtn" class="configButton" onclick="sendCommand('configOdometer');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Set</a>
+                </div>
+                <div id="configOdometerWaiting" style="display:none;margin-top:10px;">
+                    <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                    @SentinelMobile.Resources.Resources.PleaseWait
+                </div>
+                <div id="configOdometerMsg" class="configPageMsg"></div>                
+            </div>
+            
+            <div id="updatePositionConfig" class="configPageItem">
+                <div id="updatePositionDiv">
+                    <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.UpdatePosition</span>
+                    <a href="javascript:void(0)" id="updatePositionBtn" class="configButton" onclick="sendCommand('updatePosition');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Run</a>
+                </div>
+                <div id="updatePositionWaiting" style="display:none;margin-top:10px;">
+                    <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                    @SentinelMobile.Resources.Resources.PleaseWait
+                </div>
+                <div id="updatePositionMsg" class="configPageMsg"></div>
+                <div id="BoxLastPositionInfo" style="display:none">
+                    <div id="BoxLastPositionContent"></div>
+                    <a href="javascript:void(0)" id="BoxLastPositionClear" class="configButton" onclick="$('#BoxLastPositionContent').html('');$('#BoxLastPositionInfo').hide();" data-role="button" data-inline="true" data-transition="flow" data-corners="true" data-iconshadow="false" data-theme="c">@SentinelMobile.Resources.Resources.Close</a>
+                </div>
+            </div>
+
+            <div id="getBoxStatusConfig" class="configPageItem">
+                <div id="getBoxStatus">
+                    <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.GetBoxStatus</span>
+                    <a href="javascript:void(0)" id="getBoxStatusBtn" class="configButton" onclick="sendCommand('getBoxStatus');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Run</a>
+                </div>
+                <div id="getBoxStatusWaiting" style="display:none;margin-top:10px;">
+                    <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                    @SentinelMobile.Resources.Resources.PleaseWait
+                </div>
+                <div id="getBoxStatusMsg" class="configPageMsg"></div>
+                <div id="BoxStatusInfo" style="display:none">
+                    <div id="BoxStatusInfoContent"></div>
+                    <a href="javascript:void(0)" id="BoxStatusInfoClear" class="configButton" onclick="$('#BoxStatusInfoContent').html('');$('#BoxStatusInfo').hide();" data-role="button" data-inline="true" data-transition="flow" data-corners="true" data-iconshadow="false" data-theme="c">@SentinelMobile.Resources.Resources.CloseStatusInfo</a>
+                </div>
+            </div>
+
+            @*<div id="getBoxSensorConfig" class="configPageItem">
+                <div id="getBoxSensor">
+                    <span style="font-weight:bold;">Box Sensors</span>
+                    <a href="javascript:void(0)" id="boxSensorBtn" class="configButton" onclick="getBoxSensorInfo();" data-role="button" data-inline="true" data-transition="flow" data-theme="h">Configure</a>
+                </div>
+                <div id="getBoxSensorWaiting" style="display:none;margin-top:10px;">
+                    <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                    @SentinelMobile.Resources.Resources.PleaseWait
+                </div>
+                <div id="getBoxSensorMsg" class="configPageMsg"></div>
+                <div id="BoxSensorInfo" style="display:none">
+                    <div id="BoxSensorInfoContent"></div>
+                    <a href="javascript:void(0)" id="BoxSensorInfoClear1" class="configButton" onclick="$('#BoxStatusInfoContent').html('');$('#BoxStatusInfo').hide();" data-role="button" data-inline="true" data-transition="flow" data-corners="true" data-iconshadow="false" data-theme="c">@SentinelMobile.Resources.Resources.CloseStatusInfo</a>
+                </div>
+            </div>*@
+
+            @if (ViewBag.Reefer)
+            {
+                <div id="reeferChangeOperatingModeConfig" class="configPageItem">
+                    <div id="reeferChangeOperatingMode">
+                        <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.ReeferChangeOperatingMode</span> <br />
+                        <select id="reeferOperationModeType" name="reeferOperationModeType" data-inline="true" data-theme="e">
+                            <option value="2">@SentinelMobile.Resources.Resources.ReeferContinuousRunMode</option>  
+                            <option value="4">@SentinelMobile.Resources.Resources.ReeferCycleSentryMode</option>
+                            <option value="6">@SentinelMobile.Resources.Resources.ReeferSleepMode</option>                        
+                        </select>
+                        <a href="javascript:void(0)" id="reeferOperatingModeBtn" class="configButton" onclick="sendCommand('reeferChangeOperatingMode');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Set</a>
+                    </div>
+                    <div id="reeferChangeOperatingModeWaiting" style="display:none;margin-top:10px;">
+                        <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                        @SentinelMobile.Resources.Resources.PleaseWait
+                    </div>
+                    <div id="reeferChangeOperatingModeMsg" class="configPageMsg"></div>
+
+                </div>
+                
+                <div id="reeferChangeSetPointConfig" class="configPageItem">
+                    <div id="reeferChangeSetPoint">
+                        <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.ReeferChangeSetPoint</span> <br />
+                            <input type="text" name="reeferSetPoint" id="reeferSetPoint" data-clear-btn="false" autocomplete="off" data-theme="e" />
+                        <a href="javascript:void(0)" id="reeferChangeSetPointBtn" class="configButton" onclick="sendCommand('reeferChangeSetPoint');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Set</a>
+                    </div>
+                    <div id="reeferChangeSetPointWaiting" style="display:none;margin-top:10px;">
+                        <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                        @SentinelMobile.Resources.Resources.PleaseWait
+                    </div>
+                    <div id="reeferChangeSetPointMsg" class="configPageMsg"></div>
+
+                </div>
+                
+                <div id="reeferClearAlarmConfig" class="configPageItem">
+                    <div id="reeferClearAlarm">
+                        <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.ReeferClearAlarm</span> 
+                        <a href="javascript:void(0)" id="reeferClearAlarmBtn" class="configButton" onclick="sendCommand('reeferClearAlarm');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Run</a>
+                    </div>
+                    <div id="reeferClearAlarmWaiting" style="display:none;margin-top:10px;">
+                        <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                        @SentinelMobile.Resources.Resources.PleaseWait
+                    </div>
+                    <div id="reeferClearAlarmMsg" class="configPageMsg"></div>
+
+                </div>
+                
+                <div id="reeferOpenFreshAirDoorConfig" class="configPageItem">
+                    <div id="reeferOpenFreshAirDoor">
+                        <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.ReeferOpenFreshAirDoor</span> 
+                        <a href="javascript:void(0)" id="reeferOpenFreshAirDoorBtn" class="configButton" onclick="sendCommand('reeferOpenFreshAirDoor');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Run</a>
+                    </div>
+                    <div id="reeferOpenFreshAirDoorWaiting" style="display:none;margin-top:10px;">
+                        <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                        @SentinelMobile.Resources.Resources.PleaseWait
+                    </div>
+                    <div id="reeferOpenFreshAirDoorMsg" class="configPageMsg"></div>
+
+                </div>
+                
+                <div id="reeferCloseFreshAirDoorConfig" class="configPageItem">
+                    <div id="reeferCloseFreshAirDoor">
+                        <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.ReeferCloseFreshAirDoor</span> 
+                        <a href="javascript:void(0)" id="reeferCloseFreshAirDoorBtn" class="configButton" onclick="sendCommand('reeferCloseFreshAirDoor');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Run</a>
+                    </div>
+                    <div id="reeferCloseFreshAirDoorWaiting" style="display:none;margin-top:10px;">
+                        <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                        @SentinelMobile.Resources.Resources.PleaseWait
+                    </div>
+                    <div id="reeferCloseFreshAirDoorMsg" class="configPageMsg"></div>
+
+                </div>
+                
+                <div id="reeferInitiatePreTripConfig" class="configPageItem">
+                    <div id="reeferInitiatePreTrip">
+                        <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.ReeferInitiatePreTrip</span> 
+                        <a href="javascript:void(0)" id="reeferInitiatePreTripBtn" class="configButton" onclick="sendCommand('reeferInitiatePreTrip');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Run</a>
+                    </div>
+                    <div id="reeferInitiatePreTripWaiting" style="display:none;margin-top:10px;">
+                        <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                        @SentinelMobile.Resources.Resources.PleaseWait
+                    </div>
+                    <div id="reeferInitiatePreTripMsg" class="configPageMsg"></div>
+
+                </div>
+                
+                <div id="reeferInitiateDefrostConfig" class="configPageItem">
+                    <div id="reeferInitiateDefrost">
+                        <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.ReeferInitiateDefrost</span> 
+                        <a href="javascript:void(0)" id="reeferInitiateDefrostBtn" class="configButton" onclick="sendCommand('reeferInitiateDefrost');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Run</a>
+                    </div>
+                    <div id="reeferInitiateDefrostWaiting" style="display:none;margin-top:10px;">
+                        <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                        @SentinelMobile.Resources.Resources.PleaseWait
+                    </div>
+                    <div id="reeferInitiateDefrostMsg" class="configPageMsg"></div>
+
+                </div>
+                
+                <div id="reeferMultipleAlarmReadConfig" class="configPageItem">
+                    <div id="reeferMultipleAlarmRead">
+                        <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.ReeferMultipleAlarmRead</span> 
+                        <a href="javascript:void(0)" id="reeferMultipleAlarmReadBtn" class="configButton" onclick="sendCommand('reeferMultipleAlarmRead');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Run</a>
+                    </div>
+                    <div id="reeferMultipleAlarmReadWaiting" style="display:none;margin-top:10px;">
+                        <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                        @SentinelMobile.Resources.Resources.PleaseWait
+                    </div>
+                    <div id="reeferMultipleAlarmReadMsg" class="configPageMsg"></div>
+
+                </div>
+                
+                <div id="reeferSoftwareIdentificationConfig" class="configPageItem" style="display:none;">
+                    <div id="reeferSoftwareIdentification">
+                        <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.ReeferSoftwareIdentification</span> 
+                        <a href="javascript:void(0)" id="reeferSoftwareIdentificationBtn" class="configButton" onclick="sendCommand('reeferSoftwareIdentification');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Run</a>
+                    </div>
+                    <div id="reeferSoftwareIdentificationWaiting" style="display:none;margin-top:10px;">
+                        <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                        @SentinelMobile.Resources.Resources.PleaseWait
+                    </div>
+                    <div id="reeferSoftwareIdentificationMsg" class="configPageMsg"></div>
+
+                </div>
+                
+                <div id="reeferTurnPowerOffConfig" class="configPageItem">
+                    <div id="reeferTurnPowerOff">
+                        <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.ReeferTurnPowerOff</span> 
+                        <a href="javascript:void(0)" id="reeferTurnPowerOffBtn" class="configButton" onclick="sendCommand('reeferTurnPowerOff');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Run</a>
+                    </div>
+                    <div id="reeferTurnPowerOffWaiting" style="display:none;margin-top:10px;">
+                        <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                        @SentinelMobile.Resources.Resources.PleaseWait
+                    </div>
+                    <div id="reeferTurnPowerOffMsg" class="configPageMsg"></div>
+
+                </div>
+                
+                <div id="reeferTurnPowerOnConfig" class="configPageItem">
+                    <div id="reeferTurnPowerOn">
+                        <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.ReeferTurnPowerOn</span> 
+                        <a href="javascript:void(0)" id="reeferTurnPowerOnBtn" class="configButton" onclick="sendCommand('reeferTurnPowerOn');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Run</a>
+                    </div>
+                    <div id="reeferTurnPowerOnWaiting" style="display:none;margin-top:10px;">
+                        <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                        @SentinelMobile.Resources.Resources.PleaseWait
+                    </div>
+                    <div id="reeferTurnPowerOnMsg" class="configPageMsg"></div>
+
+                </div>
+            }
+
+            <div id="SetFuelConfigurationConfig" class="configPageItem">
+                <div id="SetFuelConfigurationDiv">
+                    <span style="font-weight:bold;">@SentinelMobile.Resources.Resources.SetFuelConfiguration</span> <br />
+                    <table style="width:100%;">
+                            <tr>
+                                <td style="width:100px;">@SentinelMobile.Resources.Resources.FuelType:</td>
+                            <td>
+                                <select id="selSetFuelConfigurationFuelType" onchange="selSetFuelConfigurationFuelTypeChange()" name="selSetFuelConfigurationFuelType" data-inline="true" data-theme="e">
+                                    <option value="0">@SentinelMobile.Resources.Resources.Regular</option>  
+                                    <option value="1">@SentinelMobile.Resources.Resources.Mid</option>
+                                    <option value="2">@SentinelMobile.Resources.Resources.Premium</option>
+                                    <option value="3">@SentinelMobile.Resources.Resources.NaturalGas</option>
+                                    <option value="4">@SentinelMobile.Resources.Resources.Diesel</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="fuelTypeNotDiesel">
+                            <td colspan="2">@SentinelMobile.Resources.Resources.EngineDisplacement:</td>
+                        </tr>
+                        <tr class="fuelTypeNotDiesel">
+                                <td colspan="2"><input type="text" name="SetFuelConfigurationEngineDisplacement" id="SetFuelConfigurationEngineDisplacement" value="3000" data-clear-btn="false" autocomplete="off" data-theme="e" /></td>
+                        </tr>
+                        <tr class="fuelTypeNotDiesel">
+                            <td colspan="2">@SentinelMobile.Resources.Resources.VolumeEfficency:</td>
+                        </tr>
+                        <tr class="fuelTypeNotDiesel">
+                                <td colspan="2"><input type="text" name="SetFuelConfigurationVolumeEfficency" id="SetFuelConfigurationVolumeEfficency" value="80" data-clear-btn="false" autocomplete="off" data-theme="e" /></td>
+                        </tr>
+                        <tr class="fuelTypeNotDiesel">
+                            <td colspan="2">@SentinelMobile.Resources.Resources.AirFuelRatiox10:</td>
+                        </tr>
+                        <tr class="fuelTypeNotDiesel">
+                            <td colspan="2">
+                                    <input type="text" name="SetFuelConfigurationAirFuelRatiox10" id="SetFuelConfigurationAirFuelRatiox10" value="140" data-clear-btn="false" autocomplete="off" data-theme="e" />
+                            </td>
+                        </tr>
+                        <tr class="fuelTypeDiesel" style="display:none">
+                            <td colspan="2">@SentinelMobile.Resources.Resources.Denominator:</td>
+                        </tr>
+                        <tr class="fuelTypeDiesel" style="display:none">
+                            <td colspan="2">
+                                    <input type="text" name="SetFuelConfigurationDenominator" id="SetFuelConfigurationDenominator" value="132500000" data-clear-btn="false" autocomplete="off" data-theme="e" />
+                            </td>
+                        </tr>
+                    </table>
+                    <a href="javascript:void(0)" id="SetFuelConfigurationBtn" class="configButton" onclick="sendCommand('SetFuelConfiguration');" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Set</a>
+                    
+                </div>
+                <div id="SetFuelConfigurationWaiting" style="display:none;margin-top:10px;">
+                    <!--<img src="~/Content/images/prgBar.gif" alt="" />-->
+                    @SentinelMobile.Resources.Resources.PleaseWait
+                </div>
+                <div id="SetFuelConfigurationMsg" class="configPageMsg"></div>
+            </div>
+        </div>
+            if (ViewBag.OrganizationId == 951 || ViewBag.OrganizationId == 999994 || ViewBag.OrganizationId == 1000148)
+            {
+                <div style="height:50px;"></div>
+            <div data-role="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">                
+		        <div data-role="navbar" data-grid="c">
+			        <ul>
+                        <!--<li><a href="#vehicleInfoPage" id="vehicleProfileMenu1" data-icon="bars" data-role="button" data-rel="dialog" data-transition="none">@SentinelMobile.Resources.Resources.Config</a></li>-->
+                        
+                        <li><a href="javascript:void(0)" onclick="getBoxSensorInfo();" id="vehicleProfileMenu2" data-icon="layers" data-role="button" data-rel="dialog" data-transition="none">@SentinelMobile.Resources.Resources.SensorList</a></li>				    	                            				    
+                        
+			        </ul>
+		        </div>
+                
+	        </div>
+            }
+        }
+
+        <div id="swapConfirm" data-role="popup" data-overlay-theme="a" data-theme="c" style="width:300px;height:170px" class="ui-corner-all">
+            <div data-position="inline" data-theme="d" data-role="header" id="swapConfirmHeader">
+                <h1>@SentinelMobile.Resources.Resources.Swap</h1>
+            </div>
+            <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+                <div data-role="fieldcontain" style="margin-left:10px;">
+                    <span>@SentinelMobile.Resources.Resources.SwapConfirmMsg</span>                    
+                </div>
+                <div class="ui-btn-left" style="margin:20px auto;clear:both;display:block;width:180px;"> 
+                    <a href="javascript:void(0)" onclick="swapVehicleSubmit();" data-role="button" data-inline="true" data-rel="back" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.OK</a>
+                    <a href="javascript:void(0)" data-role="button" data-inline="true" data-rel="back" data-theme="c">@SentinelMobile.Resources.Resources.Cancel</a>    				
+                </div>                
+            </div>        
+        </div>
+        
+    </div>    
+}
+
+@section sendEmailPage
+{
+    <div data-role="page" id="sendEmailPage" data-theme="d" data-title="@SentinelMobile.Resources.Resources.SendEmail">
+        <div data-role="header" data-position="fixed" data-theme="h">
+            <h1 id="sendEmailPageTitle">@SentinelMobile.Resources.Resources.SendEmail</h1>
+            <a href="javascript:void(0)" data-role="button" data-rel="back" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Close</a>            
+        </div>
+        <div data-role="content" data-theme="d" id="sendEmailPageContent">
+            <div id="divSendEmailPageForm" class="configPageItem">
+                <form id="formSendEmail" name="formSendEmail" action="https://cs17.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+                    <input type=hidden name="orgid" value="00Dg0000006RPis">
+                    <input type=hidden name="retURL" value="http://uat.sentinelfm.com/mobile/Home/FleetView">
+
+                    <div data-role="content" data-theme="d" id="sendEmailContent" style="padding-left: 10px;">
+                        <div id="divOrganization" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="CompanySetting">
+                                <label for="company" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.Organization:</label>
+                                <input type="text" name="company" id="company" data-clear-btn="false" autocomplete="off" data-theme="e" maxlength="80" value="@Html.Raw(ViewBag.OrganziationName.Replace("'", "\\'"))" />
+                            </div>
+                            <div id="OrganizationMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divInstallerOrganization" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="InstallerOrganizationSetting">
+                                <label for="00Ng00000018gf1" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.InstallerOrganization:</label>
+                                <input type="text" name="00Ng00000018gf1" id="00Ng00000018gf1" data-clear-btn="false" autocomplete="off" data-theme="e" maxlength="30" />
+                            </div>
+                            <div id="InstallerOrganizationMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divInstaller" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="InstallerSetting">
+                                <label for="00Ng00000018grq" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.Installer:</label>
+                                <input type="text" name="00Ng00000018grq" id="00Ng00000018grq" data-clear-btn="false" autocomplete="off" data-theme="e" maxlength="30" disabled />
+                            </div>
+                            <div id="InstallerMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divInstallerEmail" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="InstallerEmailSetting">
+                                <label for="00Ng00000018gew" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.Email:</label>
+                                <input type="text" name="00Ng00000018gew" id="00Ng00000018gew" data-clear-btn="false" autocomplete="off" data-theme="e" maxlength="30" />
+                            </div>
+                            <div id="InstallerEmailMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divInstallerPhone" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="InstallerPhoneSetting">
+                                <label for="00Ng0000001MI3p" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.Phone:</label>
+                                <input type="text" name="00Ng0000001MI3p" id="00Ng0000001MI3p" data-clear-btn="false" autocomplete="off" data-theme="e" maxlength="40" />
+                            </div>
+                            <div id="InstallerPhoneMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divBoxID" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="BoxIDSetting">
+                                <label for="00Ng00000018Oah" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.BoxID:</label>
+                                <input type="text" name="00Ng00000018Oah" id="00Ng00000018Oah" data-clear-btn="false" autocomplete="off" data-theme="e" maxlength="10" />
+                            </div>
+                            <div id="BoxIDMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divVehicleDescription" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="VehicleDescriptionSetting">
+                                <label for="00Ng000000177hz" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.VehicleDescription:</label>
+                                <input type="text" name="00Ng000000177hz" id="00Ng000000177hz" data-clear-btn="false" autocomplete="off" data-theme="e" maxlength="40" />
+                            </div>
+                            <div id="VehicleDescriptionMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divECM" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="ECMSetting">
+                                <label for="00Ng00000016kAm" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.ECM:</label>
+                                <select id="00Ng00000016kAm" name="00Ng00000016kAm" data-inline="true" data-theme="e">
+                                    <option value="">@SentinelMobile.Resources.Resources.None</option>
+                                    <option value="NO ECM">@SentinelMobile.Resources.Resources.NoECM</option>
+                                    <option value="OBDII">OBDII</option>
+                                    <option value="J1708 6-Pin">J1708 6-Pin</option>
+                                    <option value="J1708 9-Pin">J1708 9-Pin</option>
+                                </select>
+                            </div>
+                            <div id="ECMMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divOdometer" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="OdometerSetting">
+                                <label for="00Ng00000016f5w" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.Odometer:</label>
+                                <input type="text" name="00Ng00000016f5w" id="00Ng00000016f5w" data-clear-btn="false" autocomplete="off" data-theme="e" maxlength="8" />
+                            </div>
+                            <div id="OdometerMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divOdometerUnits" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="OdometerUnitsSetting">
+                                <label for="00Ng0000001L0XQ" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.OdometerUnits:</label>
+                                <select id="00Ng0000001L0XQ" name="00Ng0000001L0XQ" data-inline="true" data-theme="e">
+                                    <option value="">@SentinelMobile.Resources.Resources.None</option>
+                                    <option value="KM">KM</option>
+                                    <option value="MI">MI</option>
+                                </select>
+                            </div>
+                            <div id="OdometerUnitsMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divEngineHours" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="EngineHoursSetting">
+                                <label for="00Ng00000016f61" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.EngineHours:</label>
+                                <input type="text" name="00Ng00000016f61" id="00Ng00000016f61" data-clear-btn="false" autocomplete="off" data-theme="e" maxlength="8" />
+                            </div>
+                            <div id="EngineHoursMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divFuelType" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="FuelTypeSetting">
+                                <label for="00Ng00000016f6B" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.FuelType:</label>
+                                <select id="00Ng00000016f6B" name="00Ng00000016f6B" data-inline="true" data-theme="e">
+                                    <option value="">@SentinelMobile.Resources.Resources.None</option>
+                                    <option value="Gas">@SentinelMobile.Resources.Resources.Gas</option>
+                                    <option value="Diesel">@SentinelMobile.Resources.Resources.Diesel</option>
+                                </select>
+                            </div>
+                            <div id="FuelTypeMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divEngineDisplacement" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="EngineDisplacementSetting">
+                                <label for="00Ng00000016f66" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.EngineDisplacement:</label>
+                                <input type="text" name="00Ng00000016f66" id="00Ng00000016f66" data-clear-btn="false" autocomplete="off" data-theme="e" maxlength="8" />
+                            </div>
+                            <div id="EngineDisplacementMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divIgnitionSource" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="IgnitionSourceSetting">
+                                <label for="00Ng00000016jwG" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.IgnitionSource:</label>
+                                <select id="00Ng00000016jwG" name="00Ng00000016jwG" data-inline="true" data-theme="e">
+                                    <option value="">@SentinelMobile.Resources.Resources.None</option>
+                                    <option value="Ignition Harness">@SentinelMobile.Resources.Resources.IgnitionHarness</option>
+                                    <option value="Radio Harness">@SentinelMobile.Resources.Resources.RadioHarness</option>
+                                    <option value="Driver Kick Panel">@SentinelMobile.Resources.Resources.DriverKickPanel</option>
+                                    <option value="Passenger Kick Panel">@SentinelMobile.Resources.Resources.PassengerKickPanel</option>
+                                    <option value="Driver Fuse Box / BCM">@SentinelMobile.Resources.Resources.DriverFuseBoxBCM</option>
+                                    <option value="Passenger Fuse Box / BCM">@SentinelMobile.Resources.Resources.PassengerFuseBoxBCM</option>
+                                    <option value=">ECM / Rapid Install">@SentinelMobile.Resources.Resources.ECMRapidInstall</option>
+                                </select>
+                            </div>
+                            <div id="IgnitionSourceMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divPowerSource" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="PowerSourceSetting">
+                                <label for="00Ng00000016jvw" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.PowerSource:</label>
+                                <select id="00Ng00000016jvw" name="00Ng00000016jvw" data-inline="true" data-theme="e">
+                                    <option value="">@SentinelMobile.Resources.Resources.None</option>
+                                    <option value="Ignition Harness">@SentinelMobile.Resources.Resources.IgnitionHarness</option>
+                                    <option value="Radio Harness">@SentinelMobile.Resources.Resources.RadioHarness</option>
+                                    <option value="Driver Kick Panel">@SentinelMobile.Resources.Resources.DriverKickPanel</option>
+                                    <option value="Passenger Kick Panel">@SentinelMobile.Resources.Resources.PassengerKickPanel</option>
+                                    <option value="Driver Fuse Box / BCM">@SentinelMobile.Resources.Resources.DriverFuseBoxBCM</option>
+                                    <option value="Passenger Fuse Box / BCM">@SentinelMobile.Resources.Resources.PassengerFuseBoxBCM</option>
+                                    <option value=">ECM / Rapid Install">@SentinelMobile.Resources.Resources.ECMRapidInstall</option>
+                                </select>
+                            </div>
+                            <div id="PowerSourceMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divBoxLocation" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="BoxLocationSetting">
+                                <label for="00Ng00000016jZR" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.BoxLocation:</label>
+                                <select id="00Ng00000016jZR" name="00Ng00000016jZR" data-inline="true" data-theme="e">
+                                    <option value="">@SentinelMobile.Resources.Resources.None</option>
+                                    <option value="Driver Side - Top Dash">@SentinelMobile.Resources.Resources.DriverSideTopDash</option>
+                                    <option value="Driver Side - Bottom Dash">@SentinelMobile.Resources.Resources.DriverSideBottomDash</option>
+                                    <option value="Passenger Side - Top Dash">@SentinelMobile.Resources.Resources.PassengerSideTopDash</option>
+                                    <option value="Passenger Side - Bottom Dash">@SentinelMobile.Resources.Resources.PassengerSideBottomDash</option>
+                                    <option value="Center Dash">@SentinelMobile.Resources.Resources.CenterDash</option>
+                                    <option value="Driver Kick Panel">@SentinelMobile.Resources.Resources.DriverKickPanel</option>
+                                    <option value="Passenger Kick Panel">@SentinelMobile.Resources.Resources.PassengerKickPanel</option>
+                                    <option value="Other">@SentinelMobile.Resources.Resources.Other</option>
+                                </select>
+                            </div>
+                            <div id="BoxLocationMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divGPSAntennaLocation" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="GPSAntennaLocationSetting">
+                                <label for="00Ng00000016jtb" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.GPSAntennaLocation:</label>
+                                <select id="00Ng00000016jtb" name="00Ng00000016jtb" data-inline="true" data-theme="e">
+                                    <option value="">@SentinelMobile.Resources.Resources.None</option>
+                                    <option value="Driver Side - Top Dash">@SentinelMobile.Resources.Resources.DriverSideTopDash</option>
+                                    <option value="Passenger Side - Top Dash">@SentinelMobile.Resources.Resources.PassengerSideTopDash</option>
+                                    <option value="Driver A Pillar">@SentinelMobile.Resources.Resources.DriverAPillar</option>
+                                    <option value="Passenger A Pillar">@SentinelMobile.Resources.Resources.PassengerAPillar</option>
+                                    <option value="Other">@SentinelMobile.Resources.Resources.Other</option>
+                                </select>
+                            </div>
+                            <div id="GPSAntennaLocationMsg" class="configPageMsg"></div>
+                        </div>
+                        <div id="divCellAntennaLocation" class="vehicleInfoPageItem">
+                            <div data-role="fieldcontain" id="CellAntennaLocationSetting">
+                                <label for="00Ng00000016juy" style="width:100px;margin:0 5px 0 0">@SentinelMobile.Resources.Resources.CellAntennaLocation:</label>
+                                <select id="00Ng00000016juy" name="00Ng00000016juy" data-inline="true" data-theme="e">
+                                    <option value="">@SentinelMobile.Resources.Resources.None</option>
+                                    <option value="Driver Side - Top Dash">@SentinelMobile.Resources.Resources.DriverSideTopDash</option>
+                                    <option value="Passenger Side - Top Dash">@SentinelMobile.Resources.Resources.PassengerSideTopDash</option>
+                                    <option value="Driver A Pillar">@SentinelMobile.Resources.Resources.DriverAPillar</option>
+                                    <option value="Passenger A Pillar">@SentinelMobile.Resources.Resources.PassengerAPillar</option>
+                                    <option value="Other">@SentinelMobile.Resources.Resources.Other</option>
+                                </select>
+                            </div>
+                            <div id="CellAntennaLocationMsg" class="configPageMsg"></div>
+                        </div>
+            
+                        <div id="sendEmailMsg" class="vehicleInfoMsg"></div><br />
+                        
+			            <div data-role="controlgroup" data-type="horizontal">
+                            <a href="javascript:void(0)" onclick="sendEmail();" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.Submit</a>
+                            <a href="javascript:void(0)" data-role="button" data-inline="true" data-rel="back" data-theme="c">@SentinelMobile.Resources.Resources.Cancel</a>
+                        </div>                
+		                
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        
+    </div>
+}
+
+
+<div data-role="content" id="mapdiv">
+    <div id="map"></div>    
+</div>
+<div id="map_canvas" style="display:none"></div>
+@section vehicleSensorsPage {
+    <div data-role="page" id="vehicleSensorList" data-title="Vehicle Sensors">
+            <div data-role="header" data-position="fixed" data-theme="h" data-tap-toggle="false">
+            <h1 id="vehicleSensorsPageTitle">@SentinelMobile.Resources.Resources.VehicleSensors</h1>
+            <!--<a href="javascript:void(0)" onclick="$.mobile.changePage('#vehicleInfoPage');" data-role="button" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Close</a>            
+                <a href="javascript:void(0)" onclick="saveSensorInfo();" data-role="button" data-icon="save" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">'Save'</a>-->
+        </div>
+        <ul data-role="listview" data-filter="false" data-inset="false" data-theme="d" data-icon="false" class="jqm-list jqm-home-list" id="ulVehicleSensorsPage"></ul>
+        <div id="sensorlistviewmsg" data-theme="d"></div>
+            @*<!--<div data-role="content" id="fleetviewhome" style="padding-top:48px;">-->
+           
+            <div data-role="panel" id="vehicleListLeftpanel" style="background:#555555">
+                @Html.Partial("_leftMenu")                
+            </div><!-- /panel -->    *@    
+        <a href="javascript:void(0)" id="SaveSensorBtn" class="configButton" onclick="saveSensorInfo();" data-role="button" data-inline="true" data-transition="flow" data-theme="h">@SentinelMobile.Resources.Resources.SaveSensorList</a>
+         <div style="height:65px;"></div>
+         <div data-role="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
+		        <div data-role="navbar" data-grid="c">
+			        <ul>
+				       <li><a href="#vehicleInfoPage" id="ConfigPage" data-icon="bars" data-role="button" data-rel="dialog" data-transition="none">@SentinelMobile.Resources.Resources.Config</a></li>
+                        @*<li><a href="javascript:void(0)" onclick="saveSensorInfo();" id="SaveSensor" data-icon="layers" data-role="button" data-rel="dialog" data-transition="none" style="width:200px;">@SentinelMobile.Resources.Resources.SaveSensorList</a></li>*@
+			        </ul>
+		        </div>
+	        </div>    
+    </div>
+    
+}
+
+@section editSensorPage {
+    <div data-role="page" id="editSensorPage" data-title="Update Sensors" style="padding-left: 10px;">
+
+        <input type="hidden" id="sensorInfoSensorId" name="sensorInfoSensorId" />
+        <input type="hidden" id="sensorInfoSensorOriginalName" name="sensorInfoSensorOriginalName" />
+        <input type="hidden" id="sensorInfoSensorAction" name="sensorInfoSensorAction" />
+        <input type="hidden" id="sensorInfoSensorAlarmLevelOn" name="sensorInfoSensorAlarmLevelOn" />
+        <input type="hidden" id="sensorInfoSensorAlarmLevelOff" name="sensorInfoSensorAlarmLevelOff" />
+
+            <div data-role="header" data-position="fixed" data-theme="h">
+            <h1 id="editSensorPageTitle">@SentinelMobile.Resources.Resources.VehicleSensors</h1>
+            <a href="javascript:void(0)" onclick="$.mobile.changePage('#vehicleSensorList');" data-role="button" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Close</a>            
+                <a href="javascript:void(0)" onclick="onSaveSensorClick();" data-role="button" data-icon="save" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">'Save'</a>
+        </div>
+
+        @*<div id="sensorInfoIdConfig">
+            <div id="sensorInfoIdSetting" class="vehicleInfoPageItem">
+            <span style="font-weight:bold;">Sensor Id</span>
+            <input type="text" name="sensorIdDescription" id="sensorIdDescription" data-clear-btn="false" autocomplete="off"  data-theme="e" class="input_capital alphanumeric" maxlength="17" disabled/>
+            </div>
+        </div>*@                                                                  
+
+        <table>
+            <tr>
+                <td>
+                <span style="font-weight:bold;">Sensor Name</span>
+                    </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="sensorInfoDescription" id="sensorInfoDescription" data-clear-btn="false" autocomplete="off" data-theme="e" />
+                    </td>
+                <td>
+                    <a href="javascript:void(0)" onclick="onToggleSensorNameText_Unsused_Click();" data-role="button" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Unused</a>
+                </td>
+                </tr>
+            </table>
+
+        @*<div id="sensorInfoNameConfig">
+            <div id="sensorInfoNameSetting" class="vehicleInfoPageItem">
+                <span style="font-weight:bold;">Sensor Name</span>
+                <div id="sensorInfoDescriptionDiv">
+                    <input type="text" name="sensorInfoDescription1" id="sensorInfoDescription1" data-clear-btn="false" autocomplete="off"  data-theme="e"/>
+                    <a href="javascript:void(0)" onclick="onToggleSensorNameText_Unsused_Click();" data-role="button" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Close</a>
+                </div>
+            </div> 
+        </div>*@ 
+        <div id="editsensorviewmsg" data-theme="d"></div>
+              
+    </div>
+}

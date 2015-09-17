@@ -1,0 +1,85 @@
+﻿@model SentinelMobile.Models.LoginModel
+
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+@section Header
+{
+    <style type="text/css">        
+    </style>
+
+}
+
+
+<div style="margin:auto;width:160px;margin-top:50px;margin-bottom:20px;">
+    <img src="@Url.Content("~/Content/images/Sentinel.png")" alt="SentinelFM"  />
+</div>
+
+@using (Html.BeginForm("Login", "Account", FormMethod.Post, new { autocomplete = "on" }))
+{
+    <ul data-role="listview" data-inset="false" style="border:none;max-width:280px;margin:0 auto;">
+        
+        <li data-role="fieldcontain" style="text-align:center;border:none;background:none !important;">            
+            @Html.TextBoxFor(m => m.UserName, new { placeholder = SentinelMobile.Resources.Resources.Username })            
+        </li>
+
+        <li data-role="fieldcontain" style="text-align:center;border:none;background:none !important;">
+            @Html.PasswordFor(m => m.Password, new { placeholder = SentinelMobile.Resources.Resources.Password })            
+        </li>
+
+        <li data-role="fieldcontain" style="text-align:center;border:none;background:none !important;">
+            @Html.TextBoxFor(m => m.DomainName, new { placeholder = SentinelMobile.Resources.Resources.Domainname })
+        </li>
+
+        <li data-role="fieldcontain" style="display:none;">
+            @Html.LabelFor(m => m.RememberMe)
+            @Html.CheckBoxFor(m => m.RememberMe)
+        </li>
+        
+        <li data-role="fieldcontain" style="text-align:center;border:none;background:none !important;">
+            <input type="submit" value="@SentinelMobile.Resources.Resources.Login" data-theme="h" onclick="setHashPassword();" />
+        </li>        
+    </ul>
+    <div style="text-align:center;border:none;background:none !important;width:230px;margin:10px auto;">
+        <a href="/Login.aspx?f=1" data-ajax="false">@SentinelMobile.Resources.Resources.ViewFullSize</a>
+    </div>
+    
+    <input id="txtRnd" type="hidden" value='@ViewBag.authseed' name="txtRnd">
+    @Html.HiddenFor(m => m.HashPassword);
+                                        //@Html.Hidden("txtRnd", ViewBag.authseed);
+    
+    @Html.ValidationSummary()
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script type="text/javascript">
+        $(document).ready(function () {
+            $("form").attr( "data-ajax","false");
+        });
+
+        function setHashPassword() {
+            $('#HashPassword').val(hex_md5(hex_md5($('#Password').val()) + $('#txtRnd').val()));            
+        }
+
+        function setCookie(c_name, value, exdays) {
+            var exdate = new Date();
+            exdate.setDate(exdate.getDate() + exdays);
+            var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString()) + "; path=@Url.Content("~")";
+            document.cookie = c_name + "=" + c_value;
+
+            c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString()) + "; path=@Url.Content("~")" + "Account/";
+            document.cookie = c_name + "=" + c_value;
+
+            /*jQuery.mobile.changePage(window.location.href, {
+                allowSamePageTransition: true,
+                transition: 'none',
+                reloadPage: true
+            });*/
+            window.location.reload(true);
+        }
+</script>
