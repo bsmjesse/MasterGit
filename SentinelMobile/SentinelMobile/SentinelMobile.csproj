@@ -395,6 +395,7 @@
     <Content Include="Scripts\mobile-base.js" />
     <Content Include="Scripts\mobile-jq.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\Openlayers\navteqlayer.js" />
     <Content Include="Scripts\Openlayers\OpenLayers-2.11\img\blank.gif" />
     <Content Include="Scripts\Openlayers\OpenLayers-2.11\img\cloud-popup-relative.png" />
     <Content Include="Scripts\Openlayers\OpenLayers-2.11\img\drag-rectangle-off.png" />
