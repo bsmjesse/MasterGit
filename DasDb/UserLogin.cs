@@ -25,7 +25,7 @@ namespace VLF.DAS.DB
 		/// <exception cref="DASAppDataAlreadyExistsException">Thrown if user with this datetime already exists.</exception>
 		/// <exception cref="DASDbConnectionClosed">Thrown if connection to database has been closed.</exception>
 		/// <exception cref="DASException">Thrown in all other exception cases.</exception>
-        public int AddUserLogin(int UserId, DateTime LoginDateTime, string IP)
+        public int AddUserLogin(int UserId, DateTime LoginDateTime, string IP, string LoginUserSecId)
 		{
 			int rowsAffected = 0;
             int LoginID = 0;
@@ -39,6 +39,7 @@ namespace VLF.DAS.DB
                     sqlExec.AddCommandParam("@IP", SqlDbType.VarChar, ParameterDirection.Input, DBNull.Value);
                 else
                     sqlExec.AddCommandParam("@IP", SqlDbType.VarChar, ParameterDirection.Input, IP);
+                sqlExec.AddCommandParam("@LoginUserSecId", SqlDbType.VarChar, ParameterDirection.Input, LoginUserSecId);
                 sqlExec.AddCommandParam("@LoginID", SqlDbType.Int, ParameterDirection.Output, 4, LoginID);
 
                 int res = sqlExec.SPExecuteNonQuery("usp_UserLogin_Add");
@@ -79,7 +80,7 @@ namespace VLF.DAS.DB
         /// <exception cref="DASAppDataAlreadyExistsException">Thrown if user with this datetime already exists.</exception>
         /// <exception cref="DASDbConnectionClosed">Thrown if connection to database has been closed.</exception>
         /// <exception cref="DASException">Thrown in all other exception cases.</exception>
-        public int AddUserLoginExtended(int UserId, string IP, int LoginUserId)
+        public int AddUserLoginExtended(int UserId, string IP, int LoginUserId, string LoginUserSecId)
         {
             int LoginID = 0;
 
@@ -92,6 +93,7 @@ namespace VLF.DAS.DB
                 else
                     sqlExec.AddCommandParam("@IP", SqlDbType.VarChar, ParameterDirection.Input, IP);
                 sqlExec.AddCommandParam("@LoginUserId", SqlDbType.Int, ParameterDirection.Input, LoginUserId);
+                sqlExec.AddCommandParam("@LoginUserSecId", SqlDbType.VarChar, ParameterDirection.Input, LoginUserSecId);
                 sqlExec.AddCommandParam("@LoginID", SqlDbType.Int, ParameterDirection.Output, 4, LoginID);
 
                 int res = sqlExec.SPExecuteNonQuery("usp_UserLoginExtended_Add");
@@ -101,7 +103,7 @@ namespace VLF.DAS.DB
             }
             catch (SqlException objException)
             {
-                string prefixMsg = String.Format("Unable to add user login.UserId: {0}, LoginUserId: {1}, IP: {2}.", UserId.ToString(), LoginUserId.ToString(), IP);
+                string prefixMsg = String.Format("Unable to add user login. UserId: {0}, LoginUserId: {1}, IP: {2}.", UserId.ToString(), LoginUserId.ToString(), IP);
                 Util.ProcessDbException(prefixMsg, objException);
             }
             catch (DASDbConnectionClosed exCnn)
@@ -110,16 +112,54 @@ namespace VLF.DAS.DB
             }
             catch (Exception objException)
             {
-                string prefixMsg = String.Format("Unable to add user login.UserId: {0}, LoginUserId: {1}, IP: {2}.", UserId.ToString(), LoginUserId.ToString(), IP);
+                string prefixMsg = String.Format("Unable to add user login. UserId: {0}, LoginUserId: {1}, IP: {2}.", UserId.ToString(), LoginUserId.ToString(), IP);
                 throw new DASException(prefixMsg + " " + objException.Message);
             }
             if (LoginID == 0)
             {
-                string prefixMsg = String.Format("Unable to add user login.UserId: {0}, LoginUserId: {1}, IP: {2}.", UserId.ToString(), LoginUserId.ToString(), IP);
+                string prefixMsg = String.Format("Unable to add user login. UserId: {0}, LoginUserId: {1}, IP: {2}.", UserId.ToString(), LoginUserId.ToString(), IP);
                 throw new DASAppDataAlreadyExistsException(prefixMsg + " User login already exists.");
             }
 
             return LoginID;
+        }
+
+        /// <summary>
+        /// Retrieves current HGI user
+        /// </summary>
+        /// <param name="OrganizationId"></param>
+        /// <returns>UserId</returns>
+        public int GetCurrentHGIUser(int LoginUserId, string LoginUserSecId)
+        {
+            int UserId = 0;
+
+            try
+            {
+                sqlExec.ClearCommandParameters();
+                sqlExec.AddCommandParam("@LoginUserId", SqlDbType.Int, LoginUserId);
+                sqlExec.AddCommandParam("@LoginUserSecId", SqlDbType.VarChar, LoginUserSecId);
+                sqlExec.AddCommandParam("@UserId", SqlDbType.Int, ParameterDirection.Output, 4, UserId);
+
+                int res = sqlExec.SPExecuteNonQuery("usp_CurrentHGIUser_Get");
+
+                UserId = (DBNull.Value == sqlExec.ReadCommandParam("@UserId")) ?
+                              UserId : Convert.ToInt32(sqlExec.ReadCommandParam("@UserId"));
+            }
+            catch (SqlException objException)
+            {
+                string prefixMsg = "Unable to retrieve current HGI user for LoginUserId:  " + LoginUserId.ToString() + ". ";
+                Util.ProcessDbException(prefixMsg, objException);
+            }
+            catch (DASDbConnectionClosed exCnn)
+            {
+                throw new DASDbConnectionClosed(exCnn.Message);
+            }
+            catch (Exception objException)
+            {
+                string prefixMsg = "Unable to retrieve current HGI user for LoginUserId:  " + LoginUserId.ToString() + ". ";
+                throw new DASException(prefixMsg + " " + objException.Message);
+            }
+            return UserId;
         }
 
 		/// <summary>

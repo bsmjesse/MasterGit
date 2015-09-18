@@ -122,6 +122,7 @@ namespace SentinelFM
             Session["userID"] = sn.UserID;
             Session["loginUserID"] = sn.LoginUserID;
             Session["secId"] = sn.SecId;
+            Session["loginUserSecId"] = sn.LoginUserSecId;
             Session["userName"] = sn.UserName;
             Session["hashPassword"] = sn.Password;
             Session["key"] = sn.Key;
@@ -134,6 +135,7 @@ namespace SentinelFM
             sn.UserID = Convert.ToInt32(Session["userID"]);
             sn.LoginUserID = Convert.ToInt32(Session["loginUserID"]);
             sn.SecId = Session["secId"].ToString();
+            sn.LoginUserSecId = Session["loginUserSecId"].ToString();
             sn.UserName = Session["userName"].ToString();
             sn.Password = Session["hashPassword"].ToString();
             sn.Key = Session["key"].ToString();
@@ -145,6 +147,7 @@ namespace SentinelFM
         {
             int LoginUserID = 0;
             string IpAddr = String.Empty;
+            string LoginUserSecId = String.Empty;
 
             try
             {
@@ -184,9 +187,10 @@ namespace SentinelFM
                     }
 
                 LoginUserID = Convert.ToInt32(Session["loginUserID"]);
+                LoginUserSecId = Convert.ToString(Session["secId"]);
 
                 SecurityManager.SecurityManager sec = new SecurityManager.SecurityManager();
-                int errCode = sec.LoginMD5ExtendedSuperUser(userName, hashPassword, IpAddr, LoginUserID, ref uid, ref secId, ref superOrganizationId, ref Email, ref isDisclaimer);
+                int errCode = sec.LoginMD5ExtendedSuperUser(userName, hashPassword, IpAddr, LoginUserID, LoginUserSecId, ref uid, ref secId, ref superOrganizationId, ref Email, ref isDisclaimer);
                 
                 SentinelFMSession sn = new SentinelFMSession();
                 Session.Remove("SentinelFMSession");
@@ -194,6 +198,7 @@ namespace SentinelFM
                 sn.UserID = uid;
                 sn.LoginUserID = LoginUserID;
                 sn.SecId = secId;
+                sn.LoginUserSecId = LoginUserSecId;
                 sn.SuperOrganizationId = superOrganizationId;
                 sn.UserName = userName;
                 sn.Password = hashPassword;

@@ -94,6 +94,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="userIp" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="LoginUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoginUserSecId" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="SuperOrganizationId" type="s:int" />

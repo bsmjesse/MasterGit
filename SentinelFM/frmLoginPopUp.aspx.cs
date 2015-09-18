@@ -142,7 +142,8 @@ namespace SentinelFM
 					sn.SecId= secId;
 					sn.UserName = txtUserName.Text ;
 					sn.Password = txtPassword.Text ;
-					sn.User.IPAddr=IpAddr;
+					sn.User.IPAddr = IpAddr;
+                    sn.LoginUserSecId = secId;
 					Session.Add("SentinelFMSession", sn ) ;
 					//FindExistingPreference();
 					sn.User.ExistingPreference(sn);

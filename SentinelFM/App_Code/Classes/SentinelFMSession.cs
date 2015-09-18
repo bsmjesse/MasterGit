@@ -55,6 +55,7 @@ namespace SentinelFM
             snb.HomePagePicture = session.homePagePicture;
             snb.SelectedLanguage = session.selectedLanguage;
             snb.LoginUserID = session.loginUserID;
+            snb.LoginUserSecId = session.LoginUserSecId;
 
             return snb;
         }
@@ -72,6 +73,7 @@ namespace SentinelFM
             snb.HomePagePicture = base.homePagePicture;
             snb.SelectedLanguage = base.selectedLanguage;
             snb.LoginUserID = base.loginUserID;
+            snb.LoginUserSecId = base.LoginUserSecId;
 
             return snb;
         }
@@ -314,6 +316,7 @@ namespace SentinelFM
                 base.userName = sessionBase.UserName;
                 base.selectedLanguage = sessionBase.SelectedLanguage;
                 base.loginUserID = sessionBase.LoginUserID;
+                base.LoginUserSecId = sessionBase.LoginUserSecId;
 
                 history = new clsHistory();
                 user = new clsUser();

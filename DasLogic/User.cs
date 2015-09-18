@@ -1419,9 +1419,9 @@ namespace VLF.DAS.Logic
 		/// </summary>
 		/// <exception cref="DASAppDataAlreadyExistsException">Thrown if user with this datetime already exists.</exception>
 		/// <exception cref="DASException">Thrown DASException in all other exception cases.</exception>
-		public int AddUserLogin(int userId, DateTime loginDateTime, string IP)
+        public int AddUserLogin(int userId, DateTime loginDateTime, string IP, string LoginUserSecId)
 		{
-            return userLogin.AddUserLogin(userId, loginDateTime, IP);
+            return userLogin.AddUserLogin(userId, loginDateTime, IP, LoginUserSecId);
 		}
 
         /// <summary>
@@ -1429,9 +1429,9 @@ namespace VLF.DAS.Logic
         /// </summary>
         /// <exception cref="DASAppDataAlreadyExistsException">Thrown if user with this datetime already exists.</exception>
         /// <exception cref="DASException">Thrown DASException in all other exception cases.</exception>
-        public int AddUserLoginExtended(int userId, string IP, int LoginUserId)
+        public int AddUserLoginExtended(int userId, string IP, int LoginUserId, string LoginUserSecId)
         {
-            return userLogin.AddUserLoginExtended(userId, IP, LoginUserId);
+            return userLogin.AddUserLoginExtended(userId, IP, LoginUserId, LoginUserSecId);
         }
 
         // Changes for TimeZone Feature start
