@@ -151,17 +151,36 @@
                                         <div id="productFamilySelector">
                                             <div class="form-group">
                                                 <label for="Fleet_Selector">Fleet_Selector</label>
-                                                <input type="text" id="Fleet_Selector" class="form-control" /></div>
+                                                <input type="text" id="Fleet_Selector" class="form-control" />
+                                            </div>
                                             <div class="form-group">
                                                 <label for="StartDate">StartDate</label>
-                                                <input type="text" id="StartDate" class="form-control" /></div>
+                                                <input type="text" id="StartDate" class="form-control" />
+                                            </div>
                                             <div class="form-group">
                                                 <label for="EndDate">EndDate</label>
-                                                <input type="text" id="EndDate" class="form-control" /></div>
+                                                <input type="text" id="EndDate" class="form-control" />
+                                            </div>
                                             <div class="form-group">
                                                 <label for="Select_Days_of_Week">Select_Days_of_Week</label>
-                                                <input type="text" id="Select_Days_of_Week" class="form-control" /></div>
+                                                <input type="text" id="Select_Days_of_Week" class="form-control" />
+                                            </div>
                                         </div>
+                                        <div class="form-group">
+                                            <label for="Driver_Select">Driver_Select</label>
+                                            <input type="text" id="Driver_Select" class="form-control" /></div>
+                                        <div class="form-group">
+                                            <label for="Title">Title</label>
+                                            <input type="text" id="Title" class="form-control" /></div>
+                                        <div class="form-group">
+                                            <label for="Infraction_Category">Infraction_Category</label>
+                                            <input type="text" id="Infraction_Category" class="form-control" /></div>
+                                        <div class="form-group">
+                                            <label for="Infractions_List">Infractions_List</label>
+                                            <input type="text" id="Infractions_List" class="form-control" /></div>
+                                        <div class="form-group">
+                                            <label for="Vehicle_Selector">Vehicle_Selector</label>
+                                            <input type="text" id="Vehicle_Selector" class="form-control" /></div>
                                         <button type="button" class="btn btn-default" onclick="runDashboardWithAllParams()">Apply</button>
                                     </div>
 
