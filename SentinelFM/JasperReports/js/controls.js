@@ -4,9 +4,6 @@ BSM.Controls = function (el) {
 	
 	function _daysOfWeekControl (){
 			if ( $('#Select_Days_of_Week').length === 1){
-			    //$('#Select_Days_of_Week').parent().html('<select id="Select_Days_of_Week" multiple="multiple"><option value="1">Monday</option><option value="2">Tuesday</option><option value="3">Wednesday</option><option value="4">Thursday</option><option value="5">Friday</option><option value="4">Saturday</option><option value="12">Sunday</option></select>');
-			    //$('#Select_Days_of_Week').multipleSelect(); 
-
 			    var _parent = $('#Select_Days_of_Week').parent();
 			    $(_parent).append('<select id="Select_Days_of_Week" multiple="multiple"><option value="1">Monday</option><option value="2">Tuesday</option><option value="3">Wednesday</option><option value="4">Thursday</option><option value="5">Friday</option><option value="4">Saturday</option><option value="12">Sunday</option></select>');
 			    $('#Select_Days_of_Week').remove();
@@ -20,9 +17,6 @@ BSM.Controls = function (el) {
 
 	function _multipleSelectControl(elementId, dataFeed) {
 	    if ($('#' + elementId).length === 1) {
-
-	        //$('#Select_Days_of_Week').parent().html('<select id="Select_Days_of_Week" multiple="multiple"><option value="1">Monday</option><option value="2">Tuesday</option><option value="3">Wednesday</option><option value="4">Thursday</option><option value="5">Friday</option><option value="4">Saturday</option><option value="12">Sunday</option></select>');
-	        //$('#Select_Days_of_Week').multipleSelect(); 
 
 	        var _data = window[dataFeed]();
 	        var _html = '<br /><select style="width:250px;" id="' + elementId + '" multiple="multiple">';
@@ -53,29 +47,6 @@ BSM.Controls = function (el) {
 
 	}
 
-	function _fleetControl() {
-	    //if ($('#Fleet_Selector').length === 1) {
-	    //    $('#Fleet_Selector').parent().html('<select multiple="multiple"><option value="1">Monday</option><option value="2">Tuesday</option><option value="3">Wednesday</option><option value="4">Thursday</option><option value="5">Friday</option><option value="4">Saturday</option><option value="12">Sunday</option></select>');
-	    //    $('#Fleet_Selector').multipleSelect();
-	    //};
-
-	    var _parent = $('#Fleet_Selector').parent();
-	    $(_parent).append('<select id="Select_Days_of_Week" multiple="multiple"><option value="1">Monday</option><option value="2">Tuesday</option><option value="3">Wednesday</option><option value="4">Thursday</option><option value="5">Friday</option><option value="4">Saturday</option><option value="12">Sunday</option></select>');
-	    $('#Fleet_Selector').remove();
-	};
-
-	function _multiSelectControl(element) {
-	    var datafeed = window[($(element).data("feed"))]();
-	    var _html = '<select multiple="multiple">';
-	    for (var i = 0; i < datafeed.length; i++)
-	    {
-	        _html += '<option value="' + datafeed[i][0] + '">' + datafeed[i][1] + '</option>';
-	    }
-	    _html += '</select>';
-	    
-	    $(element).parent().html(_html).multipleSelect();
-	};
-		
 	function _scanControls() {
 	    
 		if ( $('#StartDate').length === 1){
