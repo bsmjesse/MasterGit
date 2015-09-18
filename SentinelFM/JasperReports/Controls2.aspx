@@ -6,55 +6,31 @@
 <head runat="server">
     <title>Analytic Report</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
-    <style type="text/css">
-        body {
-            margin-top: 50px;
-        }
+    <meta charset="utf-8">  
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link href="js/multiple-select/multiple-select.css" rel="stylesheet" />
+  <style type="text/css">
+    body {
+	    font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+	    font-size: 70.5%;
+    }
+    
+    .form-group {
+        margin-top: 10px;
+    }
 
-        .glyphicon {
-            margin-right: 10px;
-        }
+    .form-control {clear:both;display:block;}
+    
+    .ms-drop {z-index: 10031;}
+  </style>
 
-        .panel-body {
-            padding: 0px;
-        }
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-            .panel-body table tr td {
-                padding-left: 15px;
-            }
-
-            .panel-body .table {
-                margin-bottom: 0px;
-            }
-
-        .container {
-            width: 100%;
-        }
-
-        .reportContainer {
-            height: 640px;
-        }
-
-        #productFamilySelector {
-            display: inline-block;
-        }
-
-        .dashboardControl {
-            display: inline-block;
-            float: left;
-            position: relative;
-            padding-right: 6px;
-        }
-    </style>
-    <%--<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>--%>
-    <%--<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>--%>
-    <script type='text/javascript' src="js/jquery-2.1.4.min.js"></script>
-    <script type='text/javascript' src="js/bootstrap/js/bootstrap.min.js"></script>
-    <script type='text/javascript' src="js/underscore-min.js"></script>
-    <script src="js/visualize.js?_opt=false"></script>
-    <script src="js/jasper2.js"></script>
+    <script src="js/controls.js"></script>
     <script type="text/javascript">
+        var SERVER_URL = "http://dev.sentinelfm.com";
+        var token = "";
 
         function disableEnterKey(e) {
             var key;
@@ -65,6 +41,24 @@
 
             return (key != 13);
         }
+
+        function getFleetData() {            
+            return <%=FLEET_DATA%>;
+        }
+
+        function getDaysOfWeek() {
+            return [[{groupName:'Weekday', data: [{ id: 1, title: "Monday" }, { id: 2, title: "Tuesday" }, { id: 3, title: "Wednesday" }, { id: 4, title: "Thursday"  }, { id: 5, title: "Friday"}]}], [{groupName: 'Weekend', data: [{ id: 6, title: "Saturday" }, { id: 7, title: "Sunday" }]}]];
+        }
+
+        function getDriver() {
+            //return [[{ id: 1, title: "Franklin" }, { id: 2, title: "Tom" }, { id: 3, title: "John" }, { id: 4, title: "Angela" }, { id: 5, title: "William" }, { id: 6, title: "Georage" }]];
+            return <%=DRIVER_DATA%>;
+        }
+
+        function getInfractionCategory() {
+            return [[{ id: "Alarm", title: "Alarm" }, { id: "Diagnostic", title: "Diagnostic" }, { id: "Diagnostic:(Custom)", title: "Diagnostic:(Custom)" }, { id: "DTC", title: "DTC" }, { id: "Violation", title: "Violation" }, { id: "Violation:(Custom)", title: "Violation:(Custom)" }]];
+        }
+        
     </script>
 </head>
 <body>
@@ -72,74 +66,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-2 col-md-2">
-                    <div class="panel-group" id="accordion">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-folder-close"></span>Views</a>
-                                </h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <table class="table" id="tblViews">
-                                        <tbody>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th"></span>Dashboards</a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse in">
-                                <div class="panel-body">
-                                    <table class="table" id="tblDashboards">
-                                        <tbody>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file"></span>Reports</a>
-                                </h4>
-                            </div>
-                            <div id="collapseFour" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <table class="table" id="tblReports">
-                                        <tbody>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-file"></span>Demos</a>
-                                </h4>
-                            </div>
-                            <div id="collapseFive" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <table class="table" id="tblDemos">
-                                        <tbody>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+       
                 </div>
                 <div class="col-sm-10 col-md-10 reportContainer">
                     <div class="well">
-                        <div id="divTitle">Engine Hours Analysis</div>
+                        
                         <div class="btn-group" id="btnFilter" style="">
                             <button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown" aria-expanded="false">
                                 Filters<span class="caret"></span>
@@ -200,5 +131,17 @@
             </div>
         </div>
     </form>
+    <script type='text/javascript' src="js/multiple-select/jquery.multiple.select.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#dashboard-controls').on({
+                "click": function (e) {
+                    e.stopPropagation();
+                }
+            });
+            BSM.Controls.scanControls();
+        });
+    </script>
 </body>
 </html>
