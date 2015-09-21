@@ -105,6 +105,23 @@
 
             return (key != 13);
         }
+
+        function getFleetData() {
+            return <%=FLEET_DATA%>;
+        }
+
+        function getDaysOfWeek() {
+            return [[{ groupName: 'Weekday', data: [{ id: 1, title: "Monday" }, { id: 2, title: "Tuesday" }, { id: 3, title: "Wednesday" }, { id: 4, title: "Thursday" }, { id: 5, title: "Friday" }] }], [{ groupName: 'Weekend', data: [{ id: 6, title: "Saturday" }, { id: 7, title: "Sunday" }] }]];
+        }
+
+        function getDriver() {
+            //return [[{ id: 1, title: "Franklin" }, { id: 2, title: "Tom" }, { id: 3, title: "John" }, { id: 4, title: "Angela" }, { id: 5, title: "William" }, { id: 6, title: "Georage" }]];
+            return <%=DRIVER_DATA%>;
+        }
+
+        function getInfractionCategory() {
+            return [[{ id: "Alarm", title: "Alarm" }, { id: "Diagnostic", title: "Diagnostic" }, { id: "Diagnostic:(Custom)", title: "Diagnostic:(Custom)" }, { id: "DTC", title: "DTC" }, { id: "Violation", title: "Violation" }, { id: "Violation:(Custom)", title: "Violation:(Custom)" }]];
+        }
     </script>
 </head>
 <body>
