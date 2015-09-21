@@ -347,6 +347,11 @@ function buildDashboardControl() {
     //var $elInput = $("<div><input type=\"button\" onclick=\"runDashboardWithParams('" + $.trim(params[i].id) + "')\" value=\"Apply\" /></div>");
     //var $elInput = $("<div><input type=\"button\" onclick=\"runDashboardWithAllParams()\" value=\"Apply\" /></div>");
     //$("#productFamilySelector").append($elInput);
+    BSM.Controls.scanControls();
+    BSM.Controls.removeLeft();
+    $('#Title').parent().hide();
+    $('#Vehicle_Selector').parent().hide();
+    //$($('label')[0]).text(S($($('label')[0]).text()).humanize().s);
 }
 
 

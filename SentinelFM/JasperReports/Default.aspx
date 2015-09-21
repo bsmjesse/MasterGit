@@ -8,6 +8,8 @@
     <title>Analytic Report</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="js/multiple-select/multiple-select.css" rel="stylesheet" />
     <style type="text/css">
        
         .glyphicon {
@@ -76,7 +78,12 @@
         }
 
         .mydropdown{
-            width:200px;
+            width:300px;
+        }
+
+        .ui-datepicker {
+            font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+	        font-size: 90.5%;
         }
     </style>
     <%--<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>--%>
@@ -84,6 +91,10 @@
     <script type='text/javascript' src="js/jquery-2.1.4.min.js"></script>
     <script type='text/javascript' src="js/bootstrap/js/bootstrap.min.js"></script>
     <script type='text/javascript' src="js/underscore-min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    
+    <script src="js/controls.js"></script>
     <script src="js/visualize.js?_opt=false"></script>
     <script src="js/jasper2.js"></script>
     <script type="text/javascript">
@@ -122,6 +133,15 @@
         function getInfractionCategory() {
             return [[{ id: "Alarm", title: "Alarm" }, { id: "Diagnostic", title: "Diagnostic" }, { id: "Diagnostic:(Custom)", title: "Diagnostic:(Custom)" }, { id: "DTC", title: "DTC" }, { id: "Violation", title: "Violation" }, { id: "Violation:(Custom)", title: "Violation:(Custom)" }]];
         }
+
+        $(document).ready(function () {
+            $('#productFamilySelector').on({
+                "click": function (e) {
+                    e.stopPropagation();
+                }
+            });
+            //BSM.Controls.scanControls();
+        });
     </script>
 </head>
 <body>
@@ -250,5 +270,7 @@
             </div>
         </div>
     </form>
+
+    <script type='text/javascript' src="js/multiple-select/jquery.multiple.select.js"></script>    
 </body>
 </html>
