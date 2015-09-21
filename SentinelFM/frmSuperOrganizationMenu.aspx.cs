@@ -187,7 +187,7 @@ namespace SentinelFM
                     }
 
                 LoginUserID = Convert.ToInt32(Session["loginUserID"]);
-                LoginUserSecId = Convert.ToString(Session["secId"]);
+                LoginUserSecId = Session["loginUserSecId"].ToString();
 
                 SecurityManager.SecurityManager sec = new SecurityManager.SecurityManager();
                 int errCode = sec.LoginMD5ExtendedSuperUser(userName, hashPassword, IpAddr, LoginUserID, LoginUserSecId, ref uid, ref secId, ref superOrganizationId, ref Email, ref isDisclaimer);
