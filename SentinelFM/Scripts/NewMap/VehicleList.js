@@ -933,6 +933,9 @@ Ext.onReady(function () {
                     exirecord.data.isSelected = 1;
                     if (!ShowRetiredVehicles && exirecord.data.VehicleDeviceStatusID == "3")
                         return;
+                    if (exirecord.data.Latitude == 0 || exirecord.data.Latitude == 90 || exirecord.data.Latitude == -90 || exirecord.data.Longitude == 0 || exirecord.data.Longitude == 90 || exirecord.data.Longitude == -90)
+                        return;
+
                     var newIcon = "";
                     var today = new Date();
                     var posExpireDate = new Date();

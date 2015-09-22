@@ -1,0 +1,65 @@
+﻿@model SentinelMobile.Models.VehicleSensors
+
+@{
+    Layout = "";
+
+    SentinelMobile.Models.User user = Session != null ? (SentinelMobile.Models.User)Session["SentinelUser"] : null;
+    if (user != null)
+    {
+        System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(user.DefaultLanguage);  
+    }
+    
+}
+
+@if(Model.SensorList != null && Model.SensorList.Count > 0)
+{
+    for (int i = 0; i < Model.SensorList.Count; i++)
+    {
+        SentinelMobile.Models.VehicleSensor sensor = Model.SensorList[i]; 
+        
+               
+        <li id="lisensorlist_@sensor.SensorId">
+                 @{
+        string checkclass = sensor.ISInUse == true ? "checkBoxLeftChecked" : "checkBoxLeftNotChecked";
+                string strchecked = sensor.ISInUse==true ? "checked" : "";
+                string strUnsedPrefix = sensor.ISInUse == true ? "" : "Unused";
+                string strDisabled = sensor.ISDefault == true ? "disabled='true'" : "";
+                string strTextstar = sensor.ISDefault == true ? " *" : "";
+                if(sensor.SensorName.StartsWith("unused",true,null))
+                {
+                    strUnsedPrefix="";
+                }
+            }
+                
+            <div id="checkBoxLeft-@i" class="checkBoxLeft @checkclass @strDisabled">
+                    <input @strDisabled type="checkbox" name="checkbox-@i" id="checkbox-@i" class="hidden-checkbox  @strchecked " />
+                </div>
+                 
+            <div>
+                <h2 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="SesnorDivid-@i" >@sensor.SensorId    @strUnsedPrefix @sensor.SensorName @strTextstar</span> </h2>
+            </div>
+             <script type="text/javascript">
+                 document.getElementById('checkBoxLeft-@i').addEventListener('click', function (event) {
+                     var sensorNameControl = document.getElementById('SesnorDivid-@i');
+                     var checkboxStatusControl=document.getElementById('checkBoxLeft-@i')
+                     rename(checkboxStatusControl, 'checkbox-@i',@sensor.SensorId, sensorNameControl);
+                });
+            </script>
+            @*<h2 onclick="saveSensorInfo(@sensor.SensorId, '@sensor.SensorName', '@sensor.SensorAction', @sensor.AlarmLevelOn, @sensor.AlarmLevelOff)">@sensor.SensorName</h2>*@
+
+            @*<a href="javascript:void(0)" id="sensor_(@sensor.SensorId)" onclick="$.mobile.changePage('#mappage');" class="detailListText">               
+                <h2>@sensor.SensorName</h2>                              
+            </a>*@
+        </li>        
+    }
+}   
+else
+{
+    <li>@SentinelMobile.Resources.Resources.Novehicles</li>
+}
+
+@*@{
+    ViewBag.Title = "_sensorList";
+}
+
+<h2>_sensorList</h2>*@

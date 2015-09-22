@@ -1,0 +1,244 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Hours of Service </title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link rel="stylesheet" href="//code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+        <link rel="stylesheet" href="@Url.Content("~/Content/themes/custom/sfmjquerymobileCustom.css?v=" + ViewBag.LastUpdatedCustomTheme)" />
+        <link rel="stylesheet"  href="@Url.Content("~/Content/jquery.mobile.grids.collapsible.css")" />
+        <link rel="stylesheet"  href="@Url.Content("~/Content/themes/base/jqm-datebox.min.css")" />
+        <link rel="stylesheet"  href="@Url.Content("~/Content/themes/base/jquery.mobile.simpledialog.min.css")" />
+        
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.7.1.js")"></script>               
+        <script src="//code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Custom.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/md5.js")"></script>
+
+        <script type="text/javascript" src="http://dev.jtsage.com/jquery.mousewheel.min.js"></script>
+        <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>
+        <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.flipbox.min.js"></script>
+        <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en.utf8.js"></script>
+        <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.fr.utf8.js"></script>
+
+        <link rel="stylesheet" href="@Url.Content("~/Content/style.mobile-jq.css?v=20130416")" type="text/css" />
+</head>
+<body>
+             <script type="text/javascript" >
+                 $(document).ready(function () {
+                     $("#ddlDuty").change(function () {
+                         if ($("#ddlDuty").val() == "104") {
+                             $("#divAction").show();
+                             $("#ddlAction Option").each(function () { $(this).remove(); });
+                             $("#ddlAction").append($("<option selected='true'></option>").val("").text("Load inspection"));
+                             $("#ddlAction").append($("<option></option>").val("").text("Load"));
+                             $("#ddlAction").append($("<option></option>").val("").text("Meal Stop"));
+                             $("#ddlAction").append($("<option></option>").val("").text("Repairs"));
+                             $("#ddlAction").append($("<option></option>").val("").text("Rest Break"));
+                             $("#ddlAction").append($("<option></option>").val("").text("Road construction"));
+                             $("#ddlAction").append($("<option></option>").val("").text("Tire check"));
+                             $("#ddlAction").append($("<option></option>").val("").text("Unloading"));
+                         }
+                         else {
+                             $("#divAction").hide();
+                         }
+                     });
+
+                     $("#btnAddDuty").click(function () {
+                         ViewAddDuty(true);
+                     });
+
+                     $("#btnClose").click(function () {
+                         ViewAddDuty(false);
+                     });
+
+                     $("#btnSave").click(function () {
+                         SaveDuty();
+                     });
+
+                     $("#btnSubmit").click(function () {
+                         var elements = $("#ulDutyList li:visible").length;
+                         if (elements <= 0) {
+                             alert("There is no data to submit.");
+                             return;
+                         }
+
+                         alert("Submitted successfully, waitting for approve.");
+                         $("#ulDutyList").empty();
+                     });
+
+                     //                     for (var index = 0; index <= 24; index++) {
+
+                     //                         var today = new Date();
+                     //                         today.setDate(today.getDate() + index * (-1));
+                     //                         var curr_date = today.getDate();
+                     //                         var curr_month = today.getMonth() + 1; //Months are zero based
+                     //                         var curr_year = today.getFullYear();
+                     //                         var dateStr = curr_month + "/" + curr_date + "/" + curr_year;
+                     //                         $("#selDate").append($("<option></option>").val("").text(dateStr));
+
+                     //                     }
+                 });
+
+                 function SaveDuty() {
+                     var dutyDate = $("#txtDate").val();
+                     var dutyTime = $("#txtTime").val();
+                     var dutyText = $("#ddlDuty option:selected").text();
+                     var dutyValue = $("#ddlDuty option:selected").val();
+                     var dutyAction = $("#ddlAction option:selected").text();
+                     var dutyActionVal = $("#ddlAction option:selected").val();
+                     var dutyProvince = $("#ddlProvince option:selected").text();
+                     var dutyProvinceVal = $("#ddlProvince").val(); 
+                     var dutyCity = $("#txtCity").val();
+                     var dutyRemark = $("#txtRemark").val();
+                     if (dutyValue != "104") {
+                         if (dutyDate == "" || dutyTime == "" || dutyValue == ""
+                         || dutyProvince == "" || dutyCity == "" ||
+                         dutyValue == "0" || dutyProvinceVal == "0") {
+                             alert("Please input date, time, duty, province and city.");
+                             return;
+                         }
+                     }
+                     else {
+                         if (dutyDate == "" || dutyTime == "" || dutyValue == ""
+                         || dutyProvince == "" || dutyCity == "" ||
+                         dutyValue == "0" || dutyProvinceVal == "0" || dutyActionVal == "0") {
+                             alert("Please input date, time, duty, province and city.");
+                             return;
+                         }
+                     }
+                     if (dutyValue == 104) dutyText = dutyText + " " + dutyAction;
+                     var str = "<li>" + "<h2>" + dutyText + "</h2>" +
+                                        "<p>" + dutyDate + " " + dutyTime + "</p>" +
+                                        "<p>" + dutyCity + "," + dutyProvince + "</p>";
+                     if (dutyRemark != "")
+                         str = str + "<p><b>Remark:</b>" + dutyRemark + "</p>";
+                     str = str + "</li>";
+
+                     $('#ulDutyList').append(str).listview('refresh');
+                     $("#txtRemark").val("");
+                     $("#txtCity").val("");
+                     $("#txtTime").val("");
+                     $("#ddlDuty").val("");
+                     $("#ddlAction").val("");
+                     ViewAddDuty(false);
+                  }
+
+                 function ViewAddDuty(isEnable) {
+                     if (isEnable) {
+                         $("#divAddDuty").show();
+                         $("#divDutylist").hide();
+                         $("#btnSave").show();
+                         $("#btnClose").show();
+                         $("#btnAddDuty").hide();
+                         $("#btnSubmit").hide();
+                         $("#btnLogoff").hide();
+                     }
+                     else {
+                         $("#divAddDuty").hide();
+                         $("#divDutylist").show();
+                         $("#btnSave").hide();
+                         $("#btnClose").hide();
+                         $("#btnAddDuty").show();
+                         $("#btnSubmit").show();
+                         $("#btnLogoff").show();
+                     }
+                 }
+             </script>
+             <div data-role="page" id="mappage1">
+          
+            <div data-role="header" data-theme="h" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+	            <div data-role="controlgroup" data-type="horizontal" class="ui-btn-left">
+                        
+                </div>
+                
+                <h1>Hours of Service </h1>
+                
+                <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right">
+                    
+                </div>
+            </div><!-- /header -->
+            <div data-role="content" id="divAddDuty" style="padding-top:0;display:none;height:10000px">
+                <div id="newDuty"  >
+                    <div data-role="fieldcontain" >
+					    <label for="txtDate">Date:</label>
+					    <input name="txtDate" id="txtDate" type="text" data-role="datebox" data-options='{"mode":"datebox"}'  />
+                    </div>
+                    <div data-role="fieldcontain">
+					    <label for="txtTime">Time:</label>
+					    <input name="txtTime" id="txtTime" type="text" data-role="datebox" data-options='{"mode":"timebox"}' />
+                    </div>
+                    <div data-role="fieldcontain">
+				        <label for="ddlDuty" class="select" style="vertical-align:top" >Duty:</label>
+				        <select name="ddlDuty"  id="ddlDuty">
+                            <option value="0">Select Duty</option>
+					        <option value="101">Off Duty</option>
+					        <option value="104">On Duty</option>
+					        <option value="102">Sleep</option>
+					        <option value="103">Driving</option>
+				        </select>                   
+                     </div>
+                    <div id = "divAction" style="display:none" data-role="fieldcontain">
+				        <label for="ddlAction" class="select" style="vertical-align:top" >Action:</label>
+				        <select name="ddlAction" id="ddlAction">
+                           <option value="0">Select Action</option>
+				        </select>                   
+                     </div>
+
+                    <div  data-role="fieldcontain">
+				        <label for="ddlProvince" class="select" style="vertical-align:top" >Province/State:</label>
+				        <select name="ddlProvince" id="ddlProvince">
+                           <option value="0">Select Province/State</option>
+                           <option value="AB">Canada-Alberta</option>
+                           <option value="BC">Canada-British Columbia</option>
+                           <option value="MB">Canada-Manitoba</option>
+                           <option value="NB">Canada-New Brunswick</option>
+                           <option value="NF">Canada-Newfoundland</option>
+                           <option value="NT">Canada-Northwest Territories</option>
+                           <option value="NS">Canada-Nova Scotia</option>
+                           <option value="NU">Canada-Nunavut</option>
+                           <option value="ON">Canada-Ontario</option>
+                           <option value="PE">Canada-Prince Edward Island</option>
+                           <option value="QC">Canada-Quebec</option>
+                           <option value="SK">Canada-Saskatchewan</option>
+                           <option value="YT">Canada-Yukon</option>
+				        </select>                   
+                     </div>
+                    <div  data-role="fieldcontain">
+				        <label for="txtCity" class="select" style="vertical-align:top" >City:</label>
+                       <input type="text" name="txtCity" id="txtCity" value=""  />                   
+                     </div>
+                    <div  data-role="fieldcontain">
+				        <label for="txtRemark" class="select" style="vertical-align:top" >Remark:</label>
+                        <input type="text" name="txtRemark" id="txtRemark" value=""  />                   
+                     </div>
+
+                </div>
+            </div>
+            <div data-role="content" id="divDutylist" style="padding-top:0;margin-bottom:60px ">
+                <div id="listDuty">
+                
+                    <ul data-role="listview" data-filter="false" data-inset="false" data-theme="d" data-icon="false"  class="jqm-list jqm-home-list" id="ulDutyList">
+                          
+                    </ul>                 
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false" style="z-index:2000" data-hide-during-focus="">
+                   <a  id = "btnAddDuty" data-role="button" data-icon="plus" style="width:100px" >Add Duty</a>
+                   <a  id = "btnSubmit" data-role="button" data-icon="check" style="width:100px">Submit</a>
+                   <a  id = "btnLogoff" data-role="button"  href="@Url.Content("~/Account/Logoff")" data-icon="back" style="width:100px">Logout</a>
+                   <a  id = "btnSave" data-role="button"  style="width:100px; display:none" >Save</a>
+                   <a  id = "btnClose" data-role="button"  style="width:100px; display:none">Close</a>
+
+	        </div>
+
+            
+        </div>
+</body>
+</html>

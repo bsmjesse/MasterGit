@@ -2658,6 +2658,41 @@ namespace VLF.DAS.DB
             return UpdatedVehicleID;
         }
 
+        /// <summary>
+        ///         Returns offset for Engine Hours in seconds
+        /// </summary>
+        /// <param name="vehicleId"></param>
+        /// <returns></returns>
+        /// <comment>
+        ///         used by Red-D-Arc and similar organizations
+        /// </comment>
+        public int GetVehicleEngineHourOffset(long vehicleId)
+        {
+            string prefixMsg = string.Format("Unable to retrieve vehicle engine hour offset for vehicleId={0}", vehicleId);
+            object objRet = null;
+            Int32 retResult = VLF.CLS.Def.Const.unassignedIntValue;
+            try
+            {
+                objRet = sqlExec.SQLExecuteScalar(string.Format("SELECT ISNULL(dbo.udf_GetVehicleEngineHourOffset({0}), 0)", vehicleId));
+                if (objRet != System.DBNull.Value)
+                    retResult = Convert.ToInt32(objRet);
+            }
+            catch (SqlException objException)
+            {
+                Util.ProcessDbException(prefixMsg, objException);
+            }
+            catch (DASDbConnectionClosed exCnn)
+            {
+                throw new DASDbConnectionClosed(exCnn.Message);
+            }
+            catch (Exception objException)
+            {
+                throw new DASException(prefixMsg + " " + objException.Message);
+            }
+
+            return retResult;
+        }
+
         private string getOCRLogImagePath(string refId)
         {
             DataSet sqlDataSet = null;

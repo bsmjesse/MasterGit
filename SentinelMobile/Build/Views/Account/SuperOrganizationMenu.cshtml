@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "Super Organization Menu";
+}
+
+@section Header {
+    <style type="text/css">
+        .searchcontain {
+            margin-top:0;
+
+        }
+        .searchcontain div.ui-input-text
+        {
+            width: 70% !important;
+            margin-left: 10px !important;
+            display:inline-block;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var OrganizationListPageLazyLoading = false;
+        var OrganizationListPageLoadingFinished = false;
+        var CurrentOrganizationListPageIndex = 1;
+        var loadOrganizationPath = "@Url.Content("~/Account/_organizatoinList/")";
+        var SearchMode = 0;
+        var rootPath = "@Url.Content("~/")";
+
+        $(document).ready(function () {
+            $('#organizationSearch').bind('change', function (e) {
+                // Prevent form send
+                e.preventDefault();
+                //alert('changed');
+                searchOrganization();
+            });
+
+            loadOrganization('', 1);
+
+            $(window).bind('scrollstop', function () {                
+                if(!OrganizationListPageLazyLoading)
+                    loadOrganization('', CurrentOrganizationListPageIndex++);
+            });
+        });
+
+        function searchOrganization() {
+            //alert($('#vehicleListSearch').val());
+            var CurrentSearchString = $('#organizationSearch').val();
+            SearchMode = 1;
+            loadOrganization(CurrentSearchString, 1);
+        }
+
+        function loadOrganization(CurrentSearchString, pageIndex) {
+            if (OrganizationListPageLazyLoading)
+                return;
+            
+            if (pageIndex == undefined) pageIndex = 1;
+            if (pageIndex == 1) {
+                OrganizationListPageLoadingFinished = false;
+                CurrentOrganizationListPageIndex = 2;
+            }
+
+            if (OrganizationListPageLoadingFinished)
+                return;
+            /*if (isSearch == undefined) isSearch = 0;
+            if (searchString == undefined || searchString == '') {
+                isSearch = 0;
+                searchString = 'na';
+            }*/
+
+            OrganizationListPageLazyLoading = true;
+            if (pageIndex == 1)
+                $.mobile.showPageLoadingMsg();
+
+            /*var checkedVehicleIds = ';';
+            if (keepSelects || pageIndex != 1) {
+                for (i = 0; i < allVehicles.length; i++) {
+                    var _v = allVehicles[i];
+                    checkedVehicleIds += _v.VehicleId + ';';
+                }
+            }*/
+            if (CurrentSearchString == '') {
+                SearchMode = 0;
+            }
+
+            $.ajax({
+                url: loadOrganizationPath + pageIndex + "," + SearchMode + "," + (CurrentSearchString == '' ? 'na' : CurrentSearchString),
+                success: function (result) {
+
+                    OrganizationListPageLazyLoading = false;
+                    if (result.indexOf("<!DOCTYPE html>") != -1) {
+                        location.replace(rootPath + 'Account/Login');
+                        return;
+                    }
+                    if (pageIndex == 1) {
+                        $('#ulSuperOrganization').html(result).listview('refresh');
+                        
+                    }
+                    else {
+                        $('#ulSuperOrganization').append(result).listview('refresh');
+                    }
+                    if (result.indexOf("<li>") == -1) OrganizationListPageLoadingFinished = true;
+
+                    $.mobile.hidePageLoadingMsg();
+                },
+                error: function (msg) {
+                    //$('#listviewmsg').html('It has some problem loading the vehilces. Please try again later.');
+                    OrganizationListPageLazyLoading = false;
+                    $.mobile.hidePageLoadingMsg();
+                }
+            });
+
+
+        }
+    </script>
+}
+
+
+@section HeaderLeftButtons {
+    <a href="~/Account/Logoff" data-ajax="false" data-role="button" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Logout</a>
+}
+
+<div data-role="content">
+    <div data-role="fieldcontain" class="searchcontain">
+        <input name="organizationSearch" data-theme="d" id="organizationSearch" value="" data-clear-btn="true" type="text" placeholder="Search...">
+        <a style="float:right;margin-top:2px;margin-right:10px;" href="javascript:void(0)" onclick="searchOrganization();" data-role="button" data-icon="search" data-iconpos="notext" id="btnSearchVehicleList">@SentinelMobile.Resources.Resources.Search</a>
+    </div>
+    <ul data-role="listview" style="margin-top:0;" data-inset="false" data-icon="false" data-filter="false" data-scroll="true" data-filter-placeholder="Search" id="ulSuperOrganization">
+        
+    </ul>
+</div>

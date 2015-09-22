@@ -18,3 +18,23 @@ C:\Builds\SentinelFM\Master\ERRSecurity\obj\Debug\ERRSecurity.csproj.GenerateRes
 C:\Builds\SentinelFM\Master\ERRSecurity\obj\Debug\fr\ERRSecurity.resources.dll
 C:\Builds\SentinelFM\Master\ERRSecurity\obj\Debug\ERRSecurity.dll
 C:\Builds\SentinelFM\Master\ERRSecurity\obj\Debug\ERRSecurity.pdb
+C:\tfs\SentinelFM\HotFixes\BIN\ERRSecurity.dll
+C:\tfs\SentinelFM\HotFixes\BIN\ERRSecurity.pdb
+C:\tfs\SentinelFM\HotFixes\BIN\fr\ERRSecurity.resources.dll
+C:\tfs\SentinelFM\HotFixes\ERRSecurity\obj\Debug\ERRSecurity.csprojResolveAssemblyReference.cache
+C:\tfs\SentinelFM\HotFixes\ERRSecurity\obj\Debug\VLF.ERRSecurity.Resources.ERRSecurityConst.resources
+C:\tfs\SentinelFM\HotFixes\ERRSecurity\obj\Debug\VLF.ERRSecurity.Resources.ERRSecurityConst.fr.resources
+C:\tfs\SentinelFM\HotFixes\ERRSecurity\obj\Debug\ERRSecurity.csproj.GenerateResource.Cache
+C:\tfs\SentinelFM\HotFixes\ERRSecurity\obj\Debug\fr\ERRSecurity.resources.dll
+C:\tfs\SentinelFM\HotFixes\ERRSecurity\obj\Debug\ERRSecurity.dll
+C:\tfs\SentinelFM\HotFixes\ERRSecurity\obj\Debug\ERRSecurity.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\BIN\ERRSecurity.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\BIN\ERRSecurity.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\BIN\fr\ERRSecurity.resources.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\ERRSecurity\obj\Debug\ERRSecurity.csprojResolveAssemblyReference.cache
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\ERRSecurity\obj\Debug\VLF.ERRSecurity.Resources.ERRSecurityConst.resources
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\ERRSecurity\obj\Debug\VLF.ERRSecurity.Resources.ERRSecurityConst.fr.resources
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\ERRSecurity\obj\Debug\ERRSecurity.csproj.GenerateResource.Cache
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\ERRSecurity\obj\Debug\fr\ERRSecurity.resources.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\ERRSecurity\obj\Debug\ERRSecurity.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\ERRSecurity\obj\Debug\ERRSecurity.pdb

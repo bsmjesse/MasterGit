@@ -72,3 +72,77 @@ C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\fr\ERRSecurity.resources.dll
 C:\Builds\SentinelFM\Master\PatchLogic\obj\Debug\PatchLogic.csprojResolveAssemblyReference.cache
 C:\Builds\SentinelFM\Master\PatchLogic\obj\Debug\PatchLogic.dll
 C:\Builds\SentinelFM\Master\PatchLogic\obj\Debug\PatchLogic.pdb
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\PatchLogic.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\PatchLogic.pdb
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\CLS.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\DasDb.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\DasLogic.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\ERR.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\PatchDB.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\ERRSecurity.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\Npgsql.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\Map.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\MapLib.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\Mono.Security.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\GeoMicroProxy.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\GeoMicroRemoting.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\LSDProxy.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\Interop.MapPoint.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\RemoteGeoMicro.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\Interop.MapServer.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\Interop.Geocode.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\PatchDB.pdb
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\CLS.pdb
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\DasDb.pdb
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\DasLogic.pdb
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\ERR.pdb
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\ERRSecurity.pdb
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\Npgsql.xml
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\Map.pdb
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\MapLib.pdb
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\GeoMicroProxy.pdb
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\GeoMicroRemoting.pdb
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\LSDProxy.pdb
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\RemoteGeoMicro.pdb
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\fr\DasDb.resources.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\bin\Debug\fr\ERRSecurity.resources.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\obj\Debug\PatchLogic.csprojResolveAssemblyReference.cache
+C:\tfs\SentinelFM\HotFixes\PatchLogic\obj\Debug\PatchLogic.dll
+C:\tfs\SentinelFM\HotFixes\PatchLogic\obj\Debug\PatchLogic.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\PatchLogic.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\PatchLogic.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\CLS.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\DasDb.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\DasLogic.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\ERR.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\PatchDB.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\ERRSecurity.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\Npgsql.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\Map.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\MapLib.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\Mono.Security.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\GeoMicroProxy.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\GeoMicroRemoting.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\LSDProxy.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\Interop.MapPoint.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\RemoteGeoMicro.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\Interop.MapServer.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\Interop.Geocode.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\PatchDB.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\CLS.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\DasDb.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\DasLogic.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\ERR.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\ERRSecurity.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\Npgsql.xml
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\Map.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\MapLib.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\GeoMicroProxy.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\GeoMicroRemoting.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\LSDProxy.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\RemoteGeoMicro.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\fr\DasDb.resources.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\bin\Debug\fr\ERRSecurity.resources.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\obj\Debug\PatchLogic.csprojResolveAssemblyReference.cache
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\obj\Debug\PatchLogic.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\PatchLogic\obj\Debug\PatchLogic.pdb

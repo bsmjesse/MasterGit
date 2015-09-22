@@ -10,3 +10,15 @@ C:\Builds\SentinelFM\Master\BIN\ReportGenerator.xml
 C:\Builds\SentinelFM\Master\ReportGenerator\obj\Debug\ReportGenerator.csprojResolveAssemblyReference.cache
 C:\Builds\SentinelFM\Master\ReportGenerator\obj\Debug\ReportGenerator.dll
 C:\Builds\SentinelFM\Master\ReportGenerator\obj\Debug\ReportGenerator.pdb
+C:\tfs\SentinelFM\HotFixes\BIN\ReportGenerator.dll
+C:\tfs\SentinelFM\HotFixes\BIN\ReportGenerator.pdb
+C:\tfs\SentinelFM\HotFixes\BIN\ReportGenerator.xml
+C:\tfs\SentinelFM\HotFixes\ReportGenerator\obj\Debug\ReportGenerator.csprojResolveAssemblyReference.cache
+C:\tfs\SentinelFM\HotFixes\ReportGenerator\obj\Debug\ReportGenerator.dll
+C:\tfs\SentinelFM\HotFixes\ReportGenerator\obj\Debug\ReportGenerator.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\BIN\ReportGenerator.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\BIN\ReportGenerator.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\BIN\ReportGenerator.xml
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\ReportGenerator\obj\Debug\ReportGenerator.csprojResolveAssemblyReference.cache
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\ReportGenerator\obj\Debug\ReportGenerator.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\ReportGenerator\obj\Debug\ReportGenerator.pdb

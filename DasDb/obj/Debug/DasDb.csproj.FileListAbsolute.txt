@@ -18,3 +18,23 @@ C:\Builds\SentinelFM\Master\DasDb\obj\Debug\DasDb.csproj.GenerateResource.Cache
 C:\Builds\SentinelFM\Master\DasDb\obj\Debug\fr\DasDb.resources.dll
 C:\Builds\SentinelFM\Master\DasDb\obj\Debug\DasDb.dll
 C:\Builds\SentinelFM\Master\DasDb\obj\Debug\DasDb.pdb
+C:\tfs\SentinelFM\HotFixes\BIN\DasDb.dll
+C:\tfs\SentinelFM\HotFixes\BIN\DasDb.pdb
+C:\tfs\SentinelFM\HotFixes\BIN\fr\DasDb.resources.dll
+C:\tfs\SentinelFM\HotFixes\DasDb\obj\Debug\DasDb.csprojResolveAssemblyReference.cache
+C:\tfs\SentinelFM\HotFixes\DasDb\obj\Debug\VLF.DAS.DB.Resources.Const.resources
+C:\tfs\SentinelFM\HotFixes\DasDb\obj\Debug\VLF.DAS.DB.Resources.Const.fr.resources
+C:\tfs\SentinelFM\HotFixes\DasDb\obj\Debug\DasDb.csproj.GenerateResource.Cache
+C:\tfs\SentinelFM\HotFixes\DasDb\obj\Debug\fr\DasDb.resources.dll
+C:\tfs\SentinelFM\HotFixes\DasDb\obj\Debug\DasDb.dll
+C:\tfs\SentinelFM\HotFixes\DasDb\obj\Debug\DasDb.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\BIN\DasDb.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\BIN\DasDb.pdb
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\BIN\fr\DasDb.resources.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\DasDb\obj\Debug\DasDb.csprojResolveAssemblyReference.cache
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\DasDb\obj\Debug\VLF.DAS.DB.Resources.Const.resources
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\DasDb\obj\Debug\VLF.DAS.DB.Resources.Const.fr.resources
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\DasDb\obj\Debug\DasDb.csproj.GenerateResource.Cache
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\DasDb\obj\Debug\fr\DasDb.resources.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\DasDb\obj\Debug\DasDb.dll
+C:\Arun\SentinelFM\WorkSpace ARUN\Master-NewGen\DasDb\obj\Debug\DasDb.pdb

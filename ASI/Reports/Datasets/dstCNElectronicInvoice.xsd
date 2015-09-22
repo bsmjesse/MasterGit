@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstVehicleInfoDataDump" targetNamespace="http://tempuri.org/dstLandmarksReport.xsd" xmlns:mstns="http://tempuri.org/dstLandmarksReport.xsd" xmlns="http://tempuri.org/dstLandmarksReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstVehicleInfoDataDump" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Table">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BSM_LOC" type="xs:string" minOccurs="0" />
+              <xs:element name="BSM_INVC_NUMB" type="xs:string" minOccurs="0" />
+              <xs:element name="BSM_INVC_YEAR" type="xs:int" minOccurs="0" />
+              <xs:element name="BSM_INVC_MTH" type="xs:short" minOccurs="0" />
+              <xs:element name="BSM_INVC_DAY" type="xs:short" minOccurs="0" />
+              <xs:element name="BSM_INVC_TIME" type="xs:int" minOccurs="0" />
+              <xs:element name="BSM_VEHICLES" type="xs:string" minOccurs="0" />
+              <xs:element name="BSM_BOX_ID" type="xs:int" minOccurs="0" />
+              <xs:element name="BSM_CELL_NUMB" type="xs:string" minOccurs="0" />
+              <xs:element name="BSM_ODOMETER_RD" type="xs:int" minOccurs="0" />
+              <xs:element name="BSM_NET" type="xs:string" minOccurs="0" />
+              <xs:element name="BSM_GST_TAX" type="xs:string" minOccurs="0" />
+              <xs:element name="BSM_PST_TAX" type="xs:string" minOccurs="0" />
+              <xs:element name="BSM_TOT_NET" type="xs:string" minOccurs="0" />
+              <xs:element name="BSM_TOT_GST" type="xs:string" minOccurs="0" />
+              <xs:element name="BSM_TOT_PST" type="xs:string" minOccurs="0" />
+              <xs:element name="BSM_VENDOR" type="xs:int" minOccurs="0" />
+              <xs:element name="Color" type="xs:string" minOccurs="0" />
+              <xs:element name="LastStreetAddress" type="xs:string" minOccurs="0" />
+              <xs:element name="LastCommunicatedDateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LP_PROVINCE" type="xs:string" minOccurs="0" />
+              <xs:element name="PROVINCE" type="xs:string" minOccurs="0" />
+              <xs:element name="Country" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
