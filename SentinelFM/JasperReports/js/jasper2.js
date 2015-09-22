@@ -15,8 +15,10 @@ $(document).ready(function () {
 
     $(window).on('beforeunload', function () {
         
-        globalV.logout().always(function () { console.log("logout"); });
-       // return "unload?";
+        if (globalV != null)
+        {
+            globalV.logout().always(function () { console.log("logout"); });
+        }               
     });
 
     visualize(
