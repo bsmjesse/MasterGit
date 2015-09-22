@@ -7,7 +7,17 @@ var dashboardData = {};
 var dashboardParams = new Array();
 
 
+
+
+
 $(document).ready(function () {
+
+
+    $(window).on('beforeunload', function () {
+        
+        globalV.logout().always(function () { console.log("logout"); });
+       // return "unload?";
+    });
 
     visualize(
     {
@@ -27,9 +37,7 @@ $(document).ready(function () {
 
     function (v) {
         globalV = v;
-        $(window).unload(function () {
-            v.logout().always(function () { alert("logout"); });
-        });
+
 
         if (biDemo.length > 0) {
             v.resourcesSearch({
@@ -42,6 +50,7 @@ $(document).ready(function () {
                     renderBootstrapResults(results, "tblDemos");
                 },
                 error: function (err) {
+                    //alert(err);
                     //renderResults("Ad Hoc Reports", null, "selected_resource_dashboard");
                 }
             });
@@ -60,6 +69,7 @@ $(document).ready(function () {
                 renderBootstrapResults(results, "tblDashboards");
             },
             error: function (err) {
+                //alert(err);
                 //renderResults("Dashboard", null, "selected_resource_dashboard");
             }
         });
@@ -73,6 +83,7 @@ $(document).ready(function () {
                 renderBootstrapResults(results, "tblReports");
             },
             error: function (err) {
+                //alert(err);
                 //renderResults("Report", null, "selected_resource_dashboard");
             }
         });
@@ -86,6 +97,7 @@ $(document).ready(function () {
                 renderBootstrapResults(results, "tblViews");
             },
             error: function (err) {
+                //alert(err);
                 //renderResults("View", null, "selected_resource_dashboard");
             }
         });
