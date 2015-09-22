@@ -323,19 +323,39 @@ namespace SentinelFM
 
         private void DoLogin()
         {
-            
+            string ExpireDate = string.Empty;
+            string UserStatus = string.Empty;
+            int CurrentUserID = 0;
             string destination = string.Empty;
+            int OrganizationID =  1000065;
+            
+            
             ServerDBUser.DBUser vdbu = new ServerDBUser.DBUser();
 
             try
             {
-                if (Convert.ToInt16(ViewState["failcount"]) > 2)
+                if (Convert.ToInt16(ViewState["failcount"]) > 1 && Convert.ToInt16(ViewState["failcount"]) < 5)
                 {
                     if (!CaptchaPanel.Visible)
                         SetCaptcha();
                     else
                         if (!TestCaptcha())
                             return;
+                }
+                else if (Convert.ToInt16(ViewState["failcount"]) == 5)
+                {
+
+                    if ((!string.IsNullOrEmpty(Convert.ToString(Session["UserName"]))) && string.Equals(Convert.ToString(Session["UserName"]), txtUserName.Text, StringComparison.CurrentCultureIgnoreCase) )                 
+                    {
+                        lblMessage.Text = "Your account has been Deactivated, kindly contact Admin to Activate your account.";                        
+                        return;  
+                    }
+                    else
+                    {
+                        this.lblMessage.Text = "You have exceeded maximum attempts.Please try again later.";
+                        return;
+                    }
+                                 
                 }
             }
             catch (Exception Ex)
@@ -505,6 +525,43 @@ namespace SentinelFM
 
                 if (errCode != (int)VLF.ERRSecurity.InterfaceError.NoError)
                 {
+                 if (Convert.ToInt16(ViewState["failcount"]) == 4)
+                  {
+                    
+                    CaptchaPanel.Visible = false;
+                    ViewState["failcount"] = Convert.ToInt16(ViewState["failcount"]) + 1;
+                    DateTime thisDay = DateTime.Today;
+                    ExpireDate = thisDay.ToString("d");
+                    
+                    if (System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "fr")
+                        UserStatus = "Désactivé";                    
+                    else
+                        UserStatus = "Deactivated";
+
+                    int ErrorCode = vdbu.ValidateAmecoUser(txtUserName.Text, OrganizationID, ref CurrentUserID);
+                     if (ErrorCode == 4)
+                       {
+                         this.lblMessage.Text = "You have exceeded maximum attempts.Please try again later.";
+                         return;
+                       }
+                   
+                     ErrorCode = vdbu.UpdateAmecoUserInfoStatus(CurrentUserID, txtUserName.Text, ExpireDate, UserStatus);
+
+                     if (ErrorCode == 0)
+                     {
+                         Session["UserName"] = txtUserName.Text;
+                         lblMessage.Text = "Your account has been Deactivated, kindly contact Admin to Activate your account.";
+                         lblMessage.Visible = true;
+                         return;
+                     }
+                     else
+                     {
+                         this.lblMessage.Text = "You have exceeded maximum attempts.Please try again later.";
+                         return;
+                     }
+                }
+               else
+               {
                     valPassword.Visible = false;
                     this.lblMessage.Text = "Authentication failed";
                     this.lblMessage.Visible = true;
@@ -519,6 +576,7 @@ namespace SentinelFM
                     //captcha
 
                     vdbu.RecordUserAction("User", 0, 0, "vlfUser", null, "Login failed", IpAddr, this.Context.Request.RawUrl, string.Format("{0}:{1} at IP:{2}login failed", strUsername, HashPassword, IpAddr));
+                     }
 
                 }
                 else
@@ -651,7 +709,7 @@ namespace SentinelFM
             }
 
 
-
+           
             if (!string.IsNullOrEmpty(destination))
                 Response.Redirect(destination);
 
