@@ -298,7 +298,7 @@
     <value />
   </data>
   <data name="Label4Resource1.Text" xml:space="preserve">
-    <value>Password must be at least 7 characters in length</value>
+    <value>Password must be at least 8 characters in length</value>
   </data>
   <data name="Label4Resource1.ToolTip" xml:space="preserve">
     <value />
@@ -1262,5 +1262,14 @@
   </data>
   <data name="lblShowRetiredVehiclesResource1.Text" xml:space="preserve">
     <value>Show Retired Vehicles:</value>
+  </data>
+  <data name="cmdPswUpdatedAmeco" xml:space="preserve">
+    <value>The Password has been successfully updated.Please &lt;a href="/LoginAmeco.aspx"&gt;relogin&lt;/a&gt;.</value>
+  </data>
+  <data name="msgPsw_OldNewNotSame" xml:space="preserve">
+    <value>New password should not be same as Old password</value>
+  </data>
+  <data name="msgPsw_OldPswIncorrect" xml:space="preserve">
+    <value>Old Password is incorrect</value>
   </data>
 </root>

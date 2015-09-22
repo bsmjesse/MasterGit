@@ -256,6 +256,52 @@ namespace VLF.DAS.DB
 			}
 		}
 
+        //Changes
+        /// <summary>
+        /// Update Ameco user status.
+        /// </summary>
+        /// <param name="userInfo"></param>
+        /// <param name="userName"></param>
+        ///  <param name="expiredDate"></param>
+        ///  <param name="status"></param>
+        /// <returns>void</returns>   
+        /// <exception cref="DASException">Thrown DASException in all  exception cases.</exception>
+        public void UpdateAmecoUserStatus(int userId, string userName, DateTime expiredDate, string status)
+        {
+            int rowsAffected = 0;
+            string prefixMsg = "";
+            //Prepares SQL statement
+            string sql = "UPDATE vlfUser SET UserStatus='" + status.Replace("'", "''") + "'";
+            if (expiredDate == VLF.CLS.Def.Const.unassignedDateTime)
+                sql += ", ExpiredDate=NULL";
+            else
+                sql += ", ExpiredDate='" + expiredDate + "'";            
+
+            sql += " WHERE UserId=" + userId + "and UserName= '"  + userName + "'";
+            try
+            {
+                prefixMsg = "Unable to update user name=" + userName + " by id " + userId + " .";
+                //Executes SQL statement
+                rowsAffected = sqlExec.SQLExecuteNonQuery(sql);
+            }
+            catch (SqlException objException)
+            {
+                Util.ProcessDbException(prefixMsg, objException);
+            }
+            catch (DASDbConnectionClosed exCnn)
+            {
+                throw new DASDbConnectionClosed(exCnn.Message);
+            }
+            catch (Exception objException)
+            {
+                throw new DASException(prefixMsg + " " + objException.Message);
+            }
+            
+        }	
+
+
+        //Changes
+
 
 
         /// <summary>
@@ -1037,6 +1083,51 @@ namespace VLF.DAS.DB
             }
             return userId;
 		}
+
+
+        //Changes
+        /// <summary>
+        /// Retrieves user Id
+        /// </summary>
+        /// <returns>        
+        /// [UserId]
+        /// </returns>
+        /// <param name="userName" "organizationId"></param> 
+        /// <exception cref="DASException">Thrown DASException in all  exception cases.</exception>
+        public int GetAmecoUserIdByUserName(string userName, int organizationId)
+        {
+
+            string prefixMsg = string.Format("GetAmecoUserIdByUserName EXC: {0}", userName);           
+            int userId = VLF.CLS.Def.Const.unassignedIntValue;
+            try
+            {
+               
+                //Prepares SQL statement
+                string sql = "SELECT UserID" +
+                            " FROM vlfUser where OrganizationId = " + organizationId + " and UserName = " + "'"+  userName +"'";
+
+                //Executes SQL statement
+                object obj = sqlExec.SQLExecuteScalar(sql);
+                if (obj != null)
+                    userId = Convert.ToInt32(obj);
+                
+            }
+            catch (SqlException objException)
+            {
+                Util.ProcessDbException(prefixMsg, objException);
+            }
+            catch (DASDbConnectionClosed exCnn)
+            {
+                throw new DASDbConnectionClosed(exCnn.Message);
+            }
+            catch (Exception objException)
+            {
+                throw new DASException(prefixMsg + " " + objException.Message);
+            }
+            return userId;
+        }
+
+        //Changes
 		
         /// <summary>
 		/// Returns user id by driver license. 	

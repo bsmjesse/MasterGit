@@ -288,4 +288,7 @@
   <data name="lblEmailExample" xml:space="preserve">
     <value>Exemple: jone@bsmwireless.com</value>
   </data>
+  <data name="lblMessage_Text_ExceedLoginAttempts" xml:space="preserve">
+    <value>Vous avez dépassé attempts.Please maximales réessayer ultérieurement .</value>
+  </data>
 </root>

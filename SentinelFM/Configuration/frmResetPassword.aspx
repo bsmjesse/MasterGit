@@ -63,9 +63,9 @@
          function passwordChanged() 
          {
 	            var strength = document.getElementById('strength');
-	            var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
-	            var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
-	            var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+	            var strongRegex = new RegExp("^(?=.{9,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+	            var mediumRegex = new RegExp("^(?=.{8,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+	            var enoughRegex = new RegExp("(?=.{7,}).*", "g");
 	            var pwd = document.getElementById("txtNewPassword");
 	            var txtPasswordStatus=document.forms[0].elements["txtPasswordStatus"];
 	            

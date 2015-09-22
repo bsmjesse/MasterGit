@@ -544,7 +544,22 @@ namespace VLF.DAS.Logic
           }
       }		
 
-
+        //Changes
+      /// <summary>
+      /// Update Ameco user status.
+      /// </summary>
+      /// <param name="userInfo"></param>
+      /// <param name="userName"></param>
+      ///  <param name="expiredDate"></param>
+      ///  <param name="status"></param>
+      /// <returns>void</returns>   
+      /// <exception cref="DASException">Thrown DASException in all  exception cases.</exception>
+      
+      public void UpdateAmecoUserStatus(int userId, string userName, DateTime expiredDate, string status)
+      {
+          user.UpdateAmecoUserStatus(userId, userName, expiredDate, status);
+      }
+        //Changes
 
 
 		/// <summary>
@@ -870,6 +885,23 @@ namespace VLF.DAS.Logic
             DataSet dsResult = user.GetUserInfoByUserName(userName);
             return PrepareUserInfoDataSet(dsResult);
         }	
+
+        //Changes
+        /// <summary>
+        /// Retrieves user Id
+        /// </summary>
+        /// <returns>        
+        /// [UserId]
+        /// </returns>
+        /// <param name="userName" "organizationId"></param> 
+        /// <exception cref="DASException">Thrown DASException in all  exception cases.</exception>
+        public int GetAmecoUserIdByUserName(string userName, int organizationId)
+        {
+            int dsResult = user.GetAmecoUserIdByUserName(userName, organizationId);
+            return dsResult;
+        }	
+	
+        //Changes
 	
 		/// <summary>
 		/// Retrieves user info
