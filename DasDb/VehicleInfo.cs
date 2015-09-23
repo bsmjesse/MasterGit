@@ -201,6 +201,41 @@ namespace VLF.DAS.DB
             return resultSet;
         }
 
+        public DataSet ListVehiclesInLandmarkByFleet(int userId, int orgId, int fleetId, long landmarkId)
+        {
+            DataSet resultSet = null;
+            string prefixMsg = "";
+            try
+            {
+
+                prefixMsg = "ListVehiclesInLandmarkByFleet->Unable to get info for userid  = " + userId.ToString() + ", landmarkId = " + landmarkId.ToString() + ".";
+                SqlParameter[] sqlParams = new SqlParameter[4];                
+                sqlParams[0] = new SqlParameter("@UserId", userId);
+                sqlParams[1] = new SqlParameter("@OrganizationId", orgId);
+                sqlParams[2] = new SqlParameter("@FleetId", fleetId);
+                sqlParams[3] = new SqlParameter("@LandmarkId", landmarkId);
+
+                // SQL statement
+                string sql = "[ListVehiclesInLandmarkByFleet]";
+                //Executes SQL statement
+                resultSet = sqlExec.SPExecuteDataset(sql, sqlParams);
+
+            }
+            catch (SqlException objException)
+            {
+                Util.ProcessDbException(prefixMsg, objException);
+            }
+            catch (DASDbConnectionClosed exCnn)
+            {
+                throw new DASDbConnectionClosed(exCnn.Message);
+            }
+            catch (Exception objException)
+            {
+                throw new DASException(prefixMsg + " " + objException.Message);
+            }
+            return resultSet;
+        }
+
         // Changes for TimeZone Feature start
         /// <summary>
         /// Add new vehicle info.

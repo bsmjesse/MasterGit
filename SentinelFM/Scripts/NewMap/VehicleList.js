@@ -9818,6 +9818,34 @@ function getClosestVehicles(lon, lat, radius, numofvehicles) {
 
 }
 
+function getVehiclesInLandmark(landmarkId) {
+    //alert(lon + ',' + lat);
+    var fleetId;
+    if (LoadVehiclesBasedOn == 'fleet') {
+        fleetId = DefaultFleetID;
+    }
+    else {
+        fleetId = DefaultOrganizationHierarchyFleetId;
+    }
+
+    loadingMask.show();
+    FromClosestVehicles = true;
+    VehicleGridInSearchMode = true;
+    originSelectionon = selectionon;
+    mainstore.load(
+    {
+        params:
+        {
+            QueryType: 'getVehiclesInLandmark',
+            landmarkId: landmarkId,
+            fleetID: fleetId            
+        }
+    });
+
+    clearSearchBtn.show();
+
+}
+
 var SearchHistoryDateTime;
 var SearchHistoryTimeRange;
 
