@@ -36,7 +36,7 @@ namespace SentinelFM
         {
             try
             {
-                cboTARPeriod.Enabled = true;
+                cboTARPeriod.Enabled = true;               
                 ResTempratureAllowedInNumbers = GetLocalResourceObject("lblErrorMessage_Text_TempratureAllowedInNumbers").ToString();
 
 
@@ -628,6 +628,7 @@ namespace SentinelFM
                 this.cboTARPeriod.Visible = true;
                 sn.Cmd.DualComm = false;
                 chkScheduleTask.Checked = false;
+                chkSendToFleet.ForeColor = Color.Black;
                 this.lblErrorMessage.Text = "";
                 if (!(CheckIfNumberic(this.txtbxcelsius.Text) && CheckIfNumberic(this.txtbxfahrenheit.Text)))
                 {
@@ -682,7 +683,7 @@ namespace SentinelFM
                     }
                 }
 
-
+                chkSendToFleet.Enabled = true;
                 switch (Convert.ToInt32(this.cboCommand.SelectedItem.Value))
                 {
                     case (Int32)VLF.CLS.Def.Enums.CommandType.SecurityCode:
@@ -745,6 +746,8 @@ namespace SentinelFM
                         this.lblOdometer.Visible = false;
                         this.cboMesUnits.Visible = true;
                         this.lblUnit.Visible = false;
+                        this.chkSendToFleet.Enabled = false;
+                        this.chkSendToFleet.ForeColor = Color.Gray;
                         break;
                     case (Int32)VLF.CLS.Def.Enums.CommandType.WriteEEPROMData:
                         this.tblEEPROMSettings.Visible = true;
@@ -4488,6 +4491,13 @@ namespace SentinelFM
             cboSchInterval.SelectedIndex = 0;
             cboSchPeriod.SelectedIndex = 0;
             this.chkSendToFleet.Checked = false;
+            chkSendToFleet.ForeColor = Color.Black;
+            if (Convert.ToInt32(this.cboCommand.SelectedItem.Value) == 59)
+            {
+                chkSendToFleet.Enabled = false;
+                chkSendToFleet.ForeColor = Color.Gray;
+
+            }
         }
 
         private void FleetScheduler(Int16 cmdType, string paramList)
