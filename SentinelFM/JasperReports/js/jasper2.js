@@ -1,25 +1,7 @@
-﻿var globalV = null;
-var currentUrl = null;
-var report = null;
-var dashboard = null;
-var controlId = null;
-var dashboardData = {};
-var dashboardParams = new Array();
-
-
-
+﻿var BSM = BSM || {};
 
 
 $(document).ready(function () {
-
-
-    $(window).on('beforeunload', function () {
-        
-        if (globalV != null)
-        {
-            globalV.logout().always(function () { console.log("logout"); });
-        }               
-    });
 
     visualize(
     {
@@ -60,6 +42,7 @@ $(document).ready(function () {
         var reportExports = v.report
                     .exportFormats
                     .concat(["json"]);
+        //This variable does not exist and could easily break a front end framework
         $select = buildExportControl("Export to: ", reportExports);
         v.resourcesSearch({
             folderUri: biPublicDashboard,
@@ -365,7 +348,6 @@ function buildDashboardControl() {
     BSM.Controls.removeLeft();
     $('#Title').parent().hide();
     $('#Vehicle_Selector').parent().hide();
-    //$($('label')[0]).text(S($($('label')[0]).text()).humanize().s);
 }
 
 
@@ -417,6 +399,7 @@ function getInputControlTemplate(control) {
 
 }
 
+//Submitting control data to jaspersoft
 function runDashboardWithParams(inputId) {
     if (dashboard == null) return;
     var myid = $('#' + inputId).attr('id');
@@ -508,7 +491,7 @@ function renderBootstrapResults(results, controlId)
 
 function displayBootstrapReport(currentUrl, myLabel) {
     if (currentUrl != "" && currentUrl != null) {
-        $('#divTitle').html(myLabel);
+        $('#filter-title').html(myLabel);
         $("#productFamilySelector").html("");
         if (currentUrl.indexOf("Dashboards") > -1) {
             report = null;

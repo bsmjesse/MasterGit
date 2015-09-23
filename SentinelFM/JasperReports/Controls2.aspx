@@ -7,8 +7,9 @@
     <title>Analytic Report</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8">  
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <link href="js/multiple-select/multiple-select.css" rel="stylesheet" />
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css" rel="stylesheet" >
+    <link href="bower_components/multiple-select/multiple-select.css" rel="stylesheet" />
   <style type="text/css">
     body {
 	    font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
@@ -24,8 +25,16 @@
     .ms-drop {z-index: 10031;}
   </style>
 
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/string/dist/string.min.js"></script>
+    <script src="bower_components/multiple-select/jquery.multiple.select.js"></script>
+
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 
     <script src="js/controls.js"></script>
     <script type="text/javascript">
@@ -76,9 +85,6 @@
                                 Filters<span class="caret"></span>
 
                             </button>
-                            <ul class="dropdown-menu pull-right" role="menu" id="dashboard-controls">
-                                <li>
-                                    <div class="container mydropdown">
                                         <div id="productFamilySelector">
                                             <div class="form-group">
                                                 <label for="Fleet_Selector">Fleet_Selector</label>
@@ -92,6 +98,12 @@
                                                 <label for="EndDate">EndDate</label>
                                                 <input type="text" id="EndDate" class="form-control" />
                                             </div>
+
+                                            <div class="form-group">
+                                                <label for="daterange">Date Range</label>
+                                                <input type="text" name="daterange" value="01/01/2015 - 01/31/2015" />
+                                            </div>
+
                                             <div class="form-group">
                                                 <label for="Select_Days_of_Week">Select_Days_of_Week</label>
                                                 <input type="text" id="Select_Days_of_Week" class="form-control" />
@@ -115,9 +127,6 @@
                                         <button type="button" class="btn btn-default" onclick="runDashboardWithAllParams()">Apply</button>
                                     </div>
 
-                                </li>
-                            </ul>
-                        </div>
 
                     </div>
                     <div id="divContainer"></div>
@@ -131,7 +140,6 @@
             </div>
         </div>
     </form>
-    <script type='text/javascript' src="js/multiple-select/jquery.multiple.select.js"></script>
     
     <script type="text/javascript">
         $(document).ready(function () {
@@ -141,6 +149,7 @@
                 }
             });
             BSM.Controls.scanControls();
+            $('input[name="daterange"]').daterangepicker();
         });
     </script>
 </body>

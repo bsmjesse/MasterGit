@@ -28,10 +28,7 @@ public partial class JasperReports_Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
-
-        
-
+        //Lets move new values outside of the web.config and create a seperate json based settings file.
         BiPublicDashboard = ConfigurationManager.AppSettings["BiPublicDashboard"];
         BiPublicReports = ConfigurationManager.AppSettings["BiPublicReports"];
         BiOrganizationDashboard = ConfigurationManager.AppSettings["BiOrganizationDashboard"];
@@ -50,7 +47,7 @@ public partial class JasperReports_Default : System.Web.UI.Page
             Token = CalculateMD5Hash(string.Format("{0}-{1}-{2}-{3}", sn.UserID, sn.User.OrganizationId, sn.UserName, sn.Password));
         }
 
-        fleet_fill();
+        FleetFill();
         LoadDrivers();
     }
 
@@ -70,7 +67,7 @@ public partial class JasperReports_Default : System.Web.UI.Page
         return sb.ToString();
     }
 
-    private void fleet_fill()
+    private void FleetFill()
     {
         try
         {
@@ -78,7 +75,7 @@ public partial class JasperReports_Default : System.Web.UI.Page
             DataSet dsFleets = new DataSet();
             dsFleets = sn.User.GetUserFleets(sn);
             FLEET_DATA = "[[";
-            for (int i = 0; i < dsFleets.Tables[0].Rows.Count; i++)
+            for (int i = 0; i <30; i++)
             {
                 if (i > 0)
                 {
@@ -124,9 +121,9 @@ public partial class JasperReports_Default : System.Web.UI.Page
         {
             ContactManager contactMsg = new ContactManager(sConnectionString);
             dsDrivers = contactMsg.GetOrganizationDrivers(sn.User.OrganizationId);
-
+            var totalRows = dsDrivers.Tables[0].Rows.Count;
             DRIVER_DATA = "[[";
-            for (int i = 0; i < dsDrivers.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < 100; i++)
             {
                 if (i > 0)
                 {

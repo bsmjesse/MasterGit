@@ -75,7 +75,7 @@ public partial class JasperReports_Default2 : System.Web.UI.Page
             DataSet dsFleets = new DataSet();
             dsFleets = sn.User.GetUserFleets(sn);
             FLEET_DATA = "[[";
-            for(int i = 0; i<dsFleets.Tables[0].Rows.Count;i++)
+            for(int i = 0; i<20;i++)
             {
                 if (i > 0)
                 {
@@ -123,7 +123,7 @@ public partial class JasperReports_Default2 : System.Web.UI.Page
             dsDrivers = contactMsg.GetOrganizationDrivers(sn.User.OrganizationId);
 
             DRIVER_DATA = "[[";
-            for (int i = 0; i < dsDrivers.Tables[0].Rows.Count; i++)
+            for (int i = 0; i < 20; i++)
             {
                 if (i > 0)
                 {
