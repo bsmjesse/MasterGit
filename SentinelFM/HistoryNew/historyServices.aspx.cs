@@ -19,6 +19,7 @@ using NPOI.HPSF;
 using NPOI.POIFS.FileSystem;
 using NPOI.SS.UserModel;
 using ClosedXML.Excel;
+using System.Text.RegularExpressions;
 
 namespace SentinelFM
 {
@@ -3201,16 +3202,22 @@ namespace SentinelFM
                                 v = v.Replace("false", "faux");
                             }
                         }
-                        v = v.Replace("&#x0", "").Replace("&", "&amp;").Replace("\0", string.Empty).Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "\\\"");
+                        v = v.Replace("&#x0", "").Replace("&", "&amp;").Replace("\0", string.Empty).Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "\\\"").Replace("\r", " ").Replace("\n", " ");
                     }
                     //byte[] data = Encoding.Default.GetBytes(v);
                     //v = Encoding.UTF8.GetString(data);
-                    Response.Write(v);
+                    Response.Write(RemoveInvalidXmlChars(v));
                     Response.Write("\\u003c/" + column.ColumnName + "\\u003e");
                 }
                 Response.Write("\\u003c/" + ds.Tables[0].TableName + "\\u003e");
             }
             Response.Write("\\u003c/" + ds.DataSetName + "\\u003e");
+        }
+
+        private string RemoveInvalidXmlChars(string text)
+        {
+            string re = @"[^\x09\x0A\x0D\x20-\xD7FF\xE000-\xFFFD\x10000-x10FFFF]";
+            return Regex.Replace(text, re, "");
         }
 
         private string getExcelDateFormat()
