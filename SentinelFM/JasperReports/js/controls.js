@@ -16,7 +16,7 @@ BSM.Controls = function (el) {
         $('#' + elementId).datepicker('setDate', startDate);
     };
 
-    function _multipleSelectControl(elementId, dataFeed) {
+    function _multipleSelectControl(elementId, dataFeed, defaultData) {
         if ($('#' + elementId).length === 1) {
 
             var _data = window[dataFeed]();
@@ -44,6 +44,7 @@ BSM.Controls = function (el) {
             var $eventResult = $('#eventResult');
             jQuery('#' + elementId).multipleSelect({
                 filter: true,
+                width: '100%',
                 onOpen: function () {
                     console.log('Select opened!');
                 },
@@ -76,11 +77,16 @@ BSM.Controls = function (el) {
                 }
             });
 
+            if (defaultData != undefined && defaultData != '') {
+                jQuery('#' + elementId).val(defaultData);
+                jQuery('#' + elementId).multipleSelect('refresh');
+            }
+
         };
 
     }
 
-    function _singleSelectControl(elementId, dataFeed) {
+    function _singleSelectControl(elementId, dataFeed, defaultData) {
         if ($('#' + elementId).length === 1) {
 
             var _data = window[dataFeed]();
@@ -100,6 +106,11 @@ BSM.Controls = function (el) {
                 single: true
             });
 
+            if (defaultData != undefined && defaultData != '') {
+                jQuery('#' + elementId).val(defaultData);
+                jQuery('#' + elementId).multipleSelect('refresh');
+            }
+
         };
 
     }
@@ -107,7 +118,8 @@ BSM.Controls = function (el) {
     function _scanControls() {
 
         if ($('#StartDate').length === 1) {
-            _dateControl('StartDate', new Date(+new Date - 12096e5)); // 2 weeks
+            //_dateControl('StartDate', new Date(+new Date - 12096e5)); // 2 weeks
+            _dateControl('StartDate', new Date(2015, 6, 1));
         }
 
         if ($('#StartDate_2').length === 1) {
@@ -115,7 +127,8 @@ BSM.Controls = function (el) {
         }
 
         if ($('#EndDate').length === 1) {
-            _dateControl('EndDate', new Date());
+            //_dateControl('EndDate', new Date());
+            _dateControl('EndDate', new Date(2015, 6, 31));
         }
 
         if ($('#EndDate_2').length === 1) {
@@ -123,11 +136,12 @@ BSM.Controls = function (el) {
         }
 
         //_daysOfWeekControl();
-        _multipleSelectControl('Select_Days_of_Week', 'getDaysOfWeek');
-        _multipleSelectControl('Fleet_Selector', 'getFleetData');
+        _multipleSelectControl('Select_Days_of_Week', 'getDaysOfWeek', ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]);
+        _multipleSelectControl('Fleet_Selector', 'getFleetData', ["124552"]);
         _multipleSelectControl('Driver_Select', 'getDriver');
         _multipleSelectControl('Driver_Select_2', 'getDriver');
-        _singleSelectControl('Infraction_Category', 'getInfractionCategory');
+        _singleSelectControl('Infraction_Category', 'getInfractionCategory', "Violation");
+        _multipleSelectControl('Infractions_List', 'getInfractionList');
     }
 
 

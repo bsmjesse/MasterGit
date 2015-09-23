@@ -335,7 +335,8 @@ function buildDashboardControl() {
     for (var i = params.length - 1; i >= 0; i--) {
         //console.log(params[i].id);
         if (params[i].id.indexOf(":") > -1) continue;
-        var $el = $("<div class=\"form-group\"><label for=\"" + params[i].id + "\">" + params[i].id + "</label> <input type='text' id=\"" + params[i].id + "\" class=\"form-control\" /></div>");
+        var _class = getClassById(params[i].id);
+        var $el = $("<div class=\"form-group col-xs-3 " + _class + "\"><label for=\"" + params[i].id + "\">" + params[i].id + "</label> <input type='text' id=\"" + params[i].id + "\" class=\"form-control\" /></div>");
         dashboardParams.push(params[i].id);
         $("#productFamilySelector").prepend($el);
         //$("#formElement").find("tbody").find("tr").append($el);
@@ -348,6 +349,20 @@ function buildDashboardControl() {
     BSM.Controls.removeLeft();
     $('#Title').parent().hide();
     $('#Vehicle_Selector').parent().hide();
+}
+
+function getClassById(id) {
+    var _class = "";
+    if (id === 'StartDate' || id === 'EndDate' || id === 'StartDate_2' || id === 'EndDate_2') {
+        _class = 'bsm_date';
+    }
+    else if (id === 'Select_Days_of_Week' || id === 'Fleet_Selector' || id === 'Driver_Select' || id === 'Driver_Select_2') {
+        _class = 'bsm_multipleselect';
+    }
+    else if (id === 'Infraction_Category') {
+        _class = 'bsm_singleselect';
+    }
+    return _class;
 }
 
 
@@ -431,19 +446,23 @@ function runDashboardWithAllParams() {
         if (oval != null && oval != "") {
             var vals = oval.split(",");
             for (var i = 0; i < vals.length; i++) {
-                v.push($.trim(vals[i]));
+                var _v = vals[i];
+                if ($('#' + inputId).parent().hasClass('bsm_date')) {
+                    _v = moment(_v).format();
+                }
+                v.push($.trim(_v));
             }
 
-            dashboardData[myid] = v;
+            BSM.dashboardData[myid] = v;
         }
         else {
-            delete dashboardData[myid];
+            delete BSM.dashboardData[myid];
         }
     });
     
 
-    console.log(dashboardData);
-    dashboard.params(dashboardData)
+    console.log(BSM.dashboardData);
+    dashboard.params(BSM.dashboardData)
         .run();
 }
 

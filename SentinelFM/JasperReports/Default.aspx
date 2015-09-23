@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css" />
-    <link href="bower_components/multiple-select/multiple-select.css" rel="stylesheet" />
+    <link href="js/multiple-select/multiple-select.css" rel="stylesheet" />
     <style type="text/css">
         .glyphicon {
             margin-right: 10px;
@@ -75,11 +75,12 @@
         }
 
         function getFleetData() {
-            return <%=FLEET_DATA%>;
+            //return <%=FLEET_DATA%>;
+            return [[{ id: 4670, title: "Pilot Fleet" }, { id: 4733, title: "Chicago Fleet" }, { id: 4734, title: "Ft. Worth" }]];
         }
 
         function getDaysOfWeek() {
-            return [[{ groupName: 'Weekday', data: [{ id: 1, title: "Monday" }, { id: 2, title: "Tuesday" }, { id: 3, title: "Wednesday" }, { id: 4, title: "Thursday" }, { id: 5, title: "Friday" }] }], [{ groupName: 'Weekend', data: [{ id: 6, title: "Saturday" }, { id: 7, title: "Sunday" }] }]];
+            return [[{ groupName: 'Weekday', data: [{ id: "Monday", title: "Monday" }, { id: "Tuesday", title: "Tuesday" }, { id: "Wednesday", title: "Wednesday" }, { id: "Thursday", title: "Thursday" }, { id: "Friday", title: "Friday" }] }], [{ groupName: 'Weekend', data: [{ id: "Saturday", title: "Saturday" }, { id: "Sunday", title: "Sunday" }] }]];
         }
 
         function getDriver() {
@@ -89,6 +90,10 @@
 
         function getInfractionCategory() {
             return [[{ id: "Alarm", title: "Alarm" }, { id: "Diagnostic", title: "Diagnostic" }, { id: "Diagnostic:(Custom)", title: "Diagnostic:(Custom)" }, { id: "DTC", title: "DTC" }, { id: "Violation", title: "Violation" }, { id: "Violation:(Custom)", title: "Violation:(Custom)" }]];
+        }
+
+        function getInfractionList() {
+            return [[{ id: 3, title: "Speed" }, { id: 35, title: "Speeding" }, { id: 37, title: "ServiceRequired" }, { id: 55, title: "HopperDoorsTamper" }, { id: 58, title: "HarshBraking" }, { id: 59, title: "ExtremeBraking" },{id: 60, title: "HarshAcceleration" },{id: 61, title: "ExtrAcceleration" },{id: 62, title: "SeatBelt" },{id: 108, title: "ReverseExcessDistance" },{id: 111, title: "HighRailSpeed" },{id: 113, title: "ReverseHyRailExcessSpeed" },{id: 119, title: "Harsh Drive" },{id: 503, title: "Speed Event" },{id: 506, title: "HarshBraking" },{id: 507, title: "ExtremeBraking" },{id: 508, title: "HarshAcceleration" },{id: 509, title: "ExtrAcceleration" },{id: 515, title: "Speed Bucket" },{id: 521, title: "Speed In Landmark" },{id: 529, title: "Idle in Landmark" },{id: 531, title: "Seatbelt" },{id: 558, title: "Driver class" }]];
         }
 
     </script>
@@ -204,10 +209,11 @@
     <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
     <script src="bower_components/moment/min/moment.min.js"></script>
     <script src="bower_components/string/dist/string.min.js"></script>
-    <script src="js/jquery.multiple.select.js"></script>
+    
     <script src="js/bsm.js"></script>
     <script src="js/controls.js"></script>
     <script src="js/visualize.js?_opt=false"></script>
     <script src="js/jasper2.js"></script>
+    <script src="js/multiple-select/jquery.multiple.select.js"></script>
 </body>
 </html>
