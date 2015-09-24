@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Fleet View";
+}
+
+@section Header {
+    <style type="text/css">
+        #listviewwrapper 
+        {
+            padding-top : 45px;            
+        }
+        #listviewwrapper form 
+        {
+            left: 0;
+            margin: 0;
+            padding: 10px 0;
+            position: fixed;
+            top: 42px;
+            width: 100%;
+            z-index: 100;
+        }​
+    </style>
+}
+
+@section HeaderLeftButtons {
+    <a href="~/" data-role="button" data-icon="home" data-iconpos="notext" data-direction="reverse" data-inline="true">Home</a>
+}
+
+@Html.Partial("_vehicleList")
+
+

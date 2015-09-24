@@ -201,6 +201,41 @@ namespace VLF.DAS.DB
             return resultSet;
         }
 
+        public DataSet ListVehiclesInLandmarkByFleet(int userId, int orgId, int fleetId, long landmarkId)
+        {
+            DataSet resultSet = null;
+            string prefixMsg = "";
+            try
+            {
+
+                prefixMsg = "ListVehiclesInLandmarkByFleet->Unable to get info for userid  = " + userId.ToString() + ", landmarkId = " + landmarkId.ToString() + ".";
+                SqlParameter[] sqlParams = new SqlParameter[4];                
+                sqlParams[0] = new SqlParameter("@UserId", userId);
+                sqlParams[1] = new SqlParameter("@OrganizationId", orgId);
+                sqlParams[2] = new SqlParameter("@FleetId", fleetId);
+                sqlParams[3] = new SqlParameter("@LandmarkId", landmarkId);
+
+                // SQL statement
+                string sql = "[ListVehiclesInLandmarkByFleet]";
+                //Executes SQL statement
+                resultSet = sqlExec.SPExecuteDataset(sql, sqlParams);
+
+            }
+            catch (SqlException objException)
+            {
+                Util.ProcessDbException(prefixMsg, objException);
+            }
+            catch (DASDbConnectionClosed exCnn)
+            {
+                throw new DASDbConnectionClosed(exCnn.Message);
+            }
+            catch (Exception objException)
+            {
+                throw new DASException(prefixMsg + " " + objException.Message);
+            }
+            return resultSet;
+        }
+
         // Changes for TimeZone Feature start
         /// <summary>
         /// Add new vehicle info.
@@ -2656,6 +2691,41 @@ namespace VLF.DAS.DB
             }
 
             return UpdatedVehicleID;
+        }
+
+        /// <summary>
+        ///         Returns offset for Engine Hours in seconds
+        /// </summary>
+        /// <param name="vehicleId"></param>
+        /// <returns></returns>
+        /// <comment>
+        ///         used by Red-D-Arc and similar organizations
+        /// </comment>
+        public int GetVehicleEngineHourOffset(long vehicleId)
+        {
+            string prefixMsg = string.Format("Unable to retrieve vehicle engine hour offset for vehicleId={0}", vehicleId);
+            object objRet = null;
+            Int32 retResult = VLF.CLS.Def.Const.unassignedIntValue;
+            try
+            {
+                objRet = sqlExec.SQLExecuteScalar(string.Format("SELECT ISNULL(dbo.udf_GetVehicleEngineHourOffset({0}), 0)", vehicleId));
+                if (objRet != System.DBNull.Value)
+                    retResult = Convert.ToInt32(objRet);
+            }
+            catch (SqlException objException)
+            {
+                Util.ProcessDbException(prefixMsg, objException);
+            }
+            catch (DASDbConnectionClosed exCnn)
+            {
+                throw new DASDbConnectionClosed(exCnn.Message);
+            }
+            catch (Exception objException)
+            {
+                throw new DASException(prefixMsg + " " + objException.Message);
+            }
+
+            return retResult;
         }
 
         private string getOCRLogImagePath(string refId)

@@ -364,7 +364,7 @@ namespace SentinelFM
 
             try
             {
-                if (Convert.ToInt16(ViewState["failcount"]) > 2)
+                if (Convert.ToInt16(ViewState["failcount"]) > 1 && Convert.ToInt16(ViewState["failcount"]) < 5)
                 {
                     if (!CaptchaPanel.Visible)
                         SetCaptcha();
@@ -372,6 +372,12 @@ namespace SentinelFM
                         if (!TestCaptcha())
                             return;
                 }
+                else if (Convert.ToInt16(ViewState["failcount"]) == 5)
+                {                  
+                    this.lblMessage.Text = (string)base.GetLocalResourceObject("lblMessage_Text_ExceedLoginAttempts");
+                    return;
+                }
+            
             }
             catch (Exception Ex)
             {
@@ -549,19 +555,38 @@ namespace SentinelFM
                 if (errCode != (int)VLF.ERRSecurity.InterfaceError.NoError)
                 {
 
-                    this.lblMessage.Text = (string)base.GetLocalResourceObject("lblMessage_Text_AuthFailed");
-                    this.lblMessage.Visible = true;
-                    AuthenticationFailed = 1;
-                    //sec.AddFailedEntry(txtUserName.Text, IpAddr);
-                    //captcha
-                    if (ViewState["failcount"] == null)
-                        ViewState["failcount"] = 1;
-                    else
+                    //Changes
+                    if (Convert.ToInt16(ViewState["failcount"]) == 4)
+                    {
+                        //captcha
+                        CaptchaPanel.Visible = false;
+                        this.lblMessage.Text = (string)base.GetLocalResourceObject("lblMessage_Text_ExceedLoginAttempts");
                         ViewState["failcount"] = Convert.ToInt16(ViewState["failcount"]) + 1;
+                        return;
+                    }
+
+                    else
+                    {
+
+                        this.lblMessage.Text = (string)base.GetLocalResourceObject("lblMessage_Text_AuthFailed");
+                        this.lblMessage.Visible = true;
+                        AuthenticationFailed = 1;
+                        //sec.AddFailedEntry(txtUserName.Text, IpAddr);
+
+
+
+                        //captcha
+                        if (ViewState["failcount"] == null)
+                            ViewState["failcount"] = 1;
+                        else
+                            ViewState["failcount"] = Convert.ToInt16(ViewState["failcount"]) + 1;
 
                     //captcha
 
-                    vdbu.RecordUserAction("User", 0, 0, "vlfUser", null, "Login failed", IpAddr, this.Context.Request.RawUrl, string.Format("{0}:{1} at IP:{2}login failed", strUsername, HashPassword, IpAddr));
+                        vdbu.RecordUserAction("User", 0, 0, "vlfUser", null, "Login failed", IpAddr, this.Context.Request.RawUrl, string.Format("{0}:{1} at IP:{2}login failed", strUsername, HashPassword, IpAddr));
+                    }
+                    
+
 
                 }
                 else
@@ -570,6 +595,8 @@ namespace SentinelFM
                     CaptchaPanel.Visible = false;
                     //captcha
                     this.lblMessage.Visible = false;
+
+                   
 
                     // sec.ClearFailedLoginsByIP(IpAddr);
 

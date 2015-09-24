@@ -52,6 +52,7 @@ namespace VLF.DAS.DB
             // 1. Prepares SQL statement
             try
             {
+                int timeZoneOld = (int)timeZone;
                 short geozoneId = GetNextFreeGeozoneId(organizationId);
                 // 1. Set SQL command
                 string sql = "INSERT INTO " + tableName + "( " +
@@ -64,6 +65,7 @@ namespace VLF.DAS.DB
                     ",Description" +
                     ",Email" +
                     ",Phone" +
+                    ",TimeZone" +
                     ",TimeZoneNew" +
                     ",DayLightSaving" +
                     ",FormatType" +
@@ -71,7 +73,7 @@ namespace VLF.DAS.DB
                     ",Warning" +
                     ",Critical" +
                     ",AutoAdjustDayLightSaving,speed,[Public],CreateUserID)" +
-                    " VALUES ( @OrganizationId,@GeozoneId,@GeozoneName,@Type,@GeozoneType,@SeverityId,@Description,@Email,@Phone,@TimeZone,@DayLightSaving,@FormatType,@Notify,@Warning,@Critical,@AutoAdjustDayLightSaving,@speed,@publicGeozone,@CreateUserID)";
+                    " VALUES ( @OrganizationId,@GeozoneId,@GeozoneName,@Type,@GeozoneType,@SeverityId,@Description,@Email,@Phone,@TimeZone,@TimeZoneNew,@DayLightSaving,@FormatType,@Notify,@Warning,@Critical,@AutoAdjustDayLightSaving,@speed,@publicGeozone,@CreateUserID)";
                 // 2. Add parameters to SQL statement
                 sqlExec.ClearCommandParameters();
                 sqlExec.AddCommandParam("@OrganizationId", SqlDbType.Int, organizationId);
@@ -94,8 +96,8 @@ namespace VLF.DAS.DB
                     sqlExec.AddCommandParam("@Phone", SqlDbType.Char, phone);
 
 
-
-                sqlExec.AddCommandParam("@TimeZone", SqlDbType.Float, timeZone);
+                sqlExec.AddCommandParam("@TimeZone", SqlDbType.Float, timeZoneOld);
+                sqlExec.AddCommandParam("@TimeZoneNew", SqlDbType.Float, timeZone);
                 sqlExec.AddCommandParam("@DayLightSaving", SqlDbType.SmallInt, Convert.ToInt16(dayLightSaving));
                 sqlExec.AddCommandParam("@FormatType", SqlDbType.SmallInt, formatType);
                 sqlExec.AddCommandParam("@Notify", SqlDbType.SmallInt, Convert.ToInt16(notify));
@@ -421,7 +423,7 @@ namespace VLF.DAS.DB
 
 
             int rowsAffected = 0;
-
+            int timeZoneOld = (int)timeZone;
             // 1. Prepares SQL statement
             string sql = "UPDATE " + tableName +
                         " SET Description='" + description.Replace("'", "''") + "'" +
@@ -430,6 +432,7 @@ namespace VLF.DAS.DB
                         ", Phone='" + phone.Replace("'", "''") + "'" +
                         ", Email='" + email.Replace("'", "''") + "'" +
                     ", TimeZoneNew=" + timeZone +
+                    ", TimeZone=" + timeZoneOld +
                     ", DayLightSaving=" + Convert.ToInt16(dayLightSaving) +
                     ", FormatType=" + formatType +
                     ", Notify=" + Convert.ToInt16(notify) +

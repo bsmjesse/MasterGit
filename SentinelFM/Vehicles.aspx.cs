@@ -186,6 +186,24 @@ namespace SentinelFM
                            getClosestVehicles_NewTZ(fleetId, lon, lat, numofvehicles, radius);
 
                        }
+                       else if (request.Equals("getVehiclesInLandmark", StringComparison.CurrentCultureIgnoreCase))
+                       {
+                           int fleetId = 0;
+                           request = Request.QueryString["fleetID"] ?? string.Empty;
+                           Int32.TryParse(request, out fleetId);
+
+                           long landmarkId = 0;
+                           request = Request.QueryString["landmarkId"] ?? string.Empty;
+                           Int64.TryParse(request, out landmarkId);
+
+                           if (fleetId <= 0)
+                           {
+                               return;
+                           }
+
+                           getVehiclesInLandmark(fleetId, landmarkId);
+
+                       }
                        else if (request.Equals("searchHistoryAddress", StringComparison.CurrentCultureIgnoreCase))
                        {
                            string IfSearchHistoryAddressByWebservice = ConfigurationManager.AppSettings["SearchHistoryAddressByWebservice"];
@@ -2047,6 +2065,7 @@ namespace SentinelFM
                     {
                         sortedTable = sortedTable.Select(" VehicleDeviceStatusID <> 3 ").CopyToDataTable();
                     }
+                    sortedTable = sortedTable.Select(" Latitude <> 0 AND Latitude <> 90 AND Latitude <> -90 ").CopyToDataTable();
                     sortedTable = getIcon(sortedTable);
                     DataView view = new System.Data.DataView(sortedTable);
                     sortedTable = view.ToTable("VehiclesLastKnownPositionInformation", false, "BoxId","OriginDateTime","Latitude","Longitude","Description","Driver","icon","ImagePath");
@@ -2665,8 +2684,46 @@ namespace SentinelFM
                 System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.Message.ToString() + " User:" + sn.UserID.ToString() + " Form:" + Page.GetType().Name));
             }
         }
-        // Changes for TimeZone Feature start
 
+        private void getVehiclesInLandmark(int fleetId, long landmarkId)
+        {
+            DataSet dstemp = new DataSet();
+
+            string _cs = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["DBReportConnectionString"].ConnectionString;
+
+            using (VLF.DAS.Logic.Vehicle dbVehicle = new VLF.DAS.Logic.Vehicle(_cs))
+            {
+                dstemp = dbVehicle.ListVehiclesInLandmarkByFleet(sn.UserID, sn.User.OrganizationId, fleetId, landmarkId);
+            }
+
+            string _in = "(";
+            for (int i = 0; i < dstemp.Tables[0].Rows.Count - 1; i++)
+            {
+                if (i > 0)
+                    _in += ",";
+                _in += dstemp.Tables[0].Rows[i]["VehicleID"].ToString();
+            }
+            _in += ")";
+
+            DataView dv = sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].DefaultView;
+            DataTable sortedTable = dv.ToTable();
+            DataTable dt = new DataTable();
+            DataRow[] vehicles = sortedTable.Select(string.Format("VehicleID IN {0}", _in));
+            if (vehicles.Length > 0)
+                dt = vehicles.CopyToDataTable();
+
+            DataSet dsresult = new DataSet();
+            
+            dt.TableName = "VehiclesLastKnownPositionInformation";
+            dsresult.Tables.Add(dt);
+            dsresult.DataSetName = "Fleet";
+
+            Response.ContentType = "text/xml";
+            Response.ContentEncoding = Encoding.UTF8;
+            getXmlFromDs(dsresult, dt.Rows.Count);
+        }
+
+        // Changes for TimeZone Feature start
         private void searchHistoryAddressByWebservice_NewTZ()
         {
             Response.ContentType = "text/xml";

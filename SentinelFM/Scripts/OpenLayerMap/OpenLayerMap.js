@@ -4462,6 +4462,12 @@ function getClosestVehicles(lon, lat) {
     map.removePopup(searchMarkerPopup);
 }
 
+function getVehiclesInLandmark(landmarkId, popup) {
+    parent.getVehiclesInLandmark(landmarkId);
+    map.removePopup(popup);
+    
+}
+
 function searchHistoryAddress(lon, lat) {
     SearchHistoryRadius = $('#SearchHistoryRadius').val();
     SearchHistoryMinutes = $('#SearchHistoryMinutes').val();

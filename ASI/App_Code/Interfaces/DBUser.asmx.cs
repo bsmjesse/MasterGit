@@ -938,6 +938,33 @@ namespace VLF.ASI.Interfaces
            }
        }
 
+        //Changes
+       [WebMethod(Description = "Update a Ameco user info.")]
+       public int UpdateAmecoUserInfoStatus(int currUserId, string userName,string expiredDate, string status)
+       {
+           try
+           {
+               Log(">> UpdateAmecoUserInfoStatus(currUserId={0},userName={1}, expiredDate={2}, status={3})",
+                     currUserId, userName, expiredDate, status);              
+
+               // Authorize
+               //LoginManager.GetInstance().AuthorizeOperation(currUserId, VLF.CLS.Def.Enums.OperationType.Gui, 20);
+
+               //Authorization
+               using (VLF.DAS.Logic.User dbUser = new User(LoginManager.GetConnnectionString(currUserId)))
+               {
+                   dbUser.UpdateAmecoUserStatus(currUserId, userName, Convert.ToDateTime(expiredDate), status);
+               }
+
+               return (int)InterfaceError.NoError;
+           }
+           catch (Exception Ex)
+           {
+               LogException("<< UpdateAmecoUserInfoStatus : uId={0}, EXC={1}", currUserId, Ex.Message);
+               return (int)ASIErrorCheck.CheckError(Ex);
+           }
+       }
+
       #endregion
 
         #region User/Group assignment
@@ -2332,6 +2359,42 @@ namespace VLF.ASI.Interfaces
         #endregion
 
         #region User Logins
+
+        //Changes
+        [WebMethod]
+        public int ValidateAmecoUser(string userName, int organizationId, ref int userId)
+        {
+            Log(">> ValidateAmecoUser (userName={0},organizationId={1},userId={2})", userName, organizationId,userId);
+           
+            string connection = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString;
+            try
+            {
+                using (User user = new User(connection))
+                {
+                                       
+                    //Retrieves user id from DB
+                    int dsResult = user.GetAmecoUserIdByUserName(userName, organizationId);
+                    if (dsResult != -1)
+                    {
+                        userId = dsResult;
+
+                    }
+                    else
+                    {
+                        return (int)InterfaceError.AuthenticationFailed;
+                    }
+                }
+                return (int)InterfaceError.NoError;
+
+            }
+            catch(Exception Ex)
+                {
+                    LogException("<< ValidateAmecoUser : uId={0}, EXC={1}", userId, Ex.Message);
+                    return (int)ASIErrorCheck.CheckError(Ex);
+                }
+          
+        }
+        //Changes
 
         /// <summary>
         ///      Get the number of logins between certain dates

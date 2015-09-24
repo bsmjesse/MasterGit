@@ -1,0 +1,49 @@
+﻿@model SentinelMobile.Models.Vehicles
+
+@{
+    Layout = "";
+
+    SentinelMobile.Models.User user = Session != null ? (SentinelMobile.Models.User)Session["SentinelUser"] : null;
+    if (user != null)
+    {
+        System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(user.DefaultLanguage);  
+    }
+    
+}
+@if(Model.VehicleList != null && Model.VehicleList.Count > 0)
+{
+    for(int i=(Model.PageIndex-1) * Model.PageSize; i < Model.VehicleList.Count && i < Model.PageIndex * Model.PageSize; i++)
+    {
+        SentinelMobile.Models.Vehicle vehicle = Model.VehicleList[i];        
+        <li id="livehiclelist_@vehicle.VehicleId">
+            @if(Model.ShowCheckbox)
+            {
+                string checkclass = Model.CheckedVehicleIds.Contains(";" + vehicle.VehicleId.ToString() + ";") ? "checkBoxLeftChecked" : "";
+                string strchecked = Model.CheckedVehicleIds.Contains(";" + vehicle.VehicleId.ToString() + ";") ? "checked" : "";
+                <div class="checkBoxLeft checkBoxToggle @checkclass" onclick="pushToallVehicles(this, @vehicle.BoxId);">
+                    <input type="checkbox" name="checkbox-@i" id="checkbox-@i" class="hidden-checkbox" @strchecked />
+                </div>
+            }
+            <a href="javascript:void(0)" id="vehicle_@Convert.ToInt16(Model.ShowDistance)_@vehicle.BoxId" onclick="$.mobile.changePage('#mappage');markVehicleChecked(this);mapVehicle(@vehicle.BoxId);" class="detailListText" data-attr="{ BoxId: @vehicle.BoxId, VehicleId: @vehicle.VehicleId, DisplayDateTime:'@vehicle.DisplayDateTime', OriginDateTime: '@vehicle.OriginDateTime', Speed: '@String.Format("{0:0}", vehicle.Speed * Model.UnitOfMes) @Model.UnitOfMesName', Status: '@vehicle.VehicleStatus.Replace("'", "\\'")', Location: '@vehicle.StreetAddress.Replace("Address resolution in progress", SentinelMobile.Resources.Resources.AddressResolutionInProgress).Replace("'", "\\'")', Description: '@vehicle.Description.Replace("'", "\\'")', MyHeadingIcon:'@vehicle.MyHeading', MyHeading:'@vehicle.MyHeading.Replace("West",SentinelMobile.Resources.Resources.West).Replace("NW",SentinelMobile.Resources.Resources.NW).Replace("SW",SentinelMobile.Resources.Resources.SW).Replace("W", SentinelMobile.Resources.Resources.DirectionW)', lon: @vehicle.Longitude, lat: @vehicle.Latitude, LicensePlate: '@vehicle.LicensePlate'}">
+                <h2>@vehicle.Description
+                    @if(Model.ShowDistance)
+                    {
+                        <span style="font-weight:bold;font-size:12px;">(@String.Format("{0:0.00}", vehicle.Distance)km)</span>
+                    }
+                </h2>
+                <p><span id="vehicle_datetime_@Convert.ToInt16(Model.ShowDistance)_@vehicle.BoxId">@vehicle.DisplayDateTime</span>                    
+                </p>
+                <p>@SentinelMobile.Resources.Resources.Speed: <span id="vehicle_speed_@Convert.ToInt16(Model.ShowDistance)_@vehicle.BoxId">@String.Format("{0:0}", vehicle.Speed * Model.UnitOfMes) @Model.UnitOfMesName</span>, @SentinelMobile.Resources.Resources.Status: @vehicle.VehicleStatus</p>
+                @if (vehicle.Driver.Trim() != "" && vehicle.Driver.Trim() != "UNKNOWN DRIVER")
+                    {
+                        <p><span id="vehicle_driver_@Convert.ToInt16(Model.ShowDistance)_@vehicle.BoxId">@SentinelMobile.Resources.Resources.Driver: @vehicle.Driver</span></p>
+                    }
+                <p><span id="vehicle_address_@Convert.ToInt16(Model.ShowDistance)_@vehicle.BoxId">@vehicle.StreetAddress.Replace("Address resolution in progress", SentinelMobile.Resources.Resources.AddressResolutionInProgress)</span></p>
+            </a>
+        </li>        
+    }
+}   
+else
+{
+    <li>@SentinelMobile.Resources.Resources.Novehicles</li>
+}

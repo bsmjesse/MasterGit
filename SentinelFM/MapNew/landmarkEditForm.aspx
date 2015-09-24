@@ -23,6 +23,9 @@
         <div style="margin:10px 0 0 20px;">
             <a href="javascript:void(0)" onclick="showeditpolygonform();"><asp:Label ID="lblEdit" runat="server" Text="Edit" meta:resourcekey="lblEditResource1"></asp:Label></a>
             <a href="javascript:void(0)" onclick="redrawLandmark(<%=landmarkId.ToString() %>, polygonPopup, '<%=geoassetname.ClientID %>');"><asp:Label ID="lblRedraw" runat="server" Text="Redraw" meta:resourcekey="lblRedrawResource1"></asp:Label></a>
+            <% if(ShowSearchVehicleInLandmark) { %>
+            <a href="javascript:void(0)" onclick="getVehiclesInLandmark(<%=landmarkId.ToString() %>, polygonPopup);"><asp:Label ID="lblVehicles" runat="server" Text="Vehilces" meta:resourcekey="lblVehiclesResource1"></asp:Label></a>
+            <% } %>
         </div>
     </div>
 

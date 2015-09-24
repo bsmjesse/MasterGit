@@ -917,7 +917,7 @@
     <value>hierarchy</value>
   </data>
   <data name="Label4Resource1.Text" xml:space="preserve">
-    <value>Mot de passe doit être atleast 7 caractères</value>
+    <value>Mot de passe doit être atleast 8 caractères</value>
   </data>
   <data name="Label4Resource1.ToolTip" xml:space="preserve">
     <value />
@@ -996,5 +996,15 @@
   </data>
   <data name="lblShowRetiredVehiclesResource1.Text" xml:space="preserve">
     <value>Afficher retraité véhicules :</value>
+  </data>
+  <data name="cmdPswUpdatedAmeco" xml:space="preserve">
+    <value>Le mot de passe a été mis à jour avec succès. Veuillez vous connecter à nouveau.</value>
+    <comment>S'il vous plaît une reconnexion</comment>
+  </data>
+  <data name="msgPsw_OldNewNotSame" xml:space="preserve">
+    <value>Nouveau mot de passe ne doit pas être le même que Ancien mot de passe</value>
+  </data>
+  <data name="msgPsw_OldPswIncorrect" xml:space="preserve">
+    <value>Ancien mot de passe est incorrect</value>
   </data>
 </root>

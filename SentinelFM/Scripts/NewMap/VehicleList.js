@@ -933,6 +933,9 @@ Ext.onReady(function () {
                     exirecord.data.isSelected = 1;
                     if (!ShowRetiredVehicles && exirecord.data.VehicleDeviceStatusID == "3")
                         return;
+                    if (exirecord.data.Latitude == 0 || exirecord.data.Latitude == 90 || exirecord.data.Latitude == -90 || exirecord.data.Longitude == 0 || exirecord.data.Longitude == 90 || exirecord.data.Longitude == -90)
+                        return;
+
                     var newIcon = "";
                     var today = new Date();
                     var posExpireDate = new Date();
@@ -9808,6 +9811,34 @@ function getClosestVehicles(lon, lat, radius, numofvehicles) {
             lat: lat,
             radius: radius,
             numofvehicles: numofvehicles
+        }
+    });
+
+    clearSearchBtn.show();
+
+}
+
+function getVehiclesInLandmark(landmarkId) {
+    //alert(lon + ',' + lat);
+    var fleetId;
+    if (LoadVehiclesBasedOn == 'fleet') {
+        fleetId = DefaultFleetID;
+    }
+    else {
+        fleetId = DefaultOrganizationHierarchyFleetId;
+    }
+
+    loadingMask.show();
+    FromClosestVehicles = true;
+    VehicleGridInSearchMode = true;
+    originSelectionon = selectionon;
+    mainstore.load(
+    {
+        params:
+        {
+            QueryType: 'getVehiclesInLandmark',
+            landmarkId: landmarkId,
+            fleetID: fleetId            
         }
     });
 

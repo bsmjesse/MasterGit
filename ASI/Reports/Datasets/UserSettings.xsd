@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="UserSettings" targetNamespace="http://tempuri.org/UserSettings.xsd" xmlns:mstns="http://tempuri.org/UserSettings.xsd" xmlns="http://tempuri.org/UserSettings.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="UserSettings" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="UserSettings" msprop:Generator_DataSetName="UserSettings">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="rpt_UserSettings" msprop:Generator_UserTableName="rpt_UserSettings" msprop:Generator_RowEvArgName="rpt_UserSettingsRowChangeEvent" msprop:Generator_TableVarName="tablerpt_UserSettings" msprop:Generator_TablePropName="rpt_UserSettings" msprop:Generator_RowDeletingName="rpt_UserSettingsRowDeleting" msprop:Generator_RowChangingName="rpt_UserSettingsRowChanging" msprop:Generator_RowDeletedName="rpt_UserSettingsRowDeleted" msprop:Generator_RowEvHandlerName="rpt_UserSettingsRowChangeEventHandler" msprop:Generator_RowChangedName="rpt_UserSettingsRowChanged" msprop:Generator_TableClassName="rpt_UserSettingsDataTable" msprop:Generator_RowClassName="rpt_UserSettingsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserId" type="xs:int" minOccurs="0" />
+              <xs:element name="PersonId" type="xs:string" minOccurs="0" />
+              <xs:element name="OrganizationName" type="xs:string" minOccurs="0" />
+              <xs:element name="UserName" type="xs:string" minOccurs="0" />
+              <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" type="xs:string" minOccurs="0" />
+              <xs:element name="AssignedRoles" type="xs:string" minOccurs="0" />
+              <xs:element name="AccessableControls" type="xs:string" minOccurs="0" />
+              <xs:element name="AuthorizedCommands" type="xs:string" minOccurs="0" />
+              <xs:element name="Reports" type="xs:string" minOccurs="0" />
+              <xs:element name="LastLoginDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="AssignedFleets" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

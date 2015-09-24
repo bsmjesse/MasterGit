@@ -1,0 +1,1005 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link rel="stylesheet" href="//code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+        <link rel="stylesheet" href="@Url.Content("~/Content/themes/custom/sfmjquerymobileCustom.css?v=" + ViewBag.LastUpdatedCustomTheme)" />
+        <link rel="stylesheet"  href="@Url.Content("~/Content/jquery.mobile.grids.collapsible.css")" />
+        <link rel="stylesheet"  href="@Url.Content("~/Content/themes/base/jqm-datebox.min.css")" />
+
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.7.1.js")"></script>               
+        <script src="//code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Custom.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/md5.js")"></script>
+        <script type="text/javascript" src="http://dev.jtsage.com/jquery.mousewheel.min.js"></script>
+        @*<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>*@
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jqm-datebox.core.min.js")"></script>
+        <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.flipbox.min.js"></script>
+        @*<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.calbox.min.js"></script>
+        <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.datebox.min.js"></script>*@
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jqm-datebox.mode.calbox.min.js")">></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jqm-datebox.mode.datebox.min.js")">></script>
+    <script type="text/javascript" src="@ViewBag.SelectedLanguageUrl"></script>
+
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-41717884-1', 'sentinelfm.com');
+            ga('send', 'pageview');
+
+       </script>
+
+
+        <!--<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en.utf8.js"></script>
+        <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.fr.utf8.js"></script> -->
+        <style type="text/css">
+            .fixedheader
+            {
+                position:fixed !important;
+                width:100%;
+                z-index:1000;
+                left: 0;
+                top: 0;                    
+            }
+
+            .ui-content
+            {
+                padding:65px 15px;
+            }
+
+            .ui-dialog-contain
+            {
+                margin-top: 30px !important;
+            }
+
+            #fleetviewhome
+            {
+                padding-bottom: 52px;
+            }
+
+            .ui-panel .ui-body-f
+            {
+                border: none;
+            }
+
+            .ui-panel ul.ui-listview li .ui-li
+            {
+                border-top: 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            }
+            #divAddDuty .ui-btn {
+            text-align: left !important;
+        }
+
+        #divAddTripInfo .ui-btn {
+            text-align: left !important;
+        }
+
+        #divAddMenualList .ui-btn {
+            text-align: left !important;
+        }
+
+        </style>
+
+        @RenderSection("Header", required:false)    
+        <script type="text/javascript" >
+            var curDriverId = "";
+            var curDriverName = "";
+            var hasLoadOnDuty = true;
+            var hasLoadCity = true;
+            var isApprove = false;
+            var isDriver = 'false'
+            var isAdd = false;
+            var clickSave = false;
+            var language = '@ViewBag.SelectedLanguage';
+            @{
+                SentinelMobile.Models.User user = Session != null ? (SentinelMobile.Models.User)Session["SentinelUser"] : null;
+                if (user.IsDriver)
+                {
+                      <text>
+            isDriver = 'true';
+            curDriverId = '@user.UserId';
+            curDriverName = '@user.UserName';
+                      </text>
+                }}
+            /*AddDriverLog Start */
+
+            var Duty = function (time, duty, action, province, city, remark,
+                   dutyTxt, actionTxt, provinceTxt, cityTxt, odometer, TLID, date, cycle) {
+                this.time = time;
+                this.duty = duty;
+                this.action = action;
+                this.province = province;
+                this.city = city;
+                this.remark = remark;
+
+                this.dutyTxt = dutyTxt;
+                this.actionTxt = actionTxt;
+                this.provinceTxt = provinceTxt;
+                this.cityTxt = cityTxt;
+                this.odometer = odometer;
+                this.TLID = TLID,
+                this.date = date,
+                this.cycle = cycle
+            };
+
+            var TripInfo = function (date, cycle, company, shiftStart, odoStart, odoEnd, coDriver, hometerm,
+                equipmentNo, shippingDoc, truckNo, tailerNo, deferredHours, deferredDay,
+                emergency, adverseDriving, personalStart, personalEnd, remark) {
+                this.date = date,
+                this.cycle = cycle,
+                this.company = company;
+                this.shiftStart = shiftStart;
+                this.odoStart = odoStart;
+                this.odoEnd = odoEnd;
+                this.coDriver = coDriver;
+                this.hometerm = hometerm;
+                this.equipmentNo = equipmentNo;
+                this.shippingDoc = shippingDoc;
+                this.truckNo = truckNo;
+                this.tailerNo = tailerNo;
+                this.deferredHours = deferredHours;
+                this.deferredDay = deferredDay;
+                this.emergency = emergency;
+                this.adverseDriving = adverseDriving;
+                this.personalStart = personalStart;
+                this.personalEnd = personalEnd;
+                this.remark = remark;
+                this.approved = 0;
+            };
+
+            var deleteIndex = -1;
+            var editIndex = -1;
+
+            function BackHistory() {
+                var url = "@Html.Raw(Url.Action("DriverList", "HOS"))";
+                $.mobile.changePage(url);
+                /*window.location = url;
+                history.back(-1); */
+            }
+
+            function SortDuty(a, b) {
+                var date_a, date_b
+                @{
+                    if (System.Threading.Thread.CurrentThread.CurrentUICulture.ToString().ToLower().IndexOf("fr") >= 0)
+                    {
+                       <text>
+                var date_a_strs = a.date.split('/');
+                var date_b_strs = b.date.split('/');
+                date_a = new Date(parseInt(date_a_strs[2]), parseInt(date_a_strs[1]) - 1, parseInt(date_a_strs[0]), 0, 0, 0, 0);
+                date_b = new Date(parseInt(date_b_strs[2]), parseInt(date_b_strs[1]) - 1, parseInt(date_b_strs[0]), 0, 0, 0, 0);
+                </text>
+                    }
+                    else
+                    {
+                       <text>
+                var date_a_strs = a.date.split('/');
+                var date_b_strs = b.date.split('/');
+                date_a = new Date(parseInt(date_a_strs[2]), parseInt(date_a_strs[0]) - 1, parseInt(date_a_strs[1]), 0, 0, 0, 0);
+                date_b = new Date(parseInt(date_b_strs[2]), parseInt(date_b_strs[0]) - 1, parseInt(date_b_strs[1]), 0, 0, 0, 0);
+                </text>
+                    }
+                }
+
+                if (date_a > date_b) return 1;
+                if (date_a < date_b) return -1;
+
+                if (a.time > b.time) return 1;
+                if (a.time < b.time) return -1;
+
+                return 0;
+            }
+
+            var duties = new Array();
+            var tripInfo = null;
+
+            function AddDuty() {
+                deleteIndex = -1;
+                editIndex = -1;
+                AddDutyPanel();
+            }
+
+            function AddTripInfo() {
+                deleteIndex = -1;
+                editIndex = -1;
+                AddTripInfoPanel();
+            }
+
+            function AddDutyPanel() {
+                $("#ulAddDriverManualLogs").removeClass("ui-grid-a");
+                $("#divAddDuty").show();
+                $("#divAddMenualList").hide();
+                $("#divAddTripInfo").hide();
+                $("#liSubmit").hide();
+                $("#liApprove").hide();
+                $("#liAddDuty").hide();
+                $("#liAddTripIndo").hide();
+                $("#ulAddDriverManualLogs").hide();
+                $("#ulAddDriverManualDuty").show();
+            }
+
+            function AddTripInfoPanel() {
+                $("#divAddTripInfo").show();
+                $("#divAddDuty").hide();
+                $("#divAddMenualList").hide();
+                $("#liSubmit").hide();
+                $("#liApprove").hide();
+                $("#liAddDuty").hide();
+                $("#liAddTripIndo").hide();
+                $("#ulAddDriverManualLogs").show();
+                $("#ulAddDriverManualDuty").hide();
+            }
+
+            function ApprovePrompt() {
+                if (duties.length == 0) {
+                    alert('@SentinelMobile.Resources.HOSResources.Please @SentinelMobile.Resources.HOSResources.InputDuty');
+                    return;
+                }
+                if (duties[duties.length - 1].duty != '101' && duties[duties.length - 1].duty != '102') {
+                    $('#popupDialogApprove_H3Warning').show();
+                }
+                else $('#popupDialogApprove_H3Warning').hide();
+                $('#popupDialogApprove').popup(); $('#popupDialogApprove').popup('open')
+            }
+
+            function Approve() {
+                $.mobile.showPageLoadingMsg();
+                var dutiesOperate = new Array();
+                dutiesOperate.push(duties[0].date);
+                for (var index = 1; index < duties.length; index++) {
+                    if (duties[index].date != duties[index - 1].date)
+                        dutiesOperate.push(duties[index].date);
+                }
+                var dutyStr = JSON.stringify(dutiesOperate);
+                var url1 = "@Html.Raw(Url.Action("Approve_LogData_Manual", "HOS"))";
+                var dutyValue = { duties: dutyStr };
+
+                $.ajax({
+                    type: "POST",
+                    url: url1,
+                    data: dutyValue,
+                    dataType: "json",
+                    success: function (result) {
+                        $.mobile.hidePageLoadingMsg();
+                        if (result != -1) {
+                            alert('@SentinelMobile.Resources.HOSResources.ApprovedSuccessfully');
+                            Back(0);
+                        }
+                        else alert('@SentinelMobile.Resources.HOSResources.FailedToSave');
+
+                    },
+                    error: function (msg) {
+                        alert('@SentinelMobile.Resources.HOSResources.FailedToSave');
+                        $.mobile.hidePageLoadingMsg();
+                    }
+                });
+
+                }
+
+
+                function DeletePrompt(index) {
+                    deleteIndex = index;
+                    $('#popupDialogDelete').popup(); $('#popupDialogDelete').popup('open');
+                }
+
+                function Delete() {
+                    var url1 = "/mobile/HOS/Delete_LogData_TimeLog_Manual";
+                    var dutyStr = JSON.stringify(duties[deleteIndex]);
+                    var dutyValue = { duty: dutyStr };
+                    $.mobile.showPageLoadingMsg();
+                    $.ajax({
+                        type: "POST",
+                        url: url1,
+                        data: dutyValue,
+                        dataType: "json",
+                        success: function (result) {
+                            if (result != -1) {
+                                duties.splice(deleteIndex, 1);
+                                alert('@SentinelMobile.Resources.HOSResources.DeleteDutySuccessfully');
+                        FillDutyGrid();
+                        isApprove = false;
+                        if (duties.length == 0) Back(0);
+                    }
+                    else alert('@SentinelMobile.Resources.HOSResources.FailedToSave');
+                    $.mobile.hidePageLoadingMsg();
+                },
+                error: function (msg) {
+                    alert('@SentinelMobile.Resources.HOSResources.FailedToSave');
+                    $.mobile.hidePageLoadingMsg();
+                }
+            });
+
+            }
+
+            function Edit(index) {
+                var hasLoadOnDuty = false;
+                var hasLoadCity = false;
+                $.mobile.showPageLoadingMsg();
+                AddDutyPanel();
+                editIndex = index;
+                var curDuty = duties[index];
+                $("#txtTime").val(curDuty.time);
+                var myselect = $("#ddlDuty");
+                $(myselect).val(curDuty.duty);
+                myselect.selectmenu("refresh");
+                LoadOnduty();
+                myselect = $("#ddlProvince");
+                $(myselect).val(curDuty.province);
+                myselect.selectmenu("refresh");
+                LoadCities();
+                $("#txtRemark").val(curDuty.remark);
+                $("#txtOdometer").val(curDuty.odometer);
+            }
+
+            function FillDutyGrid() {
+                if (duties.length > 0) {
+                    var listli = "";
+                    for (var index = 0; index < duties.length; index++) {
+
+                        var curDuty = duties[index];
+                        listli = listli + "</li>";
+                        listli = listli + "<li id='li_manual_" + index.toString() + "'>";
+                        listli = listli + '<h2>' + curDuty.date + ' ' + curDuty.time + ' ' + curDuty.dutyTxt + '</h2>';
+                        listli = listli + '<p style="margin-left:20px;"><B>@SentinelMobile.Resources.HOSResources.Action:</B>' + curDuty.actionTxt + '</p>';
+                    listli = listli + '<p style="margin-left:20px;"><B>@SentinelMobile.Resources.HOSResources.City:</B>' + curDuty.cityTxt + '--' + curDuty.provinceTxt + '</p>';
+                    listli = listli + '<p style="margin-left:20px;"><B>@SentinelMobile.Resources.HOSResources.Odometer:</B>' + curDuty.odometer + '</p>';
+                    if (curDuty.remark != '')
+                        listli = listli + '<p style="margin-left:20px;"><B>@SentinelMobile.Resources.HOSResources.Remark:</B>' + curDuty.remark + '</p>';
+                        listli = listli + '<p style="margin-left:20px;"><button data-theme="c" style="height:30px;width:100px" onclick ="Edit(' + index.toString() + '); return false;"><B>@SentinelMobile.Resources.HOSResources.Edit</B></Button>&nbsp;&nbsp<Button style="height:30px; width:100px" data-theme="c" href="#" onclick ="DeletePrompt(' + index.toString() + ')"><B>@SentinelMobile.Resources.HOSResources.Delete</B></Button></p>';
+
+                }
+                listli = listli + "</li>";
+                $('#ulAddMenualViewList').empty().append(listli).listview('refresh');
+            }
+        }
+
+            function Save() {
+
+            if (clickSave) return;
+            clickSave = true;
+
+
+            var errors = "";
+            var dateStr = $('#txtDate').val();
+            if (dateStr == "") errors = GenerateAlertMsg(errors, '@SentinelMobile.Resources.HOSResources.InputDate', true);
+                var cycleStr = $("#ddlCycle").val();
+                if (cycleStr == "0") errors = GenerateAlertMsg(errors, '@SentinelMobile.Resources.HOSResources.SelectCycle', true);
+
+                var timeStr = $('#txtTime').val();
+                if (timeStr == '')
+                    errors = GenerateAlertMsg(errors, '@SentinelMobile.Resources.HOSResources.InputTime', true);
+
+                var dutyStr = $('#ddlDuty').val();
+                var dutyTxt = $("#ddlDuty option:selected").text();
+                if (dutyStr == "0")
+                    errors = GenerateAlertMsg(errors, '@SentinelMobile.Resources.HOSResources.SelectDuty', true);
+
+                var actionStr = $('#ddlAction').val();
+                var actionTxt = $("#ddlAction option:selected").text();
+                if (actionStr == "0")
+                    errors = GenerateAlertMsg(errors, '@SentinelMobile.Resources.HOSResources.SelectAction', true);
+
+                var provinceStr = $('#ddlProvince').val();
+                var provinceTxt = $("#ddlProvince option:selected").text();
+                if (provinceStr == "0")
+                    errors = GenerateAlertMsg(errors, '@SentinelMobile.Resources.HOSResources.SelectProvince', true);
+
+                var cityStr = $('#ddlCity').val();
+                var cityTxt = $("#ddlCity option:selected").text();
+                if (cityStr == "0")
+                    errors = GenerateAlertMsg(errors, '@SentinelMobile.Resources.HOSResources.SelectCity', true);
+                
+
+                if (errors != '') {
+                    alert(errors);
+                    clickSave = false;
+                    return;
+                }
+
+                var selectedDate = new Date();
+                var seldate1 = $('#txtDate').val().split("/");
+                if (language == "fr") {
+                    selectedDate = new Date(parseInt(seldate1[2]), parseInt(seldate1[1]) - 1, parseInt(seldate1[0]));
+                }
+                else selectedDate = new Date(parseInt(seldate1[2]), parseInt(seldate1[0] - 1), parseInt(seldate1[1]));
+                
+                var curDate = new Date();
+                curDate = new Date(curDate.getFullYear(),
+                                   curDate.getMonth(),
+                                   curDate.getDate()
+                 )
+
+                if (selectedDate > curDate) {
+                    alert(GenerateAlertMsg(errors, '@SentinelMobile.Resources.HOSResources.DateTimeGreateThanCurrent', false));
+                    clickSave = false;
+                    return;
+                }
+            
+                var txtCompanyStr = $('#txtCompany').val();
+                var txtShiftStartStr = $('#txtShiftStart').val();
+                var txtStartOdoStr = $('#txtStartOdo').val();
+                var txtEndOdoStr = $('#txtEndOdo').val();
+                var txtCoDriverStr = $('#txtCoDriver').val();
+                var txtHomeTermStr = $('#txtHomeTerm').val();
+                var txtEquipmentNoStr = $('#txtEquipmentNo').val();
+                var txtShippingDocStr = $('#txtShippingDoc').val();
+                var txtTruckNoStr = $('#txtTruckNo').val();
+                var txtTrailNoStr = $('#txtTrailNo').val();
+                var txtDeferedStr = $('#txtDefered').val();
+                var txtDeferedDayStr = '';
+                if ($("#radDeferredHoursDay1").attr('checked') == 'checked') txtDeferedDayStr = "1";
+                if ($("#radDeferredHoursDay2").attr('checked')) txtDeferedDayStr = "2";
+                var txtEmergencyStr = $('#txtEmergency').val();
+                var txtAdverseDrivingStr = "0";
+                if ($("#chkAdverseDriving").attr('checked')) txtAdverseDrivingStr = "1";
+                var txtPersonalStartOdoStr = $('#txtPersonalStartOdo').val();
+                var txtPersonalEndOdoStr = $('#txtPersonalEndOdo').val();
+                var txtTripRemarkStr = $('#txtTripRemark').val();
+                tripInfo = new TripInfo(dateStr, cycleStr, txtCompanyStr, txtShiftStartStr, txtStartOdoStr,
+                    txtEndOdoStr, txtCoDriverStr, txtHomeTermStr, txtEquipmentNoStr,
+                    txtShippingDocStr, txtTruckNoStr, txtTrailNoStr,
+                    txtDeferedStr, txtDeferedDayStr, txtEmergencyStr,
+                    txtAdverseDrivingStr, txtPersonalStartOdoStr, txtPersonalEndOdoStr, txtTripRemarkStr);
+                var tripStr = JSON.stringify(tripInfo);
+
+                var remarkStr = $('#txtRemark').val();
+                var odometerStr = $('#txtOdometer').val();
+
+                var dutiesOperate = new Array();
+                var curDuty = null;
+                if (editIndex < 0) {
+                    curDuty = new Duty(timeStr, dutyStr, actionStr, provinceStr, cityStr, remarkStr,
+                        dutyTxt, actionTxt, provinceTxt, cityTxt, odometerStr, -1, dateStr, cycleStr)
+                }
+                else {
+                    curDuty = new Duty(timeStr, dutyStr, actionStr, provinceStr, cityStr, remarkStr,
+                        dutyTxt, actionTxt, provinceTxt, cityTxt, odometerStr, duties[editIndex].TLID, dateStr, cycleStr);
+                }
+                dutiesOperate.push(curDuty);
+
+                $.mobile.showPageLoadingMsg();
+                var tripStr = JSON.stringify(tripInfo);
+                var dutyStr = JSON.stringify(dutiesOperate);
+
+                var url1 = "@Html.Raw(Url.Action("Insert_LogData_TimeLog_Manual", "HOS"))";
+                var dutyValue = { trip: tripStr, duties: dutyStr, isDelete: false };
+
+                $.ajax({
+                    type: "POST",
+                    url: url1,
+                    data: dutyValue,
+                    dataType: "json",
+                    success: function (result) {
+                        $.mobile.hidePageLoadingMsg();
+                        if (result != -1) {
+                            if (editIndex < 0) {
+                                curDuty.TLID = result;
+                                duties.push(curDuty);
+                                duties.sort(SortDuty);
+                            }
+                            else {
+                                duties[editIndex] = curDuty;
+                                duties.sort(SortDuty);
+                                Back(0);
+                            }
+                            alert('@SentinelMobile.Resources.HOSResources.SavedSuccessfully');
+                            isApprove = false;
+                            $('#txtTime').val("");
+                            $('#txtRemark').val("");
+                            $('#txtOdometer').val("");
+                            var myselect = $("select#ddlAction");
+                            myselect[0].selectedIndex = 0;
+                            myselect.selectmenu("refresh");
+                            var myselect = $("select#ddlCity");
+                            myselect[0].selectedIndex = 0;
+                            myselect.selectmenu("refresh");
+
+                        }
+                        else alert('@SentinelMobile.Resources.HOSResources.FailedToSave');
+                        clickSave = false;
+
+                    },
+                    error: function (msg) {
+                        alert('@SentinelMobile.Resources.HOSResources.FailedToSave');
+                        $.mobile.hidePageLoadingMsg();
+                        clickSave = false;
+                    }
+                });
+
+                }
+
+
+                function GetLogData_Reference_ManualDutyByDate() {
+                    $.mobile.showPageLoadingMsg();
+                    var dutiesOperate = new Array();
+                    dutiesOperate.push(duties[0].date);
+                    for (var index = 1; index < duties.length; index++) {
+                        if (duties[index].date != duties[index - 1].date)
+                            dutiesOperate.push(duties[index].date);
+                    }
+                    var dutyStr = JSON.stringify(dutiesOperate);
+
+                    var url1 = "@Html.Raw(Url.Action("GetLogData_Reference_ManualDutyByDate", "HOS"))";
+                var dutyValue = { duties: dutyStr };
+
+                $.ajax({
+                    type: "POST",
+                    url: url1,
+                    data: dutyValue,
+                    dataType: "json",
+                    success: function (result) {
+                        $.mobile.hidePageLoadingMsg();
+                        if (result != -1) {
+
+                            duties.splice(0, duties.length);
+                            result = eval(result);
+                            for (var index = 0; index < result.length; index++) {
+                                duties.push(new Duty(result[index].time, result[index].duty,
+                                                     result[index].action, result[index].province,
+                                                     result[index].city, result[index].remark,
+                                                     result[index].dutyTxt, result[index].actionTxt,
+                                                     result[index].provinceTxt, result[index].cityTxt,
+                                                     result[index].odometer, result[index].TLID,
+                                                     result[index].date,
+                                                     result[index].cycle));
+                            }
+                            duties.sort(SortDuty);
+                            FillDutyGrid();
+                        }
+                        else alert('@SentinelMobile.Resources.HOSResources.FailedToLoad');
+
+                    },
+                    error: function (msg) {
+                        alert('@SentinelMobile.Resources.HOSResources.FailedToLoad');
+                        $.mobile.hidePageLoadingMsg();
+                    }
+                });
+
+                }
+
+                function GenerateAlertMsg(errors, error, addPleae) {
+                    if (addPleae)
+                        error = '@SentinelMobile.Resources.HOSResources.Please' + error;
+                if (errors == "") errors = error;
+                else errors = errors + "\n\r" + error;
+                return errors;
+            }
+
+            function AddDriverLogReady(isAdd) {
+                //$("#ulDriverView").hide();
+                $("#ulAddDriverManualLogs").show();
+
+                $('#ddlCycle').live('change', function (ev) {
+                    AddActionBasedOnCycle();
+                });
+
+                $('#ddlDuty').live('change', function (ev) {
+                    if ($('#ddlDuty').val() == "0") {
+                        $("#ddlAction Option").each(function () { $(this).remove(); });
+                        $("#ddlAction").append($("<option selected='true'></option>").val("0").text('@SentinelMobile.Resources.HOSResources.SelectAction'));
+                        }
+                        else {
+                            LoadOnduty();
+                        }
+                    });
+
+
+                    $('#ddlProvince').live('change', function (ev) {
+                        if ($('#ddlProvince').val() == "0") {
+                            $("#ddlCity Option").each(function () { $(this).remove(); });
+                            $("#ddlCity").append($("<option selected='true'></option>").val("0").text('@SentinelMobile.Resources.HOSResources.SelectCity'));
+                        }
+                        else {
+                            LoadCities();
+                        }
+                    });
+
+                    LoadDutyByRef();
+                    if (isAdd) AddDuty();
+                    else {
+                        $("#ulAddDriverManualLogs").show();
+                        $("#divAddMenualList").show();
+                    }
+                };
+
+            function LoadCities() {
+                    $.mobile.showPageLoadingMsg();
+                    var url1 = "@Html.Raw(Url.Action("GetCities", "HOS"))";
+                    var dutyValue = { state: $('#ddlProvince').val() };
+                    $.ajax({
+                        type: "POST",
+                        url: url1,
+                        data: dutyValue,
+                        dataType: "json",
+                        success: function (result) {
+
+                            $("#ddlCity Option").each(function () { $(this).remove(); });
+                            $("#ddlCity").append($("<option ></option>").val("0").text('@SentinelMobile.Resources.HOSResources.SelectCity'));
+                        if (result.length > 0) {
+                            for (var index = 0; index < result.length; index++) {
+                                $("#ddlCity").append($("<option ></option>").val(result[index].LocationID).text(result[index].Name));
+                            }
+                            $("#ddlCity").show();
+                            if (editIndex < 0) {
+                                if (result.length == 1) {
+                                    var myselect = $("select#ddlCity");
+                                    myselect[0].selectedIndex = 1;
+                                    myselect.selectmenu("refresh");
+                                }
+                                else {
+                                    var myselect = $("select#ddlCity");
+                                    myselect[0].selectedIndex = 0;
+                                    myselect.selectmenu("refresh");
+
+                                }
+                            }
+                            else {
+                                var curDuty = duties[editIndex];
+                                var myselect = $("#ddlCity");
+                                $(myselect).val(curDuty.city);
+                                myselect.selectmenu("refresh");
+                            }
+
+
+                        }
+                        hasLoadCity = true;
+                        if (hasLoadCity && hasLoadCity) $.mobile.hidePageLoadingMsg();
+                    },
+                    error: function (msg) {
+                        hasLoadCity = true;
+                        alert('@SentinelMobile.Resources.HOSResources.FailedToLoad');
+                        $.mobile.hidePageLoadingMsg();
+                    }
+                });
+
+            }
+
+            function AddActionBasedOnCycle()
+            {
+                try
+                {
+                    var curCycle = $('#ddlCycle').val();
+                    var curDuty = $('#ddlDuty').val();
+                    if (curCycle == '20')
+                    {
+                        if (curDuty == "101") {
+                            $("#ddlAction").append($("<option ></option>").val("31").text('@SentinelMobile.Resources.HOSResources.OilFieldWaiting'));
+                            return;
+                        }
+                    }
+                    if (curDuty == "101")  $("#ddlAction option[value='31']").remove();
+                }
+                catch (err) { }
+                return;
+
+            }
+
+            function LoadOnduty() {
+                $.mobile.showPageLoadingMsg();
+                var url1 = "@Html.Raw(Url.Action("GetDutyAction", "HOS"))";
+                var dutyValue = { duty: $('#ddlDuty').val() };
+
+                    $.ajax({
+                        type: "POST",
+                        url: url1,
+                        data: dutyValue,
+                        dataType: "json",
+                        success: function (result) {
+
+                            $("#ddlAction Option").each(function () { $(this).remove(); });
+                            $("#ddlAction").append($("<option ></option>").val("0").text('@SentinelMobile.Resources.HOSResources.SelectAction'));
+                    if (result.length > 0) {
+                        for (var index = 0; index < result.length; index++) {
+                            $("#ddlAction").append($("<option ></option>").val(result[index].LSID).text(result[index].Item));
+                        }
+                        AddActionBasedOnCycle();
+                        if (editIndex < 0) {
+                            if (result.length == 1) {
+                                var myselect = $("select#ddlAction");
+                                myselect[0].selectedIndex = 1;
+                                myselect.selectmenu("refresh");
+                            }
+                            else {
+                                var myselect = $("select#ddlAction");
+                                myselect[0].selectedIndex = 0;
+                                myselect.selectmenu("refresh");
+
+                            }
+                        }
+                        else {
+                            var curDuty = duties[editIndex];
+                            var myselect = $("#ddlAction");
+                            $(myselect).val(curDuty.action);
+                            myselect.selectmenu("refresh");
+                        }
+                    }
+                    hasLoadOnDuty = true;
+                    if (hasLoadCity && hasLoadCity) $.mobile.hidePageLoadingMsg();
+                },
+                error: function (msg) {
+                    hasLoadOnDuty = true;
+                    alert('@SentinelMobile.Resources.HOSResources.FailedToLoad');
+                    $.mobile.hidePageLoadingMsg();
+                }
+            });
+
+        }
+        //AddDriverLog End
+
+        //View PDF Back Function
+        function DriverLogPDFBack()
+        {
+            $("#ulDriverView").show();
+            $("#ulDriverViewList").show();
+
+
+            $("#divDriverLogPDF").hide();
+            $("#ulDriverLogPDFBack").hide();
+            //$("#ulDriverLogPDFBack").removeClass("ui-btn-active");
+        }
+
+        //DriverView Start
+        function LogClick(filename) {
+            var url1 = "@Html.Raw(Url.Action("DriverLogsWritePdf", "HOS")).ToString()";
+                url1 = url1 + "?filename=" + filename;
+                $.mobile.showPageLoadingMsg();
+                $.ajax({
+                    url: url1,
+                    success: function (result) {
+                        $('#divDriverViewList').show();
+                        if (result.length > 1) {
+                            var url = document.URL;
+                            url = document.URL;
+                            var pos = url.indexOf("/HOS/");
+                            url = url.substring(0, pos);
+                            url = url + "/PDF/" + result;
+                            url = "http://docs.google.com/gview?embedded=true&url=" + url;
+                            url = url.replace("http://", "https://");
+                            url = url.replace("http://", "https://");
+                            $("#ulDriverView").hide();
+                            $("#ulDriverViewList").hide();
+
+                            $('#divDriverLogPDF').height($(window).height() - $("#divDriverViewList").offset().top - $("#ulDriverLogPDFBack").height());
+                            $('#divDriverLogPDF').width($("#divDriverViewList").width());
+                            $("#divDriverLogPDF").show();
+                            $('#divDriverLogPDF').attr('src', url);
+                            $("#ulDriverLogPDFBack").show();
+                            $("#liulDriverLogPDFBack").find( "a" ).removeClass("ui-btn-active");
+                           // window.location = url;
+                        }
+                        else {
+                            alert('@SentinelMobile.Resources.HOSResources.FailedToLoad');
+                        }
+
+                        $.mobile.hidePageLoadingMsg();
+                    },
+                    error: function (msg) {
+                        alert('@SentinelMobile.Resources.HOSResources.FailedToLoad');
+                $.mobile.hidePageLoadingMsg();
+            }
+                });
+
+            }
+
+
+            function DriverViewReady() {
+                $('#driverpage').live('pageshow', function (event, ui) {
+                    $.mobile.showPageLoadingMsg();
+                    setTimeout(function () { window.scrollTo(0, 1); GetLogsheet(); }, 500);
+
+                });
+            };
+
+            function AddmanualLog() {
+                isAdd = true;
+                var url = "@Html.Raw(Url.Action("AddDriverLog", "HOS"))";
+                window.location = url;
+        //$.mobile.changePage(url);
+        //$('#driverpage').live('pageshow', function (event, ui) {
+            //$.mobile.showPageLoadingMsg();
+            //setTimeout(function () { window.scrollTo(0, 1); AddDriverLogReady(1); }, 100);
+        //});
+    }
+
+            function ManualLogClick(refId) {
+                isAdd = false;
+        var url = "@Html.Raw(Url.Action("AddDriverLogByRef", "HOS"))";
+                url = url + "?refid=" + refId;
+                window.location = url;
+        //$.mobile.changePage(url);
+        //$('#driverpage').live('pageshow', function (event, ui) {
+          //  $.mobile.showPageLoadingMsg();
+            //setTimeout(function () { window.scrollTo(0, 1); AddDriverLogReady(0); }, 100);
+        //});
+
+    }
+
+    function GetLogsheet() {
+        var url1 = "@Html.Raw(Url.Action("DriverLogs", "HOS", new { driverId = -1 }))";
+        url1 = url1.replace('-1', curDriverId);
+        $.ajax({
+            url: url1,
+            success: function (result) {
+                $('#divDriverViewList').show();
+                $('#divFoot').show();
+                if (result != null && result.length > 0) {
+                    var listli = ""
+                    for (var index = 0; index < result.length; index++) {
+                        if (result[index].Type == "0" ||
+                             ((result[index].Type == "2" || result[index].Type == "3") && result[index].Date != '')
+                            ) {
+                            if (index == 0) listli = listli + "</li>";
+                            listli = listli + "<li>";
+                            listli = listli + '<h2>' + result[index].Date + '</h2>';
+                            if (result[index].Type == "0")
+                                listli = listli + '<li onclick="javascript:LogClick(\'' + result[index].FileName + '\'); return false;"><div style="margin-left:20px;"> <div style="width:15px;height:15px;background-color:#0066CC" /><a href="#"  data-ajax="false" data-rel="external" style="float:left; margin-left:18px;margin-top:-8px; " class="detailListText"><p style="">' + result[index].Desc + '</p></a></div></p>';
+                        }
+                        if (result[index].Type == "1") {
+                            listli = listli + '<li onclick="javascript:LogClick(\'' + result[index].FileName + '\'); return false;" ><div style="margin-left:20px;"><div style="width:15px;height:15px;background-color:#FF9900" /><a href="#"  data-rel="external" data-ajax="false"  style="float:left; margin-left:18px; margin-top:-8px;" class="detailListText"><p>' + result[index].Desc + ' ' + result[index].Date + '</p></a></div></p>';
+                        }
+                        if (result[index].Type == "2") {
+                            listli = listli + '<li onclick="javascript:ManualLogClick(\'' + result[index].FileName + '\'); return false;"><div style="margin-left:20px;"><div style="width:15px;height:15px;background-color:#FF0000" /><a href="#" style="float:left; margin-left:18px; margin-top:-8px;" class="detailListText"><p>' + result[index].Desc + '<font color="red"> - @SentinelMobile.Resources.HOSResources.Pending </Font></p></a></div></p>';
+                        }
+                        if (result[index].Type == "3") {
+                            listli = listli + '<li onclick="javascript:ManualLogClick(\'' + result[index].FileName + '\'); return false;"><div style="margin-left:20px;"><div style="width:15px;height:15px;background-color:#33CC33" /><a href="#"  style="float:left; margin-left:18px; margin-top:-8px;" class="detailListText"><p>' + result[index].Desc + '<font color="green"> - @SentinelMobile.Resources.HOSResources.Approved by ' + result[index].ApprovedBy + ' </Font></p></a></div></p>';
+                        }
+                    }
+                    listli = listli + "</li>";
+                    $('#ulDriverViewList').empty().append(listli).listview('refresh');
+                }
+                else {
+                    $('#ulDriverViewList').append(' <li>@SentinelMobile.Resources.HOSResources.NoDataFound</li>');
+                }
+                $.mobile.hidePageLoadingMsg();
+                $('#driverpage').die('pageshow');
+            },
+            error: function (msg) {
+                alert('@SentinelMobile.Resources.HOSResources.FailedToLoad');
+                $.mobile.hidePageLoadingMsg();
+                $('#driverpage').die('pageshow');
+            }
+        });
+        }
+        //DriverView End
+
+        //Driver List Start
+        function DriverClick(driverId, driverName) {
+            curDriverId = driverId;
+            curDriverName = driverName;
+            var url = "@Html.Raw(Url.Action("DriverView", "HOS", new { driverId = -1, driverName = -2 }))";
+                url = url.replace('-1', $.trim(driverId));
+                url = url.replace('-2', $.trim(driverName));
+
+                window.location = url;
+                //DriverViewReady();
+            }
+            //Driver List End
+            //========================================svk=======================================================
+            var dpl=[];
+            function _getPendingList() {
+               
+                var url = "@Html.Raw(Url.Action("DriverPendingList", "HOS"))";
+                window.location = url;
+            }
+            function getPendingList(cb) {
+                $.mobile.showPageLoadingMsg();
+                dpl.length=0;
+                var u = "@Html.Raw(Url.Action("getAllPending", "HOS"))";
+                var dutyValue = { duties: "getAllPending" };
+                $.ajax({
+                    type: "POST",
+                    url: u,
+                    data: dutyValue,
+                    dataType: "json",
+                    success: function (result) {
+                        $.mobile.hidePageLoadingMsg();
+                        if (result != -1) {
+                            dpl = JSON.parse(result);
+                            cb(1);
+                        }
+                        else cb(0);
+
+                    },
+                    error: function (msg) {
+                        
+                        cb(0);
+                        $.mobile.hidePageLoadingMsg();
+                    }
+                });
+               
+            }
+            function DriverPendListApprove() {
+                $.mobile.showPageLoadingMsg();
+                var v = [];
+                for (var i=0; i<dpl.length;i++) {
+                    var o=dpl[i];
+                    if (o.chked)
+                        v.push({dID:o.dID,rID:o.rID,time:o.time});
+                }
+                if (v.length == 0) {
+                    alert('@SentinelMobile.Resources.HOSResources.ApproveWarning');
+                    return;
+                }
+                var u = "@Html.Raw(Url.Action("Approve_LogData_AllPending", "HOS"))";
+                var dv = { alldpl: JSON.stringify(v) };
+                $.ajax({
+                    type: "POST",
+                    url: u,
+                    data: dv,
+                    dataType: "json",
+                    success: function (result) {
+                        $.mobile.hidePageLoadingMsg();
+                        if (result != -1) {
+                            alert('@SentinelMobile.Resources.HOSResources.ApprovedSuccessfully');
+                            BackHistory();
+                        }
+                        else alert('@SentinelMobile.Resources.HOSResources.FailedToSave');
+
+                    },
+                    error: function (msg) {
+                        alert('@SentinelMobile.Resources.HOSResources.FailedToSave');
+                        $.mobile.hidePageLoadingMsg();
+                    }
+                });
+
+            }
+            function dplRefLog(rID,dID,n)
+            {
+                //alert(rID+" "+dID+" "+n);
+                isAdd = false;
+                var url = "@Html.Raw(Url.Action("AddDplLogByRef", "HOS"))";
+                url = url + "?rid=" + rID+"&did="+dID+"&dName="+n;
+                window.location = url;
+              
+            }
+           
+       </script>
+    </head>
+    <body>
+        <div data-role="page" id="driverpage">
+   
+            <div data-role="header" data-theme="h" data-position="fixed" data-tap-toggle="false">
+	            <div data-role="controlgroup" data-type="horizontal" class="ui-btn-left">
+                        @RenderSection("HeaderLeftButtons", required: false)
+                </div>
+                <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right">
+                    @RenderSection("HeaderRightButtons", required: false)
+                </div>
+                
+                @if(ViewBag.dplTitle!=null)
+                {
+                    <h1 id="hHeader">@ViewBag.dplTitle</h1>
+                }
+                else
+                { 
+                    if (ViewBag.Driver == null)
+                    {
+                    <h1 id="hHeader">Driver List</h1>
+                    }
+                    else
+                    {
+                        <h1 id="hHeader">@ViewBag.Driver.DriverName</h1>
+
+                    }
+                }
+                
+            </div><!-- /header -->
+
+
+
+            @RenderBody()
+
+            @RenderSection("LeftPanel", required: false)           
+
+            @RenderSection("Popup", required:false)
+        </div>
+    </body>
+</html>
