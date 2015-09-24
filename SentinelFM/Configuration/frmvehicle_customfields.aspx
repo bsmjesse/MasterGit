@@ -224,6 +224,7 @@
                                                 <asp:ListItem Value="0" meta:resourcekey="ListItemResource1">Select Unit</asp:ListItem>
                                                 <asp:ListItem Value="1" meta:resourcekey="ListItemResource2">Kilogram</asp:ListItem>
                                                 <asp:ListItem Value="2" meta:resourcekey="ListItemResource3">M/Ton</asp:ListItem>
+                                                 <asp:ListItem Value="3" meta:resourcekey="ListItemResource4">LB</asp:ListItem>      
                                             </asp:DropDownList>
                                         </td>
                                     </tr>
