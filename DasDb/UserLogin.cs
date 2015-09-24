@@ -2,7 +2,8 @@ using System;
 using System.Data;
 using VLF.ERR;
 using VLF.CLS;
-using System.Data.SqlClient ;	// for SqlException
+using System.Data.SqlClient;	// for SqlException
+
 namespace VLF.DAS.DB
 {
 	/// <summary>
@@ -124,44 +125,6 @@ namespace VLF.DAS.DB
             return LoginID;
         }
 
-        /// <summary>
-        /// Retrieves current HGI user
-        /// </summary>
-        /// <param name="OrganizationId"></param>
-        /// <returns>UserId</returns>
-        public int GetCurrentHGIUser(int LoginUserId, string LoginUserSecId)
-        {
-            int UserId = 0;
-
-            try
-            {
-                sqlExec.ClearCommandParameters();
-                sqlExec.AddCommandParam("@LoginUserId", SqlDbType.Int, LoginUserId);
-                sqlExec.AddCommandParam("@LoginUserSecId", SqlDbType.VarChar, LoginUserSecId);
-                sqlExec.AddCommandParam("@UserId", SqlDbType.Int, ParameterDirection.Output, 4, UserId);
-
-                int res = sqlExec.SPExecuteNonQuery("usp_CurrentHGIUser_Get");
-
-                UserId = (DBNull.Value == sqlExec.ReadCommandParam("@UserId")) ?
-                              UserId : Convert.ToInt32(sqlExec.ReadCommandParam("@UserId"));
-            }
-            catch (SqlException objException)
-            {
-                string prefixMsg = "Unable to retrieve current HGI user for LoginUserId:  " + LoginUserId.ToString() + ". ";
-                Util.ProcessDbException(prefixMsg, objException);
-            }
-            catch (DASDbConnectionClosed exCnn)
-            {
-                throw new DASDbConnectionClosed(exCnn.Message);
-            }
-            catch (Exception objException)
-            {
-                string prefixMsg = "Unable to retrieve current HGI user for LoginUserId:  " + LoginUserId.ToString() + ". ";
-                throw new DASException(prefixMsg + " " + objException.Message);
-            }
-            return UserId;
-        }
-
 		/// <summary>
 		/// Deletes user logins.
 		/// </summary>
@@ -275,6 +238,7 @@ namespace VLF.DAS.DB
 
             return sqlDataSet;
         }
+        
         // Changes for TimeZone Feature end
         /// <summary>
         /// Retrieves user logins.
@@ -537,6 +501,7 @@ namespace VLF.DAS.DB
             }
             return sqlDataSet;
         }
+        
         // Changes for TimeZone Feature end
         /// <summary>
         ///      Retrieves user logins.

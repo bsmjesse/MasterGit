@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Globalization;
+using VLF.DAS.Logic;
 
 namespace SentinelFM
 {
@@ -183,6 +184,16 @@ namespace SentinelFM
                     //if (!String.IsNullOrEmpty(ReenterPassword))
                     //    txtReenterPassword.Attributes["value"] = ReenterPassword;
                 }
+
+                //LogEvent logEvent = new LogEvent(LoginManager.GetConnnectionString(sn.UserID));
+                //int OrgID = 0;
+                //int LoginUserId = sn.LoginUserID;
+                //DataTable dtHGIUser = LoggerManager.GetCurrentHGIUser(LoginUserId, sn.LoginUserSecId);
+                //if (dtHGIUser.Rows.Count > 0)
+                //{
+                //    userId = Convert.ToInt32(dtHGIUser.Rows[0]["UserId"]);
+                //    OrgID = Convert.ToInt32(dtHGIUser.Rows[0]["OrganizationId"]);
+                //}
 
             }
 
@@ -605,7 +616,7 @@ namespace SentinelFM
                         return;
                     }
 
-                    int addResult = dbu.AddUserToGroups(sn.UserID, sn.SecId, sn.User.OrganizationId, this.txtUserName.Text, "", this.txtPassword.Text, this.txtFirstName.Text, this.txtLastName.Text, ExpireDate, sUserGroupIDs);
+                    int addResult = dbu.AddUserToGroups(sn.LoginUserID, sn.LoginUserSecId, sn.User.OrganizationId, this.txtUserName.Text, "", this.txtPassword.Text, this.txtFirstName.Text, this.txtLastName.Text, ExpireDate, sUserGroupIDs);
                     if (objUtil.ErrCheck(addResult, false))
                         if (objUtil.ErrCheck(addResult, true))
                         {
@@ -776,7 +787,6 @@ namespace SentinelFM
                                 {
                                     ExpireDate = VLF.CLS.Def.Const.unassignedDateTime.ToString();
                                 }
-
                             }
 
                             if (this.lblUserStatusText.Text == "Deactivated" || this.lblUserStatusText.Text == "Désactivé")
@@ -820,10 +830,8 @@ namespace SentinelFM
                             break;
                     }
 
-
-
-                    if (objUtil.ErrCheck(dbu.UpdateUserInfoStatusAndGroups(sn.UserID, sn.SecId, Convert.ToInt32(UserId), txtUserName.Text, txtFirstName.Text, txtLastName.Text, ExpireDate, userStatus, sUserGroupIDs), false))
-                        if (objUtil.ErrCheck(dbu.UpdateUserInfoStatusAndGroups(sn.UserID, sn.SecId, Convert.ToInt32(UserId), txtUserName.Text, txtFirstName.Text, txtLastName.Text, ExpireDate, userStatus, sUserGroupIDs), true))
+                    if (objUtil.ErrCheck(dbu.UpdateUserInfoStatusAndGroups(sn.LoginUserID, sn.LoginUserSecId, Convert.ToInt32(UserId), txtUserName.Text, txtFirstName.Text, txtLastName.Text, ExpireDate, userStatus, sUserGroupIDs), false))
+                        if (objUtil.ErrCheck(dbu.UpdateUserInfoStatusAndGroups(sn.LoginUserID, sn.LoginUserSecId, Convert.ToInt32(UserId), txtUserName.Text, txtFirstName.Text, txtLastName.Text, ExpireDate, userStatus, sUserGroupIDs), true))
                         {
                             this.lblMessage.Visible = true;
                             this.cmdAddUser.Enabled = true;

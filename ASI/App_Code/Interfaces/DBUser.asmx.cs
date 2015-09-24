@@ -761,8 +761,15 @@ namespace VLF.ASI.Interfaces
         public int UpdateUserInfoStatusAndGroups(int currUserId, string SID, int userId, string userName, string firstName, string lastName, string expiredDate,
             string status, string UsergroupsParams)
         {
+            int CurrentUserID = 0;
+            int CurrentOrgID = 0;
+            int LoginUserId = currUserId;
+
             try
             {
+                LoggerManager.GetCurrentHGIUser(LoginUserId, SID, ref CurrentUserID, ref CurrentOrgID);
+                currUserId = CurrentUserID;
+
                 Log(">> UpdateInfo(currUserId={0},userId={1}, userName={2}, firstName={3}, lastName={4}, expiredDate={5})",
                       currUserId, userId, userName, firstName, lastName, expiredDate);
 
@@ -774,13 +781,20 @@ namespace VLF.ASI.Interfaces
 
                 using (VLF.DAS.Logic.User dbUser = new User(LoginManager.GetConnnectionString(userId)))
                 {
+                    LoggerManager.RecordInitialValues("User", LoginUserId, CurrentOrgID, "vlfUser", "UserId=" + userId.ToString(), "Update",
+                                  this.Context.Request.UserHostAddress, this.Context.Request.RawUrl, "Update user");
+
                     dbUser.UpdateInfo(userId, userName, firstName, lastName, Convert.ToDateTime(expiredDate), status);
+
+                    LoggerManager.RecordUserAction("User", LoginUserId, CurrentOrgID, "vlfUser", "UserId=" + userId.ToString(), "Update",
+                                  this.Context.Request.UserHostAddress, this.Context.Request.RawUrl,  "Update user");
+
                 }
 
                 using (UserGroup dbUserGroup = new UserGroup(LoginManager.GetConnnectionString(userId)))
                 {
                     int rowsAffected = dbUserGroup.UpdateUserGroupAssignmnet(userId, UsergroupsParams); //assign to multiple User Groups
-                    LoggerManager.RecordUserAction("User", userId, 0, "vlfUserGroupAssignment",
+                    LoggerManager.RecordUserAction("User", LoginUserId, CurrentOrgID, "vlfUserGroupAssignment",
                                                     string.Format("UserId={0} AND UserGroupId IN ({1})", userId, UsergroupsParams.Replace(";", ",")),
                                                     "Update",
                                                     this.Context.Request.UserHostAddress,
@@ -1029,8 +1043,15 @@ namespace VLF.ASI.Interfaces
         public int AddUserToGroups(int userId, string SID, int organizationId, string userName, string personId,
            string password, string firstName, string lastName, string expiredDate, string UsergroupsParams)
         {
+            int CurrentUserID = 0;
+            int CurrentOrgID = 0;
+            int LoginUserId = userId;
+
             try
             {
+                LoggerManager.GetCurrentHGIUser(LoginUserId, SID, ref CurrentUserID, ref CurrentOrgID);
+                userId = CurrentUserID;
+
                 Log(">> AddUserToGroup(userId = {0},userName = {1}, personId = {2}, firstName = {3}, lastName = {4}, expiredDate = {5})",
                        userId, userName, personId, firstName, lastName, expiredDate);
 
@@ -1050,14 +1071,14 @@ namespace VLF.ASI.Interfaces
 
                 // create new user and person
                 int newUserId = CreateDBUser(userId, organizationId, userName, personId, password, firstName, lastName, expiredDate);
-                LoggerManager.RecordUserAction("User", userId, organizationId, "vlfUser", "UserId=" + newUserId, "Add",
+                LoggerManager.RecordUserAction("User", LoginUserId, CurrentOrgID, "vlfUser", "UserId=" + newUserId, "Add",
                                   this.Context.Request.UserHostAddress, this.Context.Request.RawUrl, VLF.DAS.Logic.User.GetMD5HashData(password));
                 // assign user to group
                 using (UserGroup dbUserGroup = new UserGroup(LoginManager.GetConnnectionString(userId)))
                 {
                     //dbUserGroup.AssignUserToGroup(newUserId, userGroupId); //assign to only one User Group
                     int rowsAffected = dbUserGroup.UpdateUserGroupAssignmnet(newUserId, UsergroupsParams); //assign to multiple User Groups
-                    LoggerManager.RecordUserAction("User", userId, organizationId, "vlfUserGroupAssignment",
+                    LoggerManager.RecordUserAction("User", LoginUserId, CurrentOrgID, "vlfUserGroupAssignment",
                                                     string.Format("UserId={0} AND UserGroupId IN ({1})", newUserId, UsergroupsParams.Replace(";", ",")),
                                                     "Add",
                                                     this.Context.Request.UserHostAddress,
@@ -1077,7 +1098,7 @@ namespace VLF.ASI.Interfaces
                         if (fleetId > 0 && newUserId > 0)
                         {
                             fleet.AddUserToFleet(fleetId, newUserId);
-                            LoggerManager.RecordUserAction("User", userId, organizationId, "vlfFleetUsers",
+                            LoggerManager.RecordUserAction("User", LoginUserId, CurrentOrgID, "vlfFleetUsers",
                                                             string.Format("FleetId={0} AND UserId={1}", fleetId, newUserId),
                                                             "Add",
                                                             this.Context.Request.UserHostAddress,
@@ -1684,16 +1705,22 @@ namespace VLF.ASI.Interfaces
         public int DeleteUserGroup(int userId, string SID, int UserGroupId)
         {
             int rowsAffected = 0;
+            int CurrentUserID = 0;
+            int CurrentOrgID = 0;
+            int LoginUserId = userId;
 
             try
             {
+                LoggerManager.GetCurrentHGIUser(LoginUserId, SID, ref CurrentUserID, ref CurrentOrgID);
+                userId = CurrentUserID;
+
                 Log(">>DeleteUserGroup(uId={0}, UserGroupId={1})", userId, UserGroupId.ToString());
 
                 // Authenticate
                 LoginManager.GetInstance().SecurityCheck(userId, SID);
 
 
-                LoggerManager.RecordInitialValues("UserGroup", userId, 0, "vlfUserGroup",
+                LoggerManager.RecordInitialValues("UserGroup", LoginUserId, CurrentOrgID, "vlfUserGroup",
                                                 string.Format("UserGroupId={0}", UserGroupId.ToString()),
                                                 "Update",
                                                 this.Context.Request.UserHostAddress,
@@ -1705,7 +1732,7 @@ namespace VLF.ASI.Interfaces
                     rowsAffected = dbUserGroup.DeleteUserGroup(UserGroupId);
                 }
 
-                LoggerManager.RecordUserAction("UserGroup", userId, 0, "vlfUserGroup",
+                LoggerManager.RecordUserAction("UserGroup", LoginUserId, CurrentOrgID, "vlfUserGroup",
                                                 string.Format("UserGroupId={0}", UserGroupId.ToString()),
                                                 "Delete",
                                                 this.Context.Request.UserHostAddress,

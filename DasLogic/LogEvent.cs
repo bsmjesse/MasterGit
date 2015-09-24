@@ -4,6 +4,7 @@ using System.Text;
 using VLF.ERR;
 using VLF.CLS;
 using VLF.DAS.DB;
+using System.Data;
 
 namespace VLF.DAS.Logic
 {
@@ -46,6 +47,17 @@ namespace VLF.DAS.Logic
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Retrieves current HGI user
+        /// </summary>
+        /// <param name="LoginUserId"></param>
+        /// <param name="LoginUserSecId"></param>
+        /// <returns>UserId, OrganizationId</returns>
+        public DataSet GetCurrentHGIUser(int LoginUserId, string LoginUserSecId)
+        {
+            return logger.GetCurrentHGIUser(LoginUserId, LoginUserSecId);
         }
 
         public void Dispose()
