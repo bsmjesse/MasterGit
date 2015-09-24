@@ -21,6 +21,7 @@ namespace SentinelFM
         public string msgMinor = "Minor";
         public string descriptionisrequired = "Description is required.";
         public string msgSMCSisrequired = "SMCS is required.";
+        public string msgSMCSAdd = "The SMCS Code does not exists, Do you want to add it ?";
         clsHOSManager hosManager = new clsHOSManager();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -132,8 +133,19 @@ namespace SentinelFM
             try
             {
                 string defect = txtDescription.Text.Trim();
-                string SMCScode = cboSMCS.SelectedValue;
                 int defectLevel = int.Parse(optDefects.SelectedValue);
+                string SMCScode = cboSMCS.SelectedValue;
+                if(SMCScode == string.Empty)
+                {
+                    SMCScode = cboSMCS.Text.Trim();
+                    if (SMCScode != "")
+                    {
+                        hosManager.AddLogdata_SMCSCode(defectLevel, SMCScode, sn.User.OrganizationId);
+                        cboSMCS.Items.Clear();
+                        BindSMCS();
+                        cboSMCS.Items.Insert(0, new RadComboBoxItem("Select a SMCS code", string.Empty));
+                    }
+                }                               
                 int rowid = -1;
                 int.TryParse(hidCurrentRowId.Value, out rowid);
                 hosManager.AddOrUpdateLogdata_Question(rowid, defect, defectLevel, SMCScode, sn.User.OrganizationId);
