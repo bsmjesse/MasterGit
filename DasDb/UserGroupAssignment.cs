@@ -174,7 +174,7 @@ namespace VLF.DAS.DB
 							" WHERE vlfUserGroupAssignment.UserGroupId=" + userGroupId +
 							" AND vlfUserGroupAssignment.UserId=vlfUser.UserId" +
 							" AND vlfUser.PersonId=vlfPersonInfo.PersonId"+
-                            " AND (ExpiredDate IS NULL OR ExpiredDate > GETDATE()) AND vlfUser.OrganizationId =(SELECT OrganizationId FROM vlfUser WHERE UserId=" + currUserId + ") and (UserName not like 'support1_%' and UserName not like 'hgi_%') ORDER BY UserName";
+                            " AND (ExpiredDate IS NULL OR ExpiredDate > GETDATE()) AND vlfUser.OrganizationId =(SELECT OrganizationId FROM vlfUser WHERE UserId=" + currUserId + ") and (UserName not like 'support1_%' and UserName not like 'hgi_%') ORDER BY LastName, FirstName";
 				if(sqlExec.RequiredTransaction())
 				{
 					// 2. Attaches SQL to transaction
@@ -264,7 +264,7 @@ namespace VLF.DAS.DB
                             " AND vlfUser.PersonId=vlfPersonInfo.PersonId " +
                             " AND (ExpiredDate IS NULL OR ExpiredDate > GETDATE())" +
                             " AND (UserName not like 'support1_%' and UserName not like 'hgi_%')" +
-                            "ORDER BY UserName";
+                            "ORDER BY LastName, FirstName ";
 				if(sqlExec.RequiredTransaction())
 				{
 					// 2. Attaches SQL to transaction
