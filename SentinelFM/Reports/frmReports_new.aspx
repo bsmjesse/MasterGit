@@ -648,7 +648,7 @@
                                             <td  align="center">
                                                 <table   style="width:<%= tblWidth %> ;" cellspacing="0" cellpadding="0" border="0">
                                                     <tr style="height: 30px">
-                                                        <td  align="right">
+                                                        <td  align="right"   >
                                                             <asp:Label ID="lblReportTitle" runat="server"   CssClass="formtextGreen" meta:resourcekey="lblReportTitleResource1" Font-Bold="true"
                                                                 Text="Report:" style="padding-right:3px"></asp:Label>
                                                        </td>
@@ -659,17 +659,6 @@
                                                                 EnableScreenBoundaryDetection="true" ChangeTextOnKeyBoardNavigation="false" Skin="Hay"
                                                                 MaxHeight="400px" CausesValidation = "false">
                                                             </telerik:RadComboBox> 
-                                                        </td>
-                                                    </tr>
-                                                    <tr id="trReportLayout" runat="server" style="height: 40px; vertical-align:top;padding-top:8px;">
-                                                        <td style="text-align:left; padding-right:3px;">
-                                                        </td>
-                                                        <td class="formtext" >
-                                                            <asp:Label ID="lblReportlayout" runat="server" Text="Layout: " CssClass="formtextGreen" />
-                                                            <asp:RadioButtonList ID="rblReportLayout" runat="server" TextAlign="Right" RepeatLayout="Flow" RepeatDirection="Horizontal">
-                                                                <asp:ListItem Text="Normarl" Selected="True" Value="1"/>
-                                                                <asp:ListItem Text="Drill down" Value="2"/>
-                                                            </asp:RadioButtonList>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1087,12 +1076,12 @@
                                                                                                  <telerik:RadComboBox ID="cboViolationSpeed" runat="server" CssClass="formtext" Filter="Contains"
                                                                                                     MarkFirstMatch="true" ChangeTextOnKeyBoardNavigation="false" Skin="Hay">
                                                                                                     <Items>
-                                                                                                        <telerik:RadComboBoxItem Value="1" Text="100 kph (62 mph)"></telerik:RadComboBoxItem>
+                                                                                                       <telerik:RadComboBoxItem Value="1" Text="100 kph (62 mph)"></telerik:RadComboBoxItem>
                                                                                                         <telerik:RadComboBoxItem Value="2" Text="105 kph (65 mph)"></telerik:RadComboBoxItem>
                                                                                                         <telerik:RadComboBoxItem Value="3" Text="110 kph (68 mph)"></telerik:RadComboBoxItem>
-                                                                                                        <telerik:RadComboBoxItem Value="4" Text="115 kph (71 mph)"></telerik:RadComboBoxItem>
+                                                                        <telerik:RadComboBoxItem Value="4" Text="115 kph (71 mph)"></telerik:RadComboBoxItem>
                                                                                                         <telerik:RadComboBoxItem Value="5" Text="120 kph (75 mph)"></telerik:RadComboBoxItem>
-                                                                                                        <telerik:RadComboBoxItem Value="6" Text="125 kph (77 mph)"></telerik:RadComboBoxItem>
+<telerik:RadComboBoxItem Value="6" Text="125 kph (77 mph)"></telerik:RadComboBoxItem>
                                                                                                         <telerik:RadComboBoxItem Value="7" Text="130 kph (80 mph)"></telerik:RadComboBoxItem>
                                                                                                         <telerik:RadComboBoxItem Value="8" Text="140 kph (90 mph)"></telerik:RadComboBoxItem>
                                                                                                     </Items>
@@ -1176,9 +1165,9 @@
                                                                                                         <telerik:RadComboBoxItem Value="1" Text="100 kph (62 mph)"></telerik:RadComboBoxItem>
                                                                                                         <telerik:RadComboBoxItem Value="2" Text="105 kph (65 mph)"></telerik:RadComboBoxItem>
                                                                                                         <telerik:RadComboBoxItem Value="3" Text="110 kph (68 mph)"></telerik:RadComboBoxItem>
-                                                                                                        <telerik:RadComboBoxItem Value="4" Text="115 kph (71 mph)"></telerik:RadComboBoxItem>
+                                                                        <telerik:RadComboBoxItem Value="4" Text="115 kph (71 mph)"></telerik:RadComboBoxItem>
                                                                                                         <telerik:RadComboBoxItem Value="5" Text="120 kph (75 mph)"></telerik:RadComboBoxItem>
-                                                                                                        <telerik:RadComboBoxItem Value="6" Text="125 kph (77 mph)"></telerik:RadComboBoxItem>
+<telerik:RadComboBoxItem Value="6" Text="125 kph (77 mph)"></telerik:RadComboBoxItem>
                                                                                                         <telerik:RadComboBoxItem Value="7" Text="130 kph (80 mph)"></telerik:RadComboBoxItem>
                                                                                                         <telerik:RadComboBoxItem Value="8" Text="140 kph (90 mph)"></telerik:RadComboBoxItem>
                                                                                                     </Items>
@@ -1186,27 +1175,49 @@
                                                                                             </td>
                                                                                         </tr>
                                                                                     </table>
-                                                                                    <asp:CheckBox ID="chkPostedSpeed_Extended" runat="server" Text="Posted Speed Violation" Checked="True" /><br />
-                                                                                    <asp:CheckBox ID="chkAcceleration_Extended" runat="server" Text="Acceleration" Checked="True" /><br />
-                                                                                    <asp:CheckBox ID="chkBraking_Extended" runat="server" Text="Braking" Checked="True" /><br />
-                                                                                    <asp:CheckBox ID="chkSeatBelt_Extended" runat="server" Text="SeatBelt" Checked="True"  /><br />
-                                                                                    <asp:CheckBox ID="chkHyRailSpeed_Extended" runat="server" Text="HyRail Speed" Checked="True" /><br />
-                                                                                    <asp:CheckBox ID="chkReverseSpeed_Extended" runat="server" Text="Reverse Speed" Checked="True"   /><br />
-                                                                                    <asp:CheckBox ID="chkHyRailReverseSpeed_Extended" runat="server" Text="HyRail Reverse Speed" Checked="True" /><br /><br />
+                                                                                      <asp:CheckBox ID="chkPostedSpeed_Extended" runat="server" Text="Posted Speed Violation"
+                                                                                        Checked="True" /><br />
+
+                                                                                    <asp:CheckBox ID="chkAcceleration_Extended" runat="server" Text="Acceleration"
+                                                                                        Checked="True" /><br />
+                                                                                    <asp:CheckBox ID="chkBraking_Extended" runat="server" Text="Braking" Checked="True"
+                                                                                        /><br />
+                                                                                    <asp:CheckBox ID="chkSeatBelt_Extended" runat="server" Text="SeatBelt"
+                                                                                        Checked="True"  /><br />
+                                                                                        <asp:CheckBox ID="chkHyRailSpeed_Extended" runat="server" Text="HyRail Speed"
+                                                                                        Checked="True" /><br />
+                                                                                             <asp:CheckBox ID="chkReverseSpeed_Extended" runat="server" Text="Reverse Speed"
+                                                                                        Checked="True"   /><br />
+                                                                                        <asp:CheckBox ID="chkHyRailReverseSpeed_Extended" runat="server" Text="HyRail Reverse Speed"
+                                                                                        Checked="True" /><br />
+                                                                                    <br />
                                                                                 </td>
                                                                             </tr>
                                                                         </table>
+
+
+
+
                                                                         <table id="tblViolationReport_ExtendedSummary" cellspacing="0" cellpadding="0" border="0" runat="server" visible=false >
                                                                             <tr>
                                                                                 <td class="formtext" style="width:170px" >
-                                                                                    <asp:CheckBox ID="SpeedViolation_ExtendedSummary" runat="server" Text="Speed Violation" Checked="True" /><br />
-                                                                                    <asp:CheckBox ID="chkPostedSpeed_ExtendedSummary" runat="server" Text="Posted Speed Violation" Checked="True" /><br />
-                                                                                    <asp:CheckBox ID="Acceleration_ExtendedSummary" runat="server" Text="Acceleration" Checked="True" /><br />
-                                                                                    <asp:CheckBox ID="Braking_ExtendedSummary" runat="server" Text="Braking" Checked="True" /><br />
-                                                                                    <asp:CheckBox ID="SeatBelt_ExtendedSummary" runat="server" Text="SeatBelt" Checked="True"  /><br />
-                                                                                    <asp:CheckBox ID="HyRailSpeed_ExtendedSummary" runat="server" Text="HyRail Speed" Checked="True" /><br />
-                                                                                    <asp:CheckBox ID="ReverseSpeed_ExtendedSummary" runat="server" Text="Reverse Speed" Checked="True"   /><br />
-                                                                                    <asp:CheckBox ID="HyRailReverseSpeed_ExtendedSummary" runat="server" Text="HyRail Reverse Speed" Checked="True" /><br /><br />
+                                                                                                <asp:CheckBox ID="SpeedViolation_ExtendedSummary" runat="server" Text="Speed Violation" Checked="True" />
+                                                                                    <br />
+                                                                                    <asp:CheckBox ID="chkPostedSpeed_ExtendedSummary" runat="server" Text="Posted Speed Violation"
+                                                                                        Checked="True" /><br />
+                                                                                    <asp:CheckBox ID="Acceleration_ExtendedSummary" runat="server" Text="Acceleration"
+                                                                                        Checked="True" /><br />
+                                                                                    <asp:CheckBox ID="Braking_ExtendedSummary" runat="server" Text="Braking" Checked="True"
+                                                                                        /><br />
+                                                                                    <asp:CheckBox ID="SeatBelt_ExtendedSummary" runat="server" Text="SeatBelt"
+                                                                                        Checked="True"  /><br />
+                                                                                    <asp:CheckBox ID="HyRailSpeed_ExtendedSummary" runat="server" Text="HyRail Speed"
+                                                                                        Checked="True" /><br />
+                                                                                    <asp:CheckBox ID="ReverseSpeed_ExtendedSummary" runat="server" Text="Reverse Speed"
+                                                                                        Checked="True"   /><br />
+                                                                                    <asp:CheckBox ID="HyRailReverseSpeed_ExtendedSummary" runat="server" Text="HyRail Reverse Speed"
+                                                                                        Checked="True" /><br />
+                                                                                    <br />
                                                                                 </td>
                                                                                 <td>
                                                                                           <fieldset runat="server" id="ViolationReport_ExtendedSummaryPoints" style="width: 400px">
