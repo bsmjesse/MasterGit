@@ -8,9 +8,14 @@
 <head runat="server">
     <title>Analytic Report</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="bower_components/select2/dist/css/select2.css" />
+    <!-- endbower -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css" />
     <link href="js/multiple-select/multiple-select.css" rel="stylesheet" />
+
     <style type="text/css">
         .glyphicon {
             margin-right: 10px;
@@ -50,53 +55,9 @@
             display: inline-block;
             vertical-align: top;
         }
-
     </style>
 
 
-    <script type="text/javascript">
-        var SERVER_URL = "http://10.10.110.122:8080/jasperserver-pro";
-        var token = '<%=Token%>';// ; '645CB5DCC552F852C789A08788A3C2EF'
-        var biPublicDashboard = '<%=BiPublicDashboard%>';
-        var biPublicReports = '<%=BiPublicReports%>';
-        var biPublicAdHoc = '<%=BiPublicAdHoc%>';
-        var biOrganizationDashboard = '<%=BiOrganizationDashboard%>';
-        var biOrganizationReports = '<%=BiOrganizationReports%>';
-        var biDemo = '<%=BiDemo%>';
-
-        function disableEnterKey(e) {
-            var key;
-            if (window.event)
-                key = window.event.keyCode; //IE
-            else
-                key = e.which; //firefox      
-
-            return (key != 13);
-        }
-
-        function getFleetData() {
-            //return <%=FLEET_DATA%>;
-            return [[{ id: 4670, title: "Pilot Fleet" }, { id: 4733, title: "Chicago Fleet" }, { id: 4734, title: "Ft. Worth" }]];
-        }
-
-        function getDaysOfWeek() {
-            return [[{ groupName: 'Weekday', data: [{ id: "Monday", title: "Monday" }, { id: "Tuesday", title: "Tuesday" }, { id: "Wednesday", title: "Wednesday" }, { id: "Thursday", title: "Thursday" }, { id: "Friday", title: "Friday" }] }], [{ groupName: 'Weekend', data: [{ id: "Saturday", title: "Saturday" }, { id: "Sunday", title: "Sunday" }] }]];
-        }
-
-        function getDriver() {
-            //return [[{ id: 1, title: "Franklin" }, { id: 2, title: "Tom" }, { id: 3, title: "John" }, { id: 4, title: "Angela" }, { id: 5, title: "William" }, { id: 6, title: "Georage" }]];
-            return <%=DRIVER_DATA%>;
-        }
-
-        function getInfractionCategory() {
-            return [[{ id: "Alarm", title: "Alarm" }, { id: "Diagnostic", title: "Diagnostic" }, { id: "Diagnostic:(Custom)", title: "Diagnostic:(Custom)" }, { id: "DTC", title: "DTC" }, { id: "Violation", title: "Violation" }, { id: "Violation:(Custom)", title: "Violation:(Custom)" }]];
-        }
-
-        function getInfractionList() {
-            return [[{ id: 3, title: "Speed" }, { id: 35, title: "Speeding" }, { id: 37, title: "ServiceRequired" }, { id: 55, title: "HopperDoorsTamper" }, { id: 58, title: "HarshBraking" }, { id: 59, title: "ExtremeBraking" },{id: 60, title: "HarshAcceleration" },{id: 61, title: "ExtrAcceleration" },{id: 62, title: "SeatBelt" },{id: 108, title: "ReverseExcessDistance" },{id: 111, title: "HighRailSpeed" },{id: 113, title: "ReverseHyRailExcessSpeed" },{id: 119, title: "Harsh Drive" },{id: 503, title: "Speed Event" },{id: 506, title: "HarshBraking" },{id: 507, title: "ExtremeBraking" },{id: 508, title: "HarshAcceleration" },{id: 509, title: "ExtrAcceleration" },{id: 515, title: "Speed Bucket" },{id: 521, title: "Speed In Landmark" },{id: 529, title: "Idle in Landmark" },{id: 531, title: "Seatbelt" },{id: 558, title: "Driver class" }]];
-        }
-
-    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -105,7 +66,7 @@
             <div class="row">
 
                 <!-- Menu -->
-                <div class="col-sm-2 col-md-2">
+                <div class="col-sm-3 col-xs-3 col-md-2 col-md-2">
                     <div class="panel-group" id="accordion">
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -173,22 +134,21 @@
                 </div>
                 <!-- End of Menu -->
 
-                
-                <div class="col-sm-10 col-md-10 reportContainer">
+
+                <div class="col-sm-9 col-xs-9 col-md-10 reportContainer">
                     <div class="row">
                         <div class="well col-xs-12">
                             <div id="filter-title"></div>
-                            <button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="collapse" data-target="#dashboard-filters">
+                            <button id="dashboard-filters-toggle" type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="collapse" data-target="#dashboard-filters" onclick="BSM.Controls.onToggle()">
                                 Filters<span class="caret"></span>
                             </button>
-                            <div class="form-horizontal">
-                                <div id="dashboard-filters" class="collapse">
+                            <div id="dashboard-filters" class="collapse">
 
-                                    <div id="productFamilySelector">
-                                    </div>
-                                    <button type="button" class="btn btn-default" onclick="runDashboardWithAllParams()">Apply</button>
-
+                                <div id="productFamilySelector" class="form-horizontal">
                                 </div>
+                                <br />
+                                <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#dashboard-filters" onclick="BSM.jasper.runDashboardWithAllParams()">Apply</button>
+
                             </div>
                         </div>
                     </div>
@@ -202,18 +162,40 @@
 
             </div>
         </div>
+        <!-- bower:js -->
+        <script src="bower_components/es5-shim/es5-shim.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
+        <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script src="bower_components/json3/lib/json3.js"></script>
+        <script src="bower_components/select2/dist/js/select2.js"></script>
+        <script src="bower_components/string/dist/string.min.js"></script>
+        <!-- endbower -->
+        <script src="js/bsm.js"></script>
+        <script type="text/javascript">
+            var SERVER_URL = "http://10.10.110.122:8080/jasperserver-pro";
+            var token = '<%=Token%>';// ; '645CB5DCC552F852C789A08788A3C2EF'
+            var biPublicDashboard = '<%=BiPublicDashboard%>';
+            var biPublicReports = '<%=BiPublicReports%>';
+            var biPublicAdHoc = '<%=BiPublicAdHoc%>';
+            var biOrganizationDashboard = '<%=BiOrganizationDashboard%>';
+            var biOrganizationReports = '<%=BiOrganizationReports%>';
+            var biDemo = '<%=BiDemo%>';
+            BSM.drivers = <%=DRIVER_DATA%>;
+
+        </script>
     </form>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bower_components/underscore/underscore-min.js"></script>
-    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
-    <script src="bower_components/moment/min/moment.min.js"></script>
-    <script src="bower_components/string/dist/string.min.js"></script>
-    
-    <script src="js/bsm.js"></script>
-    <script src="js/controls.js"></script>
+
     <script src="js/visualize.js?_opt=false"></script>
+
+
+    <script src="js/controls.js"></script>
     <script src="js/jasper2.js"></script>
     <script src="js/multiple-select/jquery.multiple.select.js"></script>
+
+    <script>
+
+    </script>
 </body>
 </html>

@@ -1,25 +1,18 @@
 var BSM = BSM || {};
 
+
 BSM.Controls = function (el) {
 
-    function _daysOfWeekControl() {
-        if ($('#Select_Days_of_Week').length === 1) {
-            var _parent = $('#Select_Days_of_Week').parent();
-            $(_parent).append('<select id="Select_Days_of_Week" multiple="multiple"><option value="1">Monday</option><option value="2">Tuesday</option><option value="3">Wednesday</option><option value="4">Thursday</option><option value="5">Friday</option><option value="4">Saturday</option><option value="12">Sunday</option></select>');
-            $('#Select_Days_of_Week').remove();
-        };
-    };
-
     function _dateControl(elementId, startDate, maxDate) {
-        startDate = startDate || Date.now();
-        $('#' + elementId).datepicker();
-        $('#' + elementId).datepicker('setDate', startDate);
+        var dateRange = moment().subtract(14, 'days').format("MM/DD/YYYY") + ' - ' + moment().format("MM/DD/YYYY") ;
+        $('#StartDate').val(dateRange);
+        //$('#' + elementId).datepicker('setDate', startDate);
     };
 
     function _multipleSelectControl(elementId, dataFeed, defaultData) {
         if ($('#' + elementId).length === 1) {
 
-            var _data = window[dataFeed]();
+            var _data = dataFeed;
             var _html = '<br /><select id="' + elementId + '" multiple="multiple">';
             if (_data.length === 1) // only one group
             {
@@ -89,7 +82,7 @@ BSM.Controls = function (el) {
     function _singleSelectControl(elementId, dataFeed, defaultData) {
         if ($('#' + elementId).length === 1) {
 
-            var _data = window[dataFeed]();
+            var _data = dataFeed;
             var _html = '<br /><select style="width:250px;" id="' + elementId + '">';
 
             for (var i = 0; i < _data[0].length; i++) {
@@ -136,24 +129,74 @@ BSM.Controls = function (el) {
         }
 
         //_daysOfWeekControl();
-        _multipleSelectControl('Select_Days_of_Week', 'getDaysOfWeek', ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]);
-        _multipleSelectControl('Fleet_Selector', 'getFleetData', ["124552"]);
-        _multipleSelectControl('Driver_Select', 'getDriver');
-        _multipleSelectControl('Driver_Select_2', 'getDriver');
-        _singleSelectControl('Infraction_Category', 'getInfractionCategory', "Violation");
-        _multipleSelectControl('Infractions_List', 'getInfractionList');
+        _multipleSelectControl('Select_Days_of_Week', getDaysOfWeek(), ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]);
+        _multipleSelectControl('Fleet_Selector', getFleetData(), ["124552"]);
+        _multipleSelectControl('Driver_Select', getDriver());
+        _multipleSelectControl('Driver_Select_2', getDriver());
+        _singleSelectControl('Infraction_Category', getInfractionCategory(), "Violation");
+        _multipleSelectControl('Infractions_List', getInfractionList());
+    }
+
+        function _onToggleLoadDateRangePicker() {
+            var $j = jQuery.noConflict();
+            $('#StartDate').daterangepicker({
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }}); //Success
+            $('#EndDate').remove();
+            $('label[for=StartDate]').text('Start and End Date');
+        }
+
+    function getFleetData(){
+        //return <%=FLEET_DATA%>;
+        return [[{ id: 4670, title: "Pilot Fleet" }, { id: 4733, title: "Chicago Fleet" }, { id: 4734, title: "Ft. Worth" }]];
+    }
+
+    function getDaysOfWeek() {
+        return [[{ groupName: 'Weekday', data: [{ id: "Monday", title: "Monday" }, { id: "Tuesday", title: "Tuesday" }, { id: "Wednesday", title: "Wednesday" }, { id: "Thursday", title: "Thursday" }, { id: "Friday", title: "Friday" }] }], [{ groupName: 'Weekend', data: [{ id: "Saturday", title: "Saturday" }, { id: "Sunday", title: "Sunday" }] }]];
+    }
+
+    function getDriver() {
+        //return [[{ id: 1, title: "Franklin" }, { id: 2, title: "Tom" }, { id: 3, title: "John" }, { id: 4, title: "Angela" }, { id: 5, title: "William" }, { id: 6, title: "Georage" }]];
+        return BSM.drivers;
+    }
+
+    function getInfractionCategory() {
+        return [[{ id: "Alarm", title: "Alarm" }, { id: "Diagnostic", title: "Diagnostic" }, { id: "Diagnostic:(Custom)", title: "Diagnostic:(Custom)" }, { id: "DTC", title: "DTC" }, { id: "Violation", title: "Violation" }, { id: "Violation:(Custom)", title: "Violation:(Custom)" }]];
+    }
+
+    function getInfractionList() {
+        return [[{ id: 3, title: "Speed" }, { id: 35, title: "Speeding" }, { id: 37, title: "ServiceRequired" }, { id: 55, title: "HopperDoorsTamper" }, { id: 58, title: "HarshBraking" }, { id: 59, title: "ExtremeBraking" }, { id: 60, title: "HarshAcceleration" }, { id: 61, title: "ExtrAcceleration" }, { id: 62, title: "SeatBelt" }, { id: 108, title: "ReverseExcessDistance" }, { id: 111, title: "HighRailSpeed" }, { id: 113, title: "ReverseHyRailExcessSpeed" }, { id: 119, title: "Harsh Drive" }, { id: 503, title: "Speed Event" }, { id: 506, title: "HarshBraking" }, { id: 507, title: "ExtremeBraking" }, { id: 508, title: "HarshAcceleration" }, { id: 509, title: "ExtrAcceleration" }, { id: 515, title: "Speed Bucket" }, { id: 521, title: "Speed In Landmark" }, { id: 529, title: "Idle in Landmark" }, { id: 531, title: "Seatbelt" }, { id: 558, title: "Driver class" }]];
     }
 
 
     return {
         scanControls: _scanControls,
 
+        onToggle: _onToggleLoadDateRangePicker,
+
         removeLeft: function () {
             _.each($('.dashlet').parent(), function (data) {
-                if (data.getAttribute('componentid') === "BSM_ADHOC_View_TEMPLATE_Report") {
+                if ($(data).data('componentid') === "BSM_ADHOC_View_TEMPLATE_Report") {
                     $(data).remove();
                 }
             });
+        },
+
+        humanize: function () {
+            _.each($('label'), function (label) {
+                $(label).text(S($(label).text).humanize());
+                
+            });
+        },
+
+        applyDateRangePicker: function(){
+            $('#StartDate').daterangepicker();
         },
 
         isValidDate: function (d) {
