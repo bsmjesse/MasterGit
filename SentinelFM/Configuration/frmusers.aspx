@@ -4,7 +4,7 @@
 <%@ Register Src="../UserControl/HierarchyTree.ascx" TagName="HierarchyTree" TagPrefix="uc4" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD html 4.0 Transitional//EN" >
 <html>
-<head runat="server">
+<head id="Head1" runat="server">
     <title>frmUsers</title>
     <meta content="Microsoft Visual Studio 7.0" name="GENERATOR">
     <meta content="C#" name="CODE_LANGUAGE">
@@ -68,20 +68,19 @@
 </head>
 <body>
     <script language="javascript" type="text/javascript">
-        
+
         function ConfirmDeletePlan() {
             var cboStatusid = document.getElementById("cboStatus");
 
             var cmbstatusText = cboStatusid.options[cboStatusid.selectedIndex].text;
-            
-            if(cmbstatusText == 'Delete' || cmbstatusText == 'Effacer' )
-            {
+
+            if (cmbstatusText == 'Delete' || cmbstatusText == 'Effacer') {
                 if (confirm("<%= confirmDeletePlan %>")) return true;
                 else return false;
-              
+
             }
             return true;
-            
+
         }
 
         function clickButton(e, buttonid) {
@@ -454,6 +453,7 @@
                                                                                                                 <asp:BoundColumn DataField="ExpiredDate" HeaderText='<%$ Resources:dgUsers_ExpiredDate %>'></asp:BoundColumn>
                                                                                                                 <asp:BoundColumn DataField="UserStatus" HeaderText='<%$ Resources:dgUsers_Status %>'></asp:BoundColumn>
                                                                                                                 <asp:BoundColumn DataField="UserGroups" HeaderText='<%$ Resources:dgUsers_UserGroups %>' ItemStyle-Width="220"></asp:BoundColumn>
+                                                                                                                <asp:BoundColumn DataField="Fleets" HeaderText='<%$ Resources:dgUsers_Fleets %>' ItemStyle-Width="220" ItemStyle-Height="20"></asp:BoundColumn>
                                                                                                                 <asp:ButtonColumn Text="&lt;img src=../images/edit.gif border=0&gt;" CommandName="Select" meta:resourcekey="ButtonColumnResource1"></asp:ButtonColumn>
                                                                                                                 <asp:ButtonColumn Text='<%$ Resources:dgUsers_Settings %>' CommandName="Settings"></asp:ButtonColumn>
                                                                                                             </Columns>
@@ -505,16 +505,16 @@
     <script language="javascript">
         function passwordChanged() {
             var strength = document.getElementById('strength');
-            var strongRegex = new RegExp("^(?=.{9,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
-            var mediumRegex = new RegExp("^(?=.{8,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
-            var enoughRegex = new RegExp("(?=.{7,}).*", "g");
+            var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+            var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+            var enoughRegex = new RegExp("(?=.{6,}).*", "g");
             var pwd = document.getElementById("txtPassword");
             var txtPasswordStatus = document.getElementById("txtPasswordStatus"); //document.forms[0].elements["txtPasswordStatus"];
 
             if (pwd.value.length == 0) {
                 strength.innerHTML = '<%=msgPsw_TypePassword%>';
-	            } else if (false == enoughRegex.test(pwd.value)) {
-	                strength.innerHTML = '<%=msgPsw_MoreCharacters%>';
+            } else if (false == enoughRegex.test(pwd.value)) {
+                strength.innerHTML = '<%=msgPsw_MoreCharacters%>';
 	                txtPasswordStatus.value = "0";
 	            } else if (strongRegex.test(pwd.value)) {
 	                strength.innerHTML = '<span style="color:green"><%=msgPsw_Strong%></span>';
@@ -526,14 +526,14 @@
 	                strength.innerHTML = '<span style="color:red"><%=msgPsw_Weak%></span>';
 	                txtPasswordStatus.value = "0";
 	            }
-        }
+}
 
-        function ExportToExcel() {
-            document.getElementById('exportdata').value = document.getElementById('expdata').value;
-            document.getElementById('filename').value = "users";
-            document.getElementById('formatter').value = "excel2007";
-            exportform.submit();
-        }
+function ExportToExcel() {
+    document.getElementById('exportdata').value = document.getElementById('expdata').value;
+    document.getElementById('filename').value = "users";
+    document.getElementById('formatter').value = "excel2007";
+    exportform.submit();
+}
     </script>
 
     <iframe id="exportframe" name="exportframe" style="display: none"></iframe>
