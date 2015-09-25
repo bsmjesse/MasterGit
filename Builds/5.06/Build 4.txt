@@ -1,0 +1,10 @@
+5.06 Build 4 Created 15 Sept 2015
+Bug 846 : SSRS Trip Summary Report : by Vehicle / By Driver / show driver for trips - 13923 \ 1836 Lawrence
+Bug 855 : 16010: Red-d-Arc users cannot view the TERT value with the Scheduled Update message Peter
+Bug 856 : SSRS: CN - Landmark Auditing Report - 15665 /  TFS Change set : 5220 Lawrence
+Bug 858 : Garda Map New: map not centered when all vehilces selected Peter
+
+Deploy to Preprod : 25 Sept 2015
+
+
+

@@ -1,0 +1,12 @@
+5.06 Build 7 Created 22 Sept 2015
+Bug 872 : 16356: HQ - The Date/Time column is missing on old map Peter
+Bug 873 : 0016080: Ameco Audit of Sentinel has uncovered several issues with log-in security Archana
+
+Deploy to Preprod : 25 Sept 2015
+
+
+
+
+
+
+
