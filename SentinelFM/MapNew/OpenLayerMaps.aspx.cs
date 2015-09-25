@@ -171,7 +171,8 @@ namespace SentinelFM
         {
             sConnectionString = ConfigurationManager.ConnectionStrings["SentinelFMConnection"].ConnectionString;
             ShowAlarmPage = false;
-            if (sn.User.OrganizationId == 480 || sn.User.OrganizationId == 999991)
+            
+            if (sn.User.ControlEnable(sn, 115))
             {
                 //if (sn.User.UserGroupId == 1 || sn.User.UserGroupId == 7 || sn.User.UserGroupId == 27 || sn.User.UserGroupId == 36 || sn.User.UserGroupId == 44 || sn.UserID == 12394) // hgi user, Armored Car Security Admin, Dispatcher, NCC, NCC Admin, user: mis45050
                 //{

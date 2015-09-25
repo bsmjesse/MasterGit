@@ -97,7 +97,7 @@ namespace VLF.ASI.Interfaces
          }
       }
 
-      private int AddUserLogin(string userName, string userIp, ref int userId)
+      private int AddUserLogin(string userName, string userIp, string LoginUserSecId, ref int userId)
       {
          // Retrieve user id					
          if (userId == VLF.CLS.Def.Const.unassignedIntValue)
@@ -118,14 +118,39 @@ namespace VLF.ASI.Interfaces
            using (User dbUser = new User(LoginManager.GetConnnectionString(userId)))
             {
                // it return an int, but is not used
-               dbUser.AddUserLogin(userId, DateTime.Now.AddHours(-Convert.ToInt16(AppConfig.GetInstance().ServerTimeZone)), userIp);
+                dbUser.AddUserLogin(userId, DateTime.Now.AddHours(-Convert.ToInt16(AppConfig.GetInstance().ServerTimeZone)), userIp, LoginUserSecId);
             }
 
          }
 
          return (int)InterfaceError.NoError;
-
       }
+
+      private int AddUserLoginExtended(string UserName, string UserIP, int UserId, int LoginUseId, string LoginUserSecId)
+      {
+          int LoginID = 0;
+          				
+          if (UserId == VLF.CLS.Def.Const.unassignedIntValue)
+          {
+              // unsucessful login
+              Log("<< AddUserLoginExtended : Unsuccessful (UserName={0}, UserIP={1}, LoginUserId={2})", UserName, UserIP, LoginUseId.ToString());
+              return (int)InterfaceError.AuthenticationFailed;
+          }
+          else
+          {
+              Log(">> AddUserLoginExtended (UserName={0}, UserIP={1}, LoginUserId={2})", UserName, UserIP, LoginUseId.ToString());
+
+              using (User dbUser = new User(LoginManager.GetConnnectionString(UserId)))
+              {
+                  // it returns inserted record id
+                  LoginID = dbUser.AddUserLoginExtended(UserId, UserIP, LoginUseId, LoginUserSecId);
+              }
+
+          }
+
+          return LoginID;
+      }
+
       #endregion refactored functions
 
       [WebMethod]
@@ -137,7 +162,7 @@ namespace VLF.ASI.Interfaces
 
 				userId = LoginManager.GetInstance().LoginUser( userName, password, ref SID ) ;
             
-            return AddUserLogin(userName, userIp, ref userId);
+            return AddUserLogin(userName, userIp, SID, ref userId);
 			}
 			catch( Exception Ex )
 			{
@@ -207,7 +232,7 @@ namespace VLF.ASI.Interfaces
                 userId = LoginManager.GetInstance().LoginUserMD5(userName, srvPassword, "", ref SID);
                 
 
-            return AddUserLogin(userName, userIp, ref userId);
+            return AddUserLogin(userName, userIp, SID, ref userId);
 			}
 			catch(Exception Ex )
 			{
@@ -220,7 +245,7 @@ namespace VLF.ASI.Interfaces
 
         [WebMethod]
         public int LoginMD5Extended(string key, string userName, string password,
-                                     string userIp, ref int userId, ref string SID, ref int SuperOrganizationId, ref string Email, ref bool isDisclaimer)
+                                    string userIp, ref int userId, ref string SID, ref int SuperOrganizationId, ref string Email, ref bool isDisclaimer)
         {
             Log(">> LoginMD5Extended (userName={0}, userIp={1})", userName, userIp);
 
@@ -281,12 +306,9 @@ namespace VLF.ASI.Interfaces
                     }
                 }
 
-
                 userId = LoginManager.GetInstance().LoginUserMD5(userName, srvPassword, "", ref SID);
 
-
-                return AddUserLogin(userName, userIp, ref userId);
-
+                return AddUserLogin(userName, userIp, SID, ref userId);
             }
             catch (Exception Ex)
             {
@@ -295,7 +317,50 @@ namespace VLF.ASI.Interfaces
             }
         }
 
+        [WebMethod]
+        public int LoginMD5ExtendedSuperUser(string userName, string password, string userIp, int LoginUserId, string LoginUserSecId,
+                                     ref int userId, ref string SID, ref int SuperOrganizationId, ref string Email, ref bool isDisclaimer)
+        {
+            Log(">> LoginMD5Extended (userName={0}, userIp={1})", userName, userIp);
 
+            string srvPassword = VLF.CLS.Def.Const.unassignedStrValue;
+            string connection = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString;
+            try
+            {
+                using (User user = new User(connection))
+                {                  
+                    //Retrieves user password from DB
+                    DataSet dsInfo = user.GetUserInfoByUserName(userName);
+                    if (ASIErrorCheck.IsAnyRecord(dsInfo))
+                    {
+                        srvPassword = dsInfo.Tables[0].Rows[0]["HashPassword"].ToString().TrimEnd();
+                        SuperOrganizationId = Convert.ToInt32(dsInfo.Tables[0].Rows[0]["SuperOrganizationId"].ToString().TrimEnd());
+                        Email = Convert.ToString(dsInfo.Tables[0].Rows[0]["Email"]).TrimEnd();
+                        isDisclaimer = Convert.ToBoolean(dsInfo.Tables[0].Rows[0]["isDisclaimer"]);
+                    }
+                    else
+                    {
+                        return (int)InterfaceError.AuthenticationFailed;
+                    }
+                }
+                
+                if (password != srvPassword)
+                {
+                    // unscessful login
+                    Log("<< LoginMD5ExtendedSwitchUser : unmatched password (II) (userName={0}, userIp={1})", userName, userIp);
+                    return (int)InterfaceError.AuthenticationFailed;
+                }
+         
+                userId = LoginManager.GetInstance().LoginUserMD5(userName, srvPassword, "", ref SID);
+
+                return AddUserLoginExtended(userName, userIp, userId, LoginUserId, LoginUserSecId);
+            }
+            catch (Exception Ex)
+            {
+                LogException("<< LoginMD5ExtendedSwitchUser : username={0} EXC={1}", userName, Ex.Message);
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
 
 
         [WebMethod]
@@ -369,7 +434,7 @@ namespace VLF.ASI.Interfaces
 
 
                 userId = LoginManager.GetInstance().LoginUserMD5(userName, srvPassword, dbName, ref SID);
-                return AddUserLogin(userName, userIp, ref userId);
+                return AddUserLogin(userName, userIp, SID, ref userId);
 
             }
             catch (Exception Ex)
@@ -413,7 +478,7 @@ namespace VLF.ASI.Interfaces
             // Retrieve user id					
             userId = LoginManager.GetInstance().LoginUser(userName, srvPassword, ref SID);
             
-            return AddUserLogin(userName, userIp, ref userId);
+            return AddUserLogin(userName, userIp, SID, ref userId);
 
          }
          catch (Exception Ex)
