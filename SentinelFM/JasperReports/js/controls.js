@@ -72,8 +72,9 @@ BSM.Controls = function (el) {
 
             if (defaultData != undefined && defaultData != '') {
                 jQuery('#' + elementId).val(defaultData);
+                //jQuery('#' + elementId).multipleSelect('setSelects', [1]);
                 jQuery('#' + elementId).multipleSelect('refresh');
-            }
+            }            
 
         };
 
@@ -94,7 +95,7 @@ BSM.Controls = function (el) {
             var _parent = $('#' + elementId).parent();
             $('#' + elementId).remove();
             $(_parent).append(_html);
-            $('#' + elementId).multipleSelect({
+            jQuery('#' + elementId).multipleSelect({
                 filter: true,
                 single: true
             });
@@ -147,7 +148,10 @@ BSM.Controls = function (el) {
                     'Last 30 Days': [moment().subtract(29, 'days'), moment()],
                     'This Month': [moment().startOf('month'), moment().endOf('month')],
                     'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                }}); //Success
+                },
+                startDate: moment([2015, 6, 1]),
+                endDate: moment([2015, 6, 31])
+            }); //Success
             $('#EndDate').remove();
             $('label[for=StartDate]').text('Start and End Date');
         }
