@@ -453,7 +453,6 @@
                                                                                                                 <asp:BoundColumn DataField="ExpiredDate" HeaderText='<%$ Resources:dgUsers_ExpiredDate %>'></asp:BoundColumn>
                                                                                                                 <asp:BoundColumn DataField="UserStatus" HeaderText='<%$ Resources:dgUsers_Status %>'></asp:BoundColumn>
                                                                                                                 <asp:BoundColumn DataField="UserGroups" HeaderText='<%$ Resources:dgUsers_UserGroups %>' ItemStyle-Width="220"></asp:BoundColumn>
-                                                                                                                <asp:BoundColumn DataField="Fleets" HeaderText='<%$ Resources:dgUsers_Fleets %>' ItemStyle-Width="220" ItemStyle-Height="20"></asp:BoundColumn>
                                                                                                                 <asp:ButtonColumn Text="&lt;img src=../images/edit.gif border=0&gt;" CommandName="Select" meta:resourcekey="ButtonColumnResource1"></asp:ButtonColumn>
                                                                                                                 <asp:ButtonColumn Text='<%$ Resources:dgUsers_Settings %>' CommandName="Settings"></asp:ButtonColumn>
                                                                                                             </Columns>
@@ -505,9 +504,9 @@
     <script language="javascript">
         function passwordChanged() {
             var strength = document.getElementById('strength');
-            var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
-            var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
-            var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+            var strongRegex = new RegExp("^(?=.{9,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+            var mediumRegex = new RegExp("^(?=.{8,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+            var enoughRegex = new RegExp("(?=.{7,}).*", "g");
             var pwd = document.getElementById("txtPassword");
             var txtPasswordStatus = document.getElementById("txtPasswordStatus"); //document.forms[0].elements["txtPasswordStatus"];
 
