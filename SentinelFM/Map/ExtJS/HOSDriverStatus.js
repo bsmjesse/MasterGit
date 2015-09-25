@@ -143,7 +143,9 @@ Ext.onReady(function () {
                 Ext.each(iGrid.columns, function (col, index) {
                     if (index == 9)
                         return;
-                    columnsp += col.text + ':' + col.dataIndex + ',';
+                    if (col.text != "" && col.dataIndex != "") {
+                        columnsp += col.text + ':' + col.dataIndex + ',';
+                    }
                 });
                 columnsp = columnsp.substring(0, columnsp.length - 1);
                 path = '../HOS/HOSData.aspx?QueryType=ExportDriverStatus&formattype=' + fType + '&operation=Export' + '&columns=' + columnsp;
@@ -152,7 +154,10 @@ Ext.onReady(function () {
                 Ext.each(iGrid.columns, function (col, index) {
                     //if (index == 9)
                     //    return;
-                    columnsp += col.text + ':' + col.dataIndex + ',';
+                    if (col.text != "" && col.dataIndex != "") {
+                        columnsp += col.text + ':' + col.dataIndex + ',';
+                    }
+                    
                 });
                 columnsp = columnsp.substring(0, columnsp.length - 1);
                 var fDate = Ext.Date.format(historyDateFrom.value, userdateformat);//'m-d-Y g:i A'
@@ -164,7 +169,10 @@ Ext.onReady(function () {
                 Ext.each(iGrid.columns, function (col, index) {
                     //if (index == 9)
                     //    return;
-                    columnsp += col.text + ':' + col.dataIndex + ',';
+                    if (col.text != "" && col.dataIndex != "" && col.dataIndex.toLowerCase() != "image")
+                        {
+                            columnsp += col.text + ':' + col.dataIndex + ',';
+                        }
                 });
                 columnsp = columnsp.substring(0, columnsp.length - 1);
                 var fDate = Ext.Date.format(inspectionDateFrom.value, userdateformat);//'m-d-Y g:i A'
@@ -452,7 +460,9 @@ Ext.onReady(function () {
       { name: 'VehicleID', type: 'string' },
       { name: 'Odometer', type: 'string' },
       { name: 'FleetId', type: 'string' },
-      { name: 'image', type: 'string' } //Devin Added on 2014-08-29
+      { name: 'image', type: 'string' },
+      { name: 'Duration', type: 'string' },
+      //Devin Added on 2014-08-29
       ]
    }
    );
@@ -1134,14 +1144,9 @@ Ext.onReady(function () {
                         );
                 //alert('?? ' + iDriverID + '->' + isNaN(iDriverID));
                 //if (typeof driverId == 'number' && isNaN(iDriverID) == false) {
-                if (iDriverID != '') {
-                    logsheetgrid.columns[2].setVisible(false);
-                    inspectiongrid.columns[3].setVisible(false);
-                }
-                else {
-                    logsheetgrid.columns[2].setVisible(true);
-                    inspectiongrid.columns[3].setVisible(true);
-                }
+                logsheetgrid.columns[2].setVisible(true);
+                inspectiongrid.columns[3].setVisible(true);
+
 
                 //iDriverID = '';
                 return;
@@ -1188,13 +1193,14 @@ Ext.onReady(function () {
                         );
                 //alert('?? ' + iDriverID + '->' + isNaN(iDriverID));
                 //if (typeof driverId == 'number' && isNaN(iDriverID) == false) {
+                logsheetgrid.columns[2].setVisible(true);
                 if (iDriverID != '') {
-                    logsheetgrid.columns[2].setVisible(false);
+                    //logsheetgrid.columns[2].setVisible(true);
                     btnViewDriverLogsheet.setVisible(true);
                     btnViewDriverInspection.setVisible(true);
                 }
                 else {
-                    logsheetgrid.columns[2].setVisible(true);
+                    //logsheetgrid.columns[2].setVisible(true);
                     btnViewDriverLogsheet.setVisible(false);
                     btnViewDriverInspection.setVisible(false);
                 }
@@ -1792,14 +1798,8 @@ Ext.onReady(function () {
                 }
                         );
 
-                if (iDriverID != '') {
-                    inspectiongrid.columns[3].setVisible(false);
-                    logsheetgrid.columns[2].setVisible(false);
-                }
-                else {
-                    inspectiongrid.columns[3].setVisible(true);
-                    logsheetgrid.columns[2].setVisible(true);
-                }
+                inspectiongrid.columns[3].setVisible(true);
+                logsheetgrid.columns[2].setVisible(true);
 
                 //iDriverID = '';
                 return;
@@ -1846,13 +1846,14 @@ Ext.onReady(function () {
                         );
                 //alert('?? ' + iDriverID + '->' + isNaN(iDriverID));
                 //if (typeof driverId == 'number' && isNaN(iDriverID) == false) {
+                inspectiongrid.columns[3].setVisible(true);
                 if (iDriverID != '') {
-                    inspectiongrid.columns[3].setVisible(false);
+                    //inspectiongrid.columns[3].setVisible(false);
                     btnViewDriverInspection.setVisible(true);
                     btnViewDriverLogsheet.setVisible(true);
                 }
                 else {
-                    inspectiongrid.columns[3].setVisible(true);
+                    //inspectiongrid.columns[3].setVisible(true);
                     btnViewDriverInspection.setVisible(false);
                     btnViewDriverLogsheet.setVisible(false);
                 }
@@ -2129,7 +2130,7 @@ Ext.onReady(function () {
          {
              text: 'Date/Time',
              align: 'left',
-             width: 70,
+             width: 80,
              xtype: 'datecolumn',
              format: userdateformat,
              dataIndex: 'InsTime',
@@ -2168,6 +2169,13 @@ Ext.onReady(function () {
                       renderer: function (value, p, record) {
                           return viewInspectionImage(value);
                       }
+         },
+         {
+             text: 'Duration(h:m:s)',
+             align: 'left',
+             width: 90,
+             dataIndex: 'Duration',
+             sortable: true
          }
       ],
        dockedItems: [
@@ -2382,13 +2390,14 @@ function OpenLog(driverId, driverName) {
     
     //if (typeof driverId == 'number' || isNaN(driverId) == false) {
     //if (driverId != ''){
+    logsheetgrid.columns[2].setVisible(true);
     if (typeof driverId == 'number') {
-        logsheetgrid.columns[2].setVisible(false);
+        //logsheetgrid.columns[2].setVisible(false);
         btnViewDriverLogsheet.setVisible(true);
         btnViewDriverInspection.setVisible(true);
     }
     else {
-        logsheetgrid.columns[2].setVisible(true);
+        //logsheetgrid.columns[2].setVisible(true);
         btnViewDriverLogsheet.setVisible(false);
         btnViewDriverInspection.setVisible(false);
     }
@@ -2419,14 +2428,14 @@ function OpenIns(driverId, driverName) {
             driverId: driverId
         }
     });
-
+    inspectiongrid.columns[3].setVisible(true);
     if (typeof driverId == 'number') {
-        inspectiongrid.columns[3].setVisible(false);
+        //inspectiongrid.columns[3].setVisible(false);
         btnViewDriverLogsheet.setVisible(true);
         btnViewDriverInspection.setVisible(true);
     }
     else {
-        inspectiongrid.columns[3].setVisible(true);
+        //inspectiongrid.columns[3].setVisible(true);
         btnViewDriverLogsheet.setVisible(false);
         btnViewDriverInspection.setVisible(false);
     }
