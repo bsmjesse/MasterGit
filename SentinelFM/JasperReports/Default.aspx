@@ -17,21 +17,6 @@
     <link href="js/multiple-select/multiple-select.css" rel="stylesheet" />
 
     <style type="text/css">
-        .glyphicon {
-            margin-right: 10px;
-        }
-
-        .panel-body {
-            padding: 0px;
-        }
-
-            .panel-body table tr td {
-                padding-left: 15px;
-            }
-
-            .panel-body .table {
-                margin-bottom: 0px;
-            }
 
         .reportContainer {
             height: 95vh;
@@ -147,14 +132,14 @@
                                 <div id="productFamilySelector" class="form-horizontal">
                                 </div>
                                 <br />
-                                <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#dashboard-filters" onclick="BSM.jasper.runDashboardWithAllParams()">Apply</button>
+                                <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#dashboard-filters" onclick="BSM.jasper.runDashboardWithAllParams(window)">Apply</button>
 
                             </div>
                         </div>
                     </div>
                     <div id="divContainer" class="reportContainer"></div>
                     <div id="divReportView" class="reportContainer" style="display: none;">
-                        <iframe id="reportView" name="reportView" src="" frameborder="0" style="overflow: hidden; height: 100%; width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+                        <iframe id="reportView" name="reportView" src="" frameborder="0" style="overflow: hidden; height: 100%; width: 100%; position: absolute;"></iframe>
                     </div>
 
                 </div>
@@ -174,28 +159,31 @@
         <!-- endbower -->
         <script src="js/bsm.js"></script>
         <script type="text/javascript">
-            var SERVER_URL = "http://10.10.110.122:8080/jasperserver-pro";
-            var token = '<%=Token%>';// ; '645CB5DCC552F852C789A08788A3C2EF'
-            var biPublicDashboard = '<%=BiPublicDashboard%>';
-            var biPublicReports = '<%=BiPublicReports%>';
-            var biPublicAdHoc = '<%=BiPublicAdHoc%>';
-            var biOrganizationDashboard = '<%=BiOrganizationDashboard%>';
-            var biOrganizationReports = '<%=BiOrganizationReports%>';
-            var biDemo = '<%=BiDemo%>';
+            BSM.SERVER_URL = "http://10.10.110.122:8080/jasperserver-pro";
+            BSM.token = '<%=Token%>';// ; '645CB5DCC552F852C789A08788A3C2EF'
+            BSM.biPublicDashboard = '<%=BiPublicDashboard%>';
+            BSM.biPublicReports = '<%=BiPublicReports%>';
+            BSM.biPublicAdHoc = '<%=BiPublicAdHoc%>';
+            BSM.biOrganizationDashboard = '<%=BiOrganizationDashboard%>';
+            BSM.biOrganizationReports = '<%=BiOrganizationReports%>';
+            BSM.biDemo = '<%=BiDemo%>';
             BSM.drivers = <%=DRIVER_DATA%>;
 
         </script>
     </form>
 
     <script src="js/visualize.js?_opt=false"></script>
-
-
+    <script src="js/bsm.visualize.js"></script>
+    <script src="js/bsm.analytics.view.js"></script>
     <script src="js/controls.js"></script>
     <script src="js/jasper2.js"></script>
     <script src="js/multiple-select/jquery.multiple.select.js"></script>
 
     <script>
+        $(document).ready(function () {
 
+            BSM.Visualize.loadMenu(window);
+        });
     </script>
 </body>
 </html>

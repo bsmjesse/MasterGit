@@ -32,25 +32,28 @@
             }
         },
 
+        // !! This is the name of the task ('requirejs')
         requirejs: {
-            compile: {
+            compile:
+            {
+
+                // !! You can drop your app.build.js config wholesale into 'options'
                 options: {
-                    baseUrl: "js",
-                    mainConfigFile: "js/config.js",
-                    out: "js/optimized.js",
+                    appDir: "src/",
+                    baseUrl: ".",
+                    dir: "target/",
+                    optimize: 'uglify',
+                    mainConfigFile: './src/main.js',
                     modules: [
-                        {
-                            name: '../common',
-                            //List common dependencies here. Only need to list
-                            //top level dependencies, "include" will find
-                            //nested dependencies.
-                            include: [
-                              'jquery',
-                              'js/controls',
-                            ]
-                        }
-                    ]
-                },
+                      {
+                          name: 'MyModule'
+                      }
+                    ],
+                    logLevel: 0,
+                    findNestedDependencies: true,
+                    fileExclusionRegExp: /^\./,
+                    inlineText: true
+                }
             }
         }
     });
@@ -58,11 +61,30 @@
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-wiredep');
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
 
     grunt.registerTask('uglify', ['uglify']);
     grunt.registerTask('requirejs', ['require']);
 
     // Default task(s).
     grunt.registerTask('default', ['wiredep']);
+
+    require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
+
+    grunt.initConfig({
+        babel: {
+
+            options: {
+                sourceMap: true
+            },
+            dist: {
+                files: {
+                    'dist/app.js': 'src/app.js'
+                }
+            }
+        }
+    });
+
+    grunt.registerTask('babel', ['babel']);
 
 };
