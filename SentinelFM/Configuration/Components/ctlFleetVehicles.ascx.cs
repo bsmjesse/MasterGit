@@ -470,6 +470,51 @@ namespace SentinelFM.Components
             }
         }
 
+        //Changes
+        protected void btnBatchUpload_Click(object sender, System.EventArgs e)
+        {
+            if (this.newMultipleFleetVehicleAssignment.FileName.Trim() != String.Empty)
+            {
+                ServerDBFleet.DBFleet dbf = new ServerDBFleet.DBFleet();
+                int FleetId = Convert.ToInt32(cboToFleet.SelectedValue);
+                string fileName = "";
+                try
+                {
+                    DataTable dt = new DataTable();
+                    fileName = Server.MapPath("~/App_Data/") + this.newMultipleFleetVehicleAssignment.FileName;
+                    this.newMultipleFleetVehicleAssignment.PostedFile.SaveAs(fileName);
+
+                    DataTable dtVehicles = clsUtility.ReadDataFromExcel2003(fileName);
+                    dtVehicles.TableName = "NewTemplate";
+
+                    string result;
+                    using (StringWriter sw = new StringWriter())
+                    {
+                        dtVehicles.WriteXml(sw);
+                        result = sw.ToString();                        
+                    }
+
+
+                    if (objUtil.ErrCheck(dbf.AddAllVehicleToMultipleFleet(sn.UserID, sn.SecId, result, sn.User.OrganizationId), false))
+                        if (objUtil.ErrCheck(dbf.AddAllVehicleToMultipleFleet(sn.UserID, sn.SecId, result, sn.User.OrganizationId), true))
+                        {
+                            lblMessage.Visible = true;
+                            lblMessage.Text = (string)base.GetLocalResourceObject("ErrorMsgFleet");
+                            return;
+                        }
+                    lblMessage.Visible = true;
+                    lblMessage.Text = (string)base.GetLocalResourceObject("SuccessMsgMultipleFleet");
+
+                }
+                catch
+                {
+                    lblMessage.Visible = true;
+                    lblMessage.Text = (string)base.GetLocalResourceObject("ErrorMsgFleet");
+                }
+            }
+        }
+        //Changes
+
 		#region Web Form Designer generated code
 		override protected void OnInit(EventArgs e)
 		{

@@ -39,6 +39,15 @@
 
                                     </td>
                                 </tr>
+
+                                <tr><td>
+                                   <asp:FileUpload ID="newMultipleFleetVehicleAssignment" runat="server" CssClass="RegularText" Width="200px" style="margin: 20px 0px 20px 0px;" />
+                                    </td>
+                                    <td>
+                                        <asp:Button ID="btnBatchUpload" runat="server" Text="Batch Upload" OnClick="btnBatchUpload_Click"/>
+
+                                    </td>
+                                </tr>
                                 
                                     
                                 
@@ -112,4 +121,6 @@
                         </tr>
         </td>
     </tr>
+    
 </table>
+
