@@ -1386,10 +1386,19 @@ namespace SentinelFM
                 if (sn.User.OrganizationId == 1000065)
                     Response.Redirect("../Loginameco.aspx");
                 else
-                 Response.Redirect("../login.aspx");
+                    Response.Redirect("../login.aspx");
             }
             else
-                Response.Redirect("../Home/frmMainHome.aspx");
+            {
+                // Response.Redirect("../Home/frmMainHome.aspx");
+                this.cmdSavePsw.Text = (string)base.GetLocalResourceObject("cmdEditPsw");                
+                this.txtNewPassword.Text = string.Empty;
+                this.txtNewPassword1.Text = string.Empty;
+                this.txtOldPassword.Text = string.Empty;
+                this.txtNewPassword.Enabled = false;
+                this.txtNewPassword1.Enabled = false;
+                this.txtOldPassword.Enabled = false;
+            }
         }
 
 
