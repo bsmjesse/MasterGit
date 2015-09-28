@@ -1,0 +1,15 @@
+5.06 Build 10 Created 28 Sept 2015
+
+Bug 889 : 0012980: CN - Dev - Fleet Update Import Tool
+Bug 873 : 0016080: Ameco Audit of Sentinel has uncovered several issues with log-in security
+Bug 884 : 0015993: Be able to input new SMCS code in "Questions" page
+
+
+
+
+
+
+
+
+
+
