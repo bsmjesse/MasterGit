@@ -319,11 +319,11 @@
                     <td>
                         <telerik:RadComboBox ID="cboSMCS" runat="server" Height="200px" Width="500px" DropDownWidth="500px"
                             AllowCustomText="true" 
-                            EmptyMessage="Select a SMCS code" HighlightTemplatedItems="true" Filter="Contains" DataTextField="SMCS"
+                            EmptyMessage="<%# msgSelectSMCScode %>" HighlightTemplatedItems="true" Filter="Contains" DataTextField="SMCS"
                             DataValueField="SMCS" AppendDataBoundItems="true"
                             meta:resourcekey="cboQuestionsResource1">
                             <Items>
-                                <telerik:RadComboBoxItem Text="Select a SMCS code" Value="-1" />
+                                <telerik:RadComboBoxItem Text="<%# msgSelectSMCScode %>" Value="-1" />
                             </Items>
                             </telerik:RadComboBox>
                     </td>
