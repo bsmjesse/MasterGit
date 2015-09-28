@@ -1,0 +1,10 @@
+\System Volume Information\
+\$Recycle.Bin\
+\RECYCLER\
+\RECYCLED\
+*\desktop.ini
+*\thumbs.db
+*.pdf;*.config;*.xls;*.pdb;*.xml;*.refresh;*.publishproj
+\Scripts\Openlayers\OpenLayers-2.11\
+\Scripts\Openlayers\OpenLayers-2.12\
+\Scripts\Openlayers\OpenLayers-2.13\

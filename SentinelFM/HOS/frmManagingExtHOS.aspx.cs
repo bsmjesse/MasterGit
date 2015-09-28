@@ -188,8 +188,8 @@ public partial class frmManagingExtHOS : SentinelFMBasePage
                 if (operation == "Export" && !string.IsNullOrEmpty(formattype))
                 {
                     request = Request.QueryString["columns"];
-                    DateTime from = Convert.ToDateTime(Request.QueryString["fromDate"]);
-                    DateTime to = Convert.ToDateTime(Request.QueryString["toDate"]);
+                    DateTime from = DateTime.ParseExact(Request.QueryString["fromDate"].Substring(0, 10), sn.User.DateFormat.Substring(0, 10), null);
+                    DateTime to = DateTime.ParseExact(Request.QueryString["toDate"].Substring(0, 10), sn.User.DateFormat.Substring(0, 10), null);
                     if (!string.IsNullOrEmpty(request))
                     {
                         DataTable dtDS = GetAllDriverLogSheet(from, to, drvID);
@@ -218,8 +218,8 @@ public partial class frmManagingExtHOS : SentinelFMBasePage
                 if (operation == "Export" && !string.IsNullOrEmpty(formattype))
                 {
                     request = Request.QueryString["columns"];
-                    DateTime from = Convert.ToDateTime(Request.QueryString["fromDate"]);
-                    DateTime to = Convert.ToDateTime(Request.QueryString["toDate"]);
+                    DateTime from = DateTime.ParseExact(Request.QueryString["fromDate"].Substring(0,10), sn.User.DateFormat.Substring(0,10), null);
+                    DateTime to = DateTime.ParseExact(Request.QueryString["toDate"].Substring(0, 10), sn.User.DateFormat.Substring(0, 10), null);
                     if (!string.IsNullOrEmpty(request))
                     {
                         DataTable dtDS = GetAllDriverInspectionSheet(from, to, drvID);
@@ -364,16 +364,29 @@ public partial class frmManagingExtHOS : SentinelFMBasePage
         //    iDataSet.Tables.Add(logSheetsAdapter.GetLogSheets(sn.User.OrganizationId, from, to));
         //}
 
-        
 
-        HOS_GetOrganizationInspectionsTableAdapter inspectionsAdapter = new HOS_GetOrganizationInspectionsTableAdapter();
-        iDataSet.Tables.Add(inspectionsAdapter.GetTrips(sn.User.OrganizationId, from, to,driverId));
+        clsHOSManager hosManager = new clsHOSManager();
+        //HOS_GetOrganizationInspectionsTableAdapter inspectionsAdapter = new HOS_GetOrganizationInspectionsTableAdapter();
+        iDataSet.Tables.Add(hosManager.GetOrganizationInspections(sn.User.OrganizationId, from, to, driverId));
+
 
 
         DataSet dstemp = new DataSet();
         //DataView dv = iDataSet.Tables[0].DefaultView;
         DataRow[] drInspectionSheet_Fleet = iDataSet.Tables[0].Select(string.Format("FleetIds LIKE '%,{0},%'", fleetId));
-        DataView dv = drInspectionSheet_Fleet.CopyToDataTable().DefaultView;
+        DataView dv = null;
+
+        if (drInspectionSheet_Fleet.Length > 0)
+        {
+            dv = drInspectionSheet_Fleet.CopyToDataTable().DefaultView;
+        }
+        else {
+            Response.ContentType = "text/xml";
+
+            Response.Write("");
+            return;
+        }
+
         Session["InspectionSheetData"] = dv;
 
         dv.Sort = "InsTime ASC";
@@ -714,8 +727,9 @@ public partial class frmManagingExtHOS : SentinelFMBasePage
         {
             DataSet iDataSet = new DataSet();
 
-            HOS_GetOrganizationInspectionsTableAdapter inspectionsAdapter = new HOS_GetOrganizationInspectionsTableAdapter();
-            iDataSet.Tables.Add(inspectionsAdapter.GetTrips(sn.User.OrganizationId, from, to, driverId));
+            //HOS_GetOrganizationInspectionsTableAdapter inspectionsAdapter = new HOS_GetOrganizationInspectionsTableAdapter();
+            clsHOSManager hosManager = new clsHOSManager();
+            iDataSet.Tables.Add(hosManager.GetOrganizationInspections(sn.User.OrganizationId, from, to, driverId));
 
             DataSet dstemp = new DataSet();
             //DataView dv = iDataSet.Tables[0].DefaultView;
@@ -733,11 +747,28 @@ public partial class frmManagingExtHOS : SentinelFMBasePage
             dt.AcceptChanges();
             dt.TableName = "GetAllDriverInspectionSheet";
         }
-        catch
+        catch (Exception Ex)
         {
+            System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.StackTrace.ToString()));
             return null;
         }
         return dt;
+    }
+
+    private String FindSplitValue(string txt, char searchChr, int index)
+    {
+        String ret = "";
+        int i_pos = txt.LastIndexOf(searchChr);
+        if (i_pos > 0)
+        {
+            if (index == 0)
+              return txt.Substring(0, i_pos);
+            else 
+            {
+                if (txt.Length > i_pos) return txt.Substring(i_pos + 1);
+            }
+        }
+        return ret; 
     }
 
     private void exportDatatable(DataTable dt, string formatter, string columns, string fname)
@@ -752,7 +783,8 @@ public partial class frmManagingExtHOS : SentinelFMBasePage
                 string header = string.Empty;
                 foreach (string column in columns.Split(','))
                 {
-                    string s = column.Split(':')[0];
+                    string s = FindSplitValue(column, ':', 0);// column.Split(':')[0];
+
                     header += "\"" + s + "\",";
                 }
                 header = header.Substring(0, header.Length - 1);
@@ -764,8 +796,8 @@ public partial class frmManagingExtHOS : SentinelFMBasePage
                     string data = string.Empty;
                     foreach (string column in columns.Split(','))
                     {
-                        string s = row[column.Split(':')[1]].ToString();
-                        if (column.Split(':')[1] == "LastUpdate")
+                        string s = row[FindSplitValue(column, ':', 1)].ToString(); //row[column.Split(':')[1]].ToString();
+                        if (FindSplitValue(column, ':', 1) == "LastUpdate")
                             s = Convert.ToDateTime(s).ToString(sn.User.DateFormat + " " + sn.User.TimeFormat);
                         data += "\"" + s.Replace("[br]", Environment.NewLine).Replace("\"", "\"\"") + "\",";
                     }
@@ -810,7 +842,7 @@ public partial class frmManagingExtHOS : SentinelFMBasePage
                 IRow row = ws.CreateRow(0);
                 foreach (string column in columns.Split(','))
                 {
-                    string s = column.Split(':')[0];
+                    string s = FindSplitValue(column, ':', 0);//column.Split(':')[0];
                     row.CreateCell(row.Cells.Count).SetCellValue(s);
                 }
                 for (int i = 0; i < dt.Rows.Count; i++)
@@ -819,12 +851,12 @@ public partial class frmManagingExtHOS : SentinelFMBasePage
                     IRow rowData = ws.CreateRow(i + 1);
                     foreach (string column in columns.Split(','))
                     {
-                        if (column.Split(':')[1] == "LastUpdate")
+                        if (FindSplitValue(column, ':', 1) == "LastUpdate")
                         {
                             DateTime currentDate = DateTime.Now.ToUniversalTime();
                             //DateTime recordDate;
 
-                            string datadate = Convert.ToDateTime(dt.Rows[i][column.Split(':')[1]].ToString()).ToString(sn.User.DateFormat + " " + sn.User.TimeFormat);
+                            string datadate = Convert.ToDateTime(dt.Rows[i][FindSplitValue(column, ':', 1)].ToString()).ToString(sn.User.DateFormat + " " + sn.User.TimeFormat);
                             rowData.CreateCell(rowData.Cells.Count).SetCellValue(datadate.Replace("[br]", Environment.NewLine));
                             //recordDate = DateTime.ParseExact(datadate, sn.User.DateFormat + " " + sn.User.TimeFormat, System.Globalization.CultureInfo.InvariantCulture).ToUniversalTime();
 
@@ -863,7 +895,7 @@ public partial class frmManagingExtHOS : SentinelFMBasePage
 
                         }
                         else
-                            rowData.CreateCell(rowData.Cells.Count).SetCellValue(dt.Rows[i][column.Split(':')[1]].ToString().Replace("[br]", Environment.NewLine));
+                            rowData.CreateCell(rowData.Cells.Count).SetCellValue(dt.Rows[i][FindSplitValue(column, ':', 1)].ToString().Replace("[br]", Environment.NewLine));
 
                     }
                 }
@@ -904,7 +936,7 @@ public partial class frmManagingExtHOS : SentinelFMBasePage
                     var ws = wb.Worksheets.Add("Sheet1");
                     foreach (string column in columns.Split(','))
                     {
-                        string s = column.Split(':')[0];
+                        string s = FindSplitValue(column, ':', 0); //column.Split(':')[0];
                         ws.Cell(1, ws.Row(1).CellsUsed().Count() + 1).Value = s;
                     }
 
@@ -916,13 +948,13 @@ public partial class frmManagingExtHOS : SentinelFMBasePage
                         {
                             ws.Cell(i + 2, iColumn).DataType = XLCellValues.Text;
 
-                            if (column.Split(':')[1] == "LastUpdate")
+                            if (FindSplitValue(column, ':', 1) == "LastUpdate")
                             {
                                 DateTime currentDate = DateTime.Now.ToUniversalTime();
                                 //DateTime recordDate;
 
 
-                                string datadate = Convert.ToDateTime(dt.Rows[i][column.Split(':')[1]].ToString()).ToString(sn.User.DateFormat + " " + sn.User.TimeFormat);
+                                string datadate = Convert.ToDateTime(dt.Rows[i][FindSplitValue(column, ':', 1)].ToString()).ToString(sn.User.DateFormat + " " + sn.User.TimeFormat);
                                 ws.Cell(i + 2, iColumn).Value = "'" + datadate.Replace("[br]", Environment.NewLine);
                                 //recordDate = DateTime.ParseExact(datadate, sn.User.DateFormat + " " + sn.User.TimeFormat, System.Globalization.CultureInfo.InvariantCulture).ToUniversalTime();
 
@@ -951,7 +983,7 @@ public partial class frmManagingExtHOS : SentinelFMBasePage
 
                             }
                             else
-                                ws.Cell(i + 2, iColumn).Value = "'" + dt.Rows[i][column.Split(':')[1]].ToString().Replace("[br]", Environment.NewLine);
+                                ws.Cell(i + 2, iColumn).Value = "'" + dt.Rows[i][FindSplitValue(column, ':', 1)].ToString().Replace("[br]", Environment.NewLine);
 
                             iColumn++;
                         }
