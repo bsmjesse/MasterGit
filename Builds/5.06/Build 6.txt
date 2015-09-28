@@ -1,0 +1,11 @@
+5.06 Build 6 Created 17 Sept 2015
+Bug 864 : Sentinel Mobile: 16328: Map Screen not displaying Map right away in the Sentinel Mobile App
+Bug 860 : Web form to post SentinelFM data to Sales Force
+
+Deploy to Preprod : 25 Sept 2015
+
+
+
+
+
+

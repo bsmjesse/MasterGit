@@ -1445,16 +1445,26 @@ namespace VLF.DAS.Logic
 		#endregion
 
 		#region User Logins
+
 		/// <summary>
-		/// Add new user login
+		/// Adds new user login
 		/// </summary>
 		/// <exception cref="DASAppDataAlreadyExistsException">Thrown if user with this datetime already exists.</exception>
 		/// <exception cref="DASException">Thrown DASException in all other exception cases.</exception>
-		public int AddUserLogin(int userId,DateTime loginDateTime,string ip)
+        public int AddUserLogin(int userId, DateTime loginDateTime, string IP, string LoginUserSecId)
 		{
-			return userLogin.AddUserLogin(userId,loginDateTime,ip);
+            return userLogin.AddUserLogin(userId, loginDateTime, IP, LoginUserSecId);
 		}
 
+        /// <summary>
+        /// Adds new user login
+        /// </summary>
+        /// <exception cref="DASAppDataAlreadyExistsException">Thrown if user with this datetime already exists.</exception>
+        /// <exception cref="DASException">Thrown DASException in all other exception cases.</exception>
+        public int AddUserLoginExtended(int userId, string IP, int LoginUserId, string LoginUserSecId)
+        {
+            return userLogin.AddUserLoginExtended(userId, IP, LoginUserId, LoginUserSecId);
+        }
 
         // Changes for TimeZone Feature start
         /// <summary>

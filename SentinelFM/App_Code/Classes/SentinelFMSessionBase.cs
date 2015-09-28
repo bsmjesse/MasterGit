@@ -16,12 +16,11 @@ namespace SentinelFM
         protected string password;
         protected string secId;
         protected int superOrganizationId;
-        protected string companyURL = "";
-        protected string homePagePicture = "";
+        protected string companyURL = String.Empty;
+        protected string homePagePicture = String.Empty;
         protected string emailID;
         protected int loginUserID;
-        
-
+        protected string loginUserSecId = String.Empty;
 
         public string Key
         {
@@ -85,7 +84,6 @@ namespace SentinelFM
             set { interfacePrefrence = value; }
         }
 
-
         protected string previousDateFormat = " ";
         public string PreviousDateFormat
         {
@@ -97,6 +95,12 @@ namespace SentinelFM
         {
             get { return loginUserID; }
             set { loginUserID = value; }
+        }
+
+        public string LoginUserSecId
+        {
+            get { return loginUserSecId; }
+            set { loginUserSecId = value; }
         }
 
         public SentinelFMSessionBase()

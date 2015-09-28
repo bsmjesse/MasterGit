@@ -1,0 +1,14 @@
+5.06 Build 5 Created 16 Sept 2015
+ASIReports merged with ASI
+Bug 862 : Mantis 0012273: MTO - Disable 'send to selected fleet' option for updating odometer
+Bug 849 : Addition of User/Fleet Assignment column in "User Info" Screen
+
+install reportviewer on ASI server
+Add below assembly in ASI web.config
+                           <add assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/>
+
+Deploy to Preprod : 25 Sept 2015
+
+
+
+

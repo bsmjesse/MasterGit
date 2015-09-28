@@ -588,7 +588,4 @@
   <data name="lblAssignedUserHierarchyResource1.Text" xml:space="preserve">
     <value>Assigned Hierarchies</value>
   </data>
-  <data name="dgUsers_Fleets" xml:space="preserve">
-    <value>Assigned Fleets</value>
-  </data>
 </root>

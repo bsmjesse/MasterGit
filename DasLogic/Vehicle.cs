@@ -2291,6 +2291,20 @@ namespace VLF.DAS.Logic
           return dsResult;
       }
 
+      public DataSet ListVehiclesInLandmarkByFleet(int userId, int orgId, int fleetId, long landmarkId)
+      {
+          DataSet dsResult = vehicleInfo.ListVehiclesInLandmarkByFleet(userId, orgId, fleetId, landmarkId);
+          if (dsResult != null)
+          {
+              if (dsResult.Tables.Count > 0)
+              {
+                  dsResult.Tables[0].TableName = "VehicleList";
+              }
+              dsResult.DataSetName = "Vehicle";
+          }
+          return dsResult;
+      }
+
       public DataSet GetServiceConfigurationsByLandmarkAndVehicle(int orgId, long vehicleId, long landmarkId)
       {
           DataSet dsResult = vehicleInfo.GetServiceConfigurationsByLandmarkAndVehicle(orgId, vehicleId, landmarkId);

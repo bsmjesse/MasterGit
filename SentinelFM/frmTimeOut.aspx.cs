@@ -307,6 +307,7 @@ namespace SentinelFM
                     sn.UserID = uid;
                     sn.LoginUserID = uid;
                     sn.SecId = secId;
+                    sn.LoginUserSecId = secId;
                     sn.SuperOrganizationId = superOrganizationId;
 
                     try

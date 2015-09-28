@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 
 namespace VLF.DAS.DB
 {
-    public class Logging : IDisposable
+    public class Logging : IDisposable 
     {
         private string connStr { get; set; }
         bool isDisposed = false;
@@ -175,6 +175,44 @@ namespace VLF.DAS.DB
                 throw new Exception(exception.Message);
             }
             return false;
+        }
+
+        /// <summary>
+        /// Retrieves current HGI user
+        /// </summary>
+        /// <param name="LoginUserId"></param>
+        /// <param name="LoginUserSecId"></param>
+        /// <returns>UserId,OrganizationId</returns>
+        public DataSet GetCurrentHGIUser(int LoginUserId, string LoginUserSecId)
+        {
+            DataSet sqlDataSet = null;
+            SQLExecuter sqlExec = new SQLExecuter(connStr);
+
+            try
+            {
+                string sql = "usp_CurrentHGIUser_Get";
+                SqlParameter[] sqlParams = new SqlParameter[2];
+                sqlParams[0] = new SqlParameter("@LoginUserId", LoginUserId);
+                sqlParams[1] = new SqlParameter("@LoginUserSecId", LoginUserSecId);
+
+                //Executes SQL statement
+                sqlDataSet = sqlExec.SPExecuteDataset(sql, sqlParams);
+            }
+            catch (SqlException objException)
+            {
+                string prefixMsg = "SqlException - Unable to retrieve current HGI user for LoginUserId:  " + LoginUserId.ToString() + ". ";
+                Util.ProcessDbException(prefixMsg, objException);
+            }
+            catch (DASDbConnectionClosed exCnn)
+            {
+                throw new DASDbConnectionClosed(exCnn.Message);
+            }
+            catch (Exception objException)
+            {
+                string prefixMsg = "Exception - Unable to retrieve current HGI user for LoginUserId:  " + LoginUserId.ToString() + ". ";
+                throw new DASException(prefixMsg + " " + objException.Message);
+            }
+            return sqlDataSet;
         }
 
         public void Dispose()

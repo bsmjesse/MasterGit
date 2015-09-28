@@ -128,6 +128,8 @@ namespace SentinelFM
                             dsCurrentAlarm.Tables[0].Columns.Add("BoxId", typeof(string));
                             dsCurrentAlarm.Tables[0].Columns.Add("CustomProp", typeof(string));
                             dsCurrentAlarm.Tables[0].Columns.Add("AlarmLandmarkID", typeof(string));
+                            dsCurrentAlarm.Tables[0].Columns.Add("NearestLandmark", typeof(string));
+                            dsCurrentAlarm.Tables[0].Columns.Add("Fleets", typeof(string));
 
                             foreach (DataRow ittr in dsAlarmInfo.Tables[0].Rows)
                             {
@@ -183,6 +185,9 @@ namespace SentinelFM
                                     objRow[20] = "";
                                 else
                                     objRow[20] = ittr["AlarmLandmarkID"].ToString();
+                                objRow[21] = ittr["NearestLandmark"].ToString();
+                                objRow[22] = ittr["Fleets"].ToString();
+
                                 AlarmBoxId = ittr["BoxId"].ToString();
                                 AlarmVehicleDescription = ittr["vehicleDescription"].ToString();
                                 AlarmLon = ittr["Longitude"].ToString();
@@ -384,6 +389,8 @@ namespace SentinelFM
 
                 this.AlarmSeverity.Text = ds.Tables[0].Rows[0]["AlarmLevel"].ToString().TrimEnd();
                 this.StreetAddress.Text = ds.Tables[0].Rows[0]["StreetAddress"].ToString().TrimEnd();
+                this.NearestLandmark.Text = ds.Tables[0].Rows[0]["NearestLandmark"].ToString().TrimEnd();
+                this.Fleets.Text = ds.Tables[0].Rows[0]["Fleets"].ToString().TrimEnd();
 
                 //if ((ds.Tables[0].Rows[0]["TimeAccepted"].ToString().TrimEnd() != "1/1/0001 12:00:00 AM") && (ds.Tables[0].Rows[0]["TimeAccepted"].ToString().TrimEnd() != "01/01/1900 12:00:00 AM"))
                 //    this.TimeAccepted.Text = ds.Tables[0].Rows[0]["TimeAccepted"].ToString().TrimEnd();

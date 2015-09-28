@@ -550,6 +550,7 @@ namespace SentinelFM
                     sn.LoginUserID = uid;
                     SNuserid.Value = uid.ToString();
                     sn.SecId = secId;
+                    sn.LoginUserSecId = secId;
                     SNsecId.Value = secId;
                     sn.UserName = txtUserName.Text;
                     sn.Password = HashPassword;

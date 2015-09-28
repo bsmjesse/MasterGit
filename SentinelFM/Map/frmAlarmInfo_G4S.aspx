@@ -123,7 +123,15 @@ Culture="en-US" UICulture="auto" %>
                         <tr runat="server" id="trStreetAddress">
                             <td>  <asp:Label ID="StreetAddressLabel" runat="server" Text="Street Address:" ReadOnly="true" AnchorHorizontal="100%"/>         </td>
                             <td> <asp:Label ID="StreetAddress" runat="server"  ReadOnly="true" AnchorHorizontal="100%"/>         </td>
-                        </tr>                            
+                        </tr>   
+                        <tr runat="server" id="trNearestLandmark">
+                            <td>  <asp:Label ID="NearestLandmarkLabel" runat="server" Text="Nearest Landmark:" ReadOnly="true" AnchorHorizontal="100%"/>         </td>
+                            <td> <asp:Label ID="NearestLandmark" runat="server"  ReadOnly="true" AnchorHorizontal="100%"/>         </td>
+                        </tr>  
+                        <tr runat="server" id="trFleets">
+                            <td>  <asp:Label ID="FleetsLabel" runat="server" Text="Vehicle Fleets:" ReadOnly="true" AnchorHorizontal="100%"/>         </td>
+                            <td> <asp:Label ID="Fleets" runat="server"  ReadOnly="true" AnchorHorizontal="100%"/>         </td>
+                        </tr>                         
                         <tr>
                             <td>  <asp:Label ID="ExtraNotesLabel" runat="server" Text="Notes:" ReadOnly="true" AnchorHorizontal="100%"/>         </td>
                             <td>  

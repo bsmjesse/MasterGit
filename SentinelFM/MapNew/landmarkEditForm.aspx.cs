@@ -33,6 +33,7 @@ namespace SentinelFM
         private PatchServices _ps = null;
 
         public bool ShowCallTimer = false;
+        public bool ShowSearchVehicleInLandmark = false;
 
         //Resorce Reader
         public string Res_btnCancel = string.Empty;
@@ -47,6 +48,9 @@ namespace SentinelFM
             sn = (SentinelFMSession)Session["SentinelFMSession"];
             if (sn.DsLandMarks == null)
                 DgLandmarks_Fill(sn);
+
+            clsUtility objUtil;
+            objUtil = new clsUtility(sn);
 
             string displayExtendedAttributesAtNewmapLandmark = ConfigurationManager.AppSettings["displayExtendedAttributesAtNewmapLandmark"] ?? "false";
             
@@ -201,6 +205,34 @@ namespace SentinelFM
             CheckBoxFleet_Fill();
 
             ALL_SERVICES = "<ul>" + ALL_SERVICES + "</ul>";
+
+            string xml = "";
+            using (ServerDBOrganization.DBOrganization dbOrganization = new ServerDBOrganization.DBOrganization())
+            {
+                if (objUtil.ErrCheck(dbOrganization.GetOrganizationSettings(sn.UserID, sn.SecId, sn.User.OrganizationId, ref xml), false))
+                    if (objUtil.ErrCheck(dbOrganization.GetOrganizationSettings(sn.UserID, sn.SecId, sn.User.OrganizationId, ref xml), true))
+                    {
+                        return;
+                    }
+                if (xml != "")
+                {
+                    DataSet dsPref = new DataSet();
+                    System.IO.StringReader strrXML = new System.IO.StringReader(xml);
+                    dsPref.ReadXml(strrXML);
+                    foreach (DataRow rowItem in dsPref.Tables[0].Rows)
+                    {
+
+                        if (Convert.ToInt16(rowItem["OrgPreferenceId"]) == 27)// 27 SearchVehiclesInLandmark
+                        {
+                            if (rowItem["PreferenceValue"].ToString().Trim() == "1")
+                            {
+                                ShowSearchVehicleInLandmark = true;
+                            }
+                        }
+
+                    }
+                }
+            }
 
             //REsource Reading/binding
             Res_btnCancel = (string)base.GetLocalResourceObject("btnCancel.Text");
