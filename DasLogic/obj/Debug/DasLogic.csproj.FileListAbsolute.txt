@@ -13,3 +13,8 @@ C:\tfs\SentinelFM\HotFixes\BIN\DasLogic.pdb
 C:\tfs\SentinelFM\HotFixes\DasLogic\obj\Debug\DasLogic.csprojResolveAssemblyReference.cache
 C:\tfs\SentinelFM\HotFixes\DasLogic\obj\Debug\DasLogic.dll
 C:\tfs\SentinelFM\HotFixes\DasLogic\obj\Debug\DasLogic.pdb
+C:\Users\dzheng\Desktop\source\Web\SentinelFM\Master-HOS\BIN\DasLogic.dll
+C:\Users\dzheng\Desktop\source\Web\SentinelFM\Master-HOS\BIN\DasLogic.pdb
+C:\Users\dzheng\Desktop\source\Web\SentinelFM\Master-HOS\DasLogic\obj\Debug\DasLogic.csprojResolveAssemblyReference.cache
+C:\Users\dzheng\Desktop\source\Web\SentinelFM\Master-HOS\DasLogic\obj\Debug\DasLogic.dll
+C:\Users\dzheng\Desktop\source\Web\SentinelFM\Master-HOS\DasLogic\obj\Debug\DasLogic.pdb
