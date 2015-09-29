@@ -2139,6 +2139,60 @@ namespace VLF.DAS.DB
                 throw new DASAppDataAlreadyExistsException(prefixMsg + " The vehicle already exists in the fleet.");
             }
             return rowsAffected;
-        }		
+        }
+		
+
+        //Changes
+        /// <summary>
+        /// Add new vehicle to multiple fleet.
+        /// </summary>
+        /// <param name="fleetId"></param>
+        /// <param name="vehicleId"></param>
+        /// <returns>Int64</returns>
+        /// <exception cref="DASAppDataAlreadyExistsException">Thrown if vehicle alredy exists in the fleet.</exception>
+        /// <exception cref="DASAppInvalidValueException">Thrown in in case of incorrect value.</exception>
+        /// <exception cref="DASDbConnectionClosed">Thrown if connection to database has been closed.</exception>
+        /// <exception cref="DASException">Thrown in all other exception cases.</exception>
+        public int AddAllVehicleToMultipleFleet(string result, int organizationId)
+        {
+            int rowsAffected = 0;
+
+            try
+            {
+                sqlExec.ClearCommandParameters();                
+                sqlExec.AddCommandParam("@organizationId", SqlDbType.Int, organizationId);
+                sqlExec.AddCommandParam("@temptable", SqlDbType.Xml, result);
+
+
+                rowsAffected = (int)sqlExec.SPExecuteNonQuery("sp_AssignAllVehicleToMultipleFleet");
+
+
+            }
+            
+            catch (SqlException objException)
+            {
+                string prefixMsg = "Unable to update fleet from the provided xls file.";
+                Util.ProcessDbException(prefixMsg, objException);
+            }
+            catch (DASDbConnectionClosed exCnn)
+            {
+                throw new DASDbConnectionClosed(exCnn.Message);
+            }
+            catch (Exception objException)
+            {
+                string prefixMsg = "Unable to update fleet from the provided xls file";
+                throw new DASException(prefixMsg + " " + objException.Message);
+            }
+            
+            if (rowsAffected == 0)
+            {
+                string prefixMsg = "Fleets are already updated";
+                throw new DASAppDataAlreadyExistsException(prefixMsg);
+            }
+
+          
+            
+            return rowsAffected;
+        }	
 	}
 }

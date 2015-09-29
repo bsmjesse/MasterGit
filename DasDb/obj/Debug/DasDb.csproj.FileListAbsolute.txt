@@ -28,3 +28,13 @@ C:\tfs\SentinelFM\HotFixes\DasDb\obj\Debug\DasDb.csproj.GenerateResource.Cache
 C:\tfs\SentinelFM\HotFixes\DasDb\obj\Debug\fr\DasDb.resources.dll
 C:\tfs\SentinelFM\HotFixes\DasDb\obj\Debug\DasDb.dll
 C:\tfs\SentinelFM\HotFixes\DasDb\obj\Debug\DasDb.pdb
+C:\Users\dzheng\Desktop\source\Web\SentinelFM\Master-HOS\BIN\DasDb.dll
+C:\Users\dzheng\Desktop\source\Web\SentinelFM\Master-HOS\BIN\DasDb.pdb
+C:\Users\dzheng\Desktop\source\Web\SentinelFM\Master-HOS\BIN\fr\DasDb.resources.dll
+C:\Users\dzheng\Desktop\source\Web\SentinelFM\Master-HOS\DasDb\obj\Debug\DasDb.csprojResolveAssemblyReference.cache
+C:\Users\dzheng\Desktop\source\Web\SentinelFM\Master-HOS\DasDb\obj\Debug\VLF.DAS.DB.Resources.Const.resources
+C:\Users\dzheng\Desktop\source\Web\SentinelFM\Master-HOS\DasDb\obj\Debug\VLF.DAS.DB.Resources.Const.fr.resources
+C:\Users\dzheng\Desktop\source\Web\SentinelFM\Master-HOS\DasDb\obj\Debug\DasDb.csproj.GenerateResource.Cache
+C:\Users\dzheng\Desktop\source\Web\SentinelFM\Master-HOS\DasDb\obj\Debug\fr\DasDb.resources.dll
+C:\Users\dzheng\Desktop\source\Web\SentinelFM\Master-HOS\DasDb\obj\Debug\DasDb.dll
+C:\Users\dzheng\Desktop\source\Web\SentinelFM\Master-HOS\DasDb\obj\Debug\DasDb.pdb

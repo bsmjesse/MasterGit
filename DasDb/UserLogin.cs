@@ -2,7 +2,8 @@ using System;
 using System.Data;
 using VLF.ERR;
 using VLF.CLS;
-using System.Data.SqlClient ;	// for SqlException
+using System.Data.SqlClient;	// for SqlException
+
 namespace VLF.DAS.DB
 {
 	/// <summary>
@@ -17,6 +18,7 @@ namespace VLF.DAS.DB
 		public UserLogin(SQLExecuter sqlExec) : base ("vlfUserLogin",sqlExec)
 		{
 		}
+
 		/// <summary>
 		/// Adds new user login
 		/// </summary>
@@ -24,28 +26,34 @@ namespace VLF.DAS.DB
 		/// <exception cref="DASAppDataAlreadyExistsException">Thrown if user with this datetime already exists.</exception>
 		/// <exception cref="DASDbConnectionClosed">Thrown if connection to database has been closed.</exception>
 		/// <exception cref="DASException">Thrown in all other exception cases.</exception>
-		public int AddUserLogin(int userId,DateTime loginDateTime,string ip)
+        public int AddUserLogin(int UserId, DateTime LoginDateTime, string IP, string LoginUserSecId)
 		{
 			int rowsAffected = 0;
+            int LoginID = 0;
+
 			try
 			{
-				// Set SQL command
-				string sql = "INSERT INTO vlfUserLogin(UserId,LoginDateTime,IP) VALUES ( @UserId,@LoginDateTime,@IP ) ";
-				sqlExec.ClearCommandParameters();
-				// Add parameters to SQL statement
-				sqlExec.AddCommandParam("@UserId",SqlDbType.Int,userId);
-				sqlExec.AddCommandParam("@LoginDateTime",SqlDbType.DateTime,loginDateTime);
-				if(ip == null)
-					sqlExec.AddCommandParam("@IP",SqlDbType.Char,System.DBNull.Value);
-				else
-					sqlExec.AddCommandParam("@IP",SqlDbType.Char,ip);
+                sqlExec.ClearCommandParameters();
+                sqlExec.AddCommandParam("@UserId", SqlDbType.Int, ParameterDirection.Input, UserId);
+                sqlExec.AddCommandParam("@LoginDateTime", SqlDbType.DateTime, ParameterDirection.Input, LoginDateTime);
+                if (IP == null)
+                    sqlExec.AddCommandParam("@IP", SqlDbType.VarChar, ParameterDirection.Input, DBNull.Value);
+                else
+                    sqlExec.AddCommandParam("@IP", SqlDbType.VarChar, ParameterDirection.Input, IP);
+                sqlExec.AddCommandParam("@LoginUserSecId", SqlDbType.VarChar, ParameterDirection.Input, LoginUserSecId);
+                sqlExec.AddCommandParam("@LoginID", SqlDbType.Int, ParameterDirection.Output, 4, LoginID);
+
+                int res = sqlExec.SPExecuteNonQuery("usp_UserLogin_Add");
+
+                LoginID = (DBNull.Value == sqlExec.ReadCommandParam("@LoginID")) ?
+                              LoginID : Convert.ToInt32(sqlExec.ReadCommandParam("@LoginID"));
 				
-				//Executes SQL statement
-				rowsAffected = sqlExec.SQLExecuteNonQuery(sql);
+                if (LoginID > 0)
+				    rowsAffected = 1;
 			}
 			catch (SqlException objException) 
 			{
-				string prefixMsg = "Unable to add user login Date:'" + loginDateTime.ToString() + "' UserId:" + userId + " IP='" + ip + "'.";
+                string prefixMsg = String.Format("Unable to add user login. Date: {0}, UserId: {1}, IP: {2}", LoginDateTime.ToString(), UserId.ToString(), IP);
 				Util.ProcessDbException(prefixMsg,objException);
 			}
 			catch(DASDbConnectionClosed exCnn)
@@ -54,16 +62,69 @@ namespace VLF.DAS.DB
 			}
 			catch(Exception objException)
 			{
-				string prefixMsg = "Unable to add user login Date:'" + loginDateTime.ToString() + "' UserId:" + userId + " IP='" + ip + "'.";
+                string prefixMsg = String.Format("Unable to add user login. Date: {0}, UserId: {1}, IP: {2}", LoginDateTime.ToString(), UserId.ToString(), IP);
 				throw new DASException(prefixMsg + " " + objException.Message);
 			}
 			if(rowsAffected == 0) 
 			{
-				string prefixMsg = "Unable to add user login Date:'" + loginDateTime.ToString() + "' UserId:" + userId + " IP='" + ip + "'.";
+                string prefixMsg = String.Format("Unable to add user login. Date: {0}, UserId: {1}, IP: {2}", LoginDateTime.ToString(), UserId.ToString(), IP);
 				throw new DASAppDataAlreadyExistsException(prefixMsg + " User login already exists.");
 			}
+
 			return rowsAffected;
-		}	
+		}
+
+        /// <summary>
+        /// Adds new user login
+        /// </summary>
+        /// <returns>inserted record id</returns>
+        /// <exception cref="DASAppDataAlreadyExistsException">Thrown if user with this datetime already exists.</exception>
+        /// <exception cref="DASDbConnectionClosed">Thrown if connection to database has been closed.</exception>
+        /// <exception cref="DASException">Thrown in all other exception cases.</exception>
+        public int AddUserLoginExtended(int UserId, string IP, int LoginUserId, string LoginUserSecId)
+        {
+            int LoginID = 0;
+
+            try
+            {
+                sqlExec.ClearCommandParameters();
+                sqlExec.AddCommandParam("@UserId", SqlDbType.Int, ParameterDirection.Input, UserId);
+                if (String.IsNullOrEmpty(IP))
+                    sqlExec.AddCommandParam("@IP", SqlDbType.VarChar, ParameterDirection.Input, DBNull.Value);
+                else
+                    sqlExec.AddCommandParam("@IP", SqlDbType.VarChar, ParameterDirection.Input, IP);
+                sqlExec.AddCommandParam("@LoginUserId", SqlDbType.Int, ParameterDirection.Input, LoginUserId);
+                sqlExec.AddCommandParam("@LoginUserSecId", SqlDbType.VarChar, ParameterDirection.Input, LoginUserSecId);
+                sqlExec.AddCommandParam("@LoginID", SqlDbType.Int, ParameterDirection.Output, 4, LoginID);
+
+                int res = sqlExec.SPExecuteNonQuery("usp_UserLoginExtended_Add");
+
+                LoginID = (DBNull.Value == sqlExec.ReadCommandParam("@LoginID")) ?
+                              LoginID : Convert.ToInt32(sqlExec.ReadCommandParam("@LoginID"));
+            }
+            catch (SqlException objException)
+            {
+                string prefixMsg = String.Format("Unable to add user login. UserId: {0}, LoginUserId: {1}, IP: {2}.", UserId.ToString(), LoginUserId.ToString(), IP);
+                Util.ProcessDbException(prefixMsg, objException);
+            }
+            catch (DASDbConnectionClosed exCnn)
+            {
+                throw new DASDbConnectionClosed(exCnn.Message);
+            }
+            catch (Exception objException)
+            {
+                string prefixMsg = String.Format("Unable to add user login. UserId: {0}, LoginUserId: {1}, IP: {2}.", UserId.ToString(), LoginUserId.ToString(), IP);
+                throw new DASException(prefixMsg + " " + objException.Message);
+            }
+            if (LoginID == 0)
+            {
+                string prefixMsg = String.Format("Unable to add user login. UserId: {0}, LoginUserId: {1}, IP: {2}.", UserId.ToString(), LoginUserId.ToString(), IP);
+                throw new DASAppDataAlreadyExistsException(prefixMsg + " User login already exists.");
+            }
+
+            return LoginID;
+        }
+
 		/// <summary>
 		/// Deletes user logins.
 		/// </summary>
@@ -177,6 +238,7 @@ namespace VLF.DAS.DB
 
             return sqlDataSet;
         }
+        
         // Changes for TimeZone Feature end
         /// <summary>
         /// Retrieves user logins.
@@ -439,6 +501,7 @@ namespace VLF.DAS.DB
             }
             return sqlDataSet;
         }
+        
         // Changes for TimeZone Feature end
         /// <summary>
         ///      Retrieves user logins.
