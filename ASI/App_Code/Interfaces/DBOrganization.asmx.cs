@@ -473,7 +473,7 @@ namespace VLF.ASI.Interfaces
             {
                 string dbConnectionString;
 
-                if (getWebConfigureConnectionString("DBReportConnectionString", out dbConnectionString))
+                if (getWebConfigureConnectionString("DBConnectionString", out dbConnectionString))
                 {
                     using (SqlConnection connection = new SqlConnection(dbConnectionString))
                     {
