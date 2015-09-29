@@ -176,7 +176,6 @@ namespace SentinelFM
                 }
 
             dgGroups.SelectedIndex = -1;
-            //lblMessage.Text = (string)base.GetLocalResourceObject("GroupDeleted");
             dgGroups.CurrentPageIndex = 0;
             dgGroups_Fill();
             ViewState["ConfirmDelete"] = "0";

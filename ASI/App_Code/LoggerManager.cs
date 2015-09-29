@@ -103,6 +103,11 @@ namespace VLF.ASI
                             CurrentUserID = Convert.ToInt32(dtHGIUser.Rows[0]["UserId"]);
                             CurrentOrgID = Convert.ToInt32(dtHGIUser.Rows[0]["OrganizationId"]);
                         }
+                        else
+                        {
+                            CurrentUserID = LoginUserId;
+                            CurrentOrgID = 0;
+                        }
                     }
                     logEvent.Dispose();
                 }
