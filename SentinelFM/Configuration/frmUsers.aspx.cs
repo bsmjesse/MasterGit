@@ -184,17 +184,6 @@ namespace SentinelFM
                     //if (!String.IsNullOrEmpty(ReenterPassword))
                     //    txtReenterPassword.Attributes["value"] = ReenterPassword;
                 }
-
-                //LogEvent logEvent = new LogEvent(LoginManager.GetConnnectionString(sn.UserID));
-                //int OrgID = 0;
-                //int LoginUserId = sn.LoginUserID;
-                //DataTable dtHGIUser = LoggerManager.GetCurrentHGIUser(LoginUserId, sn.LoginUserSecId);
-                //if (dtHGIUser.Rows.Count > 0)
-                //{
-                //    userId = Convert.ToInt32(dtHGIUser.Rows[0]["UserId"]);
-                //    OrgID = Convert.ToInt32(dtHGIUser.Rows[0]["OrganizationId"]);
-                //}
-
             }
 
             catch (NullReferenceException Ex)
