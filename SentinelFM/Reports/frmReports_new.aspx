@@ -661,6 +661,17 @@
                                                             </telerik:RadComboBox> 
                                                         </td>
                                                     </tr>
+                                                    <tr id="trReportLayout" runat="server" style="height: 40px; vertical-align:top;padding-top:8px;">
+                                                        <td style="text-align:left; padding-right:3px;">
+                                                        </td>
+                                                        <td class="formtext" >
+                                                            <asp:Label ID="lblReportlayout" runat="server" Text="Layout: " CssClass="formtextGreen" />
+                                                            <asp:RadioButtonList ID="rblReportLayout" runat="server" TextAlign="Right" RepeatLayout="Flow" RepeatDirection="Horizontal">
+                                                                <asp:ListItem Text="Normarl" Selected="True" Value="1"/>
+                                                                <asp:ListItem Text="Drill down" Value="2"/>
+                                                            </asp:RadioButtonList>
+                                                        </td>
+                                                    </tr>
                                                     <tr>
                                                         <td  align="right"  style="width: 50px" >
                                                         </td>
