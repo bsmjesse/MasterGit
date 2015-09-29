@@ -371,7 +371,7 @@ namespace SentinelFM
             }
 
             this.lblAddMessage.Text = "";
-            if (resolvedAddress.Trim() != "")
+            if (resolvedAddress != null && resolvedAddress.Trim() != "")
                 strAddress = resolvedAddress;
 
             bool DayLightSaving = Convert.ToBoolean(objUtil.IsDayLightSaving(chkDayLight.Checked));
