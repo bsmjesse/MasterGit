@@ -3,7 +3,7 @@
 BSM.jasper = function() {
 
     function _buildReportInput() {
-        BSM.VisualizeClient.inputControls({
+         BSM.VisualizeClient.inputControls({
             resource: BSM.currentUrl,
             success: function (controls) {
                 controls.forEach(buildControl);
@@ -207,9 +207,9 @@ BSM.jasper = function() {
     }
 
     function _createReportInView(uri, viewSelect) {
-        var uriTemplate = SERVER_URL + '/flow.html?_flowId=viewReportFlow&standAlone=true&reportUnit=[addressuri]&decorate=no';
+        var uriTemplate = BSM.SERVER_URL + '/flow.html?_flowId=viewReportFlow&standAlone=true&reportUnit=[addressuri]&decorate=no';
         if (viewSelect != null) {
-            uriTemplate = SERVER_URL + '/flow.html?_flowId=' + viewSelect + '&standAlone=true&resource=[addressuri]&decorate=no&viewReport=true';
+            uriTemplate = BSM.SERVER_URL + '/flow.html?_flowId=' + viewSelect + '&standAlone=true&resource=[addressuri]&decorate=no&viewReport=true';
         }
         var url = uriTemplate.replace("[addressuri]", uri);
         console.log(url);
@@ -222,7 +222,7 @@ BSM.jasper = function() {
     }
 
     function _createDashboardInView(uri) {
-        var uriTemplate = SERVER_URL + '/flow.html?_flowId=dashboardRuntimeFlow&dashboardResource=[addressuri]&decorate=no';
+        var uriTemplate = BSM.SERVER_URL + '/flow.html?_flowId=dashboardRuntimeFlow&dashboardResource=[addressuri]&decorate=no';
         //if (viewSelect != null) {
         //    uriTemplate = SERVER_URL + '/flow.html?_flowId=' + viewSelect + '&standAlone=true&resource=[addressuri]&decorate=no&viewReport=true';
         //}
