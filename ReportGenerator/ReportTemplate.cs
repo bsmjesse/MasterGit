@@ -219,6 +219,11 @@ namespace VLF.Reports
 
       #endregion
 
+      #region HOS Report Parameters
+      public const string RptHOSParamFleetId = "FleetId";
+      public const string RptHOSParamPrefrence = "Prefrence";
+      #endregion
+
       # region Common Report Parameters
 
       public const string RptParamFleetId = "FleetId";
