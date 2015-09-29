@@ -555,4 +555,7 @@
   <data name="AddUserPasswordFailed22" xml:space="preserve">
     <value>Le mot de passe est dupliqué dans l'un des 8 derniers mots de passe que vous avez utilisé récemment.</value>
   </data>
+  <data name="dgUsers_Fleets" xml:space="preserve">
+    <value>Flottes affectées</value>
+  </data>
 </root>

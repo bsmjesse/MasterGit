@@ -398,6 +398,7 @@ namespace SentinelFM
             string sExpiredDate = String.Empty;
             string sUserStatus = String.Empty;
             string sUserGroups = String.Empty;
+            string sFleets = String.Empty;
 
             foreach (DataRow drUsers in dtUsers.Rows)
             {
@@ -425,14 +426,18 @@ namespace SentinelFM
                     sUserGroups = drUsers["UserGroups"].ToString();
                 else
                     sUserGroups = string.Empty;
+                if (drUsers["Fleets"] != null)
+                    sFleets = drUsers["Fleets"].ToString();
+                else
+                    sFleets = string.Empty;
 
-                _sUsers.Append(String.Format("[\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\",\"{5}\"],", sFirstName, sLastName, sUserName, sExpiredDate, sUserStatus, sUserGroups));
+                _sUsers.Append(String.Format("[\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\",\"{5}\",\"{6}\"],", sFirstName, sLastName, sUserName, sExpiredDate, sUserStatus, sUserGroups, sFleets));
             }
 
             if (_sUsers.Length > 0)
             {
                 sUsers = _sUsers.ToString().Substring(0, _sUsers.Length - 1);
-                expdata.Value = "{\"Header\":[\"" + (string)base.GetLocalResourceObject("dgUsers_FirstName") + "\",\"" + (string)base.GetLocalResourceObject("dgUsers_LastName") + "\",\"" + (string)base.GetLocalResourceObject("dgUsers_UserName") + "\",\"" + (string)base.GetLocalResourceObject("dgUsers_ExpiredDate") + "\",\"" + (string)base.GetLocalResourceObject("dgUsers_Status") + "\",\"" + (string)base.GetLocalResourceObject("dgUsers_UserGroups") + "\"],\"Data\":[" + sUsers + "]}";
+                expdata.Value = "{\"Header\":[\"" + (string)base.GetLocalResourceObject("dgUsers_FirstName") + "\",\"" + (string)base.GetLocalResourceObject("dgUsers_LastName") + "\",\"" + (string)base.GetLocalResourceObject("dgUsers_UserName") + "\",\"" + (string)base.GetLocalResourceObject("dgUsers_ExpiredDate") + "\",\"" + (string)base.GetLocalResourceObject("dgUsers_Status") + "\",\"" + (string)base.GetLocalResourceObject("dgUsers_UserGroups") + "\",\"" + (string)base.GetLocalResourceObject("dgUsers_Fleets") + "\"],\"Data\":[" + sUsers + "]}";
                 imgExcel.Visible = true;
             }
             else
@@ -1189,12 +1194,10 @@ namespace SentinelFM
         {
             if ((e.Item.ItemType == ListItemType.AlternatingItem) || (e.Item.ItemType == ListItemType.Item))
             {
-                e.Item.Cells[7].ToolTip = (string)base.GetLocalResourceObject("EditToolTip");
-                //e.Item.Cells[7].ToolTip = (string)base.GetLocalResourceObject("DeleteToolTip");
+                e.Item.Cells[8].ToolTip = (string)base.GetLocalResourceObject("EditToolTip");
 
-                LinkButton settings = (LinkButton)e.Item.Cells[8].Controls[0];
+                LinkButton settings = (LinkButton)e.Item.Cells[9].Controls[0];
 
-                //if (sn.User.UserGroupId == 1 || sn.User.UserGroupId == 2)
                 if (sn.User.ControlEnable(sn, 78))
                 {
                     string windowOpen = "preferenceWindow('" + dgUsers.DataKeys[e.Item.ItemIndex].ToString() + "','" + e.Item.Cells[3].Text + "')";

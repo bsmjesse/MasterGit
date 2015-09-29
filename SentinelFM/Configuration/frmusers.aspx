@@ -453,7 +453,7 @@
                                                                                                                 <asp:BoundColumn DataField="ExpiredDate" HeaderText='<%$ Resources:dgUsers_ExpiredDate %>'></asp:BoundColumn>
                                                                                                                 <asp:BoundColumn DataField="UserStatus" HeaderText='<%$ Resources:dgUsers_Status %>'></asp:BoundColumn>
                                                                                                                 <asp:BoundColumn DataField="UserGroups" HeaderText='<%$ Resources:dgUsers_UserGroups %>' ItemStyle-Width="220"></asp:BoundColumn>
-                                                                                                                <asp:BoundColumn DataField="Fleets" HeaderText='<%$ Resources:dgUsers_Fleets %>' ItemStyle-Width="220"></asp:BoundColumn>
+                                                                                                                <asp:BoundColumn DataField="UserGroups" HeaderText='<%$ Resources:dgUsers_Fleets %>' ItemStyle-Width="220"></asp:BoundColumn>
                                                                                                                 <asp:ButtonColumn Text="&lt;img src=../images/edit.gif border=0&gt;" CommandName="Select" meta:resourcekey="ButtonColumnResource1"></asp:ButtonColumn>
                                                                                                                 <asp:ButtonColumn Text='<%$ Resources:dgUsers_Settings %>' CommandName="Settings"></asp:ButtonColumn>
                                                                                                             </Columns>
