@@ -34373,6 +34373,18 @@ namespace VLF.ASI.Interfaces
                 Log(">> GetHOSAuditReport(uId={0}, dtFrom={1}, dtTo={2},organizationID={3})",
                                    userId, from, to, organizationID);
 
+                String hosParamFleetId  = Util.PairFindValue(ReportTemplate.RptHOSParamFleetId, para1);
+                String hosParamPrefrence = Util.PairFindValue(ReportTemplate.RptHOSParamPrefrence, para1);
+
+                if (String.IsNullOrEmpty(hosParamFleetId) || hosParamFleetId.Trim() == "") hosParamFleetId = fleetId.ToString();
+                if (String.IsNullOrEmpty(hosParamPrefrence) || hosParamPrefrence.Trim() == "") hosParamPrefrence = "fleet";
+
+                //HOS schedule report is still calling GetHOSAuditReportNew, so we redirect to GetHOSAuditReportForMultiFleets here
+                return  GetHOSAuditReportForMultiFleets(userId, SID, organizationID, from, to,
+                   hosParamFleetId, para1, hosParamPrefrence,
+                   rFormat, lang, ref ReportPath);
+
+
                 // Authenticate 
                 //LoginManager.GetInstance().SecurityCheck(userId, SID);
                 int driverId = 0;
