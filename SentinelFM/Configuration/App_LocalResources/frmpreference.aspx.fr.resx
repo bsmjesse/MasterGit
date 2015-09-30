@@ -811,7 +811,7 @@
     <value />
   </data>
   <data name="valOldPasswordResource1.ErrorMessage" xml:space="preserve">
-    <value>Entrer votre ancien mot de passe</value>
+    <value>Entrez votre ancien mot de passe</value>
   </data>
   <data name="valOldPasswordResource1.Text" xml:space="preserve">
     <value>*</value>

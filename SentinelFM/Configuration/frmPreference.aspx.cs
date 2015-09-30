@@ -1395,9 +1395,13 @@ namespace SentinelFM
                 this.txtNewPassword.Text = string.Empty;
                 this.txtNewPassword1.Text = string.Empty;
                 this.txtOldPassword.Text = string.Empty;
+                this.lblPswMsg.Text = string.Empty;
                 this.txtNewPassword.Enabled = false;
                 this.txtNewPassword1.Enabled = false;
                 this.txtOldPassword.Enabled = false;
+                this.vlComp.Enabled = false;
+                this.valNewPassword.Enabled = false;
+                this.valOldPassword.Enabled = false;
             }
         }
 

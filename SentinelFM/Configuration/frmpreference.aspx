@@ -786,19 +786,19 @@ ErrorMessage="Value must be a whole number between 0- 1000;" Text="*" meta:resou
                                  </td>
                                  <td align="right">
                                     &nbsp;<asp:button id="cmdSavePsw" runat="server" Width="114px" CssClass="combutton" Text="Edit Password" onclick="cmdSavePsw_Click" meta:resourcekey="cmdSavePswResource1"></asp:button></td>
-                              </tr>
+                              </tr>                              
                               <tr>
-                                 <td colspan="2">
-                                 <asp:label id="lblPswMsg" runat="server" CssClass="errortext" Visible="False" meta:resourcekey="lblPswMsgResource1"></asp:label>
-                                 </td>
-                              </tr>
-                              <tr>
-                                 <td class="style3">
+                                 <td class="style3">                                    
                                  </td>
                                  <td align="right">
                                     <asp:Button runat=server CssClass=combutton ID=cmdHome style="width:114px; height:19px"  text=Cancel meta:resourcekey="cmdHomeResource1" OnClick="cmdHome_Click" CausesValidation="False" />
                                     <asp:Button runat="server" CssClass=combutton ID="cmdExit" Visible=false   style="width:114px; height:19px"  text=Close OnClientClick="javascript:window.close();"   CausesValidation="False"/>
                                     </td> 
+                              </tr>
+                               <tr>
+                                 <td colspan="2">
+                                 <asp:label id="lblPswMsg" runat="server" CssClass="errortext" Visible="False" meta:resourcekey="lblPswMsgResource1"></asp:label>
+                                 </td>
                               </tr>
                            </table>
 								</TD>
@@ -1026,7 +1026,8 @@ ErrorMessage="Value must be a whole number between 0- 1000;" Text="*" meta:resou
 		    if (NewPassword == OldPassword) { 
 		        args.IsValid = false;
 		       sender.errormessage = "<%= msgPsw_OldNewNotSame%>";  
-		       document.getElementById("txtNewPassword").focus();
+		        document.getElementById("txtNewPassword").focus();
+		        
 		        return ; 
 		    }
 		}
