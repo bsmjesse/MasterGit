@@ -124,7 +124,7 @@
                     <div class="row">
                         <div class="well col-xs-12">
                             <div id="filter-title"></div>
-                            <button id="dashboard-filters-toggle" type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="collapse" data-target="#dashboard-filters" onclick="BSM.Controls.onToggle()">
+                            <button id="dashboard-filters-toggle" type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="collapse" data-target="#dashboard-filters" >
                                 Filters<span class="caret"></span>
                             </button>
                             <div id="dashboard-filters" class="collapse">
@@ -132,7 +132,7 @@
                                 <div id="productFamilySelector" class="form-horizontal">
                                 </div>
                                 <br />
-                                <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#dashboard-filters" onclick="BSM.jasper.runDashboardWithAllParams(window)">Apply</button>
+                                <button id="jasper-filters" type="button" class="btn btn-default" data-toggle="collapse" data-target="#dashboard-filters">Apply</button>
 
                             </div>
                         </div>
@@ -168,6 +168,7 @@
             BSM.biOrganizationReports = '<%=BiOrganizationReports%>';
             BSM.biDemo = '<%=BiDemo%>';
             BSM.drivers = <%=DRIVER_DATA%>;
+            BSM.fleets = <%=FLEET_DATA%>;
 
         </script>
     </form>
@@ -181,7 +182,9 @@
 
     <script>
         $(document).ready(function () {
-
+            $('#jasper-filters').on('click', function(){
+                BSM.jasper.runDashboardWithAllParams(BSM.dashboardParams);
+            });
             BSM.Visualize.loadMenu(window);
         });
     </script>

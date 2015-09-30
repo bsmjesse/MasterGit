@@ -32,6 +32,10 @@ BSM.jasper = function() {
             error: function (err) {
                 alert(err.message);
             },
+            success: function () {
+                _buildDashboardControl(BSM.report.data().parameters);
+
+            },
             container: "#divContainer"
         });
     }
@@ -44,7 +48,8 @@ BSM.jasper = function() {
                 alert(err.message);
             },
             success: function () {
-                _buildDashboardControl();
+                _buildDashboardControl(BSM.dashboard.data().parameters);
+                //BSM.jasper.runDashboardWithAllParams(BSM.dashboardParams);
                
             },
             container: "#divContainer"
@@ -84,8 +89,9 @@ BSM.jasper = function() {
 
     }
 
-    function _buildDashboardControl() {
-        var params = BSM.dashboard.data().parameters;
+    function _buildDashboardControl(data) {
+        //var params = BSM.dashboard.data().parameters;
+        var params = data;
         console.log(params);
         BSM.dashboardParams = new Array();
         for (var i = params.length - 1; i >= 0; i--) {
@@ -172,9 +178,9 @@ BSM.jasper = function() {
         BSM.dashboardData['EndDate'] = [moment(ranges[1]).format()];
     }
 
-    function _runDashboardWithAllParams() {
+    function _runDashboardWithAllParams(dashboardParams) {
         if (BSM.dashboard == null) return;
-        BSM.dashboardParams.forEach(function (inputId) {
+        dashboardParams.forEach(function (inputId) {
             var id = $('#' + inputId).attr('id');
             var dashboardData = [];
             var inputControlValue = $.trim($('#' + inputId).val());

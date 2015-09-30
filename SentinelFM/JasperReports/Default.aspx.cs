@@ -74,8 +74,8 @@ public partial class JasperReports_Default : System.Web.UI.Page
 
             DataSet dsFleets = new DataSet();
             dsFleets = sn.User.GetUserFleets(sn);
-            FLEET_DATA = "[[";
-            for (int i = 0; i <30; i++)
+            FLEET_DATA = "{data:[[";
+            for (int i = 0; i < dsFleets.Tables[0].Rows.Count; i++)
             {
                 if (i > 0)
                 {
@@ -84,6 +84,8 @@ public partial class JasperReports_Default : System.Web.UI.Page
                 FLEET_DATA += "{id: " + dsFleets.Tables[0].Rows[i]["fleetId"].ToString() + ", title:\"" + dsFleets.Tables[0].Rows[i]["fleetName"].ToString() + "\"}";
             }
             FLEET_DATA += "]]";
+            FLEET_DATA += ",default:[" + sn.User.DefaultFleet.ToString() + "]";
+            FLEET_DATA += "}";
         }
         catch (NullReferenceException Ex)
         {
@@ -94,7 +96,7 @@ public partial class JasperReports_Default : System.Web.UI.Page
         {
             System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.Message.ToString() + " User:" + sn.UserID.ToString() + " Form:" + Page.GetType().Name));
             System.Diagnostics.StackTrace trace = new System.Diagnostics.StackTrace(Ex, true);
-            FLEET_DATA = "[]";
+            FLEET_DATA = "{data: []}";
         }
     }
 
@@ -122,7 +124,7 @@ public partial class JasperReports_Default : System.Web.UI.Page
             ContactManager contactMsg = new ContactManager(sConnectionString);
             dsDrivers = contactMsg.GetOrganizationDrivers(sn.User.OrganizationId);
             var totalRows = dsDrivers.Tables[0].Rows.Count;
-            DRIVER_DATA = "[[";
+            DRIVER_DATA = "{data:[[";
             for (int i = 0; i < 100; i++)
             {
                 if (i > 0)
@@ -131,7 +133,7 @@ public partial class JasperReports_Default : System.Web.UI.Page
                 }
                 DRIVER_DATA += "{id: " + dsDrivers.Tables[0].Rows[i]["DriverId"].ToString() + ", title:\"" + dsDrivers.Tables[0].Rows[i]["FirstName"].ToString() + " " + dsDrivers.Tables[0].Rows[i]["LastName"].ToString() + "\"}";
             }
-            DRIVER_DATA += "]]";
+            DRIVER_DATA += "]]}";
         }
         catch (NullReferenceException Ex)
         {
@@ -143,7 +145,7 @@ public partial class JasperReports_Default : System.Web.UI.Page
         catch (Exception Ex)
         {
             System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.Message.ToString() + " User:" + sn.UserID.ToString() + " Form:" + Page.GetType().Name));
-            DRIVER_DATA = "[]";
+            DRIVER_DATA = "{data:[]}";
 
         }
 

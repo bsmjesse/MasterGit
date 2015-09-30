@@ -12,7 +12,7 @@ BSM.Controls = function (el) {
     function _multipleSelectControl(elementId, dataFeed, defaultData) {
         if ($('#' + elementId).length === 1) {
 
-            var _data = dataFeed;
+            var _data = dataFeed.data;
             var _html = '<br /><select id="' + elementId + '" multiple="multiple">';
             if (_data.length === 1) // only one group
             {
@@ -74,7 +74,12 @@ BSM.Controls = function (el) {
                 jQuery('#' + elementId).val(defaultData);
                 //jQuery('#' + elementId).multipleSelect('setSelects', [1]);
                 jQuery('#' + elementId).multipleSelect('refresh');
-            }            
+            }
+            else if (dataFeed.default != undefined && dataFeed.default != '') {
+                jQuery('#' + elementId).val(dataFeed.default);
+                //jQuery('#' + elementId).multipleSelect('setSelects', [1]);
+                jQuery('#' + elementId).multipleSelect('refresh');
+            }
 
         };
 
@@ -83,7 +88,7 @@ BSM.Controls = function (el) {
     function _singleSelectControl(elementId, dataFeed, defaultData) {
         if ($('#' + elementId).length === 1) {
 
-            var _data = dataFeed;
+            var _data = dataFeed.data;
             var _html = '<br /><select style="width:250px;" id="' + elementId + '">';
 
             for (var i = 0; i < _data[0].length; i++) {
@@ -104,6 +109,10 @@ BSM.Controls = function (el) {
                 jQuery('#' + elementId).val(defaultData);
                 jQuery('#' + elementId).multipleSelect('refresh');
             }
+            else if (dataFeed.default != undefined && dataFeed.default != '') {
+                jQuery('#' + elementId).val(dataFeed.default);
+                jQuery('#' + elementId).multipleSelect('refresh');
+            }
 
         };
 
@@ -114,6 +123,8 @@ BSM.Controls = function (el) {
         if ($('#StartDate').length === 1) {
             //_dateControl('StartDate', new Date(+new Date - 12096e5)); // 2 weeks
             _dateControl('StartDate', new Date(2015, 6, 1));
+
+            _initDateRangePicker();
         }
 
         if ($('#StartDate_2').length === 1) {
@@ -131,14 +142,16 @@ BSM.Controls = function (el) {
 
         //_daysOfWeekControl();
         _multipleSelectControl('Select_Days_of_Week', getDaysOfWeek(), ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]);
-        _multipleSelectControl('Fleet_Selector', getFleetData(), ["124552"]);
+        _multipleSelectControl('Fleet_Selector', getFleetData());
         _multipleSelectControl('Driver_Select', getDriver());
         _multipleSelectControl('Driver_Select_2', getDriver());
         _singleSelectControl('Infraction_Category', getInfractionCategory(), "Violation");
         _multipleSelectControl('Infractions_List', getInfractionList());
+
+        setTimeout(function () { BSM.jasper.runDashboardWithAllParams(BSM.dashboardParams); }, 6000);
     }
 
-        function _onToggleLoadDateRangePicker() {
+        function _initDateRangePicker() {
             var $j = jQuery.noConflict();
             $('#StartDate').daterangepicker({
                 ranges: {
@@ -158,11 +171,12 @@ BSM.Controls = function (el) {
 
     function getFleetData(){
         //return <%=FLEET_DATA%>;
-        return [[{ id: 4670, title: "Pilot Fleet" }, { id: 4733, title: "Chicago Fleet" }, { id: 4734, title: "Ft. Worth" }]];
+        //return [[{ id: 4670, title: "Pilot Fleet" }, { id: 4733, title: "Chicago Fleet" }, { id: 4734, title: "Ft. Worth" }]];
+        return BSM.fleets;
     }
 
     function getDaysOfWeek() {
-        return [[{ groupName: 'Weekday', data: [{ id: "Monday", title: "Monday" }, { id: "Tuesday", title: "Tuesday" }, { id: "Wednesday", title: "Wednesday" }, { id: "Thursday", title: "Thursday" }, { id: "Friday", title: "Friday" }] }], [{ groupName: 'Weekend', data: [{ id: "Saturday", title: "Saturday" }, { id: "Sunday", title: "Sunday" }] }]];
+        return { data: [[{ groupName: 'Weekday', data: [{ id: "Monday", title: "Monday" }, { id: "Tuesday", title: "Tuesday" }, { id: "Wednesday", title: "Wednesday" }, { id: "Thursday", title: "Thursday" }, { id: "Friday", title: "Friday" }] }], [{ groupName: 'Weekend', data: [{ id: "Saturday", title: "Saturday" }, { id: "Sunday", title: "Sunday" }] }]] };
     }
 
     function getDriver() {
@@ -171,18 +185,18 @@ BSM.Controls = function (el) {
     }
 
     function getInfractionCategory() {
-        return [[{ id: "Alarm", title: "Alarm" }, { id: "Diagnostic", title: "Diagnostic" }, { id: "Diagnostic:(Custom)", title: "Diagnostic:(Custom)" }, { id: "DTC", title: "DTC" }, { id: "Violation", title: "Violation" }, { id: "Violation:(Custom)", title: "Violation:(Custom)" }]];
+        return { data: [[{ id: "Alarm", title: "Alarm" }, { id: "Diagnostic", title: "Diagnostic" }, { id: "Diagnostic:(Custom)", title: "Diagnostic:(Custom)" }, { id: "DTC", title: "DTC" }, { id: "Violation", title: "Violation" }, { id: "Violation:(Custom)", title: "Violation:(Custom)" }]] };
     }
 
     function getInfractionList() {
-        return [[{ id: 3, title: "Speed" }, { id: 35, title: "Speeding" }, { id: 37, title: "ServiceRequired" }, { id: 55, title: "HopperDoorsTamper" }, { id: 58, title: "HarshBraking" }, { id: 59, title: "ExtremeBraking" }, { id: 60, title: "HarshAcceleration" }, { id: 61, title: "ExtrAcceleration" }, { id: 62, title: "SeatBelt" }, { id: 108, title: "ReverseExcessDistance" }, { id: 111, title: "HighRailSpeed" }, { id: 113, title: "ReverseHyRailExcessSpeed" }, { id: 119, title: "Harsh Drive" }, { id: 503, title: "Speed Event" }, { id: 506, title: "HarshBraking" }, { id: 507, title: "ExtremeBraking" }, { id: 508, title: "HarshAcceleration" }, { id: 509, title: "ExtrAcceleration" }, { id: 515, title: "Speed Bucket" }, { id: 521, title: "Speed In Landmark" }, { id: 529, title: "Idle in Landmark" }, { id: 531, title: "Seatbelt" }, { id: 558, title: "Driver class" }]];
+        return { data: [[{ id: 3, title: "Speed" }, { id: 35, title: "Speeding" }, { id: 37, title: "ServiceRequired" }, { id: 55, title: "HopperDoorsTamper" }, { id: 58, title: "HarshBraking" }, { id: 59, title: "ExtremeBraking" }, { id: 60, title: "HarshAcceleration" }, { id: 61, title: "ExtrAcceleration" }, { id: 62, title: "SeatBelt" }, { id: 108, title: "ReverseExcessDistance" }, { id: 111, title: "HighRailSpeed" }, { id: 113, title: "ReverseHyRailExcessSpeed" }, { id: 119, title: "Harsh Drive" }, { id: 503, title: "Speed Event" }, { id: 506, title: "HarshBraking" }, { id: 507, title: "ExtremeBraking" }, { id: 508, title: "HarshAcceleration" }, { id: 509, title: "ExtrAcceleration" }, { id: 515, title: "Speed Bucket" }, { id: 521, title: "Speed In Landmark" }, { id: 529, title: "Idle in Landmark" }, { id: 531, title: "Seatbelt" }, { id: 558, title: "Driver class" }]] };
     }
 
 
     return {
         scanControls: _scanControls,
 
-        onToggle: _onToggleLoadDateRangePicker,
+        //onToggle: _onToggleLoadDateRangePicker,
 
         removeLeft: function () {
             _.each($('.dashlet').parent(), function (data) {
