@@ -3454,6 +3454,36 @@ namespace SentinelFM
   
                 ret = standardReport.CreateReportParams(cboVehicle);
 
+                //If it is schedule report and HOS Audit Report
+                if (standardReport.cboReports == "103" && hidSubmitType.Value == "2")
+                {
+                    String auditKeyValue = standardReport.keyValue;
+                    String auditFleetId = "";
+                    String auditPrefrence = "";
+                    if (auditKeyValue.Contains("Multi-Fleet"))
+                    {
+                        int start = auditKeyValue.IndexOf(":");
+                        int stop = auditKeyValue.IndexOf("<b>S");
+                        auditFleetId = auditKeyValue.Substring(start + 1, stop - start - 1);
+                        auditPrefrence = "hierarchy";
+
+                    }
+                    else
+                    {
+                        if (sn.Report.OrganizationHierarchyNodeCode != "")
+                        {
+                            auditFleetId = sn.Report.FleetId.ToString();
+                            auditPrefrence = "hierarchy";
+                        }
+                        else
+                        {
+                            auditFleetId = sn.Report.FleetId.ToString();
+                            auditPrefrence = "fleet";
+                        }
+                    }
+                    sn.Report.XmlParams += ReportTemplate.MakePair(ReportTemplate.RptHOSParamFleetId, auditFleetId);
+                    sn.Report.XmlParams += ReportTemplate.MakePair(ReportTemplate.RptHOSParamPrefrence, auditPrefrence);
+                }
             }
             catch (NullReferenceException Ex)
             {
