@@ -13,3 +13,8 @@ C:\tfs\SentinelFM\HotFixes\ERR\obj\Debug\ERR.csprojResolveAssemblyReference.cach
 C:\tfs\SentinelFM\HotFixes\ERR\obj\Debug\ERR.dll
 C:\tfs\SentinelFM\HotFixes\ERR\obj\Debug\ERR.pdb
 C:\Builds\SentinelFM\Master\ERR\obj\Debug\ERR.csprojResolveAssemblyReference.cache
+D:\Apps\BSM\SentinelFM\Master\BIN\ERR.dll
+D:\Apps\BSM\SentinelFM\Master\BIN\ERR.pdb
+D:\Apps\BSM\SentinelFM\Master\ERR\obj\Debug\ERR.csprojResolveAssemblyReference.cache
+D:\Apps\BSM\SentinelFM\Master\ERR\obj\Debug\ERR.dll
+D:\Apps\BSM\SentinelFM\Master\ERR\obj\Debug\ERR.pdb

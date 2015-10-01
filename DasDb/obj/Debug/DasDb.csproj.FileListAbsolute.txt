@@ -28,3 +28,13 @@ C:\tfs\SentinelFM\HotFixes\DasDb\obj\Debug\DasDb.csproj.GenerateResource.Cache
 C:\tfs\SentinelFM\HotFixes\DasDb\obj\Debug\fr\DasDb.resources.dll
 C:\tfs\SentinelFM\HotFixes\DasDb\obj\Debug\DasDb.dll
 C:\tfs\SentinelFM\HotFixes\DasDb\obj\Debug\DasDb.pdb
+D:\Apps\BSM\SentinelFM\Master\BIN\DasDb.dll
+D:\Apps\BSM\SentinelFM\Master\BIN\DasDb.pdb
+D:\Apps\BSM\SentinelFM\Master\BIN\fr\DasDb.resources.dll
+D:\Apps\BSM\SentinelFM\Master\DasDb\obj\Debug\DasDb.csprojResolveAssemblyReference.cache
+D:\Apps\BSM\SentinelFM\Master\DasDb\obj\Debug\VLF.DAS.DB.Resources.Const.resources
+D:\Apps\BSM\SentinelFM\Master\DasDb\obj\Debug\VLF.DAS.DB.Resources.Const.fr.resources
+D:\Apps\BSM\SentinelFM\Master\DasDb\obj\Debug\DasDb.csproj.GenerateResource.Cache
+D:\Apps\BSM\SentinelFM\Master\DasDb\obj\Debug\fr\DasDb.resources.dll
+D:\Apps\BSM\SentinelFM\Master\DasDb\obj\Debug\DasDb.dll
+D:\Apps\BSM\SentinelFM\Master\DasDb\obj\Debug\DasDb.pdb
