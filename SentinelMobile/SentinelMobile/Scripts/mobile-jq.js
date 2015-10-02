@@ -225,6 +225,8 @@ $('#historypage').live('pageshow', function () {
 
 $('#sendEmailPage').live('pageshow', function () {
     $("#company").prop("readonly", true);
+    $('#00Ng00000018gf1').val(InstallerOrganization);
+    $('#00Ng00000018grq').val(InstallerName);
     $('#00Ng000000177hz').val(FollowingVehicleName);
     $("#00Ng000000177hz").prop("readonly", true);
     $('#00Ng00000018Oah').val(FollowingBoxId);
@@ -1382,12 +1384,18 @@ function sendEmail() {
         $('#InstallerOrganizationMsg').css('color', 'red').html(InstallerOrganizationNotEmpty).show().delay(1000).fadeOut(1000);
         return;
     }
+    else {
+        InstallerOrganization = $('#00Ng00000018gf1').val();
+    }
 
     if ($('#00Ng00000018grq').val() == '') {
         $('#00Ng00000018grq').addClass('textboxError');
         $('#00Ng00000018grq').focus();
         $('#InstallerMsg').css('color', 'red').html(ResourceInstallerNotEmpty).show().delay(1000).fadeOut(1000);
         return;
+    }
+    else {
+        InstallerName = $('#00Ng00000018grq').val();
     }
 
     if ($('#00Ng00000018gew').val() == '') {
