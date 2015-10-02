@@ -63,6 +63,46 @@ namespace VLF.DAS.DB
             return rowsAffected;
         }
 
+        public int LandmarkInOut_Update_EndDate_Of_UnavailableEvents(int orgId, int userId, int boxId, int landmarkId, string landmarkInDate, bool makeItUnavailableAgain)
+        {
+            int rowsAffected = 0;
+            try
+            {
+                string sql = "usp_LandmarkInOut_Update_EndDate_Of_UnavailableEvents";
+
+                sqlExec.ClearCommandParameters();
+
+                sqlExec.AddCommandParam("@organizationId", SqlDbType.Int, orgId);
+                sqlExec.AddCommandParam("@userId", SqlDbType.Int, userId);
+                sqlExec.AddCommandParam("@boxId", SqlDbType.Int, boxId);
+                sqlExec.AddCommandParam("@landmarkId", SqlDbType.Int, landmarkId);
+                sqlExec.AddCommandParam("@LandmarkInDate", SqlDbType.DateTime, landmarkInDate);
+                sqlExec.AddCommandParam("@makeItUnavailableAgain", SqlDbType.Bit, makeItUnavailableAgain);
+                
+                if (sqlExec.RequiredTransaction())
+                {
+                    sqlExec.AttachToTransaction(sql);
+                }
+                rowsAffected = sqlExec.SPExecuteNonQuery(sql);
+            }
+            catch (SqlException objException)
+            {
+                string prefixMsg = "Unable to LandmarkInOut_Update_EndDate_Of_UnavailableEvents organizationId=" + orgId + " userId=" + userId + " boxId=" + boxId.ToString();
+                Util.ProcessDbException(prefixMsg, objException);
+            }
+            catch (DASDbConnectionClosed exCnn)
+            {
+                throw new DASDbConnectionClosed(exCnn.Message);
+            }
+            catch (Exception objException)
+            {
+                string prefixMsg = "Unable to LandmarkInOut_Update_EndDate_Of_UnavailableEvents organizationId=" + orgId + " userId=" + userId + " boxId=" + boxId.ToString();
+                throw new DASException(prefixMsg + " " + objException.Message);
+            }
+
+            return rowsAffected;
+        }
+
         public DataSet GetVehicleOperationalState(int userId, int orgId, long vehicleId)
         {
             DataSet resultSet = null;

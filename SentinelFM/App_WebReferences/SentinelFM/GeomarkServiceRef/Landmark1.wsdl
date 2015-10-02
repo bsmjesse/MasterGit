@@ -18,6 +18,7 @@
       <xsd:import schemaLocation="http://dev2:8080/GeomarkService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BsmLandmarkService" />
       <xsd:import schemaLocation="http://dev2:8080/GeomarkService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Telogis.GeoBase" />
       <xsd:import schemaLocation="http://dev2:8080/GeomarkService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://dev2:8080/GeomarkService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/GeomarkWcfService" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IGeomarkService_GetData_InputMessage">
@@ -158,6 +159,18 @@
   <wsdl:message name="IGeomarkService_GetPostpone_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPostponeResponse" />
   </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetVehicleAvailableEmailSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleAvailableEmailSetting" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_GetVehicleAvailableEmailSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleAvailableEmailSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_SetVehicleAvailableEmailSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetVehicleAvailableEmailSetting" />
+  </wsdl:message>
+  <wsdl:message name="IGeomarkService_SetVehicleAvailableEmailSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetVehicleAvailableEmailSettingResponse" />
+  </wsdl:message>
   <wsdl:portType name="IGeomarkService">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/GetData" message="tns:IGeomarkService_GetData_InputMessage" />
@@ -250,6 +263,14 @@
     <wsdl:operation name="GetPostpone">
       <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/GetPostpone" message="tns:IGeomarkService_GetPostpone_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/GetPostponeResponse" message="tns:IGeomarkService_GetPostpone_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAvailableEmailSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/GetVehicleAvailableEmailSetting" message="tns:IGeomarkService_GetVehicleAvailableEmailSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/GetVehicleAvailableEmailSettingResponse" message="tns:IGeomarkService_GetVehicleAvailableEmailSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetVehicleAvailableEmailSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGeomarkService/SetVehicleAvailableEmailSetting" message="tns:IGeomarkService_SetVehicleAvailableEmailSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGeomarkService/SetVehicleAvailableEmailSettingResponse" message="tns:IGeomarkService_SetVehicleAvailableEmailSetting_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="httpws" type="tns:IGeomarkService">
@@ -462,6 +483,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetVehicleAvailableEmailSetting">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/GetVehicleAvailableEmailSetting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetVehicleAvailableEmailSetting">
+      <soap12:operation soapAction="http://tempuri.org/IGeomarkService/SetVehicleAvailableEmailSetting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="httpbasic" type="tns:IGeomarkService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -665,6 +704,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetPostpone">
       <soap:operation soapAction="http://tempuri.org/IGeomarkService/GetPostpone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAvailableEmailSetting">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/GetVehicleAvailableEmailSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetVehicleAvailableEmailSetting">
+      <soap:operation soapAction="http://tempuri.org/IGeomarkService/SetVehicleAvailableEmailSetting" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

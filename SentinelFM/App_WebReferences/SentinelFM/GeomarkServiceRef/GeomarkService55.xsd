@@ -3,6 +3,7 @@
   <xs:import schemaLocation="http://dev2:8080/GeomarkService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BsmLandmarkService" />
   <xs:import schemaLocation="http://dev2:8080/GeomarkService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Telogis.GeoBase" />
   <xs:import schemaLocation="http://dev2:8080/GeomarkService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://dev2:8080/GeomarkService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/GeomarkWcfService" />
   <xs:element name="GetData">
     <xs:complexType>
       <xs:sequence>
@@ -149,7 +150,7 @@
   <xs:element name="InGeoLandmarkWithDetailResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InGeoLandmarkWithDetailResult" nillable="true" type="q8:ArrayOfKeyValueOflongLandmarkInfoiOYzyKks" />
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InGeoLandmarkWithDetailResult" nillable="true" type="q8:ArrayOfKeyValueOflongLandmarkInfomLnUaEFN" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -270,7 +271,7 @@
   <xs:element name="NavteqReverseGeoCoderResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/BsmLandmarkService" minOccurs="0" name="NavteqReverseGeoCoderResult" nillable="true" type="q15:GeoCoderNavteqResp" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/GeomarkWcfService" minOccurs="0" name="NavteqReverseGeoCoderResult" nillable="true" type="q15:GeoCoderNavteqResp" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -286,7 +287,7 @@
   <xs:element name="NavteqReverseGeoCoderWithHeadingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/BsmLandmarkService" minOccurs="0" name="NavteqReverseGeoCoderWithHeadingResult" nillable="true" type="q16:GeoCoderNavteqResp" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/GeomarkWcfService" minOccurs="0" name="NavteqReverseGeoCoderWithHeadingResult" nillable="true" type="q16:GeoCoderNavteqResp" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -348,6 +349,40 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="GetPostponeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleAvailableEmailSetting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="boxId" type="xs:int" />
+        <xs:element minOccurs="0" name="landmarkId" type="xs:int" />
+        <xs:element minOccurs="0" name="serviceConfigId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleAvailableEmailSettingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetVehicleAvailableEmailSettingResult" nillable="true" type="q17:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetVehicleAvailableEmailSetting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="boxId" type="xs:int" />
+        <xs:element minOccurs="0" name="landmarkId" type="xs:int" />
+        <xs:element minOccurs="0" name="serviceConfigId" type="xs:int" />
+        <xs:element minOccurs="0" name="durationInMinute" type="xs:int" />
+        <xs:element minOccurs="0" name="shouldSendEmailImmediately" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetVehicleAvailableEmailSettingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetVehicleAvailableEmailSettingResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

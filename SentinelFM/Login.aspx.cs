@@ -776,8 +776,8 @@ namespace SentinelFM
 
             catch (Exception Ex)
             {
-                //lblMessage.Text = Ex.Message.ToString();
-                //lblMessage.Visible = true;
+                lblMessage.Text = Ex.Message.ToString();
+                lblMessage.Visible = true;
 
                 System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.Message.ToString() + " User:" + sn.UserID.ToString() + " Form:Login.aspx"));
             }

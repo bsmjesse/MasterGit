@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BsmLandmarkService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BsmLandmarkService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dev2:8080/GeomarkService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Telogis.GeoBase" />
+  <xs:complexType name="ArrayOfLandmarkEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LandmarkEntity" nillable="true" type="tns:LandmarkEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLandmarkEntity" nillable="true" type="tns:ArrayOfLandmarkEntity" />
+  <xs:complexType name="LandmarkEntity">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Telogis.GeoBase" minOccurs="0" name="CenterPoint" type="q1:LatLon" />
+      <xs:element minOccurs="0" name="ClusterKeyId" type="xs:int" />
+      <xs:element minOccurs="0" name="LandmarkId" type="xs:int" />
+      <xs:element minOccurs="0" name="Organizationid" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Telogis.GeoBase" minOccurs="0" name="PolygonPoints" nillable="true" type="q2:ArrayOfLatLon" />
+      <xs:element minOccurs="0" name="Radius" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LandmarkEntity" nillable="true" type="tns:LandmarkEntity" />
+  <xs:complexType name="CompositeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
+</xs:schema>

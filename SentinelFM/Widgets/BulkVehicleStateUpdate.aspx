@@ -103,6 +103,10 @@
                 sdata += "&LandmarkDuration=" + $('#LandmarkDuration_' + selectedvehicles[i]).val();
                 sdata += "&vehicleId=" + $('#vehicleId_' + selectedvehicles[i]).val();
                 sdata += "&boxId=" + $('#boxId_' + selectedvehicles[i]).val();
+                sdata += "&chkSendEmailImmediately=" + $('#chkSendEmailImmediately_' + selectedvehicles[i]).val();
+                sdata += "&landmarkEventId=" + $('#landmarkEventId_' + selectedvehicles[i]).val();
+                sdata += "&landmarkInDatetime=" + $('#landmarkInDatetime_' + selectedvehicles[i]).val();
+                sdata += "&originOperationState=" + $('#originOperationState_' + selectedvehicles[i]).val();
                 //alert(sdata);
 
                 var VehicleDescription = $('#VehicleDescription_' + selectedvehicles[i]).html();
@@ -168,6 +172,41 @@
                 $('#selLandmarkDuration_' + vid).show();
             }
         }
+
+        function getLandmarkDuration(vehicleId, landmarkId, boxId) {
+            var serviceConfigId = $('#ServiceConfigId_' + vehicleId).val();
+            $.ajax({
+                type: 'GET',
+                url: rootpath + 'Vehicles.aspx?QueryType=GetLandmarkDuration',
+                data: { "serviceConfigId": serviceConfigId, "vehicleId": vehicleId, "landmarkId": landmarkId, "boxId": boxId },
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                async: true,
+                success: function (msg) {
+                    if (msg.status == 200) {
+                        if (msg.landmarkDuration == -1) {
+                            $('#LandmarkDuration_' + vehicleId).val(0);
+                            //$('#trOperationalStateMessage').show();
+                        }
+                        else {
+                            $('#LandmarkDuration_' + vehicleId).val(msg.landmarkDuration);
+                            //$('#trOperationalStateMessage').hide();
+                        }
+
+                        if (msg.ShouldSendEmailImmediately != undefined && msg.ShouldSendEmailImmediately.toLowerCase() == "false") {
+                            $('#chkSendEmailImmediately_' + vehicleId).prop('checked', false);
+                        }
+                        else {
+                            $('#chkSendEmailImmediately_' + vehicleId).prop('checked', true);
+                        }
+                    }
+
+                },
+                error: function (msg) {
+                    alert('failure');
+                }
+            });
+        }
     </script>
     
     <div>
@@ -178,10 +217,11 @@
                     <table id="tblVehicleStates" style="width:100%;">
                         <thead> 
                             <tr>
-                                <th data-bsortable="true">Vehilce</th>
+                                <th data-bsortable="true" style="width:80px;">Vehilce</th>
+                                <th>Service Name</th>
                                 <th>State</th>
                                 <th>Notes</th>
-                                <th>Postpone Duration</th>
+                                <th style="width:360px;">Email Reminder Period</th>
                                 <th></th>                    
                             </tr>
                         </thead>

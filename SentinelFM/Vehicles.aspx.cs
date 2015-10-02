@@ -489,6 +489,13 @@ namespace SentinelFM
                         //    dsFleetInfo.Tables["VehiclesLastKnownPositionInformation"].Columns.Add(dc);
                         //}
 
+                        if (!dsFleetInfo.Tables["VehiclesLastKnownPositionInformation"].Columns.Contains("LandmarkEventId"))
+                        {
+                            dc = new DataColumn("LandmarkEventId", Type.GetType("System.Int64"));
+                            dc.DefaultValue = 0;
+                            dsFleetInfo.Tables["VehiclesLastKnownPositionInformation"].Columns.Add(dc);
+                        }
+
                         if (!dsFleetInfo.Tables["VehiclesLastKnownPositionInformation"].Columns.Contains("OperationalStateName"))
                         {
                             dc = new DataColumn("OperationalStateName", Type.GetType("System.String"));
@@ -499,6 +506,12 @@ namespace SentinelFM
                         if (!dsFleetInfo.Tables["VehiclesLastKnownPositionInformation"].Columns.Contains("DurationInLandmarkMin"))
                         {
                             dc = new DataColumn("DurationInLandmarkMin", Type.GetType("System.Int32"));
+                            dsFleetInfo.Tables["VehiclesLastKnownPositionInformation"].Columns.Add(dc);
+                        }
+
+                        if (!dsFleetInfo.Tables["VehiclesLastKnownPositionInformation"].Columns.Contains("LandmarkInDateTime"))
+                        {
+                            dc = new DataColumn("LandmarkInDateTime", Type.GetType("System.DateTime"));
                             dsFleetInfo.Tables["VehiclesLastKnownPositionInformation"].Columns.Add(dc);
                         }
 
@@ -3231,10 +3244,10 @@ namespace SentinelFM
 
                 foreach (DataColumn col in ds.Tables[0].Columns)
                 {
-                    if(col.ColumnName =="OriginDateTime")
+                    if (col.ColumnName == "OriginDateTime" || col.ColumnName == "LandmarkInDateTime")
                         dict.Add(col.ColumnName,ds.Tables[0].Rows[0][col].ToString());
                     else
-                    dict[col.ColumnName] = ds.Tables[0].Rows[0][col];
+                        dict[col.ColumnName] = ds.Tables[0].Rows[0][col];
                 }
 
                 if (ShowDashboardView)
@@ -3261,37 +3274,21 @@ namespace SentinelFM
                                 serviceList[i, 1] = dsService.Tables[0].Rows[i]["ServiceConfigName"].ToString();
                             }
 
-                            //string[,] serviceList = new string[3, 2];
-                            //serviceList[0, 0] = "1001";
-                            //serviceList[0, 1] = "Test 1";
-                            //serviceList[1, 0] = "1002";
-                            //serviceList[1, 1] = "Test 2";
-                            //serviceList[2, 0] = "1003";
-                            //serviceList[2, 1] = "Test 3";
-
                             dict.Add("ServiceConfigurations", serviceList);
 
-                            int landmarkDuration = serviceList.Length > 1 ? getDuration(int.Parse(serviceList[0,0]), vehicleId, landmarkId, boxId) : -1;
+                            Dictionary<string, string> dictVehicleAvailableEmailSetting = GetVehicleAvailableEmailSetting(int.Parse(serviceList[0, 0]), vehicleId, landmarkId, boxId);
+                            //int landmarkDuration = serviceList.Length > 1 ? getDuration(int.Parse(serviceList[0,0]), vehicleId, landmarkId, boxId) : -1;
+                            int landmarkDuration = -1;
+                            int.TryParse(dictVehicleAvailableEmailSetting["PeriodicEmailDurationInMinute"], out landmarkDuration);
+                            if (landmarkDuration > 0)
+                            {
+                                landmarkDuration = landmarkDuration / 60;
+                            }
                             dict.Add("LandmarkDuration", landmarkDuration);
+                            dict.Add("ShouldSendEmailImmediately", dictVehicleAvailableEmailSetting["ShouldSendEmailImmediately"].ToLower());
 
                         }
                     }
-                    
-                    
-
-                    //DataSet dsVehicleOperationalState = GetVehicleOperationalState(sn.UserID, sn.User.OrganizationId, vehicleId);
-                    //if (dsVehicleOperationalState.Tables[0].Rows.Count > 0)
-                    //{
-                    //    dict.Add("OperationalState", dsVehicleOperationalState.Tables[0].Rows[0]["OperationalState"].ToString());
-                    //    dict.Add("OperationalStateDuration", "");
-                    //    dict.Add("OperationalStateNotes", dsVehicleOperationalState.Tables[0].Rows[0]["Notes"].ToString());
-                    //}
-                    //else
-                    //{
-                    //    dict.Add("OperationalState", "");
-                    //    dict.Add("OperationalStateDuration", "");
-                    //    dict.Add("OperationalStateNotes", "");
-                    //}
 
                 }
                                
@@ -3307,13 +3304,6 @@ namespace SentinelFM
 
         private int getDuration(int serviceConfigId, long vehicleId, long landmarkId, int boxId)
         {
-            //TODO: Subas will fill the function
-            //if (serviceConfigId == 1001)
-            //    return 24;
-            //else if (serviceConfigId == 1002)
-            //    return 36;
-            //else if (serviceConfigId == 1003)
-            //    return 48;
             int rvDuration = -1;
 
             try
@@ -3322,7 +3312,7 @@ namespace SentinelFM
                 rvDuration = clientGeomarkService.GetPostpone(boxId, (int)landmarkId, serviceConfigId);
                 if (rvDuration == -1)
                 {
-                    rvDuration = 0;
+                    rvDuration = 24;
                 }
             }catch(Exception ex)
             {
@@ -3330,6 +3320,39 @@ namespace SentinelFM
             }
 
             return rvDuration;
+        }
+
+        private Dictionary<string, string> GetVehicleAvailableEmailSetting(int serviceConfigId, long vehicleId, long landmarkId, int boxId)
+        {
+            Dictionary<string, string> dictVehicleAvailableEmailSetting = new Dictionary<string, string>();
+
+            try
+            {
+                GeomarkServiceClient clientGeomarkService = new GeomarkServiceClient("httpbasic");
+                dictVehicleAvailableEmailSetting = clientGeomarkService.GetVehicleAvailableEmailSetting(boxId, (int)landmarkId, serviceConfigId);
+                if (dictVehicleAvailableEmailSetting == null)
+                {
+                    dictVehicleAvailableEmailSetting = new Dictionary<string, string>();
+                    dictVehicleAvailableEmailSetting.Add("PeriodicEmailDurationInMinute", "-1");
+                    dictVehicleAvailableEmailSetting.Add("ShouldSendEmailImmediately", "True");
+                }
+
+                if (!dictVehicleAvailableEmailSetting.ContainsKey("PeriodicEmailDurationInMinute"))
+                {
+                    dictVehicleAvailableEmailSetting.Add("PeriodicEmailDurationInMinute", "-1");
+                }
+
+                if (!dictVehicleAvailableEmailSetting.ContainsKey("ShouldSendEmailImmediately"))
+                {
+                    dictVehicleAvailableEmailSetting.Add("ShouldSendEmailImmediately", "True");
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, ex.Message.ToString() + " User:" + sn.UserID.ToString() + " Form:" + Page.GetType().Name));
+            }
+
+            return dictVehicleAvailableEmailSetting;
         }
 
         private DataTable getIcon(DataTable dt)
@@ -3708,10 +3731,20 @@ namespace SentinelFM
                 Response.Write(js.Serialize(dict));
             }
 
-            int landmarkDuration = getDuration(serviceConfigId, vehicleId, landmarkId, boxId);
+            Dictionary<string, string> dictVehicleAvailableEmailSetting = GetVehicleAvailableEmailSetting(serviceConfigId, vehicleId, landmarkId, boxId);
+            //int landmarkDuration = getDuration(serviceConfigId, vehicleId, landmarkId, boxId);
+
+            int landmarkDuration = -1;
+            int.TryParse(dictVehicleAvailableEmailSetting["PeriodicEmailDurationInMinute"], out landmarkDuration);
+            if (landmarkDuration > 0)
+            {
+                landmarkDuration = landmarkDuration / 60;
+            }
+            dict.Add("landmarkDuration", landmarkDuration);
+            dict.Add("ShouldSendEmailImmediately", dictVehicleAvailableEmailSetting["ShouldSendEmailImmediately"].ToLower());
 
             dict.Add("status", 200);
-            dict.Add("landmarkDuration", landmarkDuration);
+            //dict.Add("landmarkDuration", landmarkDuration);
             Response.Write(js.Serialize(dict));
         }
 
@@ -3873,6 +3906,8 @@ namespace SentinelFM
                     oneRecord.LandmarkID = oneRow["LandmarkID"].ToString();
                     oneRecord.LandmarkName = oneRow["LandmarkName"].ToString();
                     oneRecord.VehicleID = oneRow["VehicleID"].ToString();
+                    oneRecord.LandmarkEventId = oneRow["ID"].ToString();
+                    oneRecord.LandmarkInDateTime = oneRow["LandmarkInDateTime"].ToString();
 
                     rvDict.Add(oneRecord.VehicleID, oneRecord);
                 }
@@ -3910,6 +3945,8 @@ namespace SentinelFM
                                 sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[i]["DurationInLandmarkMin"] = 0;
                                 sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[i]["LandmarkID"] = 0;
                                 sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[i]["LandmarkName"] = "";
+                                sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[i]["LandmarkEventId"] = 0;
+                                //sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[i]["LandmarkInDateTime"] = DBNull;
 
                                 if (resultDictionary.ContainsKey(sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[i]["VehicleId"].ToString()) == true)
                                 {
@@ -3920,6 +3957,8 @@ namespace SentinelFM
                                     sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[i]["DurationInLandmarkMin"] = oneRecord.DurationInLandmarkMin;
                                     sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[i]["LandmarkID"] = oneRecord.LandmarkID;
                                     sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[i]["LandmarkName"] = oneRecord.LandmarkName;
+                                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[i]["LandmarkEventId"] = oneRecord.LandmarkEventId;
+                                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[i]["LandmarkInDateTime"] = oneRecord.LandmarkInDateTime;
 
                                     sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].AcceptChanges();
                                 }
@@ -4020,6 +4059,8 @@ namespace SentinelFM
         public string LandmarkID { get; set; }
         public string LandmarkName { get; set; }
         public string VehicleID { get; set; }
+        public string LandmarkEventId { get; set; }
+        public string LandmarkInDateTime { get; set; }
     }
 
 

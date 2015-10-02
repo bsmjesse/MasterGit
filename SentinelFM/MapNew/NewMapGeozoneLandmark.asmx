@@ -30,6 +30,7 @@ using VLF.CLS.Def;
 using SentinelFM.GeomarkServiceRef;
 using System.Resources;
 using System.Xml;
+using VLF.DAS.Logic;
 
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -2537,12 +2538,15 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
         
         int operationState = 0;
         int.TryParse(HttpContext.Current.Request["OperationalState"], out operationState);
+
+        int originOperationState = 0;
+        int.TryParse(HttpContext.Current.Request["originOperationState"], out originOperationState);
         
         long vehicleId = 0;
         long.TryParse(HttpContext.Current.Request["vehicleId"], out vehicleId);
 
-        long boxId = 0;
-        long.TryParse(HttpContext.Current.Request["boxId"], out boxId);
+        int boxId = 0;
+        int.TryParse(HttpContext.Current.Request["boxId"], out boxId);
 
         int duration = 0;
         int.TryParse(HttpContext.Current.Request["LandmarkDuration"], out duration);
@@ -2555,6 +2559,17 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
         int OperationalStateServiceConfigId = 0;
         int.TryParse(HttpContext.Current.Request["OperationalStateServiceConfigId"], out OperationalStateServiceConfigId);
 
+        bool sendEmailImmediately = false;
+        if (!string.IsNullOrEmpty(HttpContext.Current.Request["chkSendEmailImmediately"]) && HttpContext.Current.Request["chkSendEmailImmediately"].ToString().ToLower() == "on")
+        {
+            sendEmailImmediately = true;
+        }
+
+        long landmarkEventId = 0;
+        long.TryParse(HttpContext.Current.Request["landmarkEventId"], out landmarkEventId);
+        
+        string landmarkInDatetime = HttpContext.Current.Request["landmarkInDatetime"].ToString();
+
         string myConnnectionString = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["SentinelFMConnection"].ConnectionString;
 
         VLF.DAS.Logic.Vehicle _vehicle = new VLF.DAS.Logic.Vehicle(myConnnectionString);
@@ -2565,7 +2580,19 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
             _r.status = 200;
             _r.message = "Succeed.";
 
-            if (OperationalStateServiceConfigId > 0)
+            if (landmarkId > 0 && !string.IsNullOrEmpty(landmarkInDatetime) && (((originOperationState == 100) && (operationState == 200)) || ((originOperationState == 200) && (operationState == 100))))
+            {
+                bool makeItUnavailableAgain = (originOperationState == 100) && (operationState == 200);
+
+                string rptConnnectionString = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["DBReportConnectionString"].ConnectionString;
+
+                using (Vehicle dasVehicle = new Vehicle(rptConnnectionString))
+                {
+                    int _result = dasVehicle.LandmarkInOut_Update_EndDate_Of_UnavailableEvents(sn.User.OrganizationId, sn.UserID, boxId, landmarkId, landmarkInDatetime, makeItUnavailableAgain);
+                }
+            }
+
+            if (landmarkId > 0 && OperationalStateServiceConfigId > 0)
             {
                 try
                 {
@@ -2574,7 +2601,9 @@ public class NewMapGeozoneLandmark  : System.Web.Services.WebService {
                         duration = 0;
                     }
                     GeomarkServiceClient clientGeomarkService = new GeomarkServiceClient("httpbasic");
-                    int updatePostponeResult = clientGeomarkService.UpdatePostpone((int)boxId, landmarkId, OperationalStateServiceConfigId, duration);
+                    //int updatePostponeResult = clientGeomarkService.UpdatePostpone(boxId, landmarkId, OperationalStateServiceConfigId, duration);
+                    bool updatePostponeResult = clientGeomarkService.SetVehicleAvailableEmailSetting(boxId, landmarkId, OperationalStateServiceConfigId, duration * 60, sendEmailImmediately);
+                    
                 }
                 catch (Exception ex)
                 {

@@ -374,6 +374,9 @@ Ext.define('VehicleList',
      , 'VehicleDeviceStatusID'
      , 'NearestLandmark'
      , 'SAP_number'
+     , {
+         name: 'LandmarkInDateTime', type: 'date', dateFormat: 'c'
+     }
       ],
        idProperty: 'BoxId'
    }
@@ -621,7 +624,8 @@ Ext.define('DashboardModel', {
         { name: 'OperationalStateName', type: 'string' },
         { name: 'Notes', type: 'string' },
         { name: 'TimeInLandmark', type: 'int' },
-        { name: 'DurationInLandmarkMin', type: 'int' }
+        { name: 'DurationInLandmarkMin', type: 'int' },
+        { name: 'LandmarkInDateTime', type: 'date', dateFormat: 'c'}
         
     ]
 });
@@ -1715,7 +1719,10 @@ Ext.onReady(function () {
     iconCls: 'map',
     cls: 'cmbfonts',
     textAlign: 'left',
-    disabled: true,
+    //disabled: true,
+    allowDepress: false,
+    pressed: true,
+    toggleGroup: 'vehiclegridViewGroup',
     handler: function () {
         try {
             //vehiclegrid.removeColumn('Position');
@@ -1730,12 +1737,15 @@ Ext.onReady(function () {
 
     var dashboardBtn = Ext.create('Ext.Button',
 {
-    text: 'Landmark Dashboard',
+    text: 'Dashboard',
     id: 'dashboardBtn',
     tooltip: '',
     iconCls: 'map',
     cls: 'cmbfonts',
-    textAlign: 'left',    
+    textAlign: 'left',
+    allowDepress: false,
+    pressed: false,
+    toggleGroup: 'vehiclegridViewGroup',
     handler: function () {
         try {
             //vehiclegrid.removeColumn('Position');
@@ -2031,6 +2041,10 @@ Ext.onReady(function () {
    {
        type: 'string',
        dataIndex: 'LandmarkName'
+   },
+   {
+       type: 'date',
+       dataIndex: 'LandmarkInDateTime'
    }
     ]
 }
@@ -4253,7 +4267,7 @@ Ext.onReady(function () {
                     var defaultState = numUnavailable >= numAvailable ? 100 : 200;
                     var winurl = "./Widgets/BulkVehicleStateUpdate.aspx?defaultState=" + defaultState + "&selectedVehicles=" + selectedVehicles;
                     var htmlNewWin = '<iframe scrolling="no" src="' + winurl + '" style="Height:100%; width:100%;  border:0;margin:0px"></iframe>';
-                    openGeneralPopupWindow("Change Vehicle Status", htmlNewWin, 800, 430, 'destroy', 'winBulkVehicleStateUpdate'); 
+                    openGeneralPopupWindow("Change Vehicle Status", htmlNewWin, 900, 430, 'destroy', 'winBulkVehicleStateUpdate'); 
                     wincounter++;
                 }
                 catch (err) {
@@ -4353,7 +4367,7 @@ Ext.onReady(function () {
             hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.OriginDateTime) - 1] == "y") ? false : true,
             renderer: function (value, p, record) {
                 return Ext.Date.format(value, userdateformat);
-            },
+            }
         });
             vehicleGridColumns.push(col_vgDateTime);
             baseColumns.push(col_vgDateTime);
@@ -4893,6 +4907,24 @@ Ext.onReady(function () {
 
         dashboardViewColumns.push(col_vgDashboardNotes);
 
+        var col_vgLandmarkInDateTime = Ext.create('Ext.grid.column.Column', {
+            id: 'vgLandmarkInDateTime',
+            text: 'In DateTime',
+            align: 'left',
+            width: 150,
+            dataIndex: 'LandmarkInDateTime',
+            filterable: true,
+            sortable: true,
+            hidden: true,
+            renderer: function (value, p, record) {
+                if (value == '' || value == null) {
+                    return '';
+                }
+                return Ext.Date.format(value, userdateformat);
+            }
+        });
+        dashboardViewColumns.push(col_vgLandmarkInDateTime);
+
         var col_vgDashboardTimeInLandmark = Ext.create('Ext.grid.column.Column', {
             id: 'vgDashboardTimeInLandmark',
             text: 'Time Inside (hours)',
@@ -4902,9 +4934,11 @@ Ext.onReady(function () {
             filterable: true,
             sortable: true,
             hidden: false,
-            renderer: function (value) {
+            renderer: function (value, p, record) {
 
-                if (value == 0)
+                if (value == 0 && record.get('LandmarkName') != '')
+                    return 0;
+                else if (value == 0)
                     return '';
                 else
                     return value;
@@ -5020,8 +5054,8 @@ Ext.onReady(function () {
 
         vehiclegrid.getView().refresh();
 
-        dashboardBtn.disable();
-        defaultViewBtn.enable();
+        //dashboardBtn.disable();
+        //defaultViewBtn.enable();
 
         recordUpdater.load({
             params:
@@ -5066,8 +5100,8 @@ Ext.onReady(function () {
         
         vehiclegrid.getView().refresh();
 
-        dashboardBtn.enable();
-        defaultViewBtn.disable();
+        //dashboardBtn.enable();
+        //defaultViewBtn.disable();
 
         recordUpdater.load({
             params:
@@ -5223,8 +5257,7 @@ Ext.onReady(function () {
          , ShowDashboardView ? availabilityChartBtn : null
          , { xtype: 'tbfill' }
          , ShowDashboardView ? defaultViewBtn : null
-         , ShowDashboardView ? dashboardBtn : null
-         
+         , ShowDashboardView ? dashboardBtn : null         
          //, segmentbtn
          ]
       }
