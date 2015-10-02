@@ -1,0 +1,179 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Xml;
+using System.Text;
+
+namespace VLF.ASI
+{
+   /// <summary>
+   /// Summary description for clsXmlUtil
+   /// </summary>
+   public class XmlUtil
+   {
+      private XmlDocument xDoc;
+
+      /// <summary>
+      /// Create xml
+      /// </summary>
+      public XmlUtil()
+      {
+         xDoc = new XmlDocument();
+         XmlDeclaration xmlDecl = xDoc.CreateXmlDeclaration("1.0", Encoding.UTF8.EncodingName, "");
+         xDoc.AppendChild(xmlDecl);
+      }
+
+      /// <summary>
+      /// Load xml
+      /// </summary>
+      /// <param name="xmlString"></param>
+      public XmlUtil(string xmlString)
+      {
+         xDoc = new XmlDocument();
+         if (!String.IsNullOrEmpty(xmlString))
+            xDoc.LoadXml(xmlString);
+      }
+
+      public void CreateRoot(string rootName)
+      {
+         if (Root == null)
+         {
+            XmlElement root = xDoc.CreateElement(rootName);
+            xDoc.AppendChild(root);
+         }
+      }
+
+      /// <summary>
+      /// Text contents of a node
+      /// </summary>
+      /// <param name="xPath"></param>
+      /// <returns></returns>
+      public string GetNodeValue(string xPath)
+      {
+         return Root.SelectSingleNode(xPath).InnerText;
+      }
+
+      /// <summary>
+      /// Add a new node to the xml
+      /// </summary>
+      /// <param name="nodeName">Node name</param>
+      /// <param name="nodeValue">String value</param>
+      public void CreateNode(string nodeName, string nodeValue)
+      {
+         XmlNode newNode = xDoc.CreateNode("element", nodeName, "");
+         newNode.InnerText = nodeValue;
+         Root.AppendChild(newNode);
+      }
+
+      /// <summary>
+      /// Add a new node to the xml
+      /// </summary>
+      /// <param name="nodeName">Node name</param>
+      /// <param name="nodeValue">Integer value</param>
+      public void CreateNode(string nodeName, int nodeValue)
+      {
+         XmlNode newNode = xDoc.CreateNode("element", nodeName, "");
+         newNode.InnerText = nodeValue.ToString();
+         Root.AppendChild(newNode);
+      }
+
+      /// <summary>
+      /// Add a new node to the xml
+      /// </summary>
+      /// <param name="nodeName">Node name</param>
+      /// <param name="nodeValue">Integer value</param>
+      public void CreateNode(string nodeName, bool nodeValue)
+      {
+         XmlNode newNode = xDoc.CreateNode("element", nodeName, "");
+         newNode.InnerText = nodeValue.ToString();
+         Root.AppendChild(newNode);
+      }
+
+      /// <summary>
+      /// Add a new node to the xml
+      /// </summary>
+      /// <param name="nodeName">Node name</param>
+      /// <param name="nodeValue">Long value</param>
+      public void CreateNode(string nodeName, long nodeValue)
+      {
+         XmlNode newNode = xDoc.CreateNode("element", nodeName, "");
+         newNode.InnerText = nodeValue.ToString();
+         Root.AppendChild(newNode);
+      }
+
+      /// <summary>
+      /// Add a new node to the xml
+      /// </summary>
+      /// <param name="nodeName">Node name</param>
+      /// <param name="nodeValue">Short value</param>
+      public void CreateNode(string nodeName, short nodeValue)
+      {
+         XmlNode newNode = xDoc.CreateNode("element", nodeName, "");
+         newNode.InnerText = nodeValue.ToString();
+         Root.AppendChild(newNode);
+      }
+
+      /// <summary>
+      /// Add a new node to the xml
+      /// </summary>
+      /// <param name="nodeName">Node name</param>
+      /// <param name="nodeValue">DateTime value</param>
+      public void CreateNode(string nodeName, DateTime nodeValue)
+      {
+         XmlNode newNode = xDoc.CreateNode("element", nodeName, "");
+         newNode.InnerText = nodeValue.ToString();
+         Root.AppendChild(newNode);
+      }
+
+      /// <summary>
+      /// Add a new node to the xml
+      /// </summary>
+      /// <param name="nodeName">Node name</param>
+      /// <param name="nodeValue">DateTime value</param>
+      /// <param name="nodeValue">DateTime Format</param>
+      /// <param name="utcFormat">True if Utc conversion required</param>
+      public void CreateNode(string nodeName, DateTime nodeValue, string dateFormat, bool utcFormat)
+      {
+         XmlNode newNode = xDoc.CreateNode("element", nodeName, "");
+         if (utcFormat)
+            newNode.InnerText = nodeValue.ToUniversalTime().ToString(dateFormat);
+         else
+            newNode.InnerText = nodeValue.ToString(dateFormat);
+         Root.AppendChild(newNode);
+      }
+
+      /// <summary>
+      /// Add a new node to the xml
+      /// </summary>
+      /// <param name="nodeName">Node name</param>
+      /// <param name="nodeValue">Char value</param>
+      public void CreateNode(string nodeName, char nodeValue)
+      {
+         XmlNode newNode = xDoc.CreateNode("element", nodeName, "");
+         newNode.InnerText = nodeValue.ToString();
+         Root.AppendChild(newNode);
+      }
+
+      /// <summary>
+      /// Root node of the xml document
+      /// </summary>
+      public XmlElement Root
+      {
+         get { return xDoc.DocumentElement; }
+      }
+
+      /// <summary>
+      /// String representation of xml doc
+      /// </summary>
+      public string Xml
+      {
+         get { return xDoc.InnerXml; }
+      }
+   }
+}

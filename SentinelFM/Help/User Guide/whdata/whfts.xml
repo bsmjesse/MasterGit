@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<fts>
+<chunkinfo url="whfwdata0.xml" first="1" last="individual"/>
+<chunkinfo url="whfwdata1.xml" first="info" last="trip"/>
+<chunkinfo url="whfwdata2.xml" first="truck" last="zoom"/>
+
+<tchunkinfo first="0" last="16" url="whftdata0.xml" />
+
+</fts>

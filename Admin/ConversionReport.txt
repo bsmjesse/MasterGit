@@ -1,0 +1,229 @@
+﻿This report shows the steps taken to convert your Web application from ASP.NET 1.1 to ASP.NET 2.0. 
+There may be some unresolved conversion issues you will need to manually fix. 
+For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=46995 or search for the help topic "Converting from Visual Studio .NET 2002 or 2003".
+Conversion Started on project file SetntinelAdmin.csproj at February 09 2006, 11:07:59.
+
+=========================ERRORS===================
+
+=========================WARNINGS=================
+Warning: File C:\Inetpub\wwwroot\SentinelAdmin\..\..\..\SRC\HGI VLF\VLF 1.0\BIN\CLS.pdb not found.
+Warning: File C:\Inetpub\wwwroot\SentinelAdmin\..\..\..\SRC\HGI VLF\VLF 1.0\BIN\ReportGenerator.pdb not found.
+Warning: File C:\Inetpub\wwwroot\SentinelAdmin\..\..\..\SRC\HGI VLF\VLF 1.0\BIN\Map.pdb not found.
+Warning: File C:\Inetpub\wwwroot\SentinelAdmin\..\..\..\SRC\HGI VLF\VLF 1.0\BIN\MapLib.pdb not found.
+Warning: If the base class of any of the code-behind classes declares page fields please add the 'CodeFileBaseClass' attribute in the corresponding Page.
+Warning: This web project was converted as a file-based web application. If your site contained any IIS meta-information, e.g. sub-folders marked as virtual directories, it is recommended that you close this web site and re-open it using the Open Web Site command and selecting the Local IIS tab.
+
+=========================COMMENTS=================
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\Web.Config has been changed to read-write.
+Web.Config: Added 'xhtmlConformance' attribute.
+Added folder Bin.
+Warning: Copied file C:\Inetpub\wwwroot\SentinelAdmin\..\..\..\SRC\HGI VLF\VLF 1.0\BIN\CLS.dll to folder Bin.
+Warning: Copied file C:\Inetpub\wwwroot\SentinelAdmin\..\..\..\SRC\HGI VLF\VLF 1.0\BIN\ReportGenerator.dll to folder Bin.
+Warning: Copied file C:\Inetpub\wwwroot\SentinelAdmin\..\..\..\SRC\HGI VLF\VLF 1.0\BIN\ERRSecurity.dll to folder Bin.
+Warning: Copied file C:\Inetpub\wwwroot\SentinelAdmin\..\..\..\SRC\HGI VLF\VLF 1.0\BIN\ERRSecurity.pdb to folder Bin.
+Warning: Copied file C:\Inetpub\wwwroot\SentinelAdmin\..\..\..\SRC\HGI VLF\VLF 1.0\BIN\Map.dll to folder Bin.
+Warning: Copied file C:\Inetpub\wwwroot\SentinelAdmin\..\..\..\SRC\HGI VLF\VLF 1.0\BIN\MapLib.dll to folder Bin.
+Added folder Web References\SentinelFM\LocationMgr.
+Moved file Web References\LocationMgr\location.disco to the Web References\SentinelFM\LocationMgr\ directory.
+Moved file Web References\LocationMgr\location.wsdl to the Web References\SentinelFM\LocationMgr\ directory.
+Warning: Renamed file Web References\LocationMgr\Reference.map to file location.discomap.
+Moved file Web References\LocationMgr\location.discomap to the Web References\SentinelFM\LocationMgr\ directory.
+Added folder Web References\SentinelFM\SecurityManager.
+Moved file Web References\SecurityManager\SecurityManager.disco to the Web References\SentinelFM\SecurityManager\ directory.
+Moved file Web References\SecurityManager\SecurityManager.wsdl to the Web References\SentinelFM\SecurityManager\ directory.
+Warning: Renamed file Web References\SecurityManager\Reference.map to file SecurityManager.discomap.
+Moved file Web References\SecurityManager\SecurityManager.discomap to the Web References\SentinelFM\SecurityManager\ directory.
+Added folder Web References\SentinelFM\ServerDBFleet.
+Moved file Web References\ServerDBFleet\DBFleet.disco to the Web References\SentinelFM\ServerDBFleet\ directory.
+Moved file Web References\ServerDBFleet\DBFleet.wsdl to the Web References\SentinelFM\ServerDBFleet\ directory.
+Warning: Renamed file Web References\ServerDBFleet\Reference.map to file DBFleet.discomap.
+Moved file Web References\ServerDBFleet\DBFleet.discomap to the Web References\SentinelFM\ServerDBFleet\ directory.
+Added folder Web References\SentinelFM\ServerDBHistory.
+Moved file Web References\ServerDBHistory\DBHistory.disco to the Web References\SentinelFM\ServerDBHistory\ directory.
+Moved file Web References\ServerDBHistory\DBHistory.wsdl to the Web References\SentinelFM\ServerDBHistory\ directory.
+Warning: Renamed file Web References\ServerDBHistory\Reference.map to file DBHistory.discomap.
+Moved file Web References\ServerDBHistory\DBHistory.discomap to the Web References\SentinelFM\ServerDBHistory\ directory.
+Added folder Web References\SentinelFM\ServerDBOrganization.
+Moved file Web References\ServerDBOrganization\DBOrganization.disco to the Web References\SentinelFM\ServerDBOrganization\ directory.
+Moved file Web References\ServerDBOrganization\DBOrganization.wsdl to the Web References\SentinelFM\ServerDBOrganization\ directory.
+Warning: Renamed file Web References\ServerDBOrganization\Reference.map to file DBOrganization.discomap.
+Moved file Web References\ServerDBOrganization\DBOrganization.discomap to the Web References\SentinelFM\ServerDBOrganization\ directory.
+Added folder Web References\SentinelFM\ServerDBSystem.
+Moved file Web References\ServerDBSystem\DBSystem.disco to the Web References\SentinelFM\ServerDBSystem\ directory.
+Moved file Web References\ServerDBSystem\DBSystem.wsdl to the Web References\SentinelFM\ServerDBSystem\ directory.
+Warning: Renamed file Web References\ServerDBSystem\Reference.map to file DBSystem.discomap.
+Moved file Web References\ServerDBSystem\DBSystem.discomap to the Web References\SentinelFM\ServerDBSystem\ directory.
+Added folder Web References\SentinelFM\ServerDBUser.
+Moved file Web References\ServerDBUser\DBUser.disco to the Web References\SentinelFM\ServerDBUser\ directory.
+Moved file Web References\ServerDBUser\DBUser.wsdl to the Web References\SentinelFM\ServerDBUser\ directory.
+Warning: Renamed file Web References\ServerDBUser\Reference.map to file DBUser.discomap.
+Moved file Web References\ServerDBUser\DBUser.discomap to the Web References\SentinelFM\ServerDBUser\ directory.
+Added folder Web References\SentinelFM\ServerDBVehicle.
+Moved file Web References\ServerDBVehicle\DBVehicle.disco to the Web References\SentinelFM\ServerDBVehicle\ directory.
+Moved file Web References\ServerDBVehicle\DBVehicle.wsdl to the Web References\SentinelFM\ServerDBVehicle\ directory.
+Warning: Renamed file Web References\ServerDBVehicle\Reference.map to file DBVehicle.discomap.
+Moved file Web References\ServerDBVehicle\DBVehicle.discomap to the Web References\SentinelFM\ServerDBVehicle\ directory.
+Added folder Web References\SentinelFM\ServerReport.
+Moved file Web References\ServerReport\Reports.disco to the Web References\SentinelFM\ServerReport\ directory.
+Moved file Web References\ServerReport\Reports.wsdl to the Web References\SentinelFM\ServerReport\ directory.
+Warning: Renamed file Web References\ServerReport\Reference.map to file Reports.discomap.
+Moved file Web References\ServerReport\Reports.discomap to the Web References\SentinelFM\ServerReport\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmAdminLogin.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmAdminLogin.aspx.
+Removed attribute Codebehind from file frmAdminLogin.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmAdminLogin.aspx.cs (Line 26).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmAdminLogin.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmAdminMenu.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmAdminMenu.aspx.
+Removed attribute Codebehind from file frmAdminMenu.aspx.
+Removed the id attribute from the <form> tag in file frmAdminMenu.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmAdminMenu.aspx.cs (Line 20).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmAdminMenu.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmBoxCommInfo.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmBoxCommInfo.aspx.
+Removed attribute Codebehind from file frmBoxCommInfo.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmBoxCommInfo.aspx.cs (Line 24).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmBoxCommInfo.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmDiagnostic.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmDiagnostic.aspx.
+Removed attribute Codebehind from file frmDiagnostic.aspx.
+Removed the id attribute from the <form> tag in file frmDiagnostic.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmDiagnostic.aspx.cs (Line 21).
+Warning: Access level of 'cmdView_Click' changed to 'protected' in file frmDiagnostic.aspx.cs (Line 50).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmDiagnostic.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmDiagNotValidGPS.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmDiagNotValidGPS.aspx.
+Removed attribute Codebehind from file frmDiagNotValidGPS.aspx.
+Removed the id attribute from the <form> tag in file frmDiagNotValidGPS.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmDiagNotValidGPS.aspx.cs (Line 22).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmDiagNotValidGPS.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmFeatures.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmFeatures.aspx.
+Removed attribute Codebehind from file frmFeatures.aspx.
+Removed the id attribute from the <form> tag in file frmFeatures.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmFeatures.aspx.cs (Line 26).
+Warning: Access level of 'cmdAddMsg_Click' changed to 'protected' in file frmFeatures.aspx.cs (Line 162).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmFeatures.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmFWResults.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmFWResults.aspx.
+Removed attribute Codebehind from file frmFWResults.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmFWResults.aspx.cs (Line 22).
+Warning: Access level of 'cboOrganization_SelectedIndexChanged' changed to 'protected' in file frmFWResults.aspx.cs (Line 119).
+Warning: Access level of 'cboFleet_SelectedIndexChanged' changed to 'protected' in file frmFWResults.aspx.cs (Line 204).
+Warning: Access level of 'cmdView_Click' changed to 'protected' in file frmFWResults.aspx.cs (Line 243).
+Warning: Access level of 'cboVehicle_SelectedIndexChanged' changed to 'protected' in file frmFWResults.aspx.cs (Line 248).
+Warning: Access level of 'cmdRefresh_Click' changed to 'protected' in file frmFWResults.aspx.cs (Line 253).
+Warning: Access level of 'cmdFWUpdate_Click' changed to 'protected' in file frmFWResults.aspx.cs (Line 379).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmFWResults.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmFWUpdate.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmFWUpdate.aspx.
+Removed attribute Codebehind from file frmFWUpdate.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmFWUpdate.aspx.cs (Line 24).
+Warning: Access level of 'cboOrganization_SelectedIndexChanged' changed to 'protected' in file frmFWUpdate.aspx.cs (Line 148).
+Warning: Access level of 'cboFleet_SelectedIndexChanged' changed to 'protected' in file frmFWUpdate.aspx.cs (Line 231).
+Warning: Access level of 'cmdView_Click' changed to 'protected' in file frmFWUpdate.aspx.cs (Line 286).
+Warning: Access level of 'cboVehicle_SelectedIndexChanged' changed to 'protected' in file frmFWUpdate.aspx.cs (Line 385).
+Warning: Access level of 'cboFirmware_SelectedIndexChanged' changed to 'protected' in file frmFWUpdate.aspx.cs (Line 404).
+Warning: Access level of 'cmdUpdate_Click' changed to 'protected' in file frmFWUpdate.aspx.cs (Line 426).
+Warning: Access level of 'dgData_SelectedIndexChanged' changed to 'protected' in file frmFWUpdate.aspx.cs (Line 468).
+Warning: Access level of 'cmdSetAllSensors_Click' changed to 'protected' in file frmFWUpdate.aspx.cs (Line 473).
+Warning: Access level of 'cmdUnselectAllSensors_Click' changed to 'protected' in file frmFWUpdate.aspx.cs (Line 486).
+Warning: Access level of 'cmdViewResults_Click' changed to 'protected' in file frmFWUpdate.aspx.cs (Line 496).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmFWUpdate.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmHistoryMsgs.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmHistoryMsgs.aspx.
+Removed attribute Codebehind from file frmHistoryMsgs.aspx.
+Removed the id attribute from the <form> tag in file frmHistoryMsgs.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmHistoryMsgs.aspx.cs (Line 25).
+Warning: Access level of 'btnRetrieveLastMessages_Click' changed to 'protected' in file frmHistoryMsgs.aspx.cs (Line 271).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmHistoryMsgs.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmReport_CommDiagnostic.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmReport_CommDiagnostic.aspx.
+Removed attribute Codebehind from file frmReport_CommDiagnostic.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmReport_CommDiagnostic.aspx.cs (Line 25).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmReport_CommDiagnostic.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmReport_ExceptionUsage.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmReport_ExceptionUsage.aspx.
+Removed attribute Codebehind from file frmReport_ExceptionUsage.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmReport_ExceptionUsage.aspx.cs (Line 24).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmReport_ExceptionUsage.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmReport_Login.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmReport_Login.aspx.
+Removed attribute Codebehind from file frmReport_Login.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmReport_Login.aspx.cs (Line 23).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmReport_Login.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmReport_MapUsage.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmReport_MapUsage.aspx.
+Removed attribute Codebehind from file frmReport_MapUsage.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmReport_MapUsage.aspx.cs (Line 24).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmReport_MapUsage.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmReport_SystemUsage.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmReport_SystemUsage.aspx.
+Removed attribute Codebehind from file frmReport_SystemUsage.aspx.
+Removed the id attribute from the <form> tag in file frmReport_SystemUsage.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmReport_SystemUsage.aspx.cs (Line 31).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmReport_SystemUsage.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmReport_SystemUsage_Box.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmReport_SystemUsage_Box.aspx.
+Removed attribute Codebehind from file frmReport_SystemUsage_Box.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmReport_SystemUsage_Box.aspx.cs (Line 25).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmReport_SystemUsage_Box.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmReport_SystemUsageMonthly.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmReport_SystemUsageMonthly.aspx.
+Removed attribute Codebehind from file frmReport_SystemUsageMonthly.aspx.
+Removed the id attribute from the <form> tag in file frmReport_SystemUsageMonthly.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmReport_SystemUsageMonthly.aspx.cs (Line 31).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmReport_SystemUsageMonthly.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmReports.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmReports.aspx.
+Removed attribute Codebehind from file frmReports.aspx.
+Removed the id attribute from the <form> tag in file frmReports.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmReports.aspx.cs (Line 23).
+Warning: Access level of 'cmdPreview_Click' changed to 'protected' in file frmReports.aspx.cs (Line 192).
+Warning: Access level of 'cldFrom_SelectionChanged' changed to 'protected' in file frmReports.aspx.cs (Line 330).
+Warning: Access level of 'cldTo_SelectionChanged' changed to 'protected' in file frmReports.aspx.cs (Line 335).
+Warning: Access level of 'cboReports_SelectedIndexChanged' changed to 'protected' in file frmReports.aspx.cs (Line 340).
+Warning: Access level of 'optSystemUsage_SelectedIndexChanged' changed to 'protected' in file frmReports.aspx.cs (Line 420).
+Warning: Access level of 'optRange_SelectedIndexChanged' changed to 'protected' in file frmReports.aspx.cs (Line 577).
+Warning: Access level of 'cboOrganization_SelectedIndexChanged' changed to 'protected' in file frmReports.aspx.cs (Line 604).
+Warning: Access level of 'cboFleet_SelectedIndexChanged' changed to 'protected' in file frmReports.aspx.cs (Line 616).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmReports.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmServicesUpdates.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmServicesUpdates.aspx.
+Removed attribute Codebehind from file frmServicesUpdates.aspx.
+Removed the id attribute from the <form> tag in file frmServicesUpdates.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmServicesUpdates.aspx.cs (Line 21).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmServicesUpdates.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmSystemUpdate.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmSystemUpdate.aspx.
+Removed attribute Codebehind from file frmSystemUpdate.aspx.
+Removed the id attribute from the <form> tag in file frmSystemUpdate.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmSystemUpdate.aspx.cs (Line 26).
+Warning: Access level of 'cmdAddMsg_Click' changed to 'protected' in file frmSystemUpdate.aspx.cs (Line 247).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmSystemUpdate.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmAdminLogin.aspx has been changed to read-write.
+Removed attribute AutoEventWireup from file frmAdminLogin.aspx.
+Removed attribute Codebehind from file frmAdminLogin.aspx.
+Warning: Access level of 'Page_Load' changed to 'protected' in file frmAdminLogin.aspx.cs (Line 28).
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\frmAdminLogin.aspx.cs has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\Global.asax has been changed to read-write.
+Removed attribute Codebehind from file Global.asax.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\classes\clsadmin.cs has been changed to read-write.
+Added folder App_Code\Classes.
+Moved file classes\clsadmin.cs to the App_Code\Classes\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\Global.asax.cs has been changed to read-write.
+Moved file Global.asax.cs to the App_Code\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\classes\sentinelfmsession.cs has been changed to read-write.
+Moved file classes\sentinelfmsession.cs to the App_Code\Classes\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\classes\clsuser.cs has been changed to read-write.
+Moved file classes\clsuser.cs to the App_Code\Classes\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\classes\appconfig.cs has been changed to read-write.
+Moved file classes\appconfig.cs to the App_Code\Classes\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\AssemblyInfo.cs has been changed to read-write.
+Moved file AssemblyInfo.cs to the App_Code\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\SentinelAdmin\classes\clsutility.cs has been changed to read-write.
+Moved file classes\clsutility.cs to the App_Code\Classes\ directory.
+Warning: Renamed folder Web References\ to App_WebReferences.
+Changed HTML validation schema for all projects to 'Internet Explorer 6.0'.
+Removed file SetntinelAdmin.csproj.
+Project SetntinelAdmin.csproj has been converted successfully at February 09 2006, 11:08:09.

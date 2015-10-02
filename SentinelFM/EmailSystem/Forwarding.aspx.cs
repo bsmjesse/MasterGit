@@ -1,0 +1,60 @@
+﻿using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Web;
+using System.Web.SessionState;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
+using Telerik.Web.UI;
+
+namespace SentinelFM
+{
+    public partial class Forwarding : SentinelFMBasePage
+    {
+        #region Java Script Localization Messages
+        public string ErrorMessage;
+        public string Warning_Select;
+
+        //Messages Sent/ Not sent
+        public string Warning_MessagesSent;
+        public string Warning_MessagesNotSent;
+        public string Warning_MessageNotSent;
+        public string Warning_MessageSent;
+
+        public string PageTitle;
+        public string Button_Send;
+        public string Button_Cancel;
+        #endregion
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            sn = (SentinelFMSession)Session["SentinelFMSession"];
+
+            if (sn == null || sn.User == null || String.IsNullOrEmpty(sn.UserName))
+            {
+                System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, "RedirectToLogin -  Session null , SessionId:" + Session.SessionID.ToString() + "-" + Session.GetHashCode() + " , Form:"));
+                Session.Abandon();
+                Response.Write("<SCRIPT Language='javascript'>window.open('../Login.aspx','_top') </SCRIPT>");
+                return;
+            }
+
+            ErrorMessage = GetLocalResourceObject("1_ErrorMessage").ToString();
+            Warning_Select = GetLocalResourceObject("1_Warning_Select").ToString();
+            PageTitle = GetLocalResourceObject("1_PageTitle").ToString();
+
+            //All Messages
+            Warning_MessagesSent = GetLocalResourceObject("1_NotificationMessagesWereSent").ToString();
+            Warning_MessagesNotSent = GetLocalResourceObject("1_NotificationMessagesWereNotSent").ToString();
+            //One Message
+            Warning_MessageSent = GetLocalResourceObject("1_NotificationMessageWasSent").ToString();
+            Warning_MessageNotSent = GetLocalResourceObject("1_NotificationMessageWasNotSent").ToString();
+
+            //Buttons 
+            Button_Send = GetLocalResourceObject("1_ButtonSend").ToString();
+            Button_Cancel = GetLocalResourceObject("1_ButtonCancel").ToString();
+        }
+    }
+}

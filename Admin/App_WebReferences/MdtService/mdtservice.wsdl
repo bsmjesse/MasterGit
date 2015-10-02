@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://bsmwireless.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://bsmwireless.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://bsmwireless.com/">
+      <s:element name="GetAvailableFirmwareVersions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="firmwareVersions" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAvailableFirmwareVersionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAvailableFirmwareVersionsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="firmwareVersions" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentFirmwareVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="boxIdentifier" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="version" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentFirmwareVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCurrentFirmwareVersionResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="version" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMdtSerialNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="boxIdentifier" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="uniqueIdentifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMdtSerialNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMdtSerialNumberResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="uniqueIdentifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentSetup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="boxIdentifier" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="daylightSavingsActive" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="blankInMotionModeActive" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="loadedDefaultFormats" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="contrastValue" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="contrastRatio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="backlightLevel" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentSetupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCurrentSetupResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="daylightSavingsActive" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="blankInMotionModeActive" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="loadedDefaultFormats" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="contrastValue" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="contrastRatio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="backlightLevel" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RebootMDT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="boxIdentifier" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RebootMDTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RebootMDTResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAvailableFirmwareVersionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableFirmwareVersions" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableFirmwareVersionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableFirmwareVersionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentFirmwareVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentFirmwareVersion" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentFirmwareVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentFirmwareVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMdtSerialNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMdtSerialNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetMdtSerialNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMdtSerialNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentSetupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentSetup" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentSetupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentSetupResponse" />
+  </wsdl:message>
+  <wsdl:message name="RebootMDTSoapIn">
+    <wsdl:part name="parameters" element="tns:RebootMDT" />
+  </wsdl:message>
+  <wsdl:message name="RebootMDTSoapOut">
+    <wsdl:part name="parameters" element="tns:RebootMDTResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MdtServiceSoap">
+    <wsdl:operation name="GetAvailableFirmwareVersions">
+      <wsdl:input message="tns:GetAvailableFirmwareVersionsSoapIn" />
+      <wsdl:output message="tns:GetAvailableFirmwareVersionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentFirmwareVersion">
+      <wsdl:input message="tns:GetCurrentFirmwareVersionSoapIn" />
+      <wsdl:output message="tns:GetCurrentFirmwareVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMdtSerialNumber">
+      <wsdl:input message="tns:GetMdtSerialNumberSoapIn" />
+      <wsdl:output message="tns:GetMdtSerialNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentSetup">
+      <wsdl:input message="tns:GetCurrentSetupSoapIn" />
+      <wsdl:output message="tns:GetCurrentSetupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RebootMDT">
+      <wsdl:input message="tns:RebootMDTSoapIn" />
+      <wsdl:output message="tns:RebootMDTSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MdtServiceSoap" type="tns:MdtServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAvailableFirmwareVersions">
+      <soap:operation soapAction="http://bsmwireless.com/GetAvailableFirmwareVersions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentFirmwareVersion">
+      <soap:operation soapAction="http://bsmwireless.com/GetCurrentFirmwareVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMdtSerialNumber">
+      <soap:operation soapAction="http://bsmwireless.com/GetMdtSerialNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentSetup">
+      <soap:operation soapAction="http://bsmwireless.com/GetCurrentSetup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RebootMDT">
+      <soap:operation soapAction="http://bsmwireless.com/RebootMDT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MdtServiceSoap12" type="tns:MdtServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAvailableFirmwareVersions">
+      <soap12:operation soapAction="http://bsmwireless.com/GetAvailableFirmwareVersions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentFirmwareVersion">
+      <soap12:operation soapAction="http://bsmwireless.com/GetCurrentFirmwareVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMdtSerialNumber">
+      <soap12:operation soapAction="http://bsmwireless.com/GetMdtSerialNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentSetup">
+      <soap12:operation soapAction="http://bsmwireless.com/GetCurrentSetup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RebootMDT">
+      <soap12:operation soapAction="http://bsmwireless.com/RebootMDT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MdtService">
+    <wsdl:port name="MdtServiceSoap" binding="tns:MdtServiceSoap">
+      <soap:address location="http://192.168.9.31/mdtadminservice/mdtservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MdtServiceSoap12" binding="tns:MdtServiceSoap12">
+      <soap12:address location="http://192.168.9.31/mdtadminservice/mdtservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

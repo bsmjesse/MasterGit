@@ -1,0 +1,4 @@
+5.06 Build 3 Created 15 Sept 2015
+Bug 857 Checking IP restrictions rulse for Garda by entering "ipTest" value
+
+Publish to PROD on 15 Sept 2015

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<themes>
+  <theme>
+    <url>http://localhost:58717/responsive/responsivelogin.aspx</url>
+    <id>1</id>
+    <Name>Default</Name>
+    <HeaderLogoPosition>Left</HeaderLogoPosition>    <!--(Left, Right, Center)-->
+    <HeaderHeight>0%</HeaderHeight>    <!--(in percentages)-->
+    <BodyBackgroundColor></BodyBackgroundColor>    <!--(valid color name/ code)-->
+    <BodyBackgroungImage>images/sfmbg.jpg</BodyBackgroungImage>    <!--valid path--><!--provide any one path or color-->
+    <LoginBannerPosition>TopLoginNoBanner</LoginBannerPosition>      <!--(LeftLoginRightBanner, RightLoginLeftBanner, TopLoginBottomBanner, TopLoginNoBanner)-->
+    <LoginLogoPosition>Center</LoginLogoPosition>  <!--(Left, Right, Center)-->
+    <FooterPosition>Center</FooterPosition>  <!--(Left, Right, Center)-->
+    <LoginButtonColor>#57AE22</LoginButtonColor>
+    <LoginLinksColor>#57AE22</LoginLinksColor>
+    <LoginButtonColor></LoginButtonColor>
+    <LoginLinksColor></LoginLinksColor>
+    <LearnMoreButtonColor>#5BB72C</LearnMoreButtonColor>
+    <BannerLink1>http://www.bsmwireless.com/</BannerLink1>
+    <BannerLink2>https://dev.sentinelfm.com/Responsive/ResponsiveLogin.aspx</BannerLink2>
+    <BannerLink3>https://dev.sentinelfm.com/Login.aspx</BannerLink3>
+ 
+  </theme>
+<theme>
+  <url>http://localhost:58717/Responsive/ResponsiveLogin2.aspx</url>
+  <id>2</id>
+  <Name>Classic</Name>
+  <HeaderLogoPosition>Left</HeaderLogoPosition>
+  <HeaderHeight>10%</HeaderHeight>
+  <BodyBackgroundColor>#5BB72C</BodyBackgroundColor>
+  <BodyBackgroungImage>images/ResponsiveLoginBG_2.png</BodyBackgroungImage>
+  <LoginBannerPosition>TopLoginBottomBanner</LoginBannerPosition>
+  <LoginLogoPosition>Right</LoginLogoPosition>    <!--(Left, Right, Center)-->
+  <FooterPosition>Right</FooterPosition>
+  <LoginButtonColor>#5BB72C</LoginButtonColor>
+  <LoginLinksColor>#5BB72C</LoginLinksColor>
+</theme>
+  <theme>
+    <url>http://localhost:58717/Responsive/ResponsiveLogin3.aspx</url>
+    <id>3</id>
+    <Name>Natural</Name>
+    <HeaderLogoPosition>Center</HeaderLogoPosition>
+    <HeaderHeight>20%</HeaderHeight>
+    <BodyBackgroundColor>pink</BodyBackgroundColor>
+    <BodyBackgroungImage>images/ResponsiveLoginBG_1.png</BodyBackgroungImage>
+    <LoginBannerPosition>RightLoginLeftBanner</LoginBannerPosition>
+    <LoginLogoPosition>Center</LoginLogoPosition>     <!--(Left, Right, Center)-->
+    <FooterPosition>Center</FooterPosition>
+    <LoginButtonColor>green</LoginButtonColor>
+  </theme>
+</themes>

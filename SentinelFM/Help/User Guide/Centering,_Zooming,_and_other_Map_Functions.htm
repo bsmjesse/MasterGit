@@ -1,0 +1,384 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Centering, Zooming, and other Map Functions</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="SentinelFMStyleSheet_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='SentinelFMStyleSheet.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+h1.whs1 { margin-bottom:0pt; }
+hr.whs2 { float:alignleft; color:#008000; }
+p.whs3 { font-size:10pt; }
+h2.whs4 { font-size:12pt; }
+ol.whs5 { list-style:decimal; }
+p.whs6 { margin-top:4.5pt; }
+img_whs7 { border:none; width:74px; height:19px; margin-left:0px; margin-right:0px; margin-bottom:0px; margin-top:0px; float:none; border-style:none; }
+p.whs8 { font-size:12pt; font-weight:bold; }
+img_whs9 { border:none; width:74px; height:19px; float:none; border-style:none; }
+h3.whs10 { font-size:10pt; }
+p.whs11 { margin-left:40px; }
+img_whs12 { border:none; width:419px; height:249px; float:none; border-style:none; }
+table.whs13 { x-cell-content-align:top; width:100%; border-spacing:0px; }
+col.whs14 { width:14.828%; }
+col.whs15 { width:85.172%; }
+tr.whs16 { x-cell-content-align:top; height:44px; }
+td.whs17 { width:14.828%; padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-top-style:none; border-bottom-style:none; }
+td.whs18 { width:85.172%; padding-right:10px; padding-left:10px; border-top-style:none; border-bottom-style:none; border-right-style:none; }
+p.whs19 { font-weight:bold; font-style:italic; }
+p.whs20 { font-weight:normal; font-style:normal; }
+img_whs21 { border:none; width:155px; height:98px; float:none; border-style:none; }
+ul.whs22 { list-style:disc; }
+img_whs23 { border:none; width:60px; height:19px; float:none; border-style:none; }
+img_whs24 { border:none; float:none; width:21px; height:21px; border-style:none; }
+p.whs25 { margin-left:40px; font-size:10pt; }
+img_whs26 { border:none; width:21px; height:21px; float:none; border-style:none; }
+p.whs27 { margin-left:0px; font-style:italic; border-left-width:1px; border-left-style:Solid; border-top-width:1px; border-top-style:Solid; border-right-width:1px; border-right-style:Solid; border-bottom-width:1px; border-bottom-style:Solid; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; }
+h3.whs28 { font-weight:normal; font-size:10pt; }
+img_whs29 { border:none; width:77px; height:14px; float:none; border-style:none; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "h1.whs1 {margin-bottom:1pt; }";
+  strNSS += "img_whs7 {margin-left:1pt;margin-right:1pt;margin-bottom:1pt;margin-top:1pt; }";
+  strNSS += "p.whs27 {margin-left:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Working with the Map Page\nCentering, Zooming, and other Map Functions");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("User_Guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1 class="whs1">Centering, Zooming, and other Map Functions</h1>
+
+
+<hr align="left" color="#008000" class="whs2">
+
+
+<p class="whs3">To use the various mapping functions available 
+ in the Sentinel-FM system, in the <a href="../Getting Started Guide/The_Map_Screen.htm"
+										style="font-size: 10pt;">Map screen</a>, 
+ a User must generally first display the vehicles they want to work with. 
+ For details, see <a href="Displaying_Vehicles_on_the_Map_Screen.htm"
+					style="font-size: 10pt;">Displaying Vehicles in the 
+ Map Screen</a>. &nbsp;A 
+ User can then use the following procedures to manage the map display.</p>
+
+<h2 class="whs4">Re-centering the Map on a Selected Point</h2>
+
+<p class="whs3">To center the map on a point where you click 
+ with the left mouse button:</p>
+
+<ol type="1" class="whs5">
+	
+	<li class=kadov-p><p class="whs6">On the left side of 
+ the map, enable the re-center button &nbsp;<script type="text/javascript" language="JavaScript"><!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) <= 4)) 
+{  if (parseInt(navigator.appVersion) != 2) document.write("<img src='RECENTER.GIF' x-maintain-ratio='TRUE' width='74px' height='19px' border='0' class='img_whs7'>");}
+else
+{   document.write("<img src='RECENTER.GIF' x-maintain-ratio='TRUE' style='margin-left:0px;margin-right:0px;margin-bottom:0px;margin-top:0px;' width='74px' height='19px' border='0' class='img_whs7'>");}
+//--></script><noscript><img src='RECENTER.GIF' x-maintain-ratio='TRUE' style='margin-left:0px;margin-right:0px;margin-bottom:0px;margin-top:0px;' width='74px' height='19px' border='0' class='img_whs7'></noscript> (This is the default option - button text turns yellow when 
+ enabled.)</p></li>
+</ol>
+
+<ol start="2" type="1" class="whs5">
+	
+	<li class=kadov-p><p class="whs6">Click anywhere on the 
+ map.</p></li>
+	
+	<li class=kadov-p><p class="whs6">The point where you 
+ clicked becomes the center of a new map display.</p></li>
+</ol>
+
+<p class="whs3">&nbsp;</p>
+
+&nbsp; 
+
+<p class="whs8">Re-centering the Map on 
+ a Vehicle or Vehicles</p>
+
+<p class="whs3">&nbsp;</p>
+
+<p class="whs3">When you first display a vehicle on the map, 
+ it is centered. Sometimes as you navigate through the map, the map may 
+ move so that you are no longer able to view the vehicle(s) you are monitoring. 
+ To re-center the map on a particular vehicle or vehicles:</p>
+
+<ol type="1" class="whs5">
+	
+	<li class=kadov-p><p class="whs6">Ensure vehicle(s) are 
+ being displayed on the Map screen. For details, see <a href="Displaying_Vehicles_on_the_Map_Screen.htm"
+														style="font-size: 10pt;">Displaying 
+ Vehicles on the Map Screen</a>.</p></li>
+	
+	<li class=kadov-p><p class="whs6">While you are working 
+ with the standard Map screen, if the vehicle(s) are no longer visible, 
+ click the <span style="font-weight: bold;"><B>Map It</B></span> button. &nbsp;All 
+ selected vehicles will appear centered on the updated map display.</p></li>
+	
+	<li class=kadov-p><p class="whs6">If you are working 
+ with the Full Screen Map display, if the vehicle(s) are no longer visible, 
+ click on the <span style="font-weight: bold;"><B>Show All</B></span> button <img src="SHOWALL.GIF" x-maintain-ratio="TRUE" width="74px" height="19px" border="0" class="img_whs9">. &nbsp;All 
+ selected vehicles will appear centered on the updated map display.</p></li>
+</ol>
+
+&nbsp; 
+
+<h2>Zooming</h2>
+
+<p class="whs3">There are several ways to zoom in or out on 
+ the map. &nbsp;These 
+ include rectangle zoom, using the zoom-in and zoom-out buttons, using 
+ the right click menu or using the pre-defined zoom buttons.</p>
+
+<h3 class="whs10">Zooming In Using Rectangle Zoom</h3>
+
+<p class="whs3">With the rectangle zoom function, you outline 
+ an area, and the map zooms in on it.</p>
+
+<p class="whs3">&nbsp;</p>
+
+<p class="whs3">To use the rectangle zoom:</p>
+
+<p class="whs3">&nbsp;</p>
+
+<ol type="1" class="whs5">
+	
+	<li style="/*begin!kadov{{*/ font-size: 10pt; /*}}end!kadov*/ "
+		class=kadov-p><p class="whs3">Click on one corner of 
+ the area you want to zoom in on.</p></li>
+	
+	<li style="/*begin!kadov{{*/ font-size: 10pt; /*}}end!kadov*/ "
+		class=kadov-p><p><span style="font-size: 10pt;"><font size=2 style="font-size:10pt;">Keeping the mouse 
+ button held down drag the mouse to the opposite corner of the area. As 
+ you drag the mouse, a dashed box appears over the map.</font></span><span style="font-size: 11pt;"><font size=3 style="font-size:11pt;"><br>
+	&nbsp;</font></span></p></li>
+</ol>
+
+<p class="whs11"><img src="RECTZOOM.GIF" x-maintain-ratio="TRUE" width="419px" height="249px" border="0" class="img_whs12"><br>&nbsp;</p>
+
+<ol start="3" type="1" class="whs5">
+	
+	<li style="/*begin!kadov{{*/ font-size: 10pt; /*}}end!kadov*/ "
+		class=kadov-p><p class="whs3">Release the mouse button. 
+ The map zooms in on the area within the dashed box.</p></li>
+</ol>
+
+<h3><span style="font-size: 10pt;"><font size=2 style="font-size:10pt;">Zooming In or Out Using the Zoom Buttons</font></span> 
+ </h3>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs13">
+<col class="whs14">
+<col class="whs15">
+
+<tr valign="top" class="whs16">
+<td width="14.828%" class="whs17">
+<p><img src="ZOOMIN.GIF" x-maintain-ratio="TRUE" width="74px" height="19px" border="0" class="img_whs9"><br>
+<br>
+<img src="ZOOMOUT.GIF" x-maintain-ratio="TRUE" width="74px" height="19px" border="0" class="img_whs9">&nbsp;</td>
+<td width="85.172%" class="whs18">
+<p>Use the zoom buttons on the left side of the map to set whether you 
+ want to zoom in &nbsp;or 
+ zoom out when you click on a map location with the left mouse button. 
+ Once you choose one of these buttons the button text turns yellow indicating 
+ it is enabled and it remains enabled until you choose a different one. 
+ </td></tr>
+</table>
+
+<p class="whs3">&nbsp;</p>
+
+<p class="whs3">To use the zoom buttons:</p>
+
+<p class="whs3">&nbsp;</p>
+
+<ol type="1" class="whs5">
+	
+	<li style="/*begin!kadov{{*/ font-size: 10pt; /*}}end!kadov*/ "
+		class=kadov-p><p class="whs3">Enable either the zoom 
+ in or the zoom out button by clicking on it.</p></li>
+	
+	<li style="/*begin!kadov{{*/ font-size: 10pt; /*}}end!kadov*/ "
+		class=kadov-p><p class="whs3">Click anywhere on the 
+ map.</p></li>
+	
+	<li style="/*begin!kadov{{*/ font-size: 10pt; /*}}end!kadov*/ "
+		class=kadov-p><p class="whs3">The map zooms in or out 
+ on the point where you clicked. The point where you clicked will be the 
+ center of the new map display.</p></li>
+	
+	<li style="/*begin!kadov{{*/ font-size: 10pt; /*}}end!kadov*/ "
+		class=kadov-p><p class="whs3">You can keep clicking 
+ on the map and it will continue to zoom in or out, depending on which 
+ button you enabled.</p></li>
+</ol>
+
+<p>&nbsp;</p>
+
+&nbsp; 
+
+<p class="whs19">Zooming In or Out Using 
+ the Right Click Mouse Menu</p>
+
+<p>&nbsp;</p>
+
+<p class="whs20">At any time a User 
+ can use the right click mouse menu to zoom in or zoom out on the current 
+ center of the map display.</p>
+
+<p class="whs19">&nbsp;</p>
+
+<p class="whs20"><img src="RIGHTCLK.GIF" x-maintain-ratio="TRUE" width="155px" height="98px" border="0" class="img_whs21"></p>
+
+<p>&nbsp;</p>
+
+<h3><span style="font-size: 10pt;"><font size=2 style="font-size:10pt;">Zooming In or Out Using Predefined Zoom 
+ Levels</font></span> </h3>
+
+<p class="whs3">The vertical zoom bar on the upper left side 
+ of the map contains predefined zoom level buttons. These buttons zoom 
+ in or zoom out at preset levels on the center of the current map display, 
+ so you do not need to click on the map. </p>
+
+<p class="whs3">&nbsp;</p>
+
+<p class="whs3">The numbered buttons zoom to six predefined 
+ levels. The plus and minus buttons zoom to a larger number of levels.</p>
+
+<ul type="disc" class="whs22">
+	
+	<li class=kadov-p><p class="whs3">To zoom to one of the 
+ six predefined zoom levels, click one of the numbered buttons <img src="ZOOMTWO.GIF" x-maintain-ratio="TRUE" width="60px" height="19px" border="0" class="img_whs23">.</p></li>
+	
+	<li class=kadov-p><p class="whs3">To zoom in or out one 
+ zoom level at a time, click the plus button <img src="PLUS.GIF" x-maintain-ratio="TRUE" width="21px" height="21px" border="0" class="img_whs24"> </p></li>
+</ul>
+
+<p class="whs25">or the minus button <img src="MINUS.GIF" x-maintain-ratio="TRUE" width="21px" height="21px" border="0" class="img_whs26">.</p>
+
+<p class="whs25">&nbsp;</p>
+
+<p class="whs27"><SPAN style="font-style: italic; padding-left: 4px; padding-right: 4px; padding-top: 2px; padding-bottom: 2px; "><I><span style="font-weight: bold;"><B>Note:</B></span> 
+ These buttons override the zoom in and zoom out buttons at the left of 
+ the map.</I></SPAN></p>
+
+&nbsp; 
+
+<h2>Other Map Functions</h2>
+
+<h3 class="whs10">Determining the Current Zoom Level of the 
+ Map</h3>
+
+<p class="whs3">To determine the current zoom level of the 
+ map, in the vertical zoom bar on the upper left side of the map, identify 
+ the button whose text is highlighted in yellow.</p>
+
+&nbsp;
+
+<h3 class="whs10">Scrolling the Map North, South, East or West</h3>
+
+<h3 class="whs28"><span style="font-style: normal;">To 
+ scroll the map in any of the four cardinal directions, click one of the 
+ arrows on the edges of the map</span> &nbsp;<img src="ARROW.GIF" x-maintain-ratio="TRUE" width="77px" height="14px" border="0" class="img_whs29">.</h3>
+
+&nbsp;
+
+<h3><span style="font-size: 10pt;"><font size=2 style="font-size:10pt;">Viewing the Map Display Full Screen</font></span> 
+ </h3>
+
+<p><span style="font-size: 10pt;"><font size=2 style="font-size:10pt;">To view the Map more easily, click </font></span><span 
+ style="font-weight: bold; font-size: 10pt;"><font size=2 style="font-size:10pt;"><B>Full Screen Map</B></font></span><span 
+ style="font-size: 10pt;"><font size=2 style="font-size:10pt;">. The map is displayed, along with all of its 
+ standard functions, in its own full screen window. Alarms appear as moving 
+ text at the bottom of the screen. The vehicle grid does not appear; to 
+ view current information for a vehicle, move the mouse over the vehicle 
+ icon on the map, and a popup window appears. To return to the standard 
+ Map screen, click </font></span><span style="font-weight: bold; font-size: 10pt;"><font size=2 style="font-size:10pt;"><B>Close 
+ Window</B></font></span><span style="font-size: 10pt;"><font size=2 style="font-size:10pt;">.</font></span> </p>
+
+&nbsp;
+
+<h3 class="whs10">Printing the Currently Displayed Map</h3>
+
+<p class="whs3">To print the current map display, right-click 
+ on the map and choose <span style="font-weight: bold;"><B>Print Map</B></span>. 
+ A standard Print dialog appears where you can choose settings before you 
+ print.</p>
+
+<p class="whs3">&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+
+<!--SALMAN-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="../ValidateHelp.js"></script>
+<!--SALMAN-->
+
+</body>
+</html>

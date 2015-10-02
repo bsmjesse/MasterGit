@@ -1,0 +1,2039 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>ISNet.WebUI.WebCombo</name>
+  </assembly>
+  <members>
+    <member name="T:ISNet.WebUI.WebCombo.WebComboColumn">
+      <summary>
+            The Column object contains properties to customize basic column information
+            such as HeaderText and Width. This class should be used only when <see cref="P:ISNet.WebUI.WebCombo.LayoutSet.ComboMode" /> is set to <b>MultipleColumns</b></summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebComboColumn.#ctor(System.String)">
+      <summary>
+            Creates column object with BaseFieldName.
+            </summary>
+      <param name="FieldName">
+      </param>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboColumn.Combo">
+      <summary>
+            Returns the WebCombo object that own this column.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboColumn.HeaderText">
+      <summary>
+            Returns or sets the header text for the column.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboColumn.Position">
+      <summary>
+            The ordinal position of the column.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboColumn.BaseFieldName">
+      <summary>
+            Returns or sets the base field name of the column.
+            You should never set this property manually as it's populated automatically on <see cref="M:ISNet.WebUI.WebCombo.WebCombo.DataBind" /></summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboColumn.Width">
+      <summary>
+            Specifies the width of the column.
+            </summary>
+      <remarks>
+            This property is leave to Empty by default. WebCombo control will use <see cref="!:ColumnWidthDefault" /> property as the default column width
+            for the 2nd and the rest columns.
+            <para>
+            When working in MultipleColumns mode, WebCombo always set the 1st column's width to width of the WebCombo control.
+            This is based on the standard behavior of Windows GUI.
+            </para><para>
+            You may manually assign column's width from anywhere in the code.
+            </para></remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboColumn.Hidden">
+      <summary>
+            Specifies whether the column should be displayed or hidden.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboColumn.Bound">
+      <summary>
+            Specifies whether the column is bound to the DataColumn of DataSource.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboColumn.ColumnType">
+      <summary>
+            Gets or sets the type of the column that control how the column content will be rendered.
+            </summary>
+      <remarks>
+            WebCombo provides predefined column type such as Image, ImageAndText and so on, which are most commonly
+            used. For greater level of customization, WebCombo's Column contents can also be customized to display
+            rich HTML-based contents by setting its ColumnType to <see cref="!:ColumnType.Custom" /> and write the 
+            custom content codes in <see cref="!:InitializeRow" /> event.
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboColumn.DataType">
+      <summary>
+            Gets or sets the data type of the column.
+            </summary>
+      <remarks>
+            By default, WebCombo will automatically determines the data type of columns which is bound to DataSource
+            and previous settings of DataType specified in design time is overriden.
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboColumn.CellImage">
+      <summary>
+            Gets or sets the image filename that will be displayed in cells that belong to this column.
+            </summary>
+      <remarks>
+            This property will only take affect on column which ColumnType is <see cref="!:ColumnType.Image" />
+            or <see cref="!:ColumnType.ImageAndText" /></remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboColumn.DataFormatString">
+      <summary>
+            Gets or sets the string format to use when rendering values.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboColumn.RenderOnHidden">
+      <summary>
+            Gets or sets a value indicating whether WebCombo should render this Column and its cell to client (in invisible display) when its Hidden property is set to True.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.ClientEvents">
+      <summary>
+            Provides a centralized class for client side events.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.ClientEvents.ToString">
+      <summary>
+            Override of ToString() method.
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ClientEvents.OnBeforeRequest">
+      <summary>
+            This event fired when the request is about to be made.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ClientEvents.OnResponse">
+      <summary>
+            This event fired when response is returned from server.
+            </summary>
+      <remarks>
+            Server response is xml format.
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ClientEvents.OnBeforeItemSelected">
+      <summary>
+            This event fired when an item is about to be selected.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ClientEvents.OnAfterItemSelected">
+      <summary>
+            This event fired after an item is selected.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ClientEvents.OnError">
+      <summary>
+            This event fired when error response from server is detected.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ClientEvents.OnLostFocus">
+      <summary>
+            This event fired when the control's focus is lost.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ClientEvents.OnAddItem">
+      <summary>
+            This event fired when an item is about to be added.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ClientEvents.OnUnhandledError">
+      <summary>
+            This event fired when there is unhandled error.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ClientEvents.OnInitialize">
+      <summary>
+            This event fired when WebCombo is being initialized.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ClientEvents.OnMatchInstantLookup">
+      <summary>
+            This event fired when perfect match is found when using InstantLookup EntryMode.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ClientEvents.OnActionDispatched">
+      <summary>
+            Specifies the client side (JavaScript) function that will be invoked after an FlyPostBack action is dispacthed during response.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ClientEvents.OnAfterResponseProcess">
+      <summary>
+            Specifies the client side (JavaScript) function that will be invoked after the response action of a request has been performed.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ClientEvents.OnKeyDown">
+      <summary>
+            Specifies the client side (JavaScript) function that will be invoked when user is typing in the WebCombo textbox.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ClientEvents.OnShowDropDown">
+      <summary>
+             Specifies the client side (JavaScript) function that will be invoked when the ResultBox is about to show.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ClientEvents.OnValueItemNotInList">
+      <summary>
+            Specifies the JavaScript function that will be invoked when the typed text can't be found in the List. This event is only applicable when MultipleSelectionSettings is enabled and AllowNotInListText is set to True.
+            </summary>
+      <remarks>
+            You can handle this event to determine how items that are not in list should be treated. You can either alert the user that the specified value is not currently available and provide a form for them to input it.
+            You can also instruct WebCombo to cancel the addition of unknown items by specifying return false at the end of function.
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ClientEvents.OnValueItemContextMenu">
+      <summary>
+            Specifies the JavaScript function to be invoked when mouse's right button is clicked on a valid ValueItem. This event is only applicable when MultipleSelectionSettings is enabled.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.WebComboRenderer">
+      <summary>
+            Generic renderer class for Intersoft(r) WebCommonControl implementation.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.Columns">
+      <summary>
+            Columns object provides a collection for the columns contained in WebGrid control.
+            </summary>
+      <remarks>
+            You should never create this class manually as it is automatically populated on <see cref="!:DataBind" /> process.
+            </remarks>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Columns.#ctor(ISNet.WebUI.WebCombo.WebCombo)">
+      <summary>
+            Default constructor for Columns.
+            </summary>
+      <param name="o">
+      </param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Columns.GetEnumerator">
+      <summary>
+            Returns an enumerator object for the collection.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Columns.Add(System.String)">
+      <summary>
+            Add <see cref="!:Column" /> object to Columns collection.
+            </summary>
+      <param name="FieldName">The data column field to add.</param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Columns.Add(ISNet.WebUI.WebCombo.WebComboColumn)">
+      <summary>
+            Add an Column object into the Columns collection.
+            </summary>
+      <param name="column">The Column object to be added.</param>
+      <returns>The index of the newly added Column.</returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Columns.Clear">
+      <summary>
+            Removes all Column objects from the collection.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Columns.GetNamedItem(System.String)">
+      <summary>
+            Property indexer for the collection. Uses the Name string to return an WebGridColumn object.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Columns.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>
+            Serialize the collection
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.Columns.IsReadOnly">
+      <summary>
+            Returns a Boolean value indicating whether the collection is read-only.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.Columns.Item(System.Int32)">
+      <summary>
+            Property indexer for the collection.  
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.MultipleSelectionSettings.Enabled">
+      <summary>
+            Gets or sets whether multiple selections feature should be enabled.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.MultipleSelectionSettings.SeparatorChar">
+      <summary>
+            Gets or sets the separator character used to separate multiple values in the textbox.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.MultipleSelectionSettings.ItemContextMenu">
+      <summary>
+            Gets or sets the Intersoft WebContextMenu object to be displayed when right clicking an item.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.MultipleSelectionSettings.AllowNotInListText">
+      <summary>
+            Gets or sets whether WebCombo should accept text which is not appear in the list.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.MultipleSelectionSettings.AutoSelectFirstMatch">
+      <summary>
+            Gets or sets whether WebCombo should automatically select first row of matched items against input Text.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.MultipleSelectionSettings.AllowBrowseAll">
+      <summary>
+            Gets or sets whether WebCombo should allow the user to browse all list by pressing Ctrl Space key.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.MultipleSelectionSettings.AutoPositionResultBox">
+      <summary>
+            Gets or sets whether the ResultBox position should be automatically positioned beneath the cursor position.
+            </summary>
+      <remarks>
+            This property is only applicable for Editable mode, that is TextBoxMode is set to Editable.
+            </remarks>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.LayoutSet">
+      <summary>
+            LayoutSet provides a centralized access to configure the behaviors and styles of the WebCombo control.
+            </summary>
+      <remarks>
+            You can customize the styles for almost the whole control's user interface elements.
+            For greater web experiences, this class provides many interactive styles for
+            most elements of the control. With strongly-typed WebStyle object, you can easily configure the styles in design-time without
+            expertise in DHTML, client scripting or CSS.
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.Combo">
+      <summary>
+            A reference to the WebCombo object that contains the Layout.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.ResultBoxStyle">
+      <summary>
+            The sytle applied to result box (only the box that contain data)
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.StatusBoxStyle">
+      <summary>
+            The styles applied to status box.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.ResultFrameStyle">
+      <summary>
+            The styles applied to result frame (the outer result box).
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.HeaderStyle">
+      <summary>
+            The styles applied to columns header.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.ColumnStyle">
+      <summary>
+            The styles applied to column.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.RowStyle">
+      <summary>
+            The interactive style applied to row.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.SelectedRowStyle">
+      <summary>
+            The styles applied to selected row.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.AlwaysShowResultBox">
+      <summary>
+            Specifies whether result box is still displayed after item selection made by mouse click.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.AlwaysShowHelpButton">
+      <summary>
+            Specifies whether the help button is displayed.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.AlwaysShowSearchButton">
+      <summary>
+            Specifies whether the dropdown arrow button is displayed.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.AlwaysShowColumnHeaders">
+      <summary>
+            Specifies whether the column headers is displayed when <see cref="P:ISNet.WebUI.WebCombo.LayoutSet.ComboMode" /> is set to <b>MultipleColumns</b>.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.ComboMode">
+      <summary>
+            Specifies the mode of the WebCombo control.
+            </summary>
+      <remarks>
+            When set to SingleColumn (Default), the control will work as a normal
+            dropdownlist control. In this mode, <see cref="!:DataTextField" />
+            and <see cref="!:DataValueField" /> will be used to display data.
+            Other columns in DataSource are ignored.
+            <para>
+            When set to MultipleColumns, the control will show all columns by default.
+            <see cref="!:DataTextField" /> field will always at the first position and its width is set to the width of control by default.
+            </para><para>
+            For greater level of customization, WebCombo provides <see cref="!:Column" /> object which
+            contains basic column properties such as HeaderText or Width.
+            You can access the <see cref="!:Column" /> object after <see cref="M:ISNet.WebUI.WebCombo.WebCombo.DataBind" /> is called.
+            </para></remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.SearchIconMode">
+      <summary>
+            Specifies the mode of search icon.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.StatusBoxPosition">
+      <summary>
+            Specifies the status box position.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.SearchImage">
+      <summary>
+            Specifies the image for search icon.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.HelpImage">
+      <summary>
+            Specifies the image for Help.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.ItemHeight">
+      <summary>
+            Specifies the default item row height.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.ClientSideEvents">
+      <summary>
+            Returns <see cref="T:ISNet.WebUI.WebCombo.ClientEvents" /> object.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.AllowNavigationOnMouseWheel">
+      <summary>
+            Specifies whether navigation of records is allowed when moving the mouse wheel.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.ColumnWidthDefault">
+      <summary>
+            Specifies the column width default. Only affected to MultipleColumns mode.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.TextSettings">
+      <summary>
+            Represents a <see cref="T:ISNet.WebUI.WebCombo.TextSet" /> object which contains text used in WebCombo control.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.ScriptDirectory">
+      <summary>
+            This property is available for backward compabitility with V2.x only. This property is linked to WebCombo.ScriptDirectory directly.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.ImagesDirectory">
+      <summary>
+            Specifies the directory used to store WebCombo images files.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.AdjustResultBoxTop">
+      <summary>
+            Specifies the top position adjustment for ResultBox object.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.AdjustResultBoxLeft">
+      <summary>
+            Specifies the left position adjustment for ResultBox object.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.AllowTextWrapping">
+      <summary>
+            Returns or sets whether overflow text will be wrapped to next line. If set to false, the overflow text will be truncated with ellipsis.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.ResultBoxWidth">
+      <summary>
+            Returns or sets the width of the result box. Set this property to 0 for automatic width calculation.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.ResultBoxHeight">
+      <summary>
+            Returns or sets the height of the result box.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.StatusBoxVisible">
+      <summary>
+            Specifies whether the status box is visible.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.AllowAddItem">
+      <summary>
+            Specifies whether item addition is allowed when input text doesn't match any list items.
+            </summary>
+      <remarks>
+            When set to True, input text that doesn't match the text in the list will automatically be added in the list.
+            <para>
+            You can write client scripts to validate and response this event by assigning your function name in <see cref="!:ClientSideEvents.OnAddItem" />.
+            To cancel the default item addition process, return the function's value as false (return false).
+            </para><para>
+            In DataBound mode, the <b>AddItem</b> server side event will be invoked after the clientside OnAddItem's event is evaluated and the return value is true.
+            The server side AddItem event provides a way for developer to handle and process the added item to the DataSource.
+            </para></remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.TextBoxMode">
+      <summary>
+            Returns or sets the textbox mode of the control.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.AlwaysShowAllRowsOnDropdown">
+      <summary>
+            Determines whether or not to display all rows when dropdown arrow is clicked.
+            </summary>
+      <remarks>
+            This behavior allows filtering to be turned off easily when there is selected value and dropdown arrow is clicked.
+            Note that AdditionalFilter will still take affect and DropDownRows property will be accounted.
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.BoundMode">
+      <summary>
+            Gets or sets the bound mode of WebCombo.
+            </summary>
+      <remarks>
+            By default, the bound mode of WebCombo is set to AutoDetect, which it will automatically determine whether the WebCombo is working in DataBound or Unbound mode.
+            The detection is basically based on the DataSource property of the WebCombo, so if the DataSource is filled then WebCombo will work in DataBound mode, which it will query the InitializeDataSource event.
+            Generally, it is best to leave this setting to the default but in some complex scenarios where DataBound mode can't be determined automatically such as in Requery implementation, you can force the WebCombo to work in DataBound mode by setting the value of this property to ForceBound.
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.EntryMode">
+      <summary>
+            Gets or sets the entry behavior of WebCombo.
+            </summary>
+      <remarks>
+            Starting from SP2 (Build 20), WebCombo.NET includes 2 new entry behaviors for <b>Bound</b> mode instead of existing entry mode which called Default.
+            The InstantLookup entry mode designated for scenarios which input data is mostly available and exact such as "OrderID". This mode is also
+            designed for end-users who requires fast data entry and only wanted to see the resultbox when exact match is not found.
+            <para>
+            Scenario example for InstantLookup mode:
+            </para><para>
+            Let's say user wants to search OrderID "299980"
+            <list type="number"><item>
+            "299980" is typed in the WebCombo's textbox (any combination of one or more characters). WebCombo will not perform any search at this step.
+            </item><item>
+            Pressing Enter or Tab key fires "InitializeDataSource" event.
+            </item><item>
+            WebCombo.NET searches the text in database and upon a perfect match "ValueChanged" event is fired when AllowAutoPostBack is set to True - no resultbox is shown. When AllowAutoPostBack is set to False (default), 
+            the WebCombo will simply set the text as selected and assign the corresponding value automatically from search result.
+            </item><item>
+            In case there is no perfect match (result is 0 or more than 1 or when input text is not equal to result's text), the resultbox window will be shown (as in Default mode).
+            </item></list><para>
+            Notes that when AllowAutoPostback is not used when using this mode, you should make sure that all controls that cause postback should check the state of the WebCombo before the postback occurs.
+            This is important because the WebCombo will perform searching silently in this mode. For example, you typed "299980" then you click on a button, upon the focus changes from WebCombo to Button,
+            WebCombo will try to check whether specified input has perfect match in the database. If yes then the value will be assigned to the WebCombo and mark it as selected. Looking at the mechanism above,
+            clicking on a button that cause postback after typing the value in WebCombo will cause the WebCombo's value to Empty. This condition happened because WebCombo's asynchronous searching hasn't return any result yet when the postback occured.
+            </para><para>
+            Although the above scenario might be rare to happen, it is a good idea to avoid any further issues. You can easily handle the form's onsubmit event and perform a simple check such as: 
+            <code>
+            if (webCombo.IsInProgress) {
+            	alert("wcOrderID's searching is in progress...");
+            	return false;
+            }
+            </code></para><para>
+            Alternatively, if the WebCombo is a required field, you can put a .NET required validator to check the WebCombo's value. In this case, when you changed focus from WebCombo to button, 
+            the page will not postback because there is no selected value yet in WebCombo.
+            </para></para><para>
+            The AutoComplete entry mode allow "traditional" text auto-completion such as in IE 4.x days. The entry mode has exact behavior as in Default mode, except it will autocomplete the text with first matched result.
+            </para></remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.SearchButtonPosition">
+      <summary>
+            Gets or sets the search button (dropdown button) position of the WebCombo.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.FrameStyle">
+      <summary>
+            The interactive styles of the WebCombo's Frame.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.TextBoxStyle">
+      <summary>
+            The interactive style applied to WebCombo's TextBox.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.DropDownStyle">
+      <summary>
+            The interactive style applied to WebCombo's DropDown.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.MoreButtonStyle">
+      <summary>
+            The interactive style applied to WebCombo's more button.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.NoResultFoundAction">
+      <summary>
+            Gets or sets the action which WebCombo should perform when there are no results found and the WebCombo has lost its focus.
+            </summary>
+      <remarks>
+            This property only applicable when WebCombo is in following conditions:
+            - WebCombo is configured to use Bound mode.
+            - WebCombo is not using AllowAddItem feature.
+            
+            <para>
+            WebCombo.NET V3 improves the natural behavior of end users while entrying data. WebCombo.NET introduced Latency property which determines
+            the number of milliseconds to wait before requesting the data to server. Everything is good except for fast-typing end users as the users
+            typed the data quicker than the Latency period, and press Tab key to go to the next field.
+            
+            </para><para>
+            In previous versions, the scenario above would fail as the typed data will be reverted back (or empty if previously has no selection).
+            It would also sometimes redisplay the resultbox in incorrect position and causing some interruption since the WebCombo expects the user to wait for the response and then select an input before entering next field.
+            In V3, this scenario has been completely taken care. WebCombo will do following:
+            - Silently select the result if the result row is only 1, and that row has the same text as input text. No display or focus interuption occured.
+            - If the returned rows are more than one or empty, WebCombo will get the NoResultFoundAction property and perform the action according to value of this property.
+            
+            </para><para>
+            If this property is set to RevertSelection, then WebCombo will revert back the previously selected value when the returned rows are more than one or empty.
+            Otherwise, WebCombo will take the focus back to the related WebCombo instance and display the ResultBox so the end users know that his/her entry is incorrect.
+            </para></remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.ResultBoxWindowType">
+      <summary>
+            Specifies the resultbox's window type. This property is only applicable to IE browser.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.ResultBoxShadow">
+      <summary>
+            Specifies whether shadow should be applied to resultbox. This property is only applicable to IE browser and ResultBoxWindowType should be set to Normal.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.HelpURL">
+      <summary>
+            Specifies the client's help URL when user clicked on the Help icon. This property is application-wide configurable.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.EnableAnimation">
+      <summary>
+            Gets or sets a value indicating whether background animation is enabled when mouse is over the dropdown button.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.RoundCorner">
+      <summary>
+            Whether to render the control's user interface in round corner effect.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.XhtmlSearchImage">
+      <summary>
+            Specifies the image file name used to render the search button's arrow. This property is designed to be used in XHTML document and applies to Mozilla browsers.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.ColumnSeparatorColor">
+      <summary>
+            Gets or sets the separator color between columns.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.Mode">
+      <summary>
+            Enumerations for WebCombo's mode.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.SearchMode">
+      <summary>
+            Enumerations for SearchIcon's mode.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.BoxPosition">
+      <summary>
+            Enumerations for status of WebCombo control.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.ColLayout">
+      <summary>
+            Enumerations for column layout.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.ColumnType">
+      <summary>
+            ColumnType Enumeration.
+            </summary>
+    </member>
+    <member name="F:ISNet.WebUI.WebCombo.ColumnType.Text">
+      <summary>
+            Cells that belong to a column with this setting will display only text.
+            </summary>
+    </member>
+    <member name="F:ISNet.WebUI.WebCombo.ColumnType.Image">
+      <summary>
+            Cells that belong to a column with this setting will display only an image that specified in <see cref="!:WebGridColumn.CellImage" /> or its own Image property.
+            </summary>
+    </member>
+    <member name="F:ISNet.WebUI.WebCombo.ColumnType.ImageAndText">
+      <summary>
+            Cells that belong to a column with this setting will display an image that specified in <see cref="!:WebGridColumn.CellImage" /> or its own Image property and text.
+            </summary>
+    </member>
+    <member name="F:ISNet.WebUI.WebCombo.ColumnType.Custom">
+      <summary>
+            Cells that belong to a column with this setting can be fully customized from within runtime code.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.TextboxMode">
+      <summary>
+            TextboxMode Enumeration.
+            </summary>
+    </member>
+    <member name="F:ISNet.WebUI.WebCombo.TextboxMode.Editable">
+      <summary>
+            The textbox portion of the control is editable. This is the default value.
+            </summary>
+    </member>
+    <member name="F:ISNet.WebUI.WebCombo.TextboxMode.ReadOnly">
+      <summary>
+            The textbox portion of the control is read only (not editable).
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.PostBackAction">
+      <summary>
+            Class that contains string constants for OnTheFly post back actions.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.LinkSettings">
+      <summary>
+            LinkSettings class provides information about WebCombo links configurations.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LinkSettings.Enabled">
+      <summary>
+            Gets or sets whether the link feature should be enabled for this WebCombo instance.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LinkSettings.ParentWebComboID">
+      <summary>
+            Gets or sets the parent WebCombo's ID which this instance should be linked to.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LinkSettings.FilterDataMember">
+      <summary>
+            Gets or sets the data member within the DataSource which should be used for filtering during automatic lookup.
+            </summary>
+      <remarks>
+            You may leave this property blank to use the same field specified in parent's WebCombo value or text field.
+            If you need to link to multiple parent WebCombo, you can leave this property blank or specify multiple filter members separated by comma, in the appropriate order of ParentWebComboID property.
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LinkSettings.ParentFilterMode">
+      <summary>
+            Gets or sets which key field of the parent WebCombo that should be used for filtering this WebCombo data.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LinkSettings.ResolvedParentWebComboID">
+      <summary>
+            This property is not intended to be called directly by developers.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LinkSettings.ParentEmptyAction">
+      <summary>
+            Gets or sets the action to be performed when the user requests data for this WebCombo instance, but the specified ParentWebCombo(s) are still empty (no value selected).
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LinkSettings.SkipQueryTextField">
+      <summary>
+            Gets or sets a value indicating whether WebCombo should query the text based on the DataTextField.
+            </summary>
+      <remarks>
+            You can set this property to True when you don't want the WebCombo to be filtered by the entered text. 
+            This is especially useful when the DataTextField is not a String type, where WebCombo can't effectively perform automatic lookup.
+            In this scenario, oftenly the WebCombo is ReadOnly (not Editable) and user simply pick a selection from the ResultBox.
+            </remarks>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.TextSet">
+      <summary>
+            Provides a centralized access for customizing texts which used in WebCombo control.
+            </summary>
+      <remarks>
+            You can customize almost all text that is used in WebCombo control,
+            such as the Loading text, Search text, etc.
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.TextSet.LoadingText">
+      <summary>
+            Specifies the loading text.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.TextSet.SearchText">
+      <summary>
+            Specifies the search text.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.TextSet.NoResultsText">
+      <summary>
+            Specifies the no results text.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.TextSet.RetrievedTextFormat">
+      <summary>
+            Specifies the retrieved text format.
+            </summary>
+      <remarks>
+            With this property, you can change the way retrieved text is formatted.
+            <para>
+            {retrieved} is the total rows retrieved in WebCombo control.
+            </para><para>
+            {totalrows} is the total rows of the <see cref="P:ISNet.WebUI.WebCombo.WebCombo.DataSource" /> object.
+            </para></remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.TextSet.HelpTitleText">
+      <summary>
+            Specifies the text that will appear when mouse is over the Help button.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.TextSet.MoreTitleText">
+      <summary>
+            Specifies the text that will appear when mouse is over the More button.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.TextSet.UnhandledErrorText">
+      <summary>
+            Specifies the text that will appear in the error box when an unhandled exception occurred.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.TextSet.ParentEmptyPromptText">
+      <summary>
+            Specifies the text used for the prompt when ParentEmptyAction is set to PromptMessage.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.FieldTypeEditor">
+      <summary>
+            Summary description for FieldTypeEditor.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.FieldTypeEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)">
+      <summary>
+        <para>
+                    This is an override from UITypeEditor.  The property grid will call this when
+                    it wants to display the editor for the given value.
+               </para>
+      </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.FieldTypeEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)">
+      <summary>
+        <para>
+                    This is an override from UITypeEditor.  The editor style indicates what
+                    type of editor we are providing:  we can either display a dialog or a
+                    drop-down box.  Our editor always shows a drop-down box.
+               </para>
+      </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.FieldTypeEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)">
+      <summary>
+        <para>
+                    This is an override from UITypeEditor and indicates if we support 
+                    painting a small representation of our value in the property grid.
+               </para>
+      </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.ValueChangedEventArgs">
+      <summary>
+            Events class contains all event argument definitions that are used in WebCombo control.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.BaseEventArgs">
+      <summary>
+            The base class for all event arguments classes. The ReturnValue allows events to be cancelled to skip 
+            default event behavior.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.LayoutEventArgs">
+      <summary>
+            Provides data for layout related event.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutEventArgs.Layout">
+      <summary>
+            Gets the LayoutSet object used by the event.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.DataSourceEventArgs">
+      <summary>
+            Provides data for datasource related event.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.DataSourceEventArgs.DataSource">
+      <summary>
+            Gets or sets the DataSource for the control.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.RowEventArgs">
+      <summary>
+            Provides data for row related event.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.RowEventArgs.Row">
+      <summary>
+            Gets the WebGridRow object used by the event.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.PostbackEventArgs">
+      <summary>
+            Provides data for OnTheFly postback event.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.PostbackEventArgs.Combo">
+      <summary>
+            Gets the WebGrid object used by the event.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.PostbackEventArgs.DataSource">
+      <summary>
+            Gets the assigned WebGrid's DataSource.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.PostbackEventArgs.XmlRequest">
+      <summary>
+            Gets the request in XmlDocument type that contains requests information by clients.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.PostbackEventArgs.Action">
+      <summary>
+            Gets the action name (<see cref="T:ISNet.WebUI.WebCombo.PostBackAction" />) for the requests that initiate the event.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.PostbackEventArgs.CustomActionData">
+      <summary>
+            Gets or sets custom action data for requests that initiated by custom request function.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.ValueChangedEventHandler">
+      <summary>
+            The delegate that handles the <see cref="E:ISNet.WebUI.WebCombo.WebCombo.ValueChanged" /> event,
+            which is invoked when the value of WebCombo control is changed.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.LayoutEventHandler">
+      <summary>
+            Delegate that handles the <see cref="E:ISNet.WebUI.WebCombo.WebCombo.InitializeLayout" /> event.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.DataSourceEventHandler">
+      <summary>
+            Delegate that handles the <see cref="E:ISNet.WebUI.WebCombo.WebCombo.InitializeDataSource" /> event.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.RowEventHandler">
+      <summary>
+            Delegate that handles the <see cref="E:ISNet.WebUI.WebCombo.WebCombo.InitializeRow" /> event.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.PostBackEventHandler">
+      <summary>
+            Delegate that handles the <see cref="E:ISNet.WebUI.WebCombo.WebCombo.InitializePostBack" /> event.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.WebComboComponentEditor">
+      <summary>
+            Summary description for WebInputComponentEditor.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.WebCombo">
+      <summary>
+            WebCombo is the main control object. The LayoutSettings property contains
+            many of the appearance and layout settings for WebCombo. WebCombo provides
+            advanced data-bound functionality without additional server pages or components.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.#ctor">
+      <summary>
+            The default constructor for WebCombo. This constructor should not be called directly from code. To create WebCombo control from code, use WebCombo(id) instead.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.#ctor(System.String)">
+      <summary>
+            Special constructor used to create WebCombo dynamically in code.
+            
+            </summary>
+      <param name="id">
+      </param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.OnPreRender(System.EventArgs)">
+      <summary>
+               Prepare the renderer and emit JavaScript 
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.OnValueChanged(System.String,System.String)">
+      <summary>
+            Invoked when the value is changed.
+            </summary>
+      <param name="Text">Returns the new datatext from changed value.</param>
+      <param name="Value">Returns the new value.</param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.OnInitializeLayout(ISNet.WebUI.WebCombo.LayoutSet)">
+      <summary>
+            Invoked when the WebCombo's layout needs to be initialized during data binding.
+            You can write the codes to set WebCombo's appearance-related settings in this event.
+            </summary>
+      <param name="layout">A reference to the <see cref="T:ISNet.WebUI.WebCombo.LayoutSet" /> object.</param>
+      <returns>
+            Returns ReturnValue. Event will be cancelled when ReturnValue is False.
+            </returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.OnInitializeDataSource(System.Object,System.Boolean,System.String,System.Int32,System.Int32,System.Int32,System.String,System.Boolean)">
+      <summary>
+            Invoked when data source need to be initialized. It is highly recommended that you use this event
+            to initialize your databinding code for more centralized and easy to maintain codes.
+            </summary>
+      <remarks>
+            Instead of writing your databinding code in Page_Load event, it is more effective to use InitializeDataSource
+            event as a central place for the WebCombo's databinding code. By using this event, you are automatically
+            taking advantage of the WebCombo's automatic data caching feature.
+            <para>
+            Note that you don't need to use <see cref="M:ISNet.WebUI.WebCombo.WebCombo.IsDataCached" /> anymore to query the DataCache status since that
+            the control will automatically check it and only call this event when it needs DataSource.
+            You also don't need to put it under !IsPostBack or other conditions because the event is only fired
+            on first page load, on refresh, or when the cache has been cleared/expired.
+            Additionally, the databinding code has been very simplified so that you don't have to call <see cref="M:ISNet.WebUI.WebCombo.WebCombo.DataBind" />
+            after you assign the DataSource as needed by other controls normally.
+            </para></remarks>
+      <example>
+            C# Example:
+            <code>
+            protected void WebCombo1_InitData(object sender, DataSourceEventArgs e) 
+            {
+            	// the codes will only be executed on first page load, when refresh function invoked
+            	// from client, or when the cache is expired/cleared.
+            	
+            	sqlDataAdapter1.Fill(dataSet11.Customers);
+            	e.DataSource = dataSet11;
+            }
+            </code></example>
+      <param name="dataSource">A reference to the dataSource object.</param>
+      <returns>
+            Returns ReturnValue. Event will be cancelled when ReturnValue is False.
+            </returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.OnInitializeRow(ISNet.WebUI.WebCombo.WebComboRow)">
+      <summary>
+            Invoked when a WebComboRow is being initialized for rendering.
+            </summary>
+      <param name="row">The row which is being initialized.</param>
+      <returns>Returns ReturnValue.</returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.OnInitializePostBack(ISNet.WebUI.WebCombo.WebCombo,System.Object,System.Xml.XmlDocument,System.String)">
+      <summary>
+            Invoked when the WebCombo is performing OnTheFly postback. You can handle this event to perform additional
+            functions or create your own custom actions.
+            </summary>
+      <param name="combo">The reference to the WebCombo object.</param>
+      <param name="dataSource">The datasource.</param>
+      <param name="request">The request context in XmlDocument type.</param>
+      <param name="action">The action name of the current request.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.DataBind">
+      <summary>
+            Starts databinding process for the WebCombo control.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.GetColumn(System.String)">
+      <summary>
+            Returns <see cref="!:Column" /> object which provide access to basic column properties.
+            You should only use this method when <see cref="!:ComboMode" /> is set to MultipleColumns.
+            </summary>
+      <param name="fieldName">The data field name.</param>
+      <returns>Returns <see cref="!:Column" /> object</returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.ShowOnlyColumns(System.String[])">
+      <summary>
+            Show only the columns specified in fieldNames.
+            You should only use this method when <see cref="P:ISNet.WebUI.WebCombo.LayoutSet.ComboMode" /> is set to MultipleColumns.
+            </summary>
+      <param name="fieldNames">An array of string representing the field name you want it to be shown.</param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.LoadLayout(ISNet.WebUI.LayoutInfo)">
+      <summary>
+            Load layout configuration from LayoutInfo object.
+            </summary>
+      <param name="settings">A LayoutInfo object representing the layout configuration.</param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.SaveLayout(System.String)">
+      <summary>
+            Saves <see cref="T:ISNet.WebUI.WebCombo.LayoutSet" /> properties to a file.
+            </summary>
+      <param name="fileName">The layout filename.</param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.SaveLayout(System.IO.Stream)">
+      <summary>
+            Saves <see cref="T:ISNet.WebUI.WebCombo.LayoutSet" /> properties to Stream.
+            </summary>
+      <param name="stream">
+      </param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.SetCacheControl(System.TimeSpan,System.Web.Caching.CacheItemPriority)">
+      <summary>
+            Overrides the default data cache configuration.
+            </summary>
+      <param name="duration">The duration of the cache.</param>
+      <param name="cachePriority">The priority of the cache.</param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.ReInitialize">
+      <summary>
+            Forces WebCombo to be initialized. This method is useful when retrieving WebCombo object from persistence storage.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.ResetStyleToDefault">
+      <summary>
+            Clear any styles associated with this control and set the control to use default WebCombo.NET style.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.PopulateUnboundData(System.Data.DataSet,System.String,System.Boolean)">
+      <summary>
+               Called by the framework to save round-trip data from the WebCombo into the html ViewState variable.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.GetValueByText(System.String)">
+      <summary>
+            Returns a value by specified text from datasource.
+            </summary>
+      <param name="text">The text to search</param>
+      <returns>Object.</returns>
+      <remarks>
+            Use this method to return the corresponding value by a search text based on DataValueField and DataTextField in DataSource.
+            </remarks>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.ClearCachedDataSource">
+      <summary>
+            Clears the cached data source.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.IsDataCached">
+      <summary>
+            Returns whether the Datasource is already cached.
+            </summary>
+      <remarks>
+            This method is required to take advantage of built-in datacaching mechanism
+            implemented in WebCombo control.
+            <example>
+            With automatic datacaching feature on, the codes in your webform code behind should looks like the example below.
+            <code>
+            private void Page_Load(object sender, System.EventArgs e)
+            {
+            	if (!WebCombo1.IsDataCached()) 
+            	{
+            		WebCombo1.DataSource = LookupClass.GetProducts();
+            		WebCombo1.DataBind();
+            	}
+            </code></example>		/// </remarks>
+      <returns>Returns true if DataSource is already cached</returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.GetCachedDataSource">
+      <summary>
+            Get the currently cached data source of the specified control.
+            </summary>
+      <returns>Cached data source object if any, otherwise returns null.</returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.AddDataSourceToCache(System.Object)">
+      <summary>
+            Adds the specified datasource to cache storage.
+            </summary>
+      <param name="dataSource">
+      </param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.GetMultipleValues">
+      <summary>
+            Gets the multiple values collection in ArrayList object.
+            </summary>
+      <returns>ArrayList object containing collection of WebComboValueItem objects which represents the multiple values entried by users.</returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.GetMultipleValuesText">
+      <summary>
+            Gets the string representation of multiple values' Text. Each values will be separated by the character specified in SeparatorChar property, followed by a space.
+            </summary>
+      <returns>string.</returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.GetMultipleValuesValue">
+      <summary>
+            Gets the string representation of multiple values' Value. Each values will be separated by the character specified in SeparatorChar property, followed by a space.
+            </summary>
+      <returns>string.</returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.SetMultipleValues(System.String,System.String)">
+      <summary>
+            Sets multiple values into the WebCombo.
+            </summary>
+      <param name="text">string contains multiple value's text separated by the character specified in SeparatorChar property</param>
+      <param name="values">string contains multiple value's value separated by the character specified in SeparatorChar property</param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.SetMultipleValues(System.Collections.ArrayList)">
+      <summary>
+            Sets multiple values into the WebCombo.
+            </summary>
+      <param name="valueItems">ArrayList object contains a collection of WebComboValueItem objects.</param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebCombo.PopulateValueItems(System.String)">
+      <summary>
+            Populate the appropriate texts of the specified multiple values into a collection of WebComboValueItem objects.
+            </summary>
+      <param name="values">Multiple values separated by the character specified in SeparatorChar property.</param>
+      <returns>ArrayList.</returns>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.Text">
+      <summary>
+            Gets the text of selected value in WebCombo's dropdown list.
+            This property is readonly.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.Value">
+      <summary>
+            Returns or sets the value for WebCombo control.
+            </summary>
+      <remarks>
+            You can set the Value property in code at runtime to set initial value for the WebCombo control.
+            This property is also available at design time.
+            <para>
+            Value property has behaviors as below:
+            </para><list type="bullet"><item><description>
+            On databinding process, it will automatically check the existence of Value property in the DataSource.
+            If the specified Value is found, the Text property will be automatically populated based on <see cref="P:ISNet.WebUI.WebCombo.WebCombo.DataTextField" /> property.
+            Otherwise, the Value and Text will be set to empty.
+            </description></item><item><description>
+            The value property will also be automatically populated on every postback based on last active selection.
+            You may also programmatically set a different value on postback event.
+            </description></item></list></remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.TextBoxLength">
+      <summary>
+            Specifies the size of the textbox control.
+            </summary>
+      <remarks>
+            Use this property to limit the size of allowed input in WebCombo control.
+            Default is 0 (unlimited).
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.DropDownRows">
+      <summary>
+            Specifies the number of initial records retrieved by the WebCombo control.
+            </summary>
+      <remarks>
+            This property is used to determine the number of retrieved records when firstly requested by WebCombo control.
+            The second and further request made by WebCombo is the double of this property.
+            You may specify a larger number for this property if you run the control in Intranet or large bandwidth.
+            The default value is 15.
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.AutoLoad">
+      <summary>
+            Specifies whether the control should automatically make initial request on page load.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.Latency">
+      <summary>
+            Specifies the wait time after last keypress in milliseconds before the control make data request.
+            </summary>
+      <remarks>
+            Setting this property to a lower number results a faster response based on entered query.
+            You should carefully consider the value for this property as it will affect on server's performance and workloads.
+            You may consider a lower number if you're using the control in Intranet or when server workload is minimal.
+            Default value is 500.
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.AllowAutoPostback">
+      <summary>
+            Specifies whether postback will be automatically invoked when selected index is changed.
+            </summary>
+      <remarks>
+            When set to true, the browser will automatically invoke postback when selected index is changed.
+            <para>
+            Default value is False.
+            </para></remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.DataValueField">
+      <summary>
+            Returns or sets the field used as the value in WebCombo control.
+            </summary>
+      <remarks>
+            DataValueField is a required property in WebCombo control.
+            The control will use the field specified in this property as the value in WebCombo.
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.DataTextField">
+      <summary>
+            Returns or sets the data field used to display the text in WebCombo control.
+            </summary>
+      <remarks>
+            DataTextField is a required property in WebCombo control.
+            The control will use the field specified in this property to display the text in WebCombo.
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.LayoutSettings">
+      <summary>
+            LayoutSettings is the central object that contain all the behaviors and styles for the whole WebCombo control.
+            </summary>
+      <remarks>
+            All Intersoft's component provides a common, centralized object called LayoutSettings.
+            It contains many features that allow you to fully customize each part of the control's look and feel
+            directly at design-time.
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.LinkSettings">
+      <summary>
+            Provides settings for linking to another WebCombo.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.MultipleSelectionSettings">
+      <summary>
+            Provides settings for multiple selections feature.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.BackColor">
+      <summary>
+            Returns or sets the background color of the control.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.BorderColor">
+      <summary>
+            Returns or sets the border color of the control.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.BorderStyle">
+      <summary>
+            returns or sets the border style of the control.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.BorderWidth">
+      <summary>
+            Returns or sets the border width of the control.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.Font">
+      <summary>
+            Returns or sets the font used in the control.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.ForeColor">
+      <summary>
+            Returns or sets a <b>Color</b> object that specifies the foreground color of the control.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.Width">
+      <summary>
+            Returns or sets the width of the control.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.AdditionalFiltersText">
+      <summary>
+            Returns or sets the additional filter text for WebCombo control.
+            </summary>
+      <remarks>
+            You can add filters that you want to apply to the <see cref="P:ISNet.WebUI.WebCombo.WebCombo.DataSource" /> object
+            in either client or server side.
+            <para><list type="bullet"><item><description>
+            To add filters from server side, simply set this property from anywhere in your webform's code.
+            </description></item><item><description>
+            To add filters from client side, you can use provided <b>wc_setAdditionalFilters</b> function.
+            
+            <para>
+            The wc_setAdditionalFilters function takes 2 parameters that is ControlName and FilterText.
+            See the example below on how to use the function in client side.
+            </para></description></item></list></para><para></para></remarks>
+      <example>
+            The code fragment below shows how to use provided client function to set additional filters.
+            <code>
+            ...
+            &lt;input type='checkbox' onclick='setFilter(this)'&gt; &lt;span&gt; Limit data to Category : Beverages &lt;/span&gt;
+            
+            &lt;script language='JScript'&gt;
+            	function setFilter(o) 
+            	{
+            		if (o.checked)
+            			wc_setAdditionalFilters('WebCombo1', '[CategoryName] = "Beverages"');
+            		else
+            			wc_setAdditionalFilters('WebCombo1', '');
+            	}
+            &lt;/script&gt;
+            </code></example>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.AllowAutoQueryHandler">
+      <summary>
+            Specifies whether or not to allow WebCombo to automatically handle query request.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.Columns">
+      <summary>
+            Returns the Column collection used to display each column when WebCombo's mode is set to MultipleColumns.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.Rows">
+      <summary>
+            Returns the WebComboRow collection used to display each item in WebCombo's dropdown list.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.AdditionalSearchFields">
+      <summary>
+            Returns or sets the additional data field used to match rows against user's input.
+            </summary>
+      <remarks>
+            You can set multiple data fields by using comma as separator. For example, OfficePhone, HomePhone
+            <para>
+            This property provides a convenient way for developers when the application require more than one data field
+            to be searched instead of the specified <see cref="P:ISNet.WebUI.WebCombo.WebCombo.DataTextField" />.
+            </para><para>
+            When you set a value to this property and <see cref="P:ISNet.WebUI.WebCombo.WebCombo.AllowAutoQueryHandler" /> is set to True, WebCombo
+            will automatically search the user's input initially by DataTextField then followed by comma separated data fields
+            assigned in this property. This feature is normally used in conjuction with MultipleColumns combomode which allow
+            users to see matched information in columns based on their input.
+            </para><para>
+            Note that this property will only be used to search against user's input, the displayed selected text will still be using
+            the value specified in DataTextField.
+            </para></remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.AllowWildCardSearch">
+      <summary>
+            Specifies whether or not to allow wild card searching / fuzzy logic searching.
+            </summary>
+      <remarks>
+            By setting this property to True, users will be able to perform fuzzy logic searching without has to add * in the front of input text.
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.MinCharsToRequest">
+      <summary>
+            Returns or sets the minimum length of input character for requesting data retrieval.
+            </summary>
+      <remarks>
+            Use this property when data retrieval is only need to be performed with a minimal length assigned in this property.
+            <para>
+            For example, setting this property to 5 will tell WebCombo to retrieve data only when user typing in at least 5 characters.
+            Otherwise, WebCombo will not display the drop down list automatically. When the drop down arrow is clicked, it will display
+            the drop down list but with no data retrieving. In this context, the status of the WebCombo will remain "Ready".
+            </para></remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.SelectedRow">
+      <summary>
+            Returns the selected WebComboRow object.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.UseDefaultStyle">
+      <summary>
+            Indicates whether this control should use default WebCombo.NET 4.0 styles and appearance settings. See Help for more information.
+            </summary>
+      <remarks>
+      </remarks>
+      <isnew>9/1/2006</isnew>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.CacheServerConnection">
+      <summary>
+            Specifies the file server connection string to store data cache.
+            </summary>
+    </member>
+    <member name="E:ISNet.WebUI.WebCombo.WebCombo.ValueChanged">
+      <summary>
+            Manages delegates of type <see cref="T:ISNet.WebUI.WebCombo.ValueChangedEventHandler" /></summary>
+      <remarks>
+            Fires when the value is changed. Called by <see cref="M:ISNet.WebUI.WebCombo.WebCombo.OnValueChanged(System.String,System.String)" /></remarks>
+    </member>
+    <member name="E:ISNet.WebUI.WebCombo.WebCombo.InitializeLayout">
+      <summary>
+            Manages delegates of the type <see cref="T:ISNet.WebUI.WebCombo.LayoutEventHandler" />.
+            </summary>
+    </member>
+    <member name="E:ISNet.WebUI.WebCombo.WebCombo.InitializeDataSource">
+      <summary>
+            Manages delegates of the type <see cref="T:ISNet.WebUI.WebCombo.DataSourceEventHandler" />.
+            </summary>
+    </member>
+    <member name="E:ISNet.WebUI.WebCombo.WebCombo.PrepareDataBinding">
+      <summary>
+            Manages delegates of the type <see cref="T:ISNet.WebUI.WebCombo.DataSourceEventHandler" />.
+            </summary>
+    </member>
+    <member name="E:ISNet.WebUI.WebCombo.WebCombo.InitializeRow">
+      <summary>
+            Manages delegates of the type <see cref="!:ISNet.WebUI.WebGrid.RowEventHandler" />.
+            </summary>
+    </member>
+    <member name="E:ISNet.WebUI.WebCombo.WebCombo.AddItem">
+      <summary>
+            Manages delegates of the type <see cref="!:ISNet.WebUI.WebGrid.RowEventHandler" />.
+            </summary>
+    </member>
+    <member name="E:ISNet.WebUI.WebCombo.WebCombo.InitializePostBack">
+      <summary>
+            Manages delegates of the type <see cref="!:ISNet.WebUI.WebGrid.PostBackEventHandler" />.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.AllowAutoDataCaching">
+      <summary>
+            Specifies whether data caching is automatically handled by the control.
+            </summary>
+      <remarks>
+            This property enables the automatic caching of assigned DataSource object.
+            Always leave this property to True as it's a powerful and effective approach
+            to reduce server's workload and dramatically increase server response time.
+            <para>
+            By utilizing the power of .NET caching feature, WebCombo.NET implements
+            advanced datacaching mechanism to reduce server workloads. The scope of
+            the cache is session. This enables a greater and more flexible control
+            to the WebCombo object. The WebCombo control keeps track of each session's
+            cache and will automatically remove the DataSource object from cache when it's no longer accessed.
+            </para><para>
+            If the DataSource object is a dynamic object -- means that it always been
+            changed or added in less than 5 mins -- you may consider to set this property to False.
+            </para><para>
+            In order to take advantage of this property, you should always use <see cref="M:ISNet.WebUI.WebCombo.WebCombo.IsDataCached" />
+            to check whether the DataSource already been cached before you assign a DataSource. See the examples for details.
+            </para><para>
+            In some scenarios, you can assign a different DataSource directly from code with just assigning the DataSource property to new datasource. In this case,
+            old cache will be automatically removed and new instance of cache will be created.
+            </para><para>
+            Default value is True.
+            </para></remarks>
+      <example>
+            You should use <see cref="M:ISNet.WebUI.WebCombo.WebCombo.IsDataCached" /> method before assign a DataSource to take advantage the built-in WebCombo datacaching mechanishm.
+            <code>
+            private void Page_Load(object sender, System.EventArgs e)
+            {
+            	if (!WebCombo1.IsDataCached()) 
+            	{
+            		WebCombo1.DataSource = LookupClass.GetProducts();
+            		WebCombo1.DataBind();
+            	}
+            </code></example>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.DataCacheStorage">
+      <summary>
+            Specifies where to store the data cache.
+            </summary>
+      <remarks>
+                The default value is <b>PageCache</b>. The PageCache data storage implementation is
+                the one implemented in previous version of WebCombo component. This property is
+                only taken affect when AllowAutoDataCaching property is set to True (by default). 
+                <para>The new <b>Session</b> data storage mode enables better datasource persistent
+                mechanism when information is more scoped per user's session. With this mode,
+                datasource's cache will be valid as long as the session hasn't expired.</para><para>The default PageCache storage mode is sufficient and effective for most
+                development scenarios. Following describes the behavior of both modes:</para><para><b>PageCache</b></para><list type="bullet"><item><description>Stored in ASP.NET's built-in Cache object.</description></item><item><description>Expiring in a time period, default is 15
+                        minutes.</description></item><item><description>Use SetCacheControl() method to control cache's time and
+                        priority.</description></item><item><description>Requires implementation of InitializeDataSource event to taken
+                        affect effectively.</description></item><item><description>Best used for scenarios when all level of data can be
+                        retrieved once together.</description></item></list><para><b>Session</b></para><list type="bullet"><item><description>Stored in Session object.</description></item><item><description>Expiring when session is timed out or Session.Abandon() method
+                        is called. To longer the cache time, simply increase the Session's timeout
+                        value.</description></item><item><description>Doesn't require implementation of InitializeDataSource event.
+                        Work perfectly with common databinding method using DataBind() in Page_Load
+                        event. However, databinding implementation using InitializeDataSource event
+                        is more recommended for centralized and standarization in control's binding
+                        mechanism.</description></item><item><description>Best used for scenarios when data is scoped based per
+                        user/session and when on demand data retrieval implementation is required
+                        for WebCombo.</description></item><item><description>Better performance, the control will only hit the database for
+                        first page load and use the cached data for entire session - unlike
+                        PageCache which will need to renew the data in a time period.</description></item><item><description>Better scalability, you can implement SqlServer mode for
+                        storing the Session's data for larger applications that work in WebFarm or
+                        clustering.</description></item></list></remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.UseCachedDataOnFirstLoad">
+      <summary>
+            Specifies whether the cached data source will always be used on first page load.
+            </summary>
+      <remarks>
+            When set to True, InitializeDataSource event will not be fired even on first page load
+            if the DataSource is still in cache. Set this property to True will improve the performance significantly
+            and is highly recommended for page that display static/unconditional data, such as all customers data.
+            For page that displays grid data based on a condition or criteria, it is best to set this property to False.
+            </remarks>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.IsFlyPostBack">
+      <summary>
+            Returns whether this WebCombo instance invokes OnTheFly postback.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.FlyPostBackSettings">
+      <summary>
+            Configures the settings used by the control when performing OnTheFly postback.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.DataMember">
+      <summary>
+            Specifies the data member in multimember data source to bind to the WebCombo control.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.DataSource">
+      <summary>
+            Specifies the datasource object which the control bind to.
+            </summary>
+      <remarks>
+            One of WebCombo.NET key features is its ability to use the common
+            DataSource and <see cref="M:ISNet.WebUI.WebCombo.WebCombo.DataBind" /> method for data binding purpose.
+            <para>
+            WebCombo.NET has been specially designed to bring a new web experience
+            when selecting from a large dropdown rows and also meet the .NET infrastructure
+            requirement needed by developers.
+            </para><para>
+            DataSource property can be assigned from anywhere in the code.
+            It supports all ADO.Net objects, means that you have all the flexibility to use
+            custom classes that returns a DataSet object, stored procedures, Oracle source and so on.
+            </para><para>
+            By assigning a DataSource, you are all set and the WebCombo control is ready to use.
+            WebCombo control is built with automatic query handler. That means you don't have to create
+            another stored procedure to match with the control's infrastructure. Instead, WebCombo's
+            automatic query handler will do all required lookups and filtering process.
+            </para><para>
+            This version of WebCombo supports even more data source types including SqlDataReader,
+            OleDbDataReader, Xml data source and any objects that implement IEnumerable such as Collections
+            or ArrayList. The feature works perfectly in conjuction with AutoQueryHandler, this allow developers
+            to use non-DataSet objects as datasource while having query automatically handled by WebCombo.
+            </para></remarks>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.WebComboRow">
+      <summary>
+            Represents the data row that belongs to WebCombo object.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebComboRow.#ctor">
+      <summary>
+            The default constructor for the WebComboRow object.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebComboRow.#ctor(ISNet.WebUI.WebCombo.WebComboCell)">
+      <summary>
+            The constructor for WebComboRow object, given the WebComboCell object.
+            </summary>
+      <param name="cell">The WebComboCell object to add.</param>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboRow.Cells">
+      <summary>
+            Gets the collection of the WebComboCell objects.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboRow.DataSourceIndex">
+      <summary>
+            Gets the ordinal data row index based on datasource row's index.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboRow.Combo">
+      <summary>
+            Gets the WebCombo object that owns the row.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboRow.ParentCollection">
+      <summary>
+            Gets the parent collection that own this row.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboRow.Position">
+      <summary>
+            Gets or sets the ordinal position of the row object.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboRow.DataRow">
+      <summary>
+            Returns the DataRow object that is used to display this row.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboRow.Value">
+      <summary>
+            Returns the value of the row based on DataValueField.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboRow.CustomObjectAttributes">
+      <summary>
+            Gets or sets custom attributes that will be written in the row object's tag.
+            </summary>
+      <remarks>
+            Use this property to assign custom attributes that you want to render along with the row's tag. 
+            </remarks>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.Presets">
+      <summary>
+            Presets class contains static methods that are used to initialize default
+            styles and provides centralized access for other predefined styles.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Presets.ApplyDefaultPreset(ISNet.WebUI.WebCombo.WebCombo)">
+      <summary>
+            Apply default style to the WebCombo control.
+            </summary>
+      <param name="o">The Webcombo object to apply.</param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Presets.ApplyDefaultMulticolumnsStyle(ISNet.WebUI.WebCombo.LayoutSet)">
+      <summary>
+            Apply default multicolumn style to the WebCombo control.
+            </summary>
+      <param name="o">The LayoutSet to apply.</param>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.WebComboCell">
+      <summary>
+            Represents an individual data item when ComboMode is set to MultipleColumns.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebComboCell.#ctor">
+      <summary>
+            The default constructor for the WebComboCell object.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebComboCell.SetColumn(ISNet.WebUI.WebCombo.WebComboColumn)">
+      <summary>
+            This function is intended for internal use only.
+            </summary>
+      <param name="column">
+      </param>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboCell.WebComboRow">
+      <summary>
+            Gets the WebComboRow object that own this cell.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboCell.Position">
+      <summary>
+            Gets the position of the cell from its Collection.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboCell.Text">
+      <summary>
+            Gets or sets the text that will be displayed in cell.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboCell.CustomAttributes">
+      <summary>
+            Gets or sets custom attributes that will be written in the cell's tag.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboCell.Tag">
+      <summary>
+            Gets or sets custom data for the cell object.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboCell.Value">
+      <summary>
+            Gets or sets the cell's value.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboCell.Column">
+      <summary>
+            Gets the Column object of which this cell belongs to.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboCell.Image">
+      <summary>
+            Gets or sets the image filename that will be used to display image of an Image or ImageAndText Column.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboCell.TooltipText">
+      <summary>
+            Gets or sets the tooltip text of cell object.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboCell.Style">
+      <summary>
+            Gets or sets the style applied to the cell object.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboCell.CustomObjectAttributes">
+      <summary>
+            Gets or sets custom attributes that will be written in the cell object's tag.
+            </summary>
+      <remarks>
+            Use this property to assign custom attributes that you want to render along with the object's tag. This property will
+            affect only to column which type is Image and ImageAndText.
+            </remarks>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.Cells">
+      <summary>
+            Class Cells
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Cells.#ctor">
+      <summary>
+            Public constructor for the Cells Collection.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Cells.GetEnumerator">
+      <summary>
+            Returns an enumerator object for the collection.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Cells.GetNamedItem(System.String)">
+      <summary>
+            Property indexer for the collection. Uses the Name string to return an WebComboCell object.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Cells.Add(ISNet.WebUI.WebCombo.WebComboCell)">
+      <summary>
+            Add an WebComboCell object into the WebComboCell collection.
+            </summary>
+      <param name="cell">The WebComboCell object to be added.</param>
+      <returns>The index of the newly added WebComboCell.</returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Cells.Add(System.String)">
+      <summary>
+            Creates a new WebComboCell object in the collection and initializes its Name value.
+            </summary>
+      <param name="name">The unique Name value.</param>
+      <returns>The index of the newly-added WebComboCell object within the collection.</returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Cells.Insert(System.Int32,ISNet.WebUI.WebCombo.WebComboCell)">
+      <summary>
+            Inserts an WebComboCell object into the WebComboCell collection at a specified index.
+            </summary>
+      <param name="index">The position in the collection for the new WebComboCell.</param>
+      <param name="cell">The WebComboCell object to be inserted into the collection.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Cells.Remove(ISNet.WebUI.WebCombo.WebComboCell)">
+      <summary>
+            Removes the specified WebComboCell object from the collection.
+            </summary>
+      <param name="cell">The WebComboCell object to be removed from the collection.</param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Cells.RemoveAt(System.Int32)">
+      <summary>
+            Removes the WebComboCell object at the specified index from the collection.
+            </summary>
+      <param name="index">The index of the WebComboCell object to be removed.</param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Cells.Clear">
+      <summary>
+            Removes all WebComboCell objects from the collection.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Cells.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>
+            Serialize the collection
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.Cells.IsReadOnly">
+      <summary>
+            Returns a Boolean value indicating whether the collection is read-only.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.Cells.Item(System.Int32)">
+      <summary>
+            Property indexer for the collection.  
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebComboValueItem.#ctor">
+      <summary>
+            Constructs WebComboValueItem object without any parameters.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.WebComboValueItem.#ctor(System.String,System.String)">
+      <summary>
+            Constructs WebComboValueItem object by specifying the Text and Value parameters.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboValueItem.Text">
+      <summary>
+            Gets or sets the text of the value item.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboValueItem.Value">
+      <summary>
+            Gets or sets the value part of the item.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.WebComboDesigner">
+      <summary>
+            The class that handles the design time support for WebCombo control.
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.Rows">
+      <summary>
+            A collection of Rows objects that represent the rows of the WebCombo control.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Rows.#ctor">
+      <summary>
+            Public constructor for the Rows Collection.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Rows.GetEnumerator">
+      <summary>
+            Returns an enumerator object for the collection.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Rows.GetNamedItem(System.String)">
+      <summary>
+            Property indexer for the collection. Uses the Name string to return an WebComboRow object.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Rows.Add(ISNet.WebUI.WebCombo.WebComboRow)">
+      <summary>
+            Add an WebComboRow object into the WebComboRow collection.
+            </summary>
+      <param name="row">The WebComboRow object to be added.</param>
+      <returns>The index of the newly added WebComboRow.</returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Rows.FindRowByText(System.String)">
+      <summary>
+            Find specified text in DataTextField and return the WebComboRow object that match.
+            </summary>
+      <param name="text">The text to find.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Rows.FindRowByValue(System.String)">
+      <summary>
+            Find specified text in DataValueField and return the WebComboRow object that match.
+            </summary>
+      <param name="_value">The text to find.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Rows.Add(System.String)">
+      <summary>
+            Creates a new WebComboRow object in the collection and initializes its Name value.
+            </summary>
+      <param name="name">The unique Name value.</param>
+      <returns>The index of the newly-added WebComboRow object within the collection.</returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Rows.Insert(System.Int32,ISNet.WebUI.WebCombo.WebComboRow)">
+      <summary>
+            Inserts an WebComboRow object into the WebComboRow collection at a specified index.
+            </summary>
+      <param name="index">The position in the collection for the new WebComboRow.</param>
+      <param name="row">The WebComboRow object to be inserted into the collection.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Rows.Remove(ISNet.WebUI.WebCombo.WebComboRow)">
+      <summary>
+            Removes the specified WebComboRow object from the collection.
+            </summary>
+      <param name="row">The WebComboRow object to be removed from the collection.</param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Rows.RemoveAt(System.Int32)">
+      <summary>
+            Removes the WebComboRow object at the specified index from the collection.
+            </summary>
+      <param name="index">The index of the WebComboRow object to be removed.</param>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Rows.Clear">
+      <summary>
+            Removes all WebComboRow objects from the collection.
+            </summary>
+    </member>
+    <member name="M:ISNet.WebUI.WebCombo.Rows.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <summary>
+            Serialize the collection
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.Rows.IsReadOnly">
+      <summary>
+            Returns a Boolean value indicating whether the collection is read-only.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.Rows.Item(System.Int32)">
+      <summary>
+            Property indexer for the collection.  
+            </summary>
+    </member>
+    <member name="T:ISNet.WebUI.WebCombo.FlyEventHandler">
+      <summary>
+            Summary description for FlyEventHandler.
+            </summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.Cells.Item">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.EncodeOutput">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.ShowErrorMessages">
+      <summary>Specifies whether error messages always be shown when no datasource, datatextfield or datavaluefield is specified.</summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.CssClass">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.HasDataSource">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.MultipleTexts">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.MultipleValues">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.V4Initialized">
+      <summary>This property should not be used directly by developer. It is used by the control internally to determine versioning for default styles.</summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.showFieldNames">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.ScriptDirectory">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.FormKey">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.ActionName">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebCombo.DataSourceID">
+      <summary>Gets or sets the ID of the control from which the WebCombo control retrieves its list of data items.</summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboDesigner.AllowResize">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboDesigner.Verbs">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboDesigner.ActionLists">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboDesigner.DataTextField">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboDesigner.DataValueField">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboDesigner.InitialDialog">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.LayoutSet.AllowFloatingText">
+      <summary>Gets or sets a value whether text is allowed to float in the right side of WebCombo.</summary>
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.BaseEventArgs.ReturnValue">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.DataSourceEventArgs.IsFlyDataRequest">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.DataSourceEventArgs.QueryText">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.DataSourceEventArgs.StartRow">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.DataSourceEventArgs.EndRow">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.DataSourceEventArgs.AdditionalFilters">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.DataSourceEventArgs.RowCount">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.DataSourceEventArgs.IsDropDownClicked">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.Rows.Combo">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.Rows.Item">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.Columns.Item">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.WebComboColumn.Name">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ValueChangedEventArgs.Text">
+      <summary />
+    </member>
+    <member name="P:ISNet.WebUI.WebCombo.ValueChangedEventArgs.Value">
+      <summary />
+    </member>
+  </members>
+</doc>

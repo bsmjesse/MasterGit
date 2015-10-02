@@ -1,0 +1,68 @@
+﻿body
+{
+	font-family: Tahoma;
+	font-size: x-small;
+	color: Black;
+}
+.Shdr
+{
+	font-size: small;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+.Scap
+{
+	font-size: xx-small;
+	width: 125px;
+	font-variant: small-caps;
+	font-weight: bolder;
+	color: #00c800;
+}
+.Sval,.Swval
+
+{
+	background-color:#f3f3f3;
+	height: 16px;
+	width: 200px;
+	color: #000000;
+	font-size: x-small;
+	font-variant: normal;
+	border: 1px solid silver;
+	border-left-style: none;
+	border-top-style: none;
+	display: block;
+	text-indent:2px;
+}
+.Swval
+{
+	width: 400px;
+}
+.Si
+{
+	color: #000000;
+	width: 200px;
+}
+.Siw
+{
+	color: #000000;
+	width: 400px;
+}
+.Serr
+{
+	color: #ff0000;
+}
+.Stdcap
+{
+	color: #00c800;
+}
+.Stdval
+{
+}
+.Sb
+{
+	width: 120px;
+}
+.Sbw
+{
+	width: 180px;
+}

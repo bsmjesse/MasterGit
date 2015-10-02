@@ -1,0 +1,813 @@
+using System;
+using System.Web;
+using System.Collections;
+using System.Web.Services;
+using System.Web.Services.Protocols;
+using System.Diagnostics;
+using VLF.ERRSecurity;
+using VLF.DAS.Logic;
+using VLF.CLS;
+using VLF.CLS.Def;
+using System.Data;
+using System.Xml;
+
+namespace VLF.ASI.Interfaces
+{
+   /// <summary>
+   /// DBDriver data, assignment and history
+   /// </summary>
+   [WebService(Namespace = "http://www.sentinelfm.com")]
+
+   public class DBDriver : System.Web.Services.WebService
+   {
+      public DBDriver()
+      {
+
+         //Uncomment the following line if using designed components 
+         //InitializeComponent(); 
+      }
+
+      # region Driver general
+
+      [WebMethod(Description = "Add a new driver")]
+      public int AddDriver(int userId, string securityId, string xmlDriver)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("AddDriver(userId = {0})", userId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateSuperUser(userId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  // xml parsing
+                  XmlUtil xDoc = new XmlUtil(xmlDriver);
+
+                  driver.AddDriver(
+                     xDoc.GetNodeValue("FirstName"), xDoc.GetNodeValue("LastName"),
+                     xDoc.GetNodeValue("License"), xDoc.GetNodeValue("Class"),
+                     Convert.ToDateTime(xDoc.GetNodeValue("LicenseIssued")),
+                     Convert.ToDateTime(xDoc.GetNodeValue("LicenseExpired")),
+                     Convert.ToInt32(xDoc.GetNodeValue("OrganizationId")),
+                     xDoc.GetNodeValue("Gender")[0],
+                     Convert.ToInt16(xDoc.GetNodeValue("Height")),
+                     xDoc.GetNodeValue("HomePhone"),
+                     xDoc.GetNodeValue("CellPhone"), xDoc.GetNodeValue("AdditionalPhone"),
+                     xDoc.GetNodeValue("Smsid"), xDoc.GetNodeValue("Email"),
+                     xDoc.GetNodeValue("Address"), xDoc.GetNodeValue("City"),
+                     xDoc.GetNodeValue("Zipcode"), xDoc.GetNodeValue("State"),
+                     xDoc.GetNodeValue("Country"), xDoc.GetNodeValue("Description"));
+               }
+               //////////////////////////////////////////////////////////////////////////////////////////////
+            }
+
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Delete a driver")]
+      public int DeleteDriver(int userId, string securityId, int driverId)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("DeleteDriver(User Id = {0}, Driver Id = {1})", userId, driverId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateUserDriver(userId, driverId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  driver.DeleteDriver(driverId);
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Update a driver")]
+      public int UpdateDriver(int userId, string securityId, string xmlDriver)
+      {
+         int driverId = 0;
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("UpdateDriver(userId = {0})", userId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            // xml parsing
+            XmlUtil xDoc = new XmlUtil(xmlDriver);
+            driverId = Convert.ToInt32(xDoc.GetNodeValue("DriverId"));
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateUserDriver(userId, driverId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  driver.UpdateDriver(
+                     driverId,
+                     xDoc.GetNodeValue("FirstName"), xDoc.GetNodeValue("LastName"),
+                     xDoc.GetNodeValue("License"), xDoc.GetNodeValue("Class"),
+                     Convert.ToDateTime(xDoc.GetNodeValue("LicenseIssued")),
+                     Convert.ToDateTime(xDoc.GetNodeValue("LicenseExpired")),
+                     Convert.ToInt32(xDoc.GetNodeValue("OrganizationId")),
+                     xDoc.GetNodeValue("Gender")[0],
+                     Convert.ToInt16(xDoc.GetNodeValue("Height")),
+                     xDoc.GetNodeValue("HomePhone"),
+                     xDoc.GetNodeValue("CellPhone"), xDoc.GetNodeValue("AdditionalPhone"),
+                     xDoc.GetNodeValue("Smsid"), xDoc.GetNodeValue("Email"),
+                     xDoc.GetNodeValue("Address"), xDoc.GetNodeValue("City"),
+                     xDoc.GetNodeValue("Zipcode"), xDoc.GetNodeValue("State"),
+                     xDoc.GetNodeValue("Country"), xDoc.GetNodeValue("Description"));
+               }
+               //////////////////////////////////////////////////////////////////////////////////////////////
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Get a driver")]
+      public int GetDriver(int userId, string securityId, int driverId, ref string xmlResult)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("GetDriver(User Id = {0}, Driver Id = {1})", userId, driverId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateUserDriver(userId, driverId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  DataSet dsDriver = driver.GetDriver(driverId);
+
+                  if (Util.IsDataSetValid(dsDriver))
+                     xmlResult = dsDriver.GetXml();
+                  else
+                     xmlResult = "";
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Get all drivers for organization")]
+      public int GetAllDrivers(int userId, string securityId, int organizationId, ref string xmlResult)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("GetAllDrivers(User Id = {0}, Organization Id = {1})", userId, organizationId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateSuperUser(userId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  DataSet dsDriver = new DataSet();
+
+                  dsDriver = driver.GetDriversForOrganization(organizationId);
+
+                  if (Util.IsDataSetValid(dsDriver))
+                     xmlResult = dsDriver.GetXml();
+                  else
+                     xmlResult = "";
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      # endregion
+
+      # region Driver assignment
+
+      [WebMethod(Description = "Add a new driver assignment")]
+      public int AssignDriver(int userId, string securityId, long vehicleId, int driverId, string description)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("AddDriverAssignment(userId = {0}, vehicleId = {1}, driverId = {2})", userId, vehicleId, driverId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateUserDriver(userId, driverId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  driver.AddDriverAssignment(userId, vehicleId, driverId, description);
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Add a new driver assignment")]
+      public int AssignDriverByDate(int userId, string securityId, long vehicleId, int driverId, DateTime assgnDate, string description)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("AddDriverAssignment(userId = {0}, vehicleId = {1}, driverId = {2})", userId, vehicleId, driverId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateUserDriver(userId, driverId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  driver.AddDriverAssignment(userId, vehicleId, driverId, assgnDate, description);
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Delete a driver assignment")]
+      public int DeleteDriverAssignment(int userId, string securityId, long vehicleId, int driverId, string description)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("DeleteDriverAssignment(userId = {0}, vehicleId = {1}, driverId = {2})", userId, vehicleId, driverId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateUserDriver(userId, driverId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  driver.DeleteActiveDriverAssignment(userId, vehicleId, driverId, description);
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Delete all driver assignments")]
+      public int DeleteDriverAssignments(int userId, string securityId, int driverId, string description)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("DeleteDriverAssignments(userId = {0}, driverId = {1})", userId, driverId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateUserDriver(userId, driverId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  driver.DeleteActiveDriverAssignments(userId, driverId, description);
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Get driver assignment")]
+      public int GetDriverAssignment(int userId, string securityId, long vehicleId, ref string xmlResult)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("GetDriverAssignment(User Id = {0}, Vehicle Id = {1})", userId, vehicleId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateUserVehicle(userId, vehicleId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  DataSet dsDriver = new DataSet();
+
+                  dsDriver = driver.GetDriverActiveAssignment(vehicleId);
+
+                  if (Util.IsDataSetValid(dsDriver))
+                     xmlResult = dsDriver.GetXml();
+                  else
+                     xmlResult = "";
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Get all driver assignments")]
+      public int GetDriverAssignments(int userId, string securityId, int driverId, ref string xmlResult)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("GetDriverAssignments(User Id = {0}, Driver Id = {1})", userId, driverId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateUserDriver(userId, driverId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  DataSet dsDriver = new DataSet();
+
+                  dsDriver = driver.GetDriverActiveAssignments(driverId);
+
+                  if (Util.IsDataSetValid(dsDriver))
+                     xmlResult = dsDriver.GetXml();
+                  else
+                     xmlResult = "";
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Get unassigned drivers for organization")]
+      public int GetUnassignedDrivers(int userId, string securityId, int organizationId, ref string xmlResult)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("GetUnassignedDrivers(User Id = {0}, Organization Id = {1})", userId, organizationId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateSuperUser(userId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  DataSet dsDriver = new DataSet();
+
+                  dsDriver = driver.GetUnassignedDriversForOrganization(organizationId);
+
+                  if (Util.IsDataSetValid(dsDriver))
+                     xmlResult = dsDriver.GetXml();
+                  else
+                     xmlResult = "";
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Get assigned drivers for organization")]
+      public int GetAssignedDrivers(int userId, string securityId, int organizationId, ref string xmlResult)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("GetAssignedDrivers(User Id = {0}, Organization Id = {1})", userId, organizationId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateSuperUser(userId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  DataSet dsDriver = new DataSet();
+
+                  dsDriver = driver.GetAssignedDriversForOrganization(organizationId);
+
+                  if (Util.IsDataSetValid(dsDriver))
+                     xmlResult = dsDriver.GetXml();
+                  else
+                     xmlResult = "";
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      # endregion
+
+      # region Assignment history
+
+      [WebMethod(Description = "Add driver - vehicle assignment history")]
+      public int AddAssignmentHistory(int userId, string securityId, int driverId, long vehicleId, string description, DateTime startDt, DateTime endDt)
+      {
+         int rows = 0;
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("AddAssignmentHistory(User Id = {0}, Driver Id = {1})", userId, driverId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateUserDriver(userId, driverId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  rows = driver.AddAssignmentHistory(driverId, vehicleId, userId, description, startDt, endDt);
+               }
+            }
+            if (rows > 0)
+               return (int)InterfaceError.NoError;
+            else
+               return (int)InterfaceError.InvalidParameter;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Get driver assignment history")]
+      public int GetDriverAssignmentHistory(int userId, string securityId, int driverId, ref string xmlResult)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("GetDriverAssignmentHistory(User Id = {0}, Driver Id = {1})", userId, driverId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateUserDriver(userId, driverId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  DataSet dsDriver = new DataSet();
+
+                  dsDriver = driver.GetDriverAssignmentHistory(driverId);
+
+                  if (Util.IsDataSetValid(dsDriver))
+                     xmlResult = dsDriver.GetXml();
+                  else
+                     xmlResult = "";
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Get driver assignment history with dates")]
+      public int GetDriverAssignmentHistoryByDates(int userId, string securityId, int driverId, DateTime from, DateTime to, ref string xmlResult)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("GetDriverAssignmentHistory(User Id = {0}, Driver Id = {1})", userId, driverId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateUserDriver(userId, driverId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  DataSet dsDriver = new DataSet();
+
+                  dsDriver = driver.GetDriverAssignmentHistory(driverId, from, to);
+
+                  if (Util.IsDataSetValid(dsDriver))
+                     xmlResult = dsDriver.GetXml();
+                  else
+                     xmlResult = "";
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Get vehicle assignment history")]
+      public int GetVehicleAssignmentHistory(int userId, string securityId, long vehicleId, ref string xmlResult)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("GetVehicleAssignmentHistory(User Id = {0}, Vehicle Id = {1})", userId, vehicleId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateUserVehicle(userId, vehicleId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  DataSet dsVehicle = new DataSet();
+
+                  dsVehicle = driver.GetVehicleAssignmentHistory(vehicleId);
+
+                  if (Util.IsDataSetValid(dsVehicle))
+                     xmlResult = dsVehicle.GetXml();
+                  else
+                     xmlResult = "";
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Get vehicle assignment history")]
+      public int GetVehicleAssignmentHistoryByDates(int userId, string securityId, long vehicleId, DateTime from, DateTime to, ref string xmlResult)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("GetVehicleAssignmentHistory(User Id = {0}, Vehicle Id = {1})", userId, vehicleId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateUserVehicle(userId, vehicleId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  DataSet dsVehicle = new DataSet();
+
+                  dsVehicle = driver.GetVehicleAssignmentHistory(vehicleId, from, to);
+
+                  if (Util.IsDataSetValid(dsVehicle))
+                     xmlResult = dsVehicle.GetXml();
+                  else
+                     xmlResult = "";
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Get driver - vehicle assignment history")]
+      public int GetDriverVehicleAssignmentHistory(int userId, string securityId, int driverId, long vehicleId, ref string xmlResult)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("GetDriverVehicleAssignmentHistory(User Id = {0}, Vehicle Id = {1} Driver Id = {2})", userId, vehicleId, driverId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateUserDriver(userId, driverId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  DataSet dsVehicle = new DataSet();
+
+                  dsVehicle = driver.GetDriverVehicleAssignmentHistory(driverId, vehicleId);
+
+                  if (Util.IsDataSetValid(dsVehicle))
+                     xmlResult = dsVehicle.GetXml();
+                  else
+                     xmlResult = "";
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      [WebMethod(Description = "Get driver - vehicle assignment history")]
+      public int GetDriverVehicleAssignmentHistoryByDates(int userId, string securityId, int driverId, long vehicleId, DateTime from, DateTime to, ref string xmlResult)
+      {
+         try
+         {
+            Trace.WriteLineIf(VLF.ASI.AppConfig.tsWeb.Enabled | VLF.ASI.AppConfig.tsMain.TraceVerbose,
+               Util.TraceFormat(Enums.TraceSeverity.WebInterfaces,
+               string.Format("GetDriverVehicleAssignmentHistory(User Id = {0}, Vehicle Id = {1} Driver Id = {2})", userId, vehicleId, driverId)));
+
+            // Authenticate
+            LoginManager.GetInstance().SecurityCheck(userId, securityId);
+
+            //Authorization
+            using (User dbUser = new User(Application["ConnectionString"].ToString()))
+            {
+               if (!dbUser.ValidateUserDriver(userId, driverId))
+                  return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+               using (DriverManager driver = new DriverManager(Application["ConnectionString"].ToString()))
+               {
+                  DataSet dsVehicle = new DataSet();
+
+                  dsVehicle = driver.GetDriverVehicleAssignmentHistory(driverId, vehicleId, from, to);
+
+                  if (Util.IsDataSetValid(dsVehicle))
+                     xmlResult = dsVehicle.GetXml();
+                  else
+                     xmlResult = "";
+               }
+            }
+            return (int)InterfaceError.NoError;
+         }
+         catch (Exception ex)
+         {
+            return (int)ASIErrorCheck.CheckError(ex);
+         }
+      }
+
+      # endregion
+   }
+
+   /// <summary>
+   /// Each method must be registered in a DB and method Name-Id added to this enum
+   /// </summary>
+   //public enum DBDriverMethod
+   //{
+   //   AddDriver = 187,
+   //   DeleteDriver = 188,
+   //   UpdateDriver = 189,
+   //   GetDriver = 193,
+   //   GetAllDrivers = 194,
+   //   AssignDriver = 195,
+   //   DeleteDriverAssignment = 196,
+   //   DeleteDriverAssignments = 197,
+   //   GetDriverAssignment = 198,
+   //   GetDriverAssignments = 199,
+   //   GetUnassignedDrivers = 200,
+   //   GetAssignedDrivers = 201,
+   //   GetDriverAssignmentHistory = 208,
+   //   GetDriverAssignmentHistoryByDates = 209,
+   //   GetVehicleAssignmentHistory = 210,
+   //   GetVehicleAssignmentHistoryByDates = 211,
+   //   GetDriverVehicleAssignmentHistory = 212,
+   //   GetDriverVehicleAssignmentHistoryByDates = 213,
+   //   AddAssignmentHistory = 214,
+   //   AssignDriverByDate = 215
+   //}
+}

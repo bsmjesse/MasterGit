@@ -1,0 +1,54 @@
+DriverID,First Name, Last Name, License, Vehicle Description, Class, Gender, Height, Cell Phone, Additional Phone, City,Province, Zipcode, Country, Home Phone, License issued, License expired, E-mail, Address, Description, Termination Date, Postion Info, Key Fob Id, SMS Id, SMS Pwd, US Cycle, CA Cycle, Timezone
+,Sal,Moaied,,V-111,,M,,647-293-0189,905-907-7852,Maple ,Ont,L6A 4P5,Canada,,,,smoaied@aquatd.com,331 Rodinea Rd.,,,Senior Engineer-Corporate,,,,,,Eastern
+,Giuseppe,Verduci,,V-140,,M,,647-293-8581,905-907-7852,Maple ,Ont,L6A 4P5,Canada,,,,gverduci@aquatd.com,331 Rodinea Rd.,,,Technical Sales Rep-House Accounts,,,,,,Eastern
+,Lee,Brennan,,V-141,,M,,647-293-0889,905-907-7852,Maple ,Ont,L6A 4P5,Canada,,,,lee@aquatd.com,331 Rodinea Rd.,,,Technical Sales Rep-York/Durham,,,,,,Eastern
+,Gary,Wright,,V-142,,M,,416-576-0941,905-907-7852,Maple ,Ont,L6A 4P5,Canada,,,,gwright@aquatd.com,331 Rodinea Rd.,,,"Technical Sales Rep-Peel, Halton, Niagara",,,,,,Eastern
+,Spare PPC,Vehicle,,V-143,,,,,,Maple ,Ont,L6A 4P5,Canada,,,,,331 Rodinea Rd.,,,,,,,,,Eastern
+,Scott,Carnegie,,V-145,,M,,647-293-3241,905-907-7852,Maple ,Ont,L6A 4P5,Canada,,,,scarnegie@aquatd.com,331 Rodinea Rd.,,,Technical Sales Rep-Toronto,,,,,,Eastern
+,Patrick,Maher,,V-154,,M,,416-420-2656,905-907-7852,Maple ,Ont,L6A 4P5,Canada,,,,pmaher@aquatd.com,331 Rodinea Rd.,,,National Accounts Sales Manager,,,,,,Eastern
+,Gary,Spicer,,V-155,,M,,416-428-6698,905-907-7852,Maple ,Ont,L6A 4P5,Canada,,,,gspicer@aquatd.com,331 Rodinea Rd.,,,Technical Sales Rep-Simcoe,,,,,,Eastern
+,Delivery Sign Out PPC,Vehicle,,V-106,,,,,,Maple ,Ont,L6A 4P5,Canada,,,,,331 Rodinea Rd.,,,,,,,,,Eastern
+,Delivery ,Vehicle,,V-117,,,,,,Maple ,Ont,L6A 4P5,Canada,,,,,331 Rodinea Rd.,,,,,,,,,Eastern
+,Carlos,Cardona,,V-127,,M,,647-966-0437,905-907-7852,Maple ,Ont,L6A 4P5,Canada,,,,ccardona@aquatd.com,331 Rodinea Rd.,,,Delivery & Set-up Technician,,,,,,Eastern
+,Justin,Adams,,V-129,,M,,647-293-0069,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,jadams@aquatd.com,331 Rodinea Rd.,,,Dewatering System Technician,,,,,,Eastern
+,Sheldon,Luby ,,V-138,,M,,647-966-3593,905-907-7852,Maple ,Ont,L6A 4P5,Canada,,,,sluby@aquatd.com,331 Rodinea Rd.,,,Set up Supervisor,,,,,,Eastern
+,C-Fusion Trailer,Vehicle,,V-139,,,,,,Maple ,Ont,L6A 4P5,Canada,,,,,331 Rodinea Rd.,,,,,,,,,Eastern
+,Robert,Bluhm,,V-146,,M,,647-293-8537,905-907-7852,Maple ,Ont,L6A 4P5,Canada,,,,rbluhm@aquatd.com,331 Rodinea Rd.,,,Operations Manager,,,,,,Eastern
+,Delivery Sign Out PPC,Vehicle,,V-156,,,,,,Maple ,Ont,L6A 4P5,Canada,,,,,331 Rodinea Rd.,,,,,,,,,Eastern
+,Mechanic Sign Out PPC,Vehicle,,V-109,,,,,,Maple ,Ont,L6A 4P5,Canada,,,,,331 Rodinea Rd.,,,,,,,,,Eastern
+,Spare (NFLD) PPO,Vehicle,,V-112,,,,,,Maple ,Ont,L6A 4P5,Canada,,,,,331 Rodinea Rd.,,,,,,,,,Eastern
+,Patrick,Cadigan,,V-144,,M,,613-323-6042,613-822-9990,Ottawa ,Ont,K1T 3V7,Canada,,,,pcadigan@aquatd.co,2510 Delzotto Ave,,,Technical Sales Rep,,,,,,Eastern
+,Ottawa Sign Out PPO,Vehicle,,V-118,,,,,,Ottawa ,Ont,K1T 3V7,Canada,,,,,331 Rodinea Rd.,,,,,,,,,Eastern
+,Ottawa Spare PPO,Vehicle,,V-124,,,,,,Ottawa ,Ont,K1T 3V7,Canada,,,,,331 Rodinea Rd.,,,,,,,,,Eastern
+,Ottawa Sign Out  PPO,Vehicle,,V-147,,,,,,Maple ,Ont,L6A 4P5,Canada,,,,,331 Rodinea Rd.,,,,,,,,,Eastern
+,Kevin,Larose,,V-126,,M,,705-665-3074,705-525-1700,Subury,Ont,P3A 4R7,Canada,,,,klarose@aquatd.com,2505 Lasalle Blvd.,,,Mining Technical Sales Rep-Northern Ontario,,,,,,Eastern
+,Spare PPS,Vehicle,,V-128,,,,,,Subury,Ont,P3A 4R7,Canada,,,,,2505 Lasalle Blvd.,,,,,,,,,Eastern
+,Ben ,Bast,,V-130,,M,,705-918-1900,705-525-1700,Subury,Ont,P3A 4R7,Canada,,,,bbast@aquatd.com,2505 Lasalle Blvd.,,,Technical Inside Sales Rep,,,,,,Eastern
+,Norm ,Metcalfe,,V-157,,M,,647-293-6697,705-515-1700,Subury,Ont,P3A 4R7,Canada,,,,nmetcalfe@aquatd.com,2505 Lasalle Blvd.,,,"General Manager, Northern Ontario",,,,,,Eastern
+,Sudbury Service  PPS,Vehicle,,V-115,,,,,,Subury,Ont,P3A 4R7,Canada,,,,,2505 Lasalle Blvd.,,,,,,,,,Eastern
+,Joe,Vairo,,V-125,,M,,705-918-1700,705-515-1700,Subury,Ont,P3A 4R7,Canada,,,,joe@aquatd.com,2505 Lasalle Blvd.,,,Operations Supervisor,,,,,,Eastern
+,"Sudbury 16"" Flatbed PPS",,,V-121,,,,,,Subury,Ont,P3A 4R7,Canada,,,,,2505 Lasalle Blvd.,,,,,,,,,Eastern
+,Russell,Thomas,,V-105,,M,,647-293-8504,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,russell@aquatd.com,331 Rodinea Rd.,,,"Vice-President, Sales & Engineering",,,,,,Eastern
+,Steve,DiBiase,,V-152,,M,,416-436-9289,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,dibiase@aquatd.com,331 Rodinea Rd.,,,Senior Dewatering Engineer,,,,,,Eastern
+,Kaveh,Zamani,,V-153,,M,,416-452-5739,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,kzamani@aquatd.com,331 Rodinea Rd.,,,Project Manager/Estimator,,,,,,Eastern
+,Spare  DWO,Vehicle,,V-101,,,,,,Maple ,Ont,L6A 4P5,Canada,,,,,331 Rodinea Rd.,,,,,,,,,Eastern
+,Spare  DWO,Vehicle,,V-102,,,,,,Maple ,Ont,L6A 4P5,Canada,,,,,331 Rodinea Rd.,,,,,,,,,Eastern
+,Domenic,Calabro,,V-104,,M,,647-293-6300,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,dcalabro@aquatd.com,331 Rodinea Rd.,,,Field Operations Supervisor,,,,,,Eastern
+,Sean,King,,V-107,,M,,416-525-6567,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,sking@aquatd.com,331 Rodinea Rd.,,,Field Operations Foreman,,,,,,Eastern
+,Spare  DWO,Vehicle,,V-110,,,,,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,,331 Rodinea Rd.,,,,,,,,,Eastern
+,Gordon,Brinston,,V-114,,M,,647-293-0360,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,gbrinston@aquatd.com,331 Rodinea Rd.,,,Boom Truck Driver,,,,,,Eastern
+,Gordon,Brinston,,V-119,,M,,647-293-0360,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,gbrinston@aquatd.com,331 Rodinea Rd.,,,Boom Truck Driver,,,,,,Eastern
+,Raul,Misa,,V-122,,M,,647-293-8531,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,raul@aquatd.com,331 Rodinea Rd.,,,"Vice-President, Operations",,,,,,Eastern
+,Erquin,Fernandes,,V-123,,M,,647-293-6439,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,efernandez@aquatd.com,331 Rodinea Rd.,,,Pump Mechanic,,,,,,Eastern
+,Colin ,Ricketts,,V-131,,M,,416-573-1041,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,cricketts@aquatd.com,331 Rodinea Rd.,,,Field Operations Foreman,,,,,,Eastern
+,DR24,Kenworth T800,,V-133,,,,,,Maple ,Ont,L6A 4P5,Canada,,,,,,,,,,,,,,Eastern
+,Andy,Ingriselli,,V-134,,M,,647-293-8501,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,andy@aquatd.com,331 Rodinea Rd.,,,President & CEO,,,,,,Eastern
+,Gordon ,Brinston,,V-137,,M,,647-293-0360,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,gbrinston@aquatd.com,331 Rodinea Rd.,,,Boom Truck Driver,,,,,,Eastern
+,Hughie,Rice,,V-148,,M,,647-293-8547,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,hrice@aquatd.com,331 Rodinea Rd.,,,Field Operations Foreman,,,,,,Eastern
+,Raymond,Regular,,V-149,,M,,647-293-0877,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,rregular@aquatd.com,331 Rodinea Rd.,,,Field Operations Foreman,,,,,,Eastern
+,N&N Drilling Trailer,,,V-158,,,,,,Maple ,Ont,L6A 4P5,Canada,,,,,,,,,,,,,,Eastern
+,Hector,Calle,,V-150,,M,,647-293-8574,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,hcalled@aquatd.com,331 Rodinea Rd.,,,Field Operations Foreman,,,,,,Eastern
+,Adrian,Mizzi,,V-108,,M,,647-293-4155,905-907-7852,Maple ,Ont,L6A 4P5,Canada,,,,amizzi@aquatd.com,331 Rodinea Rd.,,,Service Supervisor (Diesel & Hydraulic Pumps),,,,,,Eastern
+,Robert,Kerr,,V-116  ,,M,,647-525-2686,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,,331 Rodinea Rd.,,,Dewatering System Technician,,,,,,Eastern
+,Cory,Warren,,V-121,,M,,416-709-3957,905-907-1700,Maple ,Ont,L6A 4P5,Canada,,,,cwarren@aquatd.com,331 Rodinea Rd.,,,Dewatering System Technician,,,,,,Eastern
+,Spare DWO,Vehicle,,V-151,,,,,,Maple ,Ont,L6A 4P5,Canada,,,,,,,,,,,,,,

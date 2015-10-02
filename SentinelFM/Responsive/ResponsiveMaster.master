@@ -1,0 +1,109 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ResponsiveMaster.master.cs" Inherits="SentinelFM.Responsive_ResponsiveMaster" %>
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" >
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta content="Microsoft Visual Studio 7.0" name="GENERATOR" />
+    <meta content="C#" name="CODE_LANGUAGE" />
+    <meta content="JavaScript" name="vs_defaultClientScript" />
+    <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema" />
+    <meta http-equiv="Pragma" content="no-cache" name="prevent_caching1" />
+    <meta http-equiv="Cache-Control" content="no-cache" name="prevent_caching2" />
+    <meta http-equiv="Expires" content="0" name="prevent_caching3" />
+
+    <title>Login</title>
+
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="Layout/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- Panel Position -->
+    <link rel="stylesheet" type="text/css" href="css/positionContainer/nb_bs.css" id="LoginBannerPositionCss" runat="server" />
+
+    <!-- Login Logo -->
+    <link rel="stylesheet" type="text/css" href="css/logoPostion/middle_logo.css" id="LoginLogoPositionCss" runat="server" />
+
+    <!-- Footer Text -->
+    <link rel="stylesheet" type="text/css" href="css/footer/footer_center.css" id="FooterPositionCss" runat="server" />
+
+    <%--header logo position--%>
+    <link href="css/LogoHeader/left_HeaderLogo.css" rel="stylesheet" id="HeaderLogoPositionCss" runat="server" />
+
+    <link href="css/jquery.bxslider.css" rel="stylesheet" />
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //slider
+            $('.bxslider').bxSlider({
+                mode: 'fade',
+                speed: 50,
+                auto: true,
+                autoControls: true
+            });
+
+            //adjust footer height
+
+        });
+    </script>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body onload="setupLogin(); prefocuslogin(); LoadOnTop();" >
+    <form id="form1" runat="server">
+        <header>
+
+            <div class="header borderBx" runat="server" id="headerDiv">
+                <img src="" height="" width="" alt="" />
+            </div>
+        </header>
+
+        <div>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+        <%--<footer class="page-footer hide">
+            <div class="container">
+                <div class="row">
+                    <div>
+                    <asp:Label ID="lblCustomerSupport" runat="server" meta:resourcekey="lblCustomerSupport" Text="Customer Support:" Style="font-weight: bold;"></asp:Label>
+                    <asp:Label ID="lblCustomerSupportPhone" meta:resourcekey="lblCustomerSupportPhone" runat="server" Text=" Toll Free Direct Line:"></asp:Label>
+                    <asp:Label ID="lblTollFreeNumber" runat="server" Text="1-866-578-4315" meta:resourcekey="lblTollFreeNumberResource1"></asp:Label>
+                    <asp:Label ID="lblEmail" Text="Email:" runat="server" meta:resourcekey="lblEmail"></asp:Label>
+                    <asp:HyperLink NavigateUrl="mailto:customercare@bsmwireless.com" runat="server" ID="lblEmailurl" Text="customercare@bsmwireless.com" meta:resourcekey="lblEmailurl"></asp:HyperLink>
+                    <asp:Label ID="Label3" runat="server" Text="Label" meta:resourcekey="Label3Resource1"></asp:Label>
+                </div>
+                <asp:Label ID="lblMessageError" runat="server" Text="Your account has been deactivated, please contact with your administrator." Visible="False" ForeColor="Red" meta:resourcekey="lblMessageErrorResource1"></asp:Label>
+
+                <asp:Label ID="Label2" runat="server" meta:resourcekey="Label2Resource1" Text="¹To maintain client privacy and confidentiality, client account information is protected by 128-bit encryption. "></asp:Label>
+                <asp:Label ID="Label4" runat="server" Text="Server: " meta:resourcekey="Label4Resource1"></asp:Label><asp:Label ID="lblMachineName" runat="server" Text="Label"></asp:Label>
+                <br />
+                <asp:Label ID="Label1" runat="server" meta:resourcekey="Label1Resource1" Text="For best viewing of this website, please use Internet Explorer ver 5.0 or higher and monitor resolution of 1024x768."></asp:Label><br />
+                <asp:Label ID="lblPopup" runat="server" Style="font-weight: bold;" meta:resourcekey="lblPopupResource1"
+                    Text="ALL POP UP BLOCKING software must be disabled before starting the application."></asp:Label>
+
+                </div>
+            </div>
+        </footer>--%>
+    </form>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="../Scripts/jquery.cookie.js"></script>
+    <script src="../Scripts/md5.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+    <script src="js/materialize.js"></script>
+</body>
+</html>

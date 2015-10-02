@@ -1,0 +1,73 @@
+﻿This report shows the steps taken to convert your Web application from ASP.NET 1.1 to ASP.NET 2.0. 
+There may be some unresolved conversion issues you will need to manually fix. 
+For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=46995 or search for the help topic "Converting from Visual Studio .NET 2002 or 2003".
+Conversion Started on project file ASI.csproj at January 26 2006, 13:44:39.
+
+=========================ERRORS===================
+
+=========================WARNINGS=================
+Warning: Unable to convert 'DocumentationFile' settings in the project file C:\Inetpub\wwwroot\ASI\ASI.csproj. Please manually update web.config.
+Warning: This web project was converted as a file-based web application. If your site contained any IIS meta-information, e.g. sub-folders marked as virtual directories, it is recommended that you close this web site and re-open it using the Open Web Site command and selecting the Local IIS tab.
+
+=========================COMMENTS=================
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\Web.Config has been changed to read-write.
+Web.Config: Added 'xhtmlConformance' attribute.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\Global.asax has been changed to read-write.
+Removed attribute Codebehind from file Global.asax.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\alarms.asmx has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\dbfleet.asmx has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\dbhistory.asmx has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\dborganization.asmx has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\dbsystem.asmx has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\dbuser.asmx has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\dbvehicle.asmx has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\eventmanager.asmx has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\location.asmx has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\reports.asmx has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\securitymanager.asmx has been changed to read-write.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\securitymanager.asmx.cs has been changed to read-write.
+Added folder App_Code\Interfaces.
+Moved file interfaces\securitymanager.asmx.cs to the App_Code\Interfaces\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\eventmanager.asmx.cs has been changed to read-write.
+Moved file interfaces\eventmanager.asmx.cs to the App_Code\Interfaces\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\dbsystem.asmx.cs has been changed to read-write.
+Moved file interfaces\dbsystem.asmx.cs to the App_Code\Interfaces\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\SecurityManager.asmx.cs has been changed to read-write.
+Moved file SecurityManager.asmx.cs to the App_Code\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\AssemblyVersion.cs has been changed to read-write.
+Moved file AssemblyVersion.cs to the App_Code\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\AppConfig.cs has been changed to read-write.
+Moved file AppConfig.cs to the App_Code\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\reports.asmx.cs has been changed to read-write.
+Moved file interfaces\reports.asmx.cs to the App_Code\Interfaces\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\location.asmx.cs has been changed to read-write.
+Moved file interfaces\location.asmx.cs to the App_Code\Interfaces\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\alarms.asmx.cs has been changed to read-write.
+Moved file interfaces\alarms.asmx.cs to the App_Code\Interfaces\ directory.
+Warning: Access level of 'VLF.ASI.PassKeyRecord' changed to 'public' in file SecurityKeyManager.cs (Line 18).
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\SecurityKeyManager.cs has been changed to read-write.
+Moved file SecurityKeyManager.cs to the App_Code\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\Global.asax.cs has been changed to read-write.
+Moved file Global.asax.cs to the App_Code\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\dbfleet.asmx.cs has been changed to read-write.
+Moved file interfaces\dbfleet.asmx.cs to the App_Code\Interfaces\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\LoginManager.cs has been changed to read-write.
+Moved file LoginManager.cs to the App_Code\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\ASLUtil.cs has been changed to read-write.
+Moved file ASLUtil.cs to the App_Code\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\dbuser.asmx.cs has been changed to read-write.
+Moved file interfaces\dbuser.asmx.cs to the App_Code\Interfaces\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\dbhistory.asmx.cs has been changed to read-write.
+Moved file interfaces\dbhistory.asmx.cs to the App_Code\Interfaces\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\CommSLS.cs has been changed to read-write.
+Moved file CommSLS.cs to the App_Code\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\AssemblyInfo.cs has been changed to read-write.
+Moved file AssemblyInfo.cs to the App_Code\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\dbvehicle.asmx.cs has been changed to read-write.
+Moved file interfaces\dbvehicle.asmx.cs to the App_Code\Interfaces\ directory.
+Read-only attribute of file C:\Inetpub\wwwroot\ASI\interfaces\dborganization.asmx.cs has been changed to read-write.
+Moved file interfaces\dborganization.asmx.cs to the App_Code\Interfaces\ directory.
+Changed HTML validation schema for all projects to 'Internet Explorer 6.0'.
+Removed file ASI.csproj.
+Removed file ASI.csproj.webinfo.
+Project ASI.csproj has been converted successfully at January 26 2006, 13:44:42.

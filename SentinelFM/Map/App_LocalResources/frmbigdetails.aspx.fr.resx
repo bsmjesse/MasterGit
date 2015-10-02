@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cboFleet_Item_0" xml:space="preserve">
+    <value>Sélectionnez une flotte de véhicules</value>
+  </data>
+  <data name="cboFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkArmedResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkArmedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCancelUpdatePosResource1.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="cmdCancelUpdatePosResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCloseResource1.Text" xml:space="preserve">
+    <value>Fermer la fenêtre</value>
+  </data>
+  <data name="cmdCloseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSearchResource1.Text" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="cmdSearchResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSelectAllResource1.Text" xml:space="preserve">
+    <value>Tout sélectionner</value>
+  </data>
+  <data name="cmdSelectAllResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdUnselectResource1.Text" xml:space="preserve">
+    <value>Tout désélectionner </value>
+  </data>
+  <data name="cmdUnselectResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdUpdatePositionResource1.Text" xml:space="preserve">
+    <value>Mise à jour de la position</value>
+  </data>
+  <data name="cmdUpdatePositionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFleetInfo_BoxArmed" xml:space="preserve">
+    <value>Armé</value>
+  </data>
+  <data name="dgFleetInfo_BoxId" xml:space="preserve">
+    <value>Identification de l'unité</value>
+  </data>
+  <data name="dgFleetInfo_CurrentStatus" xml:space="preserve">
+    <value>Durée</value>
+  </data>
+  <data name="dgFleetInfo_CustomSpeed" xml:space="preserve">
+    <value>Vitesse</value>
+  </data>
+  <data name="dgFleetInfo_Description" xml:space="preserve">
+    <value>Commandes / Informations</value>
+  </data>
+  <data name="dgFleetInfo_LastCommunicatedDateTime" xml:space="preserve">
+    <value>Date et heure de la dernière transmission</value>
+  </data>
+  <data name="dgFleetInfo_LicensePlate" xml:space="preserve">
+    <value>Plaque d'immatriculation</value>
+  </data>
+  <data name="dgFleetInfo_MyDateTime" xml:space="preserve">
+    <value>Date / Heure</value>
+  </data>
+  <data name="dgFleetInfo_MyHeading" xml:space="preserve">
+    <value>Direction</value>
+  </data>
+  <data name="dgFleetInfo_OriginDateTime" xml:space="preserve">
+    <value>Date et heure d'origine</value>
+  </data>
+  <data name="dgFleetInfo_SensorMask" xml:space="preserve">
+    <value>Filtre de capteur</value>
+  </data>
+  <data name="dgFleetInfo_StreetAddress" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="dgFleetInfo_Tooltip_BoxId" xml:space="preserve">
+    <value>Identification de l'unité</value>
+  </data>
+  <data name="dgFleetInfo_Tooltip_LicensePlate" xml:space="preserve">
+    <value>Plaque d'immatriculation</value>
+  </data>
+  <data name="dgFleetInfo_Tooltip_NoGPSAvailable" xml:space="preserve">
+    <value>Aucun signal GPS disponible pour le dernier rapport.</value>
+  </data>
+  <data name="dgFleetInfo_Tooltip_PositionInfoWarning" xml:space="preserve">
+    <value>Avertissement : L'information sur la position est considérée désuète selon le paramètre établi dans les préférences de l'usager.</value>
+  </data>
+  <data name="dgFleetInfo_VehicleId" xml:space="preserve">
+    <value>Identité du véhicule</value>
+  </data>
+  <data name="dgFleetInfo_VehicleStatus" xml:space="preserve">
+    <value>État</value>
+  </data>
+  <data name="dgFleetInfoResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgFleetInfoResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgFleetInfoResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgFleetInfoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HyperLinkColumnResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWaitResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWaitResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPleaseWaitMessageResource1.Text" xml:space="preserve">
+    <value>Veuillez patienter...</value>
+  </data>
+  <data name="lblPleaseWaitMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSelectResource1.Text" xml:space="preserve">
+    <value>Flotte :</value>
+  </data>
+  <data name="lblSelectResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUpdatingPositionMessageResource1.Text" xml:space="preserve">
+    <value>Mise à jour de la position...</value>
+  </data>
+  <data name="lblUpdatingPositionMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Détails</value>
+  </data>
+  <data name="sn_MessageText_CommunicationWithVehicle1" xml:space="preserve">
+    <value>La communication avec le(s) véhicule(s)</value>
+  </data>
+  <data name="sn_MessageText_CommunicationWithVehicle2" xml:space="preserve">
+    <value>n'est pas disponible en ce moment. La dernière position connue est affichée.</value>
+  </data>
+  <data name="sn_MessageText_GPSPositionForVehicle1" xml:space="preserve">
+    <value>La position de GPS pour les(s) véhicule(s)</value>
+  </data>
+  <data name="sn_MessageText_GPSPositionForVehicle2" xml:space="preserve">
+    <value>est invalide. La dernière position connue est affichée.</value>
+  </data>
+  <data name="sn_MessageText_SelectAFleet" xml:space="preserve">
+    <value>Sélectionner une flotte !</value>
+  </data>
+  <data name="sn_MessageText_SelectAVehicle" xml:space="preserve">
+    <value>Sélectionner un véhicule !</value>
+  </data>
+  <data name="sn_MessageText_SendingCommandToVehicle1" xml:space="preserve">
+    <value>La commande d'envoi au véhicule</value>
+  </data>
+  <data name="sn_MessageText_SendingCommandToVehicle2" xml:space="preserve">
+    <value>a échoué.</value>
+  </data>
+  <data name="sn_MessageText_UpdatePositionForVehicle1" xml:space="preserve">
+    <value>La commande de mise à jour de la position du (des) véhicule(s) a été reçue.</value>
+  </data>
+  <data name="sn_MessageText_UpdatePositionForVehicle2" xml:space="preserve">
+    <value>a été envoyée avec succès. La dernière position connue est affichée.</value>
+  </data>
+</root>

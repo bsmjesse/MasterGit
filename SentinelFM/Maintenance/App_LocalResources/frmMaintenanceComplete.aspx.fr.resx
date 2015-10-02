@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cboServiceA_Item_0" xml:space="preserve">
+    <value>Choisir un service</value>
+  </data>
+  <data name="cboServiceA_Item_1" xml:space="preserve">
+    <value>Pneus - enregistrement de profondeur de bande de roulement</value>
+  </data>
+  <data name="cboServiceA_Item_10" xml:space="preserve">
+    <value>Système pneumatique - Évaluer le temps de remplissage pour l'obtention d'une pression de 60psi</value>
+  </data>
+  <data name="cboServiceA_Item_11" xml:space="preserve">
+    <value>Système pneumatique - Évaluer le temps de remplissage pour l'obtention d'une pression de 90psi</value>
+  </data>
+  <data name="cboServiceA_Item_12" xml:space="preserve">
+    <value>Suspension - Vérifier</value>
+  </data>
+  <data name="cboServiceA_Item_13" xml:space="preserve">
+    <value>Suspension - Ajuster la hauteur de la suspension</value>
+  </data>
+  <data name="cboServiceA_Item_14" xml:space="preserve">
+    <value>Portes - grange - Pentures</value>
+  </data>
+  <data name="cboServiceA_Item_15" xml:space="preserve">
+    <value>Portes - grange - règlements douaniers</value>
+  </data>
+  <data name="cboServiceA_Item_16" xml:space="preserve">
+    <value>Portes - Roll-up - Vérifier les voies et le mécanisme</value>
+  </data>
+  <data name="cboServiceA_Item_17" xml:space="preserve">
+    <value>Unité/ Vérifier le toit</value>
+  </data>
+  <data name="cboServiceA_Item_18" xml:space="preserve">
+    <value>Éclairage - vérifier tout</value>
+  </data>
+  <data name="cboServiceA_Item_19" xml:space="preserve">
+    <value>Éclairage - inspecter le harnais de la remorque</value>
+  </data>
+  <data name="cboServiceA_Item_2" xml:space="preserve">
+    <value>Pneus - Ajustement de la pression</value>
+  </data>
+  <data name="cboServiceA_Item_20" xml:space="preserve">
+    <value>Unité de réfrigération - suivre le P.M.</value>
+  </data>
+  <data name="cboServiceA_Item_3" xml:space="preserve">
+    <value>Des freins - ajuster (le régleur lâche manuel)</value>
+  </data>
+  <data name="cboServiceA_Item_4" xml:space="preserve">
+    <value>Freins - Vérifier /Ajuster (le régleur lâche automatique)</value>
+  </data>
+  <data name="cboServiceA_Item_5" xml:space="preserve">
+    <value>Freins - Vérifier l'usure des freins</value>
+  </data>
+  <data name="cboServiceA_Item_6" xml:space="preserve">
+    <value>Freins - Vérifier l'usure des freins (Disque ou tambours)</value>
+  </data>
+  <data name="cboServiceA_Item_7" xml:space="preserve">
+    <value>Freins - Vérifier les lignes de freins</value>
+  </data>
+  <data name="cboServiceA_Item_8" xml:space="preserve">
+    <value>Freins - Vérifier l'antiblocage des freins</value>
+  </data>
+  <data name="cboServiceA_Item_9" xml:space="preserve">
+    <value>Système pneumatique - Vérifier les fuites</value>
+  </data>
+  <data name="cboServiceB_Item_0" xml:space="preserve">
+    <value>Choisir un service</value>
+  </data>
+  <data name="cboServiceB_Item_1" xml:space="preserve">
+    <value>Huile - Changement d'huile</value>
+  </data>
+  <data name="cboServiceB_Item_10" xml:space="preserve">
+    <value>Ventilateur de moteur - éventer la commande </value>
+  </data>
+  <data name="cboServiceB_Item_11" xml:space="preserve">
+    <value>Ventilateur de moteur - Vérifier la courroie du ventilateur</value>
+  </data>
+  <data name="cboServiceB_Item_12" xml:space="preserve">
+    <value>Direction - alignement</value>
+  </data>
+  <data name="cboServiceB_Item_13" xml:space="preserve">
+    <value>Direction - Vérifier le niveau d'huile à frein</value>
+  </data>
+  <data name="cboServiceB_Item_14" xml:space="preserve">
+    <value>Direction - ajustement de roulement</value>
+  </data>
+  <data name="cboServiceB_Item_15" xml:space="preserve">
+    <value>Pneus - Rotation de la direction des pneus </value>
+  </data>
+  <data name="cboServiceB_Item_16" xml:space="preserve">
+    <value>Pneus - Rotation de la conduite des pneus</value>
+  </data>
+  <data name="cboServiceB_Item_17" xml:space="preserve">
+    <value>Pneus - Enregistrement de profondeur de bande de roulement</value>
+  </data>
+  <data name="cboServiceB_Item_18" xml:space="preserve">
+    <value>Pneus - Ajuster la pression </value>
+  </data>
+  <data name="cboServiceB_Item_19" xml:space="preserve">
+    <value>Freins - ajuster (le régleur lâche manuel)</value>
+  </data>
+  <data name="cboServiceB_Item_2" xml:space="preserve">
+    <value>Filtre d'huile - changer le filtre d'huile</value>
+  </data>
+  <data name="cboServiceB_Item_20" xml:space="preserve">
+    <value>Freins - Vérifier/ajuster (le régleur lâche automatique)</value>
+  </data>
+  <data name="cboServiceB_Item_21" xml:space="preserve">
+    <value>Freins - mesure de doublure </value>
+  </data>
+  <data name="cboServiceB_Item_22" xml:space="preserve">
+    <value>Freins - tambours/mesure de rotor </value>
+  </data>
+  <data name="cboServiceB_Item_23" xml:space="preserve">
+    <value>Freins - Inspecter les tuyaux des freins</value>
+  </data>
+  <data name="cboServiceB_Item_24" xml:space="preserve">
+    <value>Freins - Contrôle du système antiblocage</value>
+  </data>
+  <data name="cboServiceB_Item_25" xml:space="preserve">
+    <value>Transmission - Niveau d'huile</value>
+  </data>
+  <data name="cboServiceB_Item_26" xml:space="preserve">
+    <value>Transmission - changement d'huile</value>
+  </data>
+  <data name="cboServiceB_Item_27" xml:space="preserve">
+    <value>Transmission - changement de filtre</value>
+  </data>
+  <data name="cboServiceB_Item_28" xml:space="preserve">
+    <value>Essieu avant - Huile</value>
+  </data>
+  <data name="cboServiceB_Item_29" xml:space="preserve">
+    <value>Essieu avant - Filtre</value>
+  </data>
+  <data name="cboServiceB_Item_3" xml:space="preserve">
+    <value>Filtre à essence - vidanger l'eau</value>
+  </data>
+  <data name="cboServiceB_Item_30" xml:space="preserve">
+    <value>Système pneumatique - Vérifier les fuites</value>
+  </data>
+  <data name="cboServiceB_Item_31" xml:space="preserve">
+    <value>Système pneumatique - Évaluer le temps de remplissage pour l'obtention d'une pression de 60psi</value>
+  </data>
+  <data name="cboServiceB_Item_32" xml:space="preserve">
+    <value>Système pneumatique - Évaluer le temps de remplissage pour l'obtention d'une pression de 90psi</value>
+  </data>
+  <data name="cboServiceB_Item_33" xml:space="preserve">
+    <value>Système pneumatique - Changement du desiccant dans le déhumidificateur</value>
+  </data>
+  <data name="cboServiceB_Item_34" xml:space="preserve">
+    <value>Système pneumatique - Vérifier des tuyaux à pression d'air </value>
+  </data>
+  <data name="cboServiceB_Item_35" xml:space="preserve">
+    <value>Éclairage - vérifier tout</value>
+  </data>
+  <data name="cboServiceB_Item_36" xml:space="preserve">
+    <value>Éclairage- Vérifier les reseptacles d'ampoules de la remorque</value>
+  </data>
+  <data name="cboServiceB_Item_37" xml:space="preserve">
+    <value>Électrique - Électricité puissante d'alternateur</value>
+  </data>
+  <data name="cboServiceB_Item_38" xml:space="preserve">
+    <value>Électrique - Vérification de batterie en forte charge</value>
+  </data>
+  <data name="cboServiceB_Item_39" xml:space="preserve">
+    <value>Électrique - Vérification du niveau de charge de la batterie</value>
+  </data>
+  <data name="cboServiceB_Item_4" xml:space="preserve">
+    <value>Filtre à essence - Changer</value>
+  </data>
+  <data name="cboServiceB_Item_40" xml:space="preserve">
+    <value>Électrique - Vérification de la chute de tension lors du démarrage</value>
+  </data>
+  <data name="cboServiceB_Item_41" xml:space="preserve">
+    <value>Vérification de lubrification du sabot d'attache</value>
+  </data>
+  <data name="cboServiceB_Item_42" xml:space="preserve">
+    <value>Vérification de l'ajustement du sabot d'attache</value>
+  </data>
+  <data name="cboServiceB_Item_43" xml:space="preserve">
+    <value>Vérification du sabot d'attache</value>
+  </data>
+  <data name="cboServiceB_Item_44" xml:space="preserve">
+    <value>Suspension - Vérifier</value>
+  </data>
+  <data name="cboServiceB_Item_45" xml:space="preserve">
+    <value>Suspension - Ajuster la hauteur de la suspension</value>
+  </data>
+  <data name="cboServiceB_Item_46" xml:space="preserve">
+    <value>Vitres - Vérifier le pare-brise</value>
+  </data>
+  <data name="cboServiceB_Item_5" xml:space="preserve">
+    <value>Filtre à air - Changer le filtre à air</value>
+  </data>
+  <data name="cboServiceB_Item_6" xml:space="preserve">
+    <value>Liquide de refroidissement du moteur - Vérifier le point de gel et le pH (taux d'acidité)</value>
+  </data>
+  <data name="cboServiceB_Item_7" xml:space="preserve">
+    <value>Liquide de refroidissement du moteur - Remplacer</value>
+  </data>
+  <data name="cboServiceB_Item_8" xml:space="preserve">
+    <value>Pot d'échappement du moteur - Vérifier</value>
+  </data>
+  <data name="cboServiceB_Item_9" xml:space="preserve">
+    <value>Moteur mécanique - vérification d'justement de hauteur des valves</value>
+  </data>
+  <data name="cboServiceNextResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboServiceThisResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddNextServiceResource1.Text" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="cmdAddNextServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddThisServiceResource1.Text" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="cmdAddThisServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCloseResource1.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="cmdCloseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSaveResource1.Text" xml:space="preserve">
+    <value>Économiser</value>
+  </data>
+  <data name="cmdSaveResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCurOdomResource1.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblCurOdomResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLastSrvOdoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLastSrvOdoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessage_Text_UpdateMaintenanceFailed" xml:space="preserve">
+    <value>La mise à jour de l'information sur l'entretien du véhicule a échoué.</value>
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNextServiceTitleResource1.Text" xml:space="preserve">
+    <value>Prochain service</value>
+  </data>
+  <data name="lblNextServiceTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOdometerResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOdometerResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblThisServiceTitleResource1.Text" xml:space="preserve">
+    <value>Ce service</value>
+  </data>
+  <data name="lblThisServiceTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleIdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleIdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Entretien complet</value>
+  </data>
+  <data name="txtNextServiceResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtNextServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtThisServiceResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtThisServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>

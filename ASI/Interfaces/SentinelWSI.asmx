@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="~/App_Code/SentinelWSI.cs" Class="VLF.ASI.Interfaces.SentinelWSI" %>

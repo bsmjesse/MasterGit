@@ -1,0 +1,144 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*.conArea{ max-width:600px !important; margin:5% auto; margin-right:15%; background:#F0F1F1 none repeat scroll 0% 0%; opacity: 0.9;}
+.loginPnl{width:100% !important; float:left !important; background:#F0F1F1; padding:20px 35px 20px 35px; height:400px;opacity: 0.9;}
+.slider{width:100% !important; height:0;  float:right !important; z-index:0;visibility:hidden;}*/
+
+.loginPnl {
+    float: right;
+    margin-left: 100px;
+}
+
+.slider {
+    float: left;
+}
+
+.loginPnl {
+    border: 0px;
+}
+
+.slider {
+    border-right: 1px solid #e4e4e4;
+}
+
+.loginPnl {
+    border: 0px;
+    background: #f0f1f1;
+    padding: 20px 35px 20px 35px;
+    height: auto;
+    width: 400px;
+    margin-right: 5%;
+    opacity: 0.9;
+}
+
+.conArea {
+    background: none;
+    box-shadow: none;
+    max-width: none;
+    margin: 4% auto;
+}
+
+.slider {
+    display: none;
+}
+/*.parentCon{ background:#39F ; display:inline-block; width:100%; background-size:cover; min-height:80%; background-image:url("images/sfmbg.jpg") !important;}*/
+.parentCon {
+    width: 100%;
+    min-height: 80%;
+    display: inline-block;
+    background-size: 100% 100% !important;
+    display: table;
+    height: 80%;
+}
+
+.material-icons.active {
+    color: #57AE22;
+}
+
+.input-field label.active {
+    color: #57AE22;
+}
+
+
+.footer {
+    /* Set the fixed height of the footer here 
+  position:absolute ;
+  height:200px;
+  bottom: 0;*/
+    background-color: #f5f5f5 !important;
+    padding: 5px !important;
+    height: 10% !important;
+    /*border-top:1px dashed #39F;*/
+}
+
+
+.signUp_bx {
+    position: absolute;
+    left: 7%;
+    margin: 2% 0%;
+    background: rgba(254, 246, 246, 0.6);
+    padding: 0px;
+    text-align: center !important;
+    z-index: 999;
+    color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+    .signUp_bx h1 {
+        color: #fff;
+        background: #000;
+        padding: 10px 0px;
+        margin: 0px;
+        font: bold 18px arial;
+    }
+
+
+    .signUp_bx p {
+        text-align: center;
+        padding: 10px 10px 0px 10px;
+        font-weight: bold;
+        font: bold 15px arial;
+    }
+
+        .signUp_bx p:last-child {
+            padding-bottom: 10px;
+        }
+
+.green {
+    background-color: #57AE22 !important;
+}
+
+@media all and (max-width:650px) {
+    .loginPnl, .slider {
+        width: 100%;
+    }
+
+    .signUp_bx {
+        width: 250px;
+        position: relative;
+        left: 0px;
+        margin: 2% auto 0px auto;
+    }
+
+    .loginPnl {
+        border: 0px;
+        box-shadow: 0px 0px 5px #5F5F5F;
+        border-radius: 4px;
+        margin-right: 0%;
+    }
+
+    .parentCon {
+        background-size: cover !important;
+    }
+}
+
+.podbar {
+    bottom: 0;
+    position: fixed;
+    z-index: 150;
+    _position: absolute;
+    _top: expression(eval(document.documentElement.scrollTop+ (document.documentElement.clientHeight-this.offsetHeight)));
+    height: 10%;
+}

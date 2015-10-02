@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Localization culture="default" description="Default Language">
+  <CommonText>
+    <Ready>Pronto.</Ready>
+    <More>Carregando dados...</More>
+    <LoadGroup>Carregando grupo...</LoadGroup>
+    <Sort>Ordenando coluna...</Sort>
+    <Group>Agrupando coluna...</Group>
+    <Ungroup>Desagrupando coluna...</Ungroup>
+    <ChangeGroup>Mudando agrupação de coluna...</ChangeGroup>
+    <FilterText>Filtrando coluna...</FilterText>
+    <LoadChild>Carregando linhas vinculadas...</LoadChild>
+    <ColumnChange>Mudando colunas...</ColumnChange>
+    <Refresh>Recarregando dados...</Refresh>
+    <RefreshAll>Recarregando dados e estrutura...</RefreshAll>
+    <RefreshChild>Recarregando tabela vinculada...</RefreshChild>
+    <AddRow>Acrescentando linha...</AddRow>
+    <UpdateRow>Atualizando linha...</UpdateRow>
+    <DeleteRow>Apagando linha...</DeleteRow>
+    <ReadyError>Pronto, mas com erros não tratados após a última solicitação.</ReadyError>
+    <ColumnMove>Mexendo coluna...</ColumnMove>
+    <Loaded>[n] de [total] foram carregados</Loaded>
+    <ExportText>Exportando...</ExportText>
+    <NoData>No ha linhas para visualizar.</NoData>
+    <NewRowInfo>Clique aquí para acresentar linha...</NewRowInfo>
+    <GroupByBoxInfo>Arrastre o cabeçal de coluna até aquí para agrupar por esse campo.</GroupByBoxInfo>
+    <LoadSelfRefChild>Carregando linhas auto-vinculadas...</LoadSelfRefChild>
+    <CalendarToday>Hoje</CalendarToday>
+    <CalendarNone>Nenhum</CalendarNone>
+  </CommonText>
+  <MessageBoxText>
+    <NoChildRow>Não ha tabelas vinculadas a este registro.</NoChildRow>
+    <InProgress>Por favor aguarde enquanto WebGrid processa sua solicitação...</InProgress>
+    <UnhandledError>Aconteceu uma exepção não manejada pelo sistema. Detalhes a continuação.</UnhandledError>
+    <LoadMoreException>Carregar mais dados somente funciona cuando no ha colunas agrupadas na tabela.</LoadMoreException>
+    <AddNewRow>Deseja acrescentar na tabela a linha recem ingressada ?</AddNewRow>
+    <UpdateRow>A linha selecionada foi modificada. Deseja guardar as mudanças ?</UpdateRow>
+    <DeleteRow>Está certo que deseja eliminar esta linha ?</DeleteRow>
+  </MessageBoxText>
+  <Tooltip>
+    <Refresh>Recarregar os dados na grade</Refresh>
+    <LoadMore>Carregar mais dados</LoadMore>
+    <ExportText>Exportar a grade</ExportText>
+    <Help>Ajuda para o Cliente de WebGrid.NET</Help>
+  </Tooltip>
+  <Grouping>
+    <Today>Hoje</Today>
+    <Yesterday>Ontem</Yesterday>
+    <LastWeek>A semana passada</LastWeek>
+    <TwoWeeksAgo>Fazem duas semanas</TwoWeeksAgo>
+    <ThreeWeeksAgo>Fazem três semanas</ThreeWeeksAgo>
+    <LastMonth>O mês passado</LastMonth>
+    <Older>Anteriores</Older>
+  </Grouping>
+  <ContextMenu>
+    <Column>
+      <SortAsc>Ordem Ascendente</SortAsc>
+      <SortDesc>Ordem Descendente</SortDesc>
+      <GroupByThisField>Agrupar por este Campo</GroupByThisField>
+      <UngroupField>Desagrupar este Campo</UngroupField>
+      <GroupByBox>Agrupar segundo o conteúdo do quadro superior</GroupByBox>
+      <RemoveColumn>Apagar esta coluna</RemoveColumn>
+      <BestFit>Largura da coluna para que encaixem os dados</BestFit>
+      <FilterBar>Barra de Filtragem</FilterBar>
+      <SelectColumns>Selecionar Colunas</SelectColumns>
+      <ApplyChanges>Guardar as alterações</ApplyChanges>
+      <Reset>Restaurar os valores iniciais</Reset>
+    </Column>
+    <Row>
+      <CopyCell>Copiar esta cela</CopyCell>
+      <CopyRow>Copiar esta linha</CopyRow>
+      <CopyTable>Copiar esta tabela</CopyTable>
+      <Update>Guardar Alterações</Update>
+      <Cancel>Cancelar</Cancel>
+      <ShowChildRows>Ver linhas dependentes</ShowChildRows>
+      <HideChildRows>Ocultar linhas dependentes</HideChildRows>
+      <Edit>Modificar</Edit>
+      <Delete>Eliminar</Delete>
+      <Expand>Expandir</Expand>
+      <Collapse>Colapsar</Collapse>
+      <ExpandAll>Expandir tudo</ExpandAll>
+      <CollapseAll>Colapsar tudo</CollapseAll>
+      <PerformAdd>Efetuar o registro</PerformAdd>
+      <CancelAdd>Cancelar o registro</CancelAdd>
+      <ApplyFilter>Aplicar todos os filtros</ApplyFilter>
+      <ClearFilter>Suprimir a filtragem</ClearFilter>
+    </Row>
+    <Filter>
+      <NotSet>Não definido</NotSet>
+      <GTET>Maior o igual que</GTET>
+      <GT>Maior que</GT>
+      <ET>Igual que</ET>
+      <NET>Não igual que</NET>
+      <LTET>Menor o igual que</LTET>
+      <LT>Menor que</LT>
+      <Like>Como</Like>
+      <NotLike>Não é Como</NotLike>
+      <Between>Entre</Between>
+      <NotBetween>Não Entre</NotBetween>
+      <IsNull>é Nulo</IsNull>
+      <NotIsNull>Não é Nulo</NotIsNull>
+      <IsEmpty>Está Vazio</IsEmpty>
+      <NotIsEmpty>Não está Vazio</NotIsEmpty>
+      <ApplyAll>Aplicar todos os Filtros</ApplyAll>
+      <Clear>Eliminar este Filtro</Clear>
+      <ClearAll>Eliminar todos os Filtros</ClearAll>
+    </Filter>
+    <Export>
+      <ExportRoot>Exportar a tabela Raíz</ExportRoot>
+      <ExportChild>Exportar a tabela vinculada que estatildeabre! selecionada</ExportChild>
+      <Portrait>Vertical</Portrait>
+      <Landscape>Horizontal</Landscape>
+      <DoExport>Exportar agora</DoExport>
+    </Export>
+    <Custom description="Agregar aquitilde seu menutilde personalizado">
+      <CustomText1>
+      </CustomText1>
+      <CustomText2>
+      </CustomText2>
+    </Custom>
+  </ContextMenu>
+</Localization>

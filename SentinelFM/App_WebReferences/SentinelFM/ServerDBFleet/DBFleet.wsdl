@@ -1,0 +1,3341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.sentinelfm.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.sentinelfm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.sentinelfm.com">
+      <s:element name="GetVehiclesIdlingDurationByFleetId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="toDateTime" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesIdlingDurationByFleetIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesIdlingDurationByFleetIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesIdlingDurationByMultipleFleetIds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fleetIds" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="toDateTime" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesIdlingDurationByMultipleFleetIdsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesIdlingDurationByMultipleFleetIdsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManagerNameByVehicleId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OrganizationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="VehicleId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManagerNameByVehicleIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetManagerNameByVehicleIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetManagerNameByVehicleId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OrganizationId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AssignedVehiclesList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rowsAffected" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetManagerNameByVehicleIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetManagerNameByVehicleIdResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rowsAffected" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesInfoXMLByFleetId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesInfoXMLByFleetIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesInfoXMLByFleetIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesInfoXMLByMultipleFleetIds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fleetIds" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesInfoXMLByMultipleFleetIdsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesInfoXMLByMultipleFleetIdsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesPeripheralInfoByFleetId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesPeripheralInfoByFleetIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesPeripheralInfoByFleetIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesLastKnownPositionInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoByLang_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoByLang_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesLastKnownPositionInfoByLang_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoByLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoByLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesLastKnownPositionInfoByLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fleetIds" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fleetIds" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoByMultipleFleetsByLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesLastKnownPositionInfoByMultipleFleetsByLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoByVehiclesXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vehiclesXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoByVehiclesXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesLastKnownPositionInfoByVehiclesXMLResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoByVehiclesXML_New">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vehiclesXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoByVehiclesXML_NewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesLastKnownPositionInfoByVehiclesXML_NewResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoNearestToLandmark">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="distance" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="landmarkName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoNearestToLandmarkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesLastKnownPositionInfoNearestToLandmarkResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoNearestToLatLon_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="distance" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="lat" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="lon" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoNearestToLatLon_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesLastKnownPositionInfoNearestToLatLon_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoNearestToLatLon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="distance" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="lat" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="lon" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoNearestToLatLonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesLastKnownPositionInfoNearestToLatLonResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetsInfoXMLByVehicleId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetsInfoXMLByVehicleIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFleetsInfoXMLByVehicleIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUnassingToFleetsVehiclesInfoXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUnassingToFleetsVehiclesInfoXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAllUnassingToFleetsVehiclesInfoXMLResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUnassingToFleetVehiclesInfoXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUnassingToFleetVehiclesInfoXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAllUnassingToFleetVehiclesInfoXMLResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteVehicleFromFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteVehicleFromFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteVehicleFromFleetResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddVehicleToFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddVehicleToFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddVehicleToFleetResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetAllActiveVehiclesCfgInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetAllActiveVehiclesCfgInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFleetAllActiveVehiclesCfgInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetMaintenanceInfoXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetMaintenanceInfoXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFleetMaintenanceInfoXMLResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetMaintenanceHistoryXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetMaintenanceHistoryXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFleetMaintenanceHistoryXMLResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessagesFromHistoryByFleetId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDateTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toDateTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessagesFromHistoryByFleetIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMessagesFromHistoryByFleetIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesInfoXMLByFleetIdFeatures">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="featureMask" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesInfoXMLByFleetIdFeaturesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesInfoXMLByFleetIdFeaturesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesShortInfoXMLByFleetId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesShortInfoXMLByFleetIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesShortInfoXMLByFleetIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesByFleetUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesByFleetUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesByFleetUserResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFleetByFleetId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFleetByFleetIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteFleetByFleetIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fleetName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddFleetResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetInfoXMLByFleetId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetInfoXMLByFleetIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFleetInfoXMLByFleetIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFleetInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fleetName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFleetInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateFleetInfoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetsInfoXMLByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetsInfoXMLByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFleetsInfoXMLByUserIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetsInfoXMLByUserIdByLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetsInfoXMLByUserIdByLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFleetsInfoXMLByUserIdByLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersInfoXMLByFleetId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersInfoXMLByFleetIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUsersInfoXMLByFleetIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnassignedUsersInfoXMLByFleetId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnassignedUsersInfoXMLByFleetIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUnassignedUsersInfoXMLByFleetIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMdtsByFleetId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="typeId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMdtsByFleetIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMdtsByFleetIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserToFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userIdAddToFleet" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserToFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUserToFleetResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserFromFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userIdDeleteFromFleet" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserFromFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteUserFromFleetResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivitySummaryPerVehicle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActivitySummaryPerVehicleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetActivitySummaryPerVehicleResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStateMileagePerFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStateMileagePerFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetStateMileagePerFleetResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeZone" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayLightSaving" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="formatType" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="notify" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="warning" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="critical" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="autoAdjustDayLightSaving" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Maintenance" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEmailResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeZone" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayLightSaving" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="formatType" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="notify" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="warning" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="critical" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="autoAdjustDayLightSaving" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Maintenance" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="DriverMessage" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="autosubscription" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="reminder" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveEmailResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeZone" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayLightSaving" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="formatType" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="notify" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="warning" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="critical" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="autoAdjustDayLightSaving" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Maintenance" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="DriverMessage" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="autosubscription" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="reminder" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyEmailResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeZone" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayLightSaving" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="formatType" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="notify" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="warning" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="critical" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="autoAdjustDayLightSaving" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Maintenance" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="autosubscription" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="reminder" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateEmailResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEmailFromFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEmailFromFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteEmailFromFleetResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllEmailsFromFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllEmailsFromFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteAllEmailsFromFleetResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetEmailsXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetEmailsXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFleetEmailsXMLResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetFleetAutoAdjustDayLightSaving">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="autoAdjustDayLightSaving" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayLightSaving" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetFleetAutoAdjustDayLightSavingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetFleetAutoAdjustDayLightSavingResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FleetMaintenancePlan_GetAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dueFlag" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FleetMaintenancePlan_GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FleetMaintenancePlan_GetAllResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FleetMaintenancePlan_GetAllByLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dueFlag" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FleetMaintenancePlan_GetAllByLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FleetMaintenancePlan_GetAllByLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FleetMaintenancePlan_GetByType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="operationType" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="dueFlag" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FleetMaintenancePlan_GetByTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FleetMaintenancePlan_GetByTypeResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FleetMaintenancePlan_GetByTypeLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="operationType" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="dueFlag" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FleetMaintenancePlan_GetByTypeLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FleetMaintenancePlan_GetByTypeLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FleetGetServicesHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FleetGetServicesHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FleetGetServicesHistoryResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VehicleMaintenancePlan_AddToFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="operationTypeId" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="notificationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="frequency" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceValue" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceInterval" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="endValue" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VehicleMaintenancePlan_AddToFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VehicleMaintenancePlan_AddToFleetResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesChangedPositionInfoByLang_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="lastChecked" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesChangedPositionInfoByLang_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesChangedPositionInfoByLang_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesChangedPositionInfoByLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="lastChecked" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesChangedPositionInfoByLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesChangedPositionInfoByLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesChangedPositionInfoByMultipleFleetsByLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fleetIds" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="lastChecked" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesChangedPositionInfoByMultipleFleetsByLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesChangedPositionInfoByMultipleFleetsByLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrganizationSkills">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrganizationSkillsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetOrganizationSkillsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoWithDriversInfoNearestToLatLon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="distance" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="lat" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="lon" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="skillId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleTypeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoWithDriversInfoNearestToLatLonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesLastKnownPositionInfoWithDriversInfoNearestToLatLonResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionCustomInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filterHierarchy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filterFleet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filterUDF1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filterCustomOutputFields" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionCustomInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesLastKnownPositionCustomInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDevicesLastKnownPosition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="selectionCriteria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDevicesLastKnownPositionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDevicesLastKnownPositionResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSelectedVehiclesLastKnownPositionInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFleetIDs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sVehicleIDs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sBoxIDs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sVehicleDescriptions" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOptionalOutputFields" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSelectedVehiclesLastKnownPositionInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSelectedVehiclesLastKnownPositionInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPeripheralsInfoByFleetId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPeripheralsInfoByFleetIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetPeripheralsInfoByFleetIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoWithPeripheral">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesLastKnownPositionInfoWithPeripheralResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesLastKnownPositionInfoWithPeripheralResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAllVehicleToFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAllVehicleToFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddAllVehicleToFleetResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAllVehicleToMultipleFleet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAllVehicleToMultipleFleetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddAllVehicleToMultipleFleetResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetVehiclesIdlingDurationByFleetIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesIdlingDurationByFleetId" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesIdlingDurationByFleetIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesIdlingDurationByFleetIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesIdlingDurationByMultipleFleetIdsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesIdlingDurationByMultipleFleetIds" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesIdlingDurationByMultipleFleetIdsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesIdlingDurationByMultipleFleetIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetManagerNameByVehicleIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetManagerNameByVehicleId" />
+  </wsdl:message>
+  <wsdl:message name="GetManagerNameByVehicleIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetManagerNameByVehicleIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetManagerNameByVehicleIdSoapIn">
+    <wsdl:part name="parameters" element="tns:SetManagerNameByVehicleId" />
+  </wsdl:message>
+  <wsdl:message name="SetManagerNameByVehicleIdSoapOut">
+    <wsdl:part name="parameters" element="tns:SetManagerNameByVehicleIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesInfoXMLByFleetIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesInfoXMLByFleetId" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesInfoXMLByFleetIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesInfoXMLByFleetIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesInfoXMLByMultipleFleetIdsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesInfoXMLByMultipleFleetIds" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesInfoXMLByMultipleFleetIdsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesInfoXMLByMultipleFleetIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesPeripheralInfoByFleetIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesPeripheralInfoByFleetId" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesPeripheralInfoByFleetIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesPeripheralInfoByFleetIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoByLang_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoByLang_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoByLang_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoByLang_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoByLangSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoByLang" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoByLangSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoByLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoByMultipleFleetsByLangSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoByMultipleFleetsByLangSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoByMultipleFleetsByLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoByVehiclesXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoByVehiclesXML" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoByVehiclesXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoByVehiclesXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoByVehiclesXML_NewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoByVehiclesXML_New" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoByVehiclesXML_NewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoByVehiclesXML_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoNearestToLandmarkSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoNearestToLandmark" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoNearestToLandmarkSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoNearestToLandmarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoNearestToLatLon_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoNearestToLatLon_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoNearestToLatLon_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoNearestToLatLon_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoNearestToLatLonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoNearestToLatLon" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoNearestToLatLonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoNearestToLatLonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetsInfoXMLByVehicleIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFleetsInfoXMLByVehicleId" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetsInfoXMLByVehicleIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFleetsInfoXMLByVehicleIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUnassingToFleetsVehiclesInfoXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUnassingToFleetsVehiclesInfoXML" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUnassingToFleetsVehiclesInfoXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUnassingToFleetsVehiclesInfoXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUnassingToFleetVehiclesInfoXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUnassingToFleetVehiclesInfoXML" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUnassingToFleetVehiclesInfoXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUnassingToFleetVehiclesInfoXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteVehicleFromFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteVehicleFromFleet" />
+  </wsdl:message>
+  <wsdl:message name="DeleteVehicleFromFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteVehicleFromFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddVehicleToFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:AddVehicleToFleet" />
+  </wsdl:message>
+  <wsdl:message name="AddVehicleToFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:AddVehicleToFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetAllActiveVehiclesCfgInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFleetAllActiveVehiclesCfgInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetAllActiveVehiclesCfgInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFleetAllActiveVehiclesCfgInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetMaintenanceInfoXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFleetMaintenanceInfoXML" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetMaintenanceInfoXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFleetMaintenanceInfoXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetMaintenanceHistoryXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFleetMaintenanceHistoryXML" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetMaintenanceHistoryXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFleetMaintenanceHistoryXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesFromHistoryByFleetIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessagesFromHistoryByFleetId" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesFromHistoryByFleetIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessagesFromHistoryByFleetIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesInfoXMLByFleetIdFeaturesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesInfoXMLByFleetIdFeatures" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesInfoXMLByFleetIdFeaturesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesInfoXMLByFleetIdFeaturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesShortInfoXMLByFleetIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesShortInfoXMLByFleetId" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesShortInfoXMLByFleetIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesShortInfoXMLByFleetIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesByFleetUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesByFleetUser" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesByFleetUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesByFleetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFleetByFleetIdSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFleetByFleetId" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFleetByFleetIdSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFleetByFleetIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFleet" />
+  </wsdl:message>
+  <wsdl:message name="AddFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetInfoXMLByFleetIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFleetInfoXMLByFleetId" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetInfoXMLByFleetIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFleetInfoXMLByFleetIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFleetInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFleetInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFleetInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFleetInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetsInfoXMLByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFleetsInfoXMLByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetsInfoXMLByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFleetsInfoXMLByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetsInfoXMLByUserIdByLangSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFleetsInfoXMLByUserIdByLang" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetsInfoXMLByUserIdByLangSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFleetsInfoXMLByUserIdByLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoXMLByFleetIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsersInfoXMLByFleetId" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoXMLByFleetIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersInfoXMLByFleetIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnassignedUsersInfoXMLByFleetIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnassignedUsersInfoXMLByFleetId" />
+  </wsdl:message>
+  <wsdl:message name="GetUnassignedUsersInfoXMLByFleetIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnassignedUsersInfoXMLByFleetIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMdtsByFleetIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMdtsByFleetId" />
+  </wsdl:message>
+  <wsdl:message name="GetMdtsByFleetIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMdtsByFleetIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserToFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserToFleet" />
+  </wsdl:message>
+  <wsdl:message name="AddUserToFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserToFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserFromFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUserFromFleet" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserFromFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserFromFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitySummaryPerVehicleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActivitySummaryPerVehicle" />
+  </wsdl:message>
+  <wsdl:message name="GetActivitySummaryPerVehicleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActivitySummaryPerVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStateMileagePerFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStateMileagePerFleet" />
+  </wsdl:message>
+  <wsdl:message name="GetStateMileagePerFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStateMileagePerFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEmail" />
+  </wsdl:message>
+  <wsdl:message name="AddEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveEmail" />
+  </wsdl:message>
+  <wsdl:message name="SaveEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyEmail" />
+  </wsdl:message>
+  <wsdl:message name="ModifyEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEmail" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEmailFromFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteEmailFromFleet" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEmailFromFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteEmailFromFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllEmailsFromFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAllEmailsFromFleet" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllEmailsFromFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAllEmailsFromFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetEmailsXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFleetEmailsXML" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetEmailsXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFleetEmailsXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetFleetAutoAdjustDayLightSavingSoapIn">
+    <wsdl:part name="parameters" element="tns:SetFleetAutoAdjustDayLightSaving" />
+  </wsdl:message>
+  <wsdl:message name="SetFleetAutoAdjustDayLightSavingSoapOut">
+    <wsdl:part name="parameters" element="tns:SetFleetAutoAdjustDayLightSavingResponse" />
+  </wsdl:message>
+  <wsdl:message name="FleetMaintenancePlan_GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:FleetMaintenancePlan_GetAll" />
+  </wsdl:message>
+  <wsdl:message name="FleetMaintenancePlan_GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:FleetMaintenancePlan_GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="FleetMaintenancePlan_GetAllByLangSoapIn">
+    <wsdl:part name="parameters" element="tns:FleetMaintenancePlan_GetAllByLang" />
+  </wsdl:message>
+  <wsdl:message name="FleetMaintenancePlan_GetAllByLangSoapOut">
+    <wsdl:part name="parameters" element="tns:FleetMaintenancePlan_GetAllByLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="FleetMaintenancePlan_GetByTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:FleetMaintenancePlan_GetByType" />
+  </wsdl:message>
+  <wsdl:message name="FleetMaintenancePlan_GetByTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:FleetMaintenancePlan_GetByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="FleetMaintenancePlan_GetByTypeLangSoapIn">
+    <wsdl:part name="parameters" element="tns:FleetMaintenancePlan_GetByTypeLang" />
+  </wsdl:message>
+  <wsdl:message name="FleetMaintenancePlan_GetByTypeLangSoapOut">
+    <wsdl:part name="parameters" element="tns:FleetMaintenancePlan_GetByTypeLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="FleetGetServicesHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:FleetGetServicesHistory" />
+  </wsdl:message>
+  <wsdl:message name="FleetGetServicesHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:FleetGetServicesHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="VehicleMaintenancePlan_AddToFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:VehicleMaintenancePlan_AddToFleet" />
+  </wsdl:message>
+  <wsdl:message name="VehicleMaintenancePlan_AddToFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:VehicleMaintenancePlan_AddToFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesChangedPositionInfoByLang_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesChangedPositionInfoByLang_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesChangedPositionInfoByLang_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesChangedPositionInfoByLang_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesChangedPositionInfoByLangSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesChangedPositionInfoByLang" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesChangedPositionInfoByLangSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesChangedPositionInfoByLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesChangedPositionInfoByMultipleFleetsByLangSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesChangedPositionInfoByMultipleFleetsByLang" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesChangedPositionInfoByMultipleFleetsByLangSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesChangedPositionInfoByMultipleFleetsByLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrganizationSkillsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrganizationSkills" />
+  </wsdl:message>
+  <wsdl:message name="GetOrganizationSkillsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrganizationSkillsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoWithDriversInfoNearestToLatLonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoWithDriversInfoNearestToLatLon" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoWithDriversInfoNearestToLatLonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoWithDriversInfoNearestToLatLonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionCustomInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionCustomInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionCustomInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionCustomInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDevicesLastKnownPositionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDevicesLastKnownPosition" />
+  </wsdl:message>
+  <wsdl:message name="GetDevicesLastKnownPositionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDevicesLastKnownPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSelectedVehiclesLastKnownPositionInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSelectedVehiclesLastKnownPositionInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetSelectedVehiclesLastKnownPositionInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSelectedVehiclesLastKnownPositionInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPeripheralsInfoByFleetIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPeripheralsInfoByFleetId" />
+  </wsdl:message>
+  <wsdl:message name="GetPeripheralsInfoByFleetIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPeripheralsInfoByFleetIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoWithPeripheralSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoWithPeripheral" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesLastKnownPositionInfoWithPeripheralSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesLastKnownPositionInfoWithPeripheralResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAllVehicleToFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAllVehicleToFleet" />
+  </wsdl:message>
+  <wsdl:message name="AddAllVehicleToFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAllVehicleToFleetResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAllVehicleToMultipleFleetSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAllVehicleToMultipleFleet" />
+  </wsdl:message>
+  <wsdl:message name="AddAllVehicleToMultipleFleetSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAllVehicleToMultipleFleetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DBFleetSoap">
+    <wsdl:operation name="GetVehiclesIdlingDurationByFleetId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML info for Idling messages of vehicles for a particular Fleet by Fleet ID. XML file format:   [BoxId],[LicensePlate],[VehicleDescription],[VehicleId],[VinNum],[OriginDateTime],[Latitude],[Longitude],[BoxMsgInTypeId],[CustomProp]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesIdlingDurationByFleetIdSoapIn" />
+      <wsdl:output message="tns:GetVehiclesIdlingDurationByFleetIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesIdlingDurationByMultipleFleetIds">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML info for Idling messages of vehicles for a particular Fleet by Multiple Fleet IDs. XML file format:   [BoxId],[LicensePlate],[VehicleDescription],[VehicleId],[VinNum],[OriginDateTime],[Latitude],[Longitude],[BoxMsgInTypeId],[CustomProp]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesIdlingDurationByMultipleFleetIdsSoapIn" />
+      <wsdl:output message="tns:GetVehiclesIdlingDurationByMultipleFleetIdsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerNameByVehicleId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of ManagerName for Vehicle id. 
+                           XML file format: [ManagerName]</wsdl:documentation>
+      <wsdl:input message="tns:GetManagerNameByVehicleIdSoapIn" />
+      <wsdl:output message="tns:GetManagerNameByVehicleIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetManagerNameByVehicleId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles for a particular fleet. 
+                           XML file format: [ManagerName]</wsdl:documentation>
+      <wsdl:input message="tns:SetManagerNameByVehicleIdSoapIn" />
+      <wsdl:output message="tns:SetManagerNameByVehicleIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesInfoXMLByFleetId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles for a particular Fleet by Fleet ID. XML file format:   [LicensePlate],[BoxId],[VehicleId],[VinNum],[MakeName],[ModelName],[VehicleTypeName],[StateProvince],[ModelYear],[Color],[Description] </wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesInfoXMLByFleetIdSoapIn" />
+      <wsdl:output message="tns:GetVehiclesInfoXMLByFleetIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesInfoXMLByMultipleFleetIds">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles for a particular Fleet by Fleet ID. XML file format:   [LicensePlate],[BoxId],[VehicleId],[VinNum],[MakeName],[ModelName],[VehicleTypeName],[StateProvince],[ModelYear],[Color],[Description] </wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesInfoXMLByMultipleFleetIdsSoapIn" />
+      <wsdl:output message="tns:GetVehiclesInfoXMLByMultipleFleetIdsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesPeripheralInfoByFleetId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with Peripherals by Fleet ID</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesPeripheralInfoByFleetIdSoapIn" />
+      <wsdl:output message="tns:GetVehiclesPeripheralInfoByFleetIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position information by Fleet ID. XML file format: [LicensePlate],[VehicleId],[BoxId],[DateTimeReceived],[OriginDateTime],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp], [StreetAddress],[Description], [IconTypeId],[IconTypeName],[VehicleTypeName], [LastStatusDateTime],[LastStatusSensor],[LastStatusSpeed],[PrevStatusDateTime],[PrevStatusSensor],[PrevStatusSpeed]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesLastKnownPositionInfoSoapIn" />
+      <wsdl:output message="tns:GetVehiclesLastKnownPositionInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByLang_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position information by Fleet ID. XML file format: [LicensePlate],[VehicleId],[BoxId],[DateTimeReceived],[OriginDateTime],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp], [StreetAddress],[Description], [IconTypeId],[IconTypeName],[VehicleTypeName], [LastStatusDateTime],[LastStatusSensor],[LastStatusSpeed],[PrevStatusDateTime],[PrevStatusSensor],[PrevStatusSpeed]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesLastKnownPositionInfoByLang_NewTZSoapIn" />
+      <wsdl:output message="tns:GetVehiclesLastKnownPositionInfoByLang_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByLang">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position information by Fleet ID. XML file format: [LicensePlate],[VehicleId],[BoxId],[DateTimeReceived],[OriginDateTime],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp], [StreetAddress],[Description], [IconTypeId],[IconTypeName],[VehicleTypeName], [LastStatusDateTime],[LastStatusSensor],[LastStatusSpeed],[PrevStatusDateTime],[PrevStatusSensor],[PrevStatusSpeed]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesLastKnownPositionInfoByLangSoapIn" />
+      <wsdl:output message="tns:GetVehiclesLastKnownPositionInfoByLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position information by Fleet ID. XML file format: [LicensePlate],[VehicleId],[BoxId],[DateTimeReceived],[OriginDateTime],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp], [StreetAddress],[Description], [IconTypeId],[IconTypeName],[VehicleTypeName], [LastStatusDateTime],[LastStatusSensor],[LastStatusSpeed],[PrevStatusDateTime],[PrevStatusSensor],[PrevStatusSpeed]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang_NewTZSoapIn" />
+      <wsdl:output message="tns:GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position information by Fleet ID. XML file format: [LicensePlate],[VehicleId],[BoxId],[DateTimeReceived],[OriginDateTime],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp], [StreetAddress],[Description], [IconTypeId],[IconTypeName],[VehicleTypeName], [LastStatusDateTime],[LastStatusSensor],[LastStatusSpeed],[PrevStatusDateTime],[PrevStatusSensor],[PrevStatusSpeed]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesLastKnownPositionInfoByMultipleFleetsByLangSoapIn" />
+      <wsdl:output message="tns:GetVehiclesLastKnownPositionInfoByMultipleFleetsByLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByVehiclesXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position information by Fleet ID. XML file format: [LicensePlate],[VehicleId],[BoxId],[DateTimeReceived],[OriginDateTime],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp], [StreetAddress],[Description], [IconTypeId],[IconTypeName],[VehicleTypeName], [LastStatusDateTime],[LastStatusSensor],[LastStatusSpeed],[PrevStatusDateTime],[PrevStatusSensor],[PrevStatusSpeed]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesLastKnownPositionInfoByVehiclesXMLSoapIn" />
+      <wsdl:output message="tns:GetVehiclesLastKnownPositionInfoByVehiclesXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByVehiclesXML_New">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position information by Fleet ID. XML file format: [LicensePlate],[VehicleId],[BoxId],[DateTimeReceived],[OriginDateTime],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp], [StreetAddress],[Description], [IconTypeId],[IconTypeName],[VehicleTypeName], [LastStatusDateTime],[LastStatusSensor],[LastStatusSpeed],[PrevStatusDateTime],[PrevStatusSensor],[PrevStatusSpeed]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesLastKnownPositionInfoByVehiclesXML_NewSoapIn" />
+      <wsdl:output message="tns:GetVehiclesLastKnownPositionInfoByVehiclesXML_NewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoNearestToLandmark">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position information by Landmark Name , distance from Landmark and Fleet ID. XML file format: [LicensePlate],[VehicleId],[BoxId],[DateTimeReceived],[OriginDateTime],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[StreetAddress],[Description]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesLastKnownPositionInfoNearestToLandmarkSoapIn" />
+      <wsdl:output message="tns:GetVehiclesLastKnownPositionInfoNearestToLandmarkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoNearestToLatLon_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position information by Landmark Name , distance from Landmark and Fleet ID. XML file format: [LicensePlate],[VehicleId],[BoxId],[DateTimeReceived],[OriginDateTime],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[StreetAddress],[Description]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesLastKnownPositionInfoNearestToLatLon_NewTZSoapIn" />
+      <wsdl:output message="tns:GetVehiclesLastKnownPositionInfoNearestToLatLon_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoNearestToLatLon">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position information by Landmark Name , distance from Landmark and Fleet ID. XML file format: [LicensePlate],[VehicleId],[BoxId],[DateTimeReceived],[OriginDateTime],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[StreetAddress],[Description]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesLastKnownPositionInfoNearestToLatLonSoapIn" />
+      <wsdl:output message="tns:GetVehiclesLastKnownPositionInfoNearestToLatLonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetsInfoXMLByVehicleId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of Fleets this vehicle belongs to by Vehicle ID. XML file format [OrganizationName],[FleetName],[FleetDescription]</wsdl:documentation>
+      <wsdl:input message="tns:GetFleetsInfoXMLByVehicleIdSoapIn" />
+      <wsdl:output message="tns:GetFleetsInfoXMLByVehicleIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnassingToFleetsVehiclesInfoXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns list of vehicles currently unassigned to any Fleet. XML file format: [LicensePlate],[BoxId],[VehicleId],[VinNum],[MakeName],[ModelName],[VehicleTypeName],[StateProvince],[ModelYear],[Color],[Description]</wsdl:documentation>
+      <wsdl:input message="tns:GetAllUnassingToFleetsVehiclesInfoXMLSoapIn" />
+      <wsdl:output message="tns:GetAllUnassingToFleetsVehiclesInfoXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnassingToFleetVehiclesInfoXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all active vehicles that are unassigned to the current fleet.XML file format: XML [LicensePlate],[BoxId],[VehicleId],[VinNum],[MakeName],[ModelName],[VehicleTypeName],[StateProvince],[ModelYear],[Color],[Description]</wsdl:documentation>
+      <wsdl:input message="tns:GetAllUnassingToFleetVehiclesInfoXMLSoapIn" />
+      <wsdl:output message="tns:GetAllUnassingToFleetVehiclesInfoXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVehicleFromFleet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove vehicle from fleet.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteVehicleFromFleetSoapIn" />
+      <wsdl:output message="tns:DeleteVehicleFromFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddVehicleToFleet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Assign vehicle to fleet.</wsdl:documentation>
+      <wsdl:input message="tns:AddVehicleToFleetSoapIn" />
+      <wsdl:output message="tns:AddVehicleToFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetAllActiveVehiclesCfgInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles for a particular Fleet by Fleet ID. XML file format:   
+                              [Description],[BoxId],[FwId],[FwName],[FwDateReleased]</wsdl:documentation>
+      <wsdl:input message="tns:GetFleetAllActiveVehiclesCfgInfoSoapIn" />
+      <wsdl:output message="tns:GetFleetAllActiveVehiclesCfgInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetMaintenanceInfoXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves vehicle maintenance information . 
+                     XML File format :[BoxId],[VehicleId],[Description],[LastSrvOdo],[CurrentOdo],[MaxSrvInterval],
+                                      [LastSrvEngHrs],[CurrentEngHrs],[EngHrsSrvInterval],[Email],[TimeZone],
+                                      [DayLightSaving],[AutoAdjustDayLightSaving],[LicensePlate],[ModelYear],[MakeName],
+                                      [ModelName],[NextServiceDescription],[VehicleTypeId]</wsdl:documentation>
+      <wsdl:input message="tns:GetFleetMaintenanceInfoXMLSoapIn" />
+      <wsdl:output message="tns:GetFleetMaintenanceInfoXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetMaintenanceHistoryXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves vehicle maintenance information . 
+                        XML File format :[VehicleId],[ServiceDateTime],[ServiceDescription],[ServiceOdo]</wsdl:documentation>
+      <wsdl:input message="tns:GetFleetMaintenanceHistoryXMLSoapIn" />
+      <wsdl:output message="tns:GetFleetMaintenanceHistoryXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesFromHistoryByFleetId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves history information by Fleet ID.  
+                     XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],
+                                     [BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],
+                                     [CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],
+                                     [CustomProp],[BlobDataSize], [StreetAddress],[SequenceNum],[BoxArmed],
+                                     [MsgDetails],[MsgDirection],[Acknowledged],[Scheduled]</wsdl:documentation>
+      <wsdl:input message="tns:GetMessagesFromHistoryByFleetIdSoapIn" />
+      <wsdl:output message="tns:GetMessagesFromHistoryByFleetIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesInfoXMLByFleetIdFeatures">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles for a particular fleet. 
+                           XML file format: [LicensePlate],[BoxId],[VehicleId],[VinNum],[MakeName],[ModelName],
+                                            [VehicleTypeName],[StateProvince],[ModelYear],[Color],[Description]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesInfoXMLByFleetIdFeaturesSoapIn" />
+      <wsdl:output message="tns:GetVehiclesInfoXMLByFleetIdFeaturesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesShortInfoXMLByFleetId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles for a particular fleet. 
+                                  XML file format: [LicensePlate],[BoxId],[VehicleId],Description]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesShortInfoXMLByFleetIdSoapIn" />
+      <wsdl:output message="tns:GetVehiclesShortInfoXMLByFleetIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesByFleetUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles for a particular fleet. 
+                                  XML file format: [LicensePlate],[BoxId],[VehicleId],Description]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesByFleetUserSoapIn" />
+      <wsdl:output message="tns:GetVehiclesByFleetUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFleetByFleetId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete existing Fleet.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteFleetByFleetIdSoapIn" />
+      <wsdl:output message="tns:DeleteFleetByFleetIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFleet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a new Fleet.</wsdl:documentation>
+      <wsdl:input message="tns:AddFleetSoapIn" />
+      <wsdl:output message="tns:AddFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetInfoXMLByFleetId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves Fleet information.
+                        XML File format: [FleetId],[FleetName],[Description],[OrganizationId],[OrganizationName]</wsdl:documentation>
+      <wsdl:input message="tns:GetFleetInfoXMLByFleetIdSoapIn" />
+      <wsdl:output message="tns:GetFleetInfoXMLByFleetIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFleetInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update fleet information.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateFleetInfoSoapIn" />
+      <wsdl:output message="tns:UpdateFleetInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetsInfoXMLByUserId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of Fleets by User ID . 
+                        XML [OrganizationName],[FleetId],[FleetName],[FleetDescription]</wsdl:documentation>
+      <wsdl:input message="tns:GetFleetsInfoXMLByUserIdSoapIn" />
+      <wsdl:output message="tns:GetFleetsInfoXMLByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetsInfoXMLByUserIdByLang">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of Fleets by User ID. 
+                              XML [OrganizationName],[FleetId],[FleetName],[FleetDescription]</wsdl:documentation>
+      <wsdl:input message="tns:GetFleetsInfoXMLByUserIdByLangSoapIn" />
+      <wsdl:output message="tns:GetFleetsInfoXMLByUserIdByLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInfoXMLByFleetId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of users assigned to fleet. 
+                  XML file format: [UserId],[UserName],[Password],[DriverLicense],[FirstName],[LastName],
+                                   [ContactInfo],[OrganizationId]</wsdl:documentation>
+      <wsdl:input message="tns:GetUsersInfoXMLByFleetIdSoapIn" />
+      <wsdl:output message="tns:GetUsersInfoXMLByFleetIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnassignedUsersInfoXMLByFleetId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of users , that not assigned to specific fleet. XML file format: [UserId],[UserName],[Password],[DriverLicense],[FirstName],[LastName],[ContactInfo],[OrganizationId]</wsdl:documentation>
+      <wsdl:input message="tns:GetUnassignedUsersInfoXMLByFleetIdSoapIn" />
+      <wsdl:output message="tns:GetUnassignedUsersInfoXMLByFleetIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMdtsByFleetId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of Mdts based on FleetId</wsdl:documentation>
+      <wsdl:input message="tns:GetMdtsByFleetIdSoapIn" />
+      <wsdl:output message="tns:GetMdtsByFleetIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToFleet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Assign a user to fleet</wsdl:documentation>
+      <wsdl:input message="tns:AddUserToFleetSoapIn" />
+      <wsdl:output message="tns:AddUserToFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserFromFleet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove a user from fleet</wsdl:documentation>
+      <wsdl:input message="tns:DeleteUserFromFleetSoapIn" />
+      <wsdl:output message="tns:DeleteUserFromFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitySummaryPerVehicle">
+      <wsdl:input message="tns:GetActivitySummaryPerVehicleSoapIn" />
+      <wsdl:output message="tns:GetActivitySummaryPerVehicleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStateMileagePerFleet">
+      <wsdl:input message="tns:GetStateMileagePerFleetSoapIn" />
+      <wsdl:output message="tns:GetStateMileagePerFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a email address to fleet. This email will be notify in case of alarm</wsdl:documentation>
+      <wsdl:input message="tns:AddEmailSoapIn" />
+      <wsdl:output message="tns:AddEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a email address to fleet. This email will be notify in case of alarm</wsdl:documentation>
+      <wsdl:input message="tns:SaveEmailSoapIn" />
+      <wsdl:output message="tns:SaveEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Modify a email address. This email will be notify in case of alarm</wsdl:documentation>
+      <wsdl:input message="tns:ModifyEmailSoapIn" />
+      <wsdl:output message="tns:ModifyEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a email address. This email will be notify in case of alarm</wsdl:documentation>
+      <wsdl:input message="tns:UpdateEmailSoapIn" />
+      <wsdl:output message="tns:UpdateEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmailFromFleet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove a email address from fleet.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteEmailFromFleetSoapIn" />
+      <wsdl:output message="tns:DeleteEmailFromFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllEmailsFromFleet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete all email addresses from fleet.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteAllEmailsFromFleetSoapIn" />
+      <wsdl:output message="tns:DeleteAllEmailsFromFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetEmailsXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of all email addresses assigned to fleet. XML File format:XML [FleetId],[FleetMame],[Email],[TimeZone],[DayLightSaving],[FormatType],[Notify],[Warning],[Critical]</wsdl:documentation>
+      <wsdl:input message="tns:GetFleetEmailsXMLSoapIn" />
+      <wsdl:output message="tns:GetFleetEmailsXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFleetAutoAdjustDayLightSaving">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Set Daylight Saving adjustment to the notification email</wsdl:documentation>
+      <wsdl:input message="tns:SetFleetAutoAdjustDayLightSavingSoapIn" />
+      <wsdl:output message="tns:SetFleetAutoAdjustDayLightSavingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FleetMaintenancePlan_GetAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Fleet All Maintenance Plans</wsdl:documentation>
+      <wsdl:input message="tns:FleetMaintenancePlan_GetAllSoapIn" />
+      <wsdl:output message="tns:FleetMaintenancePlan_GetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FleetMaintenancePlan_GetAllByLang">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Fleet All Maintenance Plans</wsdl:documentation>
+      <wsdl:input message="tns:FleetMaintenancePlan_GetAllByLangSoapIn" />
+      <wsdl:output message="tns:FleetMaintenancePlan_GetAllByLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FleetMaintenancePlan_GetByType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Fleet's Maintenance Plans By Type</wsdl:documentation>
+      <wsdl:input message="tns:FleetMaintenancePlan_GetByTypeSoapIn" />
+      <wsdl:output message="tns:FleetMaintenancePlan_GetByTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FleetMaintenancePlan_GetByTypeLang">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Fleet's Maintenance Plans By Type</wsdl:documentation>
+      <wsdl:input message="tns:FleetMaintenancePlan_GetByTypeLangSoapIn" />
+      <wsdl:output message="tns:FleetMaintenancePlan_GetByTypeLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FleetGetServicesHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Fleet Service History</wsdl:documentation>
+      <wsdl:input message="tns:FleetGetServicesHistorySoapIn" />
+      <wsdl:output message="tns:FleetGetServicesHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VehicleMaintenancePlan_AddToFleet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add New Vehicle Maintenance Plan</wsdl:documentation>
+      <wsdl:input message="tns:VehicleMaintenancePlan_AddToFleetSoapIn" />
+      <wsdl:output message="tns:VehicleMaintenancePlan_AddToFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesChangedPositionInfoByLang_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position information by Fleet ID. XML file format: [LicensePlate],[VehicleId],[BoxId],[DateTimeReceived],[OriginDateTime],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp], [StreetAddress],[Description], [IconTypeId],[IconTypeName],[VehicleTypeName], [LastStatusDateTime],[LastStatusSensor],[LastStatusSpeed],[PrevStatusDateTime],[PrevStatusSensor],[PrevStatusSpeed]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesChangedPositionInfoByLang_NewTZSoapIn" />
+      <wsdl:output message="tns:GetVehiclesChangedPositionInfoByLang_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesChangedPositionInfoByLang">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position information by Fleet ID. XML file format: [LicensePlate],[VehicleId],[BoxId],[DateTimeReceived],[OriginDateTime],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp], [StreetAddress],[Description], [IconTypeId],[IconTypeName],[VehicleTypeName], [LastStatusDateTime],[LastStatusSensor],[LastStatusSpeed],[PrevStatusDateTime],[PrevStatusSensor],[PrevStatusSpeed]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesChangedPositionInfoByLangSoapIn" />
+      <wsdl:output message="tns:GetVehiclesChangedPositionInfoByLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesChangedPositionInfoByMultipleFleetsByLang">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position information by Fleet ID. XML file format: [LicensePlate],[VehicleId],[BoxId],[DateTimeReceived],[OriginDateTime],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp], [StreetAddress],[Description], [IconTypeId],[IconTypeName],[VehicleTypeName], [LastStatusDateTime],[LastStatusSensor],[LastStatusSpeed],[PrevStatusDateTime],[PrevStatusSensor],[PrevStatusSpeed]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesChangedPositionInfoByMultipleFleetsByLangSoapIn" />
+      <wsdl:output message="tns:GetVehiclesChangedPositionInfoByMultipleFleetsByLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationSkills">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of organization skills based on organization id</wsdl:documentation>
+      <wsdl:input message="tns:GetOrganizationSkillsSoapIn" />
+      <wsdl:output message="tns:GetOrganizationSkillsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoWithDriversInfoNearestToLatLon">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position information by Landmark Name , distance from Landmark and Fleet ID, driver's information. XML file format: [LicensePlate],[VehicleId],[BoxId],[DateTimeReceived],[OriginDateTime],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[StreetAddress],[Description]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesLastKnownPositionInfoWithDriversInfoNearestToLatLonSoapIn" />
+      <wsdl:output message="tns:GetVehiclesLastKnownPositionInfoWithDriversInfoNearestToLatLonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionCustomInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position custom information by Hierarchy, Fleet, UserName (UDF1 like abc@bsm.com). XML file format: [VehicleId],[Latitude],[Longitude],[LastCommunicatedDateTime],[CustomOutputFields] (like Hierarchy, Field1, Field2)</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesLastKnownPositionCustomInfoSoapIn" />
+      <wsdl:output message="tns:GetVehiclesLastKnownPositionCustomInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDevicesLastKnownPosition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of devices with last known position information by selection criteria. XML file format: [LicensePlate],[VehicleId],[BoxId],[DateTimeReceived],[OriginDateTime],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp], [StreetAddress],[Description], [IconTypeId],[IconTypeName],[VehicleTypeName], [LastStatusDateTime],[LastStatusSensor],[LastStatusSpeed],[PrevStatusDateTime],[PrevStatusSensor],[PrevStatusSpeed]</wsdl:documentation>
+      <wsdl:input message="tns:GetDevicesLastKnownPositionSoapIn" />
+      <wsdl:output message="tns:GetDevicesLastKnownPositionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectedVehiclesLastKnownPositionInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position optional information by &lt;Filter&gt;FleetIDs:{};VehicleIDs:{};BoxIDs:{};VehicleDescriptions:{};OptionalOutputFields:{}&lt;/Filter&gt;. XML Format: [FleetId], [LicensePlate], [VehicleId], [BoxId], [LastValidDateTime], [Latitude], [Longitude], [Speed], [Heading], [StreetAddress], [SensorMask], [BoxArmed], [GeoFenceEnabled], [IconTypeName], [VehicleTypeName]</wsdl:documentation>
+      <wsdl:input message="tns:GetSelectedVehiclesLastKnownPositionInfoSoapIn" />
+      <wsdl:output message="tns:GetSelectedVehiclesLastKnownPositionInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPeripheralsInfoByFleetId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML info for Box-Peripheral information by fleet id</wsdl:documentation>
+      <wsdl:input message="tns:GetPeripheralsInfoByFleetIdSoapIn" />
+      <wsdl:output message="tns:GetPeripheralsInfoByFleetIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoWithPeripheral">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns XML of vehicles with last known position information by Fleet ID. XML file format: [LicensePlate],[VehicleId],[BoxId],[DateTimeReceived],[OriginDateTime],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp], [StreetAddress],[Description], [IconTypeId],[IconTypeName],[VehicleTypeName], [LastStatusDateTime],[LastStatusSensor],[LastStatusSpeed],[PrevStatusDateTime],[PrevStatusSensor],[PrevStatusSpeed]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesLastKnownPositionInfoWithPeripheralSoapIn" />
+      <wsdl:output message="tns:GetVehiclesLastKnownPositionInfoWithPeripheralSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAllVehicleToFleet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Assign All vehicle in excel to fleet.</wsdl:documentation>
+      <wsdl:input message="tns:AddAllVehicleToFleetSoapIn" />
+      <wsdl:output message="tns:AddAllVehicleToFleetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAllVehicleToMultipleFleet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Assign All vehicle in excel to multiple fleets.</wsdl:documentation>
+      <wsdl:input message="tns:AddAllVehicleToMultipleFleetSoapIn" />
+      <wsdl:output message="tns:AddAllVehicleToMultipleFleetSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DBFleetSoap" type="tns:DBFleetSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetVehiclesIdlingDurationByFleetId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesIdlingDurationByFleetId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesIdlingDurationByMultipleFleetIds">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesIdlingDurationByMultipleFleetIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerNameByVehicleId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetManagerNameByVehicleId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetManagerNameByVehicleId">
+      <soap:operation soapAction="http://www.sentinelfm.com/SetManagerNameByVehicleId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesInfoXMLByFleetId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesInfoXMLByFleetId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesInfoXMLByMultipleFleetIds">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesInfoXMLByMultipleFleetIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesPeripheralInfoByFleetId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesPeripheralInfoByFleetId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByLang_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoByLang_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoByLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByVehiclesXML">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoByVehiclesXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByVehiclesXML_New">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoByVehiclesXML_New" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoNearestToLandmark">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoNearestToLandmark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoNearestToLatLon_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoNearestToLatLon_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoNearestToLatLon">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoNearestToLatLon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetsInfoXMLByVehicleId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFleetsInfoXMLByVehicleId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnassingToFleetsVehiclesInfoXML">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAllUnassingToFleetsVehiclesInfoXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnassingToFleetVehiclesInfoXML">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAllUnassingToFleetVehiclesInfoXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVehicleFromFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteVehicleFromFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddVehicleToFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddVehicleToFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetAllActiveVehiclesCfgInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFleetAllActiveVehiclesCfgInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetMaintenanceInfoXML">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFleetMaintenanceInfoXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetMaintenanceHistoryXML">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFleetMaintenanceHistoryXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesFromHistoryByFleetId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetMessagesFromHistoryByFleetId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesInfoXMLByFleetIdFeatures">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesInfoXMLByFleetIdFeatures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesShortInfoXMLByFleetId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesShortInfoXMLByFleetId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesByFleetUser">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesByFleetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFleetByFleetId">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteFleetByFleetId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetInfoXMLByFleetId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFleetInfoXMLByFleetId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFleetInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/UpdateFleetInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetsInfoXMLByUserId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFleetsInfoXMLByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetsInfoXMLByUserIdByLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFleetsInfoXMLByUserIdByLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInfoXMLByFleetId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUsersInfoXMLByFleetId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnassignedUsersInfoXMLByFleetId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUnassignedUsersInfoXMLByFleetId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMdtsByFleetId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetMdtsByFleetId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddUserToFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserFromFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteUserFromFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitySummaryPerVehicle">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetActivitySummaryPerVehicle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStateMileagePerFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetStateMileagePerFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmail">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEmail">
+      <soap:operation soapAction="http://www.sentinelfm.com/SaveEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyEmail">
+      <soap:operation soapAction="http://www.sentinelfm.com/ModifyEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmail">
+      <soap:operation soapAction="http://www.sentinelfm.com/UpdateEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmailFromFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteEmailFromFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllEmailsFromFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteAllEmailsFromFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetEmailsXML">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFleetEmailsXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFleetAutoAdjustDayLightSaving">
+      <soap:operation soapAction="http://www.sentinelfm.com/SetFleetAutoAdjustDayLightSaving" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FleetMaintenancePlan_GetAll">
+      <soap:operation soapAction="http://www.sentinelfm.com/FleetMaintenancePlan_GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FleetMaintenancePlan_GetAllByLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/FleetMaintenancePlan_GetAllByLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FleetMaintenancePlan_GetByType">
+      <soap:operation soapAction="http://www.sentinelfm.com/FleetMaintenancePlan_GetByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FleetMaintenancePlan_GetByTypeLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/FleetMaintenancePlan_GetByTypeLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FleetGetServicesHistory">
+      <soap:operation soapAction="http://www.sentinelfm.com/FleetGetServicesHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehicleMaintenancePlan_AddToFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/VehicleMaintenancePlan_AddToFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesChangedPositionInfoByLang_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesChangedPositionInfoByLang_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesChangedPositionInfoByLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesChangedPositionInfoByLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesChangedPositionInfoByMultipleFleetsByLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesChangedPositionInfoByMultipleFleetsByLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationSkills">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetOrganizationSkills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoWithDriversInfoNearestToLatLon">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoWithDriversInfoNearestToLatLon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionCustomInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionCustomInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDevicesLastKnownPosition">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDevicesLastKnownPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectedVehiclesLastKnownPositionInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetSelectedVehiclesLastKnownPositionInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeripheralsInfoByFleetId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetPeripheralsInfoByFleetId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoWithPeripheral">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoWithPeripheral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAllVehicleToFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddAllVehicleToFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAllVehicleToMultipleFleet">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddAllVehicleToMultipleFleet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DBFleetSoap12" type="tns:DBFleetSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetVehiclesIdlingDurationByFleetId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesIdlingDurationByFleetId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesIdlingDurationByMultipleFleetIds">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesIdlingDurationByMultipleFleetIds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerNameByVehicleId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetManagerNameByVehicleId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetManagerNameByVehicleId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/SetManagerNameByVehicleId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesInfoXMLByFleetId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesInfoXMLByFleetId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesInfoXMLByMultipleFleetIds">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesInfoXMLByMultipleFleetIds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesPeripheralInfoByFleetId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesPeripheralInfoByFleetId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByLang_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoByLang_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoByLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByVehiclesXML">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoByVehiclesXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoByVehiclesXML_New">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoByVehiclesXML_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoNearestToLandmark">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoNearestToLandmark" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoNearestToLatLon_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoNearestToLatLon_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoNearestToLatLon">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoNearestToLatLon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetsInfoXMLByVehicleId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFleetsInfoXMLByVehicleId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnassingToFleetsVehiclesInfoXML">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAllUnassingToFleetsVehiclesInfoXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnassingToFleetVehiclesInfoXML">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAllUnassingToFleetVehiclesInfoXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVehicleFromFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteVehicleFromFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddVehicleToFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddVehicleToFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetAllActiveVehiclesCfgInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFleetAllActiveVehiclesCfgInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetMaintenanceInfoXML">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFleetMaintenanceInfoXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetMaintenanceHistoryXML">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFleetMaintenanceHistoryXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesFromHistoryByFleetId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetMessagesFromHistoryByFleetId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesInfoXMLByFleetIdFeatures">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesInfoXMLByFleetIdFeatures" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesShortInfoXMLByFleetId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesShortInfoXMLByFleetId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesByFleetUser">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesByFleetUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFleetByFleetId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteFleetByFleetId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetInfoXMLByFleetId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFleetInfoXMLByFleetId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFleetInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UpdateFleetInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetsInfoXMLByUserId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFleetsInfoXMLByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetsInfoXMLByUserIdByLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFleetsInfoXMLByUserIdByLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInfoXMLByFleetId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUsersInfoXMLByFleetId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnassignedUsersInfoXMLByFleetId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUnassignedUsersInfoXMLByFleetId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMdtsByFleetId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetMdtsByFleetId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddUserToFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserFromFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteUserFromFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitySummaryPerVehicle">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetActivitySummaryPerVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStateMileagePerFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetStateMileagePerFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmail">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEmail">
+      <soap12:operation soapAction="http://www.sentinelfm.com/SaveEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyEmail">
+      <soap12:operation soapAction="http://www.sentinelfm.com/ModifyEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmail">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UpdateEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmailFromFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteEmailFromFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllEmailsFromFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteAllEmailsFromFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetEmailsXML">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFleetEmailsXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFleetAutoAdjustDayLightSaving">
+      <soap12:operation soapAction="http://www.sentinelfm.com/SetFleetAutoAdjustDayLightSaving" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FleetMaintenancePlan_GetAll">
+      <soap12:operation soapAction="http://www.sentinelfm.com/FleetMaintenancePlan_GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FleetMaintenancePlan_GetAllByLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/FleetMaintenancePlan_GetAllByLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FleetMaintenancePlan_GetByType">
+      <soap12:operation soapAction="http://www.sentinelfm.com/FleetMaintenancePlan_GetByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FleetMaintenancePlan_GetByTypeLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/FleetMaintenancePlan_GetByTypeLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FleetGetServicesHistory">
+      <soap12:operation soapAction="http://www.sentinelfm.com/FleetGetServicesHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehicleMaintenancePlan_AddToFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/VehicleMaintenancePlan_AddToFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesChangedPositionInfoByLang_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesChangedPositionInfoByLang_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesChangedPositionInfoByLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesChangedPositionInfoByLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesChangedPositionInfoByMultipleFleetsByLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesChangedPositionInfoByMultipleFleetsByLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationSkills">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetOrganizationSkills" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoWithDriversInfoNearestToLatLon">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoWithDriversInfoNearestToLatLon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionCustomInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionCustomInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDevicesLastKnownPosition">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDevicesLastKnownPosition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectedVehiclesLastKnownPositionInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetSelectedVehiclesLastKnownPositionInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeripheralsInfoByFleetId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetPeripheralsInfoByFleetId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesLastKnownPositionInfoWithPeripheral">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesLastKnownPositionInfoWithPeripheral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAllVehicleToFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddAllVehicleToFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAllVehicleToMultipleFleet">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddAllVehicleToMultipleFleet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DBFleet">
+    <wsdl:port name="DBFleetSoap" binding="tns:DBFleetSoap">
+      <soap:address location="http://localhost:53931/Interfaces/DBFleet.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DBFleetSoap12" binding="tns:DBFleetSoap12">
+      <soap12:address location="http://localhost:53931/Interfaces/DBFleet.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

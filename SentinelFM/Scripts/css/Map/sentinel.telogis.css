@@ -1,0 +1,241 @@
+﻿
+/*************************************************************************************************/
+/* Map controls */
+
+div#topControlArea
+{
+	display: block;
+	position: absolute;
+}
+
+div#panControlPanel
+{
+	display: block;
+	z-index: 121;
+	position: absolute;
+	line-height: 0px;
+	height: 46px;
+	width: 46px;
+	padding: 0px;
+	margin-top: -5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+    margin-left:-4px;
+}
+
+div#panControlPanel img.panImage 
+{
+	border: none;
+}
+
+div#topMenu
+{
+	position: absolute;
+	/*float: left;*/
+	left: 50px;
+	width: 300px; /* forcing a width is hackish; needed to make sure items don't flow down-ward */ /* TODO fix this */
+	background-color: Black;
+	color: White;
+	z-index: 120;
+	padding: 2px 5px 2px 5px;
+}
+
+div#topMenu input#recenterButton
+{
+	float: left;
+}
+
+/*************************************************************************************************/
+/* Drop-down menu */
+
+#jsddm
+{	
+	margin: 0;
+	padding: 0;
+}
+
+#jsddm li
+{	
+	display: block;
+	float: left;
+	list-style: none;
+	font: 12px Tahoma, Arial
+}
+
+#jsddm > li 
+{
+	display: block;
+	padding: 5px;
+	text-decoration: none;
+	background-color: black;
+	color: white;
+	white-space: nowrap
+}
+
+#jsddm > li.toggle
+{
+	padding-left: 10px;
+}
+
+#jsddm > li.toggle .selected
+{
+	text-decoration: underline;
+}
+
+#jsddm li ul
+{	
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	visibility: hidden;
+	/*border-top: 1px solid white;*/
+}
+
+#jsddm li ul li
+{	
+	float: none;
+	display: inline;
+}
+
+#jsddm li.dropdown ul
+{
+	background-color: black;
+	color: white;
+	padding: 5px;
+}
+
+#jsddm li.dropdown ul li
+{	
+	display: block;
+	padding: 0px 0px 0px 0px;
+	text-decoration: none;
+	/*width: 70px;
+	background-color: black;
+	color: white;*/
+	white-space: nowrap
+}
+
+#jsddm li.dropdown ul li.subitem
+{
+	padding-top: 0px;
+	padding-left: 25px;
+}
+
+/*************************************************************************************************/
+/* Map elements */
+
+span.balloonBlock
+{
+	margin: 0px;
+	display: block;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	color: #000000;
+	font-size: 9pt;
+}
+
+span.balloonBlock p
+{
+	padding: 0px;
+	margin: 0px 0px 3px 0px;
+}
+
+span.balloonBlock table tr td em
+{
+	font-weight: bold;
+}
+
+div.elementIcon,
+table.elementIcon
+{
+	display: block;
+}
+
+div.elementIcon img,
+table.elementIcon img
+{
+	display: inline;
+	
+}
+
+div.elementIcon span.text,
+table.elementIcon span.text
+{
+	display: inline;
+	background-color: White;
+	border: 1px solid black;
+	white-space: nowrap;
+	padding-left: 3px;
+	padding-right: 3px;
+	font-size:9pt;
+}
+
+div.elementIcon span.landmarktext,
+table.elementIcon span.landmarktext
+{
+	display: inline;
+	background-color: White;
+	border: 1px solid black;
+	white-space: nowrap;
+	padding-left: 3px;
+	padding-right: 3px;
+	font-size:9pt;
+}
+
+div.elementIcon span.vehicletext,
+table.elementIcon span.vehicletext
+{
+	display: inline;
+	background-color: White;
+	border: 1px solid black;
+	white-space: nowrap;
+	padding-left: 3px;
+	padding-right: 3px;
+	font-size:9pt;
+}
+
+div.hide_vehicle_label div.elementIcon span.vehicletext,
+div.hide_vehicle_label div.elementIcon .vehicledash
+{
+    display: none;
+}
+
+
+div.hide_landmark_label div.elementIcon span.landmarktext,
+div.hide_landmark_label div.elementIcon .landmarkdash,
+.hide_landmark_label span.landmarktext,
+.hide_landmark_label .landmarkdash,
+.hide_landmark_label table tr td .landmarktext
+{
+    display: none;
+}
+
+
+/* Disable labels visibility */
+div.hideLabels div.elementIcon span.text
+{
+	visibility: hidden;
+}
+
+/* Show labels if labels visibility is disabled, 
+   but pointer hovers on icon */
+div.hideLabels div.elementIcon:hover span.text
+{
+	visibility: visible;
+}
+
+/* loading message*/
+div.loading
+{
+	display: block;
+	position: absolute;
+	left: 90px;
+	top: 26px;
+	z-index: 100;
+	background-color: White;
+	color: Black;
+	font-size: large;
+	padding: 3px 10px 3px 10px;
+}

@@ -1,0 +1,27 @@
+<%-- Default GridView skin - add Page attribute Theme="Theme name". --%>
+<asp:GridView runat="server" BackColor="White" BorderColor="#CCCCCC" BorderWidth="1px"
+    BorderStyle="Ridge" 
+    CellPadding="3" CellSpacing="1" GridLines="Vertical" 
+    PageSize="50" Font-Size="Small" Font-Names="Arial,Helvetica,Sans-serif" ForeColor="Black">
+    <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
+    <SelectedRowStyle BackColor="SlateGray" Font-Bold="True" ForeColor="White" Wrap="False"/>
+    <PagerStyle BackColor="#C6C3C6" HorizontalAlign="Right" />
+    <AlternatingRowStyle BackColor="Beige" CssClass="gridtext" Wrap="False" />
+    <RowStyle BackColor="White" CssClass="gridtext" Wrap="False" />
+    <HeaderStyle BackColor="#009933" Font-Bold="True" ForeColor="White" Wrap="False" />
+</asp:GridView>
+<%-- Default FileUpload skin --%>
+<asp:FileUpload runat="server" BackColor="White" Font-Names="Arial,Helvetica,Sans-serif" Font-Size="Small" ForeColor="Black" />
+<%-- Default Label skin --%>
+<asp:Label runat="server" BackColor="Transparent" Font-Names="Arial,Helvetica,Sans-serif" Font-Size="Small" ForeColor="Black" />
+<%-- Default Drop down list skin --%>
+<asp:DropDownList runat="server" Font-Names="Arial,Helvetica,Sans-serif" Font-Size="Small" ForeColor="Black" />
+<%-- Default check box skin --%>
+<asp:CheckBox runat="server" Font-Names="Arial,Helvetica,Sans-serif" Font-Size="Small" ForeColor="Black" />
+<%-- Default text box skin --%>
+<asp:TextBox runat="server" Font-Names="Arial,Helvetica,Sans-serif" Font-Size="Small" ForeColor="Black" />
+<%-- Default panel skin --%>
+<asp:panel runat="server" width="990px" BorderStyle="Solid" BorderWidth="1px" BackColor="Beige" />
+<%-- Default button skin --%>
+<asp:Button runat="server" BackColor="WhiteSmoke" BorderColor="Green" BorderStyle="Solid" BorderWidth="1px" ForeColor="Black" 
+Font-Names="Arial,Helvetica,Sans-serif" Font-Size="Small" Font-Weight="Bold" Height="24px" />

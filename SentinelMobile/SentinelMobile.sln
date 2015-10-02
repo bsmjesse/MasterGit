@@ -1,0 +1,125 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SentinelMobile", "SentinelMobile\SentinelMobile.csproj", "{9606DEEB-9777-4972-A5BD-48FEBE8D6A53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrganizationHierarchy", "OrganizationHierarchy\OrganizationHierarchy.csproj", "{6611AE8F-5AD4-43C4-ACD4-71A46D8260AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DasDb", "..\DasDb\DasDb.csproj", "{9FB45C16-82DE-4AD2-87AB-1E87E1107A3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DasLogic", "..\DasLogic\DasLogic.csproj", "{7EC7BD8B-BCC9-49BB-B6DB-37DC22C2B412}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLS", "..\CLS\CLS.csproj", "{9D89EC88-D7F0-4994-9BAD-328264E99DE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERR", "..\ERR\ERR.csproj", "{AA24C24E-F232-467B-9C14-98F68A759BB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERRSecurity", "..\ERRSecurity\ERRSecurity.csproj", "{F55C9D2C-0511-4DD7-AB4B-C5F8BBD4F367}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ASI", "http://localhost:53931", "{9B4A9375-D630-4021-BDB0-FF3778C9F643}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		ProjectReferences = "{9d89ec88-d7f0-4994-9bad-328264e99de0}|CLS.dll;{AA24C24E-F232-467B-9C14-98F68A759BB6}|ERR.dll;{F55C9D2C-0511-4DD7-AB4B-C5F8BBD4F367}|ERRSecurity.dll;{9fb45c16-82de-4ad2-87ab-1e87e1107a3f}|DasDb.dll;{7ec7bd8b-bcc9-49bb-b6db-37dc22c2b412}|DasLogic.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_53931"
+		Debug.AspNetCompiler.PhysicalPath = "..\ASI\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53931\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_53931"
+		Release.AspNetCompiler.PhysicalPath = "..\ASI\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53931\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\ASI\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tor-tfs:8080/tfs/bsmcollection
+		SccProjectUniqueName0 = ..\\DasDb\\DasDb.csproj
+		SccProjectName0 = ../DasDb
+		SccAuxPath0 = http://tor-tfs:8080/tfs/bsmcollection
+		SccLocalPath0 = ..\\DasDb
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = ..\\DasLogic\\DasLogic.csproj
+		SccProjectName1 = ../DasLogic
+		SccAuxPath1 = http://tor-tfs:8080/tfs/bsmcollection
+		SccLocalPath1 = ..\\DasLogic
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = ..\\CLS\\CLS.csproj
+		SccProjectName2 = ../CLS
+		SccAuxPath2 = http://tor-tfs:8080/tfs/bsmcollection
+		SccLocalPath2 = ..\\CLS
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = ..\\ERR\\ERR.csproj
+		SccProjectName3 = ../ERR
+		SccAuxPath3 = http://tor-tfs:8080/tfs/bsmcollection
+		SccLocalPath3 = ..\\ERR
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName4 = ..\\ERRSecurity\\ERRSecurity.csproj
+		SccProjectName4 = ../ERRSecurity
+		SccAuxPath4 = http://tor-tfs:8080/tfs/bsmcollection
+		SccLocalPath4 = ..\\ERRSecurity
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccWebProject5 = true
+		SccProjectUniqueName5 = http://localhost:53931
+		SccProjectName5 = ../ASI
+		SccAuxPath5 = http://tor-tfs:8080/tfs/bsmcollection
+		SccLocalPath5 = ..\\ASI
+		SccProvider5 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectEnlistmentChoice5 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9606DEEB-9777-4972-A5BD-48FEBE8D6A53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9606DEEB-9777-4972-A5BD-48FEBE8D6A53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9606DEEB-9777-4972-A5BD-48FEBE8D6A53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9606DEEB-9777-4972-A5BD-48FEBE8D6A53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6611AE8F-5AD4-43C4-ACD4-71A46D8260AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6611AE8F-5AD4-43C4-ACD4-71A46D8260AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6611AE8F-5AD4-43C4-ACD4-71A46D8260AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6611AE8F-5AD4-43C4-ACD4-71A46D8260AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB45C16-82DE-4AD2-87AB-1E87E1107A3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB45C16-82DE-4AD2-87AB-1E87E1107A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB45C16-82DE-4AD2-87AB-1E87E1107A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB45C16-82DE-4AD2-87AB-1E87E1107A3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EC7BD8B-BCC9-49BB-B6DB-37DC22C2B412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC7BD8B-BCC9-49BB-B6DB-37DC22C2B412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EC7BD8B-BCC9-49BB-B6DB-37DC22C2B412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EC7BD8B-BCC9-49BB-B6DB-37DC22C2B412}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D89EC88-D7F0-4994-9BAD-328264E99DE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D89EC88-D7F0-4994-9BAD-328264E99DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D89EC88-D7F0-4994-9BAD-328264E99DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D89EC88-D7F0-4994-9BAD-328264E99DE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA24C24E-F232-467B-9C14-98F68A759BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA24C24E-F232-467B-9C14-98F68A759BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA24C24E-F232-467B-9C14-98F68A759BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA24C24E-F232-467B-9C14-98F68A759BB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F55C9D2C-0511-4DD7-AB4B-C5F8BBD4F367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F55C9D2C-0511-4DD7-AB4B-C5F8BBD4F367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F55C9D2C-0511-4DD7-AB4B-C5F8BBD4F367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F55C9D2C-0511-4DD7-AB4B-C5F8BBD4F367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B4A9375-D630-4021-BDB0-FF3778C9F643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B4A9375-D630-4021-BDB0-FF3778C9F643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B4A9375-D630-4021-BDB0-FF3778C9F643}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B4A9375-D630-4021-BDB0-FF3778C9F643}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

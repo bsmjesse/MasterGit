@@ -1,0 +1,199 @@
+﻿
+@{
+    ViewBag.Title = "Driver View";
+    ViewBag.HasLeftPanel = true;
+    Layout = "~/Views/Shared/_DriverLayout.cshtml";  
+}
+
+@section Header {
+    <link rel="stylesheet" href="@Url.Content("~/Scripts/Openlayers/OpenLayers-2.12/theme/default/style.css")" type="text/css" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/style.mobile-jq.css?v=20130416")" type="text/css" />
+    <script src="http://maps.googleapis.com/maps/api/js?v=3&client=gme-bsmwirelessinc&sensor=true&libraries=places"></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places" type="text/javascript"></script>-->
+    <!--<script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>-->
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Openlayers/OpenLayers-2.12/OpenLayers.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/mobile-base.js?v=" + ViewBag.LastUpdatedmobilebaseFile)"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/mobile-jq.js?v=" + ViewBag.LastUpdatedmobilejqFile)"></script>
+    
+    <style type="text/css">
+        .ui-panel-inner
+        {
+            padding: 0;
+        }
+
+        .ui-listview-filter
+        {
+            margin: 0 !important;
+        }
+
+        #navigation .ui-btn-icon-notext {
+            display: block;
+            padding: 7px 6px 7px 8px;
+        }
+
+        .ui-controlgroup#navigation .ui-btn-icon-notext {
+            height: 24px;
+            width: 24px;
+        }
+
+        .ui-controlgroup#navigation .ui-btn-icon-notext .ui-btn-inner {
+            height: 20px;
+            padding: 2px 1px 2px 3px;
+        }
+
+        .searchcontain div.ui-input-text
+        {
+            width: 70% !important;
+            margin-left: 10px !important;
+            display:inline-block;
+        }
+
+        #searchCriteria div.ui-input-text
+        {
+            width: 50px !important;
+            display:inline-block;
+            vertical-align: middle;
+        }
+
+        #searchCriteria-popup .ui-select
+        {
+            width: auto !important;
+            display: inline !important;
+        }
+
+        #searchCriteriaHeader .ui-title, #popupHeader .ui-title
+        {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .historyCriteriaTitle, .historyCriteriaDate, .historyCriteriaTime {
+            margin-left: 5px;
+        }
+        
+        .historyCriteriaDate, .historyCriteriaTime {
+            display:inline-block;            
+        }
+
+        .historyCriteriaTitle {
+            display: block;
+        }
+
+        .historyCriteriaDate div.ui-input-text
+        {
+            width: 140px !important;
+            display:inline-block;
+            vertical-align: middle;
+        }
+
+        .historyCriteriaTime div.ui-input-text
+        {
+            width: 100px !important;
+            display:inline-block;
+            vertical-align: middle;
+        }
+
+        #configContent  div.ui-input-text
+        {
+            width: 170px !important;
+            display:inline-block;
+            vertical-align: middle;
+        }
+
+        .pac-item {
+            font-size: 16px !important;
+            padding: 2px 4px !important; 
+        }
+
+        .ui-title {
+            margin: 0.6em 0.6em 0.8em !important;
+        }
+
+        .textboxError {
+            border: 1px solid red !important;
+        }
+
+    </style>    
+
+    <script type="text/javascript">
+
+        var IsAuthorizedPath = "@Url.Content("~/Home/IsAuthorized/")";
+
+        window.onload = function () {
+            $.ajax({
+                url: IsAuthorizedPath,
+                success: function (result) {
+                    if(result.IsAuthorized == 0) {                        
+                        location.replace('@Url.Content("~/Account/Login/")');
+                        return;
+                    }
+                },
+                error: function (msg) {
+                }
+            });
+        }
+
+        window.onunload = function () { };
+        $(document).ready(function () {
+            $.mobile.showPageLoadingMsg();
+            //setTimeout(function () { window.scrollTo(0, 1) }, 100);
+            GetLogsheet();
+                });
+    </script>
+}
+
+@section LeftPanel {
+   <div data-role="panel" id="left-panel"  data-theme="b" style="background:#555555">
+       @Html.Partial("../Home/_leftMenu", new SentinelMobile.Models.LeftMenu("driverView"))
+    </div><!-- /panel -->    
+}
+
+@section Popup {
+    <!--<div id="popup" data-role="popup" data-overlay-theme="a" data-theme="c" style="max-width:400px;" class="ui-corner-all">
+        <div data-position="inline" data-theme="d" data-role="header" id="popupHeader">
+            <h1>Vehicle Info</h1>
+        </div>
+        <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+            <ul id="details-list" data-role="listview">
+            </ul>
+            <div id="vehicleinfo" data-role="vehicleinfo" style="margin:20px;">
+            </div>
+            <a href="javascript:void(0)" onclick="$('#popup').popup('close');" data-role="button" data-theme="d" style="margin:40px 90px 20px 90px;">@SentinelMobile.Resources.Resources.OK</a>
+        </div>        
+    </div>-->
+}
+
+@section HeaderLeftButtons {
+    <a href="#left-panel" data-role="button" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Menu</a>
+    <!--<a href="~/" data-role="button" data-icon="home" data-iconpos="notext" data-direction="reverse" data-inline="true">Home</a>-->
+}
+            <div data-role="footer"  data-position="fixed" data-fullscreen="true" data-tap-toggle="false" style="z-index:2000;">
+		        <div data-role="navbar" data-grid="a" id="divFootNavbar">
+			        <ul id ="ulDriverView" >
+                        <li><a href="#" onclick="javascript:AddmanualLog(); return false;" id="addmanualLog" data-icon="bars" data-role="button" data-rel="dialog" data-transition="none">@SentinelMobile.Resources.HOSResources.AddmanualLog</a></li>				    
+                         @{
+                          SentinelMobile.Models.User user = Session != null ? (SentinelMobile.Models.User)Session["SentinelUser"] : null;
+                          if (!user.IsDriver)
+                          {
+                        <li id="liaddmanualback" ><a href="#" onclick="BackHistory();" id="aliaddmanualback" data-icon="arrow-l" data-role="button" data-rel="dialog" data-transition="none">@SentinelMobile.Resources.HOSResources.Back</a></li>
+                         }}
+			        </ul>
+                    <!-- View PDF Back-->
+                    <ul id ="ulDriverLogPDFBack" style="display:none"  >
+                        <li id="liulDriverLogPDFBack" ><a href="#" onclick="DriverLogPDFBack();" data-icon="arrow-l" data-role="button" data-rel="dialog" data-transition="none">@SentinelMobile.Resources.HOSResources.Back</a></li>
+                    </ul>
+                </div>
+	        </div>
+            <div data-role="content" id="divDriverViewList" >
+                <div id="Driverviewwrapper" style="margin-bottom:60px">
+                    <ul data-role="listview" data-filter="false" data-scroll="true" data-filter-placeholder="@SentinelMobile.Resources.HOSResources.SearchDrivers..." id="ulDriverViewList" >
+
+                    </ul>
+                    <!-- View PDF Iframe-->
+                    <iframe  id ="divDriverLogPDF" style="display:none"></iframe>
+                </div>
+                <script type="text/javascript" >
+                    curDriverId = '@user.DriverId';
+                    curDriverName = '@user.DriverName';
+                </script>
+            </div>

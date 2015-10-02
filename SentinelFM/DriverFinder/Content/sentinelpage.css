@@ -1,0 +1,428 @@
+﻿.body { font-family: verdana; font-size: 12px; color: #000000; }
+.sub { font-family: verdana; font-size: 12px; color: #000000; font-weight: bold;}
+.heading { font-family: verdana; font-size: 13px; color: #000000; letter-spacing: 0px; }
+.tableheading { font-family: verdana; font-size: 12px;  color: #000000; }
+.smalltext { font-family: verdana; font-size: 10px; color: #000000; text-decoration: none; font-style: italic; }
+.errortext { font-family: verdana; font-size: 12px; color: #FF0000; text-decoration: none; font-style: normal; }
+.headinginstructions { font-family: verdana; font-size: 11px; color: #000000; text-decoration: none; font-weight:bold; }
+.instructions { font-family: verdana; font-size: 10px; color: #000000; text-decoration: none; font-weight:normal; }
+
+
+
+.link
+{
+	font-size: 0.8em;
+	cursor: hand;
+	color: #000000;
+	font-family: verdana;
+	text-transform: none;
+	text-decoration: underline;
+}
+
+
+.formtext { font-family: verdana; font-size: 11px; color: #000000; text-decoration: none;}
+.gridtext
+{
+	font-weight: normal;
+	font-size: 11px;
+	color: #000000;
+	font-family: verdana;
+	text-decoration: none;
+}
+a:hover.formtext { font-family:  verdana; font-size: 10px; color: #000000; text-decoration: underline;}
+
+.subnav { font-family: verdana; font-size: 10px; color: #000000; text-decoration: none; font-weight:normal; text-transform: uppercase; }
+a:hover.subnav { font-family: verdana; font-size: 10px; color: #000000; text-decoration: none; font-weight:normal; text-transform: uppercase; }
+
+.RegularText
+{
+	font-weight: normal;
+	font-size: 11px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}
+
+
+
+.field { font-family: verdana; font-weight: normal; font-size: 11px; letter-spacing: 1px; color: #FFFFFF; text-indent: 2px; background-color: #2BA7F8; 
+text-align: left; border-style: solid; border-color: #000000;}
+
+.readonly { font-family: verdana; font-weight: normal; font-size: 11px; letter-spacing: 1px; color: #969696; text-indent: 2px; background-color: #EFEFEF; 
+text-align: left; border-style: solid; border-color: #000000;}
+
+
+
+.BigText { font-weight: normal; font-size: 12px; text-transform: capitalize; color: #084F7F; font-family: verdana; text-decoration: none; }
+.BigFormText { font-family: verdana; font-size: 12px; color: #000000; text-decoration: none;}
+
+					
+						
+.menubutton
+{
+	border-top-width: 1px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-left-width: 1px;
+	font-size: 11px;
+	border-left-color: gray;
+	border-bottom-width: 2px;
+	border-bottom-color: gray;
+	padding-bottom: 1px;
+	width: 114px;
+	cursor: hand;
+	color: #084F7F;
+	border-top-color: gray;
+	padding-top: 1px;
+	font-family: verdana;
+	height: 30px;
+	background-color: whitesmoke;
+	border-right-width: 2px;
+	text-decoration: none;
+	border-right-color: gray;
+}
+						
+.combutton
+{
+	border-top-width: 1px;
+	padding-right: 5px;
+	padding-left: 5px;
+	border-left-width: 1px;
+	font-size: 11px;
+	border-left-color: gray;
+	border-bottom-width: 1px;
+	border-bottom-color: gray;
+	padding-bottom: 1px;
+	width: 105px;
+	cursor: hand;
+	color: black;
+	border-top-color: gray;
+	padding-top: 1px;
+	font-family: Verdana,
+	height: 19px;
+	background-color: whitesmoke;
+	border-right-width: 1px;
+	text-decoration: none;
+	border-right-color: gray;
+}																		
+
+
+.checkbutton 	{BORDER-TOP-WIDTH: 0px; 
+			            COLOR:#000063; 
+			            FONT-WEIGHT:bold;
+			            PADDING:2px 10px 2px 10px;
+			            FONT-FAMILY: verdana;
+			            TEXT-DECORATION: none;
+						BORDER-LEFT-WIDTH: 0px; 
+						FONT-SIZE: 10px; 
+						BORDER-LEFT-COLOR: #4682b4; 
+						BORDER-BOTTOM-WIDTH: 1px; 
+						BORDER-BOTTOM-COLOR: #4682b4; 
+						WIDTH: 95px; 
+						CURSOR: hand; 
+						COLOR: #000063; 
+						BORDER-TOP-COLOR: #4682b4; 
+						HEIGHT: 7px; 
+						BACKGROUND-COLOR: white; 
+						BORDER-RIGHT-WIDTH: 1px; 
+						BORDER-RIGHT-COLOR: #4682b4;}																		
+												
+						
+.confbutton
+{
+	border-right: gray 1px outset;
+	padding-right: 10px;
+	border-top: gray 1px outset;
+	padding-left: 10px;
+	font-size: 11px;
+	padding-bottom: 2px;
+	border-left: gray 1px outset;
+	width: 95px;
+	cursor: hand;
+	color: black;
+	padding-top: 2px;
+	border-bottom: gray 1px outset;
+	font-family: verdana;
+	height: 22px;
+	background-color: white;
+	text-decoration: underline;
+}
+						
+						
+.selectedbutton
+{
+	border-top-width: 2px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-left-width: 2px;
+	font-size: 11px;
+	border-left-color: gray;
+	border-bottom-width: 1px;
+	border-bottom-color: gray;
+	padding-bottom: 2px;
+	width: 95px;
+	cursor: hand;
+	color: saddlebrown;
+	border-top-color: gray;
+	padding-top: 2px;
+	font-family: verdana;
+	height: 22px;
+	background-color: #fffff0;
+	border-right-width: 2px;
+	text-decoration: none;
+	border-right-color: gray;
+}												
+
+
+
+
+.Commands
+{
+	border-top-width: 1px;
+	padding-right: 5px;
+	padding-left: 5px;
+	border-left-width: 1px;
+	font-size: 10px;
+	border-left-color: gray;
+	border-bottom-width: 1px;
+	border-bottom-color: gray;
+	padding-bottom: 1px;
+	width: 150px;
+	cursor: hand;
+	color:  black;
+	border-top-color: gray;
+	padding-top: 1px;
+	font-family: Verdana;
+	height: 19px;
+	background-color: whitesmoke;
+	border-right-width: 1px;
+	text-decoration: none;
+	border-right-color: gray;
+	}
+
+.PopupDescText { font-family: verdana; font-size: 12px; font-weight: bold; color: #000000; }
+.PopupFieldText { font-family: verdana; font-size: 12px; font-weight: normal; color: #000000; }
+.hbg
+{
+	
+    color:White; 
+	background-repeat: repeat;
+	background-color: #009933;
+
+}
+
+
+.divider {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, sans-serif}
+
+.td_green {	FONT-SIZE: 11px; COLOR: #009933; FONT-FAMILY: arial}
+	
+	
+		
+.table
+ { 
+   border-right: gray 2px outset;
+   border-top: gray 2px outset;
+   border-left: gray 2px outset;
+   border-bottom: gray 2px outset;
+ }
+ 
+ 
+ 
+
+
+ 
+ .tableDoubleBorder
+ { 
+   border-right:  gray 3px double;
+   border-top:  gray 3px double;
+   border-left:  gray 3px double;
+   border-bottom:  gray 3px double;
+ }
+
+ 
+  .tableBSMDoubleBorder
+ { 
+   border-right:  #009933 3px double;
+   border-top:   #009933 3px double;
+   border-left:  #009933 3px double;
+   border-bottom:  #009933 3px double;
+ }
+ 
+  .homepageLine
+ { 
+ LEFT: 0px; 
+ BORDER-LEFT: red 1px solid; 
+ POSITION: absolute; 
+ TOP: 0px
+ }
+.DataHeaderStyle
+{
+	background-color:#009933;
+	font-size:11px;
+	font-family: Arial,Helvetica,sans-serif;
+	FONT-WEIGHT:bold;
+	color:White   
+                                                                            
+}
+.divLogin
+{
+font-size: 16px; font-weight: bold; text-transform: uppercase;
+color: gray; background-color: #D3D3D3; text-align: left; text-indent: 5px;
+}
+
+
+  .tableLoginBorder
+ { 
+   border-right:  #D3D3D3 3px double;
+   border-top:  #D3D3D3 3px double;
+   border-left:  #D3D3D3 3px double;
+   border-bottom:  #D3D3D3 3px double;
+ }
+.configTabBackground
+{
+	background-color: #fffff0
+}
+
+.frame
+{
+	border-style: outset;
+	border-width: 2px;
+	border-color: #009933;
+}
+
+.linkbutton
+{
+	padding-bottom: 5px;
+	font-family: verdana;
+	font-size: smaller;
+	color: Black;
+}
+
+a:link.linkbutton
+{ font-family: verdana; text-decoration: none; color: #000000; }
+a:hover.linkbutton
+{ font-family: verdana; text-decoration: underline; color: #000000; }
+a:active.linkbutton
+{ font-family: verdana; text-decoration: underline; color: saddlebrown; }
+
+
+
+.RadGridtblHeader
+{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background-color :#009933 !important;
+    background-image :none !important;
+}
+
+
+.RadWindow_Hay .rwTopLeft,
+.RadWindow_Hay .rwTopRight,
+.RadWindow_Hay .rwTitlebar,
+.RadWindow_Hay .rwFooterLeft,
+.RadWindow_Hay .rwFooterRight,
+.RadWindow_Hay .rwFooterCenter,
+.RadWindow_Hay .rwTopResize,
+.RadWindow_Hay .rwStatusbar div,
+.RadWindow_Hay .rwStatusbar,
+.RadWindow_Hay .rwPopupButton,
+.RadWindow_Hay .rwPopupButton span,
+.RadWindow_Hay.rwMinimizedWindow .rwCorner
+{
+    background-image: none !important;
+    background-color:#009933 !important;
+    height:16px !important;
+}
+
+.RadWindow_Hay .rwBodyLeft,
+.RadWindow_Hay .rwBodyRight,
+.RadWindow_Hay .rwStatusbarRow .rwCorner
+{
+    background-image: none !important;
+    background-color:#009933 !important;
+}
+
+.RadToolBar_Simple .rtbOuter
+{
+    border: 0px !important;
+    background-image: none !important;
+    background-color:#009933 !important;
+}
+
+.RadToolBar_Simple .rtbWrap,
+.RadToolBar_Simple .rtbTemplate
+{
+	color: white !important;
+}
+
+.RadToolBar_Simple .rtbSplBtnFocused .rtbWrap,
+.RadToolBar_Simple .rtbItemFocused .rtbWrap,
+.RadToolBar_Simple .rtbItemHovered .rtbWrap
+{
+	padding: 2px;
+	border: 1px solid #c98400;
+	background: #ffe79c !important;
+	color: #000 !important;
+}
+.RadToolBar_Simple .rtbItemFocused .rtbWrap,
+.RadToolBar_Simple .rtbItemHovered .rtbWrap,
+.RadToolBar_Simple .rtbDropDownExpanded .rtbWrap,
+.RadToolBar_Simple .rtbSplBtnExpanded .rtbWrap,
+.RadToolBar_Simple .rtbChecked .rtbWrap,
+.RadToolBar_Simple .rtbItemClicked .rtbWrap
+{
+	color: #000 !important;
+	background: #ffe79c !important;
+}
+
+        .rgFilterRow td input
+        {
+	   font-size  : 11px !important;
+	   height:18px !important;
+        }
+        .rgFilter
+        {
+            background: url(&#39;/images/filter.gif&#39;) !important ;
+            background-repeat:no-repeat !important;
+            margin-left:0px !important;
+            margin-right:0px !important;
+
+        }
+        .rgFilterRow td
+        {
+            padding: 1px 0px;
+    vertical-align:middle !important;
+	    font-size  : 11px !important;
+        }
+
+.rgHeader, 
+.rgRow,
+.rgAltRow,
+.rgPager,
+.rmText
+.rpText
+{
+  	font-size: 11px !important;
+	font-family: Verdana !important;
+}
+.rgRow a,
+.rgAltRow a
+{
+     color:#084F7F !important;
+}
+
+.SelectedItemStyle-Simple td
+{
+    border:1px solid #90CA51 !important ;
+}
+
+.panelTitle
+{
+    color: Black;
+    font-size: 14px;
+}
+.panelSubTitle
+{
+    font-weight:normal;
+}

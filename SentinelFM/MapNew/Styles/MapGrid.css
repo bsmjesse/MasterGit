@@ -1,0 +1,52 @@
+﻿        .RadGrid_Simple .rgHoveredRow td
+        {
+            border-color: #b7dbff #b7dbff !important;
+        }
+        .RadGrid_Simple .rgHoveredRow
+        {
+            background-color: #b7dbff !important;
+            background: #b7dbff !important;
+        }
+        
+        .FiltMenuCss
+        {
+        }
+        
+        .GridButton a
+        {
+            font-size: 11px;
+            margin: 1px;
+            color: Blue !important;
+        }
+        
+        .rgAdvPart
+        {
+            display: none;
+        }
+        .rgPager td
+        {
+            padding-top: 1px !important;
+            padding-bottom: 1px !important;
+        }
+        
+        .GridRowStyle td
+        {
+            padding-top: 1px !important;
+            padding-bottom: 1px !important;
+        }
+        
+        .radToolBarMenuCss, 
+        .radToolBarMenuCss span,
+        .radToolBarMenuCss span span,
+        .radToolBarMenuCss span span span ,
+        .radToolBarMenuCss span span span span
+        {
+	        font-size  : 11px !important;
+	        font-family: Verdana !important;
+	        color:White !important;
+        }
+
+        .radToolBarMenuCss span span span span
+        {
+	        text-decoration:underline;
+        }

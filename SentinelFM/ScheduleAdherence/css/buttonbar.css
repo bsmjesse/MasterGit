@@ -1,0 +1,135 @@
+﻿#mainbuttonbar { margin:0;border:0;padding:5px 0; }
+
+.buttonbar {
+	margin:0; border:0; padding:0px 10px;
+}
+
+a.imgbutton {
+	margin-right:4px; border:1px solid transparent; padding:4px;
+	text-decoration: none;
+}
+
+button a.imgbutton:hover {
+	background:#ADFFC8;
+	border-top:1px solid lightblue; border-right:1px solid #6c96ec; border-bottom:1px solid #6c96ec; border-left:1px solid lightblue;
+}
+
+.buttonbar .imgbuttonicon {
+	background-position:center left; background-repeat:no-repeat; padding: 0 4px 0 20px;
+}
+
+.buttonbar .imgbuttonnew {
+	background-image:url("../img/NewDocumentHS.png");
+}
+
+.buttonbar .imgbuttonedit {
+	background-image:url("../img/EditInformationHS.png");
+}
+
+.buttonbar .imgbuttondelete {
+	background-image:url("../img/DeleteHS.png");
+}
+
+.buttonbar .imgbuttonassign {
+	background-image:url("../img/PortraitLandscapeHS.png");
+}
+
+.buttonbar .imgbuttonMoveNext {
+	background-image:url("../img/FillRightHS.png");
+}
+
+.buttonbar .imgbuttonMovePrevious {
+	background-image:url("../img/FillLeftHS.png");
+}
+
+.buttonbar .imgbuttonMoveUp {
+	background-image:url("../img/FillUpHS.png");
+}
+
+.buttonbar .imgbuttonMoveDown {
+	background-image:url("../img/FillDownHS.png");
+}
+
+.buttonbar .imgbuttonPrint {
+	background-image:url("../img/PrintHS.png");
+}
+
+.buttonbar .imgbuttonSave {
+	background-image:url("../img/saveHS.png");
+}
+
+.buttonbar .imgClearDate {
+	background-image:url("../img/RecordHS.png");
+}
+
+.buttonbar .imgbuttonCompleted {
+	background-image:url("../img/TaskHS.png");
+}
+
+.buttonbar .imgbuttonZoomIn {
+	background-image:url("../img/ZoomInHS.PNG");
+}
+
+.buttonbar .imgbuttonZoomOut {
+	background-image:url("../img/ZoomOutHS.PNG");
+}
+
+.buttonbar .imgbuttonBaseline {
+	background-image:url("../img/EditInformationHS.png");
+}
+
+.buttonbar .imgbuttonAll {
+	background-image:url("../img/PortraitHS.png");
+}
+
+.buttonbar .imgbuttonReverse {
+	background-image:url("../img/SplitSubdocumentHS.png");
+}
+
+.buttonbar .imgbuttonRun {
+	background-image:url("../img/book_reportHS.png");
+}
+
+.buttonbar .imgbuttonEnable {
+	background-image:url("../img/CheckMark.png");
+}
+
+.buttonbar .imgbuttonCancel {
+	background-image:url("../img/Cancel.png");
+}
+
+.buttonbar .imgbuttonDraw {
+	background-image:url("../img/NewCardHS.png");
+}
+
+.buttonbar .imgbuttonUndo {
+	background-image:url("../img/Edit_UndoHS.png");
+}
+
+.buttonbar .imgbuttonRedo {
+	background-image:url("../img/Edit_RedoHS.png");
+}
+
+.buttonbar .imgbuttonBlueflag {
+	background-image:url("../img/Flag_blueHS.png");
+}
+
+.buttonbar .imgbuttonGreenflag {
+	background-image:url("../img/Flag_greenHS.png");
+}
+
+.buttonbar .imgbuttonImport {
+	background-image:url("../img/ImportHS.png");
+}
+
+.buttonbar .imgbuttonCopy {
+	background-image:url("../img/CopyHS.png");
+}
+
+.buttonbar .imgbuttonWord {
+	background-image:url("../img/WordHS.png");
+}
+
+.buttonbar .imgbuttonPDF {
+	background-image:url("../img/PDFHS.png");
+}

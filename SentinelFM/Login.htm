@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<script language="javascript">
+			<!--
+				function WindowOpen() { 
+					//var mypage='frmLoginPopUp.aspx?Logo=SmartNet.gif&URL=frmHomeSmartNet.aspx'
+					var mypage='frmLoginPopUp.aspx'
+					var myname='';
+					var w=300;
+					var h=250;
+					var winl = (screen.width - w) / 2; 
+					var wint = (screen.height - h) / 2; 
+					
+					
+					winprops = 'height='+h+',width='+w+',top='+wint+',left='+winl+'location=0,status=0,scrollbars=0,toolbar=0,menubar=0,' 
+					win = window.open(mypage,'',winprops) 
+					if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); } 
+					
+				}
+			//-->
+		</script>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+	</HEAD>
+	<BODY onload="WindowOpen();" onload="widdows.close();">
+	</BODY>
+</HTML>

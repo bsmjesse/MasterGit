@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<xs:schema id="dstGeoZones" 
+                  targetNamespace="http://tempuri.org/dstGeoZones.xsd"
+                  elementFormDefault="qualified"
+                  attributeFormDefault="qualified"
+                  xmlns="http://tempuri.org/dstGeoZones.xsd"
+                  xmlns:mstns="http://tempuri.org/dstGeoZones.xsd"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="dstGeoZones" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UnAssVehicleGeoZone">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GeozoneId" type="xs:string" minOccurs="0" />
+              <xs:element name="GeoZoneName" type="xs:string" minOccurs="0" />
+              <xs:element name="SeverityId" type="xs:string" minOccurs="0" />
+              <xs:element name="GeozoneNo" type="xs:int" minOccurs="0" />
+              <xs:element name="OrganizationId" type="xs:int" minOccurs="0" />
+              <xs:element name="Type" type="xs:int" minOccurs="0" />
+              <xs:element name="Description" type="xs:string" minOccurs="0" />
+              <xs:element name="GeozoneType" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+
+

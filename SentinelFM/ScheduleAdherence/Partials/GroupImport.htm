@@ -1,0 +1,28 @@
+﻿<div ng-controller="GroupImportCtrl">
+    <div class="modal-body">
+            <table width="100%">
+            <tr class="InstanceRow"><td>
+                <span style="color:Red">{{ErrorMessage}}</span>
+            </td></tr>
+            <tr ng-show="ImportStatus==1" class="InstanceRow"><td>
+                Select a File to upload:<input type="file" ng-model="file" file-change="fileChange()">
+            </td></tr>
+            <tr ng-show="ImportStatus==2" class="InstanceRow"><td>
+                <input type="checkbox" ng-model="Overlap">Overlap old records
+            </td></tr>
+            <tr ng-show="ImportStatus==2" class="InstanceRow"><td>
+                {{FileName}} <button ng-click="Upload()">Upload</button> <button ng-click="ImportStatus = 1">Cancel</button>
+            </td></tr>
+            <tr ng-show="ImportStatus==3" class="InstanceRow"><td>
+                {{ProgressMsg}} 
+                <!--<div class="span4"><progress percent="ProgressRate"></progress></div>-->
+            </td></tr>
+            <tr ng-show="ImportStatus==4" class="InstanceRow"><td>
+                <button ng-click="Ignore()">Ignore</button>
+                <button ng-click="cancel()">Cancel</button>
+            </td></tr>
+            </table>
+    </div>        
+    <div class="modal-footer">
+    </div>
+</div>

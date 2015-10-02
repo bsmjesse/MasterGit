@@ -1,0 +1,19 @@
+5.06 Build 9 Created 25 Sept 2015
+
+Bug 844 : Mantis 0016030 Add inspection duration in hos dashboard page Devin
+Bug 884 : 0015993: Be able to input new SMCS code in "Questions" page Devin
+Bug 880 : SSRS New Reports Lawrence
+Bug 849 : 16015 Addition of User/Fleet Assignment column in "User Info" Screen Gene
+Bug 888 : 12718 Display Fleets & Landmarks information in Alarms Details Window Gene
+Bug 885 : 12052 Control Alarms Window on MapNew Gene
+Bug 868 : Added original UserId logging for hgi users Gene
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+﻿        .rpOut
+        {
+            background-image:none !important; 
+        }
+        
+        .rpSelected  
+        { 
+            background-image:none !important; 
+            background-color:#FAB052 !important; 
+            font-weight:bold !important; 
+        } 
+        .rpSelected:hover 
+        { 
+            background-color: #FDCD98 !important; 
+            font-weight:bold !important; 
+        } 
+        .rpSlide .rpItem:hover 
+        { 
+            background-color: #FDCD98 !important; 
+              
+        } 
+        .rpSlide .rpLink:hover  
+        { 
+            background-color: #FDCD98 !important; 
+            background-image:none !important; 
+        } 
+        .rpSlide .rpOut:hover  
+        { 
+            background-image:none !important; 
+        } 
+
+        .SubRadGridItem
+        {
+            padding: 1px !important;
+        }
+
+        .WrapTextClass
+        {
+            word-wrap:break-word;
+        }
+        .NoTDBorder
+        {
+             border-left-width:0px !important;
+        }

@@ -1,0 +1,6 @@
+@charset "utf-8";
+/* CSS Document */
+
+.conArea{ max-width:400px !important; margin:3% auto;}
+.loginPnl{width:100% !important; height:auto; float:left !important;}
+.slider{width:100% !important; height:auto;  float:right !important;}

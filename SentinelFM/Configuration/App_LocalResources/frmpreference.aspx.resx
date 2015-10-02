@@ -1,0 +1,1275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddUserPasswordFailed21" xml:space="preserve">
+    <value>The password must contain 1 capital letter and 1 low case letter</value>
+  </data>
+  <data name="AddUserPasswordFailed22" xml:space="preserve">
+    <value>The password is duplicated in one of the last 8 passwords that you have used recently</value>
+  </data>
+  <data name="cboAlarmFreqResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboExpDaysResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboExpHoursResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboExpMinResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboGridPagingResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboLoadVehiclesBasedOnResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboMapTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboRefreshFreqResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboTimeZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboUnitsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboVehicleClusteringThreshold.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboVolumeUnitsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDaylightResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDaylightResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkLandmarkResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkLandmarkResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMapAssets.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkMapAssets.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkShowLandmarknameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkShowLandmarknameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkShowLandmarknameResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkShowLandmarknameResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkShowLandmarkResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkShowLandmarkResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkShowMapGridFilterResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkShowMapGridFilterResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkShowReadMessResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkShowReadMessResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkShowVehicleNameResource1.Text" xml:space="preserve">
+    <value>Display Label on Map by Default:</value>
+  </data>
+  <data name="chkShowVehicleNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkShowVehicleNameResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkShowVehicleNameResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkVehicleClustering.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkVehicleClustering.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkViewMDTMessagesScrollingResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkViewMDTMessagesScrollingResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdEditPreferences" xml:space="preserve">
+    <value>Edit Preferences</value>
+  </data>
+  <data name="cmdEditPsw" xml:space="preserve">
+    <value>Edit Password</value>
+  </data>
+  <data name="cmdHomeResource1.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="cmdHomeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdPswUpdated" xml:space="preserve">
+    <value>The Password has been successfully updated.Please &lt;a href="/login.aspx"&gt;relogin&lt;/a&gt;.</value>
+  </data>
+  <data name="cmdSavePreferences" xml:space="preserve">
+    <value>Save Preferences</value>
+  </data>
+  <data name="cmdSavePsw" xml:space="preserve">
+    <value>Save Password</value>
+  </data>
+  <data name="cmdSavePswResource1.Text" xml:space="preserve">
+    <value>Edit Password</value>
+  </data>
+  <data name="cmdSavePswResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSaveResource1.Text" xml:space="preserve">
+    <value>Edit Preferences</value>
+  </data>
+  <data name="cmdSaveResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="defaultOrganizationHierarchyResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="defaultOrganizationHierarchyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label1Resource1.Text" xml:space="preserve">
+    <value>Show landmark name instead of an address:</value>
+  </data>
+  <data name="Label1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label1Resource2.Text" xml:space="preserve">
+    <value>Litre / Gallons:</value>
+  </data>
+  <data name="Label1Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label2Resource1.Text" xml:space="preserve">
+    <value>Default Organization Hierarchy:</value>
+  </data>
+  <data name="Label2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label3Resource1.Text" xml:space="preserve">
+    <value>Load Vehicles Based On:</value>
+  </data>
+  <data name="Label3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label4Resource1.Text" xml:space="preserve">
+    <value>Password must be at least 8 characters in length</value>
+  </data>
+  <data name="Label4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label5Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label5Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label6Resource1.Text" xml:space="preserve">
+    <value>Password should contain 1 numeral and 1 uppercase letter.</value>
+  </data>
+  <data name="Label6Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAlarmRefreshResource1.Text" xml:space="preserve">
+    <value>Alarm/Message information refresh frequency:</value>
+  </data>
+  <data name="lblAlarmRefreshResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAssetUtilizationResource1.Text" xml:space="preserve">
+    <value>Asset Utilization Threshold:</value>
+  </data>
+  <data name="lblAssetUtilizationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAutoDayLightResource1.Text" xml:space="preserve">
+    <value>Automatically adjust for daylight savings time:</value>
+  </data>
+  <data name="lblAutoDayLightResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblChangePasswordResource1.Text" xml:space="preserve">
+    <value>Change Password:</value>
+  </data>
+  <data name="lblChangePasswordResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDaysResource1.Text" xml:space="preserve">
+    <value>Days:</value>
+  </data>
+  <data name="lblDaysResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDefaultFleetResource1.Text" xml:space="preserve">
+    <value>Default Fleet:</value>
+  </data>
+  <data name="lblDefaultFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDefaultMapViewResource.Text" xml:space="preserve">
+    <value>Default Map View:</value>
+  </data>
+  <data name="lblDefaultMapViewResource.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LblDistanceResource1.Text" xml:space="preserve">
+    <value>Miles / Kilometers:</value>
+  </data>
+  <data name="LblDistanceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblHistoryGridDefaultRowsResource1.Text" xml:space="preserve">
+    <value>History Screen Grid Rows #:</value>
+  </data>
+  <data name="lblHistoryGridDefaultRowsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblHoursResource1.Text" xml:space="preserve">
+    <value>Hours:</value>
+  </data>
+  <data name="lblHoursResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLandmarkStyleResource1.Text" xml:space="preserve">
+    <value>Landmark Style:</value>
+  </data>
+  <data name="lblLandmarkStyleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMapAssets.Text" xml:space="preserve">
+    <value>Map Assets (By Default)*:</value>
+  </data>
+  <data name="lblMapAssets.ToolTip" xml:space="preserve">
+    <value>If selected and you are using IE8 browser, may experience slower performance. In this case, we will recommend you use vehicle clustering.</value>
+  </data>
+  <data name="lblMapGridDefaultRowsResource1.Text" xml:space="preserve">
+    <value>Map Screen Grid Rows #:</value>
+  </data>
+  <data name="lblMapGridDefaultRowsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMapTypeResource1.Text" xml:space="preserve">
+    <value>Map Type:</value>
+  </data>
+  <data name="lblMapTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageErrorResource1.Text" xml:space="preserve">
+    <value>Your password has expired. Please change your password</value>
+  </data>
+  <data name="lblMessageErrorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNewPswResource1.Text" xml:space="preserve">
+    <value>Enter a new password:</value>
+  </data>
+  <data name="lblNewPswResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOldPswResource1.Text" xml:space="preserve">
+    <value>Enter your old password:</value>
+  </data>
+  <data name="lblOldPswResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPswMsgResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPswMsgResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReenterPswResource1.Text" xml:space="preserve">
+    <value>Re-enter the new password:</value>
+  </data>
+  <data name="lblReenterPswResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblScreenRefreshResource1.Text" xml:space="preserve">
+    <value>Screen refresh frequency:</value>
+  </data>
+  <data name="lblScreenRefreshResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblShowLandmarkNameResource1.Text" xml:space="preserve">
+    <value>Show Landmark  names:</value>
+  </data>
+  <data name="lblShowLandmarkNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblShowLandmarkResource1.Text" xml:space="preserve">
+    <value>Show landmark name instead of an address:</value>
+  </data>
+  <data name="lblShowLandmarkResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblShowLandmarksResource1.Text" xml:space="preserve">
+    <value>Show Landmarks:</value>
+  </data>
+  <data name="lblShowLandmarksResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblShowMapGridFilterResource1.Text" xml:space="preserve">
+    <value>Show Map Grid Filter:</value>
+  </data>
+  <data name="lblShowMapGridFilterResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblShowReadMessagesResource1.Text" xml:space="preserve">
+    <value>Show read messages:</value>
+  </data>
+  <data name="lblShowReadMessagesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblShowVehicleNameResource1.Text" xml:space="preserve">
+    <value>Display Label on Map by Default:</value>
+  </data>
+  <data name="lblShowVehicleNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTimeZoneDescResource1.Text" xml:space="preserve">
+    <value>Time zone: * In order to display local time in the system, you must select your time zone. </value>
+  </data>
+  <data name="lblTimeZoneDescResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTimeZoneResource1.Text" xml:space="preserve">
+    <value> Time Zone*:</value>
+  </data>
+  <data name="lblTimeZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUserPreferenceResource1.Text" xml:space="preserve">
+    <value>User Preferences Info:</value>
+  </data>
+  <data name="lblUserPreferenceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleClustering.Text" xml:space="preserve">
+    <value>Vehicle Clustering:</value>
+  </data>
+  <data name="lblVehicleClustering.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleClusteringDistance.Text" xml:space="preserve">
+    <value>Distance:</value>
+  </data>
+  <data name="lblVehicleClusteringDistance.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleClusteringThreshold.Text" xml:space="preserve">
+    <value>Threshold:</value>
+  </data>
+  <data name="lblVehicleClusteringThreshold.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblViewAlarmScrollingResource1.Text" xml:space="preserve">
+    <value>Map Screen View:</value>
+  </data>
+  <data name="lblViewAlarmScrollingResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblViewMDTMessagesScrolling.Text" xml:space="preserve">
+    <value>View Alarm and MDT messages scrolling:</value>
+  </data>
+  <data name="lblViewMDTMessagesScrolling.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemDefaultMapViewResource64.Text" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="ListItemDefaultMapViewResource64.Value" xml:space="preserve">
+    <value>north</value>
+  </data>
+  <data name="ListItemDefaultMapViewResource65.Text" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
+  <data name="ListItemDefaultMapViewResource65.Value" xml:space="preserve">
+    <value>south</value>
+  </data>
+  <data name="ListItemDefaultMapViewResource66.Text" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="ListItemDefaultMapViewResource66.Value" xml:space="preserve">
+    <value>east</value>
+  </data>
+  <data name="ListItemResource1.Text" xml:space="preserve">
+    <value>GMT-12 Eniwetok,Kwajalein</value>
+  </data>
+  <data name="ListItemResource1.Value" xml:space="preserve">
+    <value>-12</value>
+  </data>
+  <data name="ListItemResource10.Text" xml:space="preserve">
+    <value>GMT-3 Brasilia,Greenland</value>
+  </data>
+  <data name="ListItemResource10.Value" xml:space="preserve">
+    <value>-3</value>
+  </data>
+  <data name="ListItemResource11.Text" xml:space="preserve">
+    <value>GMT-2 Mid-Atlantic</value>
+  </data>
+  <data name="ListItemResource11.Value" xml:space="preserve">
+    <value>-2</value>
+  </data>
+  <data name="ListItemResource12.Text" xml:space="preserve">
+    <value>GMT-1 Azores,Cape Verde Is.</value>
+  </data>
+  <data name="ListItemResource12.Value" xml:space="preserve">
+    <value>-1</value>
+  </data>
+  <data name="ListItemResource13.Text" xml:space="preserve">
+    <value>GMT Dublin,London</value>
+  </data>
+  <data name="ListItemResource13.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource14.Text" xml:space="preserve">
+    <value>GMT+1 Amsterdam,Berlin,Bern,Rome</value>
+  </data>
+  <data name="ListItemResource14.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource15.Text" xml:space="preserve">
+    <value>GMT+2 Jerusalem,Riga,Tallinn</value>
+  </data>
+  <data name="ListItemResource15.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource16.Text" xml:space="preserve">
+    <value>GMT+3 Moscow,St. Petersburg</value>
+  </data>
+  <data name="ListItemResource16.Value" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListItemResource17.Text" xml:space="preserve">
+    <value>GMT+4 Abu Dhabi,Baku,Tbilisi</value>
+  </data>
+  <data name="ListItemResource17.Value" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ListItemResource18.Text" xml:space="preserve">
+    <value>GMT+5 Islamabad,Karachi</value>
+  </data>
+  <data name="ListItemResource18.Value" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ListItemResource19.Text" xml:space="preserve">
+    <value>GMT+6 Astana,Dhaka</value>
+  </data>
+  <data name="ListItemResource19.Value" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="ListItemResource2.Text" xml:space="preserve">
+    <value>GMT-11 Midway Island</value>
+  </data>
+  <data name="ListItemResource2.Value" xml:space="preserve">
+    <value>-11</value>
+  </data>
+  <data name="ListItemResource20.Text" xml:space="preserve">
+    <value>GMT+7 Bangkok,Hanoi,Jakarta</value>
+  </data>
+  <data name="ListItemResource20.Value" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ListItemResource21.Text" xml:space="preserve">
+    <value>GMT+8 Beijing,Hong Kong</value>
+  </data>
+  <data name="ListItemResource21.Value" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="ListItemResource22.Text" xml:space="preserve">
+    <value>GMT+9 Osaka,Tokyo,Seoul</value>
+  </data>
+  <data name="ListItemResource22.Value" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="ListItemResource23.Text" xml:space="preserve">
+    <value>GMT+10 Sydney,Melbourne</value>
+  </data>
+  <data name="ListItemResource23.Value" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ListItemResource24.Text" xml:space="preserve">
+    <value>GMT+11 Magadan</value>
+  </data>
+  <data name="ListItemResource24.Value" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="ListItemResource25.Text" xml:space="preserve">
+    <value>GMT+12 Wellington,Fiji</value>
+  </data>
+  <data name="ListItemResource25.Value" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="ListItemResource26.Text" xml:space="preserve">
+    <value>GMT+13 Nuku'alofa</value>
+  </data>
+  <data name="ListItemResource26.Value" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="ListItemResource27.Text" xml:space="preserve">
+    <value>Miles</value>
+  </data>
+  <data name="ListItemResource27.Value" xml:space="preserve">
+    <value>0.621371</value>
+  </data>
+  <data name="ListItemResource28.Text" xml:space="preserve">
+    <value>Kilometers</value>
+  </data>
+  <data name="ListItemResource28.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource29.Text" xml:space="preserve">
+    <value>30 sec</value>
+  </data>
+  <data name="ListItemResource29.Value" xml:space="preserve">
+    <value>30000</value>
+  </data>
+  <data name="ListItemResource3.Text" xml:space="preserve">
+    <value>GMT-10 Hawaii</value>
+  </data>
+  <data name="ListItemResource3.Value" xml:space="preserve">
+    <value>-10</value>
+  </data>
+  <data name="ListItemResource30.Text" xml:space="preserve">
+    <value>60 sec</value>
+  </data>
+  <data name="ListItemResource30.Value" xml:space="preserve">
+    <value>60000</value>
+  </data>
+  <data name="ListItemResource31.Text" xml:space="preserve">
+    <value>90 sec</value>
+  </data>
+  <data name="ListItemResource31.Value" xml:space="preserve">
+    <value>90000</value>
+  </data>
+  <data name="ListItemResource32.Text" xml:space="preserve">
+    <value>120 sec</value>
+  </data>
+  <data name="ListItemResource32.Value" xml:space="preserve">
+    <value>120000</value>
+  </data>
+  <data name="ListItemResource33.Text" xml:space="preserve">
+    <value>30 sec</value>
+  </data>
+  <data name="ListItemResource33.Value" xml:space="preserve">
+    <value>30000</value>
+  </data>
+  <data name="ListItemResource34.Text" xml:space="preserve">
+    <value>60 sec</value>
+  </data>
+  <data name="ListItemResource34.Value" xml:space="preserve">
+    <value>60000</value>
+  </data>
+  <data name="ListItemResource35.Text" xml:space="preserve">
+    <value>90 sec</value>
+  </data>
+  <data name="ListItemResource35.Value" xml:space="preserve">
+    <value>90000</value>
+  </data>
+  <data name="ListItemResource36.Text" xml:space="preserve">
+    <value>120 sec</value>
+  </data>
+  <data name="ListItemResource36.Value" xml:space="preserve">
+    <value>120000</value>
+  </data>
+  <data name="ListItemResource37.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource37.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource38.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource38.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource39.Text" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource39.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource4.Text" xml:space="preserve">
+    <value>GMT-9 Alaska</value>
+  </data>
+  <data name="ListItemResource4.Value" xml:space="preserve">
+    <value>-9</value>
+  </data>
+  <data name="ListItemResource40.Text" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListItemResource40.Value" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListItemResource41.Text" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ListItemResource41.Value" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ListItemResource42.Text" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="ListItemResource42.Value" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="ListItemResource43.Text" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="ListItemResource43.Value" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="ListItemResource44.Text" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="ListItemResource44.Value" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="ListItemResource45.Text" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="ListItemResource45.Value" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="ListItemResource46.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource46.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource47.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource47.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource48.Text" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource48.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource49.Text" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ListItemResource49.Value" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ListItemResource5.Text" xml:space="preserve">
+    <value>GMT-8 Pacific Time (USA&amp;Canada)</value>
+  </data>
+  <data name="ListItemResource5.Value" xml:space="preserve">
+    <value>-8</value>
+  </data>
+  <data name="ListItemResource50.Text" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ListItemResource50.Value" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ListItemResource51.Text" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="ListItemResource51.Value" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="ListItemResource52.Text" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="ListItemResource52.Value" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="ListItemResource53.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource53.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource54.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource54.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource55.Text" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource55.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource56.Text" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ListItemResource56.Value" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ListItemResource57.Text" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ListItemResource57.Value" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ListItemResource58.Text" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="ListItemResource58.Value" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="ListItemResource59.Text" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="ListItemResource59.Value" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="ListItemResource6.Text" xml:space="preserve">
+    <value>GMT-7 Mountain Time (USA&amp;Canada)</value>
+  </data>
+  <data name="ListItemResource6.Value" xml:space="preserve">
+    <value>-7</value>
+  </data>
+  <data name="ListItemResource60.Text" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="ListItemResource60.Value" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="ListItemResource61.Text" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="ListItemResource61.Value" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="ListItemResource62.Text" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="ListItemResource62.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource63.Text" xml:space="preserve">
+    <value>LSD</value>
+  </data>
+  <data name="ListItemResource63.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource64.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource64.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource65.Text" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource65.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource66.Text" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ListItemResource66.Value" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ListItemResource67.Text" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ListItemResource67.Value" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ListItemResource68.Text" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ListItemResource68.Value" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ListItemResource69.Text" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="ListItemResource69.Value" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="ListItemResource7.Text" xml:space="preserve">
+    <value>GMT-6 Central Time (USA&amp;Canada)</value>
+  </data>
+  <data name="ListItemResource7.Value" xml:space="preserve">
+    <value>-6</value>
+  </data>
+  <data name="ListItemResource70.Text" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="ListItemResource70.Value" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="ListItemResource71.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource71.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource72.Text" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource72.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource73.Text" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ListItemResource73.Value" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ListItemResource74.Text" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ListItemResource74.Value" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ListItemResource75.Text" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ListItemResource75.Value" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ListItemResource76.Text" xml:space="preserve">
+    <value>Gallons</value>
+  </data>
+  <data name="ListItemResource76.Value" xml:space="preserve">
+    <value>0.26</value>
+  </data>
+  <data name="ListItemResource77.Text" xml:space="preserve">
+    <value>Litre</value>
+  </data>
+  <data name="ListItemResource77.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource78.Text" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource78.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource79.Text" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListItemResource79.Value" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListItemResource8.Text" xml:space="preserve">
+    <value>GMT-5 Eastern Time (USA&amp;Canada)</value>
+  </data>
+  <data name="ListItemResource8.Value" xml:space="preserve">
+    <value>-5</value>
+  </data>
+  <data name="ListItemResource80.Text" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ListItemResource80.Value" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ListItemResource81.Text" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ListItemResource81.Value" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ListItemResource82.Text" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="ListItemResource82.Value" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="ListItemResource83.Text" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ListItemResource83.Value" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ListItemResource84.Text" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="ListItemResource84.Value" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="ListItemResource85.Text" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="ListItemResource85.Value" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="ListItemResource86.Text" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ListItemResource86.Value" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ListItemResource87.Text" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListItemResource87.Value" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListItemResource88.Text" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ListItemResource88.Value" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ListItemResource89.Text" xml:space="preserve">
+    <value>Messages</value>
+  </data>
+  <data name="ListItemResource89.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource9.Text" xml:space="preserve">
+    <value>GMT-4 Atlantic Time (Canada)</value>
+  </data>
+  <data name="ListItemResource9.Value" xml:space="preserve">
+    <value>-4</value>
+  </data>
+  <data name="ListItemResource90.Text" xml:space="preserve">
+    <value>Alarms</value>
+  </data>
+  <data name="ListItemResource90.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource91.Text" xml:space="preserve">
+    <value>Messages and Alarms</value>
+  </data>
+  <data name="ListItemResource91.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource92.Text" xml:space="preserve">
+    <value>Fleet</value>
+  </data>
+  <data name="ListItemResource92.Value" xml:space="preserve">
+    <value>fleet</value>
+  </data>
+  <data name="ListItemResource93.Text" xml:space="preserve">
+    <value>Organization Hierarchy</value>
+  </data>
+  <data name="ListItemResource93.Value" xml:space="preserve">
+    <value>hierarchy</value>
+  </data>
+  <data name="lnkEnglishResource1.Text" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="lnkEnglishResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lnkFrenchResource1.Text" xml:space="preserve">
+    <value>Français</value>
+  </data>
+  <data name="lnkFrenchResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="msgPsw_Medium" xml:space="preserve">
+    <value>Medium!</value>
+  </data>
+  <data name="msgPsw_MoreCharacters" xml:space="preserve">
+    <value>More Characters</value>
+  </data>
+  <data name="msgPsw_Strong" xml:space="preserve">
+    <value>Strong!</value>
+  </data>
+  <data name="msgPsw_TypePassword" xml:space="preserve">
+    <value />
+  </data>
+  <data name="msgPsw_Weak" xml:space="preserve">
+    <value>Weak!</value>
+  </data>
+  <data name="MsgUpdateFailed" xml:space="preserve">
+    <value>Update failed</value>
+  </data>
+  <data name="msgWeakPassword" xml:space="preserve">
+    <value>The password can't be updated because it's weak!</value>
+  </data>
+  <data name="optMapTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="optMapViewResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="SelectFleet" xml:space="preserve">
+    <value>Select a Fleet</value>
+  </data>
+  <data name="txtNewPassword1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtNewPassword1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtNewPasswordResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtNewPasswordResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtOldPasswordResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtOldPasswordResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtVehicleClusteringDistance.Text" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="txtVehicleClusteringDistance.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValidationSummary1Resource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValidationSummary1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valNewPasswordResource1.ErrorMessage" xml:space="preserve">
+    <value>Enter a new Password</value>
+  </data>
+  <data name="valNewPasswordResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valNewPasswordResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valOldPasswordResource1.ErrorMessage" xml:space="preserve">
+    <value>Enter your old password</value>
+  </data>
+  <data name="valOldPasswordResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valOldPasswordResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="vlCompResource1.ErrorMessage" xml:space="preserve">
+    <value>Please re-enter the new password</value>
+  </data>
+  <data name="vlCompResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="vlCompResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label18Resource1.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Label19Resource1.Text" xml:space="preserve">
+    <value>Search Result:</value>
+  </data>
+  <data name="Label8Resource1.Text" xml:space="preserve">
+    <value>Search: </value>
+  </data>
+  <data name="Label9Resource1.Text" xml:space="preserve">
+    <value>Path:</value>
+  </data>
+  <data name="Label9Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLoadLandmarkByDefault.Text" xml:space="preserve">
+    <value>Load Landmark By Default:</value>
+  </data>
+  <data name="lblMinutesResource1.Text" xml:space="preserve">
+    <value>Minutes:</value>
+  </data>
+  <data name="ListItemResource94.Text" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="ListItemResource94.Value" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblRememberLastPageResource1.Text" xml:space="preserve">
+    <value>Remember Last Page:</value>
+  </data>
+  <data name="lblRememberLastPageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlVehicleNotReportedResource1.Text" xml:space="preserve">
+    <value>Vehicle Not Reported For X Days (0- 1000)</value>
+  </data>
+  <data name="ddlVehicleNotReportedResource1.ToolTip" xml:space="preserve">
+    <value>Vehicle Not Reported For X Days (0- 1000)</value>
+  </data>
+  <data name="WholeNumberRangeResource1.ErrorMessage" xml:space="preserve">
+    <value>Value must be a whole number between 0- 1000</value>
+  </data>
+  <data name="WholeNumberRangeResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="WholeNumberRangeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WholeNumberResource1.ErrorMessage" xml:space="preserve">
+    <value>Value must be a whole number</value>
+  </data>
+  <data name="WholeNumberResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="WholeNumberResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblShowRetiredVehiclesResource1.Text" xml:space="preserve">
+    <value>Show Retired Vehicles:</value>
+  </data>
+  <data name="cmdPswUpdatedAmeco" xml:space="preserve">
+    <value>The Password has been successfully updated.Please &lt;a href="/LoginAmeco.aspx"&gt;relogin&lt;/a&gt;.</value>
+  </data>
+  <data name="msgPsw_OldNewNotSame" xml:space="preserve">
+    <value>New password should not be same as Old password</value>
+  </data>
+  <data name="msgPsw_OldPswIncorrect" xml:space="preserve">
+    <value>Old Password is incorrect</value>
+  </data>
+</root>

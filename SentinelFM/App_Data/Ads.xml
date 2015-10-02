@@ -1,0 +1,20 @@
+<Advertisements>
+  <Ad>
+    <ImageUrl>~/Images/DunbarCar.jpg</ImageUrl>
+    <Height>60</Height>
+    <Width>190</Width>
+    <NavigateUrl>http://www.microsoft.com</NavigateUrl>
+    <AlternateText>Microsoft Main Site</AlternateText>
+     <Keyword>Topic1</Keyword>
+    <Caption>This is the caption for Ad#1</Caption> 
+  </Ad>
+  <Ad>
+    <ImageUrl>~/Images/GR_Logo.jpg</ImageUrl>
+    <Height>90</Height>
+    <Width>90</Width>
+    <NavigateUrl>http://www.wingtiptoys.com</NavigateUrl>
+    <AlternateText>Wingtip Toys</AlternateText>
+      <Keyword>Topic2</Keyword>
+    <Caption>This is the caption for Ad#2</Caption> 
+  </Ad>
+</Advertisements>

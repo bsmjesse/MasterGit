@@ -1,0 +1,33 @@
+﻿<div ng-controller="GroupInstanceCtrl" >
+    <div class="modal-body">
+            <table class="formtext">
+            <tr class="InstanceRow">
+                <td>Begin Date:</td>
+                <td>{{Group.ScheduleBeginDate| date:'mediumDate'}}</td>
+            </tr>
+            <tr ng-show="IsNewInsance()" class="InstanceRow">
+                <td></td>
+                <td>
+                <div ng-model="Group.ScheduleBeginDate">
+                    <datepicker min="minDate" show-weeks="showWeeks"></datepicker>
+                </div>
+                </td>
+            </tr>
+            <tr ng-show="IsNewInsance()" class="InstanceRow">
+                <td>Duration:</td>
+                <td>
+                    <input name="input_duration" ng-model="Group.Duration" placeholder="Enter a Number" ng-required="true" />
+                    <span class="ErrorMessage" ng-show="form1.input_duration.$error.integer">Not valid integer!</span>
+                </td>
+            </tr>
+            <tr class="InstanceRow">
+                <td>Description:</td>
+                <td><input type="text" ng-model="Group.Description"/></td>
+           </tr>
+            </table>
+    </div>        
+    <div class="modal-footer">
+        <button ng-disabled="Status!='Loaded'" ng-click="ok()">OK</button>
+        <button ng-click="cancel()">Cancel</button>
+    </div>
+</div>

@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9FB45C16-82DE-4AD2-87AB-1E87E1107A3F}</ProjectGuid>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>DasDb</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>VLF.DAS.DB</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SignAssembly>false</SignAssembly>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\BIN\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;DEBUG;NEW_REPORTS;NEW_ALARMS</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\BIN\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;NEW_REPORTS;NEW_ALARMS</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Map, Version=2.6.2.22252, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\ExternalLibraries\Map.dll</HintPath>
+    </Reference>
+    <Reference Include="MapLib">
+      <HintPath>..\ExternalLibraries\MapLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.0.12.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalLibraries\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alarm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Asl.cs" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyVersion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AverageFleetReport.cs" />
+    <Compile Include="BatteryTrending.cs" />
+    <Compile Include="BoxCmdHist.cs" />
+    <Compile Include="BoxProileDB.cs" />
+    <Compile Include="Contact.cs" />
+    <Compile Include="CustomReportEmail.cs" />
+    <Compile Include="DashBoard.cs" />
+    <Compile Include="Equipment.cs" />
+    <Compile Include="EvtEvents.cs" />
+    <Compile Include="FuelCategory.cs" />
+    <Compile Include="GeoAsset.cs" />
+    <Compile Include="Integrations.cs" />
+    <Compile Include="LandmarkPointSet.cs" />
+    <Compile Include="Logging.cs" />
+    <Compile Include="Maintenance.cs" />
+    <Compile Include="MapLayers.cs" />
+    <Compile Include="MapSearch.cs" />
+    <Compile Include="MCC.cs" />
+    <Compile Include="Mdt.cs" />
+    <Compile Include="MdtType.cs" />
+    <Compile Include="Media.cs" />
+    <Compile Include="OrganizationPeripheralFormSet.cs" />
+    <Compile Include="PeripheralBoxAssigment.cs" />
+    <Compile Include="PostGISLandmarkDB.cs" />
+    <Compile Include="PS_EepromMap.cs" />
+    <Compile Include="PS_EepromAttribute.cs" />
+    <Compile Include="PS_Model.cs" />
+    <Compile Include="PS_Carrier.cs" />
+    <Compile Include="EngineCodes.cs" />
+    <Compile Include="FleetHierarchy.cs" />
+    <Compile Include="MsgOutLiteHst.cs" />
+    <Compile Include="Notification.cs" />
+    <Compile Include="OrganizationPushConfiguration.cs" />
+    <Compile Include="Peripheral.cs" />
+    <Compile Include="PeripheralFirmware.cs" />
+    <Compile Include="PeripheralForm.cs" />
+    <Compile Include="RapidLog.cs" />
+    <Compile Include="SAReasonCode.cs" />
+    <Compile Include="SARoute.cs" />
+    <Compile Include="SARouteStation.cs" />
+    <Compile Include="SASchedule.cs" />
+    <Compile Include="SAScheduleGroup.cs" />
+    <Compile Include="SASetting.cs" />
+    <Compile Include="SAStation.cs" />
+    <Compile Include="ServiceAssignmentDB.cs" />
+    <Compile Include="SqlUtil.cs" />
+    <Compile Include="TableInterfaces.cs" />
+    <Compile Include="VehicleEquipmentAssignment.cs" />
+    <Compile Include="VehicleSummaryReport.cs" />
+    <Compile Include="Box.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxCmdOutType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxCommInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxHwDefaultOutputsCfg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxHwDefaultSensorsCfg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxHwType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxMsgInType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxMsgSeverity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxOutputsCfg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxProtocolSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxProtocolType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxProtocolTypeCmdOutType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxProtocolTypeMsgInType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxSensorsCfg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommAddressType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommandScheduler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommModeAddressType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="common\AssemblyVersion.cs" />
+    <Compile Include="OrganizationPreferences.cs" />
+    <Compile Include="FuelTransaction.cs" />
+    <Compile Include="HoursOfService.cs" />
+    <Compile Include="HoursOfServiceNotification.cs" />
+    <Compile Include="InstallJob.cs" />
+    <Compile Include="MdtOTA.cs" />
+    <Compile Include="MessageToTable.cs" />
+    <Compile Include="VehicleMaintenance\OrganizationNotifications.cs" />
+    <Compile Include="VehicleMaintenance\OrganizationVehicleServiceType.cs" />
+    <Compile Include="Resources\Const.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Const.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Driver.cs" />
+    <Compile Include="Configuration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAS.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dcl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DriverAssignment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DriverAssignmentHst.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExceptionReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Fleet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FleetEmails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FleetUsers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FleetVehicles.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GroupSecurity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IconType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Images.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Landmark.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Localization.cs" />
+    <Compile Include="Make.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MakeModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MapEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MsgIn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MsgInLite.cs" />
+    <Compile Include="MsgOut.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MsgOutLite.cs" />
+    <Compile Include="Organization.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OrganizationGeozone.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Output.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PersonInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Preference.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportScheduler.cs" />
+    <Compile Include="ReportVehicleTrip.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Resources\Const.fr.Designer.cs">
+      <DependentUpon>Const.fr.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Security.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sensor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SensorProfile.cs" />
+    <Compile Include="SensorReport.cs" />
+    <Compile Include="StateProvince.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SystemUpdate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TblInerfaces.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TemperaturePlan.cs" />
+    <Compile Include="TrustedPerson.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TxtMsgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TxtMsgType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="User.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserGroupAssignment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserLogin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserPreference.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehicleAssignment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehicleAssignmentHst.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehicleGeozone.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehicleInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehicleMaintenance\VehicleMaintenaceInfo.cs" />
+    <Compile Include="VehicleMaintenance\VehicleServices.cs" />
+    <Compile Include="VehicleType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViolationsFleetReport.cs" />
+    <Compile Include="Waypoint.cs" />
+    <Compile Include="WorkingHours.cs" />
+    <Compile Include="WorkOrders.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Const.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Const.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Const.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Const.fr.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Map.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CLS\CLS.csproj">
+      <Project>{9d89ec88-d7f0-4994-9bad-328264e99de0}</Project>
+      <Name>CLS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ERRSecurity\ERRSecurity.csproj">
+      <Project>{f55c9d2c-0511-4dd7-ab4b-c5f8bbd4f367}</Project>
+      <Name>ERRSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ERR\ERR.csproj">
+      <Project>{aa24c24e-f232-467b-9c14-98f68a759bb6}</Project>
+      <Name>ERR</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,2845 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GridBoundColumnResource10.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource11.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource12.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource13.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource14.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource8.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource9.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="AddNewMaintenancePlan" xml:space="preserve">
+    <value>&amp;#160;Add New Maintenance Plan&amp;#160;</value>
+  </data>
+  <data name="adminText" xml:space="preserve">
+    <value>Admin ▼</value>
+  </data>
+  <data name="BoundFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource1.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="BoundFieldResource10.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource10.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource10.HeaderText" xml:space="preserve">
+    <value>Courriel</value>
+  </data>
+  <data name="BoundFieldResource11.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource11.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource11.HeaderText" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="BoundFieldResource12.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource12.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource12.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource13.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource13.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource13.HeaderText" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="BoundFieldResource14.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource14.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource14.HeaderText" xml:space="preserve">
+    <value>Avertissement</value>
+  </data>
+  <data name="BoundFieldResource15.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource15.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource15.HeaderText" xml:space="preserve">
+    <value>Dernier avertissement</value>
+  </data>
+  <data name="BoundFieldResource16.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource16.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource16.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="BoundFieldResource17.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource17.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource17.HeaderText" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="BoundFieldResource18.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource18.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource18.HeaderText" xml:space="preserve">
+    <value>Date Heure</value>
+  </data>
+  <data name="BoundFieldResource19.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource19.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource19.HeaderText" xml:space="preserve">
+    <value>Valeur</value>
+  </data>
+  <data name="BoundFieldResource2.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource2.HeaderText" xml:space="preserve">
+    <value>Valeur dû</value>
+  </data>
+  <data name="BoundFieldResource20.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource20.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource20.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="BoundFieldResource21.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource21.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource21.HeaderText" xml:space="preserve">
+    <value>Identification</value>
+  </data>
+  <data name="BoundFieldResource22.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource22.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource22.HeaderText" xml:space="preserve">
+    <value>Operation Type ID</value>
+  </data>
+  <data name="BoundFieldResource23.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource23.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource23.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="BoundFieldResource24.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource24.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource24.HeaderText" xml:space="preserve">
+    <value>VRMS Code</value>
+  </data>
+  <data name="BoundFieldResource25.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource25.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource25.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource26.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource26.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource26.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource27.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource27.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource27.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource28.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource28.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource28.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource29.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource29.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource29.HeaderText" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="BoundFieldResource3.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource3.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource3.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource4.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource4.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource4.HeaderText" xml:space="preserve">
+    <value>Type d`opération</value>
+  </data>
+  <data name="BoundFieldResource5.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource5.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource5.HeaderText" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="BoundFieldResource6.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource6.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource6.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource7.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource7.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource7.HeaderText" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="BoundFieldResource8.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource8.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource8.HeaderText" xml:space="preserve">
+    <value>Intervalle de service</value>
+  </data>
+  <data name="BoundFieldResource9.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource9.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldResource9.HeaderText" xml:space="preserve">
+    <value>Valeur à la fin</value>
+  </data>
+  <data name="btnAddNewPlanResource1.Text" xml:space="preserve">
+    <value>Ajouter nouveau plan</value>
+  </data>
+  <data name="btnAddNewPlanResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnAddNotificationResource1.Text" xml:space="preserve">
+    <value>Ajouter Notification</value>
+  </data>
+  <data name="btnAddNotificationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnAdministrationResource1.Text" xml:space="preserve">
+    <value>Politique de notification</value>
+  </data>
+  <data name="btnAdministrationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCancelResource1.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="btnCancelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCancelServiceResource1.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="btnCancelServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCloseServicePlanResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCloseServicePlanResource1.ToolTip" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="btnDeleteNotificationResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnDeleteNotificationResource1.ToolTip" xml:space="preserve">
+    <value>Effacer</value>
+  </data>
+  <data name="btnDeleteOrgServiceResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnDeleteOrgServiceResource1.ToolTip" xml:space="preserve">
+    <value>Effacer</value>
+  </data>
+  <data name="btnDeleteServicePlanResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnDeleteServicePlanResource1.ToolTip" xml:space="preserve">
+    <value>Effacer</value>
+  </data>
+  <data name="btnDueResource1.Text" xml:space="preserve">
+    <value>Requête pour les services</value>
+  </data>
+  <data name="btnDueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnGetAllServicesResource1.Text" xml:space="preserve">
+    <value>Requête tout les services</value>
+  </data>
+  <data name="btnGetAllServicesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnMaintenanceHistoryResource1.Text" xml:space="preserve">
+    <value>Historique Entretien</value>
+  </data>
+  <data name="btnMaintenanceHistoryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnMaintenanceResource1.Text" xml:space="preserve">
+    <value>Entretien</value>
+  </data>
+  <data name="btnMaintenanceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnPastResource1.Text" xml:space="preserve">
+    <value>Requête des entretien dû</value>
+  </data>
+  <data name="btnPastResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnSaveResource1.Text" xml:space="preserve">
+    <value>Sauvergarder</value>
+  </data>
+  <data name="btnSaveResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnSaveServiceResource1.Text" xml:space="preserve">
+    <value>Sauvergarder</value>
+  </data>
+  <data name="btnSaveServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnServicesResource1.Text" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="btnServicesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ButtonMaintenanceCancelResource1.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="ButtonMaintenanceCancelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ButtonMaintenanceInitResource1.Text" xml:space="preserve">
+    <value>Set</value>
+  </data>
+  <data name="ButtonMaintenanceInitResource1.ToolTip" xml:space="preserve">
+    <value>Réinitialiser Heures du moteur</value>
+  </data>
+  <data name="ButtonMaintenanceSaveEHResource1.Text" xml:space="preserve">
+    <value>Sauvergarder</value>
+  </data>
+  <data name="ButtonMaintenanceSaveEHResource1.ToolTip" xml:space="preserve">
+    <value>Sauvergarder Heures du moteur</value>
+  </data>
+  <data name="CheckEngineHoursBasedResource1.Text" xml:space="preserve">
+    <value>Basé sur les heures du moteur</value>
+  </data>
+  <data name="CheckEngineHoursBasedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CheckOdometerBasedResource1.Text" xml:space="preserve">
+    <value>Basé sur l`odomètre</value>
+  </data>
+  <data name="CheckOdometerBasedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkTimeBased1.Text" xml:space="preserve">
+    <value>Basé sur le nombre de jours</value>
+  </data>
+  <data name="chkTimeBased1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.CancelText" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="CommandFieldResource1.DeleteText" xml:space="preserve">
+    <value>Effacer</value>
+  </data>
+  <data name="CommandFieldResource1.EditText" xml:space="preserve">
+    <value>Editer</value>
+  </data>
+  <data name="CommandFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.InsertText" xml:space="preserve">
+    <value>Insérer</value>
+  </data>
+  <data name="CommandFieldResource1.NewText" xml:space="preserve">
+    <value>Nouveau</value>
+  </data>
+  <data name="CommandFieldResource1.SelectText" xml:space="preserve">
+    <value>Choisir</value>
+  </data>
+  <data name="CommandFieldResource1.UpdateText" xml:space="preserve">
+    <value>Mettre à jour</value>
+  </data>
+  <data name="CommandFieldResource2.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource2.CancelText" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="CommandFieldResource2.DeleteText" xml:space="preserve">
+    <value>Effacer</value>
+  </data>
+  <data name="CommandFieldResource2.EditText" xml:space="preserve">
+    <value>Editer</value>
+  </data>
+  <data name="CommandFieldResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource2.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource2.InsertText" xml:space="preserve">
+    <value>Insérer</value>
+  </data>
+  <data name="CommandFieldResource2.NewText" xml:space="preserve">
+    <value>Nouveau</value>
+  </data>
+  <data name="CommandFieldResource2.SelectText" xml:space="preserve">
+    <value>Choisir</value>
+  </data>
+  <data name="CommandFieldResource2.UpdateText" xml:space="preserve">
+    <value>Mettre à jour</value>
+  </data>
+  <data name="CommandFieldResource3.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource3.CancelText" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="CommandFieldResource3.DeleteText" xml:space="preserve">
+    <value>Effacer</value>
+  </data>
+  <data name="CommandFieldResource3.EditText" xml:space="preserve">
+    <value>Editer</value>
+  </data>
+  <data name="CommandFieldResource3.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource3.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource3.InsertText" xml:space="preserve">
+    <value>Insérer</value>
+  </data>
+  <data name="CommandFieldResource3.NewText" xml:space="preserve">
+    <value>Nouveau</value>
+  </data>
+  <data name="CommandFieldResource3.SelectText" xml:space="preserve">
+    <value>Choisir</value>
+  </data>
+  <data name="CommandFieldResource3.UpdateText" xml:space="preserve">
+    <value>Mettre à jour</value>
+  </data>
+  <data name="CompareDueValueGT0Resource1.ErrorMessage" xml:space="preserve">
+    <value>Valeur doit être plus grand que Zéro</value>
+  </data>
+  <data name="CompareDueValueGT0Resource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="CompareDueValueGT0Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CompareDueValueResource1.ErrorMessage" xml:space="preserve">
+    <value>Valeur n`est pas valide</value>
+  </data>
+  <data name="CompareDueValueResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="CompareDueValueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CompareIntervalResource1.ErrorMessage" xml:space="preserve">
+    <value>Intervalle n`est pas valide</value>
+  </data>
+  <data name="CompareIntervalResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="CompareIntervalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CompareLastWarningResource1.ErrorMessage" xml:space="preserve">
+    <value>Invalide</value>
+  </data>
+  <data name="CompareLastWarningResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CompareLastWarningResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CompareNotifResource1.ErrorMessage" xml:space="preserve">
+    <value>Invalide</value>
+  </data>
+  <data name="CompareNotifResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CompareNotifResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ComparePlanTypeGTResource1.ErrorMessage" xml:space="preserve">
+    <value>Seulement l`Odomètre et Heures du Moteur sont supportés</value>
+  </data>
+  <data name="ComparePlanTypeGTResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="ComparePlanTypeGTResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ComparePlanTypeLTResource1.ErrorMessage" xml:space="preserve">
+    <value>Seulement l`Odomètre et Heures du Moteur sont supportés</value>
+  </data>
+  <data name="ComparePlanTypeLTResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="ComparePlanTypeLTResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CompareScheduleTypeResource1.ErrorMessage" xml:space="preserve">
+    <value>Type de cédule n`a pas été choisi</value>
+  </data>
+  <data name="CompareScheduleTypeResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="CompareScheduleTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CompareValidatorEndValueResource1.ErrorMessage" xml:space="preserve">
+    <value>Valeur n`est pas valide</value>
+  </data>
+  <data name="CompareValidatorEndValueResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="CompareValidatorEndValueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DataBaseSecurityError" xml:space="preserve">
+    <value>DataBase Security Error</value>
+  </data>
+  <data name="DataBaseSecurityError_InvalidVehicle" xml:space="preserve">
+    <value>DataBase Security Error: Invalid Vehicle</value>
+  </data>
+  <data name="ddlDateTimeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlNewPlanNotificationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlNewPlanScheduleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlNewPlanSvcTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlNewPlanTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlNotificationTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlNotTypeEditResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlOrgServiceTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddlServiceTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeleteServiceError" xml:space="preserve">
+    <value>Ne peut effacer le service&lt;br /&gt;</value>
+  </data>
+  <data name="dgFleetVehicles_EngineHours" xml:space="preserve">
+    <value>Heures du moteur</value>
+  </data>
+  <data name="dgFleetVehicles_Odometer" xml:space="preserve">
+    <value>Odomètre</value>
+  </data>
+  <data name="dgFleetVehicles_Vehicle" xml:space="preserve">
+    <value>Véhicule</value>
+  </data>
+  <data name="dgHistory_ClosingValue" xml:space="preserve">
+    <value>Valeur Finale</value>
+  </data>
+  <data name="dgHistory_ClosingValue.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgHistory_ClosingValue.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgHistory_ClosingValue.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgHistory_ClosingValue.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="dgHistory_ClosingValue.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="dgHistory_ClosingValue.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgHistory_ClosingValue.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgHistory_ClosingValue.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgHistory_ClosingValue.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgHistory_ClosingValue.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgHistory_ClosingValue.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgHistory_ClosingValue.HeaderText" xml:space="preserve">
+    <value>Valeur Finale</value>
+  </data>
+  <data name="dgHistory_ClosingValue.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgHistory_ClosingValue.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgHistory_DateTime" xml:space="preserve">
+    <value>DateHeure</value>
+  </data>
+  <data name="dgHistory_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="dgHistory_ServiceType" xml:space="preserve">
+    <value>Type de Service</value>
+  </data>
+  <data name="dgHistory_ServiceValue" xml:space="preserve">
+    <value>Valeur du Service</value>
+  </data>
+  <data name="dgHistory_Vehicle" xml:space="preserve">
+    <value>Véhicule</value>
+  </data>
+  <data name="dgMaintenanceResource1.BackImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.ClientSettings.ClientMessages.ColumnResizeTooltipFormatString" xml:space="preserve">
+    <value>Width: &lt;strong&gt;{0}&lt;/strong&gt; &lt;em&gt;pixels&lt;/em&gt;</value>
+  </data>
+  <data name="dgMaintenanceResource1.ClientSettings.ClientMessages.DragToGroupOrReorder" xml:space="preserve">
+    <value>Faites glisser pour réorganiser les groupes</value>
+  </data>
+  <data name="dgMaintenanceResource1.ClientSettings.ClientMessages.DragToResize" xml:space="preserve">
+    <value>Faites glisser pour redimensionner</value>
+  </data>
+  <data name="dgMaintenanceResource1.ClientSettings.ClientMessages.DropHereToReorder" xml:space="preserve">
+    <value>Déposer ici pour réorganiser</value>
+  </data>
+  <data name="dgMaintenanceResource1.ClientSettings.ClientMessages.PagerTooltipFormatString" xml:space="preserve">
+    <value>Page &lt;strong&gt;{0}&lt;/strong&gt; de &lt;strong&gt;{1}&lt;/strong&gt;</value>
+  </data>
+  <data name="dgMaintenanceResource1.FilterMenu.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.GroupingSettings.CollapseTooltip" xml:space="preserve">
+    <value>Minimiser le groupe</value>
+  </data>
+  <data name="dgMaintenanceResource1.GroupingSettings.ExpandTooltip" xml:space="preserve">
+    <value>Etendre le groupe</value>
+  </data>
+  <data name="dgMaintenanceResource1.GroupingSettings.GroupByFieldsSeparator" xml:space="preserve">
+    <value>; </value>
+  </data>
+  <data name="dgMaintenanceResource1.GroupingSettings.GroupContinuedFormatString" xml:space="preserve">
+    <value>... groupe suite de la page précédente. </value>
+  </data>
+  <data name="dgMaintenanceResource1.GroupingSettings.GroupContinuesFormatString" xml:space="preserve">
+    <value> Groupe continue sur la prochaine page.</value>
+  </data>
+  <data name="dgMaintenanceResource1.GroupingSettings.GroupSplitDisplayFormat" xml:space="preserve">
+    <value>{0} de {1} items.</value>
+  </data>
+  <data name="dgMaintenanceResource1.GroupingSettings.GroupSplitFormat" xml:space="preserve">
+    <value> ({0})</value>
+  </data>
+  <data name="dgMaintenanceResource1.GroupingSettings.UnGroupButtonTooltip" xml:space="preserve">
+    <value>Cliquez ici pour dégrouper</value>
+  </data>
+  <data name="dgMaintenanceResource1.GroupingSettings.UnGroupTooltip" xml:space="preserve">
+    <value>Faites glisser hors de la barre de dégrouper</value>
+  </data>
+  <data name="dgMaintenanceResource1.GroupPanel.Text" xml:space="preserve">
+    <value>Faites glisser un en-tête de colonne et déposez ici pour groupe par cette colonne</value>
+  </data>
+  <data name="dgMaintenanceResource1.GroupPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.HeaderContextMenu.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.HierarchySettings.CollapseTooltip" xml:space="preserve">
+    <value>Minimiser</value>
+  </data>
+  <data name="dgMaintenanceResource1.HierarchySettings.ExpandTooltip" xml:space="preserve">
+    <value>Etendre</value>
+  </data>
+  <data name="dgMaintenanceResource1.HierarchySettings.SelfCollapseTooltip" xml:space="preserve">
+    <value>Minimiser la référence</value>
+  </data>
+  <data name="dgMaintenanceResource1.HierarchySettings.SelfExpandTooltip" xml:space="preserve">
+    <value>Etendre la référence</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.CommandItemSettings.AddNewRecordImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.CommandItemSettings.AddNewRecordText" xml:space="preserve">
+    <value>Rajouter une fiche</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.CommandItemSettings.ExportToCsvImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.CommandItemSettings.ExportToCsvText" xml:space="preserve">
+    <value>Exporter vers fichier CSV</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.CommandItemSettings.ExportToExcelImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.CommandItemSettings.ExportToExcelText" xml:space="preserve">
+    <value>Exporter vers fichier Excel</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.CommandItemSettings.ExportToPdfImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.CommandItemSettings.ExportToPdfText" xml:space="preserve">
+    <value>Exporter vers fichier PDF</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.CommandItemSettings.ExportToWordImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.CommandItemSettings.ExportToWordText" xml:space="preserve">
+    <value>Exporter vers fichier Word</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.CommandItemSettings.RefreshImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.CommandItemSettings.RefreshText" xml:space="preserve">
+    <value>Actualiser</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.EditFormSettings.CaptionFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.EditFormSettings.InsertCaption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.ExpandCollapseColumn.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.ExpandCollapseColumn.CollapseImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.ExpandCollapseColumn.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.ExpandCollapseColumn.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.ExpandCollapseColumn.ExpandImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.ExpandCollapseColumn.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.ExpandCollapseColumn.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.ExpandCollapseColumn.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.ExpandCollapseColumn.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.ExpandCollapseColumn.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.ExpandCollapseColumn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.ExpandCollapseColumn.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.ExpandCollapseColumn.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.FilterExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.NoDetailRecordsText" xml:space="preserve">
+    <value>Aucune fiche à afficher.</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.NoMasterRecordsText" xml:space="preserve">
+    <value>Aucune fiche à afficher.</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.PagerStyle.FirstPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.PagerStyle.FirstPageToolTip" xml:space="preserve">
+    <value>Première Page</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.PagerStyle.LastPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.PagerStyle.LastPageToolTip" xml:space="preserve">
+    <value>Dernière Page</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.PagerStyle.NextPagesToolTip" xml:space="preserve">
+    <value>Prochaine Page</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.PagerStyle.NextPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.PagerStyle.NextPageToolTip" xml:space="preserve">
+    <value>Prochaine Page</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.PagerStyle.PagerTextFormat" xml:space="preserve">
+    <value>Change page: {4} &amp;nbsp;Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;, items &lt;strong&gt;{2}&lt;/strong&gt; to &lt;strong&gt;{3}&lt;/strong&gt; of &lt;strong&gt;{5}&lt;/strong&gt;.</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.PagerStyle.PageSizeLabelText" xml:space="preserve">
+    <value>Taille de la page:</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.PagerStyle.PrevPagesToolTip" xml:space="preserve">
+    <value>Pages précédentes</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.PagerStyle.PrevPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.PagerStyle.PrevPageToolTip" xml:space="preserve">
+    <value>Page précédente</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.RowIndicatorColumn.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.RowIndicatorColumn.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.RowIndicatorColumn.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.RowIndicatorColumn.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.RowIndicatorColumn.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.RowIndicatorColumn.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.RowIndicatorColumn.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.RowIndicatorColumn.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.RowIndicatorColumn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.RowIndicatorColumn.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.RowIndicatorColumn.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.Summary" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.MasterTableView.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.PagerStyle.FirstPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.PagerStyle.FirstPageToolTip" xml:space="preserve">
+    <value>Première Page</value>
+  </data>
+  <data name="dgMaintenanceResource1.PagerStyle.LastPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.PagerStyle.LastPageToolTip" xml:space="preserve">
+    <value>Dernière Page</value>
+  </data>
+  <data name="dgMaintenanceResource1.PagerStyle.NextPagesToolTip" xml:space="preserve">
+    <value>Prochaine Page</value>
+  </data>
+  <data name="dgMaintenanceResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.PagerStyle.NextPageToolTip" xml:space="preserve">
+    <value>Prochaine Page</value>
+  </data>
+  <data name="dgMaintenanceResource1.PagerStyle.PagerTextFormat" xml:space="preserve">
+    <value>Change page: {4} &amp;nbsp;Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;, items &lt;strong&gt;{2}&lt;/strong&gt; to &lt;strong&gt;{3}&lt;/strong&gt; of &lt;strong&gt;{5}&lt;/strong&gt;.</value>
+  </data>
+  <data name="dgMaintenanceResource1.PagerStyle.PageSizeLabelText" xml:space="preserve">
+    <value>Taille de la page:</value>
+  </data>
+  <data name="dgMaintenanceResource1.PagerStyle.PrevPagesToolTip" xml:space="preserve">
+    <value>Pages précédentes</value>
+  </data>
+  <data name="dgMaintenanceResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceResource1.PagerStyle.PrevPageToolTip" xml:space="preserve">
+    <value>Page précédente</value>
+  </data>
+  <data name="dgMaintenanceResource1.SortingSettings.SortedAscToolTip" xml:space="preserve">
+    <value>Trier croissant</value>
+  </data>
+  <data name="dgMaintenanceResource1.SortingSettings.SortedDescToolTip" xml:space="preserve">
+    <value>Trier décroissant</value>
+  </data>
+  <data name="dgMaintenanceResource1.SortingSettings.SortToolTip" xml:space="preserve">
+    <value>Cliquez ici pour trier</value>
+  </data>
+  <data name="dgMaintenanceResource1.StatusBarSettings.LoadingText" xml:space="preserve">
+    <value>Chargement...</value>
+  </data>
+  <data name="dgMaintenanceResource1.StatusBarSettings.ReadyText" xml:space="preserve">
+    <value>Prêt</value>
+  </data>
+  <data name="dgMaintenanceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotification_Data" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="dgNotification_Details" xml:space="preserve">
+    <value>Détails</value>
+  </data>
+  <data name="dgNotification_LicensePlate" xml:space="preserve">
+    <value>Plaque du véhicule</value>
+  </data>
+  <data name="dgNotification_Notification" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="dgNotification_Vehicle" xml:space="preserve">
+    <value>Véhicule</value>
+  </data>
+  <data name="DueMaintenanceServices" xml:space="preserve">
+    <value>&amp;#160;Due Maintenance Services&amp;#160;</value>
+  </data>
+  <data name="EmailRegExValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value>Email list should be comma separate</value>
+  </data>
+  <data name="EmailRegExValidatorResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="EmailRegExValidatorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EngineHoursCompareValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value>Heures du moteur est invalide</value>
+  </data>
+  <data name="EngineHoursCompareValidatorResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="EngineHoursCompareValidatorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EngineHoursRequiredValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value>Les heures du moteur est requis</value>
+  </data>
+  <data name="EngineHoursRequiredValidatorResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="EngineHoursRequiredValidatorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EntireFleet" xml:space="preserve">
+    <value>Tous les parcs de véhicules</value>
+  </data>
+  <data name="errorDelete" xml:space="preserve">
+    <value>Delete failed.</value>
+  </data>
+  <data name="errorDeleteAssign" xml:space="preserve">
+    <value>Can not be deleted because it has been assigned to vehicle(s).</value>
+  </data>
+  <data name="errorSave" xml:space="preserve">
+    <value>Save failed.</value>
+  </data>
+  <data name="Error_Load" xml:space="preserve">
+    <value>Failed to load data.</value>
+  </data>
+  <data name="gdvNotificationsResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdvNotificationsResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gdvNotificationsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GetOperationTypeError" xml:space="preserve">
+    <value>Get Operation Type Error</value>
+  </data>
+  <data name="GridBoundColumnResource2.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource2.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource2.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.HeaderText" xml:space="preserve">
+    <value>No unité</value>
+  </data>
+  <data name="GridBoundColumnResource2.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource3.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource3.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.HeaderText" xml:space="preserve">
+    <value>Véhicule</value>
+  </data>
+  <data name="GridBoundColumnResource3.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource4.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource4.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.HeaderText" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="GridBoundColumnResource4.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.DataFormatString" xml:space="preserve">
+    <value>{0:MM/dd/yyyy}</value>
+  </data>
+  <data name="GridBoundColumnResource5.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource5.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource5.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.HeaderText" xml:space="preserve">
+    <value>Jour/ Heure</value>
+  </data>
+  <data name="GridBoundColumnResource5.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource6.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource6.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.HeaderText" xml:space="preserve">
+    <value>Commentaires</value>
+  </data>
+  <data name="GridBoundColumnResource6.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource7.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource7.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.HeaderText" xml:space="preserve">
+    <value>Service effectué par</value>
+  </data>
+  <data name="GridBoundColumnResource7.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridTemplateColumnResource1.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.HeaderText" xml:space="preserve">
+    <value>Type d'entretien</value>
+  </data>
+  <data name="GridTemplateColumnResource1.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridTemplateColumnResource1.SortExpression" xml:space="preserve">
+    <value>OperationTypeID</value>
+  </data>
+  <data name="gvHistoryResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvHistoryResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvHistoryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvOrgServicesResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvOrgServicesResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvOrgServicesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvServicesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="hideFilter" xml:space="preserve">
+    <value>Hide Filter</value>
+  </data>
+  <data name="InvalidDueValue" xml:space="preserve">
+    <value>Invalid Due Value (must be greater than current engine hours)</value>
+  </data>
+  <data name="InvalidInterval" xml:space="preserve">
+    <value>Invalid Interval (must be greater than zero)</value>
+  </data>
+  <data name="InvalidLastWarning" xml:space="preserve">
+    <value>Invalid Last Warning&lt;br /&gt;</value>
+  </data>
+  <data name="InvalidNotification" xml:space="preserve">
+    <value>Invalid Notification&lt;br /&gt;</value>
+  </data>
+  <data name="InvalidWarning" xml:space="preserve">
+    <value>Invalid Warning&lt;br /&gt;</value>
+  </data>
+  <data name="Label3Resource1.Text" xml:space="preserve">
+    <value>Service Type</value>
+  </data>
+  <data name="Label3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelCustomerNoteResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelHistoryMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelHistoryMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelMaintenanceMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelMaintenanceMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelMaintenancePlanCaptionResource1.Text" xml:space="preserve">
+    <value>&amp;#160;Add new maintenance plan&amp;#160;</value>
+  </data>
+  <data name="LabelMaintenancePlanCaptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelMaintenancePlanCommentsResource1.Text" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="LabelMaintenancePlanCommentsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelMaintenancePlanDescriptionResource1.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="LabelMaintenancePlanDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelMaintenancePlanEmailResource1.Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="LabelMaintenancePlanEmailResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelUnlimitedResource1.Text" xml:space="preserve">
+    <value>Unlimited</value>
+  </data>
+  <data name="LabelUnlimitedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAdministrationLegendResource1.Text" xml:space="preserve">
+    <value>&amp;#160;Notifications&amp;#160;</value>
+  </data>
+  <data name="lblAdministrationLegendResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LblDueValueResource1.Text" xml:space="preserve">
+    <value>Starting Value</value>
+  </data>
+  <data name="LblDueValueResource1.Text1" xml:space="preserve">
+    <value>Starting Value</value>
+  </data>
+  <data name="LblDueValueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmptyDataResource1.Text" xml:space="preserve">
+    <value>No notifications</value>
+  </data>
+  <data name="lblEmptyDataResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmptyHistoryResource1.Text" xml:space="preserve">
+    <value>No history data available</value>
+  </data>
+  <data name="lblEmptyHistoryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmptyOrgServicesResource1.Text" xml:space="preserve">
+    <value>No Services</value>
+  </data>
+  <data name="lblEmptyOrgServicesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmptyServicesResource1.Text" xml:space="preserve">
+    <value>No Services</value>
+  </data>
+  <data name="lblEmptyServicesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LblEndValueResource1.Text" xml:space="preserve">
+    <value>End Value</value>
+  </data>
+  <data name="LblEndValueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEngineHoursResource1.Text" xml:space="preserve">
+    <value>Current Engine Hours</value>
+  </data>
+  <data name="lblEngineHoursResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblHistoryLegendResource1.Text" xml:space="preserve">
+    <value>&amp;#160;Maintenance History&amp;#160;</value>
+  </data>
+  <data name="lblHistoryLegendResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LblIntervalResource1.Text" xml:space="preserve">
+    <value>Interval</value>
+  </data>
+  <data name="LblIntervalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMaintenanceDetailsLegendResource1.Text" xml:space="preserve">
+    <value>&amp;#160;Service Details&amp;#160;</value>
+  </data>
+  <data name="lblMaintenanceDetailsLegendResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMaintenanceLegendResource1.Text" xml:space="preserve">
+    <value>&amp;#160;Maintenance&amp;#160;</value>
+  </data>
+  <data name="lblMaintenanceLegendResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMaintenanceServicesLegendResource1.Text" xml:space="preserve">
+    <value>&amp;#160;Maintenance Services&amp;#160;</value>
+  </data>
+  <data name="lblMaintenanceServicesLegendResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LblNewPlanDateResource1.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="LblNewPlanDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNewPlanNotificationResource1.Text" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="lblNewPlanNotificationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNewPlanScheduleResource1.Text" xml:space="preserve">
+    <value>Schedule Type</value>
+  </data>
+  <data name="lblNewPlanScheduleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNewPlanSvcTypeCaptionResource1.Text" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="lblNewPlanSvcTypeCaptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNewPlanTypeResource1.Text" xml:space="preserve">
+    <value>Service Type</value>
+  </data>
+  <data name="lblNewPlanTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNotification1Resource1.Text" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="lblNotification1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNotification2Resource1.Text" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="lblNotification2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNotification3Resource1.Text" xml:space="preserve">
+    <value>Last Warning</value>
+  </data>
+  <data name="lblNotification3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNotificationDescriptionResource1.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblNotificationDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNotificationDetailsCaptionResource1.Text" xml:space="preserve">
+    <value>Notification Details</value>
+  </data>
+  <data name="lblNotificationDetailsCaptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNotificationMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNotificationMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNotificationTypeResource1.Text" xml:space="preserve">
+    <value>Notification Type</value>
+  </data>
+  <data name="lblNotificationTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNotTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOdometerResource1.Text" xml:space="preserve">
+    <value>Current Odometer</value>
+  </data>
+  <data name="lblOdometerResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOperationTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOrgSvcCaptionResource1.Text" xml:space="preserve">
+    <value>Service Details</value>
+  </data>
+  <data name="lblOrgSvcCaptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblServicesMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblServicesMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblServiceTypeDescriptionResource1.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblServiceTypeDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleResource1.Text" xml:space="preserve">
+    <value>BSM Vehicle ID</value>
+  </data>
+  <data name="lblVehicleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVRMSCodeResource1.Text" xml:space="preserve">
+    <value>VRMS Code</value>
+  </data>
+  <data name="lblVRMSCodeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="linkAddServiceResource1.Text" xml:space="preserve">
+    <value>Add Service</value>
+  </data>
+  <data name="linkAddServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource1.Text" xml:space="preserve">
+    <value>Please select schedule type</value>
+  </data>
+  <data name="ListItemResource10.Text" xml:space="preserve">
+    <value>Un An</value>
+  </data>
+  <data name="ListItemResource10.Value" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ListItemResource11.Text" xml:space="preserve">
+    <value>Deux Ans</value>
+  </data>
+  <data name="ListItemResource11.Value" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="ListItemResource12.Text" xml:space="preserve">
+    <value>Tous</value>
+  </data>
+  <data name="ListItemResource12.Value" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="ListItemResource2.Text" xml:space="preserve">
+    <value>Une fois</value>
+  </data>
+  <data name="ListItemResource3.Text" xml:space="preserve">
+    <value>Répétitif</value>
+  </data>
+  <data name="ListItemResource4.Text" xml:space="preserve">
+    <value>Une Semaine</value>
+  </data>
+  <data name="ListItemResource4.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource5.Text" xml:space="preserve">
+    <value>Deux Semaines</value>
+  </data>
+  <data name="ListItemResource5.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource6.Text" xml:space="preserve">
+    <value>Un Mois</value>
+  </data>
+  <data name="ListItemResource6.Value" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListItemResource7.Text" xml:space="preserve">
+    <value>Deux Mois</value>
+  </data>
+  <data name="ListItemResource7.Value" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ListItemResource8.Text" xml:space="preserve">
+    <value>Trois Mois</value>
+  </data>
+  <data name="ListItemResource8.Value" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ListItemResource9.Text" xml:space="preserve">
+    <value>Six Mois</value>
+  </data>
+  <data name="ListItemResource9.Value" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lnkAcknowledge" xml:space="preserve">
+    <value>Acknowledge</value>
+  </data>
+  <data name="LoadHistoryError" xml:space="preserve">
+    <value>History cannot be displayed due to system error&lt;br /&gt;</value>
+  </data>
+  <data name="LoadingPanel1Resource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LoadingPanel1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MaintenancePlanAddError" xml:space="preserve">
+    <value>Maintenance Plan - Add Error</value>
+  </data>
+  <data name="MaintenancePlanCreated" xml:space="preserve">
+    <value>Maintenance Plan - Created</value>
+  </data>
+  <data name="MaintenancePlanUpdated" xml:space="preserve">
+    <value>Maintenance Plan - Updated</value>
+  </data>
+  <data name="MaintenancePlanUpdateError" xml:space="preserve">
+    <value>Maintenance Plan Update Error</value>
+  </data>
+  <data name="MaintenanceValidationSummaryResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MaintenanceValidationSummaryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewNotificationAdded" xml:space="preserve">
+    <value>New Notification Added&lt;br /&gt;</value>
+  </data>
+  <data name="NewServiceAdded" xml:space="preserve">
+    <value>New Service Added&lt;br /&gt;</value>
+  </data>
+  <data name="notification1Txt" xml:space="preserve">
+    <value>Notification1:</value>
+  </data>
+  <data name="notification2Txt" xml:space="preserve">
+    <value>Notification2:</value>
+  </data>
+  <data name="notification3Txt" xml:space="preserve">
+    <value>Notification3:</value>
+  </data>
+  <data name="NotificationAssigned" xml:space="preserve">
+    <value>The notification is used in current maintenance operations, therefore cannot be deleted!</value>
+  </data>
+  <data name="NotificationDeleted" xml:space="preserve">
+    <value>Notification Deleted&lt;br /&gt;</value>
+  </data>
+  <data name="NotificationsLoadError" xml:space="preserve">
+    <value>Notifications Load Error&lt;br /&gt;</value>
+  </data>
+  <data name="NotificationUpdated" xml:space="preserve">
+    <value>Notification Updated&lt;br /&gt;</value>
+  </data>
+  <data name="NotificationUpdatedSuccessfully" xml:space="preserve">
+    <value>Notification Updated Successfully</value>
+  </data>
+  <data name="NotificationUpdateError" xml:space="preserve">
+    <value>Notification Update Error</value>
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PastMaintenanceServices" xml:space="preserve">
+    <value>&amp;#160;Past Maintenance Services&amp;#160;</value>
+  </data>
+  <data name="pnlFleetVehicleResource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlFleetVehicleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlResource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadAjaxManager1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeLastWarningResource1.ErrorMessage" xml:space="preserve">
+    <value>Invalid</value>
+  </data>
+  <data name="RangeLastWarningResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeLastWarningResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeNotifResource1.ErrorMessage" xml:space="preserve">
+    <value>Invalid</value>
+  </data>
+  <data name="RangeNotifResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeNotifResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeWarningResource1.ErrorMessage" xml:space="preserve">
+    <value>Invalid</value>
+  </data>
+  <data name="RangeWarningResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RangeWarningResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="reqLastWarningResource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="reqLastWarningResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="reqLastWarningResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="reqNotificationDescriptionResource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="reqNotificationDescriptionResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="reqNotificationDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="reqNotifResource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="reqNotifResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="reqNotifResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredDueValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value>Due Value is Required</value>
+  </data>
+  <data name="RequiredDueValidatorResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredDueValidatorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredEmailValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value>Email is Required</value>
+  </data>
+  <data name="RequiredEmailValidatorResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredEmailValidatorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldNotificationResource1.ErrorMessage" xml:space="preserve">
+    <value>Notification is Not Specified</value>
+  </data>
+  <data name="RequiredFieldNotificationResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredFieldNotificationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredFieldValidator1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator2Resource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator2Resource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredFieldValidator2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredIntervalValidatorResource1.ErrorMessage" xml:space="preserve">
+    <value>Interval is Required</value>
+  </data>
+  <data name="RequiredIntervalValidatorResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredIntervalValidatorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredSvcTypeResource1.ErrorMessage" xml:space="preserve">
+    <value>Service Type is Not Specified</value>
+  </data>
+  <data name="RequiredSvcTypeResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredSvcTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="reqWarningResource1.ErrorMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="reqWarningResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="reqWarningResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SaveNotificationError" xml:space="preserve">
+    <value>Save Notification Error&lt;br /&gt;</value>
+  </data>
+  <data name="SaveServiceError" xml:space="preserve">
+    <value>Save Service Error&lt;br /&gt;</value>
+  </data>
+  <data name="selectFleet" xml:space="preserve">
+    <value>Select a Fleet</value>
+  </data>
+  <data name="selectGroup" xml:space="preserve">
+    <value>Please select MCC group</value>
+  </data>
+  <data name="selectMaintenance" xml:space="preserve">
+    <value>Please select MCC maintenance</value>
+  </data>
+  <data name="ServiceAssigned" xml:space="preserve">
+    <value>The service is used in current maintenance operations, therefore cannot be deleted!</value>
+  </data>
+  <data name="ServiceDeleted" xml:space="preserve">
+    <value>Service Deleted&lt;br /&gt;</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>&amp;#160;Service Details&amp;#160;</value>
+  </data>
+  <data name="ServicesLoadError" xml:space="preserve">
+    <value>Services Load Error&lt;br /&gt;</value>
+  </data>
+  <data name="ServiceUpdated" xml:space="preserve">
+    <value>Service Updated&lt;br /&gt;</value>
+  </data>
+  <data name="ServiceUpdateError" xml:space="preserve">
+    <value>Service Update Error&lt;br /&gt;</value>
+  </data>
+  <data name="showFilter" xml:space="preserve">
+    <value>Show Filter</value>
+  </data>
+  <data name="StringSelectVehicle" xml:space="preserve">
+    <value>Please select vehicle</value>
+  </data>
+  <data name="TableCellResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource10.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource10.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource11.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource11.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource12.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource12.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource13.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource13.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource14.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource14.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource15.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource15.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource16.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource16.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource17.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource17.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource18.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource18.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource19.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource19.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource20.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource20.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource21.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource21.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource22.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource22.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource23.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource23.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource24.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource24.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource25.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource25.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource26.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource26.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource27.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource27.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource28.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource28.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource29.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource29.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource3.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource30.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource30.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource31.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource31.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource32.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource32.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource33.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource33.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource34.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource34.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource35.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource35.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource36.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource36.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource37.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource37.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource38.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource38.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource39.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource39.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource4.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource40.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource40.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource5.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource6.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource7.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource7.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource8.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource8.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource9.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableCellResource9.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableDetailsResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableDetailsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableMaintenanceVehicleResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableMaintenanceVehicleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableMaintenanceVehicleResource2.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableMaintenanceVehicleResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableRowResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableRowResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableRowResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableRowResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableRowResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableRowResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableRowResource7.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableRowResource8.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource2.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource2.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource3.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource3.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource3.HeaderText" xml:space="preserve">
+    <value>Notification Type</value>
+  </data>
+  <data name="TemplateFieldResource4.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource4.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource4.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource5.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource5.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource5.HeaderText" xml:space="preserve">
+    <value>Service Type</value>
+  </data>
+  <data name="TemplateFieldResource6.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource6.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource6.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextDueValueResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextDueValueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextEndValueResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextEndValueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextIntervalResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextIntervalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextMaintenancePlanCommentsResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextMaintenancePlanCommentsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextMaintenancePlanDescriptionResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextMaintenancePlanDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextMaintenancePlanEmailResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextMaintenancePlanEmailResource1.ToolTip" xml:space="preserve">
+    <value>Invalid email address</value>
+  </data>
+  <data name="TextNewPlanDateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextNewPlanDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tfrSaveEHResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tfrSaveEHResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="trDueValueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="trEndValueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="trIntervalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="trNewPlanDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="trNewPlanNotificationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="trNewPlanScheduleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="trNewPlanServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEngineHoursResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEngineHoursResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLastWarningResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLastWarningResource1.ToolTip" xml:space="preserve">
+    <value>(0 - 100)%</value>
+  </data>
+  <data name="txtNotification1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtNotification1Resource1.ToolTip" xml:space="preserve">
+    <value>(0 - 100)%</value>
+  </data>
+  <data name="txtNotificationDescriptionResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtNotificationDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtOdometerResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtOdometerResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtServiceTypeDescriptionResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtServiceTypeDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtVehicleResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtVehicleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtVRMSCodeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtVRMSCodeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtWarningResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtWarningResource1.ToolTip" xml:space="preserve">
+    <value>(0 - 100)%</value>
+  </data>
+  <data name="ValidatorDescriptionResource1.ErrorMessage" xml:space="preserve">
+    <value>Description is Required</value>
+  </data>
+  <data name="ValidatorDescriptionResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="ValidatorDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="XmlDSOperationType_DataFile" xml:space="preserve">
+    <value>~/App_Data/OperationType.xml</value>
+  </data>
+  <data name="dgNotificationResource1.BackImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.ClientSettings.ClientMessages.ColumnResizeTooltipFormatString" xml:space="preserve">
+    <value>Width: &lt;strong&gt;{0}&lt;/strong&gt; &lt;em&gt;pixels&lt;/em&gt;</value>
+  </data>
+  <data name="dgNotificationResource1.ClientSettings.ClientMessages.DragToGroupOrReorder" xml:space="preserve">
+    <value>Drag to group or reorder</value>
+  </data>
+  <data name="dgNotificationResource1.ClientSettings.ClientMessages.DragToResize" xml:space="preserve">
+    <value>Drag to resize</value>
+  </data>
+  <data name="dgNotificationResource1.ClientSettings.ClientMessages.DropHereToReorder" xml:space="preserve">
+    <value>Drop here to reorder</value>
+  </data>
+  <data name="dgNotificationResource1.ClientSettings.ClientMessages.PagerTooltipFormatString" xml:space="preserve">
+    <value>Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;</value>
+  </data>
+  <data name="dgNotificationResource1.FilterMenu.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.GroupingSettings.CollapseTooltip" xml:space="preserve">
+    <value>Collapse group</value>
+  </data>
+  <data name="dgNotificationResource1.GroupingSettings.ExpandTooltip" xml:space="preserve">
+    <value>Expand group</value>
+  </data>
+  <data name="dgNotificationResource1.GroupingSettings.GroupByFieldsSeparator" xml:space="preserve">
+    <value>; </value>
+  </data>
+  <data name="dgNotificationResource1.GroupingSettings.GroupContinuedFormatString" xml:space="preserve">
+    <value>... group continued from the previous page. </value>
+  </data>
+  <data name="dgNotificationResource1.GroupingSettings.GroupContinuesFormatString" xml:space="preserve">
+    <value> Group continues on the next page.</value>
+  </data>
+  <data name="dgNotificationResource1.GroupingSettings.GroupSplitDisplayFormat" xml:space="preserve">
+    <value>Showing {0} of {1} items.</value>
+  </data>
+  <data name="dgNotificationResource1.GroupingSettings.GroupSplitFormat" xml:space="preserve">
+    <value> ({0})</value>
+  </data>
+  <data name="dgNotificationResource1.GroupingSettings.UnGroupButtonTooltip" xml:space="preserve">
+    <value>Click here to ungroup</value>
+  </data>
+  <data name="dgNotificationResource1.GroupingSettings.UnGroupTooltip" xml:space="preserve">
+    <value>Drag out of the bar to ungroup</value>
+  </data>
+  <data name="dgNotificationResource1.GroupPanel.Text" xml:space="preserve">
+    <value>Drag a column header and drop it here to group by that column</value>
+  </data>
+  <data name="dgNotificationResource1.GroupPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.HeaderContextMenu.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.HierarchySettings.CollapseTooltip" xml:space="preserve">
+    <value>Collapse</value>
+  </data>
+  <data name="dgNotificationResource1.HierarchySettings.ExpandTooltip" xml:space="preserve">
+    <value>Expand</value>
+  </data>
+  <data name="dgNotificationResource1.HierarchySettings.SelfCollapseTooltip" xml:space="preserve">
+    <value>Self reference collapse</value>
+  </data>
+  <data name="dgNotificationResource1.HierarchySettings.SelfExpandTooltip" xml:space="preserve">
+    <value>Self reference expand</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.CommandItemSettings.AddNewRecordImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.CommandItemSettings.AddNewRecordText" xml:space="preserve">
+    <value>Add new record</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.CommandItemSettings.ExportToCsvImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.CommandItemSettings.ExportToCsvText" xml:space="preserve">
+    <value>Export to CSV</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.CommandItemSettings.ExportToExcelImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.CommandItemSettings.ExportToExcelText" xml:space="preserve">
+    <value>Export to Excel</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.CommandItemSettings.ExportToPdfImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.CommandItemSettings.ExportToPdfText" xml:space="preserve">
+    <value>Export to Pdf</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.CommandItemSettings.ExportToWordImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.CommandItemSettings.ExportToWordText" xml:space="preserve">
+    <value>Export to Word</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.CommandItemSettings.RefreshImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.CommandItemSettings.RefreshText" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.EditFormSettings.CaptionFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.EditFormSettings.InsertCaption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.ExpandCollapseColumn.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.ExpandCollapseColumn.CollapseImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.ExpandCollapseColumn.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.ExpandCollapseColumn.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.ExpandCollapseColumn.ExpandImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.ExpandCollapseColumn.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.ExpandCollapseColumn.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.ExpandCollapseColumn.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.ExpandCollapseColumn.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.ExpandCollapseColumn.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.ExpandCollapseColumn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.ExpandCollapseColumn.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.ExpandCollapseColumn.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.FilterExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.NoDetailRecordsText" xml:space="preserve">
+    <value>Aucun enregistrement à afficher.</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.NoMasterRecordsText" xml:space="preserve">
+    <value>Aucun enregistrement à afficher.</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.PagerStyle.FirstPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.PagerStyle.FirstPageToolTip" xml:space="preserve">
+    <value>First Page</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.PagerStyle.LastPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.PagerStyle.LastPageToolTip" xml:space="preserve">
+    <value>Last Page</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.PagerStyle.NextPagesToolTip" xml:space="preserve">
+    <value>Next Pages</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.PagerStyle.NextPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.PagerStyle.NextPageToolTip" xml:space="preserve">
+    <value>Next Page</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.PagerStyle.PagerTextFormat" xml:space="preserve">
+    <value>Change page: {4} &amp;nbsp;Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;, items &lt;strong&gt;{2}&lt;/strong&gt; to &lt;strong&gt;{3}&lt;/strong&gt; of &lt;strong&gt;{5}&lt;/strong&gt;.</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.PagerStyle.PageSizeLabelText" xml:space="preserve">
+    <value>Page size:</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.PagerStyle.PrevPagesToolTip" xml:space="preserve">
+    <value>Previous Pages</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.PagerStyle.PrevPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.PagerStyle.PrevPageToolTip" xml:space="preserve">
+    <value>Previous Page</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.RowIndicatorColumn.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.RowIndicatorColumn.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.RowIndicatorColumn.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.RowIndicatorColumn.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.RowIndicatorColumn.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.RowIndicatorColumn.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.RowIndicatorColumn.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.RowIndicatorColumn.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.RowIndicatorColumn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.RowIndicatorColumn.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.RowIndicatorColumn.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.Summary" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.MasterTableView.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.PagerStyle.FirstPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.PagerStyle.FirstPageToolTip" xml:space="preserve">
+    <value>First Page</value>
+  </data>
+  <data name="dgNotificationResource1.PagerStyle.LastPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.PagerStyle.LastPageToolTip" xml:space="preserve">
+    <value>Last Page</value>
+  </data>
+  <data name="dgNotificationResource1.PagerStyle.NextPagesToolTip" xml:space="preserve">
+    <value>Next Pages</value>
+  </data>
+  <data name="dgNotificationResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.PagerStyle.NextPageToolTip" xml:space="preserve">
+    <value>Next Page</value>
+  </data>
+  <data name="dgNotificationResource1.PagerStyle.PagerTextFormat" xml:space="preserve">
+    <value>Change page: {4} &amp;nbsp;Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;, items &lt;strong&gt;{2}&lt;/strong&gt; to &lt;strong&gt;{3}&lt;/strong&gt; of &lt;strong&gt;{5}&lt;/strong&gt;.</value>
+  </data>
+  <data name="dgNotificationResource1.PagerStyle.PageSizeLabelText" xml:space="preserve">
+    <value>Page size:</value>
+  </data>
+  <data name="dgNotificationResource1.PagerStyle.PrevPagesToolTip" xml:space="preserve">
+    <value>Previous Pages</value>
+  </data>
+  <data name="dgNotificationResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgNotificationResource1.PagerStyle.PrevPageToolTip" xml:space="preserve">
+    <value>Previous Page</value>
+  </data>
+  <data name="dgNotificationResource1.SortingSettings.SortedAscToolTip" xml:space="preserve">
+    <value>Sorted asc</value>
+  </data>
+  <data name="dgNotificationResource1.SortingSettings.SortedDescToolTip" xml:space="preserve">
+    <value>Sorted desc</value>
+  </data>
+  <data name="dgNotificationResource1.SortingSettings.SortToolTip" xml:space="preserve">
+    <value>Click here to sort</value>
+  </data>
+  <data name="dgNotificationResource1.StatusBarSettings.LoadingText" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="dgNotificationResource1.StatusBarSettings.ReadyText" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="dgNotificationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>

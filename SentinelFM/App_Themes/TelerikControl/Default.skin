@@ -1,0 +1,86 @@
+﻿<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register TagPrefix="Sentinel" Namespace="SentinelFM.Controls" Assembly="SentinelFM.Controls" %>
+<telerik:RadTabStrip  runat="server" Font-Size="11px" Font-Names="verdana"  > 
+</telerik:RadTabStrip>
+<telerik:RadTab  runat="server" Font-Size="11px" Font-Names="verdana" >
+</telerik:RadTab>
+<telerik:RadToolBar runat="server" Font-Size="11px" Font-Names="verdana" >
+</telerik:RadToolBar>
+<telerik:RadDatePicker runat="server" Font-Size="11px" Font-Names="verdana" >
+</telerik:RadDatePicker>
+<telerik:RadComboBox runat="server" Font-Size="11px" Font-Names="verdana" >
+</telerik:RadComboBox>
+<telerik:RadTimePicker runat="server" Font-Size="11px" Font-Names="verdana" >
+</telerik:RadTimePicker>
+<telerik:RadComboBoxItem runat="server" Font-Size="11px" Font-Names="verdana" >
+</telerik:RadComboBoxItem>
+<telerik:RadGrid  runat="server"                                                              
+    MasterTableView-PagerStyle-Mode = "NextPrevAndNumeric"
+    MasterTableView-HeaderStyle-HorizontalAlign = "Left"
+    MasterTableView-HeaderStyle-Font-Size="11px"
+    MasterTableView-HeaderStyle-ForeColor="White"
+    MasterTableView-HeaderStyle-CssClass="RadGridtblHeader"
+
+    MasterTableView-ItemStyle-HorizontalAlign = "Left"
+    MasterTableView-ItemStyle-Font-Size="11px"
+    MasterTableView-ItemStyle-Wrap="true"
+
+    MasterTableView-AlternatingItemStyle-HorizontalAlign = "Left"
+    MasterTableView-AlternatingItemStyle-Font-Size="11px"
+    MasterTableView-AlternatingItemStyle-Wrap="true"
+
+    FilterItemStyle-HorizontalAlign ="Left"
+    FilterItemStyle-Font-Size="11px" 
+    Skin = "Simple"
+    MasterTableView-ItemStyle- = "White" 
+    MasterTableView-AlternatingItemStyle-BackColor = "#ECECD8" 
+    SelectedItemStyle-BackColor="#D8FBBE"
+    SelectedItemStyle-BorderColor="#90CA51"
+    SelectedItemStyle-BorderWidth="1px"
+    SelectedItemStyle-CssClass="SelectedItemStyle-Simple" 
+    GroupingSettings-CaseSensitive="false"
+    >
+
+</telerik:RadGrid>
+
+<Sentinel:Grid  runat="server"                                                              
+    MasterTableView-PagerStyle-Mode = "NextPrevAndNumeric"
+    MasterTableView-HeaderStyle-HorizontalAlign = "Left"
+    MasterTableView-HeaderStyle-Font-Size="11px"
+    MasterTableView-HeaderStyle-ForeColor="White"
+    MasterTableView-HeaderStyle-CssClass="RadGridtblHeader"
+
+    MasterTableView-ItemStyle-HorizontalAlign = "Left"
+    MasterTableView-ItemStyle-Font-Size="11px"
+    MasterTableView-ItemStyle-Wrap="true"
+
+    MasterTableView-AlternatingItemStyle-HorizontalAlign = "Left"
+    MasterTableView-AlternatingItemStyle-Font-Size="11px"
+    MasterTableView-AlternatingItemStyle-Wrap="true"
+
+    FilterItemStyle-HorizontalAlign ="Left"
+    FilterItemStyle-Font-Size="11px" 
+    Skin = "Simple"
+    MasterTableView-ItemStyle- = "White" 
+    MasterTableView-AlternatingItemStyle-BackColor = "#ECECD8" 
+    SelectedItemStyle-BackColor="#D8FBBE"
+    SelectedItemStyle-BorderColor="#90CA51"
+    SelectedItemStyle-BorderWidth="1px"
+    SelectedItemStyle-CssClass="SelectedItemStyle-Simple" 
+    GridLines="Both" 
+    GroupingSettings-CaseSensitive="false"
+    >
+
+</Sentinel:Grid>
+
+
+<asp:GridView runat="server" BackColor="White" BorderColor="ControlLight" BorderStyle="Ridge" BorderWidth="2px" CellPadding="2" CellSpacing="0">
+   <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
+   <SelectedRowStyle BackColor="SlateGray" Font-Bold="True" ForeColor="White" />
+   <PagerStyle BackColor="#C6C3C6" Font-Size="11px" ForeColor="Black" HorizontalAlign="Right" />
+   <AlternatingRowStyle BackColor="Beige" CssClass="gridtext" />
+   <RowStyle BackColor="White" CssClass="gridtext" />
+   <EmptyDataRowStyle CssClass="errortext" Font-Bold="True" />
+   <HeaderStyle BackColor="gray" Font-Bold="True" Font-Names="Arial,Helvetica,sans-serif" Font-Size="11px" ForeColor="White" />
+</asp:GridView>
+

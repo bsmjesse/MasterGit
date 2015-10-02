@@ -1,0 +1,264 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Using WebGrid Functionality</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="SentinelFMStyleSheet_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='SentinelFMStyleSheet.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+h1.whs1 { margin-bottom:0pt; color:#009933; }
+hr.whs2 { float:alignleft; color:#009933; }
+p.whs3 { font-size:10pt; }
+p.whs4 { font-size:12pt; font-weight:bold; }
+p.whs5 { font-size:10pt; font-weight:normal; }
+p.whs6 { font-weight:normal; font-size:10pt; }
+img_whs7 { border:none; width:13px; height:13px; float:none; border-style:none; }
+img_whs8 { border:none; float:none; width:862px; height:105px; border-style:none; }
+table.whs9 { x-cell-content-align:top; border-spacing:0px; width:63.513%; }
+col.whs10 { width:30.934%; }
+col.whs11 { width:69.066%; }
+tr.whs12 { x-cell-content-align:top; }
+td.whs13 { width:30.934%; padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-top-style:none; border-bottom-style:none; }
+img_whs14 { border:none; width:160px; height:318px; float:left; border-style:none; }
+td.whs15 { width:69.066%; padding-right:10px; padding-left:10px; border-top-style:none; border-bottom-style:none; border-right-style:none; }
+img_whs16 { border:none; width:16px; height:15px; float:none; border-style:none; }
+table.whs17 { x-cell-content-align:top; border-spacing:0px; width:64.449%; }
+col.whs18 { width:35.968%; }
+col.whs19 { width:64.032%; }
+td.whs20 { width:35.968%; padding-right:10px; padding-left:10px; border-right-style:none; border-left-style:none; border-top-style:none; border-bottom-style:none; }
+img_whs21 { border:none; width:200px; height:284px; float:none; border-style:none; }
+td.whs22 { width:64.032%; padding-right:10px; padding-left:10px; border-top-style:none; border-bottom-style:none; border-right-style:none; }
+img_whs23 { border:none; width:154px; height:32px; float:none; border-style:none; }
+img_whs24 { border:none; width:162px; height:23px; float:none; border-style:none; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "h1.whs1 {margin-bottom:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Working with the Map Page\nUsing WebGrid Functionality");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("User_Guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1 class="whs1"><span><font color=#009933 >Using WebGrid Functionality</font></span></h1>
+
+
+<hr align="left" color="#009933" class="whs2">
+
+
+<p class="whs3">The Sentinel FM system utilizes WebGrid.NET 
+ functionality by Intersoft Solutions to display and manage database information. 
+ &nbsp;WebGrid 
+ has several built-in functionalities that can help a User display, filter 
+ and extract data in a more efficient and effective manner.</p>
+
+<p class="whs3">&nbsp;</p>
+
+<p class="whs4">Column Sorting</p>
+
+<p class="whs4">&nbsp;</p>
+
+<p class="whs5">Whenever data is being 
+ displayed using the WebGrid interface the data for any database column 
+ can be sorted in ascending, descending or no order by simply clicking 
+ on the column header. Each click will cycle the sort order through the 
+ three available states, ascending order, descending order and no order. 
+ &nbsp;An arrow 
+ in the right side of the column will appear indicating that the column 
+ is sorted. &nbsp;A 
+ down arrow indicates descending order and an up arrow ascending order 
+ and no arrow indicates the column is nor sorted. &nbsp;Only 
+ one column can be sorted at a time.</p>
+
+<p class="whs5">&nbsp;</p>
+
+<p class="whs4">Column Filtering</p>
+
+<p class="whs4">&nbsp;</p>
+
+<p class="whs6">The WebGrid interface 
+ can be used to filter large datasets to find specific data a User is interested 
+ in. &nbsp;Both 
+ single and multiple column filters can be defined. &nbsp;When 
+ the WebGrid filtering option is available <span style="font-style: italic;"><I>(it 
+ can be enabled or disabled for the main map screen in User Preferences)</I></span> 
+ a row will appear below the column headers with blank fields and filter 
+ selection icons <img src="WEBGRIDB.GIF" x-maintain-ratio="TRUE" width="13px" height="13px" border="0" class="img_whs7">.</p>
+
+<p class="whs6">&nbsp;</p>
+
+<p class="whs6"><img src="WEBGRID.GIF" x-maintain-ratio="TRUE" width="862px" height="105px" border="0" class="img_whs8"></p>
+
+<p class="whs4">&nbsp;</p>
+
+<p class="whs5">&nbsp;</p>
+
+<table x-use-null-cells cellspacing="0" width="63.513%" class="whs9">
+<col class="whs10">
+<col class="whs11">
+
+<tr valign="top" class="whs12">
+<td width="30.934%" class="whs13">
+<p><img src="WEBGRID2.GIF" x-maintain-ratio="TRUE" width="160px" height="318px" align="left" border="0" class="img_whs14"></td>
+<td width="69.066%" class="whs15">
+<p>The User can type text to be filtered by in the blank field and then 
+ click on the filter selection icon to select the appropriate filter type 
+ (see left). &nbsp;&quot;Like&quot; 
+ is the default filter type if one is not selected. &nbsp;After 
+ choosing a filter type the User then selects &quot;<span style="font-weight: bold;"><B>Apply 
+ All Filters</B></span>&quot; and the filter is applied and the results shown 
+ in the database grid. &nbsp;Several 
+ columns can be filtered concurrently by repeating the process. &nbsp;In 
+ the example above the Status column has been filtered for the text &quot;Parked&quot; 
+ and the Description column has been filtered for the text &quot;Paul&quot;. 
+ &nbsp;&nbsp;Only 
+ those database records matching both filters are displayed in the database 
+ grid..</p>
+<p>&nbsp;</p>
+<p>The User can also clear a specific filter by selecting the filter type 
+ icon <img src="WEBGRIDB.GIF" x-maintain-ratio="TRUE" width="13px" height="13px" border="0" class="img_whs7"> and choosing &quot;<span style="font-weight: bold;"><B>Clear 
+ This Filter</B></span>&quot;. &nbsp;All 
+ filters can be cleared by choosing &quot;<span style="font-weight: bold;"><B>Clear 
+ All Filters</B></span>&quot;.</td></tr>
+</table>
+
+<p class="whs5">&nbsp;</p>
+
+<p class="whs5">&nbsp;</p>
+
+<p class="whs4">Exporting a Grid</p>
+
+<p class="whs4">&nbsp;</p>
+
+<p class="whs6">Any data being displayed 
+ in a database grid using the WebGrid interface can be exported to a variety 
+ of file formats (see list below) by selecting the export grid button located 
+ at the bottom right of any WebGrid display <img src="EXPGRIDB.GIF" x-maintain-ratio="TRUE" width="16px" height="15px" border="0" class="img_whs16">.</p>
+
+<p class="whs4">&nbsp;</p>
+
+<table x-use-null-cells cellspacing="0" width="64.449%" class="whs17">
+<col class="whs18">
+<col class="whs19">
+
+<tr valign="top" class="whs12">
+<td width="35.968%" class="whs20">
+<p><img src="EXPGRID.GIF" x-maintain-ratio="TRUE" width="200px" height="284px" border="0" class="img_whs21"></td>
+<td width="64.032%" class="whs22">
+<p>The User selects the output file format and whether the output should 
+ be in Portrait or Landscape mode and then selects the &quot;<span style="font-weight: bold;"><B>Export 
+ now</B></span>&quot;. &nbsp;</p>
+<p>&nbsp;</p>
+<p>The export function will only export the database records that are currently 
+ being displayed on the first page of the database grid. &nbsp;To 
+ export all records make sure that the &quot;items per page&quot; option 
+ is set to &quot;All&quot;.</p>
+<p><img src="ITEMSPP.GIF" x-maintain-ratio="TRUE" width="154px" height="32px" border="0" class="img_whs23"> </p>
+<p>&nbsp;</p>
+<p>&nbsp;</td></tr>
+</table>
+
+<p class="whs6">&nbsp;</p>
+
+<p class="whs6">&nbsp;</p>
+
+<p class="whs4">Navigating the Database 
+ Grid</p>
+
+<p class="whs4">&nbsp;</p>
+
+<p class="whs6">When displaying large 
+ datasets through the WebGrid interface the data may be spread out over 
+ several pages depending on how many items per page are being displayed. 
+ &nbsp;The User 
+ can move between the various database pages using the controls on the 
+ right bottom of the WebGrid display.</p>
+
+<p class="whs4">&nbsp;</p>
+
+<p class="whs6"><img src="WEBGRIDP.GIF" x-maintain-ratio="TRUE" width="162px" height="23px" border="0" class="img_whs24"></p>
+
+<p class="whs5">&nbsp;</p>
+
+<p class="whs5">&nbsp;</p>
+
+<p class="whs5">&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+
+<!--SALMAN-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="../ValidateHelp.js"></script>
+<!--SALMAN-->
+
+</body>
+</html>

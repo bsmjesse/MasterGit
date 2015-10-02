@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add-UpdateFailed" xml:space="preserve">
+    <value>L'ajout et la mise à jour du véhicule ont échoué</value>
+  </data>
+  <data name="AddVehicleFailed" xml:space="preserve">
+    <value>L'ajout d'un véhicule a échoué!</value>
+  </data>
+  <data name="cboBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboMakeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboModelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboProvinceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboTimeZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboVehicleTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCriticalResource1.Text" xml:space="preserve">
+    <value>Alarme critique</value>
+  </data>
+  <data name="chkCriticalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDayLightResource1.Text" xml:space="preserve">
+    <value>Ajustement automatique de l'heure avancée</value>
+  </data>
+  <data name="chkDayLightResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkNotifyResource1.Text" xml:space="preserve">
+    <value>Alarme mineure</value>
+  </data>
+  <data name="chkNotifyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkWarningResource1.Text" xml:space="preserve">
+    <value>Alarme majeure</value>
+  </data>
+  <data name="chkWarningResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCloseResource1.Text" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="cmdCloseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCustomFieldsResource1.Text" xml:space="preserve">
+    <value>Champs personnalisés</value>
+  </data>
+  <data name="cmdCustomFieldsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdInfoResource1.Text" xml:space="preserve">
+    <value>Informations</value>
+  </data>
+  <data name="cmdInfoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSaveResource1.Text" xml:space="preserve">
+    <value>Sauvegarder</value>
+  </data>
+  <data name="cmdSaveResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdWorkingHoursResource1.Text" xml:space="preserve">
+    <value>Heures de travail</value>
+  </data>
+  <data name="cmdWorkingHoursResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Image1Resource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Image1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Image2Resource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Image2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Image3Resource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Image3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxResource1.Text" xml:space="preserve">
+    <value>Identification de l'unité :</value>
+  </data>
+  <data name="lblBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblColorResource1.Text" xml:space="preserve">
+    <value>Couleur:</value>
+  </data>
+  <data name="lblColorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCostResource1.Text" xml:space="preserve">
+    <value>Coût par</value>
+  </data>
+  <data name="lblCostResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDescriptionResource1.Text" xml:space="preserve">
+    <value>Numéro de véhicule :</value>
+  </data>
+  <data name="lblDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmailResource1.Text" xml:space="preserve">
+    <value>Courriel</value>
+  </data>
+  <data name="lblEmailResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIconTypeResource1.Text" xml:space="preserve">
+    <value>Type d'icône</value>
+  </data>
+  <data name="lblIconTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLicensePlateResource1.Text" xml:space="preserve">
+    <value>Plaque d'immatriculation :</value>
+  </data>
+  <data name="lblLicensePlateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMakeResource1.Text" xml:space="preserve">
+    <value>Marque :</value>
+  </data>
+  <data name="lblMakeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblModelResource1.Text" xml:space="preserve">
+    <value>Modèle :</value>
+  </data>
+  <data name="lblModelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNotificationDescResource1.Text" xml:space="preserve">
+    <value>Notification par courriel en cas de :</value>
+  </data>
+  <data name="lblNotificationDescResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOldBoxResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOldBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOldLicenseResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOldLicenseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStateResource1.Text" xml:space="preserve">
+    <value>État/Province :</value>
+  </data>
+  <data name="lblStateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTimeZoneResource1.Text" xml:space="preserve">
+    <value>Fuseau horaire</value>
+  </data>
+  <data name="lblTimeZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnitResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnitResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleIdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleIdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleTypeResource1.Text" xml:space="preserve">
+    <value>Type de véhicule :</value>
+  </data>
+  <data name="lblVehicleTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVINResource1.Text" xml:space="preserve">
+    <value>Numéro de série du véhicule :</value>
+  </data>
+  <data name="lblVINResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblYearResource1.Text" xml:space="preserve">
+    <value>Année :</value>
+  </data>
+  <data name="lblYearResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LicensePlateQuote" xml:space="preserve">
+    <value>Les guillemets ne sont pas acceptés dans la plaque d'immatriculation.</value>
+  </data>
+  <data name="ListItemResource1.Text" xml:space="preserve">
+    <value>Cercle</value>
+  </data>
+  <data name="ListItemResource1.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource2.Text" xml:space="preserve">
+    <value>Carré</value>
+  </data>
+  <data name="ListItemResource2.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource3.Text" xml:space="preserve">
+    <value>Losange</value>
+  </data>
+  <data name="ListItemResource3.Value" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="optVehicleIconsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Informations du véhicule</value>
+  </data>
+  <data name="PleaseSaveInfo" xml:space="preserve">
+    <value>Conserver l'informations du véhicule</value>
+  </data>
+  <data name="SelectEmailTimeZone" xml:space="preserve">
+    <value>Entrer un courriel et un fuseau horaire.</value>
+  </data>
+  <data name="SelectMake" xml:space="preserve">
+    <value>Sélectionner une marque de véhicule</value>
+  </data>
+  <data name="SelectTimeZone" xml:space="preserve">
+    <value>Sélectionner un fuseau horaire</value>
+  </data>
+  <data name="SelectVehicleType" xml:space="preserve">
+    <value>Sélection un type de véhicule</value>
+  </data>
+  <data name="txtColorResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtColorResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCostResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCostResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDescriptionResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEmailResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEmailResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLicensePlateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLicensePlateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtVinNumResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtVinNumResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtYearResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtYearResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UpdateVehicleFailed" xml:space="preserve">
+    <value>la mise à jour de l'informations du véhicule a échoué.</value>
+  </data>
+  <data name="valBoxReqResource1.ErrorMessage" xml:space="preserve">
+    <value>Sélectionner une unité.</value>
+  </data>
+  <data name="valBoxReqResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valBoxReqResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valBoxResource1.ErrorMessage" xml:space="preserve">
+    <value>Sélectionner une unité.</value>
+  </data>
+  <data name="valBoxResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valCostResource1.ErrorMessage" xml:space="preserve">
+    <value>Entrer un coût</value>
+  </data>
+  <data name="valCostResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valCostResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valDescriptionResource1.ErrorMessage" xml:space="preserve">
+    <value>Entrer une description.</value>
+  </data>
+  <data name="valDescriptionResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valEmailResource1.ErrorMessage" xml:space="preserve">
+    <value>Entrer une adresse courriel valide</value>
+  </data>
+  <data name="valEmailResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valEmailResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValidationSummary1Resource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ValidationSummary1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valLicensePlateResource1.ErrorMessage" xml:space="preserve">
+    <value>Entrer le numéro de la plaque d'immatriculation.</value>
+  </data>
+  <data name="valLicensePlateResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valLicensePlateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valMakeResource1.ErrorMessage" xml:space="preserve">
+    <value>Sélectionner une marque.</value>
+  </data>
+  <data name="valMakeResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valMakeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valMoelResource1.ErrorMessage" xml:space="preserve">
+    <value>Sélectionner un modèle.</value>
+  </data>
+  <data name="valMoelResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valMoelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valVehicleTypeResource1.ErrorMessage" xml:space="preserve">
+    <value>Sélectionner un type de véhicule</value>
+  </data>
+  <data name="valVehicleTypeResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valVehicleTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valVINNumberResource1.ErrorMessage" xml:space="preserve">
+    <value>Entrer un numéro de série du véhicule.</value>
+  </data>
+  <data name="valVINNumberResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valVINNumberResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valYearResource1.ErrorMessage" xml:space="preserve">
+    <value>Entrer l'année du véhicule.</value>
+  </data>
+  <data name="valYearResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valYearResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valYearRngResource1.ErrorMessage" xml:space="preserve">
+    <value>Entrer de nouveau l'année du véhicule.</value>
+  </data>
+  <data name="valYearRngResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valYearRngResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VehicleInfoUpdated" xml:space="preserve">
+    <value>L'informations du véhicule a été sauvegardée avec succès.</value>
+  </data>
+  <data name="DescriptionCustomValidationText" xml:space="preserve">
+    <value>L'utilisation de l'espace dans le numéro du véhicule est limitée.</value>
+  </data>
+  <data name="lblCustomIconResource1.Text" xml:space="preserve">
+    <value>Icône sur commande&lt;br&gt;(Supporter sur carte nouvelle)</value>
+  </data>
+  <data name="SelectIconResource1" xml:space="preserve">
+    <value>Sélectionner un icône sur commande</value>
+  </data>
+  <data name="chkMaintenanceResource1.Text" xml:space="preserve">
+    <value>Entretien</value>
+  </data>
+</root>

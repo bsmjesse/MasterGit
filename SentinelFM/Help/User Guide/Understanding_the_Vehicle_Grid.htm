@@ -1,0 +1,287 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Understanding the Vehicle Grid</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="SentinelFMStyleSheet_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='SentinelFMStyleSheet.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+h1.whs1 { margin-bottom:0pt; }
+hr.whs2 { float:alignleft; color:#008000; }
+p.whs3 { font-size:10pt; }
+h2.whs4 { font-size:12pt; }
+p.whs5 { font-size:11pt; }
+table.whs6 { x-cell-content-align:top; width:100%; border-spacing:0px; }
+col.whs7 { width:17.036%; }
+col.whs8 { width:39.462%; }
+col.whs9 { width:43.502%; }
+tr.whs10 { x-cell-content-align:top; }
+td.whs11 { width:17.036%; padding-right:10px; padding-left:10px; border-left-style:Solid; border-left-color:#000000; border-top-color:#000000; border-top-style:Solid; border-right-style:Solid; border-right-color:#000000; border-bottom-color:#000000; border-bottom-style:Solid; border-right-width:1px; border-left-width:1px; border-top-width:1px; border-bottom-width:1px; background-color:#008000; }
+p.whs12 { font-weight:bold; color:#ffffff; font-size:10pt; }
+td.whs13 { width:39.462%; padding-right:10px; padding-left:10px; border-top-color:#000000; border-top-style:Solid; border-right-style:Solid; border-right-color:#000000; border-bottom-color:#000000; border-bottom-style:Solid; border-right-width:1px; border-top-width:1px; border-bottom-width:1px; background-color:#008000; }
+td.whs14 { width:43.502%; padding-right:10px; padding-left:10px; border-top-color:#000000; border-top-style:Solid; border-right-style:Solid; border-right-color:#000000; border-bottom-color:#000000; border-bottom-style:Solid; border-top-width:1px; border-bottom-width:1px; border-right-width:1px; background-color:#008000; }
+td.whs15 { width:17.036%; padding-right:10px; padding-left:10px; border-left-style:Solid; border-left-color:#000000; border-left-width:1px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; }
+img_whs16 { border:none; width:14px; height:14px; float:none; border-style:none; }
+p.whs17 { text-align:center; }
+td.whs18 { width:39.462%; padding-right:10px; padding-left:10px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; }
+td.whs19 { width:43.502%; padding-right:10px; padding-left:10px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; }
+td.whs20 { width:17.036%; border-left-width:1px; border-left-color:#000000; border-left-style:Solid; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+p.whs21 { font-size:10pt; x-text-underline:normal; text-decoration:underline; }
+td.whs22 { width:39.462%; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+td.whs23 { width:43.502%; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "h1.whs1 {margin-bottom:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Working with the Map Page\nUnderstanding the Vehicle Grid");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("User_Guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1 class="whs1">Understanding the Vehicle Grid</h1>
+
+
+<hr align="left" color="#008000" class="whs2">
+
+
+<p class="whs3">The vehicle grid displays a list of the vehicles 
+ in a fleet. The grid appears on the <a href="../Getting Started Guide/The_Map_Screen.htm"
+										style="font-size: 10pt;">Map screen</a> 
+ when a fleet has been selected. For details on the Map Screen, see <a 
+ href="Displaying_Vehicles_on_the_Map_Screen.htm"
+	style="font-size: 10pt;">Displaying Vehicles in the Map Screen</a>.</p>
+
+<p class="whs3">&nbsp;</p>
+
+<p class="whs3">When you select several vehicles in a fleet, 
+ the vehicles you select are moved to the top of the list in the vehicle 
+ grid. To select or deselect all vehicles in the vehicle grid, enable or 
+ disable the checkbox at the top left of the vehicle grid.</p>
+
+<p class="whs3">&nbsp;</p>
+
+<p class="whs3">To view the vehicle grid more easily, click 
+ <span style="font-weight: bold;"><B>Full Screen Grid</B></span>. The vehicle 
+ grid is displayed in its own full screen window. &nbsp;Alarms 
+ appear as moving text at the bottom of the screen. To return to the standard 
+ Map screen, from the full screen grid, click <span style="font-weight: bold;"><B>Close 
+ Window</B></span>. </p>
+
+<p class="whs3">&nbsp;</p>
+
+<p class="whs3">To control how often the vehicle grid information 
+ is updated from the database, configure the Screen Refresh Frequency option 
+ in <a href="../Configuration Guide/Changing_User_Preferences.htm">User 
+ Preferences</a>. &nbsp;To 
+ update the vehicle grid information immediately, press <span style="font-weight: bold;"><B>F5</B></span>.</p>
+
+&nbsp; 
+
+<h2 class="whs4">Columns in the Vehicle Grid</h2>
+
+<p class="whs5"><span style="font-size: 10pt;"><font size=2 style="font-size:10pt;">The vehicle 
+ grid contains the following columns:</font></span><br>&nbsp;</p>
+
+<table x-use-null-cells cellspacing="0" width="100%" class="whs6">
+<script language='JavaScript'><!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4)) document.write("</table><table x-use-null-cells cellspacing='0' width='100%' border='1' bordercolor='black' bordercolorlight='black' bordercolordark='black'>");
+//--></script>
+<col class="whs7">
+<col class="whs8">
+<col class="whs9">
+
+<tr valign="top" class="whs10">
+<td bgcolor="#008000" width="17.036%" class="whs11">
+<p class="whs12">Name of Column</td>
+<td bgcolor="#008000" width="39.462%" class="whs13">
+<p class="whs12">Function</td>
+<td bgcolor="#008000" width="43.502%" class="whs14">
+<p class="whs12">Details</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="17.036%" class="whs15">
+<p><img src="CHECKBOX.GIF" x-maintain-ratio="TRUE" width="14px" height="14px" border="0" class="img_whs16"></p>
+<p align="center" class="whs17">&nbsp;</td>
+<td colspan="1" rowspan="1" width="39.462%" class="whs18">
+<p class="whs3">Click checkbox to select or de-select a vehicle. 
+ </td>
+<td colspan="1" rowspan="1" width="43.502%" class="whs19">
+<p class="whs3">Click header checkbox to select/de-select all 
+ vehicles</td></tr>
+
+<tr valign="top" class="whs10">
+<td width="17.036%" class="whs20">
+<p class="whs21">Commands 
+ / Info</td>
+<td width="39.462%" class="whs22">
+<p class="whs3">Click on description of vehicle hyperlink to 
+ access commands and information for the selected vehicle. &nbsp;</p>
+<p class="whs3">&nbsp;</td>
+<td width="43.502%" class="whs23">
+<p class="whs3">For details, see <a href="Viewing_Sensors_and_Sending_Outputs_or_Commands.htm"
+												style="font-size: 10pt;">Viewing 
+ Sensors and Sending Outputs or Commands</a> &nbsp;Click 
+ on header title to sort the vehicle grid by vehicle description.</p>
+<p class="whs3">&nbsp;</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="17.036%" class="whs20">
+<p class="whs3">Address</td>
+<td colspan="1" rowspan="1" width="39.462%" class="whs22">
+<p class="whs3">Shows the latest address available from the 
+ Sentinel FM database.</td>
+<td colspan="1" rowspan="1" width="43.502%" class="whs23">
+<p class="whs3">This field can be configured to show street 
+ address or nearest landmark. See <a href="../Configuration Guide/Changing_User_Preferences.htm"
+									style="font-size: 10pt;">Changing User 
+ Preferences</a></td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="17.036%" class="whs20">
+<p class="whs21">Date 
+ / Time</td>
+<td colspan="1" rowspan="1" width="39.462%" class="whs22">
+<p class="whs3">Shows the last date and time the vehicle reported 
+ automatically, or the last time a User requested a vehicle position. &nbsp;</p>
+<p class="whs3">&nbsp;</td>
+<td colspan="1" rowspan="1" width="43.502%" class="whs23">
+<p class="whs3">Click on header &nbsp;title 
+ to sort the vehicle grid by Date/Time.</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="17.036%" class="whs20">
+<p class="whs3">Speed</td>
+<td colspan="1" rowspan="1" width="39.462%" class="whs22">
+<p class="whs3">Shows the speed and heading the vehicle was 
+ going at the last update.</p>
+<p class="whs3">&nbsp;</td>
+<td colspan="1" rowspan="1" width="43.502%" class="whs23">
+<p class="whs3">&nbsp;</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="17.036%" class="whs20">
+<p class="whs3">Armed</td>
+<td colspan="1" rowspan="1" width="39.462%" class="whs22">
+<p class="whs3">Shows whether the box of a vehicle is armed 
+ or disarmed.</p>
+<p class="whs3"><span style="font-size: 10pt;"><font size=2 style="font-size:10pt;">&nbsp;</font></span></td>
+<td colspan="1" rowspan="1" width="43.502%" class="whs23">
+<p class="whs3">For details, see <a href="Viewing_Sensors_and_Sending_Outputs_or_Commands.htm"
+												style="font-size: 10pt;">Viewing 
+ Sensors and Sending Outputs or Commands</a>.</td></tr>
+
+<tr valign="top" class="whs10">
+<td colspan="1" rowspan="1" width="17.036%" class="whs20">
+<p class="whs21">Status</td>
+<td colspan="1" rowspan="1" width="39.462%" class="whs22">
+<p class="whs3">Shows status of last vehicle position received. 
+ </p>
+<p class="whs3">&nbsp;</td>
+<td colspan="1" rowspan="1" width="43.502%" class="whs23">
+<p class="whs3">Moving, Idling, Stopped, Parked, N/A. &nbsp;Click 
+ on header title to sort the vehicle grid by Status.</p>
+<p class="whs3">&nbsp;</td></tr>
+
+<tr valign="top" class="whs10">
+<td width="17.036%" class="whs20">
+<p class="whs3">Duration</td>
+<td width="39.462%" class="whs22">
+<p class="whs3">Shows how long the vehicle has remained in 
+ its last status state.</p>
+<p class="whs3">&nbsp;</td>
+<td width="43.502%" class="whs23">
+<p class="whs3">&nbsp;</p>
+<p class="whs3">&nbsp;</td></tr>
+<script language='JavaScript'><!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4)) document.write("</table></table><table>");
+//--></script>
+</table>
+
+<p class="whs5">&nbsp;</p>
+
+<p class="whs3">Note that the information in the <span style="font-weight: bold;"><B>Address</B></span>, 
+ <span style="font-weight: bold;"><B>Time</B></span>, <span style="font-weight: bold;"><B>Speed</B></span>, 
+ <span style="font-weight: bold;"><B>Heading</B></span>, and <span style="font-weight: bold;"><B>Status</B></span> 
+ columns is interactive, that is, when one element changes, the others 
+ may, too.</p>
+
+<p>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+<!--SALMAN-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="../ValidateHelp.js"></script>
+<!--SALMAN-->
+
+</body>
+</html>

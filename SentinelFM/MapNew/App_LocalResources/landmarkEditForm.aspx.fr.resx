@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cboFleetResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboRuleNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboSpeedOperation.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboTimeZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CheckBoxFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FormTitleResource1.Text" xml:space="preserve">
+    <value>Configurer le Site</value>
+    <comment>Edit Landmark</comment>
+  </data>
+  <data name="FormTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label2Resource1.Text" xml:space="preserve">
+    <value>Temps expiré :</value>
+    <comment>Timeout:</comment>
+  </data>
+  <data name="Label2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LandmarkNameLabelResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LandmarkNameLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+    <comment>Contact Name:</comment>
+  </data>
+  <data name="lblContactNameTitleResource1.Text" xml:space="preserve">
+    <value>Contact Nom :</value>
+  </data>
+  <data name="lblContactNameTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCreateNewServicesTitleResource1.Text" xml:space="preserve">
+    <value>Créer de nouveaux services de cette Site</value>
+    <comment>Create new services for this landmark</comment>
+  </data>
+  <data name="lblCreateNewServicesTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEditResource1.Text" xml:space="preserve">
+    <value>Configurer</value>
+    <comment>Edit</comment>
+  </data>
+  <data name="lblEditResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmailTitleResource1.Text" xml:space="preserve">
+    <value>Courriel :</value>
+    <comment>Email:</comment>
+  </data>
+  <data name="lblEmailTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLandmarkDescriptionTitleResource1.Text" xml:space="preserve">
+    <value>Description du Site :</value>
+    <comment>Landmark Description:</comment>
+  </data>
+  <data name="lblLandmarkDescriptionTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLandmarkNameTitleResource1.Text" xml:space="preserve">
+    <value>Nom du site (*):</value>
+    <comment>Landmark Name (*):</comment>
+  </data>
+  <data name="lblLandmarkNameTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLandmarkResource1.Text" xml:space="preserve">
+    <value>Site :</value>
+    <comment>Landmark:</comment>
+  </data>
+  <data name="lblLandmarkResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMultipleEmailsResource1.Text" xml:space="preserve">
+    <value>* Les adresses Courriel doivent être séparés par un point-virgule ou virgule</value>
+    <comment>*Multiple email addresses Must be Separated by semicolon or comma</comment>
+  </data>
+  <data name="lblMultipleEmailsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPhoneResource1.Text" xml:space="preserve">
+    <value>Téléphone :</value>
+    <comment>Phone:</comment>
+  </data>
+  <data name="lblPhoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPhoneTitleResource1.Text" xml:space="preserve">
+    <value>Téléphone :</value>
+  </data>
+  <data name="lblPhoneTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRadiusTitleResource1.Text" xml:space="preserve">
+    <value>Rayon</value>
+    <comment>Radius</comment>
+  </data>
+  <data name="lblRadiusTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblRecepientsTitleResource1.Text" xml:space="preserve">
+    <value>Recepients : </value>
+    <comment>Recepients:</comment>
+  </data>
+  <data name="lblRecepientsTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSubjectTitleResource1.Text" xml:space="preserve">
+    <value>Sujet :</value>
+    <comment>Subject:</comment>
+  </data>
+  <data name="lblSubjectTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTimeZoneTitleResource1.Text" xml:space="preserve">
+    <value>Fuseau horaire :</value>
+    <comment>Time Zone:</comment>
+  </data>
+  <data name="lblTimeZoneTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnitResource1.Text" xml:space="preserve">
+    <value>(m):</value>
+    <comment>(m):</comment>
+  </data>
+  <data name="lblUnitResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource1.Value" xml:space="preserve">
+    <value>-1</value>
+  </data>
+  <data name="ListItemResource2.Text" xml:space="preserve">
+    <value>Sur</value>
+    <comment>Over</comment>
+  </data>
+  <data name="ListItemResource2.Value" xml:space="preserve">
+    <value>&gt;=</value>
+  </data>
+  <data name="ListItemResource35.Text" xml:space="preserve">
+    <value>Privé</value>
+    <comment>Private</comment>
+  </data>
+  <data name="ListItemResource35.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource36.Text" xml:space="preserve">
+    <value>Public</value>
+  </data>
+  <data name="ListItemResource36.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource4.Text" xml:space="preserve">
+    <value>Moins</value>
+    <comment>Less</comment>
+  </data>
+  <data name="ListItemResource4.Value" xml:space="preserve">
+    <value>&lt;=</value>
+  </data>
+  <data name="ListItemResource5.Text" xml:space="preserve">
+    <value>Égal</value>
+    <comment>Equal</comment>
+  </data>
+  <data name="ListItemResource5.Value" xml:space="preserve">
+    <value>=</value>
+  </data>
+  <data name="lstPublicPrivateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Site Modifier le formulaire</value>
+    <comment>Landmark Edit Form</comment>
+  </data>
+  <data name="polygonspeedValueResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="polygonspeedValueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtServicenameResource1.Text" xml:space="preserve">
+    <value>Nom du service (*)</value>
+    <comment>Service name (*)</comment>
+  </data>
+  <data name="txtServicenameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAAFDDLSTResource1.Text" xml:space="preserve">
+    <value>Ajuster automatiquement l'heure avancée</value>
+    <comment>Automatically adjust for daylight savings time</comment>
+  </data>
+  <data name="lblAssignToFleetResource1.Text" xml:space="preserve">
+    <value>Attribuer à la flotte</value>
+    <comment>Assign to fleet</comment>
+  </data>
+  <data name="lblBackResource1.Text" xml:space="preserve">
+    <value>Retour</value>
+    <comment>Back</comment>
+  </data>
+  <data name="lblExtendedResource1.Text" xml:space="preserve">
+    <value>Étendue.</value>
+    <comment>Extended.</comment>
+  </data>
+  <data name="lblMoreOptionsResource1.Text" xml:space="preserve">
+    <value>Plus d’options</value>
+    <comment>More Options</comment>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Annuler</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="btnDelete.Text" xml:space="preserve">
+    <value>Effacer</value>
+    <comment>Delete</comment>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Sauvegarder</value>
+    <comment>Save</comment>
+  </data>
+  <data name="PageTitle.Text" xml:space="preserve">
+    <value>Modifier le formulaire Site</value>
+    <comment>Landmark Edit Form</comment>
+  </data>
+  <data name="lblCategoryTitleResource1.Text" xml:space="preserve">
+    <value>catégorie (*):</value>
+  </data>
+  <data name="lblCategoryTitleResource1.Tooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehiclesResource1.Text" xml:space="preserve">
+    <value>Véhicules</value>
+  </data>
+</root>

@@ -1,0 +1,68 @@
+.caption
+{
+	font-family: Arial;
+	font-size: 7pt;
+	text-align: right;
+	color: gray;
+}
+
+.value
+{
+	font-family: Arial;
+	font-size: 7pt;
+	padding-left: 2px;
+	color: Black;
+	font-weight: bold;
+}
+.minput
+{
+	width: 250px;
+	color: gray;
+}
+
+.mapdiv
+{
+	font-family: Arial;
+	font-size: 8pt;
+	font-weight: bold;
+	color: White;
+	background-color: gray;
+}
+
+.mapcontrolbox, .mapcontrolactivator, .mapfindbox, .mapdrawcontrolbox, .mapgeocontrolbox
+{
+	background-color: gray;
+	border: 1px solid white;
+	font-family: Arial;
+	font-size: 6pt;
+	font-weight: bold;
+	color: white;
+	height: 24px;
+}
+
+.mapfindbox
+{
+	height: 26px;
+}
+
+.mapcontrolactivator
+{
+	border: gray;
+	background-color: white;
+}
+.mapdrawcontrolbox, .mapgeocontrolbox 
+{
+	padding:5px;
+	font-size: 8pt;
+	height:auto;
+}
+.infotitle
+{
+	background-color: gray;
+	color: white;
+	padding: 1px;
+	border: 2px solid black;
+	border-top: 2px solid silver;
+	border-left: 2px solid silver;
+	text-indent: 2px;
+}

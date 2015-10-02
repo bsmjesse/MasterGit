@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="VLF.ASI.AppConfig" Collapsed="true">
+    <Position X="27.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\AppConfig.cs</FileName>
+      <HashCode>AACAAgAIAMAAAAhAAAAAAAAABQBAAAACACAAgQAAAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VLF.ASI.ASIErrorCheck" Collapsed="true">
+    <Position X="29.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\ASLUtil.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACCAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VLF.ASI.CommSLS" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\CommSLS.cs</FileName>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAIAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="VLF.ASI.Global" Collapsed="true">
+    <Position X="27.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\Global.asax.cs</FileName>
+      <HashCode>AAAAAAAAAAAAACAAAAEAAAACAAAAAUCIBQAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VLF.ASI.LoginManager" Collapsed="true">
+    <Position X="29.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\LoginManager.cs</FileName>
+      <HashCode>AAAAAAEgAAAAAQAEAAAAAAAABADAAAAAAAAAAAAAACE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VLF.ASI.PassKeyRecord" Collapsed="true">
+    <Position X="31.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\SecurityKeyManager.cs</FileName>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAABAAABAQAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VLF.ASI.SecurityKeyManager" Collapsed="true">
+    <Position X="27.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\SecurityKeyManager.cs</FileName>
+      <HashCode>AAAAAAIAAAAAAEAAAQAAAAAABABBEAAAAYAAAAAAACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VLF.ASI.SecurityManager">
+    <Position X="18.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\SecurityManager.asmx.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAICAAAAAAACAAAQAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VLF.ASI.Interfaces.Alarms" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\Interfaces\Alarms.asmx.cs</FileName>
+      <HashCode>AAAAAAAAACEAAAAAAACAAAACAAABAAAAAEggAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VLF.ASI.Interfaces.DBFleet" Collapsed="true">
+    <Position X="23" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\Interfaces\DBFleet.asmx.cs</FileName>
+      <HashCode>AAEAABEAgDAACAgAAAqAgAACIAABAAACAAhQAggCAoU=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VLF.ASI.Interfaces.DBHistory" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\Interfaces\DBHistory.asmx.cs</FileName>
+      <HashCode>AIhACIAAAGEAEAAAAAGAAAACAAAAAAAAIgAAAAYKAAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VLF.ASI.Interfaces.DBOrganization" Collapsed="true">
+    <Position X="9.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\Interfaces\DBOrganization.asmx.cs</FileName>
+      <HashCode>AAGAQBEAQCAJIAIAA0GABAAGAgAAAAQIAMgAEgASBII=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VLF.ASI.Interfaces.DBSystem" Collapsed="true">
+    <Position X="11.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\Interfaces\DBSystem.asmx.cs</FileName>
+      <HashCode>CAAAACISISgAUAAAgACDAAASAIQIEAAAYAAAggAACCA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VLF.ASI.Interfaces.DBUser" Collapsed="true">
+    <Position X="20.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\Interfaces\DBUser.asmx.cs</FileName>
+      <HashCode>AAAABBBAQGAAAAAAAQCAgIICAAAIAQBAAIgYAAAIgAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VLF.ASI.Interfaces.DBVehicle" Collapsed="true">
+    <Position X="25.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\Interfaces\DBVehicle.asmx.cs</FileName>
+      <HashCode>QAgkgRIIwCFDAAcMBATgQAqLEACABADQghgEAwAjCAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VLF.ASI.Interfaces.Location">
+    <Position X="14" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\Interfaces\Location.asmx.cs</FileName>
+      <HashCode>QAAAAAgAACQAAAAAAACAAAACABAAABYACAAAAMAAgAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VLF.ASI.Interfaces.Reports" Collapsed="true">
+    <Position X="5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\Interfaces\Reports.asmx.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAIAAACAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VLF.ASI.Interfaces.SecurityManager" Collapsed="true">
+    <Position X="16.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\Interfaces\SecurityManager.asmx.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAgACAAAICAAAAAAACAAAQAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASI.Interfaces.EventManager" Collapsed="true">
+    <Position X="7.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\Interfaces\EventManager.asmx.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Web.Services.WebService" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Enum Name="VLF.ASI.ValidationResult" Collapsed="true">
+    <Position X="27.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>App_Code\SecurityKeyManager.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABABAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>

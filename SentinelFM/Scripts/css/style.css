@@ -1,0 +1,210 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('fonts/BebasNeue-webfont.eot');
+    src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/BebasNeue-webfont.woff') format('woff'),
+         url('fonts/BebasNeue-webfont.ttf') format('truetype'),
+         url('fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal; 
+}
+
+/*** CUSTOM FONT ROBOTO ***/
+@font-face {
+	font-family: 'Conv_RobotoCondensed-Regular';
+	src: url('fonts/RobotoCondensed-Regular.eot');
+	src: local('☺'), url('fonts/RobotoCondensed-Regular.woff') format('woff'), url('fonts/RobotoCondensed-Regular.ttf') format('truetype'), url('fonts/RobotoCondensed-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  src: url('fonts/pacifico.eot');
+  src: url('fonts/pacifico.eot?#iefix') format('embedded-opentype'),
+       url('fonts/pacifico.woff') format('woff'),
+       url('fonts/pacifico.ttf') format('truetype'),
+       url('fonts/pacifico.svg#Pacifico') format('svg');
+}
+
+@font-face {
+  font-family: 'Comfortaa_Thin';
+  src: url('fonts/Comfortaa_Thin.eot');
+  src: url('fonts/Comfortaa_Thin.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Comfortaa_Thin.woff') format('woff'),
+       url('fonts/Comfortaa_Thin.ttf') format('truetype'),
+       url('fonts/Comfortaa_Thin.svg#Comfortaa_Thin') format('svg');
+}
+
+html{min-height: 100%; position:relative;}
+body{ margin:0px; padding:0px; background:none #fff; font:normal 12px/19px Arial, Helvetica, sans-serif; }
+
+/*** GLOBAL CLASSES ***/
+header, section, footer, nav{ display:block;}
+ul, h1, h2, h3{ margin:0px; padding:0px; list-style:none;}
+h2{ font:normal 25px 'Conv_RobotoCondensed-Regular'; color:#000;}
+.clear{ clear:both;}
+
+
+/*** SITE CLASSES ***/
+
+#wrapper{ width:100%; height:100%; display:inline-block;}
+#inner_wrapper{ width:100%; display:block; clear:both;}
+/** header **/
+.header{ display:inline-block; width:100%;  height:55px;
+background: #ffffff;
+background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5));
+background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
+background: -o-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
+background: -ms-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
+background: linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); }
+.logo{ width:130px; height:40px;
+       background:url(../../SentinelFM_Themes/localhost/images/bsmlogo.gif) no-repeat center top; 
+        float:left; margin:10px 0px 0px 0px;
+}
+
+/** MID PANEL **/
+.leftPnl{ width:74%; float:left; border-right:1px dotted #ccc;}
+.left_section{ margin:2%; width:96%;}
+.row{ clear:both; display:inline-block; width:100%;}
+.col6{ width:98%; float:left; padding:0% 0% 0% 1%;}
+.col6.right{ float:right !important;}
+.midText{ text-align:center; font:normal 27px 'Conv_RobotoCondensed-Regular'; border-top:2px dotted #ccc; border-bottom:2px dotted #ccc; padding:10px 0px;}
+
+
+.rightPnl{ width:25%; float:right;  margin-top:10px; }
+.login{ margin:2%; width:96%; height:96%; border-radius:10px;background: #f9fcf7;
+background: -moz-linear-gradient(top, #f9fcf7 0%, #f5f9f0 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9fcf7), color-stop(100%,#f5f9f0));
+background: -webkit-linear-gradient(top, #f9fcf7 0%,#f5f9f0 100%);
+background: -o-linear-gradient(top, #f9fcf7 0%,#f5f9f0 100%);
+background: -ms-linear-gradient(top, #f9fcf7 0%,#f5f9f0 100%);
+background: linear-gradient(to bottom, #f9fcf7 0%,#f5f9f0 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9fcf7', endColorstr='#f5f9f0',GradientType=0 ); border-radius:5px; box-shadow:0px 0px 4px #ccc inset;}
+.login_header{ width:100%; height:87px; background:url(../../SentinelFM_Themes/localhost/images/Banner/ameco_logo.png) no-repeat center;  display:inline-block;}
+.login_section{ width:100%; height:auto; display:inline-block;}
+.form-signin {
+  /*//max-width: 330px;*/
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-control:focus {
+border-color:#66afe9;
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) insert, 0 0 8px rgba(102, 175,233, 0.6);
+outline: 0 none;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.sr-only{ margin:5px 0px; display:block;}
+.formLL{ margin-bottom:5px; display:inline-block; width:100%;}
+.formLL .lableB{ float:left; width:30%; padding-top:10px;}
+.formLL .txtBx{ float:left; width:65%;}.form-control {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+}
+.btn {
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.btn-primary {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    color: #fff;
+	width:100%;
+}
+
+/* [- Slideshow -] */
+.slideshow {margin:auto; z-index:55; width:100% !important}
+/*.slideshow img {top: 0px; left: 0px; display: none; z-index: 5; opacity:0; height: 492px;}*/
+.slideshow .banner_01 {background:url("../../SentinelFM_Themes/localhost/images/Banner/1.png") no-repeat scroll center center / 100% 100% rgba(0, 0, 0, 0); height:450px; width:100% !important;}
+.slideshow .banner_02 {background:url("../../SentinelFM_Themes/localhost/images/Banner/2.png") no-repeat scroll center center / 100% 100% rgba(0, 0, 0, 0); height:450px; width:100% !important}
+.slideshow .banner_03 {background:url("../../SentinelFM_Themes/localhost/images/Banner/3.png") no-repeat scroll center center / 100% 100% rgba(0, 0, 0, 0); height:450px; width:100% !important}
+
+/* End */
+
+/** footer **/
+.footer{ display:inline-block; width:100%; text-align:center; border-top:1px dotted #ccc; font-size:9px; }
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .slideshow div {
+        height:370px !important;
+    }
+}
+
+@media (min-width: 360px){
+    .slideshow div {
+        height:360px !important;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .slideshow div {
+        height:450px !important;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1600px) {
+    .slideshow div {
+        height:550px !important;
+    }
+}
+@media (min-width: 1700px) and (max-width: 2000px) {
+    .slideshow div {
+        height:700px !important;
+    }
+}

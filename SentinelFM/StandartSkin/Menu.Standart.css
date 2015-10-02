@@ -1,0 +1,457 @@
+/* <RadMenu / Hay> */
+
+.RadMenu_Standart .rmRootGroup,
+.RadMenu_Standart a.rmLink,
+.RadMenu_Standart .rmText,
+.RadMenu_Standart .rmLeftArrow,
+.RadMenu_Standart .rmRightArrow,
+.RadMenu_Standart .rmTopArrow,
+.RadMenu_Standart .rmBottomArrow
+{
+	background-image: url('Menu/rmSprite.png');
+	background-color: transparent;
+	font: normal 10px/19px "Segoe UI", Arial, sans-serif;
+	color :White ;
+}
+
+.RadMenu_Standart .rmRootGroup
+{
+	border: 1px solid #bbb99d;
+	background-repeat: repeat-x;
+	background-position: 0 0;
+	background-color: #dee0c8;
+}
+
+.RadMenu_Standart .rmVertical
+{
+	background-position: 0 -408px;
+}
+
+/* <Root items> */
+
+.RadMenu_Standart,
+.RadMenu_Standart a.rmLink
+{
+	font: normal 12px/23px "Segoe UI", Arial, sans-serif;
+	color: #272722;
+	text-decoration: none;
+}
+
+.RadMenu_Standart a.rmLink,
+.RadMenu_Standart .rmText
+{
+	background-position: 0 1050px;
+	background-repeat: no-repeat;
+}
+
+.RadMenu_Standart a.rmLink:hover,
+.RadMenu_Standart a.rmFocused,
+.RadMenu_Standart a.rmSelected
+{
+	color: #279500;
+	background-position: 0 -72px;
+}
+
+.RadMenu_Standart a.rmLink:hover .rmText,
+.RadMenu_Standart a.rmFocused .rmText,
+.RadMenu_Standart a.rmSelected .rmText
+{
+	background-position: 100% -96px;
+}
+
+.RadMenu_Standart a.rmExpanded,
+.RadMenu_Standart a.rmExpanded:hover
+{
+	color: #fff;
+	background-position: 0 -120px;
+}
+
+.RadMenu_Standart a.rmExpanded .rmText,
+.RadMenu_Standart a.rmExpanded:hover .rmText
+{
+	background-position: 100% -144px;
+}
+
+.RadMenu_Standart a.rmDisabled,
+.RadMenu_Standart a.rmDisabled:hover
+{
+	color: #919180;
+}
+
+.RadMenu_Standart a.rmDisabled:hover,
+.RadMenu_Standart a.rmDisabled:hover .rmText
+{
+	background: none;
+}
+
+/* </Root items> */
+
+
+/* <Submenu items> */
+
+.RadMenu_Standart .rmGroup,
+.RadMenu_Standart .rmMultiColumn,
+.RadMenu_Standart .rmGroup .rmVertical
+{
+	border: 1px solid #959485;
+	background: #fff url('Menu/rmVSprite.png') repeat-y -1px 0;
+}
+
+.RadMenu_Standart .rmTopFix,
+.RadMenu_Standart .rmBottomFix,
+.RadMenu_Standart .rmRoundedCorners .rmGroup .rmItem,
+.RadMenu_Standart .rmRoundedCorners li.rmFirstGroupColumn .rmItem,
+.RadMenu_Standart .rmRoundedCorners .rmFirstGroupColumn li.rmFirstGroupColumn .rmItem,
+.RadMenu_Standart .rmRoundedCorners ul.rmHorizontal .rmFirst,
+.RadMenu_Standart_Context.rmRoundedCorners .rmGroup .rmItem,
+.RadMenu_Standart_Context.rmRoundedCorners ul.rmHorizontal .rmFirst
+{
+	background-image: url('Menu/rmVSprite.png');
+	background-color: #fff; 
+	background-repeat: repeat-y;
+	background-position: -3px 0;
+}
+
+* html .rmRoundedCorners_Standart .rmGroup .rmItem,
+* html .rmRoundedCorners_Standart ul.rmHorizontal .rmFirst
+{
+	background-image: url('Menu/rmVSprite.png');
+	background-color: #fff; 
+	background-repeat: repeat-y;
+	background-position: -3px 0;
+}
+
+.RadMenu_Standart .rmRoundedCorners .rmScrollWrapContainer .rmGroup,
+.RadMenu_Standart .rmRoundedCorners .rmScrollWrap .rmItem,
+.RadMenu_Standart .rmRoundedCorners .rmGroupColumn .rmItem,
+.RadMenu_Standart .rmRoundedCorners .rmGroupColumn .rmGroupColumn .rmItem,
+.RadMenu_Standart .rmRoundedCorners .rmHorizontal .rmItem,
+.RadMenu_Standart .rmRoundedCorners .rmScrollWrap .rmVertical,
+.RadMenu_Standart_Context.rmRoundedCorners .rmScrollWrapContainer .rmGroup,
+.RadMenu_Standart_Context.rmRoundedCorners .rmScrollWrap .rmItem,
+.RadMenu_Standart_Context.rmRoundedCorners .rmHorizontal .rmItem,
+.RadMenu_Standart_Context.rmRoundedCorners .rmScrollWrap .rmVertical
+{
+	background-image: none;
+}
+
+* html .rmRoundedCorners_Standart .rmScrollWrapContainer .rmGroup,
+* html .rmRoundedCorners_Standart .rmScrollWrap .rmItem,
+* html .rmRoundedCorners_Standart .rmHorizontal .rmItem,
+* html .rmRoundedCorners_Standart .rmScrollWrap .rmVertical
+{
+	background-image: none;
+}
+
+.RadMenu_Standart .rmRoundedCorners .rmGroupColumn
+{
+	background-color: #fff;
+}
+
+.RadMenu_Standart .rmBottomLeft,
+.RadMenu_Standart .rmRoundedCorners .rmScrollWrapContainer,
+.RadMenu_Standart_Context.rmRoundedCorners .rmScrollWrapContainer,
+.RadMenu_Standart_Context.rmRoundedCorners ul.rmGroup,
+.RadMenu_Standart .rmRoundedCorners ul.rmGroup,
+.RadMenu_Standart .rmRoundedCorners .rmMultiColumn
+{
+	background-image: url('Menu/rmRoundedLeft.png');
+	background-color: transparent; 
+	background-repeat: no-repeat;
+}
+
+* html .rmRoundedCorners_Standart .rmScrollWrapContainer,
+* html .rmRoundedCorners_Standart .rmGroup ul.rmGroup,
+* html .rmRoundedCorners_Standart ul.rmGroup
+{
+	background-image:  url('Menu/rmRoundedLeft.png');
+	background-color: transparent; 
+	background-repeat: no-repeat;
+}
+
+.RadMenu_Standart .rmTopRight,
+.RadMenu_Standart .rmBottomRight
+{
+	background-image: url('Menu/rmRoundedRight.png');
+	background-color: transparent; 
+	background-repeat: no-repeat;
+}
+
+.RadMenu_Standart .rmTopFix,
+.RadMenu_Standart .rmBottomFix,
+.RadMenu_Standart .rmRoundedCorners .rmGroup .rmFirst,
+.RadMenu_Standart_Context.rmRoundedCorners .rmGroup .rmFirst,
+.rmRoundedCorners_Standart .rmGroup .rmFirst
+{
+	border-color: #959485;
+}
+
+.RadMenu_Standart .rmRoundedCorners .rmScrollWrapContainer .rmTopFix,
+.RadMenu_Standart .rmRoundedCorners .rmScrollWrapContainer .rmBottomFix,
+.RadMenu_Standart_Context.rmRoundedCorners .rmScrollWrapContainer .rmTopFix,
+.RadMenu_Standart_Context.rmRoundedCorners .rmScrollWrapContainer .rmBottomFix
+{
+	background: #FFF;
+}
+
+* html .rmRoundedCorners_Standart .rmScrollWrapContainer .rmTopFix,
+* html .rmRoundedCorners_Standart .rmScrollWrapContainer .rmBottomFix
+{
+	background: #FFF;
+}
+
+.RadMenu_Standart .rmRoundedCorners .rmScrollWrapContainer .rmTopArrow,
+.RadMenu_Standart .rmRoundedCorners .rmScrollWrapContainer .rmBottomArrow,
+.RadMenu_Standart .rmRoundedCorners .rmScrollWrapContainer .rmLeftArrow,
+.RadMenu_Standart .rmRoundedCorners .rmScrollWrapContainer .rmRightArrow,
+.RadMenu_Standart_Context.rmRoundedCorners .rmScrollWrapContainer .rmTopArrow,
+.RadMenu_Standart_Context.rmRoundedCorners .rmScrollWrapContainer .rmBottomArrow,
+.RadMenu_Standart_Context.rmRoundedCorners .rmScrollWrapContainer .rmLeftArrow,
+.RadMenu_Standart_Context.rmRoundedCorners .rmScrollWrapContainer .rmRightArrow
+{
+	background-color: #FFF;
+	border: 0;
+}
+
+* html .rmRoundedCorners_Standart .rmScrollWrapContainer .rmTopArrow,
+* html .rmRoundedCorners_Standart .rmScrollWrapContainer .rmBottomArrow,
+* html .rmRoundedCorners_Standart .rmScrollWrapContainer .rmLeftArrow,
+* html .rmRoundedCorners_Standart .rmScrollWrapContainer .rmRightArrow
+{
+	background-color: #FFF;
+	border: 0;
+}
+
+.RadMenu_Standart li.rmTopFix,
+.RadMenu_Standart li.rmBottomFix
+{
+	background-position: -4px 0;
+}
+
+.RadMenu_Standart_rtl .rmBottomLeft,
+.RadMenu_Standart_rtl .rmRoundedCorners ul.rmGroup,
+.RadMenu_Standart_rtl .rmRoundedCorners .rmMultiColumn,
+.RadMenu_Standart .rmRoundedCorners .rmScrollWrapContainer,
+.RadMenu_Standart .rmScrollWrapContainer .rmBottomLeft,
+.rmRoundedCorners.RadMenu_Standart_Context_rtl ul.rmGroup,
+.RadMenu_Standart_Context.rmRoundedCorners .rmScrollWrapContainer
+{
+	background-image: url('Menu/rmRoundedLeft_rtl.png');
+}
+
+.RadMenu_Standart_rtl .rmTopRight,
+.RadMenu_Standart_rtl .rmBottomRight
+{
+	background-image: url('Menu/rmRoundedRight_rtl.png');
+}
+
+.RadMenu_Standart_rtl li.rmTopFix,
+.RadMenu_Standart_rtl li.rmBottomFix,
+.RadMenu_Standart_rtl .rmRoundedCorners .rmGroup .rmItem,
+.rmRoundedCorners.RadMenu_Standart_Context_rtl .rmGroup .rmItem
+{
+	background-position: 101% 0;
+}
+
+.RadMenu_Standart .rmSlide .rmScrollWrap
+{
+	background-image: none;
+}
+
+.RadMenu_Standart_rtl .rmGroup,
+.RadMenu_Standart_rtl .rmMultiColumn,
+.RadMenu_Standart_rtl .rmGroup .rmVertical
+{
+	background-position: 101% 0;
+}
+
+.RadMenu_Standart .rmRootGroup .rmHorizontal
+{
+	background-image: none;
+}
+
+.RadMenu_Standart .rmScrollWrap .rmVertical
+{
+	border: 0;
+}
+
+.RadMenu_Standart .rmGroup .rmFirst,
+.RadMenu_Standart .rmGroup .rmLast,
+.RadMenu_Standart .rmRoundedCorners .rmScrollWrapContainer li.rmItem,
+.RadMenu_Standart_Context.rmRoundedCorners .rmScrollWrapContainer li.rmItem,
+.rmRoundedCorners_Standart .rmScrollWrapContainer li.rmItem
+{
+	background: none;
+}
+
+.RadMenu_Standart .rmRootGroup li.rmItem .rmGroup
+{
+	padding-bottom: 0;
+}
+
+.RadMenu_Standart .rmGroup li.rmLast
+{
+	padding-bottom: 1px;
+}
+
+.RadMenu_Standart .rmGroup a.rmLink:hover,
+.RadMenu_Standart .rmGroup a.rmFocused,
+.RadMenu_Standart .rmGroup a.rmSelected,
+.RadMenu_Standart .rmGroup a.rmExpanded
+{
+	background-position: 0 -168px;
+}
+
+.RadMenu_Standart .rmGroup a.rmLink:hover .rmText,
+.RadMenu_Standart .rmGroup a.rmFocused .rmText,
+.RadMenu_Standart .rmGroup a.rmSelected .rmText,
+.RadMenu_Standart .rmGroup a.rmExpanded .rmText
+{
+	background-position: 100% -192px;
+}
+
+.RadMenu_Standart .rmGroup a.rmExpanded,
+.RadMenu_Standart .rmGroup a.rmExpanded:hover
+{
+	color: #279500;
+}
+
+.RadMenu_Standart .rmGroup a.rmDisabled,
+.RadMenu_Standart .rmGroup a.rmDisabled:hover
+{
+	color: #8a8a8a;
+}
+
+/* <expand arrows> */
+
+.RadMenu_Standart .rmGroup .rmExpandRight,
+.RadMenu_Standart .rmGroup .rmExpandDown
+{
+	background-position: 100% -216px;
+}
+
+.RadMenu_Standart .rmGroup a.rmLink:hover .rmExpandRight,
+.RadMenu_Standart .rmGroup a.rmFocused .rmExpandRight,
+.RadMenu_Standart .rmGroup a.rmSelected .rmExpandRight,
+.RadMenu_Standart .rmGroup a.rmExpanded .rmExpandRight,
+.RadMenu_Standart .rmGroup a.rmLink:hover .rmExpandDown,
+.RadMenu_Standart .rmGroup a.rmFocused .rmExpandDown,
+.RadMenu_Standart .rmGroup a.rmSelected .rmExpandDown,
+.RadMenu_Standart .rmGroup a.rmExpanded .rmExpandDown
+{
+	background-position: 100% -240px;
+}
+
+.RadMenu_Standart .rmGroup a.rmDisabled:hover .rmExpandRight,
+.RadMenu_Standart .rmGroup a.rmDisabled:hover .rmExpandDown
+{
+	background-image: url('Menu/rmSprite.png');
+	background-position: 100% -216px;
+}
+
+/* </expand arrows> */
+
+/* <rtl> */
+
+.RadMenu_Standart_rtl .rmGroup a.rmLink:hover,
+.RadMenu_Standart_rtl .rmGroup a.rmFocused,
+.RadMenu_Standart_rtl .rmGroup a.rmSelected,
+.RadMenu_Standart_rtl .rmGroup a.rmExpanded
+{
+	background-position: 100% -264px;
+}
+
+.RadMenu_Standart_rtl .rmGroup a.rmLink:hover .rmText,
+.RadMenu_Standart_rtl .rmGroup a.rmFocused .rmText,
+.RadMenu_Standart_rtl .rmGroup a.rmSelected .rmText,
+.RadMenu_Standart_rtl .rmGroup a.rmExpanded .rmText
+{
+	background-position: 0 -288px;
+}
+
+.RadMenu_Standart_rtl .rmGroup .rmExpandLeft
+{
+	background-position: 0 -312px;
+}
+
+.RadMenu_Standart_rtl .rmGroup a.rmLink:hover .rmExpandLeft,
+.RadMenu_Standart_rtl .rmGroup a.rmFocused .rmExpandLeft,
+.RadMenu_Standart_rtl .rmGroup a.rmSelected .rmExpandLeft,
+.RadMenu_Standart_rtl .rmGroup a.rmExpanded .rmExpandLeft
+{
+	background-position: 0 -336px;
+}
+
+/* </rtl> */
+
+/* </Submenu items> */
+
+/* <Submenu offsets (Hay - specific, overlapping submenus)> */
+
+.RadMenu_Standart .rmSlide
+{
+	margin: -3px 0 0 1px;
+}
+
+.RadMenu_Standart .rmVertical .rmSlide,
+.RadMenu_Standart .rmSlide .rmSlide,
+.RadMenu_Standart_Context .rmGroup .rmSlide
+{
+	margin: 0 0 0 -5px;
+}
+
+.RadMenu_Standart_rtl .rmSlide
+{
+	margin: -3px 0 0 -1px;
+}
+
+.RadMenu_Standart_rtl .rmVertical .rmSlide,
+.RadMenu_Standart_rtl .rmSlide .rmSlide,
+.RadMenu_Standart_Context_rtl .rmGroup .rmSlide
+{
+	margin: 0 0 0 5px;
+}
+
+/* </Submenu offsets> */
+
+/* <Scrolling arrows> */
+
+.RadMenu_Standart .rmLeftArrow,
+.RadMenu_Standart .rmRightArrow
+{
+	background-color: #f6f6e8;
+}
+
+.RadMenu_Standart .rmLeftArrow { background-position: -8px -312px; border-right: 1px solid #bbb99d; }
+.RadMenu_Standart .rmRightArrow { background-position: -482px -216px; border-left: 1px solid #bbb99d; }
+
+.RadMenu_Standart .rmTopArrow,
+.RadMenu_Standart .rmBottomArrow,
+.RadMenu_Standart .rmGroup .rmLeftArrow,
+.RadMenu_Standart .rmGroup .rmRightArrow
+{
+	background-color: #f6f6e8;
+}
+
+.RadMenu_Standart .rmTopArrow { background-position: 50% -367px; border-bottom: 1px solid #bbb99d; }
+.RadMenu_Standart .rmBottomArrow { background-position: 50% -391px; border-top: 1px solid #bbb99d; }
+
+/* </Scrolling arrows> */
+
+/* <Separators> */
+
+.RadMenu_Standart .rmVertical .rmSeparator .rmText,
+.RadMenu_Standart .rmHorizontal .rmVertical .rmSeparator .rmText
+{
+	background-position: 0 -406px;
+}
+
+.RadMenu_Standart .rmHorizontal .rmSeparator .rmText,
+.RadMenu_Standart .rmVertical .rmHorizontal .rmSeparator .rmText
+{
+	background-position: 0 -386px;
+}
+
+/* </Separators> */
+
+/* </RadMenu / Hay> */

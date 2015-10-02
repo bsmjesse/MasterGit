@@ -1,0 +1,48 @@
+﻿body {
+}
+#divTitle
+{
+    background-color: #eeeeee; 
+    height: 30px;
+    font-family: Calibri;  
+    font-size: 11px;
+}
+#divParameter
+{
+    background-color: #eeeeee; 
+}
+.CommandButton
+{
+    border-style: solid;
+    border-color: #cccccc;
+}
+.EntryLabel
+{
+    background-color: inherit; 
+    text-align: right;
+    padding-right: 4px;
+    font-family: Calibri, Arial, Tahoma;
+    font-size: 12px;  
+}
+.EntryText
+{
+    border: 1px solid #cccccc;
+    font-family: Calibri, Arial, Tahoma;
+    font-size: 12px;  
+    height: 18px;
+}
+.Entrylist
+{
+    border: 1px solid #cccccc;
+    font-family: Calibri, Arial, Tahoma;
+    font-size: 12px;
+}
+.DateEntry
+{
+    border: 1px solid #cccccc;
+    font-family: Calibri, Arial, Tahoma;
+    font-size: 12px;  
+    height: 18px;
+    width: 120px;
+}
+

@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ButtonColumnResource1.Text" xml:space="preserve">
+    <value>&lt;img src=../images/edit.gif border=0&gt;</value>
+  </data>
+  <data name="ButtonColumnResource2.Text" xml:space="preserve">
+    <value>&lt;img src=../images/delete.gif border=0&gt;</value>
+  </data>
+  <data name="cboPushTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddResource1.Text" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="cmdAddResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCancelResource1.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="cmdCancelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdDriverResource1.Text" xml:space="preserve">
+    <value>Chauffeurs</value>
+  </data>
+  <data name="cmdDriverResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdFleetsResource1.Text" xml:space="preserve">
+    <value>Flottes</value>
+  </data>
+  <data name="cmdFleetsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdFuelResource1.Text" xml:space="preserve">
+    <value>Carburant</value>
+  </data>
+  <data name="cmdFuelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdOrganizationResource1.Text" xml:space="preserve">
+    <value>Organisation</value>
+  </data>
+  <data name="cmdOrganizationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdPushSettingsResource1.Text" xml:space="preserve">
+    <value>Paramètres Push</value>
+  </data>
+  <data name="cmdPushSettingsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSaveResource1.Text" xml:space="preserve">
+    <value>Sauver</value>
+  </data>
+  <data name="cmdSaveResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSettingsResource1.Text" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+  <data name="cmdSettingsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdUsersResource1.Text" xml:space="preserve">
+    <value>Usagers</value>
+  </data>
+  <data name="cmdUsersResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdVehiclesResource1.Text" xml:space="preserve">
+    <value>Véhicules</value>
+  </data>
+  <data name="cmdVehiclesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgPushConfigurationResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgPushConfigurationResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="dgPushConfigurationResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="dgPushConfigurationResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmailSMTPResource1.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblEmailSMTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIpTCPResource1.Text" xml:space="preserve">
+    <value>IP:</value>
+  </data>
+  <data name="lblIpTCPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPasswordFTPResource1.Text" xml:space="preserve">
+    <value>Mot de passe:</value>
+  </data>
+  <data name="lblPasswordFTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPasswordHTTPResource1.Text" xml:space="preserve">
+    <value>Mot de passe:</value>
+  </data>
+  <data name="lblPasswordHTTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPasswordHTTPSResource1.Text" xml:space="preserve">
+    <value>Mot de passe:</value>
+  </data>
+  <data name="lblPasswordHTTPSResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPasswordSMTPResource1.Text" xml:space="preserve">
+    <value>Mot de passe:</value>
+  </data>
+  <data name="lblPasswordSMTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPasswordWebServiceResource1.Text" xml:space="preserve">
+    <value>Mot de passe:</value>
+  </data>
+  <data name="lblPasswordWebServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPortTCPResource1.Text" xml:space="preserve">
+    <value>Port:</value>
+  </data>
+  <data name="lblPortTCPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPushIdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPushIdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPushTypeIdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPushTypeIdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPushTypeNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPushTypeNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPushTypeResource1.Text" xml:space="preserve">
+    <value>Push Type:</value>
+  </data>
+  <data name="lblPushTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSubjSMTPResource1.Text" xml:space="preserve">
+    <value>Sujet:</value>
+  </data>
+  <data name="lblSubjSMTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUrlFTPResource1.Text" xml:space="preserve">
+    <value>Url:</value>
+  </data>
+  <data name="lblUrlFTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUrlHTTPResource1.Text" xml:space="preserve">
+    <value>Url:</value>
+  </data>
+  <data name="lblUrlHTTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUrlHTTPSResource1.Text" xml:space="preserve">
+    <value>Url:</value>
+  </data>
+  <data name="lblUrlHTTPSResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUrlWebServiceResource1.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="lblUrlWebServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUserNameFTPResource1.Text" xml:space="preserve">
+    <value>Nom d'utilisateur:</value>
+  </data>
+  <data name="lblUserNameFTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUserNameHTTPResource1.Text" xml:space="preserve">
+    <value>Nom d'utilisateur:</value>
+  </data>
+  <data name="lblUserNameHTTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUserNameHTTPSResource1.Text" xml:space="preserve">
+    <value>Nom d'utilisateur:</value>
+  </data>
+  <data name="lblUserNameHTTPSResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUserNameSMTPResource1.Text" xml:space="preserve">
+    <value>Nom d'utilisateur:</value>
+  </data>
+  <data name="lblUserNameSMTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUserNameWebServiceResource1.Text" xml:space="preserve">
+    <value>Nom d'utilisateur:</value>
+  </data>
+  <data name="lblUserNameWebServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>frmEmails</value>
+  </data>
+  <data name="txtEmailSMTPResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEmailSMTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtIpTCPResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtIpTCPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPasswordFTPResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPasswordFTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPasswordHTTPResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPasswordHTTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPasswordHTTPSResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPasswordHTTPSResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPasswordSMTPResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPasswordSMTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPasswordWebServiceResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPasswordWebServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPortTCPResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtPortTCPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSubjSMTPResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSubjSMTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUrlFTPResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUrlFTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUrlHTTPResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUrlHTTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUrlHTTPSResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUrlHTTPSResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUrlWebServiceResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUrlWebServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUserNameFTPResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUserNameFTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUserNameHTTPResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUserNameHTTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUserNameHTTPSResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUserNameHTTPSResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUserNameSMTPResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUserNameSMTPResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUserNameWebServiceResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtUserNameWebServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BoundFieldPushConfigurationType" xml:space="preserve">
+    <value>Push Type de configuration</value>
+  </data>
+  <data name="cmdScheduledTasksResource1.Text" xml:space="preserve">
+    <value>Voir les tâches programmées</value>
+  </data>
+  <data name="cmdScheduledTasksResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdHierarchyAssignmentImportResource1.Text" xml:space="preserve">
+    <value>Importer l'assignation de la structure corporative</value>
+  </data>
+  <data name="cmdHierarchyAssignmentImportResource1.ToolTip" xml:space="preserve">
+    <value>Importer l'assignation de la structure corporative</value>
+  </data>
+  <data name="cmdHierarchyImportResource1.Text" xml:space="preserve">
+    <value>Importer la structure coporative</value>
+  </data>
+  <data name="cmdHierarchyImportResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdHierarchyResource1.Text" xml:space="preserve">
+    <value>Structure</value>
+  </data>
+  <data name="cmdHierarchyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdMapSubscriptionResource1.Text" xml:space="preserve">
+    <value>Choix des cartes</value>
+  </data>
+  <data name="cmdMapSubscriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdOverlaySubscriptionResource1.Text" xml:space="preserve">
+    <value>Choix des superpositions</value>
+  </data>
+  <data name="cmdOverlaySubscriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>

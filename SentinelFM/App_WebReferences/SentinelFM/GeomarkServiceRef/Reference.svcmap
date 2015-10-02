@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5c2a9eb6-f15e-40a2-bc1d-3d286b299239" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://DEV2:8080/GeomarkService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GeomarkService5.xsd" MetadataType="Schema" ID="73487e42-1315-4584-91ed-6c7580df36e2" SourceId="1" SourceUrl="http://dev2:8080/GeomarkService.svc?xsd=xsd4" />
+    <MetadataFile FileName="Landmark1.wsdl" MetadataType="Wsdl" ID="6a9a096d-57d6-4d35-bca1-99db0831214a" SourceId="1" SourceUrl="http://dev2:8080/GeomarkService.svc?wsdl" />
+    <MetadataFile FileName="GeomarkService52.xsd" MetadataType="Schema" ID="e0ebde55-555a-48a2-a462-57341dd00bb2" SourceId="1" SourceUrl="http://dev2:8080/GeomarkService.svc?xsd=xsd5" />
+    <MetadataFile FileName="GeomarkService53.xsd" MetadataType="Schema" ID="cdf3b185-28a0-4976-bc3f-5fbd1b2ae482" SourceId="1" SourceUrl="http://dev2:8080/GeomarkService.svc?xsd=xsd2" />
+    <MetadataFile FileName="GeomarkService1.disco" MetadataType="Disco" ID="997d3c09-c2eb-4024-992b-7ecf3212bd12" SourceId="1" SourceUrl="http://dev2:8080/GeomarkService.svc?disco" />
+    <MetadataFile FileName="GeomarkService54.xsd" MetadataType="Schema" ID="e720eafb-cc9b-40d0-aea1-d8560dd6aa22" SourceId="1" SourceUrl="http://dev2:8080/GeomarkService.svc?xsd=xsd1" />
+    <MetadataFile FileName="GeomarkService55.xsd" MetadataType="Schema" ID="5ea42970-af42-484b-83b1-54b3f005bae3" SourceId="1" SourceUrl="http://dev2:8080/GeomarkService.svc?xsd=xsd0" />
+    <MetadataFile FileName="GeomarkService56.xsd" MetadataType="Schema" ID="338fbe04-332a-4aa3-ae0e-87c29854215d" SourceId="1" SourceUrl="http://dev2:8080/GeomarkService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

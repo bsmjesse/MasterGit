@@ -1,0 +1,2221 @@
+Ext.Loader.setConfig(
+{
+   enabled : true
+}
+);
+Ext.Loader.setPath('Ext.ux', './extjs/examples/ux');
+Ext.require([
+'Ext.window.*',
+'Ext.ux.grid.FiltersFeature',
+'Ext.ux.AspWebAjaxProxy'
+]);
+
+   Ext.define('VehicleList',
+   {
+      extend : 'Ext.data.Model',
+      fields : [
+      'BoxId',
+      'Description',
+      'StreetAddress',
+      {
+         name : 'OriginDateTime', type : 'date', dateFormat : 'c'
+      }
+      ,
+      {
+         name : 'convertedDate', type : 'date'// , dateFormat : 'c'
+         , defaultValue : '', convert : function(value, record)
+         {
+            var localDateStr;
+            localDateStr = record.get('OriginDateTime').toLocaleString();
+            var dt = Ext.Date.parse(localDateStr, 'F-d-y g:i:s A');
+            // March - 15 - 12 12 : 41 : 27 PM for mozilla
+            if (dt == undefined)
+            {
+               var currentDate  = record.get('OriginDateTime');
+               // Wed Dec 07 2011 10 : 58 : 19 GMT - 0500 (Eastern Standard Time) for all other browsers
+               dt = new Date(currentDate);
+            }
+            return dt;
+         }
+      }
+      ,
+      {
+         name : 'convertedDisplayDate',
+         convert : function(value, record)
+         {
+            var currentDate  = record.get('OriginDateTime');
+            var dt = new Date(currentDate);
+            var newDt = Ext.Date.format(dt, 'd/m/Y h:i a');
+            return newDt;
+         }
+      }
+      ,
+      'Speed',
+      'BoxArmed',
+      'VehicleStatus',
+      'PTO',
+      'History',
+      'VehicleId',
+      'LicensePlate',
+      {
+         name : 'Latitude', type : 'float'
+      }
+      ,
+      {
+         name : 'Longitude', type : 'float'
+      }
+      ,
+      'IconTypeName',
+      {
+         name : 'CustomSpeed', type : 'int'
+      }
+      ,
+      'MyHeading',
+      'icon',
+      'Driver'
+      ],
+      idProperty : 'BoxId'
+   }
+   );
+
+   Ext.define('FleetList',
+   {
+      extend : 'Ext.data.Model',
+      fields : [
+      'OrganizationName',
+      'FleetId',
+      'FleetName',
+      'Description',
+      'IconTypeName',
+      'MyHeading'
+      ]
+   }
+   );
+
+   Ext.onReady(function () {
+       //   Ext.tip.QuickTipManager.init();
+       // setup the state provider, all state information will be saved to a cookie
+       // Ext.state.Manager.setProvider(Ext.create('Ext.state.CookieProvider'));
+       Ext.QuickTips.init();
+
+       // setup the state provider, all state information will be saved to a cookie
+       Ext.state.Manager.setProvider(Ext.create('Ext.state.CookieProvider'));
+
+       var pagesize = 10000;
+       var selectedVehIds = "";
+       var lastProxyFinished = false;
+       var mapLoading = false;
+       var currentSelected = "";
+       var wincounter = 0;
+       var proxyTimeOut = 120000;
+       var fleetDefaultText = 'All Vehicles...';
+       var taskRunning = false;
+       var mapHTML = '<iframe scrolling="no" src="./MapNew/OpenLayerMaps.aspx"';
+       var mapStyle = 'style="Height:100%; width:100%;  border:0;margin:0px"';
+       var mapframe = "nmapframe";
+       var nframeadded = false, sframeadded = false, eframeadded = false;
+       var loadingMask = new Ext.LoadMask(Ext.getBody(), { msg: "Loading..." });
+       // Default
+
+       var ActiveTabs =
+   {
+       Alarms: 0,
+       Vehicles: 1,
+       Messages: 2
+   };
+
+       var LoadStates =
+   {
+       GridLoading: 0,
+       MapLoading: 1,
+       AlarmLoading: 2,
+       FleetsLoading: 3,
+       MainStoreLoading: 4,
+       GettingUpdates: 5,
+       GettingAlarmUpdates: 6,
+       MappingVehicles: 7,
+       MainStoreLoaded: 8,
+       AlarmsLoaded: 9,
+       MessagesLoading: 10,
+       MessagesLoaded: 11,
+       GettingMessageUpdates: 6
+   };
+
+       var currentState = LoadStates.FleetsLoading;
+       var activetab = ActiveTabs.Vehicles;
+
+       //    var pagesize = 2;
+       var alarminterval = 5000;
+       var messageinterval = 5000;
+       var dateformat = 'd/m/Y h:i a';
+       var initialData = "";
+       var soundPresent = false;
+       // var newPosition = 10;
+       var statusColorString = '#00C000';
+
+       var sensorPage = './Map/frmSensorMain.aspx?LicensePlate=';
+       var historyPage = './History/frmhistmain_new.aspx?VehicleId=';
+
+       var template = '<span style="color:{0};">{1}</span>';
+
+       var selModel = Ext.create('Ext.selection.CheckboxModel',
+   {
+       checkOnly: true,
+       enableKeyNav: false,
+       listeners:
+      {
+          selectionchange: function (selModel, selections) {
+              try {
+                  vehiclegrid.down('#finditmenu').setDisabled(selectedVehicleBoxId < 0);
+                  vehiclegrid.down('#trackitmenu').setDisabled(selectedVehicleBoxId < 0);
+                  vehiclegrid.down('#streetViewMenu').setDisabled(selectedVehicleBoxId < 0);
+                  //vehiclegrid.down('#streetView2Button').setDisabled(selections.length == 0);               
+                  vehiclegrid.down('#updatePositionMenu').setDisabled(selections.length == 0);
+                  vehiclegrid.down('#clearAllMenu').setDisabled(selections.length == 0);
+
+                  if (!firstLoad) {
+                      try {
+                          var el = document.getElementById(mapframe).contentWindow;
+
+                          if (typeof el.allVehicles != "undefined")
+                              el.allVehicles.length = 0;
+                          if (el.parent.overlaysettings.vehicleDrivers)
+                              el.vehicleDriversLayer.destroyFeatures();                          
+                          else if (el.parent.overlaysettings.vehiclenames)
+                              el.vehiclenamesLayer.destroyFeatures();
+                          
+                          //el.markers.clearMarkers();
+                          el.markers.removeAllFeatures();
+
+                          /////////////// reload vehicles on map /////////////////////////////////////
+                          if (selections.length > 0) {
+                              var mapJsonData = new Array();
+                              Ext.each(selections, function (exirecord) {
+                                  var newIcon = "";
+                                  var today = new Date();
+                                  var posExpireDate = new Date();
+                                  posExpireDate.setTime(today.getTime() - (60 * PositionExpiredTime * 1000));
+                                  if (exirecord.data.OriginDateTime < posExpireDate) {
+                                      newIcon = "Grey" + exirecord.data.IconTypeName + ".ico";
+                                  }
+                                  else {
+                                      if (exirecord.data.CustomSpeed != 0) {
+                                          newIcon = "Green" + exirecord.data.IconTypeName + exirecord.data.MyHeading + ".ico";
+                                      }
+                                      else {
+                                          newIcon = "Red" + exirecord.data.IconTypeName + ".ico";
+                                      }
+                                  }
+                                  exirecord.data.icon = newIcon;
+                                  mapJsonData.push(exirecord.data);
+                              }
+                              );
+                              currentState = LoadStates.MappingVehicles;
+
+                              if (mapJsonData.length > 0) {
+                                  mapVehicles(true, mapJsonData, true, false, false);
+                              }
+                          }
+                          ////////////////////////////////////////////////////////////////////////////
+                      }
+                      catch (err) { }
+                  }
+                  firstLoad = false;
+
+              }
+              catch (err) {
+              }
+          }
+      }
+   }
+   );
+
+
+       function mapVehicles(map, vehiclesData, isInitial, zoomVehicles, zoomtomap) {
+           zoomtomap = typeof zoomVehicles !== 'undefined' ? zoomtomap : true;
+           try {
+               if (map == true) {
+                   if (zoomVehicles) {
+                       mapSelecteds(vehiclesData, mapframe);
+                   }
+                   else {
+                       if (isInitial) {
+                           ShowMapFrameData(vehiclesData, true, mapframe, zoomtomap);
+                       }
+                       else {
+                           ShowMapFrameData(vehiclesData, false, mapframe, zoomtomap);
+                       }
+                   }
+               }
+           }
+           catch (err) {
+           }
+       }
+
+
+
+       var trackpanel = Ext.create('Ext.Panel',
+   {
+       id: 'trackpanel',
+       autoHeight: true,
+       titleCollapse: true,
+       unstyled: true,
+       layout: 'fit',
+       border: false,
+       width: '100%',
+       maxWidth: window.screen.width,
+       html: '<iframe id="trackwindow" name="trackwindow" src="./OpenLayerMap.aspx" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>',
+       margins: '0 0 0 0',
+       autoScroll: true
+   }
+   );
+
+       Ext.define('UpdatePositonData',
+   {
+       extend: 'Ext.data.Model',
+       fields: ['mesg']
+   }
+   );
+
+       function onUpdatePositionReceived(operation) {
+           try {
+
+               var data = Ext.decode(operation.response.responseText);
+               // process server response here
+               if (data.d != '-1' && data.d != "0") {
+                   var retData;
+                   if (data.d) {
+                       retData = eval(data.d);
+                       Ext.MessageBox.show(
+               {
+                   title: 'UpdatePosition Command Status',
+                   msg: retData,
+                   buttons: Ext.MessageBox.OK,
+                   icon: Ext.MessageBox.INFO
+               }
+               );
+
+                   }
+               }
+           }
+           catch (err) {
+           }
+       }
+
+       function doMin() {
+           this.collapse(false);
+           this.alignTo(document.body, 'bl-bl');
+       }
+
+       var mapit = Ext.create('Ext.Button',
+   {
+       text: 'FindIt',
+       id: 'mapitButton',
+       //    renderTo : Ext.getBody(),
+       tooltip: 'Map the selected vehicle',
+       iconCls: 'map',
+       cls: 'cmbfonts',
+       textAlign: 'left',
+       disabled: true,
+       handler: function () {
+           // console.log("selected " + selectedVehIds);
+           try {
+               mapLoading = true;
+
+               if (selectedVehicleBoxId > 0) {
+                   var gridindex = 0;
+                   vehiclegrid.getStore().each(function (record) {
+                       if (record.data.BoxId == selectedVehicleBoxId) {
+                           if (!vehiclegrid.getSelectionModel().isSelected(gridindex))
+                               vehiclegrid.getSelectionModel().select(gridindex, true, false);
+                           return false;
+                       }
+                       gridindex++;
+
+                   });
+
+                   var selectedBoxs = new Array();
+                   selectedBoxs.push(selectedVehicleData);
+                   mapSelecteds(selectedBoxs, "nmapframe");
+               }
+               mapLoading = false;
+           }
+           catch (err) {
+           }
+       }
+   }
+   );
+
+       var updatePosition = Ext.create('Ext.Button',
+   {
+       text: 'Update Position',
+       id: 'updatePositionButton',
+       tooltip: 'Map selected vehicle on map',
+       iconCls: 'map',
+       cls: 'cmbfonts',
+       textAlign: 'left',
+       disabled: true,
+       handler: function () {
+           try {
+               var currentTicked = vehiclegrid.getSelectionModel().getSelection();
+               var selectedBoxs = "";
+               Ext.each(currentTicked, function (selectedRec, i) {
+                   selectedBoxs = selectedBoxs + "," + selectedRec.data.BoxId + ",";
+               }
+            );
+               var mapstore = new Ext.data.Store(
+            {
+                proxy: new Ext.ux.AspWebAjaxProxy(
+               {
+                   //
+                   url: './Vehicles.aspx/UpdatePosition',
+                   timeout: proxyTimeOut,
+                   actionMethods:
+                  {
+                      create: 'POST',
+                      destroy: 'DELETE',
+                      read: 'POST',
+                      update: 'POST'
+                  }
+                  ,
+                   extraParams:
+                  {
+                      boxIDs: selectedBoxs
+                  }
+                  ,
+                   reader:
+                  {
+                      type: 'json',
+                      // model : 'VehicleList'
+                      model: 'UpdatePositonData'
+                  }
+                  ,
+                   headers:
+                  {
+                      'Content-Type': 'application/json; charset=utf-8'
+                  }
+               }
+               )
+            }
+            );
+
+               var operation = new Ext.data.Operation(
+            {
+                action: 'read'
+            }
+            );
+               mapstore.proxy.read(operation, onUpdatePositionReceived, mapstore);
+           }
+           catch (err) {
+           }
+       }
+   }
+   );
+
+       var feedback = Ext.create('Ext.Button',
+   {
+       text: 'Feedback',
+       id: 'feedbackButton',
+       tooltip: 'Want to improve our map please provide feedback..',
+       iconCls: 'map',
+       cls: 'cmbfonts',
+       textAlign: 'left',
+       handler: function () {
+           try {
+               var feedbackURL = "./Feedback.aspx";
+               var urlToLoad = '<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="' + feedbackURL + '"></iframe>';
+               openWindow('Map<sup>beta</sup> Feedback', urlToLoad, 720, 360);
+           }
+           catch (err) {
+           }
+       }
+   }
+   );
+
+
+       var clearall = Ext.create('Ext.Button',
+   {
+       text: 'ClearAll',
+       id: 'clearAllButton',
+       tooltip: 'Clear all selected vehicles',
+       iconCls: 'map',
+       cls: 'cmbfonts',
+       textAlign: 'left',
+       handler: function () {
+           try {
+               vehiclegrid.getSelectionModel().deselectAll(false);
+           }
+           catch (err) {
+           }
+       }
+   }
+   );
+
+       var findvehiclesdrivers = Ext.create('Ext.Button',
+   {
+       text: 'Find Vehicles/Drivers',
+       id: 'findVehiclesDriversButton',
+       tooltip: 'Find Vehicles/Drivers',
+       iconCls: 'map',
+       cls: 'cmbfonts',
+       textAlign: 'left',
+       handler: function () {
+           try {
+               var url = "./DriverFinder/Default.aspx";
+
+               window.open(url);
+           }
+           catch (err) {
+           }
+       }
+   }
+   );
+
+       var legend = Ext.create('Ext.Button',
+   {
+       text: 'Legend',
+       id: 'legendButton',
+       tooltip: 'Legend of Date/Time Color',
+       iconCls: 'map',
+       cls: 'cmbfonts',
+       textAlign: 'left',
+       handler: function () {
+           try {
+               var legendURL = "./Legend.aspx";
+               var urlToLoad = '<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="' + legendURL + '"></iframe>';
+               openWindow('Map<sup>beta</sup> Legend', urlToLoad, 400, 220);
+           }
+           catch (err) {
+           }
+       }
+   }
+   );
+
+       var sendmessage = Ext.create('Ext.Button',
+   {
+       text: 'Send Message',
+       id: 'sendmessageButton',
+       tooltip: 'Send Message',
+       iconCls: 'map',
+       cls: 'cmbfonts',
+       textAlign: 'left',
+       handler: function () {
+           try {
+               /*var legendURL = "./Legend.aspx";
+               var urlToLoad = '<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="' + legendURL + '"></iframe>';
+               openWindow('Map<sup>beta</sup> Legend', urlToLoad, 400, 220);
+               NewMessageWindow();*/
+
+               var mypage = './Messages/frmNewMessageMain.aspx'
+               var myname = '';
+               var w = 560;
+               var h = 560;
+               var winl = (screen.width - w) / 2;
+               var wint = (screen.height - h) / 2;
+               winprops = 'height=' + h + ',width=' + w + ',top=' + wint + ',left=' + winl + 'location=0,status=0,scrollbars=0,toolbar=0,menubar=0,'
+               win = window.open(mypage, myname, winprops)
+               if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
+
+
+           }
+           catch (err) {
+           }
+       }
+   }
+   );
+
+       function openWindow(wintitle, winURL, winWidth, winHeight) {
+           var win = new Ext.Window(
+      {
+          title: wintitle,
+          width: winWidth,
+          height: winHeight,
+          layout: 'fit',
+          maxWidth: window.screen.width,
+          maxHeight: window.screen.height,
+          maximizable: 'true',
+          minimizable: 'true',
+          resizable: 'true',
+          closable: true,
+          border: false,
+          html: winURL
+      }
+      );
+           win.show();
+       }
+
+
+       var streetView = Ext.create('Ext.Button',
+   {
+       text: 'Street view',
+       id: 'streetViewButton',
+       tooltip: 'Google street view',
+       iconCls: 'map',
+       cls: 'cmbfonts',
+       textAlign: 'left',
+       disabled: true,
+       handler: function () {
+           try {
+               var currentTicked = vehiclegrid.getSelectionModel().getSelection();
+               if (currentTicked.length > 1) {
+                   Ext.MessageBox.alert('Streetview', ' Please select only 1 vehicle for street view.');
+               }
+               else {
+
+                   var selectedBoxs = new Array();
+                   Ext.each(currentTicked, function (selectedRec, i) {
+                       selectedBoxs.push(selectedRec.data);
+                   }
+               );
+                   var winurl = "./StreetView.aspx?WinId=" + wincounter;
+                   var htmlNewWin = '<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="' + winurl + '"></iframe>';
+                   SetWinTrackData2(selectedBoxs);
+                   openWindow('Street view', htmlNewWin, 1000, 480);
+                   wincounter++;
+               }
+           }
+           catch (err) {
+           }
+       }
+   }
+   );
+
+
+       var trackit = Ext.create('Ext.Button',
+   {
+       text: 'TrackIt',
+       id: 'trackitButton',
+       //    renderTo : Ext.getBody(),
+       tooltip: 'Track selected vehicle on separate map',
+       iconCls: 'map',
+       cls: 'cmbfonts',
+       textAlign: 'left',
+       disabled: true,
+       handler: function () {
+           try {
+               var currentTicked = vehiclegrid.getSelectionModel().getSelection();
+               var selectedBoxs = new Array();
+               Ext.each(currentTicked, function (selectedRec, i) {
+                   var newIcon = "";
+                   var today = new Date();
+                   var posExpireDate = new Date();
+                   posExpireDate.setTime(today.getTime() - (60 * PositionExpiredTime * 1000));
+                   if (selectedRec.data.OriginDateTime < posExpireDate) {
+                       newIcon = "Grey" + selectedRec.data.IconTypeName + ".ico";
+                   }
+                   else {
+                       if (selectedRec.data.CustomSpeed != 0) {
+                           newIcon = "Green" + selectedRec.data.IconTypeName + selectedRec.data.MyHeading + ".ico";
+                       }
+                       else {
+                           newIcon = "Red" + selectedRec.data.IconTypeName + ".ico";
+                       }
+                   }
+                   selectedRec.data.icon = newIcon;
+                   selectedBoxs.push(selectedRec.data);
+               }
+            );
+
+               SetWinTrackData2(selectedBoxs);
+               var winurl = "./OpenLayerMap.aspx?WinId=" + wincounter;
+               var htmlNewWin = '<iframe scrolling="no" src="' + winurl + '" style="Height:100%; width:100%;  border:0;margin:0px"></iframe>';
+               openWindow('Track Vehicles', htmlNewWin, 600, 480);
+               wincounter++;
+           }
+           catch (err) {
+
+           }
+       }
+   }
+   );
+
+       var demomap = Ext.create('Ext.Button',
+   {
+       text: 'Demo open layer map',
+       id: 'demomapButton',
+       tooltip: 'Demo open layer map without tracking vehicle',
+       iconCls: 'map',
+       cls: 'cmbfonts',
+       textAlign: 'left',
+       disabled: false,
+       handler: function () {
+           try {
+               var winurl = "./OpenLayerMap.aspx";
+
+               var htmlNewWin = '<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="' + winurl + '"></iframe>';
+
+               var win = Ext.create('Ext.Window',
+            {
+                title: 'Track Vehicles',
+                width: 1000,
+                maxWidth: window.screen.width,
+                maxHeight: window.screen.height,
+                height: 600,
+                layout: 'fit',
+                plain: true,
+                maximizable: 'true',
+                minimizable: 'true',
+                resizable: 'true',
+                closable: true,
+                html: htmlNewWin
+            }
+            ).show();
+           }
+           catch (err) {
+           }
+       }
+   }
+   );
+
+       var searchMap = Ext.create('Ext.Button',
+   {
+       text: 'Search',
+       id: 'searchMapButton',
+       tooltip: 'Search',
+       iconCls: 'map',
+       cls: 'cmbfonts',
+       textAlign: 'left',
+       handler: function () {
+           try {
+               searchwindow(mapframe);
+           }
+           catch (err) {
+           }
+       }
+   }
+   );
+
+       var filters =
+   {
+       ftype: 'filters',
+       local: true,   // defaults to false (remote filtering)
+       filters: [
+      {
+          type: 'string',
+          dataIndex: 'BoxId'
+      }
+      ,
+      {
+          type: 'string',
+          dataIndex: 'Description'
+      }
+      ,
+      {
+          type: 'string',
+          dataIndex: 'StreetAddress'
+      }
+      ,
+      {
+          type: 'string',
+          dataIndex: 'VehicleStatus'
+      }
+      ,
+      {
+          type: 'int',
+          dataIndex: 'CustomSpeed'
+      }
+      ,
+      {
+          type: 'date',
+          dataIndex: 'convertedDate'
+      }
+      ,
+      {
+          type: 'boolean',
+          dataIndex: 'BoxArmed'
+      }
+      ]
+   }
+   ;
+
+       Ext.define('Alarm',
+   {
+       extend: 'Ext.data.Model',
+       fields: [
+      'AlarmId',
+      {
+          name: 'TimeCreated', type: 'date', dateFormat: 'c'
+      }
+      ,
+      'AlarmState',
+      'AlarmLevel',
+      'vehicleDescription',
+      'AlarmDescription'
+      ],
+       idProperty: 'AlarmId'
+   }
+   );
+
+       Ext.define('Message',
+   {
+       extend: 'Ext.data.Model',
+       fields: [
+      'MessageId',
+      {
+          name: 'MsgDateTime', type: 'date', dateFormat: 'c'
+      },
+      'MsgKey',
+      'VehicleId',
+      'peripheralId',
+      'MsgTypeId',
+      'checksumId',
+      'UserId',
+      'Description',
+      'MsgBody',
+      'Acknowledged'
+      ],
+       idProperty: 'MessageId'
+   }
+   );
+       // create the Data Store
+       var alarmsstore = Ext.create('Ext.data.Store',
+   {
+       model: 'Alarm',
+       pageSize: pagesize,
+       autosync: false,
+       autoLoad: false,
+       storeId: 'AlarmsStore',
+       proxy:
+      {
+          type: 'ajax',
+          url: './Map/frmAlarmRotatingServerCall_XML.aspx',
+          timeout: proxyTimeOut,
+          reader:
+         {
+             type: 'xml',
+             root: 'Alarm',
+             record: 'AllUserAlarmsInfo'
+         }
+      }
+      ,
+       listeners:
+      {
+          'load': function (store, records, options) {
+              currentState = LoadStates.AlarmsLoaded;
+
+              var alms = store.getRange();
+              var newAlarms = 0;
+              Ext.each(alms, function (modrecord, i) {
+                  if (modrecord.data.AlarmState == "New")
+                      newAlarms++;
+              });
+
+              var divwidth = 25;
+              if (newAlarms >= 10 && newAlarms < 100)
+                  divwidth = 30;
+              else if (newAlarms >= 100)
+                  divwidth = 35;
+
+              if (!alarmgrid.isVisible() && newAlarms > 0)
+                  alarmgrid.setTitle("Alarms <div style='display:inline-block;width:" + divwidth + "px;'><span class='alarmtabtitleunreadmsg blinking'>(" + newAlarms + ")</span></div>");
+              else
+                  alarmgrid.setTitle("Alarms <div style='display:inline-block;width:" + divwidth + "px;'><span class='alarmtabtitleunreadmsg'>(" + newAlarms + ")</span></div>");
+          }
+         ,
+          scope: this
+      }
+      , sorters: [
+      {
+          // property : 'OriginDateTime',
+          property: 'TimeCreated',
+          direction: 'DESC'
+      }
+      ]
+   }
+   );
+
+       var messagesstore = Ext.create('Ext.data.Store',
+   {
+       model: 'Message',
+       pageSize: pagesize,
+       autosync: false,
+       autoLoad: false,
+       storeId: 'MessagesStore',
+       proxy:
+      {
+          type: 'ajax',
+          url: './Map/frmMessageRotatingServer_XML.aspx',
+          timeout: proxyTimeOut,
+          reader:
+         {
+             type: 'xml',
+             root: 'Message',
+             record: 'MessageInfo'
+         }
+      }
+      ,
+       listeners:
+      {
+          'load': function (store, records, options) {
+              currentState = LoadStates.MessagesLoaded;
+
+              var msgs = store.getRange();
+              var unreadMsg = 0;
+              Ext.each(msgs, function (modrecord, i) {
+                  if (modrecord.data.Acknowledged == "N/A")
+                      unreadMsg++;
+              });
+
+              var divwidth = 25;
+              if (unreadMsg >= 10 && unreadMsg < 100)
+                  divwidth = 30;
+              else if (unreadMsg >= 100)
+                  divwidth = 35;
+
+              if (!messagegrid.isVisible() && unreadMsg > 0)
+                  messagegrid.setTitle("Messages <div style='display:inline-block;width:" + divwidth + "px;'><span class='messagetabtitleunreadmsg blinking'>(" + unreadMsg + ")</span></div>");
+              else
+                  messagegrid.setTitle("Messages <div style='display:inline-block;width:" + divwidth + "px;'><span class='messagetabtitleunreadmsg'>(" + unreadMsg + ")</span></div>");
+          }
+         ,
+          scope: this
+      }
+      , sorters: [
+      {
+          // property : 'OriginDateTime',
+          property: 'MsgDateTime',
+          direction: 'DESC'
+      }
+      ]
+   }
+   );
+
+       // create the Data Store
+       var mainstore = Ext.create('Ext.data.Store',
+   {
+       model: 'VehicleList',
+       pageSize: pagesize,
+       // buffered : true,
+       // purgePageCount : 0,
+       autoLoad: false,
+       autosync: false,
+       storeId: 'Vehicles',
+       listeners:
+      {
+          'load': function (store, records, options) {
+              try {
+                  if (store.getCount() > 0) {
+                      currentState = LoadStates.GridLoading;
+                      var mapJsonData = new Array();
+                      var vi = 0;
+                      if (mapAssets) {
+                          Ext.each(records, function (exirecord) {
+                              var newIcon = "";
+                              var today = new Date();
+                              var posExpireDate = new Date();
+                              posExpireDate.setTime(today.getTime() - (60 * PositionExpiredTime * 1000));
+                              if (exirecord.data.OriginDateTime < posExpireDate) {
+                                  newIcon = "Grey" + exirecord.data.IconTypeName + ".ico";
+                              }
+                              else {
+                                  if (exirecord.data.CustomSpeed != 0) {
+                                      newIcon = "Green" + exirecord.data.IconTypeName + exirecord.data.MyHeading + ".ico";
+                                  }
+                                  else {
+                                      newIcon = "Red" + exirecord.data.IconTypeName + ".ico";
+                                  }
+                              }
+                              //var newIcon = "Red" + exirecord.data.IconTypeName + ".ico";
+                              exirecord.data.icon = newIcon;
+                              mapJsonData.push(exirecord.data);
+                              //vi++;
+                              //if (vi >= maxVehiclesOnMap) return false;
+                          }
+                        );
+                      }
+
+                      //mainstore.sort('convertedDate', 'DESC');
+                      currentState = LoadStates.MappingVehicles;
+
+
+                      if (mapJsonData.length > 0 && mapAssets) {
+                          mapVehicles(true, mapJsonData, true, false);
+                          firstLoad = true;
+                          vehiclegrid.getSelectionModel().selectAll(false);
+                          /*for (var i = 0; i < mapJsonData.length; i++) {
+                          firstLoad = true;
+                          vehiclegrid.getSelectionModel().select(i, true, false);
+                          }*/
+
+                      }
+                      else
+                          firstLoad = false;
+
+                      if (!taskRunning) {
+                          taskRunning = true;
+                          alarmsstore.load();
+                          messagesstore.load();
+                          vehiclerunner.start(vehicletask);
+                          alarmrunner.start(alarmtask);
+                          messagerunner.start(messagetask);
+                          loadingMask.hide();
+                      }
+                  }
+                  else {
+                      removeMarkersOnMap();
+                  }
+                  lastProxyFinished = true;
+
+
+              }
+              catch (err) {
+              }
+              currentState = LoadStates.MainStoreLoaded;
+          }
+         ,
+          scope: this
+      }
+      ,
+       proxy:
+      {
+          type: 'ajax',
+          url: 'Vehicles.aspx',
+          timeout: proxyTimeOut,
+          reader:
+         {
+             type: 'xml',
+             root: 'Fleet',
+             record: 'VehiclesLastKnownPositionInformation'
+         }
+      }
+      , sorters: [
+      {
+          property: 'convertedDate',
+          direction: 'DESC'
+      }
+      ]
+   }
+   );
+
+       var vehiclePager = new Ext.PagingToolbar(
+   {
+       store: mainstore,
+       displayInfo: true,
+       displayMsg: 'Displaying vehicles {0} - {1} of {2}',
+       emptyMsg: "No vehicles to display"// ,
+
+   }
+   );
+
+       var alarmsPager = new Ext.PagingToolbar(
+   {
+       store: alarmsstore,
+       displayInfo: true,
+       displayMsg: 'Displaying alarms {0} - {1} of {2}',
+       emptyMsg: "No alarms to display"// ,
+
+   }
+   );
+
+       var messagesPager = new Ext.PagingToolbar(
+   {
+       store: messagesstore,
+       displayInfo: true,
+       displayMsg: 'Displaying messages {0} - {1} of {2}',
+       emptyMsg: "No messages to display"// ,
+
+   }
+   );
+
+       var recordUpdater = Ext.create('Ext.data.Store',
+   {
+       model: 'VehicleList',
+       autoLoad: false,
+       listeners:
+      {
+          'load': function (store, records, options) {
+              try {
+                  if (store.getCount() > 0) {
+                      currentState = LoadStates.GettingUpdates;
+                      var modified = store.getRange();
+                      // var recToDelete = new Array();
+                      var newRecToMap = new Array();
+                      var counter = 0;
+                      Ext.each(modified, function (modrecord, i) {
+                          var newIcon = "";
+                          var today = new Date();
+                          var posExpireDate = new Date();
+                          posExpireDate.setTime(today.getTime() - (60 * PositionExpiredTime * 1000));
+                          if (modrecord.data.OriginDateTime < posExpireDate) {
+                              newIcon = "Grey" + modrecord.data.IconTypeName + ".ico";
+                          }
+                          else {
+                              if (modrecord.data.CustomSpeed != 0) {
+                                  newIcon = "Green" + modrecord.data.IconTypeName + modrecord.data.MyHeading + ".ico";
+                              }
+                              else {
+                                  newIcon = "Red" + modrecord.data.IconTypeName + ".ico";
+                              }
+                          }
+                          modrecord.data.icon = newIcon;
+
+                          var tests = mainstore.findExact('BoxId', modrecord.data.BoxId, 0);
+                          if (tests != -1) {
+                              mainstore.getAt(tests).data = modrecord.data;
+                              newRecToMap.push(modrecord.data);
+                          }
+                      }
+                  );
+
+                      currentState = LoadStates.MainStoreLoading;
+                      mainstore.sort('convertedDate', 'DESC');
+                      currentState = LoadStates.MappingVehicles;
+                      mapVehicles(true, newRecToMap, false, '');
+
+                      //var row = $(Ext.get(vehiclegrid.getView().getNode(gridindex)).dom);
+                      //row.children("td").attr("style", "border-right: 0 !important; border-left: 0 !important");
+
+                      if (selectedVehicleBoxId > 0) {
+                          var gridindex = 0;
+                          vehiclegrid.getStore().each(function (record) {
+                              if (record.data.BoxId == selectedVehicleBoxId) {
+                                  var row = $(Ext.get(vehiclegrid.getView().getNode(gridindex)).dom);
+
+                                  row.children("td").addClass("highlightgrid");
+                                  row.children("td").attr("style", "background-color: #ACFA97 !important");
+                                  $(".x-date-time").attr("style", "background-color: white");
+
+                                  return false;
+                              }
+                              gridindex++;
+
+                          });
+                      }
+                  }
+              }
+              catch (err) {
+                  // console.log("Error in recordUpdater " + err);
+              }
+              currentState = LoadStates.MainStoreLoaded;
+          }
+      }
+      ,
+       proxy:
+      {
+          // load using HTTP
+          type: 'ajax',
+          url: 'Vehicles.aspx',
+          timeout: proxyTimeOut,
+          reader:
+         {
+             type: 'xml',
+             root: 'Fleet',
+             record: 'VehiclesLastKnownPositionInformation'
+         }
+      }
+   }
+   );
+
+
+       var vehicletask =
+   {
+       run: function () {
+           try {
+               if (!mainstore.isLoading() && !recordUpdater.isLoading()) {
+                   if (IsSyncOn) {
+                       currentState = LoadStates.GettingUpdates;
+                       recordUpdater.removeAll(true);
+                       recordUpdater.load(
+                  {
+                      params:
+                     {
+                         QueryType: 'GetVehiclePosition',
+                         start: 0,
+                         limit: pagesize
+                     }
+                  }
+                  );
+                   }
+               }
+           }
+           catch (err) {
+           }
+       }
+      ,
+       interval: parseInt(vehinterval) // 5 second
+   }
+       var vehiclerunner = new Ext.util.TaskRunner();
+
+       // create the Data Store
+       var alarmupdater = Ext.create('Ext.data.Store',
+   {
+       model: 'Alarm',
+       autoLoad: false,
+       proxy:
+      {
+          // load using HTTP
+          type: 'ajax',
+          url: './Map/frmAlarmRotatingServerCall_XML.aspx',
+          timeout: proxyTimeOut,
+          reader:
+         {
+             type: 'xml',
+             root: 'Alarm',
+             record: 'AllUserAlarmsInfo'
+         }
+      }
+      ,
+       autoLoad: false,
+       listeners:
+      {
+          'load': function (store, records, options) {
+              try {
+                  if (store.getCount() > 0) {
+                      currentState = LoadStates.GettingAlarmUpdates;
+                      var modified = store.getRange();
+                      var newRecords = new Array();
+                      var newAlarms = 0;
+                      Ext.each(modified, function (modrecord, i) {
+                          var tests = alarmsstore.findExact('AlarmId', modrecord.data.AlarmId, 0);
+                          if (tests == -1) {
+                              newRecords.push(modrecord);
+                          }
+                          if (modrecord.data.AlarmState == "New")
+                              newAlarms++;
+                      }
+                      );
+                      if (newRecords.length > 0) {
+                          alarmsstore.insert(alarmsstore.getCount() + 1, newRecords);
+                          alarmsstore.sort('TimeCreated', 'DESC');
+
+                          var divwidth = 25;
+                          if (newAlarms >= 10 && newAlarms < 100)
+                              divwidth = 30;
+                          else if (newAlarms >= 100)
+                              divwidth = 35;
+
+                          if (!alarmgrid.isVisible())
+                              alarmgrid.setTitle("Alarms <div style='display:inline-block;width:" + divwidth + "px;'><span class='alarmtabtitleunreadmsg blinking'>(" + newAlarms + ")</span></div>");
+                          else
+                              alarmgrid.setTitle("Alarms <div style='display:inline-block;width:" + divwidth + "px;'><span class='alarmtabtitleunreadmsg'>(" + newAlarms + ")</span></div>");
+                      }
+                      alarmsPager.updateInfo();
+                  }
+              }
+              catch (err) {
+              }
+              currentState = LoadStates.AlarmsLoaded;
+          }
+      }
+   }
+   );
+
+       var alarmsDone = true;
+       var alarmtask =
+   {
+       run: function () {
+           try {
+               if (!alarmsstore.isLoading() && !alarmupdater.isLoading()) {
+                   currentState = LoadStates.GettingAlarmUpdates;
+                   alarmupdater.removeAll(true);
+                   alarmupdater.load();
+               }
+
+           }
+           catch (err) {
+           }
+       }
+      ,
+       interval: parseInt(alarminterval) // 5 second
+   }
+
+       var alarmrunner = new Ext.util.TaskRunner();
+
+
+       //////// messages
+       // create the Data Store
+       var messageupdater = Ext.create('Ext.data.Store',
+   {
+       model: 'Message',
+       autoLoad: false,
+       proxy:
+      {
+          // load using HTTP
+          type: 'ajax',
+          url: './Map/frmMessageRotatingServer_XML.aspx',
+          timeout: proxyTimeOut,
+          reader:
+         {
+             type: 'xml',
+             root: 'Message',
+             record: 'MessageInfo'
+         }
+      }
+      ,
+       autoLoad: false,
+       listeners:
+      {
+          'load': function (store, records, options) {
+              try {
+                  if (store.getCount() > 0) {
+                      currentState = LoadStates.GettingMessageUpdates;
+                      var modified = store.getRange();
+                      var newRecords = new Array();
+                      var unreadMsg = 0;
+                      Ext.each(modified, function (modrecord, i) {
+                          var tests = messagesstore.findExact('MessageId', modrecord.data.MessageId, 0);
+                          if (tests == -1) {
+                              newRecords.push(modrecord);
+                          }
+                          if (modrecord.data.Acknowledged == "N/A")
+                              unreadMsg++;
+                      }
+                      );
+
+                      if (newRecords.length > 0) {
+                          messagesstore.insert(messagesstore.getCount() + 1, newRecords);
+                          messagesstore.sort('MsgDateTime', 'DESC');
+
+                          var divwidth = 25;
+                          if (unreadMsg >= 10 && unreadMsg < 100)
+                              divwidth = 30;
+                          else if (unreadMsg >= 100)
+                              divwidth = 35;
+
+                          if (!messagegrid.isVisible())
+                              messagegrid.setTitle("Messages <div style='display:inline-block;width:" + divwidth + "px;'><span class='messagetabtitleunreadmsg blinking'>(" + unreadMsg + ")</span></div>");
+                          else
+                              messagegrid.setTitle("Messages <div style='display:inline-block;width:" + divwidth + "px;'><span class='messagetabtitleunreadmsg'>(" + unreadMsg + ")</span></div>");
+                      }
+                      messagesPager.updateInfo();
+                  }
+              }
+              catch (err) {
+              }
+              currentState = LoadStates.MessagesLoaded;
+          }
+      }
+   }
+   );
+
+       var messagesDone = true;
+       var messagetask =
+   {
+       run: function () {
+           try {
+               if (!messagesstore.isLoading() && !messageupdater.isLoading()) {
+                   currentState = LoadStates.GettingMessageUpdates;
+                   messageupdater.removeAll(true);
+                   messageupdater.load();
+               }
+
+           }
+           catch (err) {
+           }
+       }
+      ,
+       interval: parseInt(messageinterval) // 5 second
+   }
+
+       var messagerunner = new Ext.util.TaskRunner();
+       //////////////////////////////////////////////////////////////////
+
+       var fleetstore = Ext.create('Ext.data.Store',
+   {
+       model: 'FleetList',
+       autoLoad: false,
+       storeId: 'FleetStore',
+
+       listeners:
+      {
+          'load': function (store, records, options) {
+              try {
+                  if (DefaultFleetID != -1) {
+                      fleets.setValue(DefaultFleetID);
+                  }
+                  var selFleet = fleets.getValue();
+
+                  currentState = LoadStates.MainStoreLoading;
+                  mainstore.load(
+               {
+                   params:
+                  {
+                      QueryType: 'GetfleetPosition',
+                      fleetID: selFleet,
+                      start: 0,
+                      limit: pagesize
+                  }
+               }
+               );
+
+                  currentState = LoadStates.MainStoreLoaded;
+              }
+              catch (err) {
+              }
+          }
+         ,
+          scope: this
+      }
+      ,
+       proxy:
+      {
+          // load using HTTP
+          type: 'ajax',
+          url: 'Vehicles.aspx?QueryType=GetAllFleets',
+          timeout: proxyTimeOut,
+          reader:
+         {
+             type: 'xml',
+             root: 'Fleet',
+             record: 'FleetsInformation'
+         }
+      }
+   }
+   );
+
+       var fleets = Ext.create('Ext.form.ComboBox',
+   {
+       store: 'FleetStore',
+       displayField: 'FleetName',
+       valueField: 'FleetId',
+       typeAhead: true,
+       fieldStyle: 'cmbfonts',
+       labelCls: 'cmbLabel',
+       queryMode: 'local',
+       triggerAction: 'all',
+       fieldLabel: ' Fleets ',
+       emptyText: fleetDefaultText,
+       tooltip: 'Select group of vehicles to show',
+       selectOnFocus: true,
+       width: 300,
+       labelWidth: 40,
+       listeners:
+      {
+          scope: this,
+          'select': function (combo, value) {
+              currentState = LoadStates.MainStoreLoading;
+              try {
+                  var selFleet = combo.getValue();
+                  if (selFleet != '' && selFleet.length > 0) {
+                      mainstore.load(
+                  {
+                      params:
+                     {
+                         QueryType: 'GetVehiclePosition',
+                         fleetID: selFleet,
+                         start: 0,
+                         limit: pagesize
+                     }
+                  }
+                  );
+                  }
+              }
+              catch (err) {
+              }
+              currentState = LoadStates.MainStoreLoaded;
+          }
+      }
+   }
+   );
+
+       var northmappanel = Ext.create('Ext.Panel',
+   {
+       region: defaultMapView,
+       id: 'nmappanel',
+       split: true,
+       titleCollapse: true,
+       autoScroll: true,
+       border: false,
+       height: window.screen.height / 2,
+       width: window.screen.width / 2,
+       autoHeight: true,
+       collapsible: true,
+       animCollapse: true,
+       minHeight: 150,
+       minSize: 150,
+       html: mapHTML + ' id="nmapframe" name="nmapframe" ' + mapStyle + '></iframe>',
+       listeners:
+      {
+          'afterrender': function () {
+              fleetstore.load();
+          }
+      }
+   }
+   );
+
+       var scrollMenu = Ext.create('Ext.menu.Menu');
+
+       var finditmenu = {
+           id: 'finditmenu',
+           text: 'FindIt',
+           disabled: true,
+           tooltip: 'Map the selected vehicle',
+           iconCls: 'map',
+           cls: 'cmbfonts',
+           handler: findit
+       }
+
+       var trackitmenu =
+       {
+           text: 'TrackIt',
+           id: 'trackitmenu',
+           tooltip: 'Track selected vehicle on separate map',
+           iconCls: 'map',
+           cls: 'cmbfonts',
+           textAlign: 'left',
+           disabled: true,
+           handler: function () {
+               try {
+                   var selectedBoxs = new Array();
+                   if (selectedVehicleBoxId > 0) {
+                       var newIcon = "";
+                       var today = new Date();
+                       var posExpireDate = new Date();
+                       posExpireDate.setTime(today.getTime() - (60 * PositionExpiredTime * 1000));
+                       if (selectedVehicleData.OriginDateTime < posExpireDate) {
+                           newIcon = "Grey" + selectedVehicleData.IconTypeName + ".ico";
+                       }
+                       else {
+                           if (selectedVehicleData.CustomSpeed != 0) {
+                               newIcon = "Green" + selectedVehicleData.IconTypeName + selectedVehicleData.MyHeading + ".ico";
+                           }
+                           else {
+                               newIcon = "Red" + selectedVehicleData.IconTypeName + ".ico";
+                           }
+                       }
+                       selectedVehicleData.icon = newIcon;
+
+                       selectedBoxs.push(selectedVehicleData);
+                   }
+
+                   SetWinTrackData2(selectedBoxs);
+                   var winurl = "./OpenLayerMap.aspx?WinId=" + wincounter;
+                   var htmlNewWin = '<iframe scrolling="no" src="' + winurl + '" style="Height:100%; width:100%;  border:0;margin:0px"></iframe>';
+                   openWindow('Track Vehicles', htmlNewWin, 600, 480);
+                   wincounter++;
+               }
+               catch (err) {
+
+               }
+           }
+       };
+
+       var streetViewMenu =
+       {
+           text: 'Street view',
+           id: 'streetViewMenu',
+           tooltip: 'Google street view',
+           iconCls: 'map',
+           cls: 'cmbfonts',
+           textAlign: 'left',
+           disabled: true,
+           handler: function () {
+               try {
+                   if (selectedVehicleBoxId > 0) {
+                       var selectedBoxs = new Array();
+                       selectedBoxs.push(selectedVehicleData);
+
+                       var winurl = "./StreetView.aspx?WinId=" + wincounter;
+                       var htmlNewWin = '<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="' + winurl + '"></iframe>';
+                       SetWinTrackData2(selectedBoxs);
+                       openWindow('Street view', htmlNewWin, 1000, 480);
+                       wincounter++;
+                   }
+                   else {
+                       Ext.MessageBox.alert('Streetview', ' Please select a vehicle for street view.');
+                   }
+
+
+                   /*var currentTicked = vehiclegrid.getSelectionModel().getSelection();
+                   if (currentTicked.length > 1) {
+                   Ext.MessageBox.alert('Streetview', ' Please select only 1 vehicle for street view.');
+                   }
+                   else {
+
+                   var selectedBoxs = new Array();
+                   Ext.each(currentTicked, function (selectedRec, i) {
+                   selectedBoxs.push(selectedRec.data);
+                   }
+                   );
+                   var winurl = "./StreetView.aspx?WinId=" + wincounter;
+                   var htmlNewWin = '<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="' + winurl + '"></iframe>';
+                   SetWinTrackData2(selectedBoxs);
+                   openWindow('Street view', htmlNewWin, 1000, 480);
+                   wincounter++;
+                   }*/
+               }
+               catch (err) {
+               }
+           }
+       };
+
+       var updatePositionMenu =
+       {
+           text: 'Update Position',
+           id: 'updatePositionMenu',
+           tooltip: 'Map selected vehicle on map',
+           iconCls: 'map',
+           cls: 'cmbfonts',
+           textAlign: 'left',
+           disabled: true,
+           handler: function () {
+               try {
+                   var currentTicked = vehiclegrid.getSelectionModel().getSelection();
+                   var selectedBoxs = "";
+                   Ext.each(currentTicked, function (selectedRec, i) {
+                       selectedBoxs = selectedBoxs + "," + selectedRec.data.BoxId + ",";
+                   }
+                );
+                   var mapstore = new Ext.data.Store(
+                {
+                    proxy: new Ext.ux.AspWebAjaxProxy(
+                   {
+                       //
+                       url: './Vehicles.aspx/UpdatePosition',
+                       timeout: proxyTimeOut,
+                       actionMethods:
+                      {
+                          create: 'POST',
+                          destroy: 'DELETE',
+                          read: 'POST',
+                          update: 'POST'
+                      }
+                      ,
+                       extraParams:
+                      {
+                          boxIDs: selectedBoxs
+                      }
+                      ,
+                       reader:
+                      {
+                          type: 'json',
+                          // model : 'VehicleList'
+                          model: 'UpdatePositonData'
+                      }
+                      ,
+                       headers:
+                      {
+                          'Content-Type': 'application/json; charset=utf-8'
+                      }
+                   }
+                   )
+                }
+                );
+
+                   var operation = new Ext.data.Operation(
+                {
+                    action: 'read'
+                }
+                );
+                   mapstore.proxy.read(operation, onUpdatePositionReceived, mapstore);
+               }
+               catch (err) {
+               }
+           }
+       };
+
+       var clearallMenu =
+       {
+           text: 'ClearAll',
+           id: 'clearAllMenu',
+           tooltip: 'Clear all selected vehicles',
+           iconCls: 'map',
+           cls: 'cmbfonts',
+           textAlign: 'left',
+           handler: function () {
+               try {
+                   vehiclegrid.getSelectionModel().deselectAll(false);
+               }
+               catch (err) {
+               }
+           }
+       }
+
+
+       scrollMenu.add(finditmenu, trackitmenu, streetViewMenu, updatePositionMenu, clearallMenu);
+
+
+       var vehiclegrid = Ext.create('Ext.grid.Panel',
+   {
+       id: 'vehiclesgrid',
+       enableColumnHide: true,
+       title: 'Vehicles',
+       autoLoad: false,
+       autoScroll: true,
+       loadMask: true,
+       maxWidth: window.screen.width,
+       maxHeight: window.screen.height,
+       enableSorting: true,
+       stateful: false,
+       closable: false,
+       columnLines: true,
+       width: window.screen.width,
+       autoHeight: true,
+       store: mainstore,
+       collapsible: true,
+       animCollapse: true,
+       split: true,
+       features: [filters],
+       stateId: 'stateVGrid',
+       viewConfig:
+      {
+          emptyText: 'No vehicles to display',
+          useMsg: false
+      }
+      ,
+       columns: [
+      {
+          text: 'UnitID',
+          align: 'left',
+          width: 70,
+          dataIndex: 'BoxId',
+          filterable: true,
+          sortable: true,
+          // flex : 1,
+          hidden: false
+      },
+      {
+          text: 'Driver',
+          align: 'left',
+          width: 70,
+          dataIndex: 'Driver',
+          filterable: true,
+          sortable: true,
+          // flex : 1,
+          hidden: true
+      }
+      ,
+      {
+          text: 'Description',
+          align: 'left',
+          width: 150,
+          renderer: function (value, p, record) {
+              return Ext.String.format('<a href="#" OnClick="SensorInfoWindow(\'{0}\')">{1}</a>', Ext.String.escape(record.data['LicensePlate']), value);
+          }
+         ,
+          dataIndex: 'Description',
+          filterable: true,
+          sortable: true
+      }
+      ,
+      {
+          text: 'Status',
+          align: 'left',
+          width: 120,
+          renderer: function (value) {
+              var fontColor = "black";
+              if (value.indexOf("Parked") != -1) {
+                  fontColor = "red";
+              }
+              else if (value.indexOf("Idling") != -1) {
+                  fontColor = "orange";
+              }
+              else if (value.indexOf("Moving") != -1) {
+                  fontColor = "green";
+              }
+
+              return Ext.String.format(template, fontColor, value);
+          }
+         ,
+          dataIndex: 'VehicleStatus',
+          filterable: true,
+          sortable: true
+      }
+      ,
+      {
+          text: 'Speed',
+          align: 'left',
+          width: 50,
+          dataIndex: 'CustomSpeed',
+          filterable: true,
+          sortable: true
+      }
+      ,
+      {
+          text: 'Date/Time',
+          align: 'left',
+          width: 120,
+          xtype: 'datecolumn',
+          format: dateformat,
+          dataIndex: 'convertedDate',
+          filterable: true,
+          sortable: true,
+          tdCls: 'x-date-time'
+      }
+      ,
+      {
+          text: 'Address',
+          align: 'left',
+          width: 300,
+          dataIndex: 'StreetAddress',
+          filterable: true,
+          sortable: true
+      }
+      ,
+      {
+          text: 'Armed',
+          align: 'left',
+          width: 40,
+          dataIndex: 'BoxArmed',
+          filterable: true,
+          sortable: true
+      }
+      ,
+      {
+          text: 'History',
+          align: 'left',
+          width: 90,
+          renderer: function (value) {
+              return Ext.String.format('<a href="#" OnClick="NewWindow(\'{0}\',{1})">History</a>', historyPage, Ext.String.format(value));
+          }
+         ,
+          dataIndex: 'VehicleId',
+          filterable: false,
+          sortable: true
+      }
+        ]
+        , dockedItems: [
+      {
+          xtype: 'toolbar',
+          dock: 'top',
+          items: [fleets,
+         {
+             xtype: 'cycle',
+             text: 'Reading Pane',
+             prependText: 'Map: ',
+             showText: true,
+             scope: this,
+             changeHandler: readingPaneChange,
+             hidden: true,
+             menu:
+            {
+                id: 'reading-menu',
+                items: [
+               {
+                   text: 'Top',
+                   checked: defaultMapView == "north" ? true : false,
+                   iconCls: 'preview-top'
+               }
+               ,
+               {
+                   text: 'Bottom',
+                   checked: defaultMapView == "south" ? true : false,
+                   iconCls: 'preview-bottom'
+               }
+               ,
+               {
+                   text: 'Right',
+                   checked: defaultMapView == "east" ? true : false,
+                   iconCls: 'preview-right'
+               }
+               ,
+               {
+                   text: 'Hide',
+                   iconCls: 'preview-hide'
+               }
+               ]
+            }
+         }
+         ,
+         '-',
+         {
+             icon: 'preview.png',
+             cls: 'x-btn-text-icon',
+             text: 'Actions',
+             menu: scrollMenu
+         },
+         searchMap, // exportButton,
+         {
+         itemId: 'AutoSync',
+         boxLabel: 'AutoSync',
+         boxLabelCls: 'cmbfonts',
+         xtype: 'checkboxfield',
+         checked: IsSyncOn,
+         tooltip: 'Refresh the map and grid automatically',
+         handler: function () {
+             IsSyncOn = !IsSyncOn;
+         }
+         // IsSyncOn
+     }, /*feedback, */legend
+         ]
+      }
+      ]
+      , selModel: selModel
+      , listeners: {
+          'cellclick': function (grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+
+              if (cellIndex != 0) {
+                  $(".highlightgrid").attr("style", "background-color: white");
+                  $(".highlightgrid").removeClass("highlightgrid");
+                  $(tr).children("td").addClass("highlightgrid");
+                  $(tr).children("td").attr("style", "background-color: #ACFA97 !important");
+                  $(".x-date-time").attr("style", "background-color: white");
+
+                  selectedVehicleBoxId = record.data.BoxId;
+                  selectedVehicleData = record.data;
+
+                  vehiclegrid.down('#finditmenu').setDisabled(false);
+                  vehiclegrid.down('#trackitmenu').setDisabled(false);
+                  vehiclegrid.down('#streetViewMenu').setDisabled(false);
+              }
+          },
+          'celldblclick': function (grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+
+              if (cellIndex != 0) {
+                  $(".highlightgrid").attr("style", "background-color: white");
+                  $(".highlightgrid").removeClass("highlightgrid");
+                  $(tr).children("td").addClass("highlightgrid");
+                  $(tr).children("td").attr("style", "background-color: #ACFA97 !important");
+                  $(".x-date-time").attr("style", "background-color: white");
+
+                  selectedVehicleBoxId = record.data.BoxId;
+                  selectedVehicleData = record.data;
+
+                  vehiclegrid.down('#finditmenu').setDisabled(false);
+                  vehiclegrid.down('#trackitmenu').setDisabled(false);
+                  vehiclegrid.down('#streetViewMenu').setDisabled(false);
+
+                  //$('#mapitButton-btnEl').click();
+                  findit();
+              }
+          }
+      }
+      ,
+       viewConfig: {
+           getRowClass: function (record, index) {
+               var d = ((new Date()).getTime() - record.get('convertedDate').getTime()) / 1000 / 60 / 60;    // hours
+
+               if (d < 24)
+                   return 'withinlastday';
+               else if (d < 48)
+                   return 'withinlast2days';
+               else if (d < 72)
+                   return 'withinlast3days';
+               else if (d < 168)
+                   return 'withinlast7days';
+               else
+                   return 'morethan7days';
+           }
+       },
+       // paging bar on the bottom
+       bbar: vehiclePager
+   }
+   );
+
+       var alarmgrid = Ext.create('Ext.grid.Panel',
+   {
+       id: 'alarmgrid',
+       animCollapse: false,
+       autoLoad: false,
+       autoScroll: true,
+       loadMask: true,
+       maxWidth: window.screen.width,
+       maxHeight: window.screen.height,
+       stateful: true,
+
+       closable: false,
+       enableColumnHide: false,
+       enableSorting: false,
+       closable: false,
+       width: window.screen.width,
+       autoHeight: true,
+       title: 'Alarms',
+       store: alarmsstore,
+       columnLines: true,
+       stateId: 'stateAGrid',
+       viewConfig:
+      {
+          emptyText: 'No alarms to display',
+          useMsg: false,
+          getRowClass: function (rec, rowIdx, params, store) {
+              if (rec.get('AlarmDescription').indexOf("CIA") != -1) {
+                  return 'grid-row-red';
+              }
+              if (rec.get('AlarmDescription').indexOf("VIA") != -1) {
+                  return 'grid-row-yellow';
+              }
+          }
+      }
+      ,
+       columns: [
+      {
+          text: 'Number',
+          align: 'left',
+          width: 80,
+          renderer: function (value) {
+              return Ext.String.format('<a href="#" OnClick="NewAlarmWindow({0})">{1}</a>', value, value);
+          }
+         ,
+          dataIndex: 'AlarmId',
+          sortable: false
+      }
+      ,
+      {
+          text: 'Alarm Time',
+          align: 'left',
+          width: 120,
+          xtype: 'datecolumn',
+          format: dateformat,
+          dataIndex: 'TimeCreated',
+          sortable: false
+      }
+      ,
+      {
+          text: 'Alarm Priority',
+          align: 'left',
+          width: 80,
+          dataIndex: 'AlarmLevel',
+          sortable: false
+      }
+      ,
+      {
+          text: 'Alarm Description',
+          align: 'left',
+          width: 120,
+          renderer: function (value) {
+              if (value.indexOf("CIA") != -1 && soundPresent != true) {
+                  soundPresent = true;
+                  return Ext.String.format('{0} <object><embed src="../../sounds/FireAlarm.wav" hidden="true" autostart="True" loop="true" type="audio/wav" pluginspage="http://www.apple.com/quicktime/download/" /></object>', value);
+              }
+              else {
+                  return value;
+              }
+          }
+         ,
+          dataIndex: 'AlarmDescription',
+          sortable: false
+      }
+      ,
+      {
+          text: 'Vehicle Description',
+          align: 'left',
+          width: 120,
+          dataIndex: 'vehicleDescription',
+          sortable: false
+      }
+      ]
+      , listeners: {
+          'activate': function (grid, eOpts) {
+              $('.alarmtabtitleunreadmsg').show();
+              $('.alarmtabtitleunreadmsg').removeClass('blinking');
+          }
+      }
+      ,
+       // paging bar on the bottom
+       bbar: alarmsPager
+   }
+   );
+
+       var messagegrid = Ext.create('Ext.grid.Panel',
+   {
+       id: 'messagegrid',
+       animCollapse: false,
+       autoLoad: false,
+       autoScroll: true,
+       loadMask: true,
+       maxWidth: window.screen.width,
+       maxHeight: window.screen.height,
+       stateful: true,
+
+       closable: false,
+       enableColumnHide: false,
+       enableSorting: false,
+       closable: false,
+       width: window.screen.width,
+       autoHeight: true,
+       title: 'Messages',
+       store: messagesstore,
+       columnLines: true,
+       stateId: 'stateAGrid',
+       viewConfig:
+      {
+          emptyText: 'No messages to display',
+          useMsg: false
+      }
+      ,
+       columns: [
+      {
+          text: 'MessageId',
+          align: 'left',
+          width: 80,
+          renderer: function (value, p, record) {
+
+              var MsgKey = Ext.String.escape(record.data['MsgKey']);
+              return Ext.String.format('<a href="#" OnClick="NewMessageWindow(\'{0}\')">{1}</a>', MsgKey, value);
+          }
+         ,
+          dataIndex: 'MessageId',
+          sortable: false
+      }
+      ,
+      {
+          text: 'Date/Time',
+          align: 'left',
+          width: 120,
+          xtype: 'datecolumn',
+          format: dateformat,
+          dataIndex: 'MsgDateTime',
+          sortable: false
+      }
+      ,
+      {
+          text: 'From',
+          align: 'left',
+          width: 150,
+          dataIndex: 'Description',
+          sortable: false
+      }
+      ,
+      {
+          text: 'Message Body',
+          align: 'left',
+          width: 200,
+          dataIndex: 'MsgBody',
+          sortable: false
+      }
+      ,
+      {
+          text: 'Acknowledged',
+          align: 'left',
+          width: 120,
+          dataIndex: 'Acknowledged',
+          sortable: false
+      }
+      ]
+      , dockedItems: [
+          {
+              xtype: 'toolbar',
+              dock: 'top',
+              items: [
+                sendmessage
+             ]
+          }
+      ]
+      , listeners: {
+          'activate': function (grid, eOpts) {
+              $('.messagetabtitleunreadmsg').show();
+              $('.messagetabtitleunreadmsg').removeClass('blinking');
+          }
+      }
+      ,
+       // paging bar on the bottom
+       bbar: messagesPager
+   }
+   );
+
+       var tabs = Ext.create('Ext.tab.Panel',
+   {
+       region: 'center', // a center region is ALWAYS required for border layout
+       deferredRender: false,
+       activeTab: 0,     // first tab initially active
+       items: [vehiclegrid, alarmgrid, messagegrid]
+
+   }
+   );
+
+       var viewport = Ext.create('Ext.Viewport',
+   {
+       layout: 'border',
+       border: false,
+       items: [northmappanel, tabs]
+   }
+   );
+
+       function readingPaneChange(cycle, activeItem) {
+           switch (activeItem.text) {
+               case 'Top':
+                   northmappanel.show();
+                   northmappanel.region = "north";
+                   northmappanel.isHorz = false;
+                   northmappanel.isVert = true;
+                   northmappanel.setHeight(window.screen.height / 2);
+                   if (defaultMapView == "north")
+                       $('#nmappanel-splitter').show();
+                   else
+                       $('#nmappanel-splitter').hide();
+                   viewport.doLayout();
+                   break;
+               case 'Bottom':
+                   northmappanel.show();
+                   northmappanel.region = "south";
+                   northmappanel.isHorz = false;
+                   northmappanel.isVert = true;
+                   northmappanel.setHeight(window.screen.height / 2);
+                   if (defaultMapView == "south")
+                       $('#nmappanel-splitter').show();
+                   else
+                       $('#nmappanel-splitter').hide();
+                   viewport.doLayout();
+                   break;
+               case 'Right':
+                   northmappanel.show();
+                   northmappanel.region = "east";
+                   northmappanel.isHorz = true;
+                   northmappanel.isVert = false;
+                   northmappanel.setWidth(window.screen.width / 2);
+                   if (defaultMapView == "east")
+                       $('#nmappanel-splitter').show();
+                   else
+                       $('#nmappanel-splitter').hide();
+                   viewport.doLayout();
+                   break;
+               default:
+                   northmappanel.hide();
+                   break;
+           }
+       }
+
+       function onItemClick(item) {
+           alert('Menu Click, You clicked the "' + item.text + '" menu item.');
+       }
+
+       function findit() {
+           try {
+               mapLoading = true;
+
+               if (selectedVehicleBoxId > 0) {
+                   var gridindex = 0;
+                   vehiclegrid.getStore().each(function (record) {
+                       if (record.data.BoxId == selectedVehicleBoxId) {
+                           if (!vehiclegrid.getSelectionModel().isSelected(gridindex))
+                               vehiclegrid.getSelectionModel().select(gridindex, true, false);
+                           return false;
+                       }
+                       gridindex++;
+
+                   });
+
+                   var selectedBoxs = new Array();
+                   selectedBoxs.push(selectedVehicleData);
+                   mapSelecteds(selectedBoxs, "nmapframe");
+               }
+               mapLoading = false;
+           }
+           catch (err) {
+           }
+           return false;
+       }
+
+       loadingMask.show();
+   }
+);
+
+   
+
+
+Ext.PagingToolbar.override({
+    updateInfo: function () {
+        var me = this,
+            displayItem = me.child('#displayItem'),
+            store = me.store,
+            pageData = me.getPageData(),
+            count, msg;
+
+        if (displayItem) {
+            count = store.getCount();
+            if (count === 0) {
+                msg = me.emptyMsg;
+            } else {
+                msg = Ext.String.format(
+                    me.displayMsg,
+                    pageData.fromRecord,
+                    pageData.toRecord,
+                    pageData.total
+                );
+            }
+            displayItem.setText(msg);
+            me.doComponentLayout();
+        }
+
+    }
+});

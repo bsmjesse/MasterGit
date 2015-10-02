@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="dstMessages" targetNamespace="http://tempuri.org/dstMessages.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/dstMessages.xsd" xmlns:mstns="http://tempuri.org/dstMessages.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="dstMessages" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="rpt_Messages">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="VehicleId" type="xs:integer" minOccurs="0" />
+							<xs:element name="LicensePlate" type="xs:string" minOccurs="0" />
+							<xs:element name="From" type="xs:string" minOccurs="0" />
+							<xs:element name="To" type="xs:string" minOccurs="0" />
+							<xs:element name="MsgDateTime" type="xs:string" minOccurs="0" />
+							<xs:element name="MsgId" type="xs:integer" minOccurs="0" />
+							<xs:element name="BoxId" type="xs:integer" minOccurs="0" />
+							<xs:element name="TxtMsgTypeId" type="xs:integer" minOccurs="0" />
+							<xs:element name="MsgBody" type="xs:string" minOccurs="0" />
+							<xs:element name="MsgDirection" type="xs:string" minOccurs="0" />
+							<xs:element name="MsgResponse" type="xs:string" minOccurs="0" />
+							<xs:element name="ResponseDateTime" type="xs:string" minOccurs="0" />
+							<xs:element name="UserId" type="xs:integer" minOccurs="0" />
+							<xs:element name="Acknowledged" type="xs:string" minOccurs="0" />
+							<xs:element name="UserName" type="xs:string" minOccurs="0" />
+							<xs:element name="StreetAddress" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,3738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.sentinelfm.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.sentinelfm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.sentinelfm.com">
+      <s:element name="AddEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEmailResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPreferencesXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPreferencesXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserPreferencesXMLResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPreferencesXML_ByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userIdToUpdate" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPreferencesXML_ByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserPreferencesXML_ByUserIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserPreference">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="preferenceId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="preferenceValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserPreferenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUserPreferenceResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserPreference">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="preferenceId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="preferenceValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserPreferenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserPreferenceResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserPreferences">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rowsAffected" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserPreferencesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteUserPreferencesResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rowsAffected" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserPreference">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="preferenceId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rowsAffected" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserPreferenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteUserPreferenceResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rowsAffected" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserPreference_Add_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="preferenceId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="preferenceValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserPreference_Add_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserPreference_Add_UpdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserPreference_Add_Update_ByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userIdToUpdate" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="preferenceId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="preferenceValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserPreference_Add_Update_ByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserPreference_Add_Update_ByUserIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAssignedGroupsByUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAssignedGroupsByUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAssignedGroupsByUserResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAssignedGroupsForSelectedUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SelectedUserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAssignedGroupsForSelectedUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAssignedGroupsForSelectedUserResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserInfoByUserIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="usrId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserInfoByIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeUserPasswordByUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeUserPasswordByUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeUserPasswordByUserNameResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeUserPasswordByUserName_ByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userIdToUpdate" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeUserPasswordByUserName_ByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeUserPasswordByUserName_ByUserIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetPasswordBySuperUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userIdUpdated" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetPasswordBySuperUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ResetPasswordBySuperUserResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateLockedUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateLockedUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateLockedUserResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="personId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expiredDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddNewUserResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteUserByUserIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expiredDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateInfoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserInfoStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expiredDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserInfoStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserInfoStatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserInfoStatusAndGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expiredDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UsergroupsParams" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserInfoStatusAndGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserInfoStatusAndGroupsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlUserInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserInfoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecordUserAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="moduleName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="primaryWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="action" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remoteAddr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="applicationName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecordUserActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RecordUserActionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecordInitialValues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="moduleName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="primaryWhere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="action" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remoteAddr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="applicationName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecordInitialValuesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RecordInitialValuesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatePasswordInLastEight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatePasswordInLastEightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidatePasswordInLastEightResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDateTimeFormats">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsInfo">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDateTimeFormatsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDateTimeFormatsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsInfo">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDefaultDateTimeFormats">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsInfo">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDefaultDateTimeFormatsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDefaultDateTimeFormatsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsInfo">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAmecoUserInfoStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expiredDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAmecoUserInfoStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAmecoUserInfoStatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewUserToGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlUserInfo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userGroupId" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewUserToGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddNewUserToGroupResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserToGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="personId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expiredDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userGroupId" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserToGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUserToGroupResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserToGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="personId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expiredDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UsergroupsParams" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserToGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUserToGroupsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignUserToGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userGroupId" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignUserToGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AssignUserToGroupResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserAssignment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userGroupId" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserAssignmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteUserAssignmentResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersByUserGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userGroupId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersByUserGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUsersByUserGroupResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersByUserGroupAndOrganization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userGroupId" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersByUserGroupAndOrganizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUsersByUserGroupAndOrganizationResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUnassignedUsersToUserGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userGroupId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUnassignedUsersToUserGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAllUnassignedUsersToUserGroupResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUnassignedUsersToUserGroupByOrganization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userGroupId" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUnassignedUsersToUserGroupByOrganizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAllUnassignedUsersToUserGroupByOrganizationResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUserGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUserGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAllUserGroupsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeHgiAdmin" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserGroupsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUserGroupsByLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUserGroupsByLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAllUserGroupsByLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupsbyUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="AllOrganizationGroups" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupsbyUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserGroupsbyUserResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupsForUpdateByUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupsForUpdateByUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserGroupsForUpdateByUserResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetControlsForUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetControlsForUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetControlsForUpdateResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetForms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFormsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetControl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ControlId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetControlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetControlResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupControlSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ParentUserGroupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupControlSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserGroupControlSettingsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddControl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ControlName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FormID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ControlURL" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ControlIsActive" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ControlLangNames" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ParentControlId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddControlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddControlResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateControl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ControlName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FormID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ControlURL" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ControlIsActive" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ControlLangNames" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ControlId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ParentControlId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateControlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateControlResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteUserGroupResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupReportSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ParentUserGroupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupReportSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserGroupReportSettingsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupCommandSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ParentUserGroupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupCommandSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserGroupCommandSettingsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupControlAddSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ParentUserGroupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupControlAddSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserGroupControlAddSettingsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupReportAddSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ParentUserGroupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupReportAddSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserGroupReportAddSettingsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupCommandAddSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ParentUserGroupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupCommandAddSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserGroupCommandAddSettingsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserGroupSetting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OperationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OperationType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserGroupSettingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUserGroupSettingResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserGroupSetting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OperationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OperationType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserGroupSettingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteUserGroupSettingResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserGroupSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckboxValuesParams" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckboxReportsValuesParams" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckboxCommandsValuesParams" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FleetIDs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OperationType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserGroupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserGroupSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserGroupSettingsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserGroupSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckboxValuesParams" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckboxReportsValuesParams" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckboxCommandsValuesParams" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FleetIDs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OperationType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserGroupName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrganizationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ParentUserGroupId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserGroupSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUserGroupSettingsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetsByUserGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FleetType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetsByUserGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFleetsByUserGroupResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperationTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperationTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetOperationTypesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperationControls">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OperationType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperationControlsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetOperationControlsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrganizationsWithUserGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrganizationsWithUserGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetOrganizationsWithUserGroupsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupsOperationAccess">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OperationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OperationType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrganizationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OperationAccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupsOperationAccessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserGroupsOperationAccessResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupIdByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userGroupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupIdByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserGroupIdByNameResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChildControls">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ParentControlId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChildControlsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetChildControlsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserGroupSettingsAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ParentUserGroupId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OperationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OperationType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserGroupSettingsAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUserGroupSettingsAllResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserGroupSettingsAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ParentUserGroupId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OperationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OperationType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserGroupSettingsAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteUserGroupSettingsAllResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPermissionsXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPermissionsXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserPermissionsXMLResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateAmecoUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="organizationId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateAmecoUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateAmecoUserResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserLastLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="loginUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserLastLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserLastLoginResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllNotificationsForUserId_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDateTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toDateTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllNotificationsForUserId_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAllNotificationsForUserId_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllNotificationsForUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDateTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toDateTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllNotificationsForUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAllNotificationsForUserIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersDashboards">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersDashboardsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUsersDashboardsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDashboardTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDashboardTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDashboardTypesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupOperationsByType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userGroupId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="operationType" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="showAssigned" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserGroupOperationsByTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserGroupOperationsByTypeResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLanguages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="currUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLanguagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLanguagesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllEmailXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllEmailXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAllEmailXMLResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEmail" />
+  </wsdl:message>
+  <wsdl:message name="AddEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPreferencesXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserPreferencesXML" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPreferencesXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserPreferencesXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPreferencesXML_ByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserPreferencesXML_ByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPreferencesXML_ByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserPreferencesXML_ByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserPreferenceSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserPreference" />
+  </wsdl:message>
+  <wsdl:message name="AddUserPreferenceSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserPreferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserPreferenceSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserPreference" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserPreferenceSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserPreferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserPreferencesSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUserPreferences" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserPreferencesSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserPreferencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserPreferenceSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUserPreference" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserPreferenceSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserPreferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserPreference_Add_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:UserPreference_Add_Update" />
+  </wsdl:message>
+  <wsdl:message name="UserPreference_Add_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:UserPreference_Add_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserPreference_Add_Update_ByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:UserPreference_Add_Update_ByUserId" />
+  </wsdl:message>
+  <wsdl:message name="UserPreference_Add_Update_ByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:UserPreference_Add_Update_ByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAssignedGroupsByUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAssignedGroupsByUser" />
+  </wsdl:message>
+  <wsdl:message name="GetAssignedGroupsByUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAssignedGroupsByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAssignedGroupsForSelectedUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAssignedGroupsForSelectedUser" />
+  </wsdl:message>
+  <wsdl:message name="GetAssignedGroupsForSelectedUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAssignedGroupsForSelectedUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfoById" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeUserPasswordByUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeUserPasswordByUserName" />
+  </wsdl:message>
+  <wsdl:message name="ChangeUserPasswordByUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeUserPasswordByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeUserPasswordByUserName_ByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeUserPasswordByUserName_ByUserId" />
+  </wsdl:message>
+  <wsdl:message name="ChangeUserPasswordByUserName_ByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeUserPasswordByUserName_ByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetPasswordBySuperUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetPasswordBySuperUser" />
+  </wsdl:message>
+  <wsdl:message name="ResetPasswordBySuperUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetPasswordBySuperUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateLockedUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateLockedUser" />
+  </wsdl:message>
+  <wsdl:message name="ValidateLockedUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateLockedUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddNewUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNewUser" />
+  </wsdl:message>
+  <wsdl:message name="AddNewUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNewUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUserByUserId" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfoStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfoStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoStatusAndGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfoStatusAndGroups" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoStatusAndGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfoStatusAndGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecordUserActionSoapIn">
+    <wsdl:part name="parameters" element="tns:RecordUserAction" />
+  </wsdl:message>
+  <wsdl:message name="RecordUserActionSoapOut">
+    <wsdl:part name="parameters" element="tns:RecordUserActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecordInitialValuesSoapIn">
+    <wsdl:part name="parameters" element="tns:RecordInitialValues" />
+  </wsdl:message>
+  <wsdl:message name="RecordInitialValuesSoapOut">
+    <wsdl:part name="parameters" element="tns:RecordInitialValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidatePasswordInLastEightSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidatePasswordInLastEight" />
+  </wsdl:message>
+  <wsdl:message name="ValidatePasswordInLastEightSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidatePasswordInLastEightResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDateTimeFormatsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDateTimeFormats" />
+  </wsdl:message>
+  <wsdl:message name="GetDateTimeFormatsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDateTimeFormatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultDateTimeFormatsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDefaultDateTimeFormats" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultDateTimeFormatsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDefaultDateTimeFormatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAmecoUserInfoStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAmecoUserInfoStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAmecoUserInfoStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAmecoUserInfoStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddNewUserToGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNewUserToGroup" />
+  </wsdl:message>
+  <wsdl:message name="AddNewUserToGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNewUserToGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserToGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserToGroup" />
+  </wsdl:message>
+  <wsdl:message name="AddUserToGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserToGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserToGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserToGroups" />
+  </wsdl:message>
+  <wsdl:message name="AddUserToGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserToGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssignUserToGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:AssignUserToGroup" />
+  </wsdl:message>
+  <wsdl:message name="AssignUserToGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:AssignUserToGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserAssignmentSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUserAssignment" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserAssignmentSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersByUserGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsersByUserGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersByUserGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersByUserGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersByUserGroupAndOrganizationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsersByUserGroupAndOrganization" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersByUserGroupAndOrganizationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersByUserGroupAndOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUnassignedUsersToUserGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUnassignedUsersToUserGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUnassignedUsersToUserGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUnassignedUsersToUserGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUnassignedUsersToUserGroupByOrganizationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUnassignedUsersToUserGroupByOrganization" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUnassignedUsersToUserGroupByOrganizationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUnassignedUsersToUserGroupByOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUserGroups" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUserGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserGroups" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserGroupsByLangSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUserGroupsByLang" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserGroupsByLangSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUserGroupsByLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupsbyUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserGroupsbyUser" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupsbyUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserGroupsbyUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupsForUpdateByUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserGroupsForUpdateByUser" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupsForUpdateByUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserGroupsForUpdateByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetControlsForUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetControlsForUpdate" />
+  </wsdl:message>
+  <wsdl:message name="GetControlsForUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetControlsForUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetForms" />
+  </wsdl:message>
+  <wsdl:message name="GetFormsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetControlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetControl" />
+  </wsdl:message>
+  <wsdl:message name="GetControlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupControlSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserGroupControlSettings" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupControlSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserGroupControlSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddControlSoapIn">
+    <wsdl:part name="parameters" element="tns:AddControl" />
+  </wsdl:message>
+  <wsdl:message name="AddControlSoapOut">
+    <wsdl:part name="parameters" element="tns:AddControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateControlSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateControl" />
+  </wsdl:message>
+  <wsdl:message name="UpdateControlSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUserGroup" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupReportSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserGroupReportSettings" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupReportSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserGroupReportSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupCommandSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserGroupCommandSettings" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupCommandSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserGroupCommandSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupControlAddSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserGroupControlAddSettings" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupControlAddSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserGroupControlAddSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupReportAddSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserGroupReportAddSettings" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupReportAddSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserGroupReportAddSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupCommandAddSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserGroupCommandAddSettings" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupCommandAddSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserGroupCommandAddSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserGroupSettingSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserGroupSetting" />
+  </wsdl:message>
+  <wsdl:message name="AddUserGroupSettingSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserGroupSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserGroupSettingSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUserGroupSetting" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserGroupSettingSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserGroupSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserGroupSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserGroupSettings" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserGroupSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserGroupSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserGroupSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserGroupSettings" />
+  </wsdl:message>
+  <wsdl:message name="AddUserGroupSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserGroupSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetsByUserGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFleetsByUserGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetsByUserGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFleetsByUserGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOperationTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOperationTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationControlsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOperationControls" />
+  </wsdl:message>
+  <wsdl:message name="GetOperationControlsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOperationControlsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrganizationsWithUserGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrganizationsWithUserGroups" />
+  </wsdl:message>
+  <wsdl:message name="GetOrganizationsWithUserGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrganizationsWithUserGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupsOperationAccessSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserGroupsOperationAccess" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupsOperationAccessSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserGroupsOperationAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupIdByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserGroupIdByName" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupIdByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserGroupIdByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChildControlsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChildControls" />
+  </wsdl:message>
+  <wsdl:message name="GetChildControlsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChildControlsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserGroupSettingsAllSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserGroupSettingsAll" />
+  </wsdl:message>
+  <wsdl:message name="AddUserGroupSettingsAllSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserGroupSettingsAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserGroupSettingsAllSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUserGroupSettingsAll" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserGroupSettingsAllSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserGroupSettingsAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPermissionsXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserPermissionsXML" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPermissionsXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserPermissionsXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAmecoUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateAmecoUser" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAmecoUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateAmecoUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserLastLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserLastLogin" />
+  </wsdl:message>
+  <wsdl:message name="GetUserLastLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserLastLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllNotificationsForUserId_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllNotificationsForUserId_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetAllNotificationsForUserId_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllNotificationsForUserId_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllNotificationsForUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllNotificationsForUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetAllNotificationsForUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllNotificationsForUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersDashboardsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsersDashboards" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersDashboardsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersDashboardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDashboardTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDashboardTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetDashboardTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDashboardTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupOperationsByTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserGroupOperationsByType" />
+  </wsdl:message>
+  <wsdl:message name="GetUserGroupOperationsByTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserGroupOperationsByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLanguagesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLanguages" />
+  </wsdl:message>
+  <wsdl:message name="GetLanguagesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLanguagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllEmailXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllEmailXML" />
+  </wsdl:message>
+  <wsdl:message name="GetAllEmailXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllEmailXMLResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DBUserSoap">
+    <wsdl:operation name="AddEmail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update user email.</wsdl:documentation>
+      <wsdl:input message="tns:AddEmailSoapIn" />
+      <wsdl:output message="tns:AddEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPreferencesXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves all user preferences info. XML File Format: [UserId], [PreferenceId], [PreferenceName], [PreferenceValue]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserPreferencesXMLSoapIn" />
+      <wsdl:output message="tns:GetUserPreferencesXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPreferencesXML_ByUserId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves all user preferences info. XML File Format: [UserId], [PreferenceId], [PreferenceName], [PreferenceValue]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserPreferencesXML_ByUserIdSoapIn" />
+      <wsdl:output message="tns:GetUserPreferencesXML_ByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserPreference">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a user preferences.</wsdl:documentation>
+      <wsdl:input message="tns:AddUserPreferenceSoapIn" />
+      <wsdl:output message="tns:AddUserPreferenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPreference">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a user preferences.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateUserPreferenceSoapIn" />
+      <wsdl:output message="tns:UpdateUserPreferenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserPreferences">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete all user preferences.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteUserPreferencesSoapIn" />
+      <wsdl:output message="tns:DeleteUserPreferencesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserPreference">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a user preference.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteUserPreferenceSoapIn" />
+      <wsdl:output message="tns:DeleteUserPreferenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserPreference_Add_Update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add/Update a user preferences.</wsdl:documentation>
+      <wsdl:input message="tns:UserPreference_Add_UpdateSoapIn" />
+      <wsdl:output message="tns:UserPreference_Add_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserPreference_Add_Update_ByUserId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add/Update a user preferences.</wsdl:documentation>
+      <wsdl:input message="tns:UserPreference_Add_Update_ByUserIdSoapIn" />
+      <wsdl:output message="tns:UserPreference_Add_Update_ByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignedGroupsByUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all groups that user belong to. XML File Format: [UserGroupId],[UserGroupName]</wsdl:documentation>
+      <wsdl:input message="tns:GetAssignedGroupsByUserSoapIn" />
+      <wsdl:output message="tns:GetAssignedGroupsByUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignedGroupsForSelectedUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all groups that user belong to. XML File Format: [UserGroupId],[UserGroupName]</wsdl:documentation>
+      <wsdl:input message="tns:GetAssignedGroupsForSelectedUserSoapIn" />
+      <wsdl:output message="tns:GetAssignedGroupsForSelectedUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByUserId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves a user info. XML File Format: [UserId],[UserName],[Password],[PersonId],[DriverLicense],[FirstName],[LastName],[OrganizationId],[Birthday],[PIN],[Address],[City],[StateProvince],[Country],[PhoneNo1],[PhoneNo2],[CellNo],[Description],[OrganizationName],[ExpiredDate]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserInfoByUserIdSoapIn" />
+      <wsdl:output message="tns:GetUserInfoByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoById">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves a user info. XML File Format: [UserId],[UserName],[Password],[PersonId],[DriverLicense],[FirstName],[LastName],[OrganizationId],[Birthday],[PIN],[Address],[City],[StateProvince],[Country],[PhoneNo1],[PhoneNo2],[CellNo],[Description],[OrganizationName],[ExpiredDate]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserInfoByIdSoapIn" />
+      <wsdl:output message="tns:GetUserInfoByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPasswordByUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Change a user password</wsdl:documentation>
+      <wsdl:input message="tns:ChangeUserPasswordByUserNameSoapIn" />
+      <wsdl:output message="tns:ChangeUserPasswordByUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPasswordByUserName_ByUserId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Change a user password</wsdl:documentation>
+      <wsdl:input message="tns:ChangeUserPasswordByUserName_ByUserIdSoapIn" />
+      <wsdl:output message="tns:ChangeUserPasswordByUserName_ByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPasswordBySuperUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Reset Password by SuperUser</wsdl:documentation>
+      <wsdl:input message="tns:ResetPasswordBySuperUserSoapIn" />
+      <wsdl:output message="tns:ResetPasswordBySuperUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLockedUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate locked user</wsdl:documentation>
+      <wsdl:input message="tns:ValidateLockedUserSoapIn" />
+      <wsdl:output message="tns:ValidateLockedUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a new user.</wsdl:documentation>
+      <wsdl:input message="tns:AddNewUserSoapIn" />
+      <wsdl:output message="tns:AddNewUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserByUserId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a user.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteUserByUserIdSoapIn" />
+      <wsdl:output message="tns:DeleteUserByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a user info.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateInfoSoapIn" />
+      <wsdl:output message="tns:UpdateInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfoStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a user info.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateUserInfoStatusSoapIn" />
+      <wsdl:output message="tns:UpdateUserInfoStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfoStatusAndGroups">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a user info.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateUserInfoStatusAndGroupsSoapIn" />
+      <wsdl:output message="tns:UpdateUserInfoStatusAndGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a user info.&lt;br /&gt; same as UpdateInfo but it takes UserInfo structure as parameter</wsdl:documentation>
+      <wsdl:input message="tns:UpdateUserInfoSoapIn" />
+      <wsdl:output message="tns:UpdateUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecordUserAction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Record user action, it will be triggered after create, delete or update event</wsdl:documentation>
+      <wsdl:input message="tns:RecordUserActionSoapIn" />
+      <wsdl:output message="tns:RecordUserActionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecordInitialValues">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Record initial values, it will be triggered before create, delete or update event</wsdl:documentation>
+      <wsdl:input message="tns:RecordInitialValuesSoapIn" />
+      <wsdl:output message="tns:RecordInitialValuesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePasswordInLastEight">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate user password to check if it exists in the last 8 passwords, if it does, then it will return false</wsdl:documentation>
+      <wsdl:input message="tns:ValidatePasswordInLastEightSoapIn" />
+      <wsdl:output message="tns:ValidatePasswordInLastEightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDateTimeFormats">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the date-time format to populate dropdown on user preference interface</wsdl:documentation>
+      <wsdl:input message="tns:GetDateTimeFormatsSoapIn" />
+      <wsdl:output message="tns:GetDateTimeFormatsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultDateTimeFormats">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the default date-time format</wsdl:documentation>
+      <wsdl:input message="tns:GetDefaultDateTimeFormatsSoapIn" />
+      <wsdl:output message="tns:GetDefaultDateTimeFormatsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAmecoUserInfoStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update a Ameco user info.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateAmecoUserInfoStatusSoapIn" />
+      <wsdl:output message="tns:UpdateAmecoUserInfoStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewUserToGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add New User (default preferences, assigned to default fleet allVehicles) and assign him to the user group</wsdl:documentation>
+      <wsdl:input message="tns:AddNewUserToGroupSoapIn" />
+      <wsdl:output message="tns:AddNewUserToGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a new user to group, assign a default fleet.</wsdl:documentation>
+      <wsdl:input message="tns:AddUserToGroupSoapIn" />
+      <wsdl:output message="tns:AddUserToGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToGroups">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a new user to group, assign a default fleet.</wsdl:documentation>
+      <wsdl:input message="tns:AddUserToGroupsSoapIn" />
+      <wsdl:output message="tns:AddUserToGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignUserToGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Assign a user to group.</wsdl:documentation>
+      <wsdl:input message="tns:AssignUserToGroupSoapIn" />
+      <wsdl:output message="tns:AssignUserToGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserAssignment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Remove a user from group.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteUserAssignmentSoapIn" />
+      <wsdl:output message="tns:DeleteUserAssignmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersByUserGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all user assigned to the group. XML File format: [UserId],[UserName],[FirstName],[LastName]</wsdl:documentation>
+      <wsdl:input message="tns:GetUsersByUserGroupSoapIn" />
+      <wsdl:output message="tns:GetUsersByUserGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersByUserGroupAndOrganization">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all organization users assigned to the group. XML File format: [UserId],[UserName],[FirstName],[LastName]</wsdl:documentation>
+      <wsdl:input message="tns:GetUsersByUserGroupAndOrganizationSoapIn" />
+      <wsdl:output message="tns:GetUsersByUserGroupAndOrganizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnassignedUsersToUserGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all unassigned users to specific group. XML File format: [UserId],[UserName],[FirstName],[LastName]</wsdl:documentation>
+      <wsdl:input message="tns:GetAllUnassignedUsersToUserGroupSoapIn" />
+      <wsdl:output message="tns:GetAllUnassignedUsersToUserGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnassignedUsersToUserGroupByOrganization">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all unassigned users to specific group and organization. XML File format: [UserId],[UserName],[FirstName],[LastName]</wsdl:documentation>
+      <wsdl:input message="tns:GetAllUnassignedUsersToUserGroupByOrganizationSoapIn" />
+      <wsdl:output message="tns:GetAllUnassignedUsersToUserGroupByOrganizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserGroups">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all users groups. XML File format: [UserGroupId],[UserGroupName]</wsdl:documentation>
+      <wsdl:input message="tns:GetAllUserGroupsSoapIn" />
+      <wsdl:output message="tns:GetAllUserGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroups">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all users groups. XML File format: [UserGroupId],[UserGroupName]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserGroupsSoapIn" />
+      <wsdl:output message="tns:GetUserGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserGroupsByLang">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all users groups. XML File format: [UserGroupId],[UserGroupName]</wsdl:documentation>
+      <wsdl:input message="tns:GetAllUserGroupsByLangSoapIn" />
+      <wsdl:output message="tns:GetAllUserGroupsByLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupsbyUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all users groups allowed to view by User. XML File format: [UserGroupId],[UserGroupName],[IsBaseGroup],[SecurityLevelName]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserGroupsbyUserSoapIn" />
+      <wsdl:output message="tns:GetUserGroupsbyUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupsForUpdateByUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all users groups allowed to update by User. XML File format: [UserGroupId],[UserGroupName],[IsBaseGroup],[SecurityLevelName]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserGroupsForUpdateByUserSoapIn" />
+      <wsdl:output message="tns:GetUserGroupsForUpdateByUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetControlsForUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all users groups allowed to update by User. XML File format: [ControlId],[ControlName][FormID][FormName][ControlDescription][ControlIsActive]</wsdl:documentation>
+      <wsdl:input message="tns:GetControlsForUpdateSoapIn" />
+      <wsdl:output message="tns:GetControlsForUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetForms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all users groups allowed to update by User. XML File format: [FormID][FormName]</wsdl:documentation>
+      <wsdl:input message="tns:GetFormsSoapIn" />
+      <wsdl:output message="tns:GetFormsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetControl">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns control. XML File format.</wsdl:documentation>
+      <wsdl:input message="tns:GetControlSoapIn" />
+      <wsdl:output message="tns:GetControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupControlSettings">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns User Group Control settings. XML File format: [ControlId],[ControlName][SelectedControlId][FormID][FormName][ControlDescription]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserGroupControlSettingsSoapIn" />
+      <wsdl:output message="tns:GetUserGroupControlSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddControl">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds form control.</wsdl:documentation>
+      <wsdl:input message="tns:AddControlSoapIn" />
+      <wsdl:output message="tns:AddControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateControl">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates form control.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateControlSoapIn" />
+      <wsdl:output message="tns:UpdateControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes User Group.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteUserGroupSoapIn" />
+      <wsdl:output message="tns:DeleteUserGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupReportSettings">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns User Group Control settings. XML File format: [ReportTypesId][ReportName][UserGroupName][SelectedReport]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserGroupReportSettingsSoapIn" />
+      <wsdl:output message="tns:GetUserGroupReportSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupCommandSettings">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns User Group Control settings. XML File format: [BoxCmdOutTypeId][BoxCmdOutType][UserGroupName][SelectedCommand]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserGroupCommandSettingsSoapIn" />
+      <wsdl:output message="tns:GetUserGroupCommandSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupControlAddSettings">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns User Group Control additional settings. XML File format: [ControlId], [ControlDescription]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserGroupControlAddSettingsSoapIn" />
+      <wsdl:output message="tns:GetUserGroupControlAddSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupReportAddSettings">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns User Group Report additional settings. XML File format: [ReportTypesId], [ReportName]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserGroupReportAddSettingsSoapIn" />
+      <wsdl:output message="tns:GetUserGroupReportAddSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupCommandAddSettings">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns User Group Command additional settings. XML File format: [BoxCmdOutTypeId][BoxCmdOutType]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserGroupCommandAddSettingsSoapIn" />
+      <wsdl:output message="tns:GetUserGroupCommandAddSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserGroupSetting">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds User Group setting.</wsdl:documentation>
+      <wsdl:input message="tns:AddUserGroupSettingSoapIn" />
+      <wsdl:output message="tns:AddUserGroupSettingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserGroupSetting">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes User Group setting.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteUserGroupSettingSoapIn" />
+      <wsdl:output message="tns:DeleteUserGroupSettingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserGroupSettings">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates User Group settings.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateUserGroupSettingsSoapIn" />
+      <wsdl:output message="tns:UpdateUserGroupSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserGroupSettings">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add User Group settings.</wsdl:documentation>
+      <wsdl:input message="tns:AddUserGroupSettingsSoapIn" />
+      <wsdl:output message="tns:AddUserGroupSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetsByUserGroup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Fleets by UserGroup. XML File format: [FleetId][NodeCode]</wsdl:documentation>
+      <wsdl:input message="tns:GetFleetsByUserGroupSoapIn" />
+      <wsdl:output message="tns:GetFleetsByUserGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Operation Types. XML File format: [OperationType][OperationTypeName]</wsdl:documentation>
+      <wsdl:input message="tns:GetOperationTypesSoapIn" />
+      <wsdl:output message="tns:GetOperationTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationControls">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Operation Controls. XML File format: [ControlID][ControlName]</wsdl:documentation>
+      <wsdl:input message="tns:GetOperationControlsSoapIn" />
+      <wsdl:output message="tns:GetOperationControlsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationsWithUserGroups">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Operation Controls. XML File format: [OrganizationId][OrganizationName]</wsdl:documentation>
+      <wsdl:input message="tns:GetOrganizationsWithUserGroupsSoapIn" />
+      <wsdl:output message="tns:GetOrganizationsWithUserGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupsOperationAccess">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Operation Controls. XML File format: [UserGroupId][UserGroupName]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserGroupsOperationAccessSoapIn" />
+      <wsdl:output message="tns:GetUserGroupsOperationAccessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupIdByName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns UserGroupId.</wsdl:documentation>
+      <wsdl:input message="tns:GetUserGroupIdByNameSoapIn" />
+      <wsdl:output message="tns:GetUserGroupIdByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildControls">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Controls. XML File format: [ControlId]</wsdl:documentation>
+      <wsdl:input message="tns:GetChildControlsSoapIn" />
+      <wsdl:output message="tns:GetChildControlsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserGroupSettingsAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add a setting to all User Groups.</wsdl:documentation>
+      <wsdl:input message="tns:AddUserGroupSettingsAllSoapIn" />
+      <wsdl:output message="tns:AddUserGroupSettingsAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserGroupSettingsAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete a setting from all User Groups.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteUserGroupSettingsAllSoapIn" />
+      <wsdl:output message="tns:DeleteUserGroupSettingsAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPermissionsXML">
+      <wsdl:input message="tns:GetUserPermissionsXMLSoapIn" />
+      <wsdl:output message="tns:GetUserPermissionsXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAmecoUser">
+      <wsdl:input message="tns:ValidateAmecoUserSoapIn" />
+      <wsdl:output message="tns:ValidateAmecoUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLastLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get User Last Login. XML File format: [LoginId],[UserId],[LoginDateTime],[IP], [UserName],[FirstName],[LastName]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserLastLoginSoapIn" />
+      <wsdl:output message="tns:GetUserLastLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllNotificationsForUserId_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Notifications For User</wsdl:documentation>
+      <wsdl:input message="tns:GetAllNotificationsForUserId_NewTZSoapIn" />
+      <wsdl:output message="tns:GetAllNotificationsForUserId_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllNotificationsForUserId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Notifications For User</wsdl:documentation>
+      <wsdl:input message="tns:GetAllNotificationsForUserIdSoapIn" />
+      <wsdl:output message="tns:GetAllNotificationsForUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersDashboards">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Users Dashboards</wsdl:documentation>
+      <wsdl:input message="tns:GetUsersDashboardsSoapIn" />
+      <wsdl:output message="tns:GetUsersDashboardsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDashboardTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Dashboards Types</wsdl:documentation>
+      <wsdl:input message="tns:GetDashboardTypesSoapIn" />
+      <wsdl:output message="tns:GetDashboardTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupOperationsByType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return the list of the operations assigned/unassigned to a user group</wsdl:documentation>
+      <wsdl:input message="tns:GetUserGroupOperationsByTypeSoapIn" />
+      <wsdl:output message="tns:GetUserGroupOperationsByTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLanguages">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Operation Controls. XML File format: [LanguageID][CultureName][Language]</wsdl:documentation>
+      <wsdl:input message="tns:GetLanguagesSoapIn" />
+      <wsdl:output message="tns:GetLanguagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmailXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves all EmailId of all users.</wsdl:documentation>
+      <wsdl:input message="tns:GetAllEmailXMLSoapIn" />
+      <wsdl:output message="tns:GetAllEmailXMLSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DBUserSoap" type="tns:DBUserSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddEmail">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPreferencesXML">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserPreferencesXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPreferencesXML_ByUserId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserPreferencesXML_ByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserPreference">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddUserPreference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPreference">
+      <soap:operation soapAction="http://www.sentinelfm.com/UpdateUserPreference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserPreferences">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteUserPreferences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserPreference">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteUserPreference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserPreference_Add_Update">
+      <soap:operation soapAction="http://www.sentinelfm.com/UserPreference_Add_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserPreference_Add_Update_ByUserId">
+      <soap:operation soapAction="http://www.sentinelfm.com/UserPreference_Add_Update_ByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignedGroupsByUser">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAssignedGroupsByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignedGroupsForSelectedUser">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAssignedGroupsForSelectedUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByUserId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserInfoByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoById">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserInfoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPasswordByUserName">
+      <soap:operation soapAction="http://www.sentinelfm.com/ChangeUserPasswordByUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPasswordByUserName_ByUserId">
+      <soap:operation soapAction="http://www.sentinelfm.com/ChangeUserPasswordByUserName_ByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPasswordBySuperUser">
+      <soap:operation soapAction="http://www.sentinelfm.com/ResetPasswordBySuperUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLockedUser">
+      <soap:operation soapAction="http://www.sentinelfm.com/ValidateLockedUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewUser">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddNewUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserByUserId">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteUserByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/UpdateInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfoStatus">
+      <soap:operation soapAction="http://www.sentinelfm.com/UpdateUserInfoStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfoStatusAndGroups">
+      <soap:operation soapAction="http://www.sentinelfm.com/UpdateUserInfoStatusAndGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/UpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecordUserAction">
+      <soap:operation soapAction="http://www.sentinelfm.com/RecordUserAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecordInitialValues">
+      <soap:operation soapAction="http://www.sentinelfm.com/RecordInitialValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePasswordInLastEight">
+      <soap:operation soapAction="http://www.sentinelfm.com/ValidatePasswordInLastEight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDateTimeFormats">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDateTimeFormats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultDateTimeFormats">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDefaultDateTimeFormats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAmecoUserInfoStatus">
+      <soap:operation soapAction="http://www.sentinelfm.com/UpdateAmecoUserInfoStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewUserToGroup">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddNewUserToGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToGroup">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddUserToGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToGroups">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddUserToGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignUserToGroup">
+      <soap:operation soapAction="http://www.sentinelfm.com/AssignUserToGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserAssignment">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteUserAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersByUserGroup">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUsersByUserGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersByUserGroupAndOrganization">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUsersByUserGroupAndOrganization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnassignedUsersToUserGroup">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAllUnassignedUsersToUserGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnassignedUsersToUserGroupByOrganization">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAllUnassignedUsersToUserGroupByOrganization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserGroups">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAllUserGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroups">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserGroupsByLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAllUserGroupsByLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupsbyUser">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserGroupsbyUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupsForUpdateByUser">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserGroupsForUpdateByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetControlsForUpdate">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetControlsForUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetForms">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetForms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetControl">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupControlSettings">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserGroupControlSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddControl">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateControl">
+      <soap:operation soapAction="http://www.sentinelfm.com/UpdateControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserGroup">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteUserGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupReportSettings">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserGroupReportSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupCommandSettings">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserGroupCommandSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupControlAddSettings">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserGroupControlAddSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupReportAddSettings">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserGroupReportAddSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupCommandAddSettings">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserGroupCommandAddSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserGroupSetting">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddUserGroupSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserGroupSetting">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteUserGroupSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserGroupSettings">
+      <soap:operation soapAction="http://www.sentinelfm.com/UpdateUserGroupSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserGroupSettings">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddUserGroupSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetsByUserGroup">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFleetsByUserGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationTypes">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetOperationTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationControls">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetOperationControls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationsWithUserGroups">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetOrganizationsWithUserGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupsOperationAccess">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserGroupsOperationAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupIdByName">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserGroupIdByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChildControls">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetChildControls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserGroupSettingsAll">
+      <soap:operation soapAction="http://www.sentinelfm.com/AddUserGroupSettingsAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserGroupSettingsAll">
+      <soap:operation soapAction="http://www.sentinelfm.com/DeleteUserGroupSettingsAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPermissionsXML">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserPermissionsXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAmecoUser">
+      <soap:operation soapAction="http://www.sentinelfm.com/ValidateAmecoUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLastLogin">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserLastLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllNotificationsForUserId_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAllNotificationsForUserId_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllNotificationsForUserId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAllNotificationsForUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersDashboards">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUsersDashboards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDashboardTypes">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDashboardTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupOperationsByType">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserGroupOperationsByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLanguages">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetLanguages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmailXML">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetAllEmailXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DBUserSoap12" type="tns:DBUserSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddEmail">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPreferencesXML">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserPreferencesXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPreferencesXML_ByUserId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserPreferencesXML_ByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserPreference">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddUserPreference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPreference">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UpdateUserPreference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserPreferences">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteUserPreferences" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserPreference">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteUserPreference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserPreference_Add_Update">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UserPreference_Add_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserPreference_Add_Update_ByUserId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UserPreference_Add_Update_ByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignedGroupsByUser">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAssignedGroupsByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignedGroupsForSelectedUser">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAssignedGroupsForSelectedUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByUserId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserInfoByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoById">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPasswordByUserName">
+      <soap12:operation soapAction="http://www.sentinelfm.com/ChangeUserPasswordByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPasswordByUserName_ByUserId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/ChangeUserPasswordByUserName_ByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPasswordBySuperUser">
+      <soap12:operation soapAction="http://www.sentinelfm.com/ResetPasswordBySuperUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateLockedUser">
+      <soap12:operation soapAction="http://www.sentinelfm.com/ValidateLockedUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewUser">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddNewUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserByUserId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteUserByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UpdateInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfoStatus">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UpdateUserInfoStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfoStatusAndGroups">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UpdateUserInfoStatusAndGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecordUserAction">
+      <soap12:operation soapAction="http://www.sentinelfm.com/RecordUserAction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecordInitialValues">
+      <soap12:operation soapAction="http://www.sentinelfm.com/RecordInitialValues" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePasswordInLastEight">
+      <soap12:operation soapAction="http://www.sentinelfm.com/ValidatePasswordInLastEight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDateTimeFormats">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDateTimeFormats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultDateTimeFormats">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDefaultDateTimeFormats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAmecoUserInfoStatus">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UpdateAmecoUserInfoStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewUserToGroup">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddNewUserToGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToGroup">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddUserToGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToGroups">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddUserToGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignUserToGroup">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AssignUserToGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserAssignment">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteUserAssignment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersByUserGroup">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUsersByUserGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersByUserGroupAndOrganization">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUsersByUserGroupAndOrganization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnassignedUsersToUserGroup">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAllUnassignedUsersToUserGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnassignedUsersToUserGroupByOrganization">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAllUnassignedUsersToUserGroupByOrganization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserGroups">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAllUserGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroups">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserGroupsByLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAllUserGroupsByLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupsbyUser">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserGroupsbyUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupsForUpdateByUser">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserGroupsForUpdateByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetControlsForUpdate">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetControlsForUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetForms">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetForms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetControl">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupControlSettings">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserGroupControlSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddControl">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateControl">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UpdateControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserGroup">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteUserGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupReportSettings">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserGroupReportSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupCommandSettings">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserGroupCommandSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupControlAddSettings">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserGroupControlAddSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupReportAddSettings">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserGroupReportAddSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupCommandAddSettings">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserGroupCommandAddSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserGroupSetting">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddUserGroupSetting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserGroupSetting">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteUserGroupSetting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserGroupSettings">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UpdateUserGroupSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserGroupSettings">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddUserGroupSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetsByUserGroup">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFleetsByUserGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationTypes">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetOperationTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationControls">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetOperationControls" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationsWithUserGroups">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetOrganizationsWithUserGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupsOperationAccess">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserGroupsOperationAccess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupIdByName">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserGroupIdByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChildControls">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetChildControls" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserGroupSettingsAll">
+      <soap12:operation soapAction="http://www.sentinelfm.com/AddUserGroupSettingsAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserGroupSettingsAll">
+      <soap12:operation soapAction="http://www.sentinelfm.com/DeleteUserGroupSettingsAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPermissionsXML">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserPermissionsXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAmecoUser">
+      <soap12:operation soapAction="http://www.sentinelfm.com/ValidateAmecoUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLastLogin">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserLastLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllNotificationsForUserId_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAllNotificationsForUserId_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllNotificationsForUserId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAllNotificationsForUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersDashboards">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUsersDashboards" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDashboardTypes">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDashboardTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGroupOperationsByType">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserGroupOperationsByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLanguages">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetLanguages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmailXML">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetAllEmailXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DBUser">
+    <wsdl:port name="DBUserSoap" binding="tns:DBUserSoap">
+      <soap:address location="http://localhost:53931/Interfaces/DBUser.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DBUserSoap12" binding="tns:DBUserSoap12">
+      <soap12:address location="http://localhost:53931/Interfaces/DBUser.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

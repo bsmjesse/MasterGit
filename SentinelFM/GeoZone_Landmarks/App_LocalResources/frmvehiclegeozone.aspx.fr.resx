@@ -1,0 +1,1306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btn_Text_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="btn_Text_Delete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="cboFleet_Item_0" xml:space="preserve">
+    <value>Sélectionner des véhicules</value>
+  </data>
+  <data name="cboFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboFleetResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboFleetResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboFleetResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboFleetResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboFleetResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboSeverityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboSeverityResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboSeverityResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboSeverityResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboSeverityResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboSeverityResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboVehicle_Item_0" xml:space="preserve">
+    <value>Sélectionner un véhicule</value>
+  </data>
+  <data name="cboVehicleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboVehicleResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboVehicleResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboVehicleResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboVehicleResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboVehicleResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxResource3.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxResource4.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxResource5.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxResource6.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddAllResource1.Text" xml:space="preserve">
+    <value>Tout ajouter-&gt;</value>
+  </data>
+  <data name="cmdAddAllResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddAllResource2.Text" xml:space="preserve">
+    <value>Tout ajouter-&gt;</value>
+  </data>
+  <data name="cmdAddAllResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddAllResource3.Text" xml:space="preserve">
+    <value>Tout ajouter-&gt;</value>
+  </data>
+  <data name="cmdAddAllResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddAllResource4.Text" xml:space="preserve">
+    <value>Tout ajouter-&gt;</value>
+  </data>
+  <data name="cmdAddAllResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddAllResource5.Text" xml:space="preserve">
+    <value>Tout ajouter-&gt;</value>
+  </data>
+  <data name="cmdAddAllResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddAllResource6.Text" xml:space="preserve">
+    <value>Tout ajouter-&gt;</value>
+  </data>
+  <data name="cmdAddAllResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddResource1.Text" xml:space="preserve">
+    <value>Ajouter-&gt;</value>
+  </data>
+  <data name="cmdAddResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddResource2.Text" xml:space="preserve">
+    <value>Ajouter-&gt;</value>
+  </data>
+  <data name="cmdAddResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddResource3.Text" xml:space="preserve">
+    <value>Ajouter-&gt;</value>
+  </data>
+  <data name="cmdAddResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddResource4.Text" xml:space="preserve">
+    <value>Ajouter-&gt;</value>
+  </data>
+  <data name="cmdAddResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddResource5.Text" xml:space="preserve">
+    <value>Ajouter-&gt;</value>
+  </data>
+  <data name="cmdAddResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddResource6.Text" xml:space="preserve">
+    <value>Ajouter-&gt;</value>
+  </data>
+  <data name="cmdAddResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCancelSyncResource1.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="cmdCancelSyncResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCancelSyncResource2.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="cmdCancelSyncResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCancelSyncResource3.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="cmdCancelSyncResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCancelSyncResource4.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="cmdCancelSyncResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCancelSyncResource5.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="cmdCancelSyncResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCancelSyncResource6.Text" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="cmdCancelSyncResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCheckSyncResource1.Text" xml:space="preserve">
+    <value>Vérifier Synchro</value>
+  </data>
+  <data name="cmdCheckSyncResource1.ToolTip" xml:space="preserve">
+    <value>Vérifier la synchronisation</value>
+  </data>
+  <data name="cmdCheckSyncResource2.Text" xml:space="preserve">
+    <value>Vérifier Synchro</value>
+  </data>
+  <data name="cmdCheckSyncResource2.ToolTip" xml:space="preserve">
+    <value>Vérifier la synchronisation</value>
+  </data>
+  <data name="cmdCheckSyncResource3.Text" xml:space="preserve">
+    <value>Vérifier Synchro</value>
+  </data>
+  <data name="cmdCheckSyncResource3.ToolTip" xml:space="preserve">
+    <value>Vérifier la synchronisation</value>
+  </data>
+  <data name="cmdCheckSyncResource4.Text" xml:space="preserve">
+    <value>Vérifier Synchro</value>
+  </data>
+  <data name="cmdCheckSyncResource4.ToolTip" xml:space="preserve">
+    <value>Vérifier la synchronisation</value>
+  </data>
+  <data name="cmdCheckSyncResource5.Text" xml:space="preserve">
+    <value>Vérifier Synchro</value>
+  </data>
+  <data name="cmdCheckSyncResource5.ToolTip" xml:space="preserve">
+    <value>Vérifier la synchronisation</value>
+  </data>
+  <data name="cmdCheckSyncResource6.Text" xml:space="preserve">
+    <value>Vérifier Synchro</value>
+  </data>
+  <data name="cmdCheckSyncResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdClearAllResource1.Text" xml:space="preserve">
+    <value>&lt;-Tout supprimer</value>
+  </data>
+  <data name="cmdClearAllResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdClearAllResource2.Text" xml:space="preserve">
+    <value>&lt;-Tout supprimer</value>
+  </data>
+  <data name="cmdClearAllResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdClearAllResource3.Text" xml:space="preserve">
+    <value>&lt;-Tout supprimer</value>
+  </data>
+  <data name="cmdClearAllResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdClearAllResource4.Text" xml:space="preserve">
+    <value>&lt;-Tout supprimer</value>
+  </data>
+  <data name="cmdClearAllResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdClearAllResource5.Text" xml:space="preserve">
+    <value>&lt;-Tout supprimer</value>
+  </data>
+  <data name="cmdClearAllResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdClearAllResource6.Text" xml:space="preserve">
+    <value>&lt;-Tout supprimer</value>
+  </data>
+  <data name="cmdClearAllResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdGeoZoneResource1.Text" xml:space="preserve">
+    <value>Géo-Zones</value>
+  </data>
+  <data name="cmdGeoZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdGeoZoneResource2.Text" xml:space="preserve">
+    <value>Géo-Zones</value>
+  </data>
+  <data name="cmdGeoZoneResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdGeoZoneResource3.Text" xml:space="preserve">
+    <value>Géo-Zones</value>
+  </data>
+  <data name="cmdGeoZoneResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdGeoZoneResource4.Text" xml:space="preserve">
+    <value>Géo-Zones</value>
+  </data>
+  <data name="cmdGeoZoneResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdGeoZoneResource5.Text" xml:space="preserve">
+    <value>Géo-Zones</value>
+  </data>
+  <data name="cmdGeoZoneResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdGeoZoneResource6.Text" xml:space="preserve">
+    <value>Géo-Zones</value>
+  </data>
+  <data name="cmdGeoZoneResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdLandmarkResource1.Text" xml:space="preserve">
+    <value>Sites</value>
+  </data>
+  <data name="cmdLandmarkResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdLandmarkResource2.Text" xml:space="preserve">
+    <value>Sites</value>
+  </data>
+  <data name="cmdLandmarkResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdLandmarkResource3.Text" xml:space="preserve">
+    <value>Sites</value>
+  </data>
+  <data name="cmdLandmarkResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdLandmarkResource4.Text" xml:space="preserve">
+    <value>Sites</value>
+  </data>
+  <data name="cmdLandmarkResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdLandmarkResource5.Text" xml:space="preserve">
+    <value>Sites</value>
+  </data>
+  <data name="cmdLandmarkResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdLandmarkResource6.Text" xml:space="preserve">
+    <value>Sites</value>
+  </data>
+  <data name="cmdLandmarkResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdMapResource1.Text" xml:space="preserve">
+    <value>Carte</value>
+  </data>
+  <data name="cmdMapResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdMapResource2.Text" xml:space="preserve">
+    <value>Carte</value>
+  </data>
+  <data name="cmdMapResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdMapResource3.Text" xml:space="preserve">
+    <value>Carte</value>
+  </data>
+  <data name="cmdMapResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdMapResource4.Text" xml:space="preserve">
+    <value>Carte</value>
+  </data>
+  <data name="cmdMapResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdMapResource5.Text" xml:space="preserve">
+    <value>Carte</value>
+  </data>
+  <data name="cmdMapResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdMapResource6.Text" xml:space="preserve">
+    <value>Carte</value>
+  </data>
+  <data name="cmdMapResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSyncResource1.Text" xml:space="preserve">
+    <value>Synchro</value>
+  </data>
+  <data name="cmdSyncResource1.ToolTip" xml:space="preserve">
+    <value>Synchroniser</value>
+  </data>
+  <data name="cmdSyncResource2.Text" xml:space="preserve">
+    <value>Synchro</value>
+  </data>
+  <data name="cmdSyncResource2.ToolTip" xml:space="preserve">
+    <value>Synchroniser</value>
+  </data>
+  <data name="cmdSyncResource3.Text" xml:space="preserve">
+    <value>Synchro</value>
+  </data>
+  <data name="cmdSyncResource3.ToolTip" xml:space="preserve">
+    <value>Synchroniser</value>
+  </data>
+  <data name="cmdSyncResource4.Text" xml:space="preserve">
+    <value>Synchro</value>
+  </data>
+  <data name="cmdSyncResource4.ToolTip" xml:space="preserve">
+    <value>Synchroniser</value>
+  </data>
+  <data name="cmdSyncResource5.Text" xml:space="preserve">
+    <value>Synchro</value>
+  </data>
+  <data name="cmdSyncResource5.ToolTip" xml:space="preserve">
+    <value>Synchroniser</value>
+  </data>
+  <data name="cmdSyncResource6.Text" xml:space="preserve">
+    <value>Synchro</value>
+  </data>
+  <data name="cmdSyncResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdVehicleGeoZoneResource1.Text" xml:space="preserve">
+    <value>Assigner des véhicules &amp; des Géo-Zones</value>
+  </data>
+  <data name="cmdVehicleGeoZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdVehicleGeoZoneResource2.Text" xml:space="preserve">
+    <value>Assigner des véhicules &amp; des Géo-Zones</value>
+  </data>
+  <data name="cmdVehicleGeoZoneResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdVehicleGeoZoneResource3.Text" xml:space="preserve">
+    <value>Assigner des véhicules &amp; des Géo-Zones</value>
+  </data>
+  <data name="cmdVehicleGeoZoneResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdVehicleGeoZoneResource4.Text" xml:space="preserve">
+    <value>Assigner des véhicules &amp; des Géo-Zones</value>
+  </data>
+  <data name="cmdVehicleGeoZoneResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdVehicleGeoZoneResource5.Text" xml:space="preserve">
+    <value>Assigner des véhicules &amp; des Géo-Zones</value>
+  </data>
+  <data name="cmdVehicleGeoZoneResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdVehicleGeoZoneResource6.Text" xml:space="preserve">
+    <value>Assigner des véhicules &amp; des Géo-Zones</value>
+  </data>
+  <data name="cmdVehicleGeoZoneResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAssGeozone_Assigned" xml:space="preserve">
+    <value>Assigner</value>
+  </data>
+  <data name="dgAssGeozone_GeoZoneId" xml:space="preserve">
+    <value>Identification de la Géo-Zone</value>
+  </data>
+  <data name="dgAssGeozone_GeozoneName" xml:space="preserve">
+    <value>Géo-Zone</value>
+  </data>
+  <data name="dgAssGeozone_Severity" xml:space="preserve">
+    <value>Sévérité</value>
+  </data>
+  <data name="dgAssGeozone_Status" xml:space="preserve">
+    <value>État</value>
+  </data>
+  <data name="dgAssGeoZoneResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAssGeoZoneResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgAssGeoZoneResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgAssGeoZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAssGeoZoneResource2.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAssGeoZoneResource2.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgAssGeoZoneResource2.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgAssGeoZoneResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAssGeoZoneResource3.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAssGeoZoneResource3.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgAssGeoZoneResource3.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgAssGeoZoneResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAssGeoZoneResource4.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAssGeoZoneResource4.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgAssGeoZoneResource4.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgAssGeoZoneResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAssGeoZoneResource5.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAssGeoZoneResource5.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgAssGeoZoneResource5.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgAssGeoZoneResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAssGeoZoneResource6.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAssGeoZoneResource6.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgAssGeoZoneResource6.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgAssGeoZoneResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgUnAssGeozone_GeozoneId" xml:space="preserve">
+    <value>Identification de la Géo-Zone</value>
+  </data>
+  <data name="dgUnAssGeozone_GeozoneName" xml:space="preserve">
+    <value>Géo-Zone</value>
+  </data>
+  <data name="dgUnAssGeozone_SeverityId" xml:space="preserve">
+    <value>Identification de la sévérité</value>
+  </data>
+  <data name="dgUnAssGeoZoneResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgUnAssGeoZoneResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgUnAssGeoZoneResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgUnAssGeoZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgUnAssGeoZoneResource2.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgUnAssGeoZoneResource2.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgUnAssGeoZoneResource2.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgUnAssGeoZoneResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgUnAssGeoZoneResource3.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgUnAssGeoZoneResource3.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgUnAssGeoZoneResource3.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgUnAssGeoZoneResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgUnAssGeoZoneResource4.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgUnAssGeoZoneResource4.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgUnAssGeoZoneResource4.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgUnAssGeoZoneResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgUnAssGeoZoneResource5.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgUnAssGeoZoneResource5.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgUnAssGeoZoneResource5.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgUnAssGeoZoneResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgUnAssGeoZoneResource6.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgUnAssGeoZoneResource6.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgUnAssGeoZoneResource6.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgUnAssGeoZoneResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EditCommandColumnResource1.CancelText" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="EditCommandColumnResource1.EditText" xml:space="preserve">
+    <value>Éditer</value>
+  </data>
+  <data name="EditCommandColumnResource1.UpdateText" xml:space="preserve">
+    <value>Mise à jour</value>
+  </data>
+  <data name="EditCommandColumnResource2.CancelText" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="EditCommandColumnResource2.EditText" xml:space="preserve">
+    <value>Éditer</value>
+  </data>
+  <data name="EditCommandColumnResource2.UpdateText" xml:space="preserve">
+    <value>Mise à jour</value>
+  </data>
+  <data name="EditCommandColumnResource3.CancelText" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="EditCommandColumnResource3.EditText" xml:space="preserve">
+    <value>Éditer</value>
+  </data>
+  <data name="EditCommandColumnResource3.UpdateText" xml:space="preserve">
+    <value>Mise à jour</value>
+  </data>
+  <data name="EditCommandColumnResource4.CancelText" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="EditCommandColumnResource4.EditText" xml:space="preserve">
+    <value>Éditer</value>
+  </data>
+  <data name="EditCommandColumnResource4.UpdateText" xml:space="preserve">
+    <value>Mise à jour</value>
+  </data>
+  <data name="EditCommandColumnResource5.CancelText" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="EditCommandColumnResource5.EditText" xml:space="preserve">
+    <value>Éditer</value>
+  </data>
+  <data name="EditCommandColumnResource5.UpdateText" xml:space="preserve">
+    <value>Mise à jour</value>
+  </data>
+  <data name="EditCommandColumnResource6.CancelText" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="EditCommandColumnResource6.EditText" xml:space="preserve">
+    <value>Éditer</value>
+  </data>
+  <data name="EditCommandColumnResource6.UpdateText" xml:space="preserve">
+    <value>Mise à jour</value>
+  </data>
+  <data name="imgWaitResource1.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWaitResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWaitResource2.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWaitResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWaitResource3.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWaitResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWaitResource4.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWaitResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWaitResource5.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWaitResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWaitResource6.AlternateText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="imgWaitResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAssignedGeozonesResource1.Text" xml:space="preserve">
+    <value>Assigner les Géo-Zones</value>
+  </data>
+  <data name="lblAssignedGeozonesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAssignedGeozonesResource2.Text" xml:space="preserve">
+    <value>Assigner les Géo-Zones</value>
+  </data>
+  <data name="lblAssignedGeozonesResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAssignedGeozonesResource3.Text" xml:space="preserve">
+    <value>Assigner les Géo-Zones</value>
+  </data>
+  <data name="lblAssignedGeozonesResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAssignedGeozonesResource4.Text" xml:space="preserve">
+    <value>Assigner les Géo-Zones</value>
+  </data>
+  <data name="lblAssignedGeozonesResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAssignedGeozonesResource5.Text" xml:space="preserve">
+    <value>Assigner les Géo-Zones</value>
+  </data>
+  <data name="lblAssignedGeozonesResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAssignedGeozonesResource6.Text" xml:space="preserve">
+    <value>Assigner les Géo-Zones</value>
+  </data>
+  <data name="lblAssignedGeozonesResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetTitleResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetTitleResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetTitleResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetTitleResource3.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetTitleResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetTitleResource4.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetTitleResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetTitleResource5.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetTitleResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetTitleResource6.Text" xml:space="preserve">
+    <value>Flotte</value>
+  </data>
+  <data name="lblFleetTitleResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderGeozoneResource1.Text" xml:space="preserve">
+    <value>Géo-Zones</value>
+  </data>
+  <data name="lblGeozoneHeaderGeozoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderGeozoneResource2.Text" xml:space="preserve">
+    <value>Géo-Zones</value>
+  </data>
+  <data name="lblGeozoneHeaderGeozoneResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderGeozoneResource3.Text" xml:space="preserve">
+    <value>Géo-Zones</value>
+  </data>
+  <data name="lblGeozoneHeaderGeozoneResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderGeozoneResource4.Text" xml:space="preserve">
+    <value>Géo-Zones</value>
+  </data>
+  <data name="lblGeozoneHeaderGeozoneResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderGeozoneResource5.Text" xml:space="preserve">
+    <value>Géo-Zones</value>
+  </data>
+  <data name="lblGeozoneHeaderGeozoneResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderGeozoneResource6.Text" xml:space="preserve">
+    <value>Géo-Zones</value>
+  </data>
+  <data name="lblGeozoneHeaderGeozoneResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderSeverityResource1.Text" xml:space="preserve">
+    <value>Sévérité</value>
+  </data>
+  <data name="lblGeozoneHeaderSeverityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderSeverityResource2.Text" xml:space="preserve">
+    <value>Sévérité</value>
+  </data>
+  <data name="lblGeozoneHeaderSeverityResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderSeverityResource3.Text" xml:space="preserve">
+    <value>Sévérité</value>
+  </data>
+  <data name="lblGeozoneHeaderSeverityResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderSeverityResource4.Text" xml:space="preserve">
+    <value>Sévérité</value>
+  </data>
+  <data name="lblGeozoneHeaderSeverityResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderSeverityResource5.Text" xml:space="preserve">
+    <value>Sévérité</value>
+  </data>
+  <data name="lblGeozoneHeaderSeverityResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderSeverityResource6.Text" xml:space="preserve">
+    <value>Sévérité</value>
+  </data>
+  <data name="lblGeozoneHeaderSeverityResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderStatusResource1.Text" xml:space="preserve">
+    <value>État</value>
+  </data>
+  <data name="lblGeozoneHeaderStatusResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderStatusResource2.Text" xml:space="preserve">
+    <value>État</value>
+  </data>
+  <data name="lblGeozoneHeaderStatusResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderStatusResource3.Text" xml:space="preserve">
+    <value>État</value>
+  </data>
+  <data name="lblGeozoneHeaderStatusResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderStatusResource4.Text" xml:space="preserve">
+    <value>État</value>
+  </data>
+  <data name="lblGeozoneHeaderStatusResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderStatusResource5.Text" xml:space="preserve">
+    <value>État</value>
+  </data>
+  <data name="lblGeozoneHeaderStatusResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderStatusResource6.Text" xml:space="preserve">
+    <value>État</value>
+  </data>
+  <data name="lblGeozoneHeaderStatusResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderUnAssGeozoneResource1.Text" xml:space="preserve">
+    <value>Géo-Zone</value>
+  </data>
+  <data name="lblGeozoneHeaderUnAssGeozoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderUnAssGeozoneResource2.Text" xml:space="preserve">
+    <value>Géo-Zone</value>
+  </data>
+  <data name="lblGeozoneHeaderUnAssGeozoneResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderUnAssGeozoneResource3.Text" xml:space="preserve">
+    <value>Géo-Zone</value>
+  </data>
+  <data name="lblGeozoneHeaderUnAssGeozoneResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderUnAssGeozoneResource4.Text" xml:space="preserve">
+    <value>Géo-Zone</value>
+  </data>
+  <data name="lblGeozoneHeaderUnAssGeozoneResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderUnAssGeozoneResource5.Text" xml:space="preserve">
+    <value>Géo-Zone</value>
+  </data>
+  <data name="lblGeozoneHeaderUnAssGeozoneResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeozoneHeaderUnAssGeozoneResource6.Text" xml:space="preserve">
+    <value>Géo-Zone</value>
+  </data>
+  <data name="lblGeozoneHeaderUnAssGeozoneResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessage_Text_GeozonesNotSupportedError" xml:space="preserve">
+    <value>Ce véhicule ne supporte aucune Géo-Zone </value>
+  </data>
+  <data name="lblMessage_Text_MaximumGeozoneCount" xml:space="preserve">
+    <value>Le nombre maximal de GéoZone est</value>
+  </data>
+  <data name="lblMessage_Text_MaximumGeozonesError" xml:space="preserve">
+    <value>L'unité contient un maximum de 50 Géo-Zones. L'ajout d'une Géo-Zone a échoué.</value>
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource3.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource4.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource5.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource6.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPleaseWaitResource1.Text" xml:space="preserve">
+    <value>Veuillez patienter...</value>
+  </data>
+  <data name="lblPleaseWaitResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPleaseWaitResource2.Text" xml:space="preserve">
+    <value>Veuillez patienter...</value>
+  </data>
+  <data name="lblPleaseWaitResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPleaseWaitResource3.Text" xml:space="preserve">
+    <value>Veuillez patienter...</value>
+  </data>
+  <data name="lblPleaseWaitResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPleaseWaitResource4.Text" xml:space="preserve">
+    <value>Veuillez patienter...</value>
+  </data>
+  <data name="lblPleaseWaitResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPleaseWaitResource5.Text" xml:space="preserve">
+    <value>Veuillez patienter...</value>
+  </data>
+  <data name="lblPleaseWaitResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPleaseWaitResource6.Text" xml:space="preserve">
+    <value>Veuillez patienter...</value>
+  </data>
+  <data name="lblPleaseWaitResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSeverityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSeverityResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSeverityResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSeverityResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSeverityResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSeverityResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnassignedGeozonesResource1.Text" xml:space="preserve">
+    <value>Géo-Zones non-assignées</value>
+  </data>
+  <data name="lblUnassignedGeozonesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnassignedGeozonesResource2.Text" xml:space="preserve">
+    <value>Géo-Zones non-assignés</value>
+  </data>
+  <data name="lblUnassignedGeozonesResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnassignedGeozonesResource3.Text" xml:space="preserve">
+    <value>Géo-Zones non-assignés</value>
+  </data>
+  <data name="lblUnassignedGeozonesResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnassignedGeozonesResource4.Text" xml:space="preserve">
+    <value>Géo-Zones non-assignés</value>
+  </data>
+  <data name="lblUnassignedGeozonesResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnassignedGeozonesResource5.Text" xml:space="preserve">
+    <value>Géo-Zones non-assignés</value>
+  </data>
+  <data name="lblUnassignedGeozonesResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnassignedGeozonesResource6.Text" xml:space="preserve">
+    <value>Géo-Zones non-assignés</value>
+  </data>
+  <data name="lblUnassignedGeozonesResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleNameResource1.Text" xml:space="preserve">
+    <value> Véhicule :</value>
+  </data>
+  <data name="lblVehicleNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleNameResource2.Text" xml:space="preserve">
+    <value> Véhicule :</value>
+  </data>
+  <data name="lblVehicleNameResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleNameResource3.Text" xml:space="preserve">
+    <value> Véhicule :</value>
+  </data>
+  <data name="lblVehicleNameResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleNameResource4.Text" xml:space="preserve">
+    <value> Véhicule :</value>
+  </data>
+  <data name="lblVehicleNameResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleNameResource5.Text" xml:space="preserve">
+    <value> Véhicule :</value>
+  </data>
+  <data name="lblVehicleNameResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleNameResource6.Text" xml:space="preserve">
+    <value> Véhicule :</value>
+  </data>
+  <data name="lblVehicleNameResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lnkDeleteResource1.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="lnkDeleteResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lnkDeleteResource2.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="lnkDeleteResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lnkDeleteResource3.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="lnkDeleteResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lnkDeleteResource4.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="lnkDeleteResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lnkDeleteResource5.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="lnkDeleteResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lnkDeleteResource6.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="lnkDeleteResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>frmVéhiculeGéo-Zone</value>
+  </data>
+  <data name="PageResource2.Title" xml:space="preserve">
+    <value>frmVéhiculeGéo-Zone</value>
+  </data>
+  <data name="PageResource3.Title" xml:space="preserve">
+    <value>frmVéhiculeGéo-Zone</value>
+  </data>
+  <data name="PageResource4.Title" xml:space="preserve">
+    <value>frmVéhiculeGéo-Zone</value>
+  </data>
+  <data name="PageResource5.Title" xml:space="preserve">
+    <value>frmVéhiculeGéo-Zone</value>
+  </data>
+  <data name="PageResource6.Title" xml:space="preserve">
+    <value>frmVéhiculeGéo-Zone</value>
+  </data>
+  <data name="lblNote.Text" xml:space="preserve">
+    <value>Quand une Geo-zone est ajoutée ou retirée du tableau des Géo-Zones assignées, le système tentera de synchroniser la géo-zone immédiatement.
+
+Si l’unité n'est pas disponible, la géo-zone sera automatiquement synchronisée la prochaine fois que l'unité communiquera avec le serveur.
+
+Définitions de l’État
+
+Sync : la synchronisation entre la géo-zone et l'unité est complétée.
+Ajouter en attente : La géo-zone est en attente d’être synchronisée et le sera lorsque l'appareil communiquera avec le serveur.</value>
+  </data>
+  <data name="lblNote.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOhTitleResource1.Text" xml:space="preserve">
+    <value>Hiérarchie:</value>
+  </data>
+  <data name="lblOhTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAssGeozone_Speed" xml:space="preserve">
+    <value>Vitesse</value>
+  </data>
+  <data name="ResMultipleHierarchies" xml:space="preserve">
+    <value>Plusieurs hiérarchies</value>
+  </data>
+</root>

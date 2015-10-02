@@ -1,0 +1,515 @@
+﻿@charset "utf-8";
+/* CSS Documented by Shreya Srivastava */
+
+
+body {
+    /* Margin bottom by footer height 
+  margin-bottom:250px;*/
+    
+    background: #BBe1c2; 
+    font-family: Calibri, Arial, Helvetica, sans-serif !important;
+    background-color: #BBe1c2;
+    background: url(../images/sfmbg.jpg) no-repeat !important;
+   
+   
+  
+}
+
+
+/*.text-left{ text-align:left;}
+.text-right{ text-align:right;}
+.text-center{ text-align:center;}
+.float-left{ float:left !important;}
+.float-right{ float:right !important;}*/
+.mt10 {
+    margin-top: 10px;
+}
+
+.ml {
+    margin-left: 8px;
+}
+
+
+
+/*** Header ***/
+.header {
+    height: 10%;
+    background: #f5f5f5;
+    width: 100%;
+    padding: 0%;
+}
+
+/*** Content Area ***/
+
+.parentCon {
+    background: url(../images/sfmbg.jpg) no-repeat !important;
+    width: 100%;
+}
+
+.conArea {
+    max-width: 750px;
+    width: 100%;
+    background: #f4f4f4;
+    position: relative;
+    display: block;
+    margin: 6% auto;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px #5F5F5F;
+}
+
+.loginPnl {
+    height: 380px;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+}
+
+.loginHeader {
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+}
+
+.slider {
+    height: 380px;
+    padding: 10px;
+}
+
+.unameStyle {
+    border: 1px solid #ccc;
+    border-bottom: 0px;
+    border-radius: 3px 3px 0px 0px; /*background:url(../images/username.png) no-repeat 10px 10px #fff;*/
+}
+
+.btn-primary {
+    background: #00b7ea; /* Old browsers */
+    background: -moz-linear-gradient(top, #00b7ea 0%, #009ec3 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00b7ea), color-stop(100%,#009ec3)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #00b7ea 0%,#009ec3 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #00b7ea 0%,#009ec3 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #00b7ea 0%,#009ec3 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #00b7ea 0%,#009ec3 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=0 ); /* IE6-9 */
+    border-color: #2e6da4;
+    color: #fff;
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.loginlinks {
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px #fff;
+    padding: 5px;
+    /*background-color:#E6F5FF;*/
+    background: #00b7ea; /* Old browsers */
+    background: -moz-linear-gradient(top, #00b7ea 0%, #009ec3 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00b7ea), color-stop(100%,#009ec3)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #00b7ea 0%,#009ec3 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #00b7ea 0%,#009ec3 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #00b7ea 0%,#009ec3 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #00b7ea 0%,#009ec3 100%); /* W3C */
+}
+
+    .loginlinks a {
+        color: #fff;
+    }
+
+        .loginlinks a:hover {
+            color: #1F76A0;
+        }
+
+.culturelinks a {
+    color: #006600;
+}
+
+    .culturelinks a:hover {
+        color: #1F76A0;
+    }
+
+
+
+
+/*** Footer ***/
+.footer {
+    /* Set the fixed height of the footer here 
+  position:absolute ;
+  height:200px;
+  bottom: 0;*/
+    background-color: #f5f5f5;
+    padding: 5px;
+    /*border-top:1px dashed #39F;*/
+}
+
+.footer_text {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+    .footer_text a {
+        color: #1F76A0;
+    }
+
+        .footer_text a:hover {
+            color: #000;
+        }
+
+    .footer_text p {
+        margin-bottom: 10px;
+    }
+
+/* [- Slideshow -] */
+.slideshow {
+    margin: auto;
+    z-index: 55;
+    width: 100% !important;
+}
+    /*.slideshow img {top: 0px; left: 0px; display: none; z-index: 5; opacity:0; height: 492px;}*/
+    .slideshow .banner_01 {
+        background: url("../../SentinelFM_Themes/localhost/images/Banner/1.png") no-repeat scroll center center / 100% 100% rgba(0, 0, 0, 0);
+        height: 320px;
+        width: 100% !important;
+    }
+
+    .slideshow .banner_02 {
+        background: url("../../SentinelFM_Themes/localhost/images/Banner/2.png") no-repeat scroll center center / 100% 100% rgba(0, 0, 0, 0);
+        height: 320px;
+        width: 100% !important;
+    }
+
+    .slideshow .banner_03 {
+        background: url("../../SentinelFM_Themes/localhost/images/Banner/3.png") no-repeat scroll center center / 100% 100% rgba(0, 0, 0, 0);
+        height: 320px;
+        width: 100% !important;
+    }
+
+/* End */
+
+
+@media all and (max-width:480px) {
+    .loginPnl, .slider {
+        width: 100%;
+    }
+}
+
+.learnMore {
+    z-index: 55;
+    background: #5BB72C;
+    width: 67px;
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px #fff;
+    padding: 5px;
+    margin-top: -23px;
+    /*margin-bottom:10px;*/
+}
+
+    .learnMore a {
+        color: #fff;
+    }
+
+        .learnMore a:hover {
+            color: #FFFF80;
+        }
+
+.captcha {
+    display: inline;
+}
+
+
+@media (min-width: 320px) and (max-width: 650px) {
+    .parentCon {
+        /*background: url(../images/sfmbg.jpg) no-repeat !important;*/
+        width: 100%;
+    }
+}
+
+@media (min-width: 651px) and (max-width: 800px) {
+    .parentCon {
+        /*background: url(../images/ResponsiveLoginBG_1.png) no-repeat !important;*/
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 801px) and (max-width: 1024px) {
+    .parentCon {
+        /*background: url(../images/ResponsiveLoginBG_2.png) no-repeat !important;*/
+        width: 100%;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1600px) {
+    .parentCon {
+        /*background: url(../images/ResponsiveLoginBG_1.png) no-repeat !important;*/
+        width: 100%;
+    }
+}
+
+@media (min-width: 1601px) and (max-width: 2000px) {
+    .parentCon {
+        /*background: url(../images/sfmbg.jpg) no-repeat !important;*/
+        width: 100%;
+    }
+}
+
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+    padding: 0 15px;
+}
+
+    .icon-block .material-icons {
+        font-size: inherit;
+    }
+
+.directCont {
+    color: #333333;
+}
+
+.lightGrey {
+    background: #f8f8f8 !important;
+}
+
+.mediumGrey {
+    color: #929497 !important;
+}
+
+.mediumGreyText {
+    color: #BFC0C2 !important;
+    margin: 0 0 10px 0 !important;
+}
+
+h4.footerText {
+    font-size: 19px;
+    margin: 0 !important;
+    padding: 10px 0 0 0 !important;
+    color: #BFC0C2 !important;
+    line-height: normal !important;
+}
+
+.captionLeft {
+    font-size: 22px;
+    color: #fff;
+    display: table-cell;
+    height: 400px;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+/*
+============= CUSTOMAIZED MATERIALIZE STYLE ==============*/
+nav ul a {
+    color: #939393;
+}
+
+nav .button-collapse i {
+    color: #000;
+}
+
+nav .brand-logo {
+    font-size: inherit !important;
+    padding: 15px 0 0 0;
+}
+
+.section {
+    padding-top: 20px !important;
+    padding-bottom: 0 !important;
+}
+
+.bg1 {
+    background: url(../img/bg1.jpg) no-repeat;
+    background-size: cover;
+}
+
+.bg2 {
+    background: #2aabfa;
+}
+
+.bg3 {
+    background: url(../img/bg3.jpg) no-repeat;
+    background-size: cover;
+}
+
+.light-blue.lighten-1 {
+    background-color: #f8f8f8 !important;
+}
+
+ul .mt10 {
+    margin-top: 10px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+.mt40 {
+    margin-top: 40px;
+}
+
+.mb50 {
+    margin-bottom: 50px;
+}
+
+.btn.mt10 {
+    margin-top: 10px;
+}
+
+.btn.mt20 {
+    margin-top: 20px;
+}
+
+.btn.mt30 {
+    margin-top: 30px;
+}
+
+.input-field .prefix.active {
+    color: #57AE22;
+}
+
+
+/*
+============= BX SLIDER STYLE ==============*/
+.bx-wrapper {
+    position: relative;
+    margin: 0 auto !important;
+    padding: 0;
+}
+
+    .bx-wrapper .bx-viewport {
+        box-shadow: none !important;
+        border: none !important;
+        left: 0 !important;
+        height: 400px !important;
+    }
+
+.bxslider li {
+    height: 400px !important;
+}
+
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+    width: auto !important;
+    right: 0 !important;
+}
+
+    .bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active {
+        background: #333333 !important;
+    }
+
+    .bx-wrapper .bx-pager.bx-default-pager a {
+        background: none !important;
+        border: 2px solid #333333 !important;
+        width: 11px !important;
+        height: 11px !important;
+        border-radius: 50% !important;
+    }
+
+.bxSlideOut {
+    position: relative;
+}
+
+    .bxSlideOut .outside {
+        position: absolute;
+        bottom: -26px;
+    }
+
+.bxslider li {
+    position: relative;
+}
+
+    .bxslider li .captionOut {
+        position: absolute;
+        bottom: 0;
+        background: #000;
+        opacity: 0.8;
+        padding: 10px;
+        color: #fff;
+        font-size: 12px;
+        width: 100%;
+    }
+
+/*
+============= LOGIN STYLE ==============*/
+.loginOut {
+    background: #f0f1f1;
+    padding: 20px 35px 20px 35px;
+    height: 400px;
+}
+
+.loginOutCenter {
+    background: #f0f1f1;
+    padding: 10px 35px 15px 35px;
+    margin: 0 auto;
+}
+
+.loginOut.opt {
+    opacity: 0.9;
+}
+
+.loginOut a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/*
+================== FOOTER ==================*/
+.footerOut a {
+    color: #BFC0C2;
+}
+
+
+/*
+================== ICOMOON ==================*/
+@font-face {
+    font-family: 'icomoon';
+    src: url('../font/icomoon.eot?ucfc1m');
+    src: url('../font/icomoon.eot?#iefixucfc1m') format('embedded-opentype'), url('../font/icomoon.ttf?ucfc1m') format('truetype'), url('../font/icomoon.woff?ucfc1m') format('woff'), url('../font/icomoon.svg?ucfc1m#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-key2:before {
+    content: "\e601";
+}
+
+.parent{
+    position:absolute;
+    
+    margin:auto;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+}
+
+.login_footer
+{
+    background-color:#415B41;
+    color:#fff;
+    text-align:center;
+    line-height:20px;
+}

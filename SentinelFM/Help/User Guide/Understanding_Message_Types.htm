@@ -1,0 +1,357 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Understanding Message Types</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="SentinelFMStyleSheet_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='SentinelFMStyleSheet.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+h1.whs1 { margin-bottom:0pt; }
+hr.whs2 { float:alignleft; color:#008000; }
+p.whs3 { font-size:10pt; }
+ul.whs4 { list-style:disc; }
+table.whs5 { x-cell-content-align:top; width:95.069%; border-spacing:0px; }
+col.whs6 { width:17.829%; }
+col.whs7 { width:11.77%; }
+col.whs8 { width:71.063%; }
+tr.whs9 { x-cell-content-align:top; }
+td.whs10 { width:17.829%; padding-right:10px; padding-left:10px; border-left-style:Solid; border-left-color:#000000; border-top-color:#000000; border-top-style:Solid; border-right-style:Solid; border-right-color:#000000; border-bottom-color:#000000; border-bottom-style:Solid; border-right-width:1px; border-left-width:1px; border-top-width:1px; border-bottom-width:1px; background-color:#008000; }
+p.whs11 { font-weight:bold; font-size:10pt; color:#ffffff; }
+td.whs12 { width:11.77%; padding-right:10px; padding-left:10px; border-top-style:Solid; border-top-color:#000000; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-right-width:1px; border-top-width:1px; border-bottom-width:1px; background-color:#008000; }
+td.whs13 { width:71.063%; padding-right:10px; padding-left:10px; border-top-style:Solid; border-top-color:#000000; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-top-width:1px; border-bottom-width:1px; border-right-width:1px; background-color:#008000; }
+td.whs14 { width:17.829%; padding-right:10px; padding-left:10px; border-left-style:Solid; border-left-color:#000000; border-left-width:1px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; }
+td.whs15 { width:11.77%; padding-right:10px; padding-left:10px; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; }
+p.whs16 { font-size:10pt; text-align:center; }
+td.whs17 { width:71.063%; padding-right:10px; padding-left:10px; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; }
+td.whs18 { width:17.829%; padding-right:10px; padding-left:10px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; border-left-style:Solid; border-left-color:#000000; border-left-width:1px; }
+td.whs19 { width:11.77%; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+td.whs20 { width:71.063%; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; padding-right:10px; padding-left:10px; }
+td.whs21 { width:17.829%; padding-right:10px; padding-left:10px; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; border-left-width:1px; border-left-color:#000000; border-left-style:Solid; }
+td.whs22 { width:11.77%; padding-right:10px; padding-left:10px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; }
+td.whs23 { width:71.063%; padding-right:10px; padding-left:10px; border-right-style:Solid; border-right-color:#000000; border-right-width:1px; border-bottom-width:1px; border-bottom-color:#000000; border-bottom-style:Solid; }
+td.whs24 { width:17.829%; padding-right:10px; padding-left:10px; border-left-width:1px; border-left-color:#000000; border-left-style:Solid; border-right-width:1px; border-right-color:#000000; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#000000; border-bottom-width:1px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "h1.whs1 {margin-bottom:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Working With History\nUnderstanding Message Types");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("User_Guide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1 class="whs1">Understanding Message Types</h1>
+
+
+<hr align="left" color="#008000" class="whs2">
+
+
+<p class="whs3">In the History screen, when you choose the 
+ Vehicle Path option for the history type, you can view locations for and 
+ information about messages, commands, GPS positions, triggered sensors, 
+ and other activity history that was communicated, either from the Sentinel 
+ FM server to the box in a vehicle, or vice versa. (For details about the 
+ Vehicle Path option, see <a href="Viewing_Vehicle_Path_History.htm"
+							style="font-size: 10pt;">Viewing Vehicle Path 
+ History</a>.) All of these communications are referred to in the grid 
+ as &quot;message types&quot;.</p>
+
+<p class="whs3">&nbsp;</p>
+
+<ul type="disc" class="whs4">
+	
+	<li class=kadov-p><p class="whs3">Data that was sent from 
+ Sentinel FM to a vehicle box is called &quot;outgoing&quot;, and appears 
+ with a <span style="font-weight: bold;"><B>&gt;&gt; </B></span>in the<span style="font-weight: bold;"><B> 
+ Message Type </B></span>column.</p></li>
+	
+	<li class=kadov-p><p class="whs3">Data that was sent from 
+ a vehicle box to Sentinel FM is called &quot;incoming&quot;, and appears 
+ with a <span style="font-weight: bold;"><B>&lt;&lt; </B></span>in the<span style="font-weight: bold;"><B> 
+ Message Type </B></span>column.</p></li>
+</ul>
+
+<p class="whs3">&nbsp;</p>
+
+<p><span style="font-size: 10pt;"><font size=2 style="font-size:10pt;">The following table explains some typical 
+ message types:</font></span> </p>
+
+<p>&nbsp;</p>
+
+<table x-use-null-cells cellspacing="0" width="95.069%" class="whs5">
+<script language='JavaScript'><!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4)) document.write("</table><table x-use-null-cells cellspacing='0' width='95.069%' border='1' bordercolor='black' bordercolorlight='black' bordercolordark='black'>");
+//--></script>
+<col class="whs6">
+<col class="whs7">
+<col class="whs8">
+
+<tr valign="top" class="whs9">
+<td bgcolor="#008000" width="17.829%" class="whs10">
+<p class="whs11">Message Type</td>
+<td colspan="1" rowspan="1" bgcolor="#008000" width="11.77%" class="whs12">
+<p class="whs11">Message Direction</td>
+<td bgcolor="#008000" width="71.063%" class="whs13">
+<p class="whs11">What It Means</td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="17.829%" class="whs14">
+<p class="whs3">Alarm</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs15">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td colspan="1" rowspan="1" width="71.063%" class="whs17">
+<p class="whs3">Special message type for Bantek</td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="17.829%" class="whs18">
+<p class="whs3">BoxSetup</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs19">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td colspan="1" rowspan="1" width="71.063%" class="whs20">
+<p class="whs3">Sentinel FM requests BoxSetup information </td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="17.829%" class="whs18">
+<p class="whs3">BoxStatus</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs19">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td colspan="1" rowspan="1" width="71.063%" class="whs20">
+<p class="whs3">Sentinel FM requests BoxStatus information 
+ </td></tr>
+
+<tr valign="top" class="whs9">
+<td width="17.829%" class="whs18">
+<p class="whs3">Coordinate</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs19">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td width="71.063%" class="whs20">
+<p class="whs3">Scheduled position report</td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="17.829%" class="whs18">
+<p class="whs3">ExternalData</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs19">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td colspan="1" rowspan="1" width="71.063%" class="whs20">
+<p class="whs3">Special message type for Bantek</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="17.829%" class="whs18">
+<p class="whs3">GeoFence</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs19">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td width="71.063%" class="whs20">
+<p class="whs3">Geo-fence violated. Geo-fence is a virtual 
+ circular perimeter that is set up around a vehicle when the box is armed. 
+ As soon as this perimeter is crossed by a vehicle, a GeoFence message 
+ is received on the Server, creating an alarm.</td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="17.829%" class="whs18">
+<p class="whs3">GeoZone</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs19">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td colspan="1" rowspan="1" width="71.063%" class="whs20">
+<p class="whs3">GeoZone violated (for future versions)</td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="17.829%" class="whs18">
+<p class="whs3">Idling</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs19">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td colspan="1" rowspan="1" width="71.063%" class="whs20">
+<p class="whs3">Speed of vehicle is zero, but ignition is on</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="17.829%" class="whs18">
+<p class="whs3">IP Update</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs19">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td width="71.063%" class="whs20">
+<p class="whs3">Service message for diagnostic purposes</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="17.829%" class="whs18">
+<p class="whs3">KeyFobArm</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs19">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td width="71.063%" class="whs20">
+<p class="whs3">Box armed from the key fob. Arming the box 
+ enables alarms.</td></tr>
+
+<tr valign="top" class="whs9">
+<td width="17.829%" class="whs18">
+<p class="whs3">KeyFobDisarm</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs19">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td width="71.063%" class="whs20">
+<p class="whs3">Box disarmed from the key fob. Disarming the 
+ box disables alarms.</td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="17.829%" class="whs21">
+<p class="whs3">KeyFobPanic</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs22">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td colspan="1" rowspan="1" width="71.063%" class="whs23">
+<p class="whs3">Both buttons pressed on the box’s key fob--always 
+ creates an alarm</td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="17.829%" class="whs18">
+<p class="whs3">MBAlarm</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs15">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td colspan="1" rowspan="1" width="71.063%" class="whs17">
+<p class="whs3">Special message type for Bantek </td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="17.829%" class="whs21">
+<p class="whs3">MDTResponse</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs22">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td colspan="1" rowspan="1" width="71.063%" class="whs23">
+<p class="whs3">Text message from the vehicle</td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="17.829%" class="whs21">
+<p class="whs3">MDTTextMessage</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs22">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td colspan="1" rowspan="1" width="71.063%" class="whs23">
+<p class="whs3">Text message from the vehicle</td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="17.829%" class="whs21">
+<p class="whs3">PositionUpdate</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs22">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td colspan="1" rowspan="1" width="71.063%" class="whs23">
+<p class="whs3">Answer for Update Position command manually 
+ sent from the Map screen</td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="17.829%" class="whs21">
+<p class="whs3">Sensor</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs22">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td colspan="1" rowspan="1" width="71.063%" class="whs23">
+<p class="whs3">Box Sensor triggered</td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="17.829%" class="whs21">
+<p class="whs3">Speed</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs22">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td colspan="1" rowspan="1" width="71.063%" class="whs23">
+<p class="whs3">Speed threshold violated</td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="17.829%" class="whs21">
+<p class="whs3">StoredPosition</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs22">
+<p align="center" class="whs16">&lt;&lt;</td>
+<td colspan="1" rowspan="1" width="71.063%" class="whs23">
+<p class="whs3">Service message: Stored position in case of 
+ invalid GPS</td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="17.829%" class="whs14">
+<p class="whs3">Command</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs15">
+<p align="center" class="whs16">&gt;&gt;</td>
+<td colspan="1" rowspan="1" width="71.063%" class="whs17">
+<p class="whs3">Command to the box</td></tr>
+
+<tr valign="top" class="whs9">
+<td colspan="1" rowspan="1" width="17.829%" class="whs24">
+<p class="whs3">Output</td>
+<td colspan="1" rowspan="1" width="11.77%" class="whs22">
+<p align="center" class="whs16">&gt;&gt;</td>
+<td colspan="1" rowspan="1" width="71.063%" class="whs23">
+<p class="whs3">Output to the box</td></tr>
+<script language='JavaScript'><!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4)) document.write("</table></table><table>");
+//--></script>
+</table>
+
+<p>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+
+<!--SALMAN-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="../ValidateHelp.js"></script>
+<!--SALMAN-->
+
+</body>
+</html>

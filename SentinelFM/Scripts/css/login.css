@@ -1,0 +1,39 @@
+﻿body
+{
+	font-family: Tahoma;
+	font-size: 8pt;
+	color: Black;
+}
+.StandardLabel
+{
+	color: #009800;
+	font-variant: small-caps;
+	font-weight: bolder;
+}
+
+.StandardInput
+{
+	width: 200px;color: Black;
+}
+.CollapseContainer
+{
+	display: none;
+}
+.CollapseContainer2
+{
+	display: inline-block;
+	position: absolute;
+	left: -1000px;
+	top: -1000px;
+
+}
+.popupWindow
+{
+	position:absolute;
+    width:250px;
+    border: solid 1px black;
+    margin: 0px 0px 0px 20px;
+    background-color:white;
+    filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=5, OffY=5, Color=#2557ad); 
+    display:none;
+}

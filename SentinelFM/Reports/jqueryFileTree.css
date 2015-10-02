@@ -1,0 +1,421 @@
+UL.jqueryFileTree, .vehiclelisttbl tr {
+	font-family: Verdana, sans-serif;
+	font-size: 11px;
+	line-height: 18px;
+	padding: 0px;
+	margin: 0px;
+}
+
+UL.jqueryFileTree
+{
+    /*float:left;*/
+    clear:both;
+}
+
+UL.jqueryFileTree LI {
+	list-style: none;
+	padding: 0px;
+	padding-left: 20px;
+	margin: 0px;    
+	white-space: nowrap;
+	clear: both;
+}
+
+
+
+UL.jqueryFileTree A {
+	color: #333;
+	text-decoration: none;
+	/*display: inline-block;*/
+	display: block;
+	padding: 0px 2px;
+}
+
+UL.jqueryFileTree A.inlineblock {
+	display: inline-block;	
+}
+
+UL.jqueryFileTree A:hover {
+	background: #BDF;
+}
+UL.jqueryFileTree A.current {
+    background: #0A246A;
+    color: White;
+}
+
+.vehicleitem:hover 
+{
+    background: #BDF;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.vehiclelisttbl tr.current td {
+    background: #0A246A !important;
+    color: White !important;
+}
+
+.tablesorter-blue 
+{
+    margin-top: 0 !important;
+}
+
+.vehiclelisttbl
+{
+    width: 250px !important;
+}
+
+.tablesorter-blue .tablesorter-filter
+{
+	width: 95% !important;
+}
+
+.LeftPane {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #BBBBBB #FFFFFF #FFFFFF #BBBBBB;
+    border-style: solid;
+    border-width: 1px;
+    height: 300px;
+    overflow: scroll;
+    padding: 5px;
+    width: 300px;
+}
+        
+#vehicletreeview, #vehicledetails
+{
+    padding: 0 5px;
+}
+        
+#vehicledetails
+{
+    /*width:450px;*/
+    <%--margin-right:16px;--%>
+    border-bottom: 1px solid #CCCCCC;            
+    height: 270px;
+    margin-bottom: 0;
+    margin-right: 0;
+    overflow: auto; 
+}
+        
+#vehiclelistPageBar
+{
+    padding: 5px 0 0 5px;
+    height: 26px;  
+    overflow: hidden;                  
+}
+        
+/*
+    * Splitter container. Set this to the desired width and height
+    * of the combined left and right panes. In this example, the
+    * height is fixed and the width is the full width of the body,
+    * less the margin on the splitter itself.
+    */
+#MySplitter {
+	height: 300px;
+	margin: 5px 40px 5px 0;
+	border: 4px solid #bdb;
+	/* No padding allowed */
+}
+/*
+    * Left-side element of the splitter. Use pixel units for the
+    * min-width and max-width; the splitter plugin parses them to
+    * determine the splitter movement limits. Set the width to
+    * the desired initial width of the element; the plugin changes
+    * the width of this element dynamically.
+    */
+#LeftPane {
+	background: #efe;
+	overflow: auto;
+	/* No margin or border allowed */
+}
+/*
+    * Right-side element of the splitter.
+    */
+#RightPane {
+	background: #f8fff8;
+	overflow: hidden;
+	/* No margin or border allowed */
+}
+/* 
+    * Splitter bar style; the .active class is added when the
+    * mouse is over the splitter or the splitter is focused
+    * via the keyboard taborder or an accessKey. 
+    */
+#MySplitter .vsplitbar {
+	width: 6px;
+	background: #aca url(images/vgrabber.gif) no-repeat center;
+}
+#MySplitter .vsplitbar.active {
+	background: #da8 url(images/vgrabber.gif) no-repeat center;
+	opacity: 0.7;
+}
+        
+ul.jqueryFileTree A
+{
+    text-align:left;
+}
+
+/* Core Styles */
+.jqueryFileTree LI.directory { background: url(images/directory.png) left top no-repeat;
+}
+.jqueryFileTree LI.plus { background: url(images/plusicon.png) left center no-repeat; }
+.jqueryFileTree LI.expanded { background: url(images/folder_open.png) left top no-repeat; }
+.jqueryFileTree LI.file { background: url(images/file.png) left top no-repeat; }
+.jqueryFileTree LI.wait { background: url(images/spinner.gif) left top no-repeat; }
+/* File Extensions*/
+.jqueryFileTree LI.ext_3gp { background: url(images/film.png) left top no-repeat; }
+.jqueryFileTree LI.ext_afp { background: url(images/code.png) left top no-repeat; }
+.jqueryFileTree LI.ext_afpa { background: url(images/code.png) left top no-repeat; }
+.jqueryFileTree LI.ext_asp { background: url(images/code.png) left top no-repeat; }
+.jqueryFileTree LI.ext_aspx { background: url(images/code.png) left top no-repeat; }
+.jqueryFileTree LI.ext_avi { background: url(images/film.png) left top no-repeat; }
+.jqueryFileTree LI.ext_bat { background: url(images/application.png) left top no-repeat; }
+.jqueryFileTree LI.ext_bmp { background: url(images/picture.png) left top no-repeat; }
+.jqueryFileTree LI.ext_c { background: url(images/code.png) left top no-repeat; }
+.jqueryFileTree LI.ext_cfm { background: url(images/code.png) left top no-repeat; }
+.jqueryFileTree LI.ext_cgi { background: url(images/code.png) left top no-repeat; }
+.jqueryFileTree LI.ext_com { background: url(images/application.png) left top no-repeat; }
+.jqueryFileTree LI.ext_cpp { background: url(images/code.png) left top no-repeat; }
+.jqueryFileTree LI.ext_css { background: url(images/css.png) left top no-repeat; }
+.jqueryFileTree LI.ext_doc { background: url(images/doc.png) left top no-repeat; }
+.jqueryFileTree LI.ext_exe { background: url(images/application.png) left top no-repeat; }
+.jqueryFileTree LI.ext_gif { background: url(images/picture.png) left top no-repeat; }
+.jqueryFileTree LI.ext_fla { background: url(images/flash.png) left top no-repeat; }
+.jqueryFileTree LI.ext_h { background: url(images/code.png) left top no-repeat; }
+.jqueryFileTree LI.ext_htm { background: url(images/html.png) left top no-repeat; }
+.jqueryFileTree LI.ext_html { background: url(images/html.png) left top no-repeat; }
+.jqueryFileTree LI.ext_jar { background: url(images/java.png) left top no-repeat; }
+.jqueryFileTree LI.ext_jpg { background: url(images/picture.png) left top no-repeat; }
+.jqueryFileTree LI.ext_jpeg { background: url(images/picture.png) left top no-repeat; }
+.jqueryFileTree LI.ext_js { background: url(images/script.png) left top no-repeat; }
+.jqueryFileTree LI.ext_lasso { background: url(images/code.png) left top no-repeat; }
+.jqueryFileTree LI.ext_log { background: url(images/txt.png) left top no-repeat; }
+.jqueryFileTree LI.ext_m4p { background: url(images/music.png) left top no-repeat; }
+.jqueryFileTree LI.ext_mov { background: url(images/film.png) left top no-repeat; }
+.jqueryFileTree LI.ext_mp3 { background: url(images/music.png) left top no-repeat; }
+.jqueryFileTree LI.ext_mp4 { background: url(images/film.png) left top no-repeat; }
+.jqueryFileTree LI.ext_mpg { background: url(images/film.png) left top no-repeat; }
+.jqueryFileTree LI.ext_mpeg { background: url(images/film.png) left top no-repeat; }
+.jqueryFileTree LI.ext_ogg { background: url(images/music.png) left top no-repeat; }
+.jqueryFileTree LI.ext_pcx { background: url(images/picture.png) left top no-repeat; }
+.jqueryFileTree LI.ext_pdf { background: url(images/pdf.png) left top no-repeat; }
+.jqueryFileTree LI.ext_php { background: url(images/php.png) left top no-repeat; }
+.jqueryFileTree LI.ext_png { background: url(images/picture.png) left top no-repeat; }
+.jqueryFileTree LI.ext_ppt { background: url(images/ppt.png) left top no-repeat; }
+.jqueryFileTree LI.ext_psd { background: url(images/psd.png) left top no-repeat; }
+.jqueryFileTree LI.ext_pl { background: url(images/script.png) left top no-repeat; }
+.jqueryFileTree LI.ext_py { background: url(images/script.png) left top no-repeat; }
+.jqueryFileTree LI.ext_rb { background: url(images/ruby.png) left top no-repeat; }
+.jqueryFileTree LI.ext_rbx { background: url(images/ruby.png) left top no-repeat; }
+.jqueryFileTree LI.ext_rhtml { background: url(images/ruby.png) left top no-repeat; }
+.jqueryFileTree LI.ext_rpm { background: url(images/linux.png) left top no-repeat; }
+.jqueryFileTree LI.ext_ruby { background: url(images/ruby.png) left top no-repeat; }
+.jqueryFileTree LI.ext_sql { background: url(images/db.png) left top no-repeat; }
+.jqueryFileTree LI.ext_swf { background: url(images/flash.png) left top no-repeat; }
+.jqueryFileTree LI.ext_tif { background: url(images/picture.png) left top no-repeat; }
+.jqueryFileTree LI.ext_tiff { background: url(images/picture.png) left top no-repeat; }
+.jqueryFileTree LI.ext_txt { background: url(images/txt.png) left top no-repeat; }
+.jqueryFileTree LI.ext_vb { background: url(images/code.png) left top no-repeat; }
+.jqueryFileTree LI.ext_wav { background: url(images/music.png) left top no-repeat; }
+.jqueryFileTree LI.ext_wmv { background: url(images/film.png) left top no-repeat; }
+.jqueryFileTree LI.ext_xls { background: url(images/xls.png) left top no-repeat; }
+.jqueryFileTree LI.ext_xml { background: url(images/code.png) left top no-repeat; }
+.jqueryFileTree LI.ext_zip { background: url(images/zip.png) left top no-repeat; }
+
+
+
+.ohsearch, .ohtextbox
+{
+    border: 1px solid #898772;
+    width: 150px;
+}
+
+.ohsearch:hover, .ohsearch:focus, .ohtextbox:hover, .ohtextbox:focus
+{
+    border-color: #2C8406;
+}
+
+#ohsearchresult
+{
+    width: 500px;
+    height: 300px;
+    display: none;
+    position: absolute;
+    z-index:200;
+    padding: 10px;
+    
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #FFFFFF;
+    border-color: -moz-use-text-color #BDBDBD #BDBDBD;
+    border-image: none;
+    border: 1px solid #BDBDBD;
+    border-style: solid;
+    border-width: medium 1px 1px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 1px 5px 0 rgba(51, 51, 51, 0.3);
+    position: relative;        
+    min-width: 160px; 
+    visibility: visible; 
+    position: absolute; display:none; 
+    margin: 0;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size:13px; 
+}
+
+#ohsearchresultlist
+{
+    overflow: auto;
+    height: 270px;
+}
+
+#ohsearchresulttitle
+{
+    border-bottom: 2px solid #aaaaaa;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+#ohsearchresultlist ul
+{
+    padding: 0;
+    margin: 10px 0;
+}
+
+#ohsearchresultlist li
+{
+    list-style: none outside none;
+    line-height:20px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid #cccccc;
+}
+
+#ohsearchresultlist li.selected
+{
+    background-color: #0A246A;
+    color: White;
+}
+
+.matchsearch
+{
+    color: #FF741E;
+    font-weight: bold;
+}
+
+.popupdiv 
+{
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #FFFFFF;
+    border-color: -moz-use-text-color #BDBDBD #BDBDBD;
+    border-image: none;
+    border: 1px solid #BDBDBD;
+    border-style: solid;
+    border-width: medium 1px 1px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 1px 5px 0 rgba(51, 51, 51, 0.3);
+    position: relative;        
+    min-width: 160px; 
+    visibility: visible; 
+    margin: 0;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size:13px; 
+}
+
+#divAddHierarchy
+{
+    position: absolute; 
+    display:none;
+    z-index:1000;
+    width:300px;
+    height:150px;
+}
+
+.formfield
+{
+    margin-top:30px;
+}
+
+.chkfleet
+{
+    /*float: left;*/
+}
+
+.b-m-ifocus
+{
+    cursor: pointer;
+}
+
+.ht_kd-button {
+    -moz-transition: all 0.218s ease 0s;
+    background-color: #F5F5F5;
+    background-image: -moz-linear-gradient(center top , #F5F5F5, #F1F1F1);
+    /*border: 1px solid rgba(0, 0, 0, 0.1);*/
+    border: 1px solid #D8D8D8;
+    border-radius: 2px 2px 2px 2px;
+    
+    color: #444444;
+    display: inline-block;
+    font-size: 100%;
+    font-family: arial,?sans-serif;
+    font-weight: bold;
+    height: 27px;
+    line-height: 27px;
+    min-width: 54px;
+    padding: 0 8px;
+    text-align: center;
+}
+
+.ht_kd-button:hover {
+    -moz-transition: all 0s ease 0s;
+    background-color: #F8F8F8;
+    background-image: -moz-linear-gradient(center top , #F8F8F8, #F1F1F1);
+    border: 1px solid #C6C6C6;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: #333333;
+    text-decoration: none;
+}
+
+.ht_kd-button-disabled, .ht_kd-button-disabled:hover {
+    -moz-transition: all 0.218s ease 0s !important;
+    background-color: #F5F5F5 !important;
+    background-image: -moz-linear-gradient(center top , #F5F5F5, #F1F1F1) !important;
+    border: 1px solid #D8D8D8 !important;
+    border-radius: 2px 2px 2px 2px !important;
+    color: #cccccc !important;
+    font-weight: normal !important;
+    box-shadow: none !important;        
+}
+
+#LeftPaneWithoutVehicle {
+	height: 300px;
+	margin: 5px 10px 5px 0;
+	border: 4px solid #bdb;
+	overflow: auto;
+	/* No padding allowed */
+}
+
+
+.right_part {
+    width:auto;
+    margin-left:50px;
+    /*float:left;*/
+    list-style: none;
+	padding: 0px;
+	padding-left: 20px;
+	/*margin: 0px;*/
+    margin: 0 0 0 15px !important;
+	white-space: nowrap;
+	clear: none !important;
+}
+.left_part {
+    float:left;
+    width:auto;
+    display:inline-block;
+    margin-top: 4px;
+}

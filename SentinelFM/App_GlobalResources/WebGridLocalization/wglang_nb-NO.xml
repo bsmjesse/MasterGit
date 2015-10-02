@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Localization culture="nb-NO" description="NB-NO">
+  <CommonText>
+    <Ready>Klar.</Ready>
+    <More>Laster mer data…</More>
+    <LoadGroup>Laster gruppe…</LoadGroup>
+    <Sort>Sorterer kolonne…</Sort>
+    <Group>Grupperer kolonne…</Group>
+    <Ungroup>Degrupperer kolonne...</Ungroup>
+    <ChangeGroup>Endrer gruppe kolonne…</ChangeGroup>
+    <FilterText>Filtrerer kolonner…</FilterText>
+    <LoadChild>Laster underrader...</LoadChild>
+    <ColumnChange>Laster underrader...</ColumnChange>
+    <Refresh>Oppdaterer data…</Refresh>
+    <RefreshAll>Oppdaterer data og struktur…</RefreshAll>
+    <RefreshChild>Oppdaterer undertabell</RefreshChild>
+    <AddRow>Legger til ny rad…</AddRow>
+    <UpdateRow>Oppdaterer rad…</UpdateRow>
+    <DeleteRow>Sletter rad…</DeleteRow>
+    <ReadyError>Ferdig med uhåndterte feil i siste forespørsel…</ReadyError>
+    <ColumnMove>Flytter kolonne…</ColumnMove>
+    <Loaded>Lastet [n] av [total]</Loaded>
+    <ExportText>Eksporterer…</ExportText>
+    <NoData>Der er ingen rader i denne visningen.</NoData>
+    <NewRowInfo>Klikk her for å legge til ny rad…</NewRowInfo>
+    <GroupByBoxInfo>Dra et kolonnehode hit for å gruppere kolonnen.</GroupByBoxInfo>
+    <LoadSelfRefChild>Laster selvrefererende underrader...</LoadSelfRefChild>
+    <CalendarToday>I dag</CalendarToday>
+    <CalendarNone>Ingen</CalendarNone>
+  </CommonText>
+  <MessageBoxText>
+    <NoChildRow>Der er ingen underrader for denne posten.</NoChildRow>
+    <InProgress>Vennligst vent mens WebGrid utfører forespørselen…</InProgress>
+    <UnhandledError>Et uhåndterbart unntak oppstod. Se påfølgende detaljer.</UnhandledError>
+    <LoadMoreException>Laste mer data er kun tilgjengelig når det ikke er gruppekolonner i root-tabelle.</LoadMoreException>
+    <AddNewRow>Den nye raden er forandret. Vil du legge til den nye raden?</AddNewRow>
+    <UpdateRow>Den valgte raden er forandret. Vil du oppdaterer forandringene nå?</UpdateRow>
+    <DeleteRow>Den valgte raden er forandret. Vil du oppdaterer forandringene nå?</DeleteRow>
+  </MessageBoxText>
+  <Tooltip>
+    <Refresh>Oppdaterer tabell data</Refresh>
+    <LoadMore>Last mer data</LoadMore>
+    <ExportText>Eksporterer tabell</ExportText>
+    <Help>WebGrid.NET Klient Hjelp</Help>
+  </Tooltip>
+  <Grouping>
+    <Today>I dag</Today>
+    <Yesterday>I går</Yesterday>
+    <LastWeek>Forrige uke</LastWeek>
+    <TwoWeeksAgo>To uker siden</TwoWeeksAgo>
+    <ThreeWeeksAgo>Tre uker siden</ThreeWeeksAgo>
+    <LastMonth>Forrige måned</LastMonth>
+    <Older>Eldre</Older>
+  </Grouping>
+  <ContextMenu>
+    <Column>
+      <SortAsc>Sorter Stigende</SortAsc>
+      <SortDesc>Sorter Synkende</SortDesc>
+      <GroupByThisField>Grupper utifra dette felt</GroupByThisField>
+      <UngroupField>Degrupper dette felt</UngroupField>
+      <GroupByBox>Grupper utifra Box</GroupByBox>
+      <RemoveColumn>Fjern denne kolonnen</RemoveColumn>
+      <BestFit>Passer best</BestFit>
+      <FilterBar>Filter linje</FilterBar>
+      <SelectColumns>Velg kolonner</SelectColumns>
+      <ApplyChanges>Utfør Endringer</ApplyChanges>
+      <Reset>Nullstill</Reset>
+    </Column>
+    <Row>
+      <CopyCell>Kopier denne cellen</CopyCell>
+      <CopyRow>Kopier denne raden</CopyRow>
+      <CopyTable>Kopier denne tabellen</CopyTable>
+      <Update>Oppdater endringer</Update>
+      <Cancel>Kanseller endringer</Cancel>
+      <ShowChildRows>Vis underrader</ShowChildRows>
+      <HideChildRows>Gjem underrader</HideChildRows>
+      <Edit>Endre</Edit>
+      <Delete>Slett</Delete>
+      <Expand>Utvide</Expand>
+      <Collapse>Trekke sammen</Collapse>
+      <ExpandAll>Utvid alt</ExpandAll>
+      <CollapseAll>Trekk sammen alt</CollapseAll>
+      <PerformAdd>Utfør legg til</PerformAdd>
+      <CancelAdd>Kanseller legg til</CancelAdd>
+      <ApplyFilter>Utfør alle filter</ApplyFilter>
+      <ClearFilter>Slett alle filter</ClearFilter>
+    </Row>
+    <Filter>
+      <NotSet>Ikke valgt.</NotSet>
+      <GTET>Større enn eller lik</GTET>
+      <GT>Større enn</GT>
+      <ET>Er lik</ET>
+      <NET>Ikke er lik</NET>
+      <LTET>Mindre enn eller lik</LTET>
+      <LT>Mindre enn</LT>
+      <Like>Lik</Like>
+      <NotLike>Ikke Lik</NotLike>
+      <Between>Mellom</Between>
+      <NotBetween>Ikke Mellom</NotBetween>
+      <IsNull>Er null</IsNull>
+      <NotIsNull>ikke er null</NotIsNull>
+      <IsEmpty>Er tom</IsEmpty>
+      <NotIsEmpty>Ikke er tom</NotIsEmpty>
+      <ApplyAll>Utfør alle filter</ApplyAll>
+      <Clear>Slett dette filter</Clear>
+      <ClearAll>Slett alle filter</ClearAll>
+    </Filter>
+    <Export>
+      <ExportRoot>Eksporter root-tabell</ExportRoot>
+      <ExportChild>Eksporter valgt undertabell</ExportChild>
+      <Portrait>Portrett</Portrait>
+      <Landscape>Landskap</Landscape>
+      <DoExport>Eksporter nå</DoExport>
+    </Export>
+    <Custom description="Add your row custom menu text here">
+      <CustomText1>
+      </CustomText1>
+      <CustomText2>
+      </CustomText2>
+    </Custom>
+  </ContextMenu>
+</Localization>

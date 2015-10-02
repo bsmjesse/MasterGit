@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ButtonColumnResource1.Text" xml:space="preserve">
+    <value>Sélectionner</value>
+  </data>
+  <data name="ButtonColumnResource2.Text" xml:space="preserve">
+    <value>Sélectionner</value>
+  </data>
+  <data name="cboAdvanceDistResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboAdvanceFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboAdvanceLandmarksResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboCountryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboDistanceAdrSrcResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboFleetAdrSrchResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboIntrDistanceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboIntrFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboSearchTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCloseResource1.Text" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="cmdCloseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdFindAddressResource1.Text" xml:space="preserve">
+    <value>Trouver une adresse</value>
+  </data>
+  <data name="cmdFindAddressResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdGoToResource1.Text" xml:space="preserve">
+    <value>Afficher la carte</value>
+  </data>
+  <data name="cmdGoToResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSearchResource1.Text" xml:space="preserve">
+    <value>Recherche de véhicules</value>
+  </data>
+  <data name="cmdSearchResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAddress_Address" xml:space="preserve">
+    <value>Adresse </value>
+  </data>
+  <data name="dgAddress_Latitude" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="dgAddress_Longitude" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="dgAddressResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgAddressResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgAddressResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgAddressResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMultiplyVehicle_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="dgMultiplyVehicle_Show" xml:space="preserve">
+    <value>Afficher</value>
+  </data>
+  <data name="dgMultiplyVehicle_Status" xml:space="preserve">
+    <value>État</value>
+  </data>
+  <data name="dgMultiplyVehicle_StreetAddress" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="dgMultiplyVehicle_VehicleId" xml:space="preserve">
+    <value>Identité du véhicule</value>
+  </data>
+  <data name="dgMultiplyVehicleResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMultiplyVehicleResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgMultiplyVehicleResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgMultiplyVehicleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgSingleVehicle_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="dgSingleVehicle_Status" xml:space="preserve">
+    <value>État</value>
+  </data>
+  <data name="dgSingleVehicleResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgSingleVehicleResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgSingleVehicleResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgSingleVehicleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label1Resource1.Text" xml:space="preserve">
+    <value>à partir du site</value>
+  </data>
+  <data name="Label1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label2Resource1.Text" xml:space="preserve">
+    <value>Dans la flotte :</value>
+  </data>
+  <data name="Label2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label3Resource1.Text" xml:space="preserve">
+    <value>De l'adresse :</value>
+  </data>
+  <data name="Label3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCityTitleResource1.Text" xml:space="preserve">
+    <value>Ville :</value>
+  </data>
+  <data name="lblCityTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCountryTitleResource1.Text" xml:space="preserve">
+    <value>Pays :</value>
+  </data>
+  <data name="lblCountryTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetTitleResource1.Text" xml:space="preserve">
+    <value>Parc :</value>
+  </data>
+  <data name="lblFleetTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIntrFleetResource1.Text" xml:space="preserve">
+    <value>Flotte :</value>
+  </data>
+  <data name="lblIntrFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIntrStreet1Resource1.Text" xml:space="preserve">
+    <value>Rue 1:</value>
+  </data>
+  <data name="lblIntrStreet1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIntrStreet2Resource1.Text" xml:space="preserve">
+    <value>Rue 2:</value>
+  </data>
+  <data name="lblIntrStreet2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIntrTitleResource1.Text" xml:space="preserve">
+    <value>A partir de l'intersection:</value>
+  </data>
+  <data name="lblIntrTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblIntrWithinResource1.Text" xml:space="preserve">
+    <value>sein</value>
+  </data>
+  <data name="lblIntrWithinResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessage_Text_AddressNotFound" xml:space="preserve">
+    <value>Adresse introuvable!</value>
+  </data>
+  <data name="lblMessage_Text_InputNumber" xml:space="preserve">
+    <value>Entrer un numéro</value>
+  </data>
+  <data name="lblMessage_Text_NoData" xml:space="preserve">
+    <value>Aucune donnée correspondant au critère choisi.</value>
+  </data>
+  <data name="lblMessage_Text_SelectAddress" xml:space="preserve">
+    <value>Sélectionner une adresse et cliquer Recherche!</value>
+  </data>
+  <data name="lblMessage_Text_SelectFleet" xml:space="preserve">
+    <value>Sélectionner une flotte de véhicules</value>
+  </data>
+  <data name="lblMessage_Text_SelectVehicle" xml:space="preserve">
+    <value>Sélectionner un véhicule</value>
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSearchForVehicleByResource1.Text" xml:space="preserve">
+    <value>Recherche d'un véhicule par :</value>
+  </data>
+  <data name="lblSearchForVehicleByResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStateTitleResource1.Text" xml:space="preserve">
+    <value>État :</value>
+  </data>
+  <data name="lblStateTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStreetTitleResource1.Text" xml:space="preserve">
+    <value>Rue :</value>
+  </data>
+  <data name="lblStreetTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblWithin1Resource1.Text" xml:space="preserve">
+    <value>à l'intérieur de</value>
+  </data>
+  <data name="lblWithin1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblWithin2Resource1.Text" xml:space="preserve">
+    <value>à l'intérieur de</value>
+  </data>
+  <data name="lblWithin2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource1.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ListItemResource1.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource10.Text" xml:space="preserve">
+    <value>100 km/62 mi</value>
+  </data>
+  <data name="ListItemResource10.Value" xml:space="preserve">
+    <value>100000</value>
+  </data>
+  <data name="ListItemResource11.Text" xml:space="preserve">
+    <value>250 km/155 mi</value>
+  </data>
+  <data name="ListItemResource11.Value" xml:space="preserve">
+    <value>250000</value>
+  </data>
+  <data name="ListItemResource12.Text" xml:space="preserve">
+    <value>500 km/311 mi</value>
+  </data>
+  <data name="ListItemResource12.Value" xml:space="preserve">
+    <value>500000</value>
+  </data>
+  <data name="ListItemResource13.Text" xml:space="preserve">
+    <value>É.-U.</value>
+  </data>
+  <data name="ListItemResource13.Value" xml:space="preserve">
+    <value>É.-U.</value>
+  </data>
+  <data name="ListItemResource14.Text" xml:space="preserve">
+    <value>Canada</value>
+  </data>
+  <data name="ListItemResource14.Value" xml:space="preserve">
+    <value>Canada</value>
+  </data>
+  <data name="ListItemResource15.Text" xml:space="preserve">
+    <value>1 km/0,6 mi</value>
+  </data>
+  <data name="ListItemResource15.Value" xml:space="preserve">
+    <value>1000</value>
+  </data>
+  <data name="ListItemResource16.Text" xml:space="preserve">
+    <value>5 km/3,1 mi</value>
+  </data>
+  <data name="ListItemResource16.Value" xml:space="preserve">
+    <value>5000</value>
+  </data>
+  <data name="ListItemResource17.Text" xml:space="preserve">
+    <value>10 km/6,2 mi</value>
+  </data>
+  <data name="ListItemResource17.Value" xml:space="preserve">
+    <value>10000</value>
+  </data>
+  <data name="ListItemResource18.Text" xml:space="preserve">
+    <value>50 km/31 mi</value>
+  </data>
+  <data name="ListItemResource18.Value" xml:space="preserve">
+    <value>50000</value>
+  </data>
+  <data name="ListItemResource19.Text" xml:space="preserve">
+    <value>100 km/62 mi</value>
+  </data>
+  <data name="ListItemResource19.Value" xml:space="preserve">
+    <value>100000</value>
+  </data>
+  <data name="ListItemResource2.Text" xml:space="preserve">
+    <value>Plaque d'immatriculation</value>
+  </data>
+  <data name="ListItemResource2.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource20.Text" xml:space="preserve">
+    <value>250 km/155 mi</value>
+  </data>
+  <data name="ListItemResource20.Value" xml:space="preserve">
+    <value>250000</value>
+  </data>
+  <data name="ListItemResource21.Text" xml:space="preserve">
+    <value>500 km/311 mi</value>
+  </data>
+  <data name="ListItemResource21.Value" xml:space="preserve">
+    <value>500000</value>
+  </data>
+  <data name="ListItemResource3.Text" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="ListItemResource3.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource4.Text" xml:space="preserve">
+    <value>Identification de l'unité</value>
+  </data>
+  <data name="ListItemResource4.Value" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListItemResource5.Text" xml:space="preserve">
+    <value>Adresse </value>
+  </data>
+  <data name="ListItemResource5.Value" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ListItemResource6.Text" xml:space="preserve">
+    <value>1 km/0,6 mi</value>
+  </data>
+  <data name="ListItemResource6.Value" xml:space="preserve">
+    <value>1000</value>
+  </data>
+  <data name="ListItemResource7.Text" xml:space="preserve">
+    <value>5 km/3,1 mi</value>
+  </data>
+  <data name="ListItemResource7.Value" xml:space="preserve">
+    <value>5000</value>
+  </data>
+  <data name="ListItemResource8.Text" xml:space="preserve">
+    <value>10 km/6,2 mi</value>
+  </data>
+  <data name="ListItemResource8.Value" xml:space="preserve">
+    <value>10000</value>
+  </data>
+  <data name="ListItemResource9.Text" xml:space="preserve">
+    <value>50 km/31 mi</value>
+  </data>
+  <data name="ListItemResource9.Value" xml:space="preserve">
+    <value>50000</value>
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Recherche d'un véhicule</value>
+  </data>
+  <data name="txtCityResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCityResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtIntrStreet1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtIntrStreet2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtIntrStreet2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSearchParamResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSearchParamResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStreetResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStreetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtXResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtXResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtYResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtYResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>

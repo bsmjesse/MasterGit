@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GarminDestinations>
+  <UID>1944</UID>
+  <SID>09243509809345609</SID>
+  <GarminDestinationByLandmark>
+    <RefID>1000</RefID>
+    <UnitName>Truck 0000</UnitName>
+    <StopIndex>0</StopIndex>
+    <Text>Some Text Here</Text>
+    <LandmarkName>ABC Co.</LandmarkName>
+    <DeliveryTimeStamp>2011-11-15T01:22:35-4:00</DeliveryTimeStamp>
+    <RetryIntervalInMinutes>5</RetryIntervalInMinutes>
+    <LifetimeInMinutes>-1</LifetimeInMinutes>
+  </GarminDestinationByLandmark>
+</GarminDestinations>

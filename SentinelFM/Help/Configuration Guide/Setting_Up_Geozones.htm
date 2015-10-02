@@ -1,0 +1,322 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>Setting Up Geozones</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="stylesheet" href="SentinelFMStyleSheet_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='SentinelFMStyleSheet.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+h1.whs1 { margin-bottom:0pt; }
+hr.whs2 { float:alignleft; color:#008000; }
+ul.whs3 { list-style:disc; }
+img_whs4 { border:none; width:16px; height:16px; float:none; border-style:none; }
+img_whs5 { border:none; width:22px; height:19px; float:none; border-style:none; }
+ol.whs6 { list-style:decimal; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "h1.whs1 {margin-bottom:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="whtopic.js"></script>
+</head>
+<body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("Setting Up Landmarks and GeoZones\nSetting Up GeoZones");
+addAvenueInfo("Setting Up Landmarks and Geozones","Setting_Up_Landmarks.htm","Assigning_GeoZones_to_Vehicles.htm");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("SentinelFM_ConfigurationGuide.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1 class="whs1">Setting Up GeoZones</h1>
+
+
+<hr align="left" color="#008000" class="whs2">
+
+
+<p>If you want to have an alarm triggered when a vehicle comes into or 
+ goes out of certain areas, you can set up GeoZones. Rectangular or polygon 
+ (maximum 10 point) GeoZones can be positioned anywhere you want on the 
+ map. For each GeoZone, you must specify:</p>
+
+<p>&nbsp;</p>
+
+<ul type="disc" class="whs3">
+	
+	<li class=kadov-p><p>A name (and description, if desired) for the GeoZone;</p></li>
+	
+	<li class=kadov-p><p>Whether an alarm should be triggered for this 
+ GeoZone, and if so, what vehicle movement (for example, entering or exiting) 
+ will trigger it;</p></li>
+	
+	<li class=kadov-p><p>The level of severity (No Alarm, Notify, Warning, 
+ or Critical) of the alarm that occurs when a vehicle enters or exits the 
+ GeoZone (This is the default severity level for this GeoZone, but you 
+ can override it for individual vehicles. For details, see <a href="Changing_Severity_Levels_for_GeoZones.htm">Changing 
+ Severity Levels for GeoZones</a>.);</p></li>
+	
+	<li class=kadov-p><p>An email address if notification of GeoZone alarm 
+ trigger is required</p></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p class=NumberedList>To view a detailed map of all GeoZones, see <a href="Viewing_Landmarks_and_Geozones.htm">Viewing 
+ Landmarks and GeoZones</a>.</p>
+
+<p class=NumberedList>&nbsp;</p>
+
+<p class=NumberedList>To assign GeoZones to vehicles, see <a href="Assigning_GeoZones_to_Vehicles.htm">Assigning 
+ GeoZones to Vehicles</a>.</p>
+
+<p>&nbsp;</p>
+
+<h2>Step 1. Enter basic information for a GeoZone.</h2>
+
+<ol>
+	
+	<li style="margin-left: -20px;"
+		class=kadov-p-CNumberedList><p class=NumberedList
+										style="margin-bottom: 4.5pt;">From 
+ any Sentinel-FM page, click the <span style="font-weight: bold;"><B>Landmarks 
+ &amp; GeoZones </B></span>hyperlink<span style="font-weight: bold;"> <B></B></span>the 
+ top of the screen. On the <span style="font-weight: bold;"><B>GeoZone</B></span> 
+ tab, view the table of GeoZones that have been entered. If you do not 
+ see the table, click <span style="font-weight: bold;"><B>Cancel</B></span>, and 
+ the screen will refresh, displaying the table.</p></li>
+</ol>
+
+<ul>
+	
+	<li class=kadov-p-CBullet2><p class=Bullet2>To add a new GeoZone, click 
+ on the <span style="font-weight: bold;"><B>Add GeoZone </B></span>button below 
+ the table. </p></li>
+	
+	<li class=kadov-p-CBullet2><p class=Bullet2>To modify a GeoZone, in 
+ the table, click the edit icon (<img src="images/edit_icon.gif" x-maintain-ratio="TRUE" width="16px" height="16px" border="0" class="img_whs4">) in the row for that 
+ GeoZone. </p></li>
+	
+	<li class=kadov-p-CBullet2><p class=Bullet2>To delete a GeoZone, in 
+ the table, click the delete icon (<img src="images/delete_icon.gif" x-maintain-ratio="TRUE" width="22px" height="19px" border="0" class="img_whs5">) in the row for that 
+ GeoZone. You are prompted to confirm the deletion.</p></li>
+</ul>
+
+<ol start="2" type="1" class="whs6">
+	
+	<li style="margin-left: -20px;"
+		class=kadov-p-CNumberedList><p class=NumberedList
+										style="margin-top: 4.5pt;">If you 
+ are adding or modifying a GeoZone, an add/modify screen appears. Enter 
+ information in the <span style="font-weight: bold;"><B>GeoZone Name</B></span> 
+ and <span style="font-weight: bold;"><B>GeoZone Description</B></span> fields. 
+ </p></li>
+</ol>
+
+<h2>Step 2. Specify the alarm trigger and severity.</h2>
+
+<p>If you do not want an alarm to be triggered for this GeoZone, from the 
+ <span style="font-weight: bold;"><B>Direction</B></span> list, choose <span style="font-weight: bold;"><B>Disable</B></span>. 
+ Alarms for this GeoZone will be disabled.</p>
+
+<p>&nbsp;</p>
+
+<p>If you do want an alarm to be triggered:</p>
+
+<p>&nbsp;</p>
+
+<ol start="1" type="1" class="whs6">
+	
+	<li style="margin-left: -20px;"
+		class=kadov-p-CNumberedList><p class=NumberedList>To specify the 
+ vehicle movements that you want to trigger an alarm, from the <span style="font-weight: bold;"><B>Direction</B></span> 
+ list, choose one of the following:</p></li>
+	
+	<ul type="disc" class="whs3">
+		
+		<li class=kadov-p><p>entering the GeoZone - choose <span style="font-weight: bold;"><B>In</B></span></p></li>
+		
+		<li class=kadov-p><p>exiting the GeoZone - choose <span style="font-weight: bold;"><B>Out</B></span></p></li>
+		
+		<li class=kadov-p><p>either entering or exiting the GeoZone - choose 
+ <span style="font-weight: bold;"><B>InOut</B></span></p></li>
+	</ul>
+	
+	<li style="margin-left: -20px;"
+		class=kadov-p-CNumberedList><p class=NumberedList>To specify the 
+ severity of the alarm that will be triggered, from the <span style="font-weight: bold;"><B>Severity</B></span> 
+ list, choose the level that you want for this GeoZone. For details about 
+ severity levels, see <a href="Setting_Alarm_Severity_and_Customizing_Sensor_Names.htm#Alarm_Severity_Levels">Alarm 
+ Severity Levels</a>.</p></li>
+	
+	<li style="margin-left: -20px;"
+		class=kadov-p-CNumberedList><p class=NumberedList>Specify an email 
+ address for alarm notification as well as time zone of the addressee and 
+ the type of alarm that should cause email notification.</p></li>
+</ol>
+
+<h2 class=NumberedList>Step 3. Draw the GeoZone.</h2>
+
+<p>In the middle of the add/modify screen, click on the <span style="font-weight: bold;"><B>DRAW 
+ GEOZONE</B></span> hyperlink. The hyperlink displays the page where you can 
+ draw the GeoZone.</p>
+
+<p>&nbsp;</p>
+
+<p>Use the standard map zoom tools to zoom into the area where the GeoZone 
+ is to be drawn or select a landmark from the <span style="font-weight: bold;"><B>Map 
+ To:</B></span> drop down list to automatically zoom into a specific landmark 
+ area.</p>
+
+<p>&nbsp;</p>
+
+<p>Once the approximate location has been selected choose whether you want 
+ to draw a <span style="font-weight: bold;"><B>Rectangle</B></span> or <span style="font-weight: bold;"><B>Polygon</B></span> 
+ GeoZone.</p>
+
+<h3>By Rectangle</h3>
+
+<ol>
+	
+	<li class=kadov-p-CNumberedList><p class=NumberedList>Once you have 
+ selected the <span style="font-weight: bold;"><B>Rectangle</B></span> option 
+ click on the <span style="font-weight: bold;"><B>Start drawing</B></span> button</p></li>
+	
+	<li class=kadov-p-CNumberedList><p class=NumberedList>Draw a rectangle 
+ by moving the mouse pointer to one corner of the rectangle to be drawn 
+ then holding down the left mouse button drag the mouse pointer to the 
+ other corner and release the mouse button.</p></li>
+	
+	<li class=kadov-p-CNumberedList><p class=NumberedList>A black rectangle 
+ with a dotted interior will appear.</p></li>
+	
+	<li class=kadov-p-CNumberedList><p class=NumberedList>If you are not 
+ satisfied with the GeoZone you can click on the <span style="font-weight: bold;"><B>Clear 
+ Map</B></span> button to clear the rectangle and start the process over again 
+ by clicking on the <span style="font-weight: bold;"><B>Start drawing</B></span> 
+ button to specify a new rectangle.</p></li>
+	
+	<li class=kadov-p-CNumberedList><p class=NumberedList>When finished 
+ click on the <span style="font-weight: bold;"><B>Complete Drawing</B></span> 
+ button</p></li>
+	
+	<li class=kadov-p-CNumberedList><p class=NumberedList>Click on the 
+ <span style="font-weight: bold;"><B>Save</B></span> button &nbsp;(&quot;GeoZone 
+ was drawn successfully&quot; message will be displayed)</p></li>
+	
+	<li class=kadov-p-CNumberedList><p class=NumberedList>Click on the 
+ <span style="font-weight: bold;"><B>Save</B></span> button (&quot;GeoZone has 
+ been updated successfully&quot; message will be displayed)</p></li>
+</ol>
+
+<h3>By Polygon</h3>
+
+<ol type="1" class="whs6">
+	
+	<li class=kadov-p><p>Once you have selected the <span style="font-weight: bold;"><B>Polygon</B></span> 
+ option click on the <span style="font-weight: bold;"><B>Start drawing</B></span> 
+ button</p></li>
+	
+	<li class=kadov-p><p>Click on the first point of the polygon (a black 
+ dot will appear)</p></li>
+	
+	<li class=kadov-p><p>Click on the next point of the polygon (a red 
+ line with connect between the first and second points)</p></li>
+	
+	<li class=kadov-p><p>Continue clicking on subsequent points in the 
+ polygon to a maximum of 10</p></li>
+	
+	<li class=kadov-p><p>A any point during the process of specifying points 
+ you are not satisfied with the polygon being drawn you can click on the 
+ <span style="font-weight: bold;"><B>Clear Map</B></span> button to clear the 
+ screen and start the process over again by clicking on the <span style="font-weight: bold;"><B>Start 
+ drawing</B></span> button</p></li>
+	
+	<li class=kadov-p><p>When finished click on <span style="font-weight: bold;"><B>Complete 
+ Drawing</B></span> button (last point and first point will be joined creating 
+ closed shape)</p></li>
+	
+	<li class=kadov-p><p>A red polygon with a striped interior will appear.</p></li>
+	
+	<li class=kadov-p><p>Click on <span style="font-weight: bold;"><B>Save</B></span> 
+ button (&quot;GeoZone was drawn successfully&quot; message will be displayed)</p></li>
+	
+	<li class=kadov-p><p>Click on the <span style="font-weight: bold;"><B>Save</B></span> 
+ button (&quot;GeoZone has been updated successfully&quot; message will 
+ be displayed)</p></li>
+</ol>
+
+<p class=NumberedList>&nbsp;</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+
+<!--SALMAN-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="../ValidateHelp.js"></script>
+<!--SALMAN-->
+
+</body>
+</html>

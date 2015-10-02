@@ -1,0 +1,22 @@
+﻿
+.frame
+{
+	border-style: outset;
+	border-width: 2px;
+	border-color: gray;
+}
+
+.linkbutton
+{
+	padding-bottom: 5px;
+	font-family: verdana;
+	font-size: smaller;
+	color: Black;
+}
+
+a:link.linkbutton
+{ font-family: verdana; text-decoration: none; color: #000000; }
+a:hover.linkbutton
+{ font-family: verdana; text-decoration: underline; color: gray; }
+a:active.linkbutton
+{ font-family: verdana; text-decoration: underline; color: saddlebrown; }

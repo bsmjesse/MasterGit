@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--This file is used by AuthenticatedPage.aspx.cs-->
+<!--URLs can be absolute (ex. 'http://172.16.3.90/GeoStream'), or relative to app server (ex. '/GeoStream') -->
+<Servers>
+  
+  <!--<Server>http://stream.sentinelfm.com/geostream/</Server>-->
+
+	<Server>http://map.sentinelfm.com/geostream/</Server>
+
+
+  <!-- <Server>http://maps.sentinelfm.com/maps</Server>-->
+  <!-- <Server>http://www.maps.sentinelfm.com/maps</Server> -->
+</Servers>

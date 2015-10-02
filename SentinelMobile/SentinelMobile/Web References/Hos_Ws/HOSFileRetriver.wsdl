@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://localhost/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost/">
+      <s:element name="ReadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDriverStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orgId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDriverStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllDriverStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ReadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadFile" />
+  </wsdl:message>
+  <wsdl:message name="ReadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDriverStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllDriverStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDriverStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllDriverStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HOSFileReteriverSoap">
+    <wsdl:operation name="ReadFile">
+      <wsdl:input message="tns:ReadFileSoapIn" />
+      <wsdl:output message="tns:ReadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDriverStatus">
+      <wsdl:input message="tns:GetAllDriverStatusSoapIn" />
+      <wsdl:output message="tns:GetAllDriverStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HOSFileReteriverSoap" type="tns:HOSFileReteriverSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReadFile">
+      <soap:operation soapAction="http://localhost/ReadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDriverStatus">
+      <soap:operation soapAction="http://localhost/GetAllDriverStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HOSFileReteriverSoap12" type="tns:HOSFileReteriverSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReadFile">
+      <soap12:operation soapAction="http://localhost/ReadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDriverStatus">
+      <soap12:operation soapAction="http://localhost/GetAllDriverStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HOSFileReteriver">
+    <wsdl:port name="HOSFileReteriverSoap" binding="tns:HOSFileReteriverSoap">
+      <soap:address location="http://192.168.9.45/HOSWS/HOSFileRetriver.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HOSFileReteriverSoap12" binding="tns:HOSFileReteriverSoap12">
+      <soap12:address location="http://192.168.9.45/HOSWS/HOSFileRetriver.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

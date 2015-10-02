@@ -1,0 +1,666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ButtonColumnResource1.Text" xml:space="preserve">
+    <value>View Details</value>
+  </data>
+  <data name="cboFleet_Item_0" xml:space="preserve">
+    <value>Select a Fleet</value>
+  </data>
+  <data name="cboFleetResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboServiceA_Item_0" xml:space="preserve">
+    <value>Select a Service</value>
+  </data>
+  <data name="cboServiceA_Item_1" xml:space="preserve">
+    <value>Tires - Tread Depth Recording</value>
+  </data>
+  <data name="cboServiceA_Item_10" xml:space="preserve">
+    <value>Air System - Test Pressure Build Time to 60psi</value>
+  </data>
+  <data name="cboServiceA_Item_11" xml:space="preserve">
+    <value>Air System - Test Pressure Build Time to 90psi</value>
+  </data>
+  <data name="cboServiceA_Item_12" xml:space="preserve">
+    <value>Suspension - Inspect</value>
+  </data>
+  <data name="cboServiceA_Item_13" xml:space="preserve">
+    <value>Suspension - Adjust Ride Height(air ride)</value>
+  </data>
+  <data name="cboServiceA_Item_14" xml:space="preserve">
+    <value>Doors - Barn - Check Hinges</value>
+  </data>
+  <data name="cboServiceA_Item_15" xml:space="preserve">
+    <value>Doors - Barn - Customs Regulations</value>
+  </data>
+  <data name="cboServiceA_Item_16" xml:space="preserve">
+    <value>Doors - Roll-up - Check Tracks and Mechanism</value>
+  </data>
+  <data name="cboServiceA_Item_17" xml:space="preserve">
+    <value>General Box/Roof Inspect</value>
+  </data>
+  <data name="cboServiceA_Item_18" xml:space="preserve">
+    <value>Lighting - Check All</value>
+  </data>
+  <data name="cboServiceA_Item_19" xml:space="preserve">
+    <value>Lighting - Inspect Trailer Cord</value>
+  </data>
+  <data name="cboServiceA_Item_2" xml:space="preserve">
+    <value>Tires - Pressure Adjust</value>
+  </data>
+  <data name="cboServiceA_Item_20" xml:space="preserve">
+    <value>Refrigeration Unit - Follow PM</value>
+  </data>
+  <data name="cboServiceA_Item_3" xml:space="preserve">
+    <value>Brakes - Adjust (manual slack adjuster)</value>
+  </data>
+  <data name="cboServiceA_Item_4" xml:space="preserve">
+    <value>Brakes - Inspect/Adjust(Automatic slack adjuster)</value>
+  </data>
+  <data name="cboServiceA_Item_5" xml:space="preserve">
+    <value>Brakes - Lining Measure</value>
+  </data>
+  <data name="cboServiceA_Item_6" xml:space="preserve">
+    <value>Brakes - Drums/Rotor Measure</value>
+  </data>
+  <data name="cboServiceA_Item_7" xml:space="preserve">
+    <value>Brakes - Hoses Inspect</value>
+  </data>
+  <data name="cboServiceA_Item_8" xml:space="preserve">
+    <value>Brakes - Antilock System Check</value>
+  </data>
+  <data name="cboServiceA_Item_9" xml:space="preserve">
+    <value>Air System - Test for Leaks</value>
+  </data>
+  <data name="cboServiceB_Item_0" xml:space="preserve">
+    <value>Select a Service</value>
+  </data>
+  <data name="cboServiceB_Item_1" xml:space="preserve">
+    <value>Oil - Change</value>
+  </data>
+  <data name="cboServiceB_Item_10" xml:space="preserve">
+    <value>Engine Fan - Fan Drive</value>
+  </data>
+  <data name="cboServiceB_Item_11" xml:space="preserve">
+    <value>Engine Fan - Drive Belts</value>
+  </data>
+  <data name="cboServiceB_Item_12" xml:space="preserve">
+    <value>Steering - Alignment</value>
+  </data>
+  <data name="cboServiceB_Item_13" xml:space="preserve">
+    <value>Steering - Hub Oil Level</value>
+  </data>
+  <data name="cboServiceB_Item_14" xml:space="preserve">
+    <value>Steering - Bearing Adjustment</value>
+  </data>
+  <data name="cboServiceB_Item_15" xml:space="preserve">
+    <value>Tires - Steering Tire Rotation</value>
+  </data>
+  <data name="cboServiceB_Item_16" xml:space="preserve">
+    <value>Tires - Drive Tire Rotation</value>
+  </data>
+  <data name="cboServiceB_Item_17" xml:space="preserve">
+    <value>Tires - Tread Depth Recording</value>
+  </data>
+  <data name="cboServiceB_Item_18" xml:space="preserve">
+    <value>Tires - Pressure Adjust</value>
+  </data>
+  <data name="cboServiceB_Item_19" xml:space="preserve">
+    <value>Brakes - Adjust (manual slack adjuster)</value>
+  </data>
+  <data name="cboServiceB_Item_2" xml:space="preserve">
+    <value>Oil Filter - Change</value>
+  </data>
+  <data name="cboServiceB_Item_20" xml:space="preserve">
+    <value>Brakes - Inspect/Adjust(Automatic slack adjuster)</value>
+  </data>
+  <data name="cboServiceB_Item_21" xml:space="preserve">
+    <value>Brakes - Lining Measure</value>
+  </data>
+  <data name="cboServiceB_Item_22" xml:space="preserve">
+    <value>Brakes - Drums/Rotor Measure</value>
+  </data>
+  <data name="cboServiceB_Item_23" xml:space="preserve">
+    <value>Brakes - Hoses Inspect</value>
+  </data>
+  <data name="cboServiceB_Item_24" xml:space="preserve">
+    <value>Brakes - Antilock System Check</value>
+  </data>
+  <data name="cboServiceB_Item_25" xml:space="preserve">
+    <value>Transmission - Oil Level</value>
+  </data>
+  <data name="cboServiceB_Item_26" xml:space="preserve">
+    <value>Transmission - Oil Change</value>
+  </data>
+  <data name="cboServiceB_Item_27" xml:space="preserve">
+    <value>Transmission - Filter Change</value>
+  </data>
+  <data name="cboServiceB_Item_28" xml:space="preserve">
+    <value>Drive Axle - Oil</value>
+  </data>
+  <data name="cboServiceB_Item_29" xml:space="preserve">
+    <value>Drive Axle - Filter</value>
+  </data>
+  <data name="cboServiceB_Item_3" xml:space="preserve">
+    <value>Fuel Filter - Drain Water</value>
+  </data>
+  <data name="cboServiceB_Item_30" xml:space="preserve">
+    <value>Air System - Test for Leaks</value>
+  </data>
+  <data name="cboServiceB_Item_31" xml:space="preserve">
+    <value>Air System - Test Pressure Build Time to 60psi</value>
+  </data>
+  <data name="cboServiceB_Item_32" xml:space="preserve">
+    <value>Air System - Test Pressure Build Time to 90psi</value>
+  </data>
+  <data name="cboServiceB_Item_33" xml:space="preserve">
+    <value>Air System - Dryer Change desiccant</value>
+  </data>
+  <data name="cboServiceB_Item_34" xml:space="preserve">
+    <value>Air System - Air Lines Inspect</value>
+  </data>
+  <data name="cboServiceB_Item_35" xml:space="preserve">
+    <value>Lighting - Check All</value>
+  </data>
+  <data name="cboServiceB_Item_36" xml:space="preserve">
+    <value>Lighting - Inspect Trailer Socket</value>
+  </data>
+  <data name="cboServiceB_Item_37" xml:space="preserve">
+    <value>Electrical - Alternator Output</value>
+  </data>
+  <data name="cboServiceB_Item_38" xml:space="preserve">
+    <value>Electrical - Battery Load Test</value>
+  </data>
+  <data name="cboServiceB_Item_39" xml:space="preserve">
+    <value>Electrical - Battery Check Levels</value>
+  </data>
+  <data name="cboServiceB_Item_4" xml:space="preserve">
+    <value>Fuel Filter - Change</value>
+  </data>
+  <data name="cboServiceB_Item_40" xml:space="preserve">
+    <value>Electrical - Starter Draw Test and/or Voltage Drops</value>
+  </data>
+  <data name="cboServiceB_Item_41" xml:space="preserve">
+    <value>Fifth Wheel - Lube</value>
+  </data>
+  <data name="cboServiceB_Item_42" xml:space="preserve">
+    <value>Fifth Wheel - Adjust</value>
+  </data>
+  <data name="cboServiceB_Item_43" xml:space="preserve">
+    <value>Fifth Wheel - Inspect Mounting</value>
+  </data>
+  <data name="cboServiceB_Item_44" xml:space="preserve">
+    <value>Suspension - Inspect</value>
+  </data>
+  <data name="cboServiceB_Item_45" xml:space="preserve">
+    <value>Suspension - Adjust Ride Height(air ride)</value>
+  </data>
+  <data name="cboServiceB_Item_46" xml:space="preserve">
+    <value>Window Glass - Inspect Windshield</value>
+  </data>
+  <data name="cboServiceB_Item_5" xml:space="preserve">
+    <value>Air Filter - Change</value>
+  </data>
+  <data name="cboServiceB_Item_6" xml:space="preserve">
+    <value>Engine Coolant - Inspect Freeze Point &amp; PH</value>
+  </data>
+  <data name="cboServiceB_Item_7" xml:space="preserve">
+    <value>Engine Coolant - Replace</value>
+  </data>
+  <data name="cboServiceB_Item_8" xml:space="preserve">
+    <value>Engine Exhaust - Inspect</value>
+  </data>
+  <data name="cboServiceB_Item_9" xml:space="preserve">
+    <value>Engine Mechanical - Valve Lash</value>
+  </data>
+  <data name="cboServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboTimeZone_Item_0" xml:space="preserve">
+    <value>Select a TimeZone</value>
+  </data>
+  <data name="cboTimeZoneResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkDayLightResource1.Text" xml:space="preserve">
+    <value>Automatically adjust for daylight savings time</value>
+  </data>
+  <data name="chkDayLightResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdAddResource1.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="cmdAddResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCancelOdomServResource1.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="cmdCancelOdomServResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdEditOdomSrvResource1.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="cmdEditOdomSrvResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSaveOdomServResource1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="cmdSaveOdomServResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdSaveResource1.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="cmdSaveResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceHistoryResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceHistoryResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="dgMaintenanceHistoryResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="dgMaintenanceHistoryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgMaintenanceHistoryServiceDateTime" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="dgMaintenanceHistoryServiceDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="dgMaintenanceHistoryServiceEngHours" xml:space="preserve">
+    <value>Engine hours</value>
+  </data>
+  <data name="dgMaintenanceHistoryServiceOdo" xml:space="preserve">
+    <value>Odometer</value>
+  </data>
+  <data name="dgVehicles_CurrentEngHrs" xml:space="preserve">
+    <value>Current engine hours</value>
+  </data>
+  <data name="dgVehicles_CurrentOdo" xml:space="preserve">
+    <value>Current Odometer</value>
+  </data>
+  <data name="dgVehicles_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="dgVehicles_LastMaintenance" xml:space="preserve">
+    <value>Last Maintenance</value>
+  </data>
+  <data name="dgVehicles_NextService" xml:space="preserve">
+    <value>Next Service</value>
+  </data>
+  <data name="dgVehicles_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="dgVehiclesResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgVehiclesResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="dgVehiclesResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="dgVehiclesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HyperLinkColumnResource1.Text" xml:space="preserve">
+    <value>Maintenance Complete</value>
+  </data>
+  <data name="lblCurOdomResource1.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblCurOdomResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblEmailTitleResource1.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="lblEmailTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFleetTitleResource1.Text" xml:space="preserve">
+    <value>Fleet:</value>
+  </data>
+  <data name="lblFleetTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLastServiceOdomResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLastServiceOdomResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMaintenanceExistResource1.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblMaintenanceExistResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessage_Text_EngHoursSizeError" xml:space="preserve">
+    <value>Last Engine Service time should be smaller than current engine hours.</value>
+  </data>
+  <data name="lblMessage_Text_EngineHoursIntervalError" xml:space="preserve">
+    <value>Service interval must be numeric or [hh:mm] format</value>
+  </data>
+  <data name="lblMessage_Text_EngineHoursLastServiceError" xml:space="preserve">
+    <value>Last Service must be numeric or [hh:mm] format</value>
+  </data>
+  <data name="lblMessage_Text_InvalidOdometerError" xml:space="preserve">
+    <value>Odometer information should be numeric.</value>
+  </data>
+  <data name="lblMessage_Text_InvalidServiceIntervalError" xml:space="preserve">
+    <value>Service interval should be greater than zero.</value>
+  </data>
+  <data name="lblMessage_Text_MaintenanceUpdateError" xml:space="preserve">
+    <value>Update maintenance info failed.</value>
+  </data>
+  <data name="lblMessage_Text_MaintenanceUpdateSuccessful" xml:space="preserve">
+    <value>Maintenance info successfully updated.</value>
+  </data>
+  <data name="lblMessage_Text_OdometerSizeError" xml:space="preserve">
+    <value>Last Serviced Odometer should be smaller than current odometer.</value>
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNextOdomResource1.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblNextOdomResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNextOdomServiceResource1.Text" xml:space="preserve">
+    <value>Next Service Odometer</value>
+  </data>
+  <data name="lblNextOdomServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNextServiceTitleResource1.Text" xml:space="preserve">
+    <value>Next Service:</value>
+  </data>
+  <data name="lblNextServiceTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOdomCurOdometerValueResource1.Text" xml:space="preserve">
+    <value>Current Odometer</value>
+  </data>
+  <data name="lblOdomCurOdometerValueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOdomLastServicedResource1.Text" xml:space="preserve">
+    <value>Last Serviced Odometer</value>
+  </data>
+  <data name="lblOdomLastServicedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOdomServiceIntervalResource1.Text" xml:space="preserve">
+    <value>Service Interval</value>
+  </data>
+  <data name="lblOdomServiceIntervalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblServiceHistoryTitleResource1.Text" xml:space="preserve">
+    <value>Service History</value>
+  </data>
+  <data name="lblServiceHistoryTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblServiceInfoForVehicleTitleResource1.Text" xml:space="preserve">
+    <value>Service Info for Vehicle:</value>
+  </data>
+  <data name="lblServiceInfoForVehicleTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblServiceSettingsTitleResource1.Text" xml:space="preserve">
+    <value>Service Settings</value>
+  </data>
+  <data name="lblServiceSettingsTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTimeZoneTitleResource1.Text" xml:space="preserve">
+    <value>Time Zone:</value>
+  </data>
+  <data name="lblTimeZoneTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnit1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnit1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnit2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnit2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnit3Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnit3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnitResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnitResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleIdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleIdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleNameResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblVehicleNameResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="linkBackResource1.Text" xml:space="preserve">
+    <value>Back to fleet maintenance screen</value>
+  </data>
+  <data name="linkBackResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource1.Text" xml:space="preserve">
+    <value>Engine hours</value>
+  </data>
+  <data name="ListItemResource1.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource2.Text" xml:space="preserve">
+    <value>Odometer</value>
+  </data>
+  <data name="ListItemResource2.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Untitled Page</value>
+  </data>
+  <data name="radListTypeResource1.ToolTip" xml:space="preserve">
+    <value>Maintenance type</value>
+  </data>
+  <data name="resCurrentEngineTime" xml:space="preserve">
+    <value>Current engine time:</value>
+  </data>
+  <data name="resLastEngineService" xml:space="preserve">
+    <value>Last engine service:</value>
+  </data>
+  <data name="reslblOdomCurrEngTime" xml:space="preserve">
+    <value>Current engine time:</value>
+  </data>
+  <data name="reslblOdomLastEngService" xml:space="preserve">
+    <value>Last engine service:</value>
+  </data>
+  <data name="reslblOdomNextEngService" xml:space="preserve">
+    <value>Next engine service:</value>
+  </data>
+  <data name="resNextEngineService" xml:space="preserve">
+    <value>Next engine service:</value>
+  </data>
+  <data name="txtEmailResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEmailResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtLastOdomServResource1.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtLastOdomServResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtNextServiceResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtNextServiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtOdomServiceIntervalResource1.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtOdomServiceIntervalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="valEmailResource1.ErrorMessage" xml:space="preserve">
+    <value>Please enter a correct email address</value>
+  </data>
+  <data name="valEmailResource1.Text" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="valEmailResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>

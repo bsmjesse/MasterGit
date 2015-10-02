@@ -1,0 +1,26 @@
+﻿<div ng-controller="GroupCopyCtrl">
+    <div class="modal-body">
+            <table class="formtext">
+            <tr class="InstanceRow">
+                <td>From Group:</td>
+                <td>From {{OrgGroup.ScheduleBeginDate| date:'mediumDate'}} To {{OrgGroup.ScheduleEndDate|date:'mediumDate'}}</td>
+            </tr>
+            <tr class="InstanceRow">
+                <td>To Group:</td>
+                <td>From {{ScheduleBeginDate| date:'mediumDate'}} To {{GetScheduleEndDate()| date:'mediumDate'}}</td>
+            </tr>
+            <tr class="InstanceRow">
+                <td></td>
+                <td>
+                <div ng-model="ScheduleBeginDate" required>
+                    <datepicker min="minDate" show-weeks="showWeeks"></datepicker>
+                </div>
+                </td>
+            </tr>
+            </table>
+    </div>        
+    <div class="modal-footer">
+        <button ng-disabled="Status!='Loaded'" ng-click="ok()">OK</button>
+        <button ng-click="cancel()">Cancel</button>
+    </div>
+</div>

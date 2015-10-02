@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE NewDataSet [
+]>
+<NewDataSet xmlns="http://tempuri.org/default.xsd">
+	<Localization xmlns="http://tempuri.org/default.xsd" culture="default" description="Default Language">
+		<CommonText>
+			<Ready>Ready.</Ready>
+			<More>Loading more data....</More>
+			<LoadGroup>Loading group...</LoadGroup>
+			<Sort>Sorting column...</Sort>
+			<Group>Grouping column...</Group>
+			<Ungroup>Ungrouping column...</Ungroup>
+			<ChangeGroup>Changing group column...</ChangeGroup>
+			<FilterText>Filtering column...</FilterText>
+			<LoadChild>Loading child rows...</LoadChild>
+			<ColumnChange>Changing columns...</ColumnChange>
+			<Refresh>Refreshing data...</Refresh>
+			<RefreshAll>Refreshing data and structure...</RefreshAll>
+			<RefreshChild>Refreshing child table...</RefreshChild>
+			<AddRow>Adding new row...</AddRow>
+			<UpdateRow>Updating row...</UpdateRow>
+			<DeleteRow>Deleting row...</DeleteRow>
+			<ReadyError>Ready with unhandled error on last request.</ReadyError>
+			<ColumnMove>Moving column...</ColumnMove>
+			<Loaded>Loaded [n] of [total]</Loaded>
+			<ExportText>Exporting...</ExportText>
+			<NoData>There are no rows in this view.</NoData>
+			<NewRowInfo>Please click here to add new row...</NewRowInfo>
+			<GroupByBoxInfo>Drag a column header here to group by that column.</GroupByBoxInfo>
+			<LoadSelfRefChild>Loading self referencing childrows...</LoadSelfRefChild>
+			<CalendarToday>Today</CalendarToday>
+			<CalendarNone>None</CalendarNone>
+		</CommonText>
+		<CommonText>
+			<Ready>준비.</Ready>
+			<More>데이터를 로딩중....</More>
+			<LoadGroup>그룹을 로딩중....</LoadGroup>
+			<Sort>칼럼을 정렬중.....</Sort>
+			<Group>칼럼을 그룹화하는중....</Group>
+			<Ungroup>칼럼을 그룹화 해제중.....</Ungroup>
+			<ChangeGroup>칼럼 그룹을 변경중....</ChangeGroup>
+			<FilterText>칼럼을 필터링중.....</FilterText>
+			<LoadChild>차일드 로우들을 로딩중....</LoadChild>
+			<ColumnChange>칼럼들을 변경중....</ColumnChange>
+			<Refresh>데이터를 갱신중...</Refresh>
+			<RefreshAll>데이터와 구조를 갱신중....</RefreshAll>
+			<RefreshChild>차일드 테이블을 갱신중....</RefreshChild>
+			<AddRow>새 로우를 추가중.....</AddRow>
+			<UpdateRow>로우를 업데이트중....</UpdateRow>
+			<DeleteRow>로우를 삭제중....</DeleteRow>
+			<ReadyError>지난 요청에 처리되지 않은 에러에 대기중....</ReadyError>
+			<ColumnMove>칼럼을 이동중....</ColumnMove>
+			<Loaded>[total] 중, [n] 을 로딩중....</Loaded>
+			<ExportText>익스포팅중....</ExportText>
+			<NoData>이 뷰에 로우가 없습니다.</NoData>
+			<NewRowInfo>새로운 로우를 추가하실려면 [여기] 클릭해 주세요....</NewRowInfo>
+			<GroupByBoxInfo>칼럼으로 그룹화하기 위해서는 칼럼의 헤더를 드래그 해 주세요.</GroupByBoxInfo>
+			<LoadSelfRefChild>자동참조 차일드 로우들을 로딩중....</LoadSelfRefChild>
+			<CalendarToday>오늘</CalendarToday>
+			<CalendarNone>None</CalendarNone>
+		</CommonText>
+		<MessageBoxText>
+			<NoChildRow>There are no child rows for this record.</NoChildRow>
+			<InProgress>Please wait while WebGrid is in progress processing request...</InProgress>
+			<UnhandledError>Unhandled exception occurred. See following for details.</UnhandledError>
+			<LoadMoreException>Load more data is only available when there are no group columns in RootTable.</LoadMoreException>
+			<AddNewRow>The new row has been edited. Do you want to add the new row?</AddNewRow>
+			<UpdateRow>The selected row has been edited. Do you want to update the changed row?</UpdateRow>
+			<DeleteRow>Are you sure want to delete this row?</DeleteRow>
+		</MessageBoxText>
+		<MessageBoxText>
+			<NoChildRow>이 레코드에 대한 차일드 로우들이 없습니다.</NoChildRow>
+			<InProgress>WebGrid가 진행중인 요청을 처리하고 있는 동안 잠시 기다려 주십시오....</InProgress>
+			<UnhandledError>Unhandled exeption이 발생하였습니다. 자세한 사항은 다음을 참조해 주시기 바랍니다.</UnhandledError>
+			<LoadMoreException>RootTable에 그룹 칼럼들이 없을 때에만 추가적인 데이터의 로딩이 가능합니다.</LoadMoreException>
+			<AddNewRow>새로운 로우가 편집되었습니다. 새로운 로우를 추가 하시겠습니까?</AddNewRow>
+			<UpdateRow>선택된 로우는 편집되었습니다. 변경된 로우를 업데이트 하시겠습니까?</UpdateRow>
+			<DeleteRow>이 로우를 정말로 삭제하시겠습니까?</DeleteRow>
+		</MessageBoxText>
+		<Tooltip>
+			<Refresh>Refresh grid data</Refresh>
+			<LoadMore>Load more data</LoadMore>
+			<ExportText>Export grid</ExportText>
+			<Help>WebGrid.NET Client Help</Help>
+		</Tooltip>
+		<Tooltip>
+			<Refresh>그리드 데이터를 갱신</Refresh>
+			<LoadMore>추가 데이터를 로딩</LoadMore>
+			<ExportText>그리드를 익스포트</ExportText>
+			<Help>WebGrid .NET Client Help</Help>
+		</Tooltip>
+		<Grouping>
+			<Today>Today</Today>
+			<Yesterday>Yesterday</Yesterday>
+			<LastWeek>Last Week</LastWeek>
+			<TwoWeeksAgo>Two Weeks Ago</TwoWeeksAgo>
+			<ThreeWeeksAgo>Three Weeks Ago</ThreeWeeksAgo>
+			<LastMonth>Last Month</LastMonth>
+			<Older>Older</Older>
+		</Grouping>
+		<Grouping>
+			<Today>오늘</Today>
+			<Yesterday>어제</Yesterday>
+			<LastWeek>지난 주</LastWeek>
+			<TwoWeeksAgo>2주전</TwoWeeksAgo>
+			<ThreeWeeksAgo>3주전</ThreeWeeksAgo>
+			<LastMonth>지난 달</LastMonth>
+			<Older>지난 달 이전</Older>
+		</Grouping>
+		<ContextMenu>
+			<Column>
+				<SortAsc>Sort Ascending</SortAsc>
+				<SortDesc>Sort Descending</SortDesc>
+				<GroupByThisField>Group By This Field</GroupByThisField>
+				<UngroupField>Ungroup This Field</UngroupField>
+				<GroupByBox>Group By Box</GroupByBox>
+				<RemoveColumn>Remove This Column</RemoveColumn>
+				<BestFit>Best Fit</BestFit>
+				<FilterBar>Filter Bar</FilterBar>
+				<SelectColumns>Select Columns</SelectColumns>
+				<ApplyChanges>Apply Changes</ApplyChanges>
+				<Reset>Reset</Reset>
+			</Column>
+			<Column>
+				<SortAsc>오름차순으로 정렬</SortAsc>
+				<SortDesc>내림차순으로 정렬</SortDesc>
+				<GroupByThisField>이 필드로 그룹화</GroupByThisField>
+				<UngroupField>이 필드를 그룹화 해제</UngroupField>
+				<GroupByBox>박스로 그룹화</GroupByBox>
+				<RemoveColumn>이 컬럼을 삭제</RemoveColumn>
+				<BestFit>최적화</BestFit>
+				<FilterBar>필터 바</FilterBar>
+				<SelectColumns>컬럼들을 선택</SelectColumns>
+				<ApplyChanges>변경사항 적용</ApplyChanges>
+				<Reset>리셋</Reset>
+			</Column>
+			<Row>
+				<CopyCell>Copy this cell</CopyCell>
+				<CopyRow>Copy this row</CopyRow>
+				<CopyTable>Copy this table</CopyTable>
+				<Update>Update changes</Update>
+				<Cancel>Cancel changes</Cancel>
+				<ShowChildRows>Show child rows</ShowChildRows>
+				<HideChildRows>Hide child rows</HideChildRows>
+				<Edit>Edit</Edit>
+				<Delete>Delete</Delete>
+				<Expand>Expand</Expand>
+				<Collapse>Collapse</Collapse>
+				<ExpandAll>Expand all</ExpandAll>
+				<CollapseAll>Collapse all</CollapseAll>
+				<PerformAdd>Perform add</PerformAdd>
+				<CancelAdd>Cancel add</CancelAdd>
+				<ApplyFilter>Apply all filters</ApplyFilter>
+				<ClearFilter>Clear all filters</ClearFilter>
+			</Row>
+			<Row>
+				<CopyCell>이 셀을 복사</CopyCell>
+				<CopyRow>이 로우를 복사</CopyRow>
+				<CopyTable>이 테이블을 복사</CopyTable>
+				<Update>변경사항 업데이트</Update>
+				<Cancel>변경사항 취소</Cancel>
+				<ShowChildRows>차일드 로우들을 보이기</ShowChildRows>
+				<HideChildRows>차일드 로우들을 숨기기</HideChildRows>
+				<Edit>편집</Edit>
+				<Delete>삭제</Delete>
+				<Expand>확장</Expand>
+				<Collapse>축소</Collapse>
+				<ExpandAll>모두 확장</ExpandAll>
+				<CollapseAll>모두 축소</CollapseAll>
+				<PerformAdd>추가하기</PerformAdd>
+				<CancelAdd>추가 취소</CancelAdd>
+				<ApplyFilter>모든 필터들을 적용</ApplyFilter>
+				<ClearFilter>모든 필터들을 클리어</ClearFilter>
+			</Row>
+			<Filter>
+				<NotSet>Not Set</NotSet>
+				<GTET>Greater Than or Equal To</GTET>
+				<GT>Greater Than</GT>
+				<ET>Equal To</ET>
+				<NET>Not Equal To</NET>
+				<LTET>Less Than or Equal To</LTET>
+				<LT>Less Than</LT>
+				<Like>Like</Like>
+				<NotLike>Not Like</NotLike>
+				<Between>Between</Between>
+				<NotBetween>Not Between</NotBetween>
+				<IsNull>Is Null</IsNull>
+				<NotIsNull>Not Is Null</NotIsNull>
+				<IsEmpty>Is Empty</IsEmpty>
+				<NotIsEmpty>Not Is Empty</NotIsEmpty>
+				<ApplyAll>Apply All Filters</ApplyAll>
+				<Clear>Clear This Filter</Clear>
+				<ClearAll>Clear All Filters</ClearAll>
+			</Filter>
+			<Filter>
+				<NotSet>설정안함</NotSet>
+				<GTET>Greater Than or Equal To</GTET>
+				<GT>Greater Than</GT>
+				<ET>Equal To</ET>
+				<NET>Not Equal To</NET>
+				<LTET>Less Than or Equal To</LTET>
+				<LT>Less Than</LT>
+				<Like>Like</Like>
+				<NotLike>Not Like</NotLike>
+				<Between>Between</Between>
+				<NotBetween>Not Between</NotBetween>
+				<IsNull>Is Null</IsNull>
+				<NotIsNull>Not Is Null</NotIsNull>
+				<IsEmpty>Is Empty</IsEmpty>
+				<NotIsEmpty>Not Is Empty</NotIsEmpty>
+				<ApplyAll>모든 필터들을 적용</ApplyAll>
+				<Clear>이 필터를 클리어</Clear>
+				<ClearAll>모든 필터들을 클리어</ClearAll>
+			</Filter>
+			<Export>
+				<ExportRoot>Export root table</ExportRoot>
+				<ExportChild>Export selected child table</ExportChild>
+				<Portrait>Portrait</Portrait>
+				<Landscape>Landscape</Landscape>
+				<DoExport>Export now</DoExport>
+			</Export>
+			<Export>
+				<ExportRoot>루트 테이블을 익스포트</ExportRoot>
+				<ExportChild>선택된 차일드 테이블을 익스포트</ExportChild>
+				<Portrait>수직</Portrait>
+				<Landscape>수평</Landscape>
+				<DoExport>지금 익스포트하기</DoExport>
+			</Export>
+			<Custom description="Add your row custom menu text here">
+				<CustomText1/>
+				<CustomText2/>
+			</Custom>
+			<Custom description="여기에 로우 커스텀 메뉴 텍스트를 추가">
+		</ContextMenu>
+	</Localization>
+</NewDataSet>

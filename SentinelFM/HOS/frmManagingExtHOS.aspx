@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="frmManagingExtHOS.aspx.cs" Inherits="frmManagingExtHOS" Theme="TelerikControl" %>

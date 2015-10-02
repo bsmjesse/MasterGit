@@ -1,0 +1,93 @@
+Index: openlayers/lib/OpenLayers/Renderer/Elements.js
+===================================================================
+--- openlayers/lib/OpenLayers/Renderer/Elements.js	(revision 9796)
++++ openlayers/lib/OpenLayers/Renderer/Elements.js	(working copy)
+@@ -838,6 +838,10 @@
+         if (label) {
+             this.textRoot.removeChild(label);
+         }
++        var labelBackground = document.getElementById(featureId + this.LABEL_ID_SUFFIX + "_bg");
++        if (labelBackground) {
++            this.textRoot.removeChild(labelBackground);
++        }
+     },
+ 
+     /**
+Index: openlayers/lib/OpenLayers/Renderer/VML.js
+===================================================================
+--- openlayers/lib/OpenLayers/Renderer/VML.js	(revision 9796)
++++ openlayers/lib/OpenLayers/Renderer/VML.js	(working copy)
+@@ -807,6 +807,15 @@
+ 
+         textbox.innerText = style.label;
+ 
++        if (style.labelBackgroundColor) {
++            textbox.style.backgroundColor = style.labelBackgroundColor;
++        }
++        if (style.labelBorderColor || style.labelBorderSize) {
++            textbox.style.border = "solid " +
++                (style.labelBorderSize ? style.labelBorderSize : "1px") + " " +
++                (style.labelBorderColor ? style.labelBorderColor : "#000000");
++        }
++        
+         if (style.fillColor) {
+             textbox.style.color = style.fontColor;
+         }
+Index: openlayers/lib/OpenLayers/Renderer/SVG.js
+===================================================================
+--- openlayers/lib/OpenLayers/Renderer/SVG.js	(revision 9796)
++++ openlayers/lib/OpenLayers/Renderer/SVG.js	(working copy)
+@@ -713,6 +713,38 @@
+             label.appendChild(tspan);
+             this.textRoot.appendChild(label);
+         }   
++        
++        if (style.labelBackgroundColor ||
++                style.labelBorderColor ||
++                style.labelBorderSize) {
++            var bg = this.nodeFactory(featureId + this.LABEL_ID_SUFFIX + "_bg", "rect");
++            if (style.labelBackgroundColor) {
++                bg.setAttributeNS(null, "fill", style.labelBackgroundColor);
++            }
++            if (style.labelBorderColor || style.labelBorderSize) {
++                bg.setAttributeNS(null, "stroke", 
++                    (style.labelBorderColor ? style.labelBorderColor : "#000000"));
++                bg.setAttributeNS(null, "stroke-width", 
++                    (style.labelBorderSize ? style.labelBorderSize : "0.5"));
++            }
++            var bbox = label.getBBox();
++            var labelWidth = bbox.width;
++            var labelHeight = bbox.height;
++            var padding = 2;
++            if (style.labelPadding) {
++                var pos = style.labelPadding.indexOf("px");
++                if (pos == -1) {
++                    padding = style.labelPadding;
++                } else {
++                    padding = parseInt(style.labelPadding.substr(0, pos));
++                }
++            }
++            bg.setAttributeNS(null, "x", bbox.x-padding);
++            bg.setAttributeNS(null, "y", bbox.y-padding);
++            bg.setAttributeNS(null, "height", (labelHeight+padding*2)+"px");
++            bg.setAttributeNS(null, "width", (labelWidth+padding*2)+"px");
++            this.textRoot.insertBefore(bg, label);
++        }        
+     },
+     
+     /** 
+Index: openlayers/examples/vector-features-with-text.html
+===================================================================
+--- openlayers/examples/vector-features-with-text.html	(revision 9796)
++++ openlayers/examples/vector-features-with-text.html	(working copy)
+@@ -33,6 +33,10 @@
+                     fontSize: "12px",
+                     fontFamily: "Courier New, monospace",
+                     fontWeight: "bold",
++                    labelPadding: "3px",
++                    labelBackgroundColor: "#efefef",
++                    labelBorderColor: "#cfcfcf",
++                    labelBorderSize: "1px",
+                     labelAlign: "${align}",
+                     labelXOffset: "${xOffset}",
+                     labelYOffset: "${yOffset}"

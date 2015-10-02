@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+    
+    img
+{
+	border: none;
+}
+
+.btc, .btr
+{
+	font-family:Arial;
+	cursor: pointer;
+	color: White;
+	font-size: 7pt;
+	font-weight: bold;
+	position: relative;
+	left: 15px;
+	top: -22px;
+	width: 50px;
+	text-align: center;
+}
+.btr
+{
+	left: -15px;
+}
+.bln, .bcn, .brn, .blx, .bcx, .brx, .blv, .bcv, .brv, .bld, .bcd, .brd
+{
+	cursor: pointer;
+	width: 12px;
+	min-width: 12px;
+	max-width: 12px;
+	height: 25px;
+	min-height: 25px;
+	max-height: 25px;
+	background-repeat: no-repeat;
+}
+.bcx, .bcv, .bcn, .bcd
+{
+	font-size: 7pt;
+	font-weight: bold;
+	text-align: center;
+	color: White;
+	width: 60px;
+	min-width: 60px;
+	max-width: 60px;
+	background-repeat: repeat-x;
+}
+
+.bln
+{
+	background-image: url("images/ln_blk.png");
+}
+.bld
+{
+	background-image: url("images/ld_blk.png");
+}
+.blv
+{
+	background-image: url("images/lv_blk.png");
+}
+.blx
+{
+	background-image: url("images/lx_blk.png");
+}
+
+.bcn
+{
+	background-image: url("images/cn_blk.png");
+}
+.bcd
+{
+	background-image: url("images/cd_blk.png");
+}
+.bcv
+{
+	background-image: url("images/cv_blk.png");
+}
+.bcx
+{
+	background-image: url("images/cx_blk.png");
+}
+
+.brn
+{
+	background-image: url("images/rn_blk.png");
+}
+.brd
+{
+	background-image: url("images/rd_blk.png");
+}
+.brv
+{
+	background-image: url("images/rv_blk.png");
+}
+.brx
+{
+	background-image: url("images/rx_blk.png");
+
+    </style>
+
+    <script language="javascript" type="text/javascript">
+
+        var flashcount = 0;
+        var flashobj = null;
+        var flashint = null;
+        var images = null;
+
+        function me(obj, b) {
+            if (obj == flashobj && !b) return;
+
+
+            for (var i = 0; i < obj.childNodes.length; i++) {
+                if (obj.childNodes[i].tagName == "IMG") {
+                    var ncn = obj.childNodes[i].className;
+                    ncn = ncn.substr(0, 2) + "n";
+                    obj.childNodes[i].className = ncn;
+                }
+            }
+
+        }
+
+        function md(obj, b) {
+            if (obj == flashobj && !b) return;
+            for (var i = 0; i < obj.childNodes.length; i++) {
+                if (obj.childNodes[i].tagName == "IMG") {
+                    var ncn = obj.childNodes[i].className;
+                    ncn = ncn.substr(0, 2) + "d";
+                    obj.childNodes[i].className = ncn;
+                }
+            }
+        }
+
+        function mva(obj, b) {
+            if (obj == flashobj && !b) return;
+            var c = obj.dataFld;
+            for (var i = 0; i < 3; i++) {
+                switch (c) {
+                    case "n":
+                        obj.childNodes[i].runtimeStyle.backgroundImage = images[2][i];
+                        obj.dataFld = "v";
+                        break;
+                    case "v":
+                    case "x":
+                    case "d": break;
+
+                }
+            }
+
+        }
+
+        function mv(obj, b) {
+            if (obj == flashobj && !b) return;
+            for (var i = 0; i < obj.childNodes.length; i++) {
+                if (obj.childNodes[i].tagName == "IMG") {
+                    var ncn = obj.childNodes[i].className;
+                    switch (ncn.substr(2, 1)) {
+                        case "n": ncn = ncn.substr(0, 2) + "v"; break;
+                        case "v":
+                        case "x":
+                        case "d": break;
+                    }
+                    obj.childNodes[i].className = ncn;
+                }
+            }
+
+        }
+
+        function mo(obj, b) {
+            if (obj == flashobj && !b) return;
+            for (var i = 0; i < obj.childNodes.length; i++) {
+                if (obj.childNodes[i].tagName == "IMG") {
+                    var ncn = obj.childNodes[i].className;
+                    switch (ncn.substr(2, 1)) {
+                        case "n": break;
+                        case "v": ncn = ncn.substr(0, 2) + "n"; break;
+                        case "x":
+                        case "d": break;
+                    }
+                    obj.childNodes[i].className = ncn;
+                }
+            }
+        }
+
+
+        function mc(obj, b) {
+            if (obj == flashobj && !b) return;
+            for (var i = 0; i < obj.childNodes.length; i++) {
+                if (obj.childNodes[i].tagName == "IMG") {
+                    var ncn = obj.childNodes[i].className;
+                    switch (ncn.substr(2, 1)) {
+                        case "n":
+                        case "v":
+                            ncn = ncn.substr(0, 2) + "x"; break;
+                        case "x":
+                            ncn = ncn.substr(0, 2) + "v"; break;
+                        case "d": break;
+                    }
+                    obj.childNodes[i].className = ncn;
+                }
+            }
+
+        }
+
+        function mf(obj) {
+            mc(obj);
+            flashobj = obj;
+            flashint = setInterval(flash, 500);
+        }
+
+
+        function doTest(obj) {
+            mf(obj);
+        }
+
+
+        function flash() {
+            flashcount++;
+            for (var i = 0; i < flashobj.childNodes.length; i++) {
+                if (flashobj.childNodes[i].tagName == "IMG") {
+                    var ncn = flashobj.childNodes[i].className;
+                    if (ncn.substr(1, 1) == "l") {
+                        if (flashcount % 2 == 1) {
+                            ncn = ncn.substr(0, 2) + "x";
+                        }
+                        else {
+                            ncn = ncn.substr(0, 2) + "v";
+                        }
+                        flashobj.childNodes[i].className = ncn;
+                    }
+                }
+            }
+            if (flashcount > 11) {
+                clearFlash();
+            }
+
+        }
+
+        function clearFlash() {
+            clearInterval(flashint);
+            flashcount = 0;
+            me(flashobj, true);
+            flashobj = null;
+
+        }
+
+        function preloader() {
+            //window.status = ("preloading imgages...");
+            images = new Array(new Array(), new Array(), new Array(), new Array());
+            var a = new Array("ld_blk.png", "ln_blk.png", "lv_blk.png", "lx_blk.png", "cd_blk.png", "cn_blk.png", "cv_blk.png", "cx_blk.png", "rd_blk.png", "rn_blk.png", "rv_blk.png", "rx_blk.png");
+            var b = 0;
+            for (var c = 0; c < a.length; c++) {
+                var image = new Image();
+                image.src = "images/" + a[c];
+                images[b++].push(image);
+                if (b == 4)
+                    b = 0;
+            }
+            //window.status = ("preload complete");
+        }
+    </script>
+
+</head>
+<body>
+
+          <div id="ShowMiniMap" dataFld="n" onmouseover="mv(this);" onmouseout="mo(this);" onclick="mc(this);">
+                    <img name="l" border="0" src="images/trans.gif" alt="" class="bln" /><img
+                        name="c" border="0" alt="" src="images/trans.gif" class="bcn" /><img name="r"
+                            border="0" src="images/trans.gif" alt="" class="brn" />
+                            <div class="btc">Inset Map</div>
+                </div>                  
+
+</body>
+</html>

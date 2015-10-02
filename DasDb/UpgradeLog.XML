@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="DasDb">
+</Property><Property Name="Solution File" Value="C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\DasDb.sln">
+</Property><Property Name="Date" Value="September 20, 2012">
+</Property><Property Name="Time" Value="15:51:29 PM">
+</Property></Properties><Event ErrorLevel="2" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\DasLogic.csproj" Description="Project file is not writable: C:\SRC\HGI VLF\VLF 2.0\DasLogic\DasLogic.csproj">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\DasLogic.csproj" Description="Project file successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\DasLogic.csproj">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Alarm.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Alarm.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\AssemblyInfo.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\AssemblyVersion.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\AssemblyVersion.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Box.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Box.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\BoxFindMessages.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\BoxFindMessages.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\common\AssemblyVersion.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\common\AssemblyVersion.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Contact.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Contact.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\CustomReportEmail.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\CustomReportEmail.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Equipment.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Equipment.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\GeoAsset.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\GeoAsset.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\LandmarkPointSet.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\LandmarkPointSet.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\MCC.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\MCC.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Media.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Media.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\SystemNew.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\SystemNew.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\EngineCodes.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\EngineCodes.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\MsgOutLiteHst.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\MsgOutLiteHst.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Notification.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Notification.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\OrganizationPreferences.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\OrganizationPreferences.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Driver.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Driver.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Fleet.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Fleet.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Form.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Form.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Peripheral.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Peripheral.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\PushConfiguration.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\PushConfiguration.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\VehicleEquipmentAssignment.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\VehicleEquipmentAssignment.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Waypoint.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Waypoint.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Wex.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Wex.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Maintenance.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Maintenance.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\MessageQueue.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\MessageQueue.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\MsgInLite.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\MsgInLite.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\MsgOutLite.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\MsgOutLite.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Organization.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Organization.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\OrganizationProduct.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\OrganizationProduct.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\OrganizationVehicleService.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\OrganizationVehicleService.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\PersonInfo.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\PersonInfo.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Report.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Report.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\SystemInstallJobs.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\SystemInstallJobs.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\SystemSensorProfile.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\SystemSensorProfile.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\SystemSpecial.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\SystemSpecial.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\TxtMsgs.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\TxtMsgs.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\User.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\User.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\UserGroup.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\UserGroup.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Vehicle.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Vehicle.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\VehicleMaintenance.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\VehicleMaintenance.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\VehicleServices.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\VehicleServices.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\WorkingHours.cs" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\WorkingHours.cs">
+</Event><Event ErrorLevel="0" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\Readme.txt" Description="File successfully backed up as C:\SRC\HGI VLF\VLF 2.0 svn\DasDb\Backup\Readme.txt">
+</Event><Event ErrorLevel="1" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\DasLogic.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="2" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\DasLogic.csproj" Description="Unable to save converted project file.">
+</Event><Event ErrorLevel="3" Project="DasLogic" Source="..\..\VLF 2.0\DasLogic\DasLogic.csproj" Description="Not Converted">
+</Event><Event ErrorLevel="2" Project="" Source="..\..\VLF 2.0\DasLogic\DasLogic.csproj" Description="Access to the path 'C:\SRC\HGI VLF\VLF 2.0\DasLogic\DasLogic.csproj' is denied.">
+</Event></UpgradeLog>

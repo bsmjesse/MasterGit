@@ -1,0 +1,912 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cboTARPeriodResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cboVCRDelayPeriodResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxActionResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxActionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxActionResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkCheckBoxActionResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmdCloseResource1.Text" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="cmdCloseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgBoxSetupInfo_SensorId" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgBoxSetupInfo_Sensors" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgBoxSetupInfo_SensorStatus" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgBoxSetupInfo_Set" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgBoxSetupInfoResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgBoxSetupInfoResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgBoxSetupInfoResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgBoxSetupInfoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgBoxStatusInfo_SensorId" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgBoxStatusInfo_Sensors" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgBoxStatusInfo_SensorStatus" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgBoxStatusInfo_Set" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgBoxStatusInfoResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgBoxStatusInfoResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgBoxStatusInfoResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgBoxStatusInfoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgSensors_Action" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgSensors_Sensor" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgSensorsResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dgSensorsResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value>&gt;</value>
+  </data>
+  <data name="dgSensorsResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value>&lt;</value>
+  </data>
+  <data name="dgSensorsResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblArmedResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblArmedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblArmedTitle2Resource1.Text" xml:space="preserve">
+    <value>Armé :</value>
+  </data>
+  <data name="lblArmedTitle2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblArmedTitleResource1.Text" xml:space="preserve">
+    <value>Armé :</value>
+  </data>
+  <data name="lblArmedTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxIdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxIdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxIdTitleResource1.Text" xml:space="preserve">
+    <value>ID de l'unité :</value>
+  </data>
+  <data name="lblBoxIdTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxSetupGeoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxSetupGeoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxSetupGPSFregResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxSetupGPSFregResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxSetupInfoTitleResource1.Text" xml:space="preserve">
+    <value>Information sur le réglage de la boîte :</value>
+  </data>
+  <data name="lblBoxSetupInfoTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxSetupSpeedResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxSetupSpeedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxStatusArmedResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxStatusArmedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxStatusBackupBatteryLabelResource1.Text" xml:space="preserve">
+    <value>Batterie de secours :</value>
+  </data>
+  <data name="lblBoxStatusBackupBatteryLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxStatusBackupBatteryResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxStatusBackupBatteryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxStatusFirmwareResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxStatusFirmwareResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxStatusInfoTitleResource1.Text" xml:space="preserve">
+    <value>Information sur le statut de la boîte :</value>
+  </data>
+  <data name="lblBoxStatusInfoTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxStatusMainBatteryResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxStatusMainBatteryResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxStatusSNResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxStatusSNResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxStatusWaypointResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBoxStatusWaypointResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCellTitleResource1.Text" xml:space="preserve">
+    <value>Cellulaire :</value>
+  </data>
+  <data name="lblCellTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblControllerVersionResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblControllerVersionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblControllerVersionTitleResource1.Text" xml:space="preserve">
+    <value>Version du contrôleur :</value>
+  </data>
+  <data name="lblControllerVersionTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDelayPeriodTitleResource1.Text" xml:space="preserve">
+    <value>Délai :</value>
+  </data>
+  <data name="lblDelayPeriodTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDTCCountinVehicleValueResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDTCCountinVehicleValueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDTCCountResource1.Text" xml:space="preserve">
+    <value>DTC dans le Véhicule :</value>
+  </data>
+  <data name="lblDTCCountResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDTCinMsgResource1.Text" xml:space="preserve">
+    <value>DTC dans le Message : </value>
+  </data>
+  <data name="lblDTCinMsgResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDTCinMsgValueResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDTCinMsgValueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDTCResource1.Text" xml:space="preserve">
+    <value>DTC:</value>
+  </data>
+  <data name="lblDTCResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDTCSourceResource1.Text" xml:space="preserve">
+    <value>DTC Source:</value>
+  </data>
+  <data name="lblDTCSourceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDTCSourceValueResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDTCSourceValueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDTCValueResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDTCValueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFirmwareTitleResource1.Text" xml:space="preserve">
+    <value>Version du micrologiciel :</value>
+  </data>
+  <data name="lblFirmwareTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFuelConsumptionResource1.Text" xml:space="preserve">
+    <value>Alimenter la Consommation:</value>
+  </data>
+  <data name="lblFuelConsumptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFuelConsuptionValueResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFuelConsuptionValueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFuelResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblFuelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGeoFenceTitleResource1.Text" xml:space="preserve">
+    <value>GeoFence :</value>
+  </data>
+  <data name="lblGeoFenceTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblGPSFreqTitleResource1.Text" xml:space="preserve">
+    <value>Fréquence de GPS :</value>
+  </data>
+  <data name="lblGPSFreqTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblHeadingResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblHeadingResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblHeadingTitleResource1.Text" xml:space="preserve">
+    <value>Se dirigeant :</value>
+  </data>
+  <data name="lblHeadingTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLatitudeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLatitudeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLatitudeTitleResource1.Text" xml:space="preserve">
+    <value>Latitude :</value>
+  </data>
+  <data name="lblLatitudeTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLongitudeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLongitudeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLongitudeTitleResource1.Text" xml:space="preserve">
+    <value>Longitude :</value>
+  </data>
+  <data name="lblLongitudeTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMainBatteryTitleResource1.Text" xml:space="preserve">
+    <value>Batterie principale :</value>
+  </data>
+  <data name="lblMainBatteryTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMemoryUsageTitleResource1.Text" xml:space="preserve">
+    <value>Utilisation de la mémoire :</value>
+  </data>
+  <data name="lblMemoryUsageTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageTitleResource1.Text" xml:space="preserve">
+    <value>Message  :</value>
+  </data>
+  <data name="lblMessageTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageTypeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMessageTypeTitleResource1.Text" xml:space="preserve">
+    <value>Type de message :</value>
+  </data>
+  <data name="lblMessageTypeTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMILResource1.Text" xml:space="preserve">
+    <value>MIL:</value>
+  </data>
+  <data name="lblMILResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMILvalueResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblMILvalueResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOdometerResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOdometerResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOdometerTitleResource1.Text" xml:space="preserve">
+    <value>Kilométrage</value>
+  </data>
+  <data name="lblOdometerTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOriginatedDateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOriginatedDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblOriginatedDateTitleResource1.Text" xml:space="preserve">
+    <value>Date émise :</value>
+  </data>
+  <data name="lblOriginatedDateTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPRLLabelResource1.Text" xml:space="preserve">
+    <value>PRL :</value>
+  </data>
+  <data name="lblPRLLabelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPRLResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPRLResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblProtocolIdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblProtocolIdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblProtocolTypeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblProtocolTypeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblProtocolTypeTitleResource1.Text" xml:space="preserve">
+    <value>Type de protocole :</value>
+  </data>
+  <data name="lblProtocolTypeTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReasonForIPUpdateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReasonForIPUpdateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReasonForIPUpdateTitleResource1.Text" xml:space="preserve">
+    <value>Raison de la mise à jour du protocole IP :</value>
+  </data>
+  <data name="lblReasonForIPUpdateTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReceivedDateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReceivedDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblReceivedDateTitleResource1.Text" xml:space="preserve">
+    <value>Date de réception :</value>
+  </data>
+  <data name="lblReceivedDateTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSIMESNTitleResource1.Text" xml:space="preserve">
+    <value>SIM/ESN :</value>
+  </data>
+  <data name="lblSIMESNTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSNTitleResource1.Text" xml:space="preserve">
+    <value>Numéro de série :</value>
+  </data>
+  <data name="lblSNTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSpeedResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSpeedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSpeedThresTitleResource1.Text" xml:space="preserve">
+    <value>Limite de vitesse :</value>
+  </data>
+  <data name="lblSpeedThresTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblSpeedTitleResource1.Text" xml:space="preserve">
+    <value>Vitesse :</value>
+  </data>
+  <data name="lblSpeedTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStatusCellResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStatusCellResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStatusSIMResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStatusSIMResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStreetAddressResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStreetAddressResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStreetAddressTitleResource1.Text" xml:space="preserve">
+    <value>Adresse municipale :</value>
+  </data>
+  <data name="lblStreetAddressTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTARModePeriodTitleResource1.Text" xml:space="preserve">
+    <value>Période en mode TAR :</value>
+  </data>
+  <data name="lblTARModePeriodTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTarModeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblTarModeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnitResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUnitResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUserResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUserResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblUserTitleResource1.Text" xml:space="preserve">
+    <value>Utilisateur:</value>
+  </data>
+  <data name="lblUserTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidGPSResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidGPSResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblValidGPSTitleResource1.Text" xml:space="preserve">
+    <value>GPS valide :</value>
+  </data>
+  <data name="lblValidGPSTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource1.Text" xml:space="preserve">
+    <value>Arrêt</value>
+  </data>
+  <data name="ListItemResource1.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource10.Text" xml:space="preserve">
+    <value>4 jours</value>
+  </data>
+  <data name="ListItemResource10.Value" xml:space="preserve">
+    <value>96</value>
+  </data>
+  <data name="ListItemResource11.Text" xml:space="preserve">
+    <value>5 jours</value>
+  </data>
+  <data name="ListItemResource11.Value" xml:space="preserve">
+    <value>120</value>
+  </data>
+  <data name="ListItemResource12.Text" xml:space="preserve">
+    <value>6 jours</value>
+  </data>
+  <data name="ListItemResource12.Value" xml:space="preserve">
+    <value>144</value>
+  </data>
+  <data name="ListItemResource13.Text" xml:space="preserve">
+    <value>7 jours</value>
+  </data>
+  <data name="ListItemResource13.Value" xml:space="preserve">
+    <value>168</value>
+  </data>
+  <data name="ListItemResource14.Text" xml:space="preserve">
+    <value>Désactivé</value>
+  </data>
+  <data name="ListItemResource14.Value" xml:space="preserve">
+    <value>-1</value>
+  </data>
+  <data name="ListItemResource15.Text" xml:space="preserve">
+    <value>0 min</value>
+  </data>
+  <data name="ListItemResource15.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource16.Text" xml:space="preserve">
+    <value>1 min</value>
+  </data>
+  <data name="ListItemResource16.Value" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="ListItemResource17.Text" xml:space="preserve">
+    <value>2 min</value>
+  </data>
+  <data name="ListItemResource17.Value" xml:space="preserve">
+    <value>120</value>
+  </data>
+  <data name="ListItemResource18.Text" xml:space="preserve">
+    <value>3 min</value>
+  </data>
+  <data name="ListItemResource18.Value" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="ListItemResource19.Text" xml:space="preserve">
+    <value>4 min</value>
+  </data>
+  <data name="ListItemResource19.Value" xml:space="preserve">
+    <value>240</value>
+  </data>
+  <data name="ListItemResource2.Text" xml:space="preserve">
+    <value>1 heure</value>
+  </data>
+  <data name="ListItemResource2.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource20.Text" xml:space="preserve">
+    <value>5 min</value>
+  </data>
+  <data name="ListItemResource20.Value" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="ListItemResource21.Text" xml:space="preserve">
+    <value>10 min</value>
+  </data>
+  <data name="ListItemResource21.Value" xml:space="preserve">
+    <value>600</value>
+  </data>
+  <data name="ListItemResource22.Text" xml:space="preserve">
+    <value>15 min</value>
+  </data>
+  <data name="ListItemResource22.Value" xml:space="preserve">
+    <value>900</value>
+  </data>
+  <data name="ListItemResource23.Text" xml:space="preserve">
+    <value>20 min</value>
+  </data>
+  <data name="ListItemResource23.Value" xml:space="preserve">
+    <value>1200</value>
+  </data>
+  <data name="ListItemResource24.Text" xml:space="preserve">
+    <value>30 min</value>
+  </data>
+  <data name="ListItemResource24.Value" xml:space="preserve">
+    <value>1800</value>
+  </data>
+  <data name="ListItemResource25.Text" xml:space="preserve">
+    <value>1 heure</value>
+  </data>
+  <data name="ListItemResource25.Value" xml:space="preserve">
+    <value>3600</value>
+  </data>
+  <data name="ListItemResource26.Text" xml:space="preserve">
+    <value>2 heures</value>
+  </data>
+  <data name="ListItemResource26.Value" xml:space="preserve">
+    <value>7200</value>
+  </data>
+  <data name="ListItemResource27.Text" xml:space="preserve">
+    <value>3 heures</value>
+  </data>
+  <data name="ListItemResource27.Value" xml:space="preserve">
+    <value>10800</value>
+  </data>
+  <data name="ListItemResource28.Text" xml:space="preserve">
+    <value>4 heures</value>
+  </data>
+  <data name="ListItemResource28.Value" xml:space="preserve">
+    <value>14400</value>
+  </data>
+  <data name="ListItemResource29.Text" xml:space="preserve">
+    <value>5 heures</value>
+  </data>
+  <data name="ListItemResource29.Value" xml:space="preserve">
+    <value>18000</value>
+  </data>
+  <data name="ListItemResource3.Text" xml:space="preserve">
+    <value>2 heures</value>
+  </data>
+  <data name="ListItemResource3.Value" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ListItemResource30.Text" xml:space="preserve">
+    <value>6 heures</value>
+  </data>
+  <data name="ListItemResource30.Value" xml:space="preserve">
+    <value>21600</value>
+  </data>
+  <data name="ListItemResource31.Text" xml:space="preserve">
+    <value>7 heures</value>
+  </data>
+  <data name="ListItemResource31.Value" xml:space="preserve">
+    <value>25200</value>
+  </data>
+  <data name="ListItemResource32.Text" xml:space="preserve">
+    <value>8 heures</value>
+  </data>
+  <data name="ListItemResource32.Value" xml:space="preserve">
+    <value>28800</value>
+  </data>
+  <data name="ListItemResource4.Text" xml:space="preserve">
+    <value>4 heures</value>
+  </data>
+  <data name="ListItemResource4.Value" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ListItemResource5.Text" xml:space="preserve">
+    <value>6 heures</value>
+  </data>
+  <data name="ListItemResource5.Value" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="ListItemResource6.Text" xml:space="preserve">
+    <value>12 heures</value>
+  </data>
+  <data name="ListItemResource6.Value" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="ListItemResource7.Text" xml:space="preserve">
+    <value>1 jour</value>
+  </data>
+  <data name="ListItemResource7.Value" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="ListItemResource8.Text" xml:space="preserve">
+    <value>2 jours</value>
+  </data>
+  <data name="ListItemResource8.Value" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="ListItemResource9.Text" xml:space="preserve">
+    <value>3 jours</value>
+  </data>
+  <data name="ListItemResource9.Value" xml:space="preserve">
+    <value>72</value>
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Détails de l'historique</value>
+  </data>
+  <data name="SENSOR_DURATION" xml:space="preserve">
+    <value>DURÉE DE CAPTEURS</value>
+  </data>
+  <data name="Text_AlwaysOn" xml:space="preserve">
+    <value>Toujours activé </value>
+  </data>
+  <data name="Text_BackupBattery" xml:space="preserve">
+    <value>Batterie de secours</value>
+  </data>
+  <data name="Text_DaysAnd" xml:space="preserve">
+    <value>Jours et</value>
+  </data>
+  <data name="Text_Disabled" xml:space="preserve">
+    <value>Désactivé</value>
+  </data>
+  <data name="Text_False" xml:space="preserve">
+    <value>Faux</value>
+  </data>
+  <data name="Text_Hours" xml:space="preserve">
+    <value>Heures</value>
+  </data>
+  <data name="Text_NA" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="Text_Off" xml:space="preserve">
+    <value>Arrêt</value>
+  </data>
+  <data name="Text_True" xml:space="preserve">
+    <value>Vrai</value>
+  </data>
+  <data name="Text_Volt" xml:space="preserve">
+    <value>Volt</value>
+  </data>
+  <data name="lblMaintenanceServicesLegendResource1.Text" xml:space="preserve">
+    <value>Information additionnelle</value>
+  </data>
+  <data name="lblMaintenanceServicesLegendResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>

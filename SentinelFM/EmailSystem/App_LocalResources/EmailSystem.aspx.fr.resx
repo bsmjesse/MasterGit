@@ -1,0 +1,2881 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="1_ErrorMessage" xml:space="preserve">
+    <value>An error occurred, please try again later or connect ours customer support</value>
+  </data>
+  <data name="1_WarningDateFromToDate" xml:space="preserve">
+    <value>To date cannot be greater than from date</value>
+  </data>
+  <data name="1_WarningMessageDateAndTime" xml:space="preserve">
+    <value>Please specify date and time</value>
+  </data>
+  <data name="Button1Resource1.Text" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Button1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Button2Resource1.Text" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Button2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Button3Resource1.Text" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Button3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Button4Resource1.Text" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Button4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxFromResource1.Calendar.CellDayFormat" xml:space="preserve">
+    <value>%d</value>
+  </data>
+  <data name="dpInboxFromResource1.Calendar.ColumnHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxFromResource1.Calendar.ColumnHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxFromResource1.Calendar.DateRangeSeparator" xml:space="preserve">
+    <value> - </value>
+  </data>
+  <data name="dpInboxFromResource1.Calendar.DayCellToolTipFormat" xml:space="preserve">
+    <value>dddd, MMMM dd, yyyy</value>
+  </data>
+  <data name="dpInboxFromResource1.Calendar.FastNavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxFromResource1.Calendar.FastNavigationNextText" xml:space="preserve">
+    <value>&amp;gt;&amp;gt;</value>
+  </data>
+  <data name="dpInboxFromResource1.Calendar.FastNavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxFromResource1.Calendar.FastNavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;&amp;lt;</value>
+  </data>
+  <data name="dpInboxFromResource1.Calendar.FastNavigationSettings.CancelButtonCaption" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="dpInboxFromResource1.Calendar.FastNavigationSettings.DateIsOutOfRangeMessage" xml:space="preserve">
+    <value>Date is out of range.</value>
+  </data>
+  <data name="dpInboxFromResource1.Calendar.FastNavigationSettings.OkButtonCaption" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="dpInboxFromResource1.Calendar.FastNavigationSettings.TodayButtonCaption" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="dpInboxFromResource1.Calendar.NavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxFromResource1.Calendar.NavigationNextText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="dpInboxFromResource1.Calendar.NavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxFromResource1.Calendar.NavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="dpInboxFromResource1.Calendar.RowHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxFromResource1.Calendar.RowHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxFromResource1.Calendar.TitleFormat" xml:space="preserve">
+    <value>MMMM yyyy</value>
+  </data>
+  <data name="dpInboxFromResource1.Calendar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxFromResource1.Calendar.ViewSelectorImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxFromResource1.Calendar.ViewSelectorText" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="dpInboxFromResource1.DateInput.Label" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxFromResource1.DateInput.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxFromResource1.DatePopupButton.ToolTip" xml:space="preserve">
+    <value>Open the calendar popup.</value>
+  </data>
+  <data name="dpInboxFromResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxToResource1.Calendar.CellDayFormat" xml:space="preserve">
+    <value>%d</value>
+  </data>
+  <data name="dpInboxToResource1.Calendar.ColumnHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxToResource1.Calendar.ColumnHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxToResource1.Calendar.DateRangeSeparator" xml:space="preserve">
+    <value> - </value>
+  </data>
+  <data name="dpInboxToResource1.Calendar.DayCellToolTipFormat" xml:space="preserve">
+    <value>dddd, MMMM dd, yyyy</value>
+  </data>
+  <data name="dpInboxToResource1.Calendar.FastNavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxToResource1.Calendar.FastNavigationNextText" xml:space="preserve">
+    <value>&amp;gt;&amp;gt;</value>
+  </data>
+  <data name="dpInboxToResource1.Calendar.FastNavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxToResource1.Calendar.FastNavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;&amp;lt;</value>
+  </data>
+  <data name="dpInboxToResource1.Calendar.FastNavigationSettings.CancelButtonCaption" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="dpInboxToResource1.Calendar.FastNavigationSettings.DateIsOutOfRangeMessage" xml:space="preserve">
+    <value>Date is out of range.</value>
+  </data>
+  <data name="dpInboxToResource1.Calendar.FastNavigationSettings.OkButtonCaption" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="dpInboxToResource1.Calendar.FastNavigationSettings.TodayButtonCaption" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="dpInboxToResource1.Calendar.NavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxToResource1.Calendar.NavigationNextText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="dpInboxToResource1.Calendar.NavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxToResource1.Calendar.NavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="dpInboxToResource1.Calendar.RowHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxToResource1.Calendar.RowHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxToResource1.Calendar.TitleFormat" xml:space="preserve">
+    <value>MMMM yyyy</value>
+  </data>
+  <data name="dpInboxToResource1.Calendar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxToResource1.Calendar.ViewSelectorImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxToResource1.Calendar.ViewSelectorText" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="dpInboxToResource1.DateInput.Label" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxToResource1.DateInput.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpInboxToResource1.DatePopupButton.ToolTip" xml:space="preserve">
+    <value>Open the calendar popup.</value>
+  </data>
+  <data name="dpInboxToResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.CellDayFormat" xml:space="preserve">
+    <value>%d</value>
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.ColumnHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.ColumnHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.DateRangeSeparator" xml:space="preserve">
+    <value> - </value>
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.DayCellToolTipFormat" xml:space="preserve">
+    <value>dddd, MMMM dd, yyyy</value>
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.FastNavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.FastNavigationNextText" xml:space="preserve">
+    <value>&amp;gt;&amp;gt;</value>
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.FastNavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.FastNavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;&amp;lt;</value>
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.FastNavigationSettings.CancelButtonCaption" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.FastNavigationSettings.DateIsOutOfRangeMessage" xml:space="preserve">
+    <value>Date is out of range.</value>
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.FastNavigationSettings.OkButtonCaption" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.FastNavigationSettings.TodayButtonCaption" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.NavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.NavigationNextText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.NavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.NavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.RowHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.RowHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.TitleFormat" xml:space="preserve">
+    <value>MMMM yyyy</value>
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.ViewSelectorImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxFromResource1.Calendar.ViewSelectorText" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="dpOutboxFromResource1.DateInput.Label" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxFromResource1.DateInput.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxFromResource1.DatePopupButton.ToolTip" xml:space="preserve">
+    <value>Open the calendar popup.</value>
+  </data>
+  <data name="dpOutboxFromResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxToResource1.Calendar.CellDayFormat" xml:space="preserve">
+    <value>%d</value>
+  </data>
+  <data name="dpOutboxToResource1.Calendar.ColumnHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxToResource1.Calendar.ColumnHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxToResource1.Calendar.DateRangeSeparator" xml:space="preserve">
+    <value> - </value>
+  </data>
+  <data name="dpOutboxToResource1.Calendar.DayCellToolTipFormat" xml:space="preserve">
+    <value>dddd, MMMM dd, yyyy</value>
+  </data>
+  <data name="dpOutboxToResource1.Calendar.FastNavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxToResource1.Calendar.FastNavigationNextText" xml:space="preserve">
+    <value>&amp;gt;&amp;gt;</value>
+  </data>
+  <data name="dpOutboxToResource1.Calendar.FastNavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxToResource1.Calendar.FastNavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;&amp;lt;</value>
+  </data>
+  <data name="dpOutboxToResource1.Calendar.FastNavigationSettings.CancelButtonCaption" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="dpOutboxToResource1.Calendar.FastNavigationSettings.DateIsOutOfRangeMessage" xml:space="preserve">
+    <value>Date is out of range.</value>
+  </data>
+  <data name="dpOutboxToResource1.Calendar.FastNavigationSettings.OkButtonCaption" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="dpOutboxToResource1.Calendar.FastNavigationSettings.TodayButtonCaption" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="dpOutboxToResource1.Calendar.NavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxToResource1.Calendar.NavigationNextText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="dpOutboxToResource1.Calendar.NavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxToResource1.Calendar.NavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="dpOutboxToResource1.Calendar.RowHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxToResource1.Calendar.RowHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxToResource1.Calendar.TitleFormat" xml:space="preserve">
+    <value>MMMM yyyy</value>
+  </data>
+  <data name="dpOutboxToResource1.Calendar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxToResource1.Calendar.ViewSelectorImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxToResource1.Calendar.ViewSelectorText" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="dpOutboxToResource1.DateInput.Label" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxToResource1.DateInput.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dpOutboxToResource1.DatePopupButton.ToolTip" xml:space="preserve">
+    <value>Open the calendar popup.</value>
+  </data>
+  <data name="dpOutboxToResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EditResource1.Localization.Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="EditResource1.Localization.Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="EditResource1.Localization.Maximize" xml:space="preserve">
+    <value>Maximize</value>
+  </data>
+  <data name="EditResource1.Localization.Minimize" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <data name="EditResource1.Localization.No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="EditResource1.Localization.OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="EditResource1.Localization.PinOff" xml:space="preserve">
+    <value>Pin off</value>
+  </data>
+  <data name="EditResource1.Localization.PinOn" xml:space="preserve">
+    <value>Pin on</value>
+  </data>
+  <data name="EditResource1.Localization.Reload" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="EditResource1.Localization.Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="EditResource1.Localization.Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="EditResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource1.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource1.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource1.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource1.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource1.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource1.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource1.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource1.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource1.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource1.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource1.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GridBoundColumnResource1.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource1.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource10.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource10.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource10.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource10.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource10.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource10.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource10.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource10.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource10.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource10.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource10.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource10.HeaderText" xml:space="preserve">
+    <value>Date and Time</value>
+  </data>
+  <data name="GridBoundColumnResource10.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource10.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource10.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource11.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource11.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource11.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource11.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource11.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource11.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource11.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource11.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource11.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource11.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource11.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource11.HeaderText" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="GridBoundColumnResource11.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource11.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource11.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource12.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource12.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource12.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource12.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource12.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource12.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource12.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource12.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource12.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource12.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource12.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource12.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource12.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource12.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource12.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource13.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource13.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource13.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource13.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource13.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource13.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource13.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource13.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource13.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource13.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource13.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource13.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource13.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource13.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource13.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource14.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource14.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource14.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource14.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource14.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource14.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource14.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource14.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource14.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource14.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource14.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource14.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource14.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource14.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource14.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource15.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource15.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource15.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource15.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource15.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource15.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource15.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource15.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource15.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource15.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource15.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource15.HeaderText" xml:space="preserve">
+    <value>FieldValues</value>
+  </data>
+  <data name="GridBoundColumnResource15.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource15.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource15.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource16.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource16.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource16.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource16.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource16.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource16.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource16.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource16.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource16.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource16.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource16.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource16.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource16.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource16.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource16.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource17.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource17.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource17.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource17.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource17.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource17.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource17.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource17.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource17.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource17.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource17.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource17.HeaderText" xml:space="preserve">
+    <value>Sender</value>
+  </data>
+  <data name="GridBoundColumnResource17.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource17.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource17.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource18.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource18.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource18.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource18.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource18.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource18.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource18.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource18.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource18.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource18.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource18.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource18.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource18.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource18.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource18.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource19.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource19.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource19.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource19.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource19.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource19.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource19.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource19.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource19.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource19.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource19.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource19.HeaderText" xml:space="preserve">
+    <value>Recipient</value>
+  </data>
+  <data name="GridBoundColumnResource19.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource19.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource19.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource2.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource2.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource2.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource2.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource20.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource20.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource20.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource20.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource20.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource20.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource20.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource20.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource20.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource20.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource20.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource20.HeaderText" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="GridBoundColumnResource20.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource20.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource20.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource21.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource21.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource21.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource21.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource21.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource21.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource21.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource21.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource21.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource21.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource21.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource21.HeaderText" xml:space="preserve">
+    <value>Date and Time</value>
+  </data>
+  <data name="GridBoundColumnResource21.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource21.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource21.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource22.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource22.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource22.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource22.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource22.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource22.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource22.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource22.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource22.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource22.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource22.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource22.HeaderText" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="GridBoundColumnResource22.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource22.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource22.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource3.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource3.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource3.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource3.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource4.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource4.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.HeaderText" xml:space="preserve">
+    <value>FieldValues</value>
+  </data>
+  <data name="GridBoundColumnResource4.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource4.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource4.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource5.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource5.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource5.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource5.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource6.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource6.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.HeaderText" xml:space="preserve">
+    <value>Sender</value>
+  </data>
+  <data name="GridBoundColumnResource6.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource6.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource6.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource7.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource7.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource7.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource7.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource8.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource8.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource8.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource8.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource8.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource8.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource8.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource8.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource8.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource8.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource8.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource8.HeaderText" xml:space="preserve">
+    <value>Recipient</value>
+  </data>
+  <data name="GridBoundColumnResource8.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource8.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource8.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource9.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource9.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource9.DataFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource9.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="GridBoundColumnResource9.EmptyDataText" xml:space="preserve">
+    <value>&amp;nbsp;</value>
+  </data>
+  <data name="GridBoundColumnResource9.FooterAggregateFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource9.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource9.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource9.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource9.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource9.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource9.HeaderText" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="GridBoundColumnResource9.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridBoundColumnResource9.HtmlEncode" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GridBoundColumnResource9.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.BackImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.ClientSettings.ClientMessages.ColumnResizeTooltipFormatString" xml:space="preserve">
+    <value>Width: &lt;strong&gt;{0}&lt;/strong&gt; &lt;em&gt;pixels&lt;/em&gt;</value>
+  </data>
+  <data name="Inbox_GridResource1.ClientSettings.ClientMessages.DragToGroupOrReorder" xml:space="preserve">
+    <value>Drag to group or reorder</value>
+  </data>
+  <data name="Inbox_GridResource1.ClientSettings.ClientMessages.DragToResize" xml:space="preserve">
+    <value>Drag to resize</value>
+  </data>
+  <data name="Inbox_GridResource1.ClientSettings.ClientMessages.DropHereToReorder" xml:space="preserve">
+    <value>Drop here to reorder</value>
+  </data>
+  <data name="Inbox_GridResource1.ClientSettings.ClientMessages.PagerTooltipFormatString" xml:space="preserve">
+    <value>Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;</value>
+  </data>
+  <data name="Inbox_GridResource1.FilterMenu.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.GroupingSettings.CollapseTooltip" xml:space="preserve">
+    <value>Collapse group</value>
+  </data>
+  <data name="Inbox_GridResource1.GroupingSettings.ExpandTooltip" xml:space="preserve">
+    <value>Expand group</value>
+  </data>
+  <data name="Inbox_GridResource1.GroupingSettings.GroupByFieldsSeparator" xml:space="preserve">
+    <value>; </value>
+  </data>
+  <data name="Inbox_GridResource1.GroupingSettings.GroupContinuedFormatString" xml:space="preserve">
+    <value>... group continued from the previous page. </value>
+  </data>
+  <data name="Inbox_GridResource1.GroupingSettings.GroupContinuesFormatString" xml:space="preserve">
+    <value> Group continues on the next page.</value>
+  </data>
+  <data name="Inbox_GridResource1.GroupingSettings.GroupSplitDisplayFormat" xml:space="preserve">
+    <value>Showing {0} of {1} items.</value>
+  </data>
+  <data name="Inbox_GridResource1.GroupingSettings.GroupSplitFormat" xml:space="preserve">
+    <value> ({0})</value>
+  </data>
+  <data name="Inbox_GridResource1.GroupingSettings.UnGroupButtonTooltip" xml:space="preserve">
+    <value>Click here to ungroup</value>
+  </data>
+  <data name="Inbox_GridResource1.GroupingSettings.UnGroupTooltip" xml:space="preserve">
+    <value>Drag out of the bar to ungroup</value>
+  </data>
+  <data name="Inbox_GridResource1.GroupPanel.Text" xml:space="preserve">
+    <value>Drag a column header and drop it here to group by that column</value>
+  </data>
+  <data name="Inbox_GridResource1.GroupPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.HeaderContextMenu.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.HierarchySettings.CollapseTooltip" xml:space="preserve">
+    <value>Collapse</value>
+  </data>
+  <data name="Inbox_GridResource1.HierarchySettings.ExpandTooltip" xml:space="preserve">
+    <value>Expand</value>
+  </data>
+  <data name="Inbox_GridResource1.HierarchySettings.SelfCollapseTooltip" xml:space="preserve">
+    <value>Self reference collapse</value>
+  </data>
+  <data name="Inbox_GridResource1.HierarchySettings.SelfExpandTooltip" xml:space="preserve">
+    <value>Self reference expand</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.CommandItemSettings.AddNewRecordImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.CommandItemSettings.AddNewRecordText" xml:space="preserve">
+    <value>Add new record</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.CommandItemSettings.ExportToCsvImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.CommandItemSettings.ExportToCsvText" xml:space="preserve">
+    <value>Export to CSV</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.CommandItemSettings.ExportToExcelImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.CommandItemSettings.ExportToExcelText" xml:space="preserve">
+    <value>Export to Excel</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.CommandItemSettings.ExportToPdfImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.CommandItemSettings.ExportToPdfText" xml:space="preserve">
+    <value>Export to Pdf</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.CommandItemSettings.ExportToWordImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.CommandItemSettings.ExportToWordText" xml:space="preserve">
+    <value>Export to Word</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.CommandItemSettings.RefreshImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.CommandItemSettings.RefreshText" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.EditFormSettings.CaptionFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.EditFormSettings.InsertCaption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.ExpandCollapseColumn.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.ExpandCollapseColumn.CollapseImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.ExpandCollapseColumn.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.ExpandCollapseColumn.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.ExpandCollapseColumn.ExpandImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.ExpandCollapseColumn.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.ExpandCollapseColumn.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.ExpandCollapseColumn.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.ExpandCollapseColumn.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.ExpandCollapseColumn.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.ExpandCollapseColumn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.ExpandCollapseColumn.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.ExpandCollapseColumn.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.FilterExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.NoDetailRecordsText" xml:space="preserve">
+    <value>No child records to display.</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.NoMasterRecordsText" xml:space="preserve">
+    <value>No records to display.</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.PagerStyle.FirstPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.PagerStyle.FirstPageToolTip" xml:space="preserve">
+    <value>First Page</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.PagerStyle.LastPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.PagerStyle.LastPageToolTip" xml:space="preserve">
+    <value>Last Page</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.PagerStyle.NextPagesToolTip" xml:space="preserve">
+    <value>Next Pages</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.PagerStyle.NextPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.PagerStyle.NextPageToolTip" xml:space="preserve">
+    <value>Next Page</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.PagerStyle.PagerTextFormat" xml:space="preserve">
+    <value>Change page: {4} &amp;nbsp;Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;, items &lt;strong&gt;{2}&lt;/strong&gt; to &lt;strong&gt;{3}&lt;/strong&gt; of &lt;strong&gt;{5}&lt;/strong&gt;.</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.PagerStyle.PageSizeLabelText" xml:space="preserve">
+    <value>Page size:</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.PagerStyle.PrevPagesToolTip" xml:space="preserve">
+    <value>Previous Pages</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.PagerStyle.PrevPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.PagerStyle.PrevPageToolTip" xml:space="preserve">
+    <value>Previous Page</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.RowIndicatorColumn.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.RowIndicatorColumn.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.RowIndicatorColumn.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.RowIndicatorColumn.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.RowIndicatorColumn.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.RowIndicatorColumn.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.RowIndicatorColumn.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.RowIndicatorColumn.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.RowIndicatorColumn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.RowIndicatorColumn.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.RowIndicatorColumn.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.Summary" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.MasterTableView.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.PagerStyle.FirstPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.PagerStyle.FirstPageToolTip" xml:space="preserve">
+    <value>First Page</value>
+  </data>
+  <data name="Inbox_GridResource1.PagerStyle.LastPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.PagerStyle.LastPageToolTip" xml:space="preserve">
+    <value>Last Page</value>
+  </data>
+  <data name="Inbox_GridResource1.PagerStyle.NextPagesToolTip" xml:space="preserve">
+    <value>Next Pages</value>
+  </data>
+  <data name="Inbox_GridResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.PagerStyle.NextPageToolTip" xml:space="preserve">
+    <value>Next Page</value>
+  </data>
+  <data name="Inbox_GridResource1.PagerStyle.PagerTextFormat" xml:space="preserve">
+    <value>Change page: {4} &amp;nbsp;Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;, items &lt;strong&gt;{2}&lt;/strong&gt; to &lt;strong&gt;{3}&lt;/strong&gt; of &lt;strong&gt;{5}&lt;/strong&gt;.</value>
+  </data>
+  <data name="Inbox_GridResource1.PagerStyle.PageSizeLabelText" xml:space="preserve">
+    <value>Page size:</value>
+  </data>
+  <data name="Inbox_GridResource1.PagerStyle.PrevPagesToolTip" xml:space="preserve">
+    <value>Previous Pages</value>
+  </data>
+  <data name="Inbox_GridResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inbox_GridResource1.PagerStyle.PrevPageToolTip" xml:space="preserve">
+    <value>Previous Page</value>
+  </data>
+  <data name="Inbox_GridResource1.SortingSettings.SortedAscToolTip" xml:space="preserve">
+    <value>Sorted asc</value>
+  </data>
+  <data name="Inbox_GridResource1.SortingSettings.SortedDescToolTip" xml:space="preserve">
+    <value>Sorted desc</value>
+  </data>
+  <data name="Inbox_GridResource1.SortingSettings.SortToolTip" xml:space="preserve">
+    <value>Click here to sort</value>
+  </data>
+  <data name="Inbox_GridResource1.StatusBarSettings.LoadingText" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="Inbox_GridResource1.StatusBarSettings.ReadyText" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="Inbox_GridResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InboxTabName.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InboxTabName.DisabledImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InboxTabName.HoveredImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InboxTabName.ImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InboxTabName.NavigateUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InboxTabName.SelectedImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InboxTabName.Text" xml:space="preserve">
+    <value>Inbox</value>
+  </data>
+  <data name="InboxTabName.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InboxTabName.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label1Resource1.Text" xml:space="preserve">
+    <value>From:</value>
+  </data>
+  <data name="Label1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label2Resource1.Text" xml:space="preserve">
+    <value>From:</value>
+  </data>
+  <data name="Label2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label3Resource1.Text" xml:space="preserve">
+    <value>To:</value>
+  </data>
+  <data name="Label3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label4Resource1.Text" xml:space="preserve">
+    <value>To:</value>
+  </data>
+  <data name="Label4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewMessageResource1.Localization.Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="NewMessageResource1.Localization.Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="NewMessageResource1.Localization.Maximize" xml:space="preserve">
+    <value>Maximize</value>
+  </data>
+  <data name="NewMessageResource1.Localization.Minimize" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <data name="NewMessageResource1.Localization.No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NewMessageResource1.Localization.OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="NewMessageResource1.Localization.PinOff" xml:space="preserve">
+    <value>Pin off</value>
+  </data>
+  <data name="NewMessageResource1.Localization.PinOn" xml:space="preserve">
+    <value>Pin on</value>
+  </data>
+  <data name="NewMessageResource1.Localization.Reload" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="NewMessageResource1.Localization.Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="NewMessageResource1.Localization.Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="NewMessageResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewMessageWithFormatResource1.Localization.Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="NewMessageWithFormatResource1.Localization.Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="NewMessageWithFormatResource1.Localization.Maximize" xml:space="preserve">
+    <value>Maximize</value>
+  </data>
+  <data name="NewMessageWithFormatResource1.Localization.Minimize" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <data name="NewMessageWithFormatResource1.Localization.No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NewMessageWithFormatResource1.Localization.OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="NewMessageWithFormatResource1.Localization.PinOff" xml:space="preserve">
+    <value>Pin off</value>
+  </data>
+  <data name="NewMessageWithFormatResource1.Localization.PinOn" xml:space="preserve">
+    <value>Pin on</value>
+  </data>
+  <data name="NewMessageWithFormatResource1.Localization.Reload" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="NewMessageWithFormatResource1.Localization.Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="NewMessageWithFormatResource1.Localization.Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="NewMessageWithFormatResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.BackImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.ClientSettings.ClientMessages.ColumnResizeTooltipFormatString" xml:space="preserve">
+    <value>Width: &lt;strong&gt;{0}&lt;/strong&gt; &lt;em&gt;pixels&lt;/em&gt;</value>
+  </data>
+  <data name="Outbox_GridResource1.ClientSettings.ClientMessages.DragToGroupOrReorder" xml:space="preserve">
+    <value>Drag to group or reorder</value>
+  </data>
+  <data name="Outbox_GridResource1.ClientSettings.ClientMessages.DragToResize" xml:space="preserve">
+    <value>Drag to resize</value>
+  </data>
+  <data name="Outbox_GridResource1.ClientSettings.ClientMessages.DropHereToReorder" xml:space="preserve">
+    <value>Drop here to reorder</value>
+  </data>
+  <data name="Outbox_GridResource1.ClientSettings.ClientMessages.PagerTooltipFormatString" xml:space="preserve">
+    <value>Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;</value>
+  </data>
+  <data name="Outbox_GridResource1.FilterMenu.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.GroupingSettings.CollapseTooltip" xml:space="preserve">
+    <value>Collapse group</value>
+  </data>
+  <data name="Outbox_GridResource1.GroupingSettings.ExpandTooltip" xml:space="preserve">
+    <value>Expand group</value>
+  </data>
+  <data name="Outbox_GridResource1.GroupingSettings.GroupByFieldsSeparator" xml:space="preserve">
+    <value>; </value>
+  </data>
+  <data name="Outbox_GridResource1.GroupingSettings.GroupContinuedFormatString" xml:space="preserve">
+    <value>... group continued from the previous page. </value>
+  </data>
+  <data name="Outbox_GridResource1.GroupingSettings.GroupContinuesFormatString" xml:space="preserve">
+    <value> Group continues on the next page.</value>
+  </data>
+  <data name="Outbox_GridResource1.GroupingSettings.GroupSplitDisplayFormat" xml:space="preserve">
+    <value>Showing {0} of {1} items.</value>
+  </data>
+  <data name="Outbox_GridResource1.GroupingSettings.GroupSplitFormat" xml:space="preserve">
+    <value> ({0})</value>
+  </data>
+  <data name="Outbox_GridResource1.GroupingSettings.UnGroupButtonTooltip" xml:space="preserve">
+    <value>Click here to ungroup</value>
+  </data>
+  <data name="Outbox_GridResource1.GroupingSettings.UnGroupTooltip" xml:space="preserve">
+    <value>Drag out of the bar to ungroup</value>
+  </data>
+  <data name="Outbox_GridResource1.GroupPanel.Text" xml:space="preserve">
+    <value>Drag a column header and drop it here to group by that column</value>
+  </data>
+  <data name="Outbox_GridResource1.GroupPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.HeaderContextMenu.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.HierarchySettings.CollapseTooltip" xml:space="preserve">
+    <value>Collapse</value>
+  </data>
+  <data name="Outbox_GridResource1.HierarchySettings.ExpandTooltip" xml:space="preserve">
+    <value>Expand</value>
+  </data>
+  <data name="Outbox_GridResource1.HierarchySettings.SelfCollapseTooltip" xml:space="preserve">
+    <value>Self reference collapse</value>
+  </data>
+  <data name="Outbox_GridResource1.HierarchySettings.SelfExpandTooltip" xml:space="preserve">
+    <value>Self reference expand</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.CommandItemSettings.AddNewRecordImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.CommandItemSettings.AddNewRecordText" xml:space="preserve">
+    <value>Add new record</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.CommandItemSettings.ExportToCsvImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.CommandItemSettings.ExportToCsvText" xml:space="preserve">
+    <value>Export to CSV</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.CommandItemSettings.ExportToExcelImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.CommandItemSettings.ExportToExcelText" xml:space="preserve">
+    <value>Export to Excel</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.CommandItemSettings.ExportToPdfImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.CommandItemSettings.ExportToPdfText" xml:space="preserve">
+    <value>Export to Pdf</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.CommandItemSettings.ExportToWordImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.CommandItemSettings.ExportToWordText" xml:space="preserve">
+    <value>Export to Word</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.CommandItemSettings.RefreshImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.CommandItemSettings.RefreshText" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.EditFormSettings.CaptionFormatString" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.EditFormSettings.InsertCaption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.ExpandCollapseColumn.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.ExpandCollapseColumn.CollapseImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.ExpandCollapseColumn.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.ExpandCollapseColumn.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.ExpandCollapseColumn.ExpandImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.ExpandCollapseColumn.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.ExpandCollapseColumn.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.ExpandCollapseColumn.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.ExpandCollapseColumn.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.ExpandCollapseColumn.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.ExpandCollapseColumn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.ExpandCollapseColumn.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.ExpandCollapseColumn.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.FilterExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.NoDetailRecordsText" xml:space="preserve">
+    <value>No child records to display.</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.NoMasterRecordsText" xml:space="preserve">
+    <value>No records to display.</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.PagerStyle.FirstPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.PagerStyle.FirstPageToolTip" xml:space="preserve">
+    <value>First Page</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.PagerStyle.LastPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.PagerStyle.LastPageToolTip" xml:space="preserve">
+    <value>Last Page</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.PagerStyle.NextPagesToolTip" xml:space="preserve">
+    <value>Next Pages</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.PagerStyle.NextPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.PagerStyle.NextPageToolTip" xml:space="preserve">
+    <value>Next Page</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.PagerStyle.PagerTextFormat" xml:space="preserve">
+    <value>Change page: {4} &amp;nbsp;Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;, items &lt;strong&gt;{2}&lt;/strong&gt; to &lt;strong&gt;{3}&lt;/strong&gt; of &lt;strong&gt;{5}&lt;/strong&gt;.</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.PagerStyle.PageSizeLabelText" xml:space="preserve">
+    <value>Page size:</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.PagerStyle.PrevPagesToolTip" xml:space="preserve">
+    <value>Previous Pages</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.PagerStyle.PrevPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.PagerStyle.PrevPageToolTip" xml:space="preserve">
+    <value>Previous Page</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.RowIndicatorColumn.AndCurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.RowIndicatorColumn.CurrentFilterValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.RowIndicatorColumn.EditFormHeaderTextFormat" xml:space="preserve">
+    <value>{0}:</value>
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.RowIndicatorColumn.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.RowIndicatorColumn.GroupByExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.RowIndicatorColumn.HeaderAbbr" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.RowIndicatorColumn.HeaderAxis" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.RowIndicatorColumn.HeaderImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.RowIndicatorColumn.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.RowIndicatorColumn.HeaderTooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.RowIndicatorColumn.SortExpression" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.Summary" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.MasterTableView.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.PagerStyle.FirstPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.PagerStyle.FirstPageToolTip" xml:space="preserve">
+    <value>First Page</value>
+  </data>
+  <data name="Outbox_GridResource1.PagerStyle.LastPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.PagerStyle.LastPageToolTip" xml:space="preserve">
+    <value>Last Page</value>
+  </data>
+  <data name="Outbox_GridResource1.PagerStyle.NextPagesToolTip" xml:space="preserve">
+    <value>Next Pages</value>
+  </data>
+  <data name="Outbox_GridResource1.PagerStyle.NextPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.PagerStyle.NextPageToolTip" xml:space="preserve">
+    <value>Next Page</value>
+  </data>
+  <data name="Outbox_GridResource1.PagerStyle.PagerTextFormat" xml:space="preserve">
+    <value>Change page: {4} &amp;nbsp;Page &lt;strong&gt;{0}&lt;/strong&gt; of &lt;strong&gt;{1}&lt;/strong&gt;, items &lt;strong&gt;{2}&lt;/strong&gt; to &lt;strong&gt;{3}&lt;/strong&gt; of &lt;strong&gt;{5}&lt;/strong&gt;.</value>
+  </data>
+  <data name="Outbox_GridResource1.PagerStyle.PageSizeLabelText" xml:space="preserve">
+    <value>Page size:</value>
+  </data>
+  <data name="Outbox_GridResource1.PagerStyle.PrevPagesToolTip" xml:space="preserve">
+    <value>Previous Pages</value>
+  </data>
+  <data name="Outbox_GridResource1.PagerStyle.PrevPageText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Outbox_GridResource1.PagerStyle.PrevPageToolTip" xml:space="preserve">
+    <value>Previous Page</value>
+  </data>
+  <data name="Outbox_GridResource1.SortingSettings.SortedAscToolTip" xml:space="preserve">
+    <value>Sorted asc</value>
+  </data>
+  <data name="Outbox_GridResource1.SortingSettings.SortedDescToolTip" xml:space="preserve">
+    <value>Sorted desc</value>
+  </data>
+  <data name="Outbox_GridResource1.SortingSettings.SortToolTip" xml:space="preserve">
+    <value>Click here to sort</value>
+  </data>
+  <data name="Outbox_GridResource1.StatusBarSettings.LoadingText" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="Outbox_GridResource1.StatusBarSettings.ReadyText" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="Outbox_GridResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OutboxTabName.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OutboxTabName.DisabledImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OutboxTabName.HoveredImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OutboxTabName.ImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OutboxTabName.NavigateUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OutboxTabName.SelectedImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OutboxTabName.Text" xml:space="preserve">
+    <value>Outbox</value>
+  </data>
+  <data name="OutboxTabName.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OutboxTabName.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadMultiPage1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadPageView1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadPageView2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadPane1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadPane2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadPane3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadPane4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadPane5Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadPane6Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadSplitter1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadSplitter2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource1.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource1.DisabledImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource1.HoveredImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource1.ImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource1.NavigateUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource1.SelectedImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource1.Text" xml:space="preserve">
+    <value>InboxFR</value>
+  </data>
+  <data name="RadTabResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource1.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource2.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource2.DisabledImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource2.HoveredImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource2.ImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource2.NavigateUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource2.SelectedImageUrl" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource2.Text" xml:space="preserve">
+    <value>OutboxFR</value>
+  </data>
+  <data name="RadTabResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabResource2.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadTabStrip1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBar1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBar2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource1.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource1.Text" xml:space="preserve">
+    <value>New Message</value>
+  </data>
+  <data name="RadToolBarButtonResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource1.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource10.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource10.Text" xml:space="preserve">
+    <value>Reply</value>
+  </data>
+  <data name="RadToolBarButtonResource10.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource10.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource2.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource2.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource3.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource3.Text" xml:space="preserve">
+    <value>New Form Message</value>
+  </data>
+  <data name="RadToolBarButtonResource3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource3.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource4.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource4.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource4.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource5.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource5.Text" xml:space="preserve">
+    <value>Reply</value>
+  </data>
+  <data name="RadToolBarButtonResource5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource5.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource6.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource6.Text" xml:space="preserve">
+    <value>New Message</value>
+  </data>
+  <data name="RadToolBarButtonResource6.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource6.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource7.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource7.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource7.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource7.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource8.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource8.Text" xml:space="preserve">
+    <value>New Form Message</value>
+  </data>
+  <data name="RadToolBarButtonResource8.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource8.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource9.AccessKey" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource9.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource9.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadToolBarButtonResource9.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.Maximize" xml:space="preserve">
+    <value>Maximize</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.Minimize" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.PinOff" xml:space="preserve">
+    <value>Pin off</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.PinOn" xml:space="preserve">
+    <value>Pin on</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.Reload" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="RadWindowManager1Resource1.Localization.Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="RadWindowManager1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxFromResource1.Calendar.CellDayFormat" xml:space="preserve">
+    <value>%d</value>
+  </data>
+  <data name="tpInboxFromResource1.Calendar.ColumnHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxFromResource1.Calendar.ColumnHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxFromResource1.Calendar.DateRangeSeparator" xml:space="preserve">
+    <value> - </value>
+  </data>
+  <data name="tpInboxFromResource1.Calendar.DayCellToolTipFormat" xml:space="preserve">
+    <value>dddd, MMMM dd, yyyy</value>
+  </data>
+  <data name="tpInboxFromResource1.Calendar.FastNavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxFromResource1.Calendar.FastNavigationNextText" xml:space="preserve">
+    <value>&amp;gt;&amp;gt;</value>
+  </data>
+  <data name="tpInboxFromResource1.Calendar.FastNavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxFromResource1.Calendar.FastNavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;&amp;lt;</value>
+  </data>
+  <data name="tpInboxFromResource1.Calendar.FastNavigationSettings.CancelButtonCaption" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="tpInboxFromResource1.Calendar.FastNavigationSettings.DateIsOutOfRangeMessage" xml:space="preserve">
+    <value>Date is out of range.</value>
+  </data>
+  <data name="tpInboxFromResource1.Calendar.FastNavigationSettings.OkButtonCaption" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="tpInboxFromResource1.Calendar.FastNavigationSettings.TodayButtonCaption" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="tpInboxFromResource1.Calendar.NavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxFromResource1.Calendar.NavigationNextText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="tpInboxFromResource1.Calendar.NavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxFromResource1.Calendar.NavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="tpInboxFromResource1.Calendar.RowHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxFromResource1.Calendar.RowHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxFromResource1.Calendar.TitleFormat" xml:space="preserve">
+    <value>MMMM yyyy</value>
+  </data>
+  <data name="tpInboxFromResource1.Calendar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxFromResource1.Calendar.ViewSelectorImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxFromResource1.Calendar.ViewSelectorText" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="tpInboxFromResource1.DateInput.Label" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxFromResource1.DateInput.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxFromResource1.DatePopupButton.ToolTip" xml:space="preserve">
+    <value>Open the calendar popup.</value>
+  </data>
+  <data name="tpInboxFromResource1.TimePopupButton.ToolTip" xml:space="preserve">
+    <value>Open the time view popup.</value>
+  </data>
+  <data name="tpInboxFromResource1.TimeView.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxFromResource1.TimeView.HeaderText" xml:space="preserve">
+    <value>Time Picker</value>
+  </data>
+  <data name="tpInboxFromResource1.TimeView.TimeFormat" xml:space="preserve">
+    <value>t</value>
+  </data>
+  <data name="tpInboxFromResource1.TimeView.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxFromResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxToResource1.Calendar.CellDayFormat" xml:space="preserve">
+    <value>%d</value>
+  </data>
+  <data name="tpInboxToResource1.Calendar.ColumnHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxToResource1.Calendar.ColumnHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxToResource1.Calendar.DateRangeSeparator" xml:space="preserve">
+    <value> - </value>
+  </data>
+  <data name="tpInboxToResource1.Calendar.DayCellToolTipFormat" xml:space="preserve">
+    <value>dddd, MMMM dd, yyyy</value>
+  </data>
+  <data name="tpInboxToResource1.Calendar.FastNavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxToResource1.Calendar.FastNavigationNextText" xml:space="preserve">
+    <value>&amp;gt;&amp;gt;</value>
+  </data>
+  <data name="tpInboxToResource1.Calendar.FastNavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxToResource1.Calendar.FastNavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;&amp;lt;</value>
+  </data>
+  <data name="tpInboxToResource1.Calendar.FastNavigationSettings.CancelButtonCaption" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="tpInboxToResource1.Calendar.FastNavigationSettings.DateIsOutOfRangeMessage" xml:space="preserve">
+    <value>Date is out of range.</value>
+  </data>
+  <data name="tpInboxToResource1.Calendar.FastNavigationSettings.OkButtonCaption" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="tpInboxToResource1.Calendar.FastNavigationSettings.TodayButtonCaption" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="tpInboxToResource1.Calendar.NavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxToResource1.Calendar.NavigationNextText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="tpInboxToResource1.Calendar.NavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxToResource1.Calendar.NavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="tpInboxToResource1.Calendar.RowHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxToResource1.Calendar.RowHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxToResource1.Calendar.TitleFormat" xml:space="preserve">
+    <value>MMMM yyyy</value>
+  </data>
+  <data name="tpInboxToResource1.Calendar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxToResource1.Calendar.ViewSelectorImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxToResource1.Calendar.ViewSelectorText" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="tpInboxToResource1.DateInput.Label" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxToResource1.DateInput.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxToResource1.DatePopupButton.ToolTip" xml:space="preserve">
+    <value>Open the calendar popup.</value>
+  </data>
+  <data name="tpInboxToResource1.TimePopupButton.ToolTip" xml:space="preserve">
+    <value>Open the time view popup.</value>
+  </data>
+  <data name="tpInboxToResource1.TimeView.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxToResource1.TimeView.HeaderText" xml:space="preserve">
+    <value>Time Picker</value>
+  </data>
+  <data name="tpInboxToResource1.TimeView.TimeFormat" xml:space="preserve">
+    <value>t</value>
+  </data>
+  <data name="tpInboxToResource1.TimeView.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpInboxToResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.CellDayFormat" xml:space="preserve">
+    <value>%d</value>
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.ColumnHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.ColumnHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.DateRangeSeparator" xml:space="preserve">
+    <value> - </value>
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.DayCellToolTipFormat" xml:space="preserve">
+    <value>dddd, MMMM dd, yyyy</value>
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.FastNavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.FastNavigationNextText" xml:space="preserve">
+    <value>&amp;gt;&amp;gt;</value>
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.FastNavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.FastNavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;&amp;lt;</value>
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.FastNavigationSettings.CancelButtonCaption" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.FastNavigationSettings.DateIsOutOfRangeMessage" xml:space="preserve">
+    <value>Date is out of range.</value>
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.FastNavigationSettings.OkButtonCaption" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.FastNavigationSettings.TodayButtonCaption" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.NavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.NavigationNextText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.NavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.NavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.RowHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.RowHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.TitleFormat" xml:space="preserve">
+    <value>MMMM yyyy</value>
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.ViewSelectorImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxFromResource1.Calendar.ViewSelectorText" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="tpOutboxFromResource1.DateInput.Label" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxFromResource1.DateInput.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxFromResource1.DatePopupButton.ToolTip" xml:space="preserve">
+    <value>Open the calendar popup.</value>
+  </data>
+  <data name="tpOutboxFromResource1.TimePopupButton.ToolTip" xml:space="preserve">
+    <value>Open the time view popup.</value>
+  </data>
+  <data name="tpOutboxFromResource1.TimeView.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxFromResource1.TimeView.HeaderText" xml:space="preserve">
+    <value>Time Picker</value>
+  </data>
+  <data name="tpOutboxFromResource1.TimeView.TimeFormat" xml:space="preserve">
+    <value>t</value>
+  </data>
+  <data name="tpOutboxFromResource1.TimeView.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxFromResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxToResource1.Calendar.CellDayFormat" xml:space="preserve">
+    <value>%d</value>
+  </data>
+  <data name="tpOutboxToResource1.Calendar.ColumnHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxToResource1.Calendar.ColumnHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxToResource1.Calendar.DateRangeSeparator" xml:space="preserve">
+    <value> - </value>
+  </data>
+  <data name="tpOutboxToResource1.Calendar.DayCellToolTipFormat" xml:space="preserve">
+    <value>dddd, MMMM dd, yyyy</value>
+  </data>
+  <data name="tpOutboxToResource1.Calendar.FastNavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxToResource1.Calendar.FastNavigationNextText" xml:space="preserve">
+    <value>&amp;gt;&amp;gt;</value>
+  </data>
+  <data name="tpOutboxToResource1.Calendar.FastNavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxToResource1.Calendar.FastNavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;&amp;lt;</value>
+  </data>
+  <data name="tpOutboxToResource1.Calendar.FastNavigationSettings.CancelButtonCaption" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="tpOutboxToResource1.Calendar.FastNavigationSettings.DateIsOutOfRangeMessage" xml:space="preserve">
+    <value>Date is out of range.</value>
+  </data>
+  <data name="tpOutboxToResource1.Calendar.FastNavigationSettings.OkButtonCaption" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="tpOutboxToResource1.Calendar.FastNavigationSettings.TodayButtonCaption" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="tpOutboxToResource1.Calendar.NavigationNextImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxToResource1.Calendar.NavigationNextText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="tpOutboxToResource1.Calendar.NavigationPrevImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxToResource1.Calendar.NavigationPrevText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="tpOutboxToResource1.Calendar.RowHeaderImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxToResource1.Calendar.RowHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxToResource1.Calendar.TitleFormat" xml:space="preserve">
+    <value>MMMM yyyy</value>
+  </data>
+  <data name="tpOutboxToResource1.Calendar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxToResource1.Calendar.ViewSelectorImage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxToResource1.Calendar.ViewSelectorText" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="tpOutboxToResource1.DateInput.Label" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxToResource1.DateInput.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxToResource1.DatePopupButton.ToolTip" xml:space="preserve">
+    <value>Open the calendar popup.</value>
+  </data>
+  <data name="tpOutboxToResource1.TimePopupButton.ToolTip" xml:space="preserve">
+    <value>Open the time view popup.</value>
+  </data>
+  <data name="tpOutboxToResource1.TimeView.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxToResource1.TimeView.HeaderText" xml:space="preserve">
+    <value>Time Picker</value>
+  </data>
+  <data name="tpOutboxToResource1.TimeView.TimeFormat" xml:space="preserve">
+    <value>t</value>
+  </data>
+  <data name="tpOutboxToResource1.TimeView.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tpOutboxToResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="1_ErrorMessageToForward" xml:space="preserve">
+    <value>Please select message to forward</value>
+  </data>
+  <data name="1_NotificationNoData" xml:space="preserve">
+    <value>There isn't any data (FR)</value>
+  </data>
+</root>

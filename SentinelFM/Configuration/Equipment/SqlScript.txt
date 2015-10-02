@@ -1,0 +1,1431 @@
+﻿ALTER procedure Equipment_Add (
+		 @OrganizationId int,
+		 @Description varchar(255),
+		 @EquipmentTypeId int
+		)
+as
+insert into Equipment (OrganizationId,Description,EquipmentTypeId)
+values (@OrganizationId,@Description,@EquipmentTypeId)
+
+
+
+ALTER procedure Equipment_Update (
+         @EquipmentId int,
+		 @OrganizationId int,
+		 @Description varchar(255),
+		 @EquipmentTypeId int
+		)
+as
+Update Equipment Set OrganizationId = @OrganizationId,
+                     Description = @Description,
+					 EquipmentTypeId = @EquipmentTypeId 
+			     Where EquipmentId = @EquipmentId
+
+
+
+
+ALTER procedure Media_Add (
+		 @OrganizationId int,
+		 @Description nvarchar(50),
+		 @MediaTypeId  int,
+		 @Factor1 float,
+		 @Factor2 float,
+		 @Factor3 float,
+		 @Factor4 float,
+		 @Factor5 float,
+		 @UnitOfMeasureId int,
+		 @UserId int 
+		)
+as
+
+Begin
+
+    DECLARE @ScaleFactor float;
+
+	Set @ScaleFactor = dbo.GetScaleFactorByUnitOfMeasureId(@UnitOfMeasureId, @UserId);
+
+    if (@Factor1 is not null)  set @Factor1 = @Factor1*@ScaleFactor;
+	if (@Factor2 is not null)  set @Factor2 = @Factor2*@ScaleFactor;
+	if (@Factor3 is not null)  set @Factor3 = @Factor3*@ScaleFactor;
+	if (@Factor4 is not null)  set @Factor4 = @Factor4*@ScaleFactor;
+	if (@Factor5 is not null)  set @Factor5 = @Factor5*@ScaleFactor;
+    
+
+	insert into Media (OrganizationId,Description,MediaTypeId,Factor1,Factor2,Factor3,Factor4,Factor5,UnitOfMeasureId)
+    values (@OrganizationId,@Description,@MediaTypeId,
+	        @Factor1,
+			@Factor2,
+			@Factor3,
+			@Factor4,
+			@Factor5,@UnitOfMeasureId)
+
+End
+
+
+
+ALTER procedure Media_Update (
+         @MediaId int,
+		 @OrganizationId int,
+		 @Description nvarchar(50),
+		 @MediaTypeId  int,
+		 @Factor1 float,
+		 @Factor2 float,
+		 @Factor3 float,
+		 @Factor4 float,
+		 @Factor5 float,
+		 @UnitOfMeasureId int ,
+		 @UserId int 
+
+		)
+as
+
+
+Begin
+
+    DECLARE @ScaleFactor float;
+
+	Set @ScaleFactor = dbo.GetScaleFactorByUnitOfMeasureId(@UnitOfMeasureId, @UserId);
+
+    if (@Factor1 is not null)  set @Factor1 = @Factor1*@ScaleFactor;
+	if (@Factor2 is not null)  set @Factor2 = @Factor2*@ScaleFactor;
+	if (@Factor3 is not null)  set @Factor3 = @Factor3*@ScaleFactor;
+	if (@Factor4 is not null)  set @Factor4 = @Factor4*@ScaleFactor;
+	if (@Factor5 is not null)  set @Factor5 = @Factor5*@ScaleFactor;
+
+    Update Media Set OrganizationId = @OrganizationId,
+                 Description = @Description,
+				 MediaTypeId = @MediaTypeId,
+				 Factor1 = @Factor1,
+				 Factor2 = @Factor2,
+				 Factor3 = @Factor3,
+				 Factor4 = @Factor4,
+				 Factor5 = @Factor5,
+				 UnitOfMeasureId = @UnitOfMeasureId
+    where MediaId = @MediaId
+
+End
+
+ALTER procedure GetOrganizationMedias (
+		 @OrganizationId int,
+		 @UserId int 
+		)
+as
+
+Begin
+	DECLARE @MetricSystem smallint
+	SELECT  @MetricSystem=CONVERT(smallint,isnull(PreferenceValue,0)) from vlfUserPreference where UserId=@UserId and PreferenceId=27
+
+	select MediaId, OrganizationId,Description,Media.MediaTypeId,
+		   Media.Factor1/(
+		   CASE UnitOfMeasure.ScaleFactor
+                WHEN 0    THEN 1
+                ELSE UnitOfMeasure.ScaleFactor
+           END) as Factor1,
+		   Media.Factor2/(
+		   CASE UnitOfMeasure.ScaleFactor
+                WHEN 0    THEN 1
+                ELSE UnitOfMeasure.ScaleFactor
+           END) as Factor2,
+		   Media.Factor3/(
+		   CASE UnitOfMeasure.ScaleFactor
+                WHEN 0    THEN 1
+                ELSE UnitOfMeasure.ScaleFactor
+           END) as Factor3,
+		   Media.Factor4/(
+		   CASE UnitOfMeasure.ScaleFactor
+                WHEN 0    THEN 1
+                ELSE UnitOfMeasure.ScaleFactor
+           END) as Factor4,
+		   Media.Factor5/(
+		   CASE UnitOfMeasure.ScaleFactor
+                WHEN 0    THEN 1
+                ELSE UnitOfMeasure.ScaleFactor
+           END) as Factor5,
+		   TypeName, FactorName1,FactorName2,FactorName3,FactorName4,FactorName5, Media.UnitOfMeasureId,UnitOfMeasure.UnitOfMeasureAcr
+	from Media
+		inner join MediaTypes on Media.MediaTypeId=MediaTypes.MediaTypeId
+		inner join UnitOfMeasure on Media.UnitOfMeasureId = UnitOfMeasure.BaseUnit and UnitOfMeasure.MetricSystem=@MetricSystem
+	where OrganizationId=@OrganizationId
+
+End
+
+ALTER procedure GetOrganizationMedias (
+		 @OrganizationId int,
+		 @UserId int
+		)
+as
+DECLARE @MetricSystem smallint
+SELECT  @MetricSystem=CONVERT(smallint,isnull(PreferenceValue,0)) from vlfUserPreference where UserId=@UserId and PreferenceId=27
+
+select MediaId, OrganizationId,Description,Media.MediaTypeId,
+       UnitOfMeasure.ScaleFactor * Media.Factor1,
+	   UnitOfMeasure.ScaleFactor * Media.Factor2,
+	   UnitOfMeasure.ScaleFactor * Media.Factor3,
+	   UnitOfMeasure.ScaleFactor * Media.Factor4,
+	   UnitOfMeasure.ScaleFactor * Media.Factor5,
+       TypeName, FactorName1,FactorName2,FactorName3,FactorName4,FactorName5, Media.UnitOfMeasureId,UnitOfMeasure.UnitOfMeasureAcr
+from Media
+	inner join MediaTypes on Media.MediaTypeId=MediaTypes.MediaTypeId
+	inner join UnitOfMeasure on Media.UnitOfMeasureId = UnitOfMeasure.BaseUnit and MetricSystem=@MetricSystem
+where OrganizationId=@OrganizationId
+
+
+ALTER procedure GetMediaTypes 
+as
+select MediaTypeId, TypeName
+from MediaTypes
+
+
+ALTER procedure GetMediaFactorNamesByMediaTypeId 
+@MediaTypeId int 
+as
+select FactorName1, FactorName2, FactorName3, FactorName4, FactorName5
+from MediaTypes Where MediaTypeId = @MediaTypeId
+
+
+
+ALTER procedure GetEquipmentTypes 
+as
+select  EquipmentTypeId,TypeName
+from EquipmentType
+
+
+
+
+ALTER PROCEDURE dbo.VehicleEquipmentAssignment_Update
+@EquipmentMediaAssigmentId int,
+@EquipmentId int,
+@MediaId int
+AS
+
+
+RETURN
+
+
+
+
+ALTER PROCEDURE dbo.GetVehicleEquipmentAssignmentByID
+@VehicleId bigint
+AS
+   Select a.AssignmentId,a.VehicleId, a.EquipmentMediaAssigmentId,
+          c.Description as EquipmentDescription, c.EquipmentId, d.MediaId, d.Description as MediaDescription
+   from VehicleEquipmentAssignment a inner join 
+   EquipmentMediaAssignment b on a.EquipmentMediaAssigmentId = b.EquipmentMediaAssigmentId and a.VehicleId = @VehicleId 
+   and a.EndDate is null
+   inner join Equipment c on b.EquipmentId = c.EquipmentId
+   inner join Media d on b.MediaId = d.MediaId order by EquipmentDescription, MediaDescription
+RETURN
+
+
+
+ALTER PROCEDURE dbo.GetVehiclesByEquipmentAssignment
+@OrganizationId int
+AS
+   Select distinct a.VehicleId, b.Description 
+   from VehicleEquipmentAssignment a inner join 
+   vlfVehicleInfo b on a.VehicleId = b.VehicleId and b.OrganizationId = @OrganizationId order by Description
+RETURN
+
+
+
+
+ALTER PROCEDURE [dbo].[VehicleEquipmentAssignment_Add]
+@VehicleIds varchar(max),
+@EquipmentMedias varchar(2000)
+AS
+   --Add Equipment Media Assignment to vehicle, 
+   --@VehicleIds format 'VehicleId1,VehicleId2,VehicleId3'
+   --@Equipments format 'equipmentID1#mediaID1,equipmentID2#mediaID2,equipmentID3#mediaID3...
+   Declare @vehicleIds_unAssigned Varchar(max);
+   Declare @factor1 float;
+   Declare @factor2 float;
+   Declare @factor3 float;
+   Declare @factor4 float;
+   Declare @factor5 float;
+   Declare @VehicleIds_b varchar(max);
+   Declare @equipmentData varchar(100);
+   Declare @VehicleIdsData varchar(100);
+   Declare @i_pos int;
+   Declare @i_pos_v int;
+   Declare @i_pos_sp int;
+   Declare @equipmentID int;
+   Declare @mediaID int;
+   Declare @equipmentMediaAssigmentId int;
+   set @vehicleIds_unAssigned = '';
+   set @VehicleIds_b = @VehicleIds;
+   set @i_pos = Charindex(',',@EquipmentMedias);
+   if @i_pos > 0 
+   Begin
+		Set @equipmentData = Substring(@EquipmentMedias,1,@i_pos-1)
+		Set @EquipmentMedias = Substring(@EquipmentMedias,@i_pos + 1, len(@EquipmentMedias))
+   End
+   else 
+		Set @equipmentData = @EquipmentMedias
+  
+	   While (@equipmentData <> '')
+	   Begin
+		  Set @i_pos_sp = Charindex('#',@equipmentData);
+		  if @i_pos_sp > 1
+		  Begin
+			 set @equipmentID = Substring(@equipmentData,1,@i_pos_sp-1);
+			 set @mediaID = Substring(@equipmentData,@i_pos_sp+1,len(@equipmentData));
+
+			 set @VehicleIds = @VehicleIds_b;
+             set @i_pos_v = Charindex(',',@VehicleIds);
+             if  @i_pos_v > 0 
+             Begin
+		         Set @VehicleIdsData = Substring(@VehicleIds,1,@i_pos_v-1)
+		         Set @VehicleIds = Substring(@VehicleIds,@i_pos_v + 1, len(@VehicleIds))
+             End
+             else 
+		         Set @VehicleIdsData = @VehicleIds
+		     While (@VehicleIdsData <> '')
+		     Begin
+				 if (not exists( Select a.EquipmentMediaAssigmentId from VehicleEquipmentAssignment a 
+								 inner join EquipmentMediaAssignment b on 
+								 a.EquipmentMediaAssigmentId = b.EquipmentMediaAssigmentId and a.VehicleId = @VehicleIdsData
+								 and  b.EquipmentId = @equipmentID and b.MediaId =  @mediaID and EndDate is null
+								 )
+					 )
+				 Begin
+				    set @equipmentMediaAssigmentId = null;
+					set @factor1 = null;
+					set @factor2 = null;
+					set @factor3 = null;
+					set @factor4 = null;
+					set @factor5 = null;
+					Select @factor1 = factor1,@factor2 = factor2,@factor3 = factor3,
+					       @factor4 = factor4,@factor5 = factor5 from  Media where MediaId =  @mediaID;
+				    Select top 1 @equipmentMediaAssigmentId = a.EquipmentMediaAssigmentId from
+					       EquipmentMediaAssignment a where a.EquipmentId = @equipmentID and a.MediaId =  @mediaID
+
+				    BEGIN TRY
+	                    BEGIN TRANSACTION
+						if (@equipmentMediaAssigmentId is null) 
+						Begin
+						   Insert into EquipmentMediaAssignment(EquipmentId, MediaId) Values(@equipmentID, @mediaID)
+						   Set @equipmentMediaAssigmentId = SCOPE_IDENTITY()
+						End
+						Insert into VehicleEquipmentAssignment(VehicleId, EquipmentMediaAssigmentId, factor1, factor2, factor3,factor4,factor5,StartDate)
+							Values(@VehicleIdsData, @equipmentMediaAssigmentId,@factor1, @factor2, @factor3,@factor4,@factor5,getutcdate())
+						COMMIT TRANSACTION
+                    End Try
+                    BEGIN CATCH
+	                   IF @@TRANCOUNT > 0
+		                 ROLLBACK TRANSACTION;
+                       set @vehicleIds_unAssigned = @vehicleIds_unAssigned + ',' + @VehicleIdsData;
+                    END CATCH
+				 End
+   
+                 set @i_pos_v = Charindex(',',@VehicleIds);
+                 if  @i_pos_v > 0 
+                 Begin
+		             Set @VehicleIdsData = Substring(@VehicleIds,1,@i_pos_v-1)
+		             Set @VehicleIds = Substring(@VehicleIds,@i_pos_v + 1, len(@VehicleIds))
+                 End
+                 else 
+                 Begin
+		             if @VehicleIdsData = @VehicleIds
+		             set @VehicleIdsData = ''
+		         else
+		             Set @VehicleIdsData = @VehicleIds
+                 End 
+			 End
+		  End
+		  set @i_pos = Charindex(',',@EquipmentMedias);
+		  if @i_pos > 0 
+		  Begin
+			 Set @equipmentData = Substring(@EquipmentMedias,1,@i_pos-1)
+			 Set @EquipmentMedias = Substring(@EquipmentMedias,@i_pos + 1, len(@EquipmentMedias))
+		  End
+		  else 
+		  Begin
+			 if @equipmentData = @EquipmentMedias
+			   Set @equipmentData = ''
+			 else 
+			   Set @equipmentData = @EquipmentMedias
+		  End
+	   End
+	
+	   return @vehicleIds_unAssigned;
+
+
+
+
+
+
+ALTER procedure GetOrganizationEquipments (
+		 @OrganizationId int
+	
+		)
+as
+select  EquipmentId, OrganizationId,Description,Equipment.EquipmentTypeId,TypeName
+from Equipment
+	inner join EquipmentType on Equipment.EquipmentTypeId=EquipmentType.EquipmentTypeId
+where OrganizationId=@OrganizationId
+
+
+ALTER PROCEDURE [dbo].[VehicleEquipmentAssignment_Delete]
+@AssignmentId int
+
+AS
+ 
+	   Update VehicleEquipmentAssignment set EndDate = Getutcdate() where AssignmentId = @AssignmentId
+
+
+
+ALTER procedure Equipment_Delete (
+         @EquipmentId int
+		)
+as
+if exists(Select EquipmentMediaAssigmentId from EquipmentMediaAssignment where EquipmentId = @EquipmentId)
+Begin 
+   return -1
+End 
+else
+Begin
+   Delete Equipment Where EquipmentId = @EquipmentId
+   return 1
+end 
+
+
+ALTER procedure Media_Delete (
+         @MediaId int
+		)
+as
+if exists(Select EquipmentMediaAssigmentId from EquipmentMediaAssignment where MediaId = @MediaId)
+Begin 
+   return -1
+End 
+Else
+Begin
+   Delete Media where MediaId = @MediaId
+   return 1
+End 
+
+
+Create procedure GetCommunicationType
+as
+Select * from CommunicationType
+
+
+
+
+ALTER procedure VehicleContacts_Add
+	(
+		@VehicleId bigint,
+		@OrganizationId int,
+		@FirstName  varchar(50),
+		@MiddleName varchar(50),
+		@LastName   varchar(50),
+		@TimeZone   int,
+		@Contacts   varchar(8000)
+	)
+as
+--@Contacts is xml format 
+Declare @ContactInfoId bigint;
+Declare @Priority int;
+BEGIN TRY
+	BEGIN TRANSACTION
+	Insert into ContactInfo(OrganizationId, FirstName, MiddleName, LastName, TimeZone) 
+	       Values(@OrganizationId, @FirstName, @MiddleName, @LastName, @TimeZone);
+    set @ContactInfoId = SCOPE_IDENTITY();
+
+	select @Priority = max(Priority) + 1 from VehicleContacts where VehicleId = @VehicleId;
+
+	Insert into VehicleContacts(VehicleId, ContactId, Priority)
+	       values(@VehicleId, @ContactInfoId, @Priority );
+
+    Insert into ContactCommunication (ContactId, CommunicationTypeId, CommunicationData, Priority)
+	(Select @ContactInfoId as ContactId, TypeId as CommunicationTypeId, TypeData as CommunicationData, Priority
+	      FROM OPENXML(@Contacts, '/ROOT/Contact') 
+		  WITH (TypeId int,
+		        TypeData varchar(100), 
+				Priority int)
+    )
+
+	COMMIT TRANSACTION
+End Try
+BEGIN CATCH
+	IF @@TRANCOUNT > 0
+		ROLLBACK TRANSACTION;
+
+	DECLARE @ErrMsg nvarchar(4000), @ErrSeverity int
+	SELECT @ErrMsg = ERROR_MESSAGE(),
+		@ErrSeverity = ERROR_SEVERITY()
+
+	RAISERROR(@ErrMsg, @ErrSeverity, 1)
+END CATCH
+RETURN
+
+Create procedure GetMediaByMediaId 
+@MediaId int 
+as
+select * from media  Where MediaId = @MediaId
+
+ALTER PROCEDURE dbo.VehicleEquipmentAssignment_UpdateFactors
+@VehicleIds varchar(max),
+@factor1 varchar(50),
+@factor2 varchar(50),
+@factor3 varchar(50),
+@factor4 varchar(50),
+@factor5 varchar(50),
+@EquipmentMediaAssigmentId varchar(50),
+@UnitOfMeasureId int,
+@UserId int 
+AS
+	Declare @SQL varchar(max)
+
+ 
+     Begin
+        DECLARE @ScaleFactor float;
+     	Set @ScaleFactor = dbo.GetScaleFactorByUnitOfMeasureId(@UnitOfMeasureId, @UserId);
+		if (@Factor1 is not null)  set @Factor1 = @Factor1*@ScaleFactor;
+		if (@Factor2 is not null)  set @Factor2 = @Factor2*@ScaleFactor;
+		if (@Factor3 is not null)  set @Factor3 = @Factor3*@ScaleFactor;
+		if (@Factor4 is not null)  set @Factor4 = @Factor4*@ScaleFactor;
+		if (@Factor5 is not null)  set @Factor5 = @Factor5*@ScaleFactor;
+
+ 		Set @SQL = 'Update  VehicleEquipmentAssignment set ' + 
+				   'factor1=' + ISNULL(@factor1, 'null') + ',' +
+				   'factor2=' + ISNULL(@factor2, 'null') + ',' +
+				   'factor3=' + ISNULL(@factor3, 'null') + ',' +
+				   'factor4=' + ISNULL(@factor4, 'null') + ',' +
+				   'factor5=' + ISNULL(@factor5, 'null') + ' ' + 
+				   'where vehicleid in (' + @VehicleIds + ') ' + 
+				   'and EndDate is null and EquipmentMediaAssigmentId=' + @EquipmentMediaAssigmentId;
+		 Execute (@SQL)
+
+	 End
+RETURN
+
+ALTER PROCEDURE dbo.GetVehicleEquipmentFactorsById
+@AssignmentId int,
+@UserId int
+AS
+Begin
+
+	DECLARE @MetricSystem smallint
+	SELECT  @MetricSystem=CONVERT(smallint,isnull(PreferenceValue,0)) from vlfUserPreference where UserId=@UserId and PreferenceId=27
+
+    Select a.Factor1/(
+		   CASE UnitOfMeasure.ScaleFactor
+                WHEN 0    THEN 1
+                ELSE UnitOfMeasure.ScaleFactor
+           END) as Factor1,
+		   a.Factor2/(
+		   CASE UnitOfMeasure.ScaleFactor
+                WHEN 0    THEN 1
+                ELSE UnitOfMeasure.ScaleFactor
+           END) as Factor2,
+		   a.Factor3/(CASE UnitOfMeasure.ScaleFactor
+                WHEN 0    THEN 1
+                ELSE UnitOfMeasure.ScaleFactor
+           END) as Factor3,
+		    a.Factor4/(CASE UnitOfMeasure.ScaleFactor
+                WHEN 0    THEN 1
+                ELSE UnitOfMeasure.ScaleFactor
+           END) as Factor4,
+		   a.Factor5/(CASE UnitOfMeasure.ScaleFactor
+                WHEN 0    THEN 1
+                ELSE UnitOfMeasure.ScaleFactor
+           END) as Factor5,
+          c.Description as EquipmentDescription,
+		  d.Description as MediaDescription, d.UnitOfMeasureId, UnitOfMeasure.UnitOfMeasureAcr,
+		  e.FactorName1,
+		  e.FactorName2,
+		  e.FactorName3,
+		  e.FactorName4,
+		  e.FactorName5, vlfVehicleInfo.Description as VehicleDescription 
+   from VehicleEquipmentAssignment a
+   inner join EquipmentMediaAssignment b on a.EquipmentMediaAssigmentId = b.EquipmentMediaAssigmentId
+   inner join Equipment c on b.EquipmentId = c.EquipmentId
+   inner join Media d on b.MediaId = d.MediaId
+   inner join MediaTypes e on e.MediaTypeId = d.MediaTypeId
+   inner join UnitOfMeasure on d.UnitOfMeasureId = UnitOfMeasure.BaseUnit and UnitOfMeasure.MetricSystem=@MetricSystem
+   inner join vlfVehicleInfo on a.VehicleId = vlfVehicleInfo.VehicleId 
+   where a.AssignmentId = @AssignmentId
+
+End
+
+RETURN
+
+
+ALTER PROCEDURE dbo.GetVehiclesEquipmentAssignmentByFleetId
+@FleetId int
+AS
+   Select distinct a.VehicleId, c.Description, d.BoxId
+   from VehicleEquipmentAssignment a 
+   inner join vlfFleetVehicles  b on a.VehicleId = b.VehicleId and b.FleetId = @FleetId
+   inner join vlfVehicleInfo c on a.VehicleId = c.VehicleId 
+   inner join vlfVehicleAssignment d on a.VehicleId = d.VehicleId
+   where a.EndDate is null
+   order by Description
+RETURN
+
+
+ALTER PROCEDURE dbo.GetVehiclesByFleetIdandEquipmentMediaAssigmentId
+@EquipmentMediaAssigmentId int,
+@FleetId int
+AS
+   Select distinct a.VehicleId, c.Description
+   from VehicleEquipmentAssignment a 
+   inner join vlfFleetVehicles  b on a.VehicleId = b.VehicleId and b.FleetId = @FleetId
+   inner join vlfVehicleInfo c on a.VehicleId = c.VehicleId 
+   where a.EndDate is null and a.EquipmentMediaAssigmentId = @EquipmentMediaAssigmentId
+   order by Description
+RETURN
+
+
+ALTER PROCEDURE dbo.GetFleetByEquipmentMediaAssigmentId
+@EquipmentMediaAssigmentId int,
+@UserId int
+AS
+   Select distinct b.FleetId, c.FleetName
+   from VehicleEquipmentAssignment a 
+   inner join vlfFleetVehicles  b on a.VehicleId = b.VehicleId 
+   inner join vlfFleet c on b.FleetId = c.FleetId 
+   inner join vlfFleetUsers d on b.FleetId = d.FleetId and d.UserId = @UserId
+   where a.EndDate is null and a.EquipmentMediaAssigmentId = @EquipmentMediaAssigmentId
+   order by FleetName
+RETURN
+
+
+ALTER PROCEDURE dbo.GetVehiclesWithNoEquipmentAssignmentById
+@EquipmentMediaAssigmentId int,
+@FleetId int
+AS
+   Select distinct b.VehicleId, c.Description
+   from  vlfFleetVehicles  b 
+   inner join vlfVehicleInfo c on b.VehicleId = c.VehicleId
+   where   b.FleetId = @FleetId and b.VehicleId not in 
+    (Select a.VehicleId from VehicleEquipmentAssignment a where a.EndDate is null and
+	   a.EquipmentMediaAssigmentId = @EquipmentMediaAssigmentId)
+   order by Description
+RETURN
+
+
+ALTER PROCEDURE dbo.GetFleetWithNoEquipmentAssignmentById
+@EquipmentMediaAssigmentId int,
+@UserId int
+AS
+   Select distinct b.FleetId, c.FleetName
+   from  vlfFleetVehicles  b 
+   inner join vlfFleet c on b.FleetId = c.FleetId 
+   inner join vlfFleetUsers d on b.FleetId = d.FleetId and d.UserId = @UserId
+   where b.VehicleId not in 
+    (Select a.VehicleId from VehicleEquipmentAssignment a where a.EndDate is null and
+	   a.EquipmentMediaAssigmentId = @EquipmentMediaAssigmentId)
+   order by FleetName
+RETURN
+
+
+ALTER PROCEDURE dbo.VehicleEquipmentAssignment_AssignNew
+@VehicleIds varchar(max),
+@EquipmentMediaAssigmentId int,
+@Factor1 float,
+@Factor2 float,
+@Factor3 float,
+@Factor4 float,
+@Factor5 float,
+@UnitOfMeasureId int,
+@UserId int 
+
+AS 
+
+    DECLARE @ScaleFactor float;
+   	Set @ScaleFactor = dbo.GetScaleFactorByUnitOfMeasureId(@UnitOfMeasureId, @UserId);
+    if (@Factor1 is not null)  set @Factor1 = @Factor1*@ScaleFactor;
+	if (@Factor2 is not null)  set @Factor2 = @Factor2*@ScaleFactor;
+	if (@Factor3 is not null)  set @Factor3 = @Factor3*@ScaleFactor;
+	if (@Factor4 is not null)  set @Factor4 = @Factor4*@ScaleFactor;
+	if (@Factor5 is not null)  set @Factor5 = @Factor5*@ScaleFactor;
+
+
+    Declare @isExist bit;
+    Declare @vehicleIds_unAssigned varchar(max);
+    Declare @VehicleIdsData varchar(100);
+    Declare @i_pos_v int;
+    set @i_pos_v = Charindex(',',@VehicleIds);
+    if  @i_pos_v > 0 
+    Begin
+		Set @VehicleIdsData = Substring(@VehicleIds,1,@i_pos_v-1)
+		Set @VehicleIds = Substring(@VehicleIds,@i_pos_v + 1, len(@VehicleIds))
+    End
+    else Set @VehicleIdsData = @VehicleIds
+	
+	set @vehicleIds_unAssigned = '';
+	While (@VehicleIdsData <> '')
+	Begin
+			     
+		if (not exists( Select a.EquipmentMediaAssigmentId from VehicleEquipmentAssignment a where 
+						a.EquipmentMediaAssigmentId = @EquipmentMediaAssigmentId and a.VehicleId = @VehicleIdsData and 
+						a.EndDate is null)
+			)
+			Set @isExist = 0
+		else Set @isExist = 1
+		
+  		BEGIN TRY
+	    --BEGIN TRANSACTION
+		        
+				if @isExist = 0
+				Begin
+					Insert into VehicleEquipmentAssignment(VehicleId, EquipmentMediaAssigmentId, factor1, factor2, factor3,factor4,factor5,StartDate)
+						Values(@VehicleIdsData, @EquipmentMediaAssigmentId,@Factor1, @Factor2, @Factor3,@Factor4,@Factor5,getutcdate())
+
+				End
+
+ 		--COMMIT TRANSACTION
+        End Try
+        BEGIN CATCH
+	        --IF @@TRANCOUNT > 0  ROLLBACK TRANSACTION;
+            set @vehicleIds_unAssigned = @vehicleIds_unAssigned + ',' + @VehicleIdsData;
+        END CATCH
+
+        set @i_pos_v = Charindex(',',@VehicleIds);
+        if  @i_pos_v > 0 
+        Begin
+		    Set @VehicleIdsData = Substring(@VehicleIds,1,@i_pos_v-1);
+		    Set @VehicleIds = Substring(@VehicleIds,@i_pos_v + 1, len(@VehicleIds));
+        End
+        else 
+        Begin
+		    if @VehicleIdsData = @VehicleIds
+		       set @VehicleIdsData = ''
+		    else
+		       Set @VehicleIdsData = @VehicleIds
+        End 
+	End
+	return @vehicleIds_unAssigned
+
+
+
+
+ALTER PROCEDURE dbo.GetUnitOfMeasureByUserId
+    @UserId int
+AS
+    DECLARE @MetricSystem smallint
+	SELECT  @MetricSystem=CONVERT(smallint,isnull(PreferenceValue,0)) from vlfUserPreference where UserId=@UserId and PreferenceId=27
+
+	Select BaseUnit, UnitOfMeasureAcr from UnitOfMeasure where MetricSystem=@MetricSystem 
+
+ALTER FUNCTION [dbo].[GetScaleFactorByUnitOfMeasureId]
+(
+		 @UnitOfMeasureId int,
+		 @UserId int 
+)
+RETURNS float
+AS
+BEGIN
+    if (@UnitOfMeasureId is null or @UserId is null) return 1;
+
+	DECLARE @MetricSystem smallint;
+    DECLARE @ScaleFactor float;
+
+	SELECT  @MetricSystem=CONVERT(smallint,isnull(PreferenceValue,0)) from vlfUserPreference where UserId=@UserId and PreferenceId=27;
+
+	set @ScaleFactor = null;
+    select @ScaleFactor=ScaleFactor from UnitOfMeasure where BaseUnit = @UnitOfMeasureId  and MetricSystem=@MetricSystem;
+
+	if @ScaleFactor is null or @ScaleFactor = 0 set @ScaleFactor = 1
+	return @ScaleFactor
+END
+
+
+
+ALTER procedure [dbo].[ContactInfo_Add]
+(
+		@OrganizationId int,
+		@isCompany  bit,
+		@Company    varchar(50),
+		@FirstName  varchar(50),
+		@MiddleName varchar(50),
+		@LastName   varchar(50),
+		@TimeZone   int,
+		@Contacts   varchar(4000)
+	)
+as
+--@Contacts is xml format 
+
+    Declare @ContactInfoId bigint;
+
+	DECLARE @idoc int
+    create table #tmp
+	(
+	    CommunicationTypeId int,
+	    CommunicationData   varchar(100),
+		Priority int NOT NULL IDENTITY (1, 1)
+    )
+
+	if (@Contacts != '')
+	Begin
+		BEGIN TRY
+			EXEC sp_xml_preparedocument @idoc OUTPUT, @Contacts;
+			Insert into  #tmp(CommunicationTypeId, CommunicationData)
+			(Select TypeId as CommunicationTypeId, TypeData as CommunicationData
+				  FROM OPENXML(@idoc, '/ROOT/Contact',2) 
+				  WITH (TypeId int,
+						TypeData varchar(100)));
+			exec sp_xml_removedocument @idoc;
+		END TRY
+		BEGIN CATCH
+		End Catch
+	End
+     
+	BEGIN TRY
+	    BEGIN TRANSACTION
+
+		Insert into ContactInfo(OrganizationId, isCompany, Company, FirstName, MiddleName, LastName, TimeZone) 
+			   Values(@OrganizationId, @isCompany, @Company, @FirstName, @MiddleName, @LastName, @TimeZone);
+		set @ContactInfoId = SCOPE_IDENTITY();
+
+
+		Insert into ContactCommunications(ContactId, CommunicationTypeId, CommunicationData, Priority)
+		(Select @ContactInfoId as ContactId, CommunicationTypeId, CommunicationData, Priority from #tmp);
+		
+		COMMIT TRANSACTION
+    End Try
+    BEGIN CATCH
+	    IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+		Drop table #tmp
+        DECLARE @ErrMsg nvarchar(4000), @ErrSeverity int
+        SELECT @ErrMsg = ERROR_MESSAGE(),
+               @ErrSeverity = ERROR_SEVERITY()
+
+               RAISERROR(@ErrMsg, @ErrSeverity, 1)
+
+	END CATCH
+
+    Drop table #tmp	
+
+
+
+
+
+ALTER procedure ContactInfo_Delete
+	(
+		@ContactInfoId bigint
+	)
+as
+--to check it is used or not
+BEGIN TRY
+	BEGIN TRANSACTION    
+	   Delete from ContactPlanCommunications where ContactCommunicationID in 
+	     (Select ContactCommunicationID from ContactCommunications a inner join ContactInfo b
+		     on b.ContactInfoId = @ContactInfoId and  a.ContactId = b.ContactInfoId
+		  )
+       delete from  dbo.ContactCommunications where  ContactId=@ContactInfoId;
+	   delete from  dbo.ContactInfo where ContactInfoId = @ContactInfoId
+	 COMMIT TRANSACTION
+
+END TRY
+BEGIN CATCH
+	  IF @@TRANCOUNT > 0   ROLLBACK TRANSACTION
+
+        DECLARE @ErrMsg nvarchar(4000), @ErrSeverity int
+        SELECT @ErrMsg = ERROR_MESSAGE(),
+               @ErrSeverity = ERROR_SEVERITY()
+
+               RAISERROR(@ErrMsg, @ErrSeverity, 1)
+
+
+END CATCH
+
+
+ALTER procedure ContactInfo_Update
+	(
+        @ContactInfoId bigint,
+		@isCompany  bit,
+		@Company    varchar(50),
+		@FirstName  varchar(50),
+		@MiddleName varchar(50),
+		@LastName   varchar(50),
+		@TimeZone   int,
+		@DeletedIds varchar(3000),
+		@Contacts   varchar(4000),
+		@OrganizationId int
+	)
+as
+--@Contacts is xml format 
+
+    --Check Valid @OrganizationId
+	if not exists(Select ContactInfoId from ContactInfo
+	                where OrganizationId = @OrganizationId and ContactInfoId = @ContactInfoId
+				 ) 
+	Begin
+	   return
+	End
+
+
+	DECLARE @idoc int
+    create table #tmp
+	(
+	    Id                  varchar(50),
+	    CommunicationTypeId int,
+	    CommunicationData   varchar(100),
+		Priority int NOT NULL IDENTITY (1, 1)
+    )
+
+	if (@Contacts != '')
+	Begin
+		BEGIN TRY
+			EXEC sp_xml_preparedocument @idoc OUTPUT, @Contacts;
+			Insert into  #tmp(Id, CommunicationTypeId, CommunicationData)
+			(Select Id, TypeId as CommunicationTypeId, TypeData as CommunicationData
+				  FROM OPENXML(@idoc, '/ROOT/Contact',2) 
+				  WITH (Id varchar(50),
+				        TypeId int,
+						TypeData varchar(100)));
+			exec sp_xml_removedocument @idoc;
+		END TRY
+		BEGIN CATCH
+		End Catch
+	End
+
+    Declare @tmp_exist bit ;
+	set @tmp_exist = 0;
+	If exists(Select * from #tmp ) set @tmp_exist = 1;
+
+	BEGIN TRY
+	    BEGIN TRANSACTION
+
+		Update ContactInfo Set isCompany = @isCompany,
+							   Company = @Company,
+							   FirstName = @FirstName,
+							   MiddleName = @MiddleName,
+							   LastName = @LastName,
+							   TimeZone = @TimeZone
+		where ContactInfoId = @ContactInfoId and 
+			  (isCompany <> @isCompany or
+			   Company <> @Company or 
+			   FirstName <> @FirstName or 
+			   MiddleName <> @MiddleName or 
+			   LastName <> @LastName or 
+			   TimeZone <> @TimeZone
+			   )
+
+
+		if @tmp_exist = 1
+		Begin
+			Update dbo.ContactCommunications Set ContactCommunications.CommunicationData = #tmp.CommunicationData
+			From ContactCommunications, #tmp where ContactCommunications.ContactCommunicationID = #tmp.Id   and 
+			rtrim(ltrim(isnull(id,''))) <> '' and ContactCommunications.ContactId = @ContactInfoId;
+
+
+			Insert into ContactCommunications(ContactId, CommunicationTypeId, CommunicationData, Priority)
+			(Select @ContactInfoId as ContactId, CommunicationTypeId, CommunicationData, Priority from #tmp where rtrim(ltrim(isnull(id,''))) = '');
+
+		End
+
+		if isnull(@DeletedIds,'') != ''
+		Begin
+			Declare @sql varchar(3500);
+			set  @sql = 'delete from dbo.ContactPlanCommunications where ContactCommunicationID in (Select ContactCommunicationID from dbo.ContactCommunications where ContactId=' + cast(@ContactInfoId as varchar(50)) + ' and ContactCommunicationID in (' + @DeletedIds + '))';
+
+			Execute (@sql)
+
+			set  @sql = 'delete from dbo.ContactCommunications where  ContactId= ' + cast(@ContactInfoId as varchar(50)) + ' and ContactCommunicationID in (' + @DeletedIds + ')';
+			Execute (@sql)
+		End
+
+    COMMIT TRANSACTION
+    End Try
+    BEGIN CATCH
+	    IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+		
+		Drop table #tmp	
+        DECLARE @ErrMsg nvarchar(4000), @ErrSeverity int
+        SELECT @ErrMsg = ERROR_MESSAGE(),
+               @ErrSeverity = ERROR_SEVERITY()
+
+               RAISERROR(@ErrMsg, @ErrSeverity, 1)
+
+	END CATCH
+
+	Drop table #tmp	
+
+
+
+
+
+ALTER procedure ContactPlan_Add
+	(
+		@ContactPlanName  varchar(50),
+		@OrganizationId int,
+		@ContactCommunicationIDs varchar(2000)
+	)
+as
+    Declare @ContactPlanId int;
+	
+	Declare @i_pos_v int;
+	Declare @ContactCommunicationData varchar(50);
+	Declare @Priority int;
+	Set @Priority = 1;
+
+
+	BEGIN TRY
+		BEGIN TRANSACTION
+
+		Insert into ContactPlan(ContactPlanName, OrganizationId)
+			   Values(@ContactPlanName, @OrganizationId);
+		Set @ContactPlanId =  SCOPE_IDENTITY();
+
+		if  rtrim(ltrim(@ContactCommunicationIDs)) <> ''
+		Begin
+			set @i_pos_v = Charindex(',',@ContactCommunicationIDs);
+			if  @i_pos_v > 0 
+			Begin
+				Set @ContactCommunicationData = Substring(@ContactCommunicationIDs,1,@i_pos_v-1);
+				Set @ContactCommunicationIDs = Substring(@ContactCommunicationIDs,@i_pos_v + 1, len(@ContactCommunicationIDs));
+			End
+			else Set @ContactCommunicationData = @ContactCommunicationIDs;
+
+			While (@ContactCommunicationData <> '')
+			Begin 
+				Insert into ContactPlanCommunications(ContactPlanId,ContactCommunicationID, Priority)
+				Values(@ContactPlanId, @ContactCommunicationData, @Priority);
+
+				set @i_pos_v = Charindex(',',@ContactCommunicationIDs);
+				if  @i_pos_v > 0 
+				Begin
+					Set @ContactCommunicationData = Substring(@ContactCommunicationIDs,1,@i_pos_v-1);
+					Set @ContactCommunicationIDs = Substring(@ContactCommunicationIDs,@i_pos_v + 1, len(@ContactCommunicationIDs));
+				End
+				else 
+				Begin
+					if @ContactCommunicationData = @ContactCommunicationIDs
+					   set @ContactCommunicationData = '';
+					else
+					   Set @ContactCommunicationData = @ContactCommunicationIDs;
+				End 
+				Set @Priority = @Priority + 1;
+		   End
+
+		End
+
+		COMMIT TRANSACTION
+    End Try
+    BEGIN CATCH
+	    IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+        DECLARE @ErrMsg nvarchar(4000), @ErrSeverity int
+        SELECT @ErrMsg = ERROR_MESSAGE(),
+               @ErrSeverity = ERROR_SEVERITY()
+
+               RAISERROR(@ErrMsg, @ErrSeverity, 1)
+
+	END CATCH
+
+
+ALTER procedure ContactPlan_Delete
+	(
+		@ContactPlanId int
+	)
+as
+
+	BEGIN TRY
+	    BEGIN TRANSACTION
+
+        Delete ContactPlanCommunications where ContactPlanId = @ContactPlanId
+	    Delete ContactPlan where ContactPlanId = @ContactPlanId
+
+		COMMIT TRANSACTION
+    End Try
+    BEGIN CATCH
+	    IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+        DECLARE @ErrMsg nvarchar(4000), @ErrSeverity int
+        SELECT @ErrMsg = ERROR_MESSAGE(),
+               @ErrSeverity = ERROR_SEVERITY()
+
+               RAISERROR(@ErrMsg, @ErrSeverity, 1)
+
+	END CATCH
+
+
+	ALTER procedure ContactPlanCommunications_Add
+	(
+		@ContactPlanId int,
+		@ContactCommunicationIDs varchar(2000)
+	)
+as
+	Declare @i_pos_v int;
+	Declare @ContactCommunicationData varchar(50);
+	Declare @Priority int;
+	Select @Priority = isnull(max(Priority),0) from ContactPlanCommunications where ContactPlanId = @ContactPlanId;
+	Set @Priority = @Priority + 1;
+
+
+	BEGIN TRY
+	    BEGIN TRANSACTION
+
+			if  rtrim(ltrim(@ContactCommunicationIDs)) <> ''
+			Begin
+
+				set @i_pos_v = Charindex(',',@ContactCommunicationIDs);
+				if  @i_pos_v > 0 
+				Begin
+					Set @ContactCommunicationData = Substring(@ContactCommunicationIDs,1,@i_pos_v-1);
+					Set @ContactCommunicationIDs = Substring(@ContactCommunicationIDs,@i_pos_v + 1, len(@ContactCommunicationIDs));
+				End
+				else Set @ContactCommunicationData = @ContactCommunicationIDs;
+
+				While (@ContactCommunicationData <> '')
+				Begin 
+		    
+					if not exists(Select ContactCommunicationID from ContactPlanCommunications where ContactPlanId = @ContactPlanId and ContactCommunicationID = @ContactCommunicationData) 
+					Begin
+					   Insert into ContactPlanCommunications(ContactPlanId,ContactCommunicationID, Priority)
+					   Values(@ContactPlanId, @ContactCommunicationData, @Priority);
+					End
+
+					set @i_pos_v = Charindex(',',@ContactCommunicationIDs);
+					if  @i_pos_v > 0 
+					Begin
+						Set @ContactCommunicationData = Substring(@ContactCommunicationIDs,1,@i_pos_v-1);
+						Set @ContactCommunicationIDs = Substring(@ContactCommunicationIDs,@i_pos_v + 1, len(@ContactCommunicationIDs));
+					End
+					else 
+					Begin
+						if @ContactCommunicationData = @ContactCommunicationIDs
+						   set @ContactCommunicationData = '';
+						else
+						   Set @ContactCommunicationData = @ContactCommunicationIDs;
+					End 
+					Set @Priority = @Priority + 1;
+			   End
+			End
+
+		COMMIT TRANSACTION
+    End Try
+    BEGIN CATCH
+	    IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+        DECLARE @ErrMsg nvarchar(4000), @ErrSeverity int
+        SELECT @ErrMsg = ERROR_MESSAGE(),
+               @ErrSeverity = ERROR_SEVERITY()
+
+               RAISERROR(@ErrMsg, @ErrSeverity, 1)
+
+	END CATCH
+
+	ALTER procedure ContactPlanCommunications_Delete
+	(
+		@ContactPlanId int,
+		@ContactCommunicationID bigint
+	)
+as
+    Delete ContactPlanCommunications where ContactPlanId = @ContactPlanId and ContactCommunicationID = @ContactCommunicationID
+	
+
+
+	
+ALTER procedure GetCommunicationType
+as
+Select * from CommunicationType
+
+
+ALTER procedure GetOrganizationContactPlan (
+		 @OrganizationId int
+		)
+as
+
+Begin
+    Select ContactPlanName, ContactPlanId from ContactPlan where OrganizationId = @OrganizationId order by ContactPlanName
+End
+
+ALTER procedure GetOrganizationContacts (
+		 @OrganizationId int
+		)
+as
+
+Begin
+    Select * 
+	from ContactInfo
+	where OrganizationId=@OrganizationId
+
+End
+
+
+ALTER procedure GetOrganizationDriverContactPlan (
+		 @OrganizationId int,
+		 @DriverId int
+		)
+as
+
+Begin
+    if isnull(@DriverId,'') = ''
+		Select a.*, b.FirstName, b.LastName from DriverContactPlan a inner join vlfDriver b on b.OrganizationId = @OrganizationId  
+			and a.DriverId = b.DriverId  
+			order by b.FirstName
+	else
+		Select a.*, b.FirstName, b.LastName from DriverContactPlan a inner join vlfDriver b on a.DriverId = @DriverId
+			and a.DriverId = b.DriverId  
+
+End
+
+
+ALTER PROCEDURE dbo.DriverContactPlan_Add
+     @DriverId int,
+	 @EmergencyPhone varchar(20),
+	 @ContactPlanId  int
+AS
+	Insert into DriverContactPlan(DriverId, EmergencyPhone, ContactPlanId)
+	Values(@DriverId, @EmergencyPhone, @ContactPlanId)
+	RETURN
+
+
+
+ALTER PROCEDURE dbo.DriverContactPlan_Update
+     @DriverId int,
+	 @EmergencyPhone varchar(20),
+	 @ContactPlanId  int,
+	 @IsAssignPanic bit
+AS
+ 
+    if @IsAssignPanic = 1
+	    if (exists(Select DriverId from DriverContactPlan where DriverId = @DriverId ))
+		Begin 
+		    Update DriverContactPlan Set EmergencyPhone=@EmergencyPhone,
+									     ContactPlanId=@ContactPlanId
+		    Where DriverId = @DriverId 
+		End
+		Else
+		Begin
+	       Insert into DriverContactPlan(DriverId, EmergencyPhone, ContactPlanId)
+	       Values(@DriverId, @EmergencyPhone, @ContactPlanId)
+		End
+	else
+		Delete DriverContactPlan 
+		Where DriverId = @DriverId
+
+	RETURN
+
+
+ALTER PROCEDURE [dbo].[DriverAndContactPlanAdd]
+(
+	-- Add the parameters for the stored procedure here
+	@firstName varchar(50),
+	@lastName varchar(50),
+	@license varchar(50),
+	@class varchar(20),
+	@licenseIssued datetime,
+	@licenseExpired datetime,
+	@orgId int,
+	@gender char(1),
+	@height smallint,
+	@homePhone varchar(20),
+	@cellPhone varchar(20),
+	@additionalPhone varchar(20),
+	@smsid varchar(50),
+	--@smspwd varchar(50),
+	@email varchar(50),
+	@address varchar(100),
+	@city varchar(50),
+	@zipcode varchar(20),
+	@state varchar(50),
+	@country varchar(50),
+	@descr varchar(100),
+    @EmergencyPhone varchar(20),
+    @ContactPlanId int,
+    @IsAssignPanic bit
+)
+AS
+BEGIN
+DECLARE @cnt int
+-- get license for a driver
+SELECT @cnt = COUNT(*) FROM vlfDriver WHERE License = @license
+IF @cnt > 0
+BEGIN
+	RAISERROR ('DRIVER LICENSE [%s] ALREADY EXISTS', 15, 1, @license)
+	RETURN
+END
+
+    -- Insert statements for procedure here
+	BEGIN TRY
+		BEGIN TRANSACTION
+		INSERT INTO vlfDriver 
+		VALUES (
+			@firstName,
+			@lastName,
+			@license,
+			@class,
+			@licenseIssued,
+			@licenseExpired,
+			@orgId,
+			@gender,
+			@height,
+			@homePhone,
+			@cellPhone,
+			@additionalPhone,
+			@smsid,
+			@email,
+			@address,
+			@city,
+			@zipcode,
+			@state,
+			@country,
+			@descr,
+			null---@smspwd
+		)
+      
+		  if @IsAssignPanic = 1
+		  Begin
+			 Declare @DriverId int 
+			 Set @DriverId = SCOPE_IDENTITY();  
+			 exec DriverContactPlan_Add @DriverId, @EmergencyPhone, @ContactPlanId
+		  end
+		COMMIT TRANSACTION
+
+    End Try
+    BEGIN CATCH
+	    IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+        DECLARE @ErrMsg nvarchar(4000), @ErrSeverity int
+        SELECT @ErrMsg = ERROR_MESSAGE(),
+               @ErrSeverity = ERROR_SEVERITY()
+
+               RAISERROR(@ErrMsg, @ErrSeverity, 1)
+
+	END CATCH
+       
+END
+
+
+
+ALTER PROCEDURE [dbo].[DriverAndContactPlanDelete]
+(
+	@driverId int
+)
+AS
+BEGIN TRAN
+    DELETE FROM DriverContactPlan Where DriverId = @driverId
+	DELETE FROM vlfDriverAssignmentHst WHERE DriverId = @driverId
+	DELETE FROM vlfDriverAssignment WHERE DriverId = @driverId
+	DELETE FROM vlfDriver WHERE DriverId = @driverId
+IF @@ERROR <> 0 
+BEGIN
+	ROLLBACK TRAN
+	RAISERROR ('ERROR DELETING THE DRIVER [ID=%d]', 15, 1, @driverId)
+END
+ELSE COMMIT TRAN
+
+
+
+ALTER PROCEDURE [dbo].[DriverAndContactPlanUpdate]
+(
+	@driverId int,
+	@firstName varchar(50),
+	@lastName varchar(50),
+	@license varchar(50),
+	@class varchar(20),
+	@licenseIssued datetime,
+	@licenseExpired datetime,
+	@orgId int,
+	@gender char(1),
+	@height smallint,
+	@homePhone varchar(20),
+	@cellPhone varchar(20),
+	@additionalPhone varchar(20),
+	@smsid varchar(50),
+	@smspwd varchar(50),
+	@email varchar(50),
+	@address varchar(100),
+	@city varchar(50),
+	@zipcode varchar(20),
+	@state varchar(50),
+	@country varchar(50),
+	@descr varchar(100),
+    @EmergencyPhone varchar(20),
+    @ContactPlanId int,
+    @IsAssignPanic bit
+)
+AS
+BEGIN
+	BEGIN TRY
+		BEGIN TRANSACTION
+
+		UPDATE vlfDriver 
+		SET FirstName = @firstName,
+			LastName = @lastName,
+			License = @license,
+			Class = @class,
+			LicenseIssued = @licenseIssued,
+			LicenseExpired = @licenseExpired,
+			--OrganizationId = @orgId,
+			Gender = @gender,
+			Height = @height,
+			HomePhone = @homePhone,
+			CellPhone = @cellPhone,
+			AdditionalPhone = @additionalPhone,
+			SMSID = @smsid,
+			--SMSPWD = @smspwd,
+			Email = @email,
+			Address = @address,
+			City = @city,
+			ZipCode = @zipcode,
+			State = @state,
+			Country = @country,
+			[Description] = @descr
+		WHERE DriverId = @driverId AND OrganizationId = @orgId
+
+		Exec DriverContactPlan_Update @DriverId,@EmergencyPhone,@ContactPlanId,@IsAssignPanic
+
+		COMMIT TRANSACTION
+
+    End Try
+    BEGIN CATCH
+	    IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+        DECLARE @ErrMsg nvarchar(4000), @ErrSeverity int
+        SELECT @ErrMsg = ERROR_MESSAGE(),
+               @ErrSeverity = ERROR_SEVERITY()
+
+               RAISERROR(@ErrMsg, @ErrSeverity, 1)
+
+	END CATCH
+
+END
+
+
+
+
+ALTER procedure ContactPlanCommunicationsExchange_Priority
+	(
+		@ContactPlanId int,
+		@ContactCommunicationID1 bigint,
+		@ContactCommunicationID2 bigint
+	)
+as
+    Declare @Priority1 int  ;
+	Declare @Priority2 int ;
+	set @Priority1 = null;
+	set @Priority2 = null;
+	Select @Priority1 = Priority from ContactPlanCommunications where 
+	    ContactPlanId= @ContactPlanId and ContactCommunicationID = @ContactCommunicationID1
+
+	Select @Priority2 = Priority from ContactPlanCommunications where 
+	    ContactPlanId= @ContactPlanId and ContactCommunicationID = @ContactCommunicationID2
+
+	if (@Priority1 is not null and @Priority2 is not null)
+	Begin
+		BEGIN TRY
+			BEGIN TRANSACTION
+
+			Update ContactPlanCommunications set Priority = @Priority2 where 
+			       ContactPlanId= @ContactPlanId and ContactCommunicationID = @ContactCommunicationID1
+
+			Update ContactPlanCommunications set Priority = @Priority1 where 
+			       ContactPlanId= @ContactPlanId and ContactCommunicationID = @ContactCommunicationID2
+
+
+			COMMIT TRANSACTION
+		End Try
+		BEGIN CATCH
+			IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+			DECLARE @ErrMsg nvarchar(4000), @ErrSeverity int
+			SELECT @ErrMsg = ERROR_MESSAGE(),
+				   @ErrSeverity = ERROR_SEVERITY()
+
+				   RAISERROR(@ErrMsg, @ErrSeverity, 1)
+
+		END CATCH
+
+
+	End
+	

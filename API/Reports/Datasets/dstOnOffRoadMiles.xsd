@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OnOffRoadMiles" targetNamespace="http://tempuri.org/RoadMiles.xsd" xmlns:mstns="http://tempuri.org/RoadMiles.xsd" xmlns="http://tempuri.org/RoadMiles.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OnOffRoadMiles" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="OnOffRoadMiles" msprop:Generator_DataSetName="OnOffRoadMiles">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="rtp_OnOffRoadMiles" msprop:Generator_UserTableName="rtp_OnOffRoadMiles" msprop:Generator_RowDeletedName="rtp_OnOffRoadMilesRowDeleted" msprop:Generator_TableClassName="rtp_OnOffRoadMilesDataTable" msprop:Generator_RowChangedName="rtp_OnOffRoadMilesRowChanged" msprop:Generator_RowClassName="rtp_OnOffRoadMilesRow" msprop:Generator_RowChangingName="rtp_OnOffRoadMilesRowChanging" msprop:Generator_RowEvArgName="rtp_OnOffRoadMilesRowChangeEvent" msprop:Generator_RowEvHandlerName="rtp_OnOffRoadMilesRowChangeEventHandler" msprop:Generator_TablePropName="rtp_OnOffRoadMiles" msprop:Generator_TableVarName="tablertp_OnOffRoadMiles" msprop:Generator_RowDeletingName="rtp_OnOffRoadMilesRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Fleet" msprop:Generator_UserColumnName="Fleet" msprop:Generator_ColumnPropNameInRow="Fleet" msprop:Generator_ColumnVarNameInTable="columnFleet" msprop:Generator_ColumnPropNameInTable="FleetColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Box" msprop:Generator_UserColumnName="Box" msprop:Generator_ColumnPropNameInRow="Box" msprop:Generator_ColumnVarNameInTable="columnBox" msprop:Generator_ColumnPropNameInTable="BoxColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Vehicle" msprop:Generator_UserColumnName="Vehicle" msprop:Generator_ColumnPropNameInRow="Vehicle" msprop:Generator_ColumnVarNameInTable="columnVehicle" msprop:Generator_ColumnPropNameInTable="VehicleColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalMiles" msprop:Generator_UserColumnName="TotalMiles" msprop:Generator_ColumnPropNameInRow="TotalMiles" msprop:Generator_ColumnVarNameInTable="columnTotalMiles" msprop:Generator_ColumnPropNameInTable="TotalMilesColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="OnRoadMiles" msprop:Generator_UserColumnName="OnRoadMiles" msprop:Generator_ColumnPropNameInRow="OnRoadMiles" msprop:Generator_ColumnVarNameInTable="columnOnRoadMiles" msprop:Generator_ColumnPropNameInTable="OnRoadMilesColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="OffRoadMiles" msprop:Generator_UserColumnName="OffRoadMiles" msprop:Generator_ColumnPropNameInRow="OffRoadMiles" msprop:Generator_ColumnVarNameInTable="columnOffRoadMiles" msprop:Generator_ColumnPropNameInTable="OffRoadMilesColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="rpt_Header" msprop:Generator_UserTableName="rpt_Header" msprop:Generator_RowDeletedName="rpt_HeaderRowDeleted" msprop:Generator_TableClassName="rpt_HeaderDataTable" msprop:Generator_RowChangedName="rpt_HeaderRowChanged" msprop:Generator_RowClassName="rpt_HeaderRow" msprop:Generator_RowChangingName="rpt_HeaderRowChanging" msprop:Generator_RowEvArgName="rpt_HeaderRowChangeEvent" msprop:Generator_RowEvHandlerName="rpt_HeaderRowChangeEventHandler" msprop:Generator_TablePropName="rpt_Header" msprop:Generator_TableVarName="tablerpt_Header" msprop:Generator_RowDeletingName="rpt_HeaderRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TimeZone" msprop:Generator_UserColumnName="TimeZone" msprop:Generator_ColumnPropNameInRow="TimeZone" msprop:Generator_ColumnVarNameInTable="columnTimeZone" msprop:Generator_ColumnPropNameInTable="TimeZoneColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FleetName" msprop:Generator_UserColumnName="FleetName" msprop:Generator_ColumnPropNameInRow="FleetName" msprop:Generator_ColumnVarNameInTable="columnFleetName" msprop:Generator_ColumnPropNameInTable="FleetNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DateFrom" msprop:Generator_UserColumnName="DateFrom" msprop:Generator_ColumnPropNameInRow="DateFrom" msprop:Generator_ColumnVarNameInTable="columnDateFrom" msprop:Generator_ColumnPropNameInTable="DateFromColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DateTo" msprop:Generator_UserColumnName="DateTo" msprop:Generator_ColumnPropNameInRow="DateTo" msprop:Generator_ColumnVarNameInTable="columnDateTo" msprop:Generator_ColumnPropNameInTable="DateToColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Fleet" msprop:Generator_UserColumnName="Fleet" msprop:Generator_ColumnPropNameInRow="Fleet" msprop:Generator_ColumnVarNameInTable="columnFleet" msprop:Generator_ColumnPropNameInTable="FleetColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

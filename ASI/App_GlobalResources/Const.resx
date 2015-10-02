@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="defaultFleetName" xml:space="preserve">
+    <value>All Vehicles</value>
+    <comment>Fleets</comment>
+  </data>
+  <data name="InvalidAddress_addressNA" xml:space="preserve">
+    <value>Address resolution in progress</value>
+    <comment>InvalidAddress</comment>
+  </data>
+  <data name="InvalidAddress_noGPSData" xml:space="preserve">
+    <value>No GPS Data</value>
+    <comment>InvalidAddress</comment>
+  </data>
+  <data name="InvalidAddress_noValidAddress" xml:space="preserve">
+    <value>No Valid GPS Data</value>
+    <comment>InvalidAddress</comment>
+  </data>
+  <data name="MessageType_Alarm" xml:space="preserve">
+    <value>Alarm</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_BadSensor" xml:space="preserve">
+    <value>BadSensor</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_Coordinate" xml:space="preserve">
+    <value>Coordinate</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_Door" xml:space="preserve">
+    <value>Door</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_Duration" xml:space="preserve">
+    <value>Duration</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_ExtremeAcceleration" xml:space="preserve">
+    <value>ExtremeAcceleration</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_ExtremeBraking" xml:space="preserve">
+    <value>ExtremeBraking</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_GeoFence" xml:space="preserve">
+    <value>GeoFence</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_GPSAntennaOK" xml:space="preserve">
+    <value>GPSAntennaOK</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_GPSAntennaOpen" xml:space="preserve">
+    <value>GPSAntennaOpen</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_GPSAntennaShort" xml:space="preserve">
+    <value>GPSAntennaShort</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_HarshAcceleration" xml:space="preserve">
+    <value>HarshAcceleration</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_HarshBraking" xml:space="preserve">
+    <value>HarshBraking</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_Idling" xml:space="preserve">
+    <value>Idling</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_Ignition" xml:space="preserve">
+    <value>Ignition</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_KeyFobArm" xml:space="preserve">
+    <value>KeyFobArm</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_KeyFobDisarm" xml:space="preserve">
+    <value>KeyFobDisarm</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_KeyFobPanic" xml:space="preserve">
+    <value>KeyFobPanic</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_Low" xml:space="preserve">
+    <value>Low</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_Main_Battery" xml:space="preserve">
+    <value>Main Battery</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_No" xml:space="preserve">
+    <value>No</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_Off" xml:space="preserve">
+    <value>Off</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_On" xml:space="preserve">
+    <value>On</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_Open" xml:space="preserve">
+    <value>Open</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_Passenger_In_Seat" xml:space="preserve">
+    <value>Passenger In Seat</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_SeatBelt" xml:space="preserve">
+    <value>SeatBelt</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_Sensor" xml:space="preserve">
+    <value>Sensor</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_Speed" xml:space="preserve">
+    <value>Speed</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_Speeding" xml:space="preserve">
+    <value>Speeding</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_Status" xml:space="preserve">
+    <value>Status</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_StoredPosition" xml:space="preserve">
+    <value>StoredPosition</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="MessageType_Yes" xml:space="preserve">
+    <value>Yes</value>
+    <comment>MessageType</comment>
+  </data>
+  <data name="TripEnd" xml:space="preserve">
+    <value>Trip End</value>
+  </data>
+  <data name="TripEndPTO" xml:space="preserve">
+    <value>PTO End</value>
+  </data>
+  <data name="TripEndTP" xml:space="preserve">
+    <value>Tractor Power End</value>
+  </data>
+  <data name="TripStart" xml:space="preserve">
+    <value>Trip Start</value>
+  </data>
+  <data name="TripStartPTO" xml:space="preserve">
+    <value>PTO Start</value>
+  </data>
+  <data name="TripStartTP" xml:space="preserve">
+    <value>Tractor Power Start</value>
+  </data>
+  <data name="TripSummary" xml:space="preserve">
+    <value>Trip Summary</value>
+  </data>
+  <data name="TripSummaryPTO" xml:space="preserve">
+    <value>PTO Summary</value>
+  </data>
+  <data name="TripSummaryTP" xml:space="preserve">
+    <value>Tractor Power Summary</value>
+  </data>
+  <data name="TripType_PTO" xml:space="preserve">
+    <value>PTO Time</value>
+    <comment>PTOTrip</comment>
+  </data>
+  <data name="TripType_TP" xml:space="preserve">
+    <value>Tractor Power</value>
+    <comment>TPTrip</comment>
+  </data>
+  <data name="TripType_Trip" xml:space="preserve">
+    <value>Trip Time</value>
+    <comment>IgnitionTrip</comment>
+  </data>
+  <data name="UserInfo_ExpiredDate_Unlimited" xml:space="preserve">
+    <value>Unlimited</value>
+    <comment>UserInfo</comment>
+  </data>
+  <data name="ViolationWithScore_AccExtreme" xml:space="preserve">
+    <value>Acc. Extreme</value>
+    <comment>ViolationWithScore</comment>
+  </data>
+  <data name="ViolationWithScore_AccHarsh" xml:space="preserve">
+    <value>Acc. Harsh</value>
+    <comment>ViolationWithScore</comment>
+  </data>
+  <data name="ViolationWithScore_BrakingExtreme" xml:space="preserve">
+    <value>Braking Extreme</value>
+    <comment>ViolationWithScore</comment>
+  </data>
+  <data name="ViolationWithScore_BrakingHarsh" xml:space="preserve">
+    <value>Braking Harsh</value>
+    <comment>ViolationWithScore</comment>
+  </data>
+  <data name="ViolationWithScore_SeatBelt" xml:space="preserve">
+    <value>Seat Belt</value>
+    <comment>ViolationWithScore</comment>
+  </data>
+  <data name="ViolationWithScore_Speed120" xml:space="preserve">
+    <value>Speed &amp;gt;120</value>
+    <comment>ViolationWithScore</comment>
+  </data>
+  <data name="ViolationWithScore_Speed130" xml:space="preserve">
+    <value>Speed &amp;gt;130</value>
+    <comment>ViolationWithScore</comment>
+  </data>
+  <data name="ViolationWithScore_Speed140" xml:space="preserve">
+    <value>Speed &amp;gt;140</value>
+    <comment>ViolationWithScore</comment>
+  </data>
+  <data name="ViolationWithScore_Speed75" xml:space="preserve">
+    <value>Speed &amp;gt;75</value>
+    <comment>ViolationWithScore</comment>
+  </data>
+  <data name="ViolationWithScore_Speed80" xml:space="preserve">
+    <value>Speed &amp;gt;80</value>
+    <comment>ViolationWithScore</comment>
+  </data>
+  <data name="ViolationWithScore_Speed90" xml:space="preserve">
+    <value>Speed &amp;gt;90</value>
+    <comment>ViolationWithScore</comment>
+  </data>
+</root>

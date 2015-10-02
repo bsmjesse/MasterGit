@@ -1,0 +1,23 @@
+﻿<div ng-controller="DepotSummaryCtrl">
+    <div google-chart chart="dataItem" style="border:1px solid Red; height:300px; width:30%;"/>
+    <!--<div google-chart chart="item" style="border:1px solid Red; height:300px; width:30%;" ng-repeat="item in ChartData"/>-->
+    <table class="formtext">
+        <tr class="tableRow">
+            <th>Route</th>
+            <th>Vehicle</th>
+            <th colspan="2">Departure On</th>
+            <th colspan="2">Arrival On</th>
+            <th>Description</th>
+        </tr>
+        <tr class="tableRow " ng-repeat="route in RouteList">
+            <td>{{route.Name}}</td>
+            <td>{{route.VehicleName}}</td>
+            <td>{{route.RSCSchedule_Departure| date:'medium'}}</td>
+            <td>{{route.RSCActual_Departure| date:'medium'}}</td>
+            <td>{{route.RSCSchedule_Arrival| date:'medium'}}</td>
+            <td>{{route.RSCActual_Arrival| date:'medium'}}</td>
+            <td>{{route.Description}}</td>
+        </tr>
+        <thead></thead>
+    </table>
+</div>

@@ -1,0 +1,2751 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.sentinelfm.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.sentinelfm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.sentinelfm.com">
+      <s:element name="GetVehicleStatusHistoryByVehicleId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeTo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCoordinate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeSensor" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includePositionUpdate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeInvalidGps" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="DclId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByVehicleIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleStatusHistoryByVehicleIdResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByVehicleIdByLang_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeTo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCoordinate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeSensor" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includePositionUpdate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeInvalidGps" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="DclId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByVehicleIdByLang_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleStatusHistoryByVehicleIdByLang_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByVehicleIdByLang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeTo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCoordinate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeSensor" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includePositionUpdate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeInvalidGps" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="DclId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByVehicleIdByLangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleStatusHistoryByVehicleIdByLangResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByVehicleIdByLangExtended_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeTo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCoordinate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeSensor" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includePositionUpdate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeInvalidGps" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="DclId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sqlTopRecords" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByVehicleIdByLangExtended_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleStatusHistoryByVehicleIdByLangExtended_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByVehicleIdByLangExtended">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeTo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCoordinate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeSensor" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includePositionUpdate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeInvalidGps" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="DclId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sqlTopRecords" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByVehicleIdByLangExtendedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleStatusHistoryByVehicleIdByLangExtendedResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeTo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCoordinate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeSensor" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includePositionUpdate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeInvalidGps" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="DclId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sqlTopRecords" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeTo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCoordinate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeSensor" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includePositionUpdate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeInvalidGps" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="DclId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sqlTopRecords" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSearchResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByFleetIdByLangExtendedSearch_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeTo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCoordinate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeSensor" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includePositionUpdate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeInvalidGps" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="DclId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sqlTopRecords" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByFleetIdByLangExtendedSearch_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleStatusHistoryByFleetIdByLangExtendedSearch_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByFleetIdByLangExtendedSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeTo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCoordinate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeSensor" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includePositionUpdate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeInvalidGps" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="DclId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="lang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sqlTopRecords" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleStatusHistoryByFleetIdByLangExtendedSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleStatusHistoryByFleetIdByLangExtendedSearchResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleOffHoursInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeTo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayFromHour" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayFromMin" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayToHour" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayToMin" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekendFromHour" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekendFromMin" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekendToHour" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekendToMin" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCoordinate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeSensor" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includePositionUpdate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeInvalidGps" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleOffHoursInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleOffHoursInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetOffHoursInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeTo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayFromHour" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayFromMin" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayToHour" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayToMin" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekendFromHour" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekendFromMin" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekendToHour" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekendToMin" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCoordinate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeSensor" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includePositionUpdate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeInvalidGps" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetOffHoursInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFleetOffHoursInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestOverflowed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDetailedMessageInFromHistory_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDateTime" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDetailedMessageInFromHistory_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDetailedMessageInFromHistory_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDetailedMessageInFromHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDateTime" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDetailedMessageInFromHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDetailedMessageInFromHistoryResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastMessagesFromHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="numOfRecords" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgType" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastMessagesFromHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLastMessagesFromHistoryResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastMessagesFromHistoryByOriginDateTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="numOfRecords" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgType" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastMessagesFromHistoryByOriginDateTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLastMessagesFromHistoryByOriginDateTimeResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastMessagesFromHistoryByOrganization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="numOfRecords" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgType" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastMessagesFromHistoryByOrganizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLastMessagesFromHistoryByOrganizationResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastMessagesOutFromHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="numOfRecords" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cmdType" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastMessagesOutFromHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLastMessagesOutFromHistoryResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastMessagesOutFromHistoryByOrganization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="numOfRecords" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cmdType" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastMessagesOutFromHistoryByOrganizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLastMessagesOutFromHistoryByOrganizationResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDetailedMessageOutFromHistory_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDateTime" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDetailedMessageOutFromHistory_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDetailedMessageOutFromHistory_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDetailedMessageOutFromHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDateTime" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDetailedMessageOutFromHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDetailedMessageOutFromHistoryResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTextMessagesFullInfo_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDirection" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTextMessagesFullInfo_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTextMessagesFullInfo_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTextMessagesFullInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDirection" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTextMessagesFullInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTextMessagesFullInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTextMessageFullInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTextMessageFullInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTextMessageFullInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserTextMessagesFullInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDirection" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserTextMessagesFullInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserTextMessagesFullInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetTextMessagesFullInfo_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDirection" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetTextMessagesFullInfo_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFleetTextMessagesFullInfo_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetTextMessagesFullInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDirection" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetTextMessagesFullInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFleetTextMessagesFullInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetAllTextMessagesFullInfo_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDirection" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetAllTextMessagesFullInfo_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFleetAllTextMessagesFullInfo_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetAllTextMessagesFullInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDirection" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetAllTextMessagesFullInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFleetAllTextMessagesFullInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetAllDestinations_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDirection" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetAllDestinations_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFleetAllDestinations_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetAllDestinations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDirection" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFleetAllDestinationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFleetAllDestinationsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleAllTextMessagesFullInfo_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDirection" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleAllTextMessagesFullInfo_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleAllTextMessagesFullInfo_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleAllTextMessagesFullInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDirection" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleAllTextMessagesFullInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleAllTextMessagesFullInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleAllDestinations_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDirection" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleAllDestinations_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleAllDestinations_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleAllDestinations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDirection" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleAllDestinationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleAllDestinationsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserTextMessagesShortInfo_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDirection" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserTextMessagesShortInfo_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserTextMessagesShortInfo_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserTextMessagesShortInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDirection" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserTextMessagesShortInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserTextMessagesShortInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserIncomingTextMessagesShortInfo_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserIncomingTextMessagesShortInfo_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserIncomingTextMessagesShortInfo_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserIncomingTextMessagesShortInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserIncomingTextMessagesShortInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserIncomingTextMessagesShortInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserIncomingTextMessagesFullInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="peripheralId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgTypeId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="vehicleId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserIncomingTextMessagesFullInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserIncomingTextMessagesFullInfoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMsgsShortInfoCheckSum_NewTZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userTimeZone" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="checksum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMsgsShortInfoCheckSum_NewTZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMsgsShortInfoCheckSum_NewTZResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="checksum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMsgsShortInfoCheckSum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userTimeZone" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="checksum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMsgsShortInfoCheckSumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMsgsShortInfoCheckSumResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="checksum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMsgUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMsgUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetMsgUserIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMsgUserIdExtended">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgTypeId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="originDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="touchDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="peripheralId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="checksumId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMsgUserIdExtendedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetMsgUserIdExtendedResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomPropInHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="origin" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxMsgInTypeId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="customPropertyAddons" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomPropInHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCustomPropInHistoryResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesInHistoryByLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="latitude" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="longitude" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesInHistoryByLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesInHistoryByLocationResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCmdSend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cmdType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCmdSendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCmdSendResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCmdRec">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgTypeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCmdRecResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCmdRecResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesInHistoryByAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fleetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehiclesInHistoryByAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehiclesInHistoryByAddressResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvalidGPSStatistic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="InvalidGPSPercent" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Hours" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvalidGPSStatisticResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetInvalidGPSStatisticResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxesWithoutIpUpdates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Hours" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxesWithoutIpUpdatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBoxesWithoutIpUpdatesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxesReportedFrequency">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Hours" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TotalMsg" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrganizationId" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxesReportedFrequencyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBoxesReportedFrequencyResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxMissingMessages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="boxId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtTo" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoxMissingMessagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBoxMissingMessagesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleAreaSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Latitude" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Longitude" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Radius" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="toDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="orgId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="LandmarkID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PolygonPoints" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FleetIDs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BoxIDs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleAreaSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleAreaSearchResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetVehicleStatusHistoryByVehicleIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByVehicleId" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByVehicleIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByVehicleIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByVehicleIdByLang_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByVehicleIdByLang_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByVehicleIdByLang_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByVehicleIdByLang_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByVehicleIdByLangSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByVehicleIdByLang" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByVehicleIdByLangSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByVehicleIdByLangResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByVehicleIdByLangExtended_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByVehicleIdByLangExtended_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByVehicleIdByLangExtended_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByVehicleIdByLangExtended_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByVehicleIdByLangExtended" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByVehicleIdByLangExtendedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByVehicleIdByLangExtendedSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByFleetIdByLangExtendedSearch_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByFleetIdByLangExtendedSearch_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByFleetIdByLangExtendedSearch_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByFleetIdByLangExtendedSearch_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByFleetIdByLangExtendedSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByFleetIdByLangExtendedSearch" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleStatusHistoryByFleetIdByLangExtendedSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleStatusHistoryByFleetIdByLangExtendedSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleOffHoursInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleOffHoursInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleOffHoursInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleOffHoursInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetOffHoursInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFleetOffHoursInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetOffHoursInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFleetOffHoursInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailedMessageInFromHistory_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDetailedMessageInFromHistory_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailedMessageInFromHistory_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDetailedMessageInFromHistory_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailedMessageInFromHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetDetailedMessageInFromHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailedMessageInFromHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetDetailedMessageInFromHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastMessagesFromHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastMessagesFromHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetLastMessagesFromHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastMessagesFromHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastMessagesFromHistoryByOriginDateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastMessagesFromHistoryByOriginDateTime" />
+  </wsdl:message>
+  <wsdl:message name="GetLastMessagesFromHistoryByOriginDateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastMessagesFromHistoryByOriginDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastMessagesFromHistoryByOrganizationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastMessagesFromHistoryByOrganization" />
+  </wsdl:message>
+  <wsdl:message name="GetLastMessagesFromHistoryByOrganizationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastMessagesFromHistoryByOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastMessagesOutFromHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastMessagesOutFromHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetLastMessagesOutFromHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastMessagesOutFromHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastMessagesOutFromHistoryByOrganizationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastMessagesOutFromHistoryByOrganization" />
+  </wsdl:message>
+  <wsdl:message name="GetLastMessagesOutFromHistoryByOrganizationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastMessagesOutFromHistoryByOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailedMessageOutFromHistory_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDetailedMessageOutFromHistory_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailedMessageOutFromHistory_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDetailedMessageOutFromHistory_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailedMessageOutFromHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetDetailedMessageOutFromHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailedMessageOutFromHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetDetailedMessageOutFromHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTextMessagesFullInfo_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTextMessagesFullInfo_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetTextMessagesFullInfo_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTextMessagesFullInfo_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTextMessagesFullInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTextMessagesFullInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetTextMessagesFullInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTextMessagesFullInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTextMessageFullInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTextMessageFullInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetTextMessageFullInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTextMessageFullInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserTextMessagesFullInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserTextMessagesFullInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserTextMessagesFullInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserTextMessagesFullInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetTextMessagesFullInfo_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFleetTextMessagesFullInfo_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetTextMessagesFullInfo_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFleetTextMessagesFullInfo_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetTextMessagesFullInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFleetTextMessagesFullInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetTextMessagesFullInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFleetTextMessagesFullInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetAllTextMessagesFullInfo_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFleetAllTextMessagesFullInfo_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetAllTextMessagesFullInfo_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFleetAllTextMessagesFullInfo_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetAllTextMessagesFullInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFleetAllTextMessagesFullInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetAllTextMessagesFullInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFleetAllTextMessagesFullInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetAllDestinations_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFleetAllDestinations_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetAllDestinations_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFleetAllDestinations_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetAllDestinationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFleetAllDestinations" />
+  </wsdl:message>
+  <wsdl:message name="GetFleetAllDestinationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFleetAllDestinationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAllTextMessagesFullInfo_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleAllTextMessagesFullInfo_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAllTextMessagesFullInfo_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleAllTextMessagesFullInfo_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAllTextMessagesFullInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleAllTextMessagesFullInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAllTextMessagesFullInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleAllTextMessagesFullInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAllDestinations_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleAllDestinations_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAllDestinations_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleAllDestinations_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAllDestinationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleAllDestinations" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAllDestinationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleAllDestinationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserTextMessagesShortInfo_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserTextMessagesShortInfo_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetUserTextMessagesShortInfo_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserTextMessagesShortInfo_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserTextMessagesShortInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserTextMessagesShortInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserTextMessagesShortInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserTextMessagesShortInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserIncomingTextMessagesShortInfo_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserIncomingTextMessagesShortInfo_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetUserIncomingTextMessagesShortInfo_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserIncomingTextMessagesShortInfo_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserIncomingTextMessagesShortInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserIncomingTextMessagesShortInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserIncomingTextMessagesShortInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserIncomingTextMessagesShortInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserIncomingTextMessagesFullInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserIncomingTextMessagesFullInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserIncomingTextMessagesFullInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserIncomingTextMessagesFullInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMsgsShortInfoCheckSum_NewTZSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMsgsShortInfoCheckSum_NewTZ" />
+  </wsdl:message>
+  <wsdl:message name="GetMsgsShortInfoCheckSum_NewTZSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMsgsShortInfoCheckSum_NewTZResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMsgsShortInfoCheckSumSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMsgsShortInfoCheckSum" />
+  </wsdl:message>
+  <wsdl:message name="GetMsgsShortInfoCheckSumSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMsgsShortInfoCheckSumResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMsgUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:SetMsgUserId" />
+  </wsdl:message>
+  <wsdl:message name="SetMsgUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:SetMsgUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMsgUserIdExtendedSoapIn">
+    <wsdl:part name="parameters" element="tns:SetMsgUserIdExtended" />
+  </wsdl:message>
+  <wsdl:message name="SetMsgUserIdExtendedSoapOut">
+    <wsdl:part name="parameters" element="tns:SetMsgUserIdExtendedResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomPropInHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCustomPropInHistory" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomPropInHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCustomPropInHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesInHistoryByLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesInHistoryByLocation" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesInHistoryByLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesInHistoryByLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCmdSendSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCmdSend" />
+  </wsdl:message>
+  <wsdl:message name="GetCmdSendSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCmdSendResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCmdRecSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCmdRec" />
+  </wsdl:message>
+  <wsdl:message name="GetCmdRecSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCmdRecResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesInHistoryByAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehiclesInHistoryByAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetVehiclesInHistoryByAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehiclesInHistoryByAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInvalidGPSStatisticSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInvalidGPSStatistic" />
+  </wsdl:message>
+  <wsdl:message name="GetInvalidGPSStatisticSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInvalidGPSStatisticResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxesWithoutIpUpdatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBoxesWithoutIpUpdates" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxesWithoutIpUpdatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBoxesWithoutIpUpdatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxesReportedFrequencySoapIn">
+    <wsdl:part name="parameters" element="tns:GetBoxesReportedFrequency" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxesReportedFrequencySoapOut">
+    <wsdl:part name="parameters" element="tns:GetBoxesReportedFrequencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxMissingMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBoxMissingMessages" />
+  </wsdl:message>
+  <wsdl:message name="GetBoxMissingMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBoxMissingMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAreaSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleAreaSearch" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAreaSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleAreaSearchResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DBHistorySoap">
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves vehicles status from history by vehicle Id . XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize], [StreetAddress],[SequenceNum],[BoxArmed],[MsgDetails],[MsgDirection],[Acknowledged],[Scheduled]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleStatusHistoryByVehicleIdSoapIn" />
+      <wsdl:output message="tns:GetVehicleStatusHistoryByVehicleIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLang_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves vehicles status from history by vehicle Id . XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize], [StreetAddress],[SequenceNum],[BoxArmed],[MsgDetails],[MsgDirection],[Acknowledged],[Scheduled]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleStatusHistoryByVehicleIdByLang_NewTZSoapIn" />
+      <wsdl:output message="tns:GetVehicleStatusHistoryByVehicleIdByLang_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLang">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves vehicles status from history by vehicle Id . XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize], [StreetAddress],[SequenceNum],[BoxArmed],[MsgDetails],[MsgDirection],[Acknowledged],[Scheduled]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleStatusHistoryByVehicleIdByLangSoapIn" />
+      <wsdl:output message="tns:GetVehicleStatusHistoryByVehicleIdByLangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLangExtended_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves vehicles status from history by vehicle Id,messages and top number of records . XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize], [StreetAddress],[SequenceNum],[BoxArmed],[MsgDetails],[MsgDirection],[Acknowledged],[Scheduled]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleStatusHistoryByVehicleIdByLangExtended_NewTZSoapIn" />
+      <wsdl:output message="tns:GetVehicleStatusHistoryByVehicleIdByLangExtended_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLangExtended">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves vehicles status from history by vehicle Id,messages and top number of records . XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize], [StreetAddress],[SequenceNum],[BoxArmed],[MsgDetails],[MsgDirection],[Acknowledged],[Scheduled]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleStatusHistoryByVehicleIdByLangExtendedSoapIn" />
+      <wsdl:output message="tns:GetVehicleStatusHistoryByVehicleIdByLangExtendedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves vehicles status from history by vehicle Id,messages and top number of records . XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize], [StreetAddress],[SequenceNum],[BoxArmed],[MsgDetails],[MsgDirection],[Acknowledged],[Scheduled]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch_NewTZSoapIn" />
+      <wsdl:output message="tns:GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves vehicles status from history by vehicle Id,messages and top number of records . XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize], [StreetAddress],[SequenceNum],[BoxArmed],[MsgDetails],[MsgDirection],[Acknowledged],[Scheduled]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleStatusHistoryByVehicleIdByLangExtendedSearchSoapIn" />
+      <wsdl:output message="tns:GetVehicleStatusHistoryByVehicleIdByLangExtendedSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByFleetIdByLangExtendedSearch_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves vehicles status from history by vehicle Id,messages and top number of records . XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize], [StreetAddress],[SequenceNum],[BoxArmed],[MsgDetails],[MsgDirection],[Acknowledged],[Scheduled]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleStatusHistoryByFleetIdByLangExtendedSearch_NewTZSoapIn" />
+      <wsdl:output message="tns:GetVehicleStatusHistoryByFleetIdByLangExtendedSearch_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByFleetIdByLangExtendedSearch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves vehicles status from history by vehicle Id,messages and top number of records . XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize], [StreetAddress],[SequenceNum],[BoxArmed],[MsgDetails],[MsgDirection],[Acknowledged],[Scheduled]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleStatusHistoryByFleetIdByLangExtendedSearchSoapIn" />
+      <wsdl:output message="tns:GetVehicleStatusHistoryByFleetIdByLangExtendedSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleOffHoursInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves vehicle off hours info from history. XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize], [StreetAddress],[SequenceNum],[BoxArmed],[MsgDetails],[MsgDirection],[Acknowledged],[Scheduled]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleOffHoursInfoSoapIn" />
+      <wsdl:output message="tns:GetVehicleOffHoursInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetOffHoursInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves fleet off hours info from history. XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize], [StreetAddress],[SequenceNum],[BoxArmed],[MsgDetails],[MsgDirection],[Acknowledged],[Scheduled]</wsdl:documentation>
+      <wsdl:input message="tns:GetFleetOffHoursInfoSoapIn" />
+      <wsdl:output message="tns:GetFleetOffHoursInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedMessageInFromHistory_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves detailed information about incoming messages (Message In) from history by box id and DateTime. XML File format:[BoxId],[DateTime],[MsgTypeId],[MsgTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[StreetAddress],[BoxArmed],[UserName],[FirstName],[LastName]</wsdl:documentation>
+      <wsdl:input message="tns:GetDetailedMessageInFromHistory_NewTZSoapIn" />
+      <wsdl:output message="tns:GetDetailedMessageInFromHistory_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedMessageInFromHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves detailed information about incoming messages (Message In) from history by box id and DateTime. XML File format:[BoxId],[DateTime],[MsgTypeId],[MsgTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[StreetAddress],[BoxArmed],[UserName],[FirstName],[LastName]</wsdl:documentation>
+      <wsdl:input message="tns:GetDetailedMessageInFromHistorySoapIn" />
+      <wsdl:output message="tns:GetDetailedMessageInFromHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMessagesFromHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves last messages from the history by received datetime (Maximum return messages should be specified). XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize],[StreetAddress],[SequenceNum],[BoxArmed]</wsdl:documentation>
+      <wsdl:input message="tns:GetLastMessagesFromHistorySoapIn" />
+      <wsdl:output message="tns:GetLastMessagesFromHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMessagesFromHistoryByOriginDateTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves last messages from the history by originated datetime (Maximum return messages should be specified). XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize],[StreetAddress],[SequenceNum],[BoxArmed]</wsdl:documentation>
+      <wsdl:input message="tns:GetLastMessagesFromHistoryByOriginDateTimeSoapIn" />
+      <wsdl:output message="tns:GetLastMessagesFromHistoryByOriginDateTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMessagesFromHistoryByOrganization">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves last messages from the history (Maximum return messages should be specified). XML File format:[BoxId],[DateTimeReceived],[OriginDateTime],[DclId],[BoxMsgInTypeId],[BoxMsgInTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[BlobDataSize],[StreetAddress],[SequenceNum],[BoxArmed]</wsdl:documentation>
+      <wsdl:input message="tns:GetLastMessagesFromHistoryByOrganizationSoapIn" />
+      <wsdl:output message="tns:GetLastMessagesFromHistoryByOrganizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMessagesOutFromHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves last outgoing messages (Message Out) from history. XML File format:[DateTime],[BoxId],[UserId],[Priority],[DclId],[AslId],[BoxCmdOutTypeId],[BoxCmdOutTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[CustomProp],[SequenceNum],[Acknowledged]</wsdl:documentation>
+      <wsdl:input message="tns:GetLastMessagesOutFromHistorySoapIn" />
+      <wsdl:output message="tns:GetLastMessagesOutFromHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMessagesOutFromHistoryByOrganization">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves last outgoing messages (Message Out) from history. XML File format:[DateTime],[BoxId],[UserId],[Priority],[DclId],[AslId],[BoxCmdOutTypeId],[BoxCmdOutTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[CommInfo1],[CommInfo2],[CustomProp],[SequenceNum],[Acknowledged]</wsdl:documentation>
+      <wsdl:input message="tns:GetLastMessagesOutFromHistoryByOrganizationSoapIn" />
+      <wsdl:output message="tns:GetLastMessagesOutFromHistoryByOrganizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedMessageOutFromHistory_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves detailed information about outgoing messages (Message Out) from history by box id and DateTime. XML File format:[BoxId],[DateTime],[MsgTypeId],[MsgTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[StreetAddress],[BoxArmed],[UserName],[FirstName],[LastName]</wsdl:documentation>
+      <wsdl:input message="tns:GetDetailedMessageOutFromHistory_NewTZSoapIn" />
+      <wsdl:output message="tns:GetDetailedMessageOutFromHistory_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedMessageOutFromHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves detailed information about outgoing messages (Message Out) from history by box id and DateTime. XML File format:[BoxId],[DateTime],[MsgTypeId],[MsgTypeName],[BoxProtocolTypeId],[BoxProtocolTypeName],[ValidGps],[Latitude],[Longitude],[Speed],[Heading],[SensorMask],[CustomProp],[StreetAddress],[BoxArmed],[UserName],[FirstName],[LastName]</wsdl:documentation>
+      <wsdl:input message="tns:GetDetailedMessageOutFromHistorySoapIn" />
+      <wsdl:output message="tns:GetDetailedMessageOutFromHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTextMessagesFullInfo_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves text messages full information. XML File format:[VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId],[MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId]</wsdl:documentation>
+      <wsdl:input message="tns:GetTextMessagesFullInfo_NewTZSoapIn" />
+      <wsdl:output message="tns:GetTextMessagesFullInfo_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTextMessagesFullInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves text messages full information. XML File format:[VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId],[MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId]</wsdl:documentation>
+      <wsdl:input message="tns:GetTextMessagesFullInfoSoapIn" />
+      <wsdl:output message="tns:GetTextMessagesFullInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTextMessageFullInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves single text message full information. XML File format:[VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId],[MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId],[Acknowledged],[UserName],[StreetAddress],[Latitude],[Longitude],[Speed],[Heading]</wsdl:documentation>
+      <wsdl:input message="tns:GetTextMessageFullInfoSoapIn" />
+      <wsdl:output message="tns:GetTextMessageFullInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTextMessagesFullInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves text messages full information by User ID. XML File format:  [VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId], [MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserTextMessagesFullInfoSoapIn" />
+      <wsdl:output message="tns:GetUserTextMessagesFullInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetTextMessagesFullInfo_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves text messages by Fleet ID. XML File format:[VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId], [MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId]</wsdl:documentation>
+      <wsdl:input message="tns:GetFleetTextMessagesFullInfo_NewTZSoapIn" />
+      <wsdl:output message="tns:GetFleetTextMessagesFullInfo_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetTextMessagesFullInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves text messages by Fleet ID. XML File format:[VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId], [MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId]</wsdl:documentation>
+      <wsdl:input message="tns:GetFleetTextMessagesFullInfoSoapIn" />
+      <wsdl:output message="tns:GetFleetTextMessagesFullInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetAllTextMessagesFullInfo_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves text messages (MDT + Garmin) by Fleet ID. XML File format:[VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId], [MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId]</wsdl:documentation>
+      <wsdl:input message="tns:GetFleetAllTextMessagesFullInfo_NewTZSoapIn" />
+      <wsdl:output message="tns:GetFleetAllTextMessagesFullInfo_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetAllTextMessagesFullInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves text messages (MDT + Garmin) by Fleet ID. XML File format:[VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId], [MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId]</wsdl:documentation>
+      <wsdl:input message="tns:GetFleetAllTextMessagesFullInfoSoapIn" />
+      <wsdl:output message="tns:GetFleetAllTextMessagesFullInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetAllDestinations_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves Garmin Destinations by Fleet ID. XML File format:[VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId], [MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId]</wsdl:documentation>
+      <wsdl:input message="tns:GetFleetAllDestinations_NewTZSoapIn" />
+      <wsdl:output message="tns:GetFleetAllDestinations_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetAllDestinations">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves Garmin Destinations by Fleet ID. XML File format:[VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId], [MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId]</wsdl:documentation>
+      <wsdl:input message="tns:GetFleetAllDestinationsSoapIn" />
+      <wsdl:output message="tns:GetFleetAllDestinationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAllTextMessagesFullInfo_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves text messages (MDT + Garmin) by Vehilce ID. XML File format:[VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId], [MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleAllTextMessagesFullInfo_NewTZSoapIn" />
+      <wsdl:output message="tns:GetVehicleAllTextMessagesFullInfo_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAllTextMessagesFullInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves text messages (MDT + Garmin) by Vehilce ID. XML File format:[VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId], [MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleAllTextMessagesFullInfoSoapIn" />
+      <wsdl:output message="tns:GetVehicleAllTextMessagesFullInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAllDestinations_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves Garmin Destinations by Vehicle ID. XML File format:[VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId], [MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleAllDestinations_NewTZSoapIn" />
+      <wsdl:output message="tns:GetVehicleAllDestinations_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAllDestinations">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves Garmin Destinations by Vehicle ID. XML File format:[VehicleId],[LicensePlate],[From],[To],[MsgId],[BoxId],[MsgDateTime],[TxtMsgTypeId], [MsgBody],[MsgDirection],[MsgResponse],[ResponseDateTime],[UserId]</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleAllDestinationsSoapIn" />
+      <wsdl:output message="tns:GetVehicleAllDestinationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTextMessagesShortInfo_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves messages info by User ID. XML File format:[VehicleId],[Description],[LicensePlate], [MsgId],[BoxId],[MsgDateTime],[MsgBody (20)]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserTextMessagesShortInfo_NewTZSoapIn" />
+      <wsdl:output message="tns:GetUserTextMessagesShortInfo_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTextMessagesShortInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves messages info by User ID. XML File format:[VehicleId],[Description],[LicensePlate], [MsgId],[BoxId],[MsgDateTime],[MsgBody (20)]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserTextMessagesShortInfoSoapIn" />
+      <wsdl:output message="tns:GetUserTextMessagesShortInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIncomingTextMessagesShortInfo_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves messages info by User ID. XML File format:[VehicleId],[Description],[LicensePlate], [MsgId],[BoxId],[MsgDateTime],[MsgBody (20)]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserIncomingTextMessagesShortInfo_NewTZSoapIn" />
+      <wsdl:output message="tns:GetUserIncomingTextMessagesShortInfo_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIncomingTextMessagesShortInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves messages info by User ID. XML File format:[VehicleId],[Description],[LicensePlate], [MsgId],[BoxId],[MsgDateTime],[MsgBody (20)]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserIncomingTextMessagesShortInfoSoapIn" />
+      <wsdl:output message="tns:GetUserIncomingTextMessagesShortInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIncomingTextMessagesFullInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves message from MDT and Peripherals devices by User ID. XML File format:[VehicleId],[Description],[LicensePlate], [MsgId],[BoxId],[MsgDateTime],[MsgBody (20)]</wsdl:documentation>
+      <wsdl:input message="tns:GetUserIncomingTextMessagesFullInfoSoapIn" />
+      <wsdl:output message="tns:GetUserIncomingTextMessagesFullInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMsgsShortInfoCheckSum_NewTZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Msgs Short Info CheckSum</wsdl:documentation>
+      <wsdl:input message="tns:GetMsgsShortInfoCheckSum_NewTZSoapIn" />
+      <wsdl:output message="tns:GetMsgsShortInfoCheckSum_NewTZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMsgsShortInfoCheckSum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Msgs Short Info CheckSum</wsdl:documentation>
+      <wsdl:input message="tns:GetMsgsShortInfoCheckSumSoapIn" />
+      <wsdl:output message="tns:GetMsgsShortInfoCheckSumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgUserId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Mark message as read by User</wsdl:documentation>
+      <wsdl:input message="tns:SetMsgUserIdSoapIn" />
+      <wsdl:output message="tns:SetMsgUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgUserIdExtended">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Mark message as read by User</wsdl:documentation>
+      <wsdl:input message="tns:SetMsgUserIdExtendedSoapIn" />
+      <wsdl:output message="tns:SetMsgUserIdExtendedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomPropInHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update MsgInHist CustomProperty</wsdl:documentation>
+      <wsdl:input message="tns:UpdateCustomPropInHistorySoapIn" />
+      <wsdl:output message="tns:UpdateCustomPropInHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesInHistoryByLocation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get vehicles In history by location</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesInHistoryByLocationSoapIn" />
+      <wsdl:output message="tns:GetVehiclesInHistoryByLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCmdSend">
+      <wsdl:input message="tns:GetCmdSendSoapIn" />
+      <wsdl:output message="tns:GetCmdSendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCmdRec">
+      <wsdl:input message="tns:GetCmdRecSoapIn" />
+      <wsdl:output message="tns:GetCmdRecSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesInHistoryByAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get VehiclesInHistory By Address</wsdl:documentation>
+      <wsdl:input message="tns:GetVehiclesInHistoryByAddressSoapIn" />
+      <wsdl:output message="tns:GetVehiclesInHistoryByAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvalidGPSStatistic">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Box Diagnostic utilities</wsdl:documentation>
+      <wsdl:input message="tns:GetInvalidGPSStatisticSoapIn" />
+      <wsdl:output message="tns:GetInvalidGPSStatisticSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxesWithoutIpUpdates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Box Diagnostic utilities</wsdl:documentation>
+      <wsdl:input message="tns:GetBoxesWithoutIpUpdatesSoapIn" />
+      <wsdl:output message="tns:GetBoxesWithoutIpUpdatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxesReportedFrequency">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Box Diagnostic utilities</wsdl:documentation>
+      <wsdl:input message="tns:GetBoxesReportedFrequencySoapIn" />
+      <wsdl:output message="tns:GetBoxesReportedFrequencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxMissingMessages">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Box Diagnostic Utilities</wsdl:documentation>
+      <wsdl:input message="tns:GetBoxMissingMessagesSoapIn" />
+      <wsdl:output message="tns:GetBoxMissingMessagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAreaSearch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetVehicleAreaSearch</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleAreaSearchSoapIn" />
+      <wsdl:output message="tns:GetVehicleAreaSearchSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DBHistorySoap" type="tns:DBHistorySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleId">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByVehicleId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLang_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByVehicleIdByLang_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLang">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByVehicleIdByLang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLangExtended_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByVehicleIdByLangExtended_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLangExtended">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByVehicleIdByLangExtended" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByFleetIdByLangExtendedSearch_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByFleetIdByLangExtendedSearch_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByFleetIdByLangExtendedSearch">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByFleetIdByLangExtendedSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleOffHoursInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleOffHoursInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetOffHoursInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFleetOffHoursInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedMessageInFromHistory_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDetailedMessageInFromHistory_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedMessageInFromHistory">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDetailedMessageInFromHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMessagesFromHistory">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetLastMessagesFromHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMessagesFromHistoryByOriginDateTime">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetLastMessagesFromHistoryByOriginDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMessagesFromHistoryByOrganization">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetLastMessagesFromHistoryByOrganization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMessagesOutFromHistory">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetLastMessagesOutFromHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMessagesOutFromHistoryByOrganization">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetLastMessagesOutFromHistoryByOrganization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedMessageOutFromHistory_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDetailedMessageOutFromHistory_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedMessageOutFromHistory">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetDetailedMessageOutFromHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTextMessagesFullInfo_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetTextMessagesFullInfo_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTextMessagesFullInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetTextMessagesFullInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTextMessageFullInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetTextMessageFullInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTextMessagesFullInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserTextMessagesFullInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetTextMessagesFullInfo_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFleetTextMessagesFullInfo_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetTextMessagesFullInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFleetTextMessagesFullInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetAllTextMessagesFullInfo_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFleetAllTextMessagesFullInfo_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetAllTextMessagesFullInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFleetAllTextMessagesFullInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetAllDestinations_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFleetAllDestinations_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetAllDestinations">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetFleetAllDestinations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAllTextMessagesFullInfo_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleAllTextMessagesFullInfo_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAllTextMessagesFullInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleAllTextMessagesFullInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAllDestinations_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleAllDestinations_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAllDestinations">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleAllDestinations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTextMessagesShortInfo_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserTextMessagesShortInfo_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTextMessagesShortInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserTextMessagesShortInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIncomingTextMessagesShortInfo_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserIncomingTextMessagesShortInfo_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIncomingTextMessagesShortInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserIncomingTextMessagesShortInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIncomingTextMessagesFullInfo">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetUserIncomingTextMessagesFullInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMsgsShortInfoCheckSum_NewTZ">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetMsgsShortInfoCheckSum_NewTZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMsgsShortInfoCheckSum">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetMsgsShortInfoCheckSum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgUserId">
+      <soap:operation soapAction="http://www.sentinelfm.com/SetMsgUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgUserIdExtended">
+      <soap:operation soapAction="http://www.sentinelfm.com/SetMsgUserIdExtended" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomPropInHistory">
+      <soap:operation soapAction="http://www.sentinelfm.com/UpdateCustomPropInHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesInHistoryByLocation">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesInHistoryByLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCmdSend">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetCmdSend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCmdRec">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetCmdRec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesInHistoryByAddress">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehiclesInHistoryByAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvalidGPSStatistic">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetInvalidGPSStatistic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxesWithoutIpUpdates">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetBoxesWithoutIpUpdates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxesReportedFrequency">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetBoxesReportedFrequency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxMissingMessages">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetBoxMissingMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAreaSearch">
+      <soap:operation soapAction="http://www.sentinelfm.com/GetVehicleAreaSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DBHistorySoap12" type="tns:DBHistorySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByVehicleId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLang_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByVehicleIdByLang_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLang">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByVehicleIdByLang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLangExtended_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByVehicleIdByLangExtended_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLangExtended">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByVehicleIdByLangExtended" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByVehicleIdByLangExtendedSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByFleetIdByLangExtendedSearch_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByFleetIdByLangExtendedSearch_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleStatusHistoryByFleetIdByLangExtendedSearch">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleStatusHistoryByFleetIdByLangExtendedSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleOffHoursInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleOffHoursInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetOffHoursInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFleetOffHoursInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedMessageInFromHistory_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDetailedMessageInFromHistory_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedMessageInFromHistory">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDetailedMessageInFromHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMessagesFromHistory">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetLastMessagesFromHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMessagesFromHistoryByOriginDateTime">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetLastMessagesFromHistoryByOriginDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMessagesFromHistoryByOrganization">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetLastMessagesFromHistoryByOrganization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMessagesOutFromHistory">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetLastMessagesOutFromHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMessagesOutFromHistoryByOrganization">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetLastMessagesOutFromHistoryByOrganization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedMessageOutFromHistory_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDetailedMessageOutFromHistory_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedMessageOutFromHistory">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetDetailedMessageOutFromHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTextMessagesFullInfo_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetTextMessagesFullInfo_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTextMessagesFullInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetTextMessagesFullInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTextMessageFullInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetTextMessageFullInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTextMessagesFullInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserTextMessagesFullInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetTextMessagesFullInfo_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFleetTextMessagesFullInfo_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetTextMessagesFullInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFleetTextMessagesFullInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetAllTextMessagesFullInfo_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFleetAllTextMessagesFullInfo_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetAllTextMessagesFullInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFleetAllTextMessagesFullInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetAllDestinations_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFleetAllDestinations_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFleetAllDestinations">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetFleetAllDestinations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAllTextMessagesFullInfo_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleAllTextMessagesFullInfo_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAllTextMessagesFullInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleAllTextMessagesFullInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAllDestinations_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleAllDestinations_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAllDestinations">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleAllDestinations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTextMessagesShortInfo_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserTextMessagesShortInfo_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTextMessagesShortInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserTextMessagesShortInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIncomingTextMessagesShortInfo_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserIncomingTextMessagesShortInfo_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIncomingTextMessagesShortInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserIncomingTextMessagesShortInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIncomingTextMessagesFullInfo">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetUserIncomingTextMessagesFullInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMsgsShortInfoCheckSum_NewTZ">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetMsgsShortInfoCheckSum_NewTZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMsgsShortInfoCheckSum">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetMsgsShortInfoCheckSum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgUserId">
+      <soap12:operation soapAction="http://www.sentinelfm.com/SetMsgUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgUserIdExtended">
+      <soap12:operation soapAction="http://www.sentinelfm.com/SetMsgUserIdExtended" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomPropInHistory">
+      <soap12:operation soapAction="http://www.sentinelfm.com/UpdateCustomPropInHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesInHistoryByLocation">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesInHistoryByLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCmdSend">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetCmdSend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCmdRec">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetCmdRec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclesInHistoryByAddress">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehiclesInHistoryByAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvalidGPSStatistic">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetInvalidGPSStatistic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxesWithoutIpUpdates">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetBoxesWithoutIpUpdates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxesReportedFrequency">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetBoxesReportedFrequency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoxMissingMessages">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetBoxMissingMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAreaSearch">
+      <soap12:operation soapAction="http://www.sentinelfm.com/GetVehicleAreaSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DBHistory">
+    <wsdl:port name="DBHistorySoap" binding="tns:DBHistorySoap">
+      <soap:address location="http://localhost:53931/Interfaces/DBHistory.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DBHistorySoap12" binding="tns:DBHistorySoap12">
+      <soap12:address location="http://localhost:53931/Interfaces/DBHistory.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

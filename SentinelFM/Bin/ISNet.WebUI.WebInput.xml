@@ -1,0 +1,3228 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ISNet.WebUI.WebInput</name>
+    </assembly>
+    <members>
+        <member name="T:ISNet.WebUI.WebControls.WebInputRenderDHTML">
+            <summary>
+            Summary description for WebInputRenderDHTML.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.WebInputDesigner">
+            <summary>
+            Summary description for WebInputDesigner.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.ISNetMaskInfoException">
+            <summary>
+            Represents ISNet mask info exception.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.MaskValidator">
+            <summary>
+            Intersoft ASP.Net MaskValidator server control class.
+            </summary>
+            <remarks>
+            The MaskValidator provides a mechanism to control an input of an input control.
+            MaskValidator works at edit mode of an input control.
+            MaskValidator integrated with ISNet Control HighLight features (cannot be separated)
+            </remarks>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.MaskValidator.GetFormattedString">
+            <summary>
+            Get formatted string for mask validator.
+            </summary>
+            <returns>The formatted string.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.MaskValidator.OnMaskTypeBeforeChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:ISNet.WebUI.WebControls.MaskValidator.MaskTypeBeforeChanged">MaskTypeBeforeChanged</see> event.
+            </summary>
+            <param name="e">A <see cref="T:System.EventArgs">EventArgs</see> that contains the event data.</param>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.MaskValidator.OnMaskTypeChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:ISNet.WebUI.WebControls.MaskValidator.MaskTypeChanged">MaskTypeChanged</see> event.
+            </summary>
+            <param name="e">A <see cref="T:System.EventArgs">EventArgs</see> that contains the event data.</param>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.MaskValidator.IsMaskTypeChangedAttached">
+            <summary>
+            Determine whether mask type changed event is attached.
+            </summary>
+            <returns>true if value is valid; otherwise, false.</returns>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidator.Text">
+            <summary>
+            Sets or returns the text for the mask validator.
+            </summary>
+            <value>
+            A <see cref="T:System.String">string</see> contains text.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidator.MaskInfo">
+            <summary>
+            Gets or sets a <see cref="T:ISNet.WebUI.WebControls.MaskInfo">MaskInfo</see> data.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidator.ClientSideEvents">
+            <summary>
+            Gets or sets mask validator client side events.
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebControls.MaskValidatorClientSideEvents">MaskValidatorClientSideEvents</see> that contains the mask validator client side events.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidator.CaseSentitive">
+            <summary>
+            Gets or gets a value indicating whether string comparisons within the MaskValidator are case sensitive.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidator.Format">
+            <summary>
+            Gets or sets format expression for mask validator.
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebControls.MaskValidatorClientSideEvents">MaskValidatorClientSideEvents</see> that contains the mask validator client side events.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidator.MaskType">
+            <summary>
+            Gets or sets masking type.
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebControls.MaskType">MaskType</see> that contains masking type.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidator.IsValueSpinnable">
+            <summary>
+            Gets or sets a value indicating highlight value is spinnable.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidator.SkipNavigateHoliday">
+            <summary>
+            Specifies if keyboard navigation (spin) is skipped when encounters holiday.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidator.MinDropDownYear">
+            <summary>
+            Gets or sets minimal dropdown year value.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidator.MaxDropDownYear">
+            <summary>
+            Gets or sets maximum dropdown year value.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidator.Enabled">
+            <summary>
+            Gets or sets a value that indicates whether the validation control is enabled. 
+            </summary>
+            <value>
+            true if the validation control is enabled; otherwise, false. The default is true. 
+            </value>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.MaskExpressionEditor">
+            <summary>
+            Summary description for MessageControlIDEditor.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.IPlaceHolderCollection">
+            <summary>
+            Summary description for IPlaceHolderCollection.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.DTNameCollection">
+            <summary>
+            Represents a collection of DTName.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DTNameCollection.MaxLength">
+            <summary>
+            Gets or sets the max length of collection.
+            </summary>
+            <value>
+            A <see cref="T:System.Int32">int</see> that contains the max length of collection.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DTNameCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the entry to get or set.</param>
+            <returns>The <c>DTName</c> object at the specified index.</returns>
+            <seealso cref="T:ISNet.WebUI.WebControls.DTName"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DTNameCollection.IsFixedSize">
+            <summary>
+            Gets whether collection is fixed size.
+            </summary>
+            <value>
+            A <see cref="T:System.Boolean"/> value 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DTNameCollection.IsReadOnly">
+            <summary>
+            
+            </summary>
+            <value>
+            A <see cref="!:"/>
+            </value>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper">
+            <summary>
+            This class only wraps .NET DateTimeFormatInfo class.
+            </summary>
+            <seealso cref="T:System.Globalization.DateTimeFormatInfo"/>
+            <seealso cref="T:System.Globalization.CultureInfo"/>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.GetFullFormat(System.String)">
+            <summary>
+            Gets date time full format from single character format.
+            </summary>
+            <param name="format">A single character format</param>
+            <returns>
+            The full format. 
+            </returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.ValidateTimeStringData(System.String,System.String)">
+            <summary>
+            Validate whether a string data is a valid time string data.
+            </summary>
+            <param name="data">A string data to be validated.</param>
+            <param name="format">A format data to be validated.</param>
+            <returns>true if value is valid; otherwise, false.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.ParseDateTimeStringData(System.String,System.String)">
+            <summary>
+            Parse a string data to a datetime.
+            </summary>
+            <param name="data">A string data to be parsed.</param>
+            <param name="format">A format data to be validated.</param>
+            <returns>A <see cref="T:System.DateTime">DateTime</see> data</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.GetDateTimeValidationExpression(System.String)">
+            <summary>
+            Get regular expression validation expression for coresponding format expression.
+            </summary>
+            <param name="format">A format to be referenced for validation expression.</param>
+            <returns>A <see cref="T:System.String">String</see> contains regular expression validation expression.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.SetWrapperProperties">
+            <summary>
+            Wrap properties from <see cref="!:System.Globalization.DateTimeInfo">DateTimeInfo</see> instance to <see cref="T:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper">DateTimeFormatInfoWrapper</see> instance.
+            </summary>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.GetWrapperProperties">
+            <summary>
+            Wrapper properties from <see cref="T:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper">DateTimeFormatInfoWrapper</see> instance to <see cref="!:System.Globalization.DateTimeInfo">DateTimeInfo</see> instance.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.DayNames">
+            <summary>
+            Gets a collection containing the culture-specific full names of the days of the week. 
+            </summary>
+            <seealso cref="T:ISNet.WebUI.WebControls.DTNameCollection"/>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebControls.DTNameCollection">DTNameCollection</see> that contains the culture-specific full names of the days of the week.
+            </value>		
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.MonthNames">
+            <summary>
+            Gets a collection containing the culture-specific full names of the months. 
+            </summary>
+            <seealso cref="T:ISNet.WebUI.WebControls.DTNameCollection"/>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebControls.DTNameCollection">DTNameCollection</see> that contains the culture-specific full names of the days of the week.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.AbbreviatedDayNames">
+            <summary>
+            Gets a collection containing the culture-specific abbreviated names of the days of the week. 
+            </summary>
+            <seealso cref="T:ISNet.WebUI.WebControls.DTNameCollection"/>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebControls.DTNameCollection">DTNameCollection</see> that contains the culture-specific abbreviated names of the days of the week.
+            </value>	
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.AbbreviatedMonthNames">
+            <summary>
+            Gets a collection containing the culture-specific abbreviated names of the months. 
+            </summary>
+            <seealso cref="T:ISNet.WebUI.WebControls.DTNameCollection"/>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebControls.DTNameCollection">DTNameCollection</see> that contains the culture-specific abbreviated names of the days of the week.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.AMDesignator">
+            <summary>
+            Gets or sets the string designator for hours that are "ante meridiem" (before noon).
+            </summary>
+            <value>
+            The string designator for hours that are "ante meridiem" (before noon). The default for <see cref="!:System.Globalization.InvariantInfo">InvariantInfo</see> is "AM". 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.CalendarName">
+            <summary>
+            Gets or sets calendar name.
+            </summary>
+            <value>
+            A <see cref="T:System.String">String</see> that contains calendar name.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.CalendarWeekRule">
+            <summary>
+            Gets or sets a value that specifies which rule is used to determine the first calendar week of the year. 
+            </summary>
+            <value>
+            A <see cref="T:System.Globalization.CalendarWeekRule">CalendarWeekRule</see> value that determines the first calendar week of the year. The default for <see cref="!:System.Globalization.InvariantInfo">InvariantInfo</see> is FirstDay. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.DateSeparator">
+            <summary>
+            Gets or sets the string that separates the components of a date; that is, the year, month, and day.
+            </summary>
+            <value>
+            The string that separates the components of a date; that is, the year, month, and day. The default for <see cref="!:System.Globalization.InvariantInfo">InvariantInfo</see> is "/". 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.FirstDayOfWeek">
+            <summary>
+            Gets or sets the first day of the week.
+            </summary>
+            <value>
+            A <see cref="T:System.DayOfWeek">DayOfWeek</see> value representing the first day of the week. The default for <see cref="!:System.Globalization.InvariantInfo">InvariantInfo</see> is Sunday. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.FullDateTimePattern">
+            <summary>
+            Gets or sets the format pattern for a long date and long time value, which is associated with the 'F' format character.
+            </summary>
+            <value>
+            The format pattern for a long date and long time value, which is associated with the 'F' format character. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the <c>DateTimeFormatInfoWrapper</c> is read-only. 
+            </summary>
+            <value>
+            true if the <c>DateTimeFormatInfoWrapper</c> is read-only; otherwise, false. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.LongDatePattern">
+            <summary>
+            Gets or sets the format pattern for a long date value, which is associated with the 'D' format character. 
+            </summary>
+            <value>
+            The format pattern for a long date value, which is associated with the 'D' format character. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.LongTimePattern">
+            <summary>
+            Gets or sets the format pattern for a long time value, which is associated with the 'T' format character.
+            </summary>
+            <value>
+            The format pattern for a long time value, which is associated with the 'T' format character.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.MonthDayPattern">
+            <summary>
+            Gets or sets the format pattern for a month and day value, which is associated with the 'm' and 'M' format characters. 
+            </summary>
+            <value>
+            The format pattern for a month and day value, which is associated with the 'm' and 'M' format characters.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.PMDesignator">
+            <summary>
+            Gets or sets the string designator for hours that are "post meridiem" (after noon). 
+            </summary>
+            <value>
+            The string designator for hours that are "post meridiem" (after noon). The default for <see cref="!:System.Globalization.InvariantInfo">InvariantInfo</see> is "PM". 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.RFC1123Pattern">
+            <summary>
+            Gets the format pattern for a time value, which is based on the Internet Engineering Task Force (IETF) Request for Comments (RFC) 1123 specification and is associated with the 'r' and 'R' format characters.
+            </summary>
+            <value>
+            The format pattern for a time value, which is based on the IETF RFC 1123 specification and is associated with the 'r' and 'R' format characters. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.ShortDatePattern">
+            <summary>
+            Gets or sets the format pattern for a short date value, which is associated with the 'd' format character.
+            </summary>
+            <value>
+            The format pattern for a short date value, which is associated with the 'd' format character.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.ShortTimePattern">
+            <summary>
+            Gets or sets the format pattern for a short time value, which is associated with the 't' format character.
+            </summary>
+            <value>
+            The format pattern for a short time value, which is associated with the 't' format character. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.ShortableDateTimePattern">
+            <summary>
+            Gets the format pattern for a sortable date and time value, which is associated with the 's' format character.
+            </summary>
+            <value>
+            The format pattern for a sortable date and time value, which is associated with the 's' format character.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.TimeSeparator">
+            <summary>
+            Gets or sets the string that separates the components of time; that is, the hour, minutes, and seconds.
+            </summary>
+            <value>
+            The string that separates the components of time; that is, the hour, minutes, and seconds. The default for <see cref="!:System.Globalization.InvariantInfo">InvariantInfo</see> is ":".
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.UniversalShortableDateTimePattern">
+            <summary>
+            Gets the format pattern for a universal sortable date and time value, which is associated with the 'u' format character.
+            </summary>
+            <value>
+            The format pattern for a universal sortable date and time value, which is associated with the 'u' format character.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper.YearMonthPattern">
+            <summary>
+            Gets or sets the format pattern for a year and month value, which is associated with the 'y' and 'Y' format characters.
+            </summary>
+            <value>
+            The format pattern for a year and month value, which is associated with the 'y' and 'Y' format characters.
+            </value>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.DTNameCollectionEditor">
+            <summary>
+            Summary description for DTNameCollectionEditor.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.NumberPatternEditor">
+            <summary>
+            Summary description for MessageControlIDEditor.
+            </summary>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.NumberPatternEditor.CreateListBox(System.String,System.Int32)">
+            <summary>
+               <para>
+                    Creates a list box to show in the property grid.
+               </para>
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.NGroup">
+            <summary>
+            Represents NGroup.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NGroup.Group">
+            <summary>
+            Gets or sets group index.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.MaskExpressionEditorForm">
+            <summary>
+            Summary description for MaskExpressionEditorForm.
+            </summary>
+        </member>
+        <member name="F:ISNet.WebUI.WebControls.MaskExpressionEditorForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.MaskExpressionEditorForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.MaskExpressionEditorForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.CalculatorEditorClientSideEvents">
+            <summary>
+            Represents calculator editor element client side events.
+            </summary>
+            <remarks>
+            The <c>CalculatorEditorClientSideEvents</c> is a container object for all calculator editor events.
+            Calculator editor events contains of <see cref="T:ISNet.WebUI.BaseMouseElementClientSideEvents">OperatorEvents</see> and <see cref="T:ISNet.WebUI.BaseMouseElementClientSideEvents">OperandEvents</see>. 
+            </remarks>
+            <seealso cref="T:ISNet.WebUI.WebControls.CalculatorEditor"/>
+            <seealso cref="T:ISNet.WebUI.BaseMouseElementClientSideEvents"/>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.CalculatorEditorClientSideEvents.IsAnyAttachEventHandlers">
+            <summary>
+            Determine whether any event handler is attached.
+            </summary>
+            <returns>true if value is valid; otherwise, false.</returns>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CalculatorEditorClientSideEvents.OperatorEvents">
+            <summary>
+            Specifies the client side (JavaScript) Operator element events.
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.BaseMouseElementClientSideEvents">OperatorEvents</see> that contains the operator style for the calculator editor window. 
+            </value>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:ISNet.WebUI.WebControls.CalculatorEditorClientSideEvents.OperandEvents" -->
+        <member name="T:ISNet.WebUI.WebControls.IHighLightCollaborate">
+            <summary>
+            Summary description for IHighLightCollaborate.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.IFormat">
+            <summary>
+            Summary description for IIMask.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.CultureInfoWrapperConverter">
+            <summary>
+            Summary description for CultureInfoWrapperConverter.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.WebInputImageSettings">
+            <summary>
+            Represents WebInput.Net image settings.
+            </summary>
+            <remarks>
+            A wrapper class that summaries WebInput.NET image settings.
+            Any image settings wrapper properties change will reflect automatically to WebInput.NET original image settings properties and vice versa.
+            </remarks>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.WebInputImageSettings.InitSettings">
+            <summary>
+            Initialize settings.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputImageSettings.Directory">
+            <summary>
+            Gets or sets directory for current setting.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.MaskInfo">
+            <summary>
+            Represents masking info.
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.MaskInfo.IsUseablePrompChar(System.Char)">
+            <summary>
+            Determine whether a character is a useable prompt character.
+            </summary>
+            <param name="character">A <see cref="T:System.Char">char</see> to be checked.</param>
+            <returns>true if value is valid; otherwise, false.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.MaskInfo.IsValidPlaceHolder(System.Char)">
+            <summary>
+            Determine whether a character is a valid placeholder character.
+            </summary>
+            <param name="character">A <see cref="T:System.Char">char</see> to be checked.</param>
+            <returns>true if value is valid; otherwise, false.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.MaskInfo.GetValidPlaceHolder(System.Char)">
+            <summary>
+            Gets valid <c>PlaceHolder</c> instance base on a placeholder character.
+            </summary>
+            <param name="placeHolder">A <see cref="T:System.Char">char</see> to be checked.</param>
+            <returns>A <see cref="T:ISNet.WebUI.WebControls.PlaceHolder">PlaceHolder</see> instance that is found.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.MaskInfo.IsValidChar(System.Char,System.Char)">
+            <summary>
+            Determine whether a character is a valid placeholder character.
+            </summary>
+            <param name="character">A <see cref="T:System.Char">char</see> to be checked.</param>
+            <param name="placeHolder">A <see cref="T:System.Char">placeholder</see> to be checked.</param>
+            <returns>true if value is valid; otherwise, false.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.MaskInfo.Validate(System.String)">
+            <summary>
+            Validate whether a text is a valid text for current masking expression.
+            </summary>
+            <param name="text">A <see cref="T:System.String">string</see> to be validated.</param>
+            <returns>true if value is valid; otherwise, false.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.MaskInfo.BindToHighLight(ISNet.WebUI.WebControls.HighLight)">
+            <summary>
+            Bind mask info to a highlight instance.
+            </summary>
+            <param name="highLight">A <see cref="T:ISNet.WebUI.WebControls.HighLight">HighLight</see> instance to be bind to.</param>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskInfo.REExpression">
+            <summary>
+            Gets or sets regular expression for current masking expression.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskInfo.ArrREExpression">
+            <summary>
+            Gets or sets array of regular expression for current masking expression.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskInfo.ArrLiterals">
+            <summary>
+            Gets or sets array literals for current masking expression.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskInfo.ArrLiteralsChar">
+            <summary>
+            Gets or sets array literals characters for current masking expression.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskInfo.CustomPlaceHolders">
+            <summary>
+            Gets custom placeholder collection for current masking expression.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskInfo.IsEnabled">
+            <summary>
+            Enable state of the MaskInfo.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskInfo.InputText">
+            <summary>
+            Gets mask info input text.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskInfo.MaskExpression">
+            <summary>
+            Specifies masking expression.
+            </summary>
+            <remarks>
+            Using standard masking expression.
+            </remarks>
+            <value>
+            The default is null.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskInfo.CaseSentitive">
+            <summary>
+            Specifies if string comparisons within masking are case-sensitive.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskInfo.CopyWithLiterals">
+            <summary>
+            Specifies if control text is copied to clipboard contains literals.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskInfo.EmptyAsNull">
+            <summary>
+            Indicates if empty strings within control are interpreted as null values. 
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskInfo.PromptChar">
+            <summary>
+            Specifies character displayed on empty mask positions.
+            </summary>
+            <value>
+            The default is '_'.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskInfo.SaveBlanks">
+            <summary>
+            Specifies the stored text includes blank positions as PromptChar character.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskInfo.SaveLiterals">
+            <summary>
+            Specifies the stored text includes literals.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskInfo.ShowLiterals">
+            <summary>
+            Specifies the display text includes literals.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskInfo.SkipOptional">
+            <summary>
+            Specifies if optional mask positions are automatically skipped until the first position allowing the typed character.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.HighLightType">
+            <summary>
+            Specifies type of highlight
+            </summary>
+            <remarks>
+            Members :
+            <list type="table">
+            	<listheader>
+            		<term>Member name</term>
+            		<term>Description</term>
+            	</listheader>
+            	<item>
+            		<term>Character</term>
+            		<term>Default. Highlight a character</term>
+            	</item>	
+            	<item>
+            		<term>Phrase</term>
+            		<term>Highlight a collection of characters terminated by a spesific literal character</term>
+            	</item>
+            	<item>
+            		<term>Word</term>
+            		<term>Highlight a collection of characters terminated by a space or another white-space character, such as a tab</term>
+            	</item>	
+            </list>
+            </remarks>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.PlaceHolderType">
+            <summary>
+            Specifies type of placeholder
+            </summary>
+            <remarks>
+            Members :
+            <list type="table">
+            	<listheader>
+            		<term>Member name</term>
+            		<term>Description</term>
+            	</listheader>
+            	<item>
+            		<term>Place</term>
+            		<term>Default. PlaceHolder as a place character</term>
+            	</item>	
+            	<item>
+            		<term>Command</term>
+            		<term>PlaceHolder as a command character</term>
+            	</item>
+            	<item>
+            		<term>Separator</term>
+            		<term>PlaceHolder as a separator character</term>
+            	</item>	
+            </list>
+            </remarks>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.PlaceHolderCommandType">
+            <summary>
+            Specifies type of command placeholder
+            </summary>
+            <remarks>
+            Members :
+            <list type="table">
+            	<listheader>
+            		<term>Member name</term>
+            		<term>Description</term>
+            	</listheader>
+            	<item>
+            		<term>ToLowerCase</term>
+            		<term>Default. PlaceHolder as a command to lower character</term>
+            	</item>	
+            	<item>
+            		<term>ToUpperCase</term>
+            		<term>PlaceHolder as a command to upper character</term>
+            	</item>
+            	<item>
+            		<term>ToLiteralChar</term>
+            		<term>PlaceHolder as a command to literal character</term>
+            	</item>	
+            	<item>
+            		<term>None</term>
+            		<term>PlaceHolder is not a command character</term>
+            	</item>	
+            </list>
+            </remarks>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.CharacterCasing">
+            <summary>
+            Specifies the case of characters.
+            </summary>
+            <remarks>
+            Members :
+            <list type="table">
+            	<listheader>
+            		<term>Member name</term>
+            		<term>Description</term>
+            	</listheader>
+            	<item>
+            		<term>Normal</term>
+            		<term>Default. The case of characters is left unchanged.</term>
+            	</item>	
+            	<item>
+            		<term>Upper</term>
+            		<term>Converts all characters to uppercase.</term>
+            	</item>
+            	<item>
+            		<term>Lower</term>
+            		<term>Converts all characters to lowercase.</term>
+            	</item>	
+            </list>
+            </remarks>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.InitialSelection">
+            <summary>
+            Specifies the selection position when a control receives input focus.
+            </summary>
+            <remarks>
+            Members :
+            <list type="table">
+            	<listheader>
+            		<term>Member name</term>
+            		<term>Description</term>
+            	</listheader>
+            	<item>
+            		<term>SelectAll</term>
+            		<term>Default. The whole text is selected.</term>
+            	</item>	
+            	<item>
+            		<term>CaretAtStart</term>
+            		<term>The caret is moved at the beginning of the text.</term>
+            	</item>
+            	<item>
+            		<term>CaretAtEnd</term>
+            		<term>The caret is moved at the end of the text.</term>
+            	</item>	
+            	<item>
+            		<term>None</term>
+            		<term>The caret is not moved (use original caret position).</term>
+            	</item>	
+            </list>
+            </remarks>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.FormatType">
+            <summary>
+            Determines format data type of <see cref="P:ISNet.WebUI.WebControls.WebInput.DisplayFormat"/>.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.MaskType">
+            <summary>
+            Determines masking data type of <see cref="P:ISNet.WebUI.WebControls.WebInput.EditFormat"/>.
+            </summary>
+            <remarks>
+            Members :
+            <list type="table">
+            	<listheader>
+            		<term>Member name</term>
+            		<term>Description</term>
+            	</listheader>
+            	<item>
+            		<term>DateTime</term>
+            		<term>Default.</term>
+            	</item>	
+            	<item>
+            		<term>Number</term>
+            		<term></term>
+            	</item>
+            	<item>
+            		<term>DynamicNumber</term>
+            		<term>Masking with no predefined placeholder and no highlighting feature</term>
+            	</item>	
+            	<item>
+            		<term>Other</term>
+            		<term>Doesn't need edit format expression.</term>
+            	</item>	
+            </list>	/// </remarks>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.WrapType">
+            <summary>
+            Sets or retrieves how to handle wordwrapping in the object
+            </summary>
+            <remarks>
+            WebInput uses a WebInputWrapType to indicate which wrap type of WebInput should be implemented.
+            WebInputWrapType default value is soft.
+            Members :
+            <list type="table">
+            	<listheader>
+            		<term>Member name</term>
+            		<term>Description</term>
+            	</listheader>
+            	<item>
+            		<term>Soft</term>
+            		<term>Default. Text is displayed with wordwrapping and submitted without carriage returns and line feeds</term>
+            	</item>	
+            	<item>
+            		<term>Hard</term>
+            		<term>Text is displayed with wordwrapping and submitted with soft returns and line feeds</term>
+            	</item>	
+            	<item>
+            		<term>Off</term>
+            		<term>Wordwrapping is disabled. The lines appear exactly as the user types them</term>
+            	</item>	
+            </list> 
+            </remarks>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.IS">
+            <summary>
+            Summary description for IS.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.DateTimeEditor">
+            <summary>
+            Represents client datetime editor user interface.
+            </summary>
+            <remarks>
+            This editor can be activated when control has a datetime data type.
+            </remarks>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.ClientSideEvents">
+            <summary>
+            Gets or sets calculator editor element client side events.
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebControls.DateTimeEditorClientSideEvents">DateTimeEditorClientSideEvents</see> that contains the calculator editor element client side events.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.DateTimeStyle">
+            <summary>
+            Gets or sets the style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the calculator editor window. 
+            </value>
+            <remarks> 
+            Use <c>DateTimeStyle</c> to manage the style of calculator editor window including window background and border.
+            </remarks>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.DayStyle">
+            <summary>
+            Gets or sets the day section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the day section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.OtherMonthDayStyle">
+            <summary>
+            Gets or sets the other month day section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the other month day section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.HeaderDayStyle">
+            <summary>
+            Gets or sets the day header section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the day header section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.HighLightMonthYearStyle">
+            <summary>
+            Gets or sets the hightlighted month year section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the highlighted month year section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.DropDownMonthYearTextStyle">
+            <summary>
+            Gets or sets the dropdown month year text section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the dropdown month year text section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.DropDownMonthYearHighLightTextStyle">
+            <summary>
+            Gets or sets the dropdown month year highlighted text section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the  the dropdown month year highlighted text section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.DropDownMonthYearUpDownButtonStyle">
+            <summary>
+            Gets or sets the dropdown month year up down button section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the dropdown month year up down button section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.HeaderStyle">
+            <summary>
+            Gets or sets the header section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the header section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.FooterStyle">
+            <summary>
+            Gets or sets the footer section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the footer section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.DayOffStyle">
+            <summary>
+            Gets or sets the dayoff section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the dayoff section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.HolidayStyle">
+            <summary>
+            Gets or sets the holiday section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the holiday section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.Border">
+            <summary>
+            Gets or sets the border width of the calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:System.Int32">Border</see> that contains the border width of the calculator editor window. The default value is 5.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.MinDropDownYear">
+            <summary>
+            Gets or sets minimum value of datetime year.
+            </summary>
+            <value>
+            A <see cref="T:System.Int32">MinDropDownYear</see> that contains minimum value of datetime year. The default value is 1900.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.MaxDropDownYear">
+            <summary>
+            Gets or sets maximum value of datetime year.
+            </summary>
+            <value>
+            A <see cref="T:System.Int32">MaxDropDownYear</see> that contains minimum value of datetime year. The default value is 2020.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.FooterTodayText">
+            <summary>
+            Gets or sets footer today text of datetime editor.
+            </summary>
+            <value>
+            A <see cref="T:System.String">FooterTodayText</see> that contains footer today text. The default value is "Today is".
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.CellPadding">
+            <summary>
+            Gets or sets the cell padding width of the calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:System.Int32">CellPadding</see> that contains the cell padding width of the calculator editor window. The default value is 0.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.CellSpacing">
+            <summary>
+            Gets or sets the cell spacing width of the calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:System.Int32">CellSpacing</see> that contains the cell spacing width of the calculator editor window. The default value is 3.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.BorderColor">
+            <summary>
+            Gets or sets the border color of the calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:System.Drawing.Color">BorderColor</see> that contains the border color of the calculator editor window. The default value is empty.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.BorderColorDark">
+            <summary>
+            Gets or sets the border color dark of the calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:System.Drawing.Color">BorderColorDark</see> that contains the border color dark of the calculator editor window. The default value is <c>Color.Empty</c>.
+            </value>
+            <remarks>
+            <c>BorderColorDark</c> is one of the two colors used to draw the 3-D border of the object.
+            </remarks>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.BorderColorLight">
+            <summary>
+            Gets or sets the border color light of the calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:System.Drawing.Color">BorderColorDark</see> that contains the border color light of the calculator editor window. The default value is <c>Color.Empty</c>.
+            </value>
+            <remarks>
+            <c>BorderColorLight</c> is one of the two colors used to draw the 3-D border of the object.
+            </remarks>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.ShowHeader">
+            <summary>
+            Specifies if datetime editor header section is showed.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.ShowHeaderDay">
+            <summary>
+            Specifies if datetime editor header day section is showed.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.ShowOtherMonthDay">
+            <summary>
+            Specifies if datetime editor other month day section is showed.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.ShowFooter">
+            <summary>
+            Specifies if datetime editor footer section is showed.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.UnSpecificYearHolidays">
+            <summary>
+            Gets lookup chars of custom placeholder. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebControls.LookUpCharCollection">LookupChars</see> that contains lookup char list. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.Behavior">
+            <summary>
+            Gets or set behavior for <c>DateTimeEditor</c>.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.WindowInfo">
+            <summary>
+            Defines how custom window information is layout at client.
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.EditorWindowInfo">WindowInfo</see> that contains window information is layout at client. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.IsCollaborateWithHighLight">
+            <summary>
+            Specifies if selected control value is default editor value and selected editor value assigned to selected control value when HighLight is enabled.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditor.SkipNavigateHoliday">
+            <summary>
+            Specifies if keyboard navigation is skipped when encounters holiday.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.REPattern">
+            <summary>
+            Summary description for REPattern.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.NumberFormatInfoWrapper">
+            <summary>
+            Represents number format info wrapper.
+            </summary>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.GetWrapperProperties">
+            <summary>
+            Wrapper properties from <see cref="T:ISNet.WebUI.WebControls.NumberFormatInfoWrapper">NumberFormatInfoWrapper</see> instance to <see cref="!:System.Globalization.NumberInfo">NumberInfo</see> instance.
+            </summary>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.SetWrapperProperties">
+            <summary>
+            Wrap properties from <see cref="!:System.Globalization.DateTimeInfo">DateTimeInfo</see> instance to <see cref="T:ISNet.WebUI.WebControls.DateTimeFormatInfoWrapper">DateTimeFormatInfoWrapper</see> instance.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.CurrencyGroupSizes">
+            <summary>
+            Gets or sets the number of digits in each group to the left of the decimal in currency values.
+            </summary>
+            <seealso cref="T:ISNet.WebUI.WebControls.NGroupCollection"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.NumberGroupSizes">
+            <summary>
+            Gets or sets the number of digits in each group to the left of the decimal in numeric values.
+            </summary>
+            <seealso cref="T:ISNet.WebUI.WebControls.NGroupCollection"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.PercentGroupSizes">
+            <summary>
+            Gets or sets the number of digits in each group to the left of the decimal in percent values.
+            </summary>
+            <seealso cref="T:ISNet.WebUI.WebControls.NGroupCollection"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.CurrencyDecimalDigits">
+            <summary>
+            Indicates the number of decimal places to use in currency values.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.CurrencyDecimalSeparator">
+            <summary>
+            Gets or sets the string to use as the decimal separator in currency values.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.CurrencyGroupSeparator">
+            <summary>
+            Gets or sets the string that separates groups of digits to the left of the decimal in currency values.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.CurrencyNegativePattern">
+            <summary>
+            Gets or sets the format pattern for negative currency values.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.CurrencyPositivePattern">
+            <summary>
+            Gets or sets the format pattern for positive currency values.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.CurrencySymbol">
+            <summary>
+            Gets or sets the string to use as the currency symbol.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the NumberFormatInfo is read-only.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.NanSymbol">
+            <summary>
+            Gets or sets the string that represents the IEEE NaN (not a number) value.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.NegativeInfinitySymbol">
+            <summary>
+            Gets or sets the string that represents negative infinity.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.NegativeSign">
+            <summary>
+            Gets or sets the string that denotes that the associated number is negative.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.NumberDecimalDigits">
+            <summary>
+            Gets or sets the number of decimal places to use in numeric values.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.NumberDecimalSeparator">
+            <summary>
+            Gets or sets the string to use as the decimal separator in numeric values.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.NumberGroupSeparator">
+            <summary>
+            Gets or sets the string that separates groups of digits to the left of the decimal in numeric values.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.NumberNegativePattern">
+            <summary>
+            Gets or sets the format pattern for negative numeric values.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.PercentDecimalDigits">
+            <summary>
+            Gets or sets the number of decimal places to use in percent values.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.PercentDecimalSeparator">
+            <summary>
+            Gets or sets the string to use as the decimal separator in percent values.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.PercentGroupSeparator">
+            <summary>
+            Gets or sets the string that separates groups of digits to the left of the decimal in percent values.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.PercentNegativePattern">
+            <summary>
+            Gets or sets the format pattern for negative percent values.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.PercentPositivePattern">
+            <summary>
+            Gets or sets the format pattern for positive percent values.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.PercentSymbol">
+            <summary>
+            Gets or sets the string to use as the percent symbol.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.PerMilleSymbol">
+            <summary>
+            Gets or sets the string to use as the per mille symbol.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.PositiveInfinitySymbol">
+            <summary>
+            Gets or sets the string that represents positive infinity.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NumberFormatInfoWrapper.PositiveSign">
+            <summary>
+            Gets or sets the string that denotes that the associated number is positive.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.MaskExpressionEventArgs">
+            <summary>
+            Represents mask expression event arguments.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.WebInputTextSettings">
+            <summary>
+            Represents WebInput.Net text settings.
+            </summary>
+            <remarks>
+            A wrapper class that summaries WebInput.NET text settings.
+            Any text settings wrapper properties change will reflect automatically to WebInput.NET original text settings properties and vice versa.
+            </remarks>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.MaskValidatorClientSideEvents">
+            <summary>
+            Specifies client side (Javascript) edit format element events.
+            </summary>
+            <remarks>
+            There are 4 events in edit format , OnBeforeValidate, OnAfterValidate, OnBeforeCharValidate and OnAfterCharValidate.
+            Both events are involved in validating process.
+            Edit format validates character value when character value is going to entered and character value is entered.
+            Edit format validates control value when control is activated (focused) and control is deactivated (blur).
+            </remarks>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidatorClientSideEvents.OnValidateError">
+             <summary>
+             Specifies the client side (JavaScript) function name that will be invoked when validation process failed.
+             </summary>
+             <remarks>
+             Parameters :
+             <list type="bullet">
+            		<item>
+            			<description>controlId - string</description>
+            		</item>
+             </list>
+            
+             </remarks>
+             <example>
+            		<code>
+            			function doValidateError(controlId)
+            			{
+            				// do some action here ...
+            			}
+            		</code>
+             </example>
+             <value>
+             The default is null.
+             </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidatorClientSideEvents.OnBeforeValidate">
+            <summary>
+            Specifies the client side (JavaScript) function name that will be invoked before value is validated.
+            </summary>
+            <remarks>
+            Parameters :
+            <list type="bullet">
+            	<item>
+            		<description>controlId - string</description>
+            	</item>
+            	<item>
+            		<description>value - string</description>
+            	</item>
+            </list>
+            
+            Edit format validates control value when control is activated (focused) and control is deactivated (blur).
+            </remarks>
+            <example>
+            	<code>
+            		function doBeforeValidate(controlId, value)
+            		{
+            			// do some action here ...
+            		}
+            	</code>
+            </example>
+            <value>
+            The default is null.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidatorClientSideEvents.OnAfterValidate">
+             <summary>
+             Specifies the client side (JavaScript) function name that will be invoked after value is validated.
+             </summary>
+             <remarks>
+             Parameters :
+             <list type="bullet">
+            		<item>
+            			<description>controlId - string</description>
+            		</item>
+            		<item>
+            			<description>value - string</description>
+            		</item>
+            		<item>
+            			<description>isValid - boolean</description>
+            		</item>
+             </list>
+            
+             Edit format validates control value when control is activated (focused) and control is deactivated (blur).
+             </remarks>
+             <example>
+            		<code>
+            			function doAfterValidate(controlId, value, isValid)
+            			{
+            				// do some action here ...
+            			}
+            		</code>
+             </example>
+             <value>
+             The default is null.
+             </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidatorClientSideEvents.OnBeforeCharValidate">
+             <summary>
+             Specifies the client side (JavaScript) function name that will be invoked before character value value is validated.
+             </summary>
+             <remarks>
+             Parameters :
+             <list type="bullet">
+            		<item>
+            			<description>controlId - string</description>
+            		</item>
+            		<item>
+            			<description>value - string</description>
+            		</item>
+            		<item>
+            			<description>index - int</description>
+            		</item>
+             </list>
+            
+             Edit format validates character value when character value is going to entered and character value is entered.
+             </remarks>
+             <example>
+            		<code>
+            			function doBeforeCharValidate(controlId, value, index)
+            			{
+            				// do some action here ...
+            			}
+            		</code>
+             </example>
+             <value>
+             The default is null.
+             </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidatorClientSideEvents.OnAfterCharValidate">
+             <summary>
+             Specifies the client side (JavaScript) function name that will be invoked after character value is validated.
+             </summary>
+             <remarks>
+             Parameters :
+             <list type="bullet">
+            		<item>
+            			<description>controlId - string</description>
+            		</item>
+            		<item>
+            			<description>value - string</description>
+            		</item>
+            		<item>
+            			<description>isValid - boolean</description>
+            		</item>
+            		<item>
+            			<description>index - int</description>
+            		</item>
+             </list>
+            
+             Edit format validates character value when character value is going to entered and character value is entered.
+             </remarks>
+             <example>
+            		<code>
+            			function doAfterCharValidate(controlId, value, isValid, index)
+            			{
+            				// do some action here ...
+            			}
+            		</code>
+             </example>
+             <value>
+             The default is null.
+             </value>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.DateTimeEditorClientSideEvents">
+            <summary>
+            Represents client side (Javascript) datetime editor element events.
+            </summary>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.DateTimeEditorClientSideEvents.IsAnyAttachEventHandlers">
+            <summary>
+            Determine whether any event handler is attached.
+            </summary>
+            <returns>true if value is valid; otherwise, false.</returns>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditorClientSideEvents.DayEvents">
+            <summary>
+            Specifies the client side (JavaScript) Day element events.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DateTimeEditorClientSideEvents.HighLightDayEvents">
+            <summary>
+            Specifies the client side (JavaScript) HighLight Day element events.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.FormatValidatorInfo">
+            <summary>
+            Represents display format info.
+            </summary>
+            <remarks>
+            Display format info is applied when the control is inactivated (has no focus).
+            </remarks>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.FormatValidatorInfo.SetInfo(ISNet.WebUI.ISNetBaseValidator.ISNetBaseValidator)">
+            <summary>
+            Set validator info from format validator control to format validator info.
+            </summary>
+            <param name="validator">A <see cref="T:ISNet.WebUI.ISNetBaseValidator.ISNetBaseValidator">ISNetBaseValidator</see> object to be copied its value to format validator info.</param>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.FormatValidatorInfo.ErrorText">
+            <summary>
+            Specifies error text.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.FormatValidatorInfo.Format">
+            <summary>
+            Specifies format expression of the text diplayed in the control when the control is inactivated (has no focus).
+            </summary>
+            <remarks>
+            Using standard .NET formatting specifiers.
+            </remarks>
+            <value>
+            The default is String.Empty
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.FormatValidatorInfo.Type">
+            <summary>
+            Specifies display format data type.
+            </summary>
+            <value>
+            One of the <see cref="T:ISNet.WebUI.WebControls.FormatType"/> enumeration values that specifies display format data type. The default is FormatType.DateTime.
+            </value>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.FormatValidator">
+            <summary>
+            Makes the associated input control display value to be formatted.
+            </summary>
+            <remarks>
+            Use this control to make an input control display value to be formatted. The input control fails validation if its value cannot be formatted (has an invalid input value data type).
+            Multiple validators can be associated with the same input control.
+            </remarks>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.FormatValidator.OnFormatTypeBeforeChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="!:ISNet.WebUI.WebControls.FormatTypeBeforeChanged">FormatTypeBeforeChanged</see> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs">EventArgs</see> object that contains the event data.</param>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.FormatValidator.OnFormatTypeChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="!:ISNet.WebUI.WebControls.FormatTypeChanged">FormatTypeChanged</see> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs">EventArgs</see> object that contains the event data.</param>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.FormatValidator.IsFormatTypeChangedAttached">
+            <summary>
+            Determine wether format type changed event is attached.
+            </summary>
+            <returns>true if value is valid; otherwise, false.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.FormatValidator.GetFormattedString">
+            <summary>
+            Get formatted string for format validator.
+            </summary>
+            <returns>The formatted string.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.FormatValidator.GetUnFormattedString">
+            <summary>
+            Get unformatted string for format validator.
+            </summary>
+            <returns>The unformatted string.</returns>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.FormatValidator.ClientSideEvents">
+            <summary>
+            Gets or sets format validator client side events.
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebControls.FormatValidatorClientSideEvents">FormatValidatorClientSideEvents</see> that contains the format validator client side events.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.FormatValidator.Format">
+            <summary>
+            Gets or sets format expression for format validator.
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebControls.FormatValidatorClientSideEvents">FormatValidatorClientSideEvents</see> that contains the format validator client side events.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.FormatValidator.FormatType">
+            <summary>
+            Gets or sets format type.
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebControls.FormatType">FormatType</see> that contains information about format validator format type.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.FormatValidator.Text">
+            <summary>
+            Sets or returns the text for the format validator.
+            </summary>
+            <value>
+            A <see cref="T:System.String">string</see> contains text.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.FormatValidator.Enabled">
+            <summary>
+            Gets or sets a value that indicates whether the validation control is enabled. 
+            </summary>
+            <value>
+            true if the validation control is enabled; otherwise, false. The default is true. 
+            </value>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.CultureInfoWrapper">
+            <summary>
+            Intersoft ASP.Net cultureinfo wrapper class.  
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CultureInfoWrapper.CultureInfo">
+            <summary>
+            Represents .NET culture info class.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CultureInfoWrapper.DateTimeFormatInfo">
+            <summary>
+            Represents .NET DateTimeFormatInfo class wrapper.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CultureInfoWrapper.NumberFormatInfo">
+            <summary>
+            Represents .NET NumberFormatInfo class wrapper.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CultureInfoWrapper.CultureName">
+            <summary>
+            Represents culture name for CultureInfo.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CultureInfoWrapper.IsCustomize">
+            <summary>
+            Indicates if culture info setting is customizeable.
+            </summary>
+            <remarks>
+            Notify that some culture info settings are read only so they are not customizable. For details about  .NET formatting features, please refer to the .NET Framework documentation.	
+            </remarks>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.CalendarNetEditor">
+            <summary>
+            Summary description for MessageControlIDEditor.
+            </summary>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.CalendarNetEditor.CreateListBox(System.String)">
+            <summary>
+               <para>
+                    Creates a list box to show in the property grid.
+               </para>
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.CalculatorEditor">
+            <summary>
+            Represents client calculator editor user interface.
+            </summary>
+            <remarks>
+            This editor can be activated when control has a numeric data type.
+            </remarks>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.CalculatorEditor.OnIsCollaborateWithHighLightChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:ISNet.WebUI.WebControls.CalculatorEditor.IsCollaborateWithHighLightChanged">IsCollaborateWithHighLightChanged</see> event.
+            </summary>
+            <param name="e">A <see cref="T:System.EventArgs">EventArgs</see> that contains the event data.</param>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CalculatorEditor.CalculatorStyle">
+            <summary>
+            Gets or sets the style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the calculator editor window. 
+            </value>
+            <remarks> 
+            Use <c>CalculatorStyle</c> to manage the style of calculator editor window including window background and border.
+            </remarks>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CalculatorEditor.OperandStyle">
+            <summary>
+            Gets or sets the dynamic style of calculator operand style button. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.DynamicStyle">DynamicStyle</see> that contains the style for the calculator operand style button. 
+            </value>
+            <remarks> 
+            Use <c>OperandStyle</c> to manage the dynamic style of calculator operand style button including style on active state, style on over state, and style on normal state.
+            </remarks>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CalculatorEditor.OperatorStyle">
+            <summary>
+            Gets or sets the dynamic style of calculator operator style button. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.DynamicStyle">DynamicStyle</see> that contains the style for the calculator operator style button. 
+            </value>
+            <remarks> 
+            Use <c>OperatorStyle</c> to manage the dynamic style of calculator operator style button including style on active state, style on over state, and style on normal state.
+            </remarks>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CalculatorEditor.ClientSideEvents">
+            <summary>
+            Gets or sets calculator editor element client side events.
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebControls.CalculatorEditorClientSideEvents">CalculatorEditorClientSideEvents</see> that contains the calculator editor element client side events.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CalculatorEditor.Border">
+            <summary>
+            Gets or sets the border width of the calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:System.Int32">Border</see> that contains the border width of the calculator editor window. The default value is 5.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CalculatorEditor.CellPadding">
+            <summary>
+            Gets or sets the cell padding width of the calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:System.Int32">CellPadding</see> that contains the cell padding width of the calculator editor window. The default value is 0.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CalculatorEditor.CellSpacing">
+            <summary>
+            Gets or sets the cell spacing width of the calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:System.Int32">CellSpacing</see> that contains the cell spacing width of the calculator editor window. The default value is 3.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CalculatorEditor.BorderColor">
+            <summary>
+            Gets or sets the border color of the calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:System.Drawing.Color">BorderColor</see> that contains the border color of the calculator editor window. The default value is royal blue.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CalculatorEditor.BorderColorDark">
+            <summary>
+            Gets or sets the border color dark of the calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:System.Drawing.Color">BorderColorDark</see> that contains the border color dark of the calculator editor window. The default value is <c>Color.Empty</c>.
+            </value>
+            <remarks>
+            <c>BorderColorDark</c> is one of the two colors used to draw the 3-D border of the object.
+            </remarks>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CalculatorEditor.BorderColorLight">
+            <summary>
+            Gets or sets the border color light of the calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:System.Drawing.Color">BorderColorDark</see> that contains the border color light of the calculator editor window. The default value is <c>Color.Empty</c>.
+            </value>
+            <remarks>
+            <c>BorderColorLight</c> is one of the two colors used to draw the 3-D border of the object.
+            </remarks>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CalculatorEditor.Behavior">
+            <summary>
+            Gets or sets the client editor behavior. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.ClientEditorBehavior">ClientEditorBehavior</see> that contains the client editor behavior. 
+            </value>
+            <remarks> 
+            Use <c>ClientEditorBehavior</c> to manage the client editor behavior including dropdown button size, dropdown button display position, dropdown button tooltip.
+            </remarks>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CalculatorEditor.WindowInfo">
+            <summary>
+            Defines how custom window information is layout at client.
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.EditorWindowInfo">WindowInfo</see> that contains window information is layout at client. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CalculatorEditor.IsCollaborateWithHighLight">
+            <summary>
+            Specifies if selected control value is default editor value and selected editor value assigned to selected control value when HighLight is enabled.
+            </summary>
+            <value>
+            <c>true</c> if the collaborate with highlight is enabled; otherwise false. The default is true.
+            </value>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.WebInput">
+            <summary>
+            Intersoft ASP.Net WebInput server control for Microsoft ASP.NET 
+            </summary>
+            <remarks>
+            The WebInput.NET control is a rich user interface input control that allows you to formatting data, masking data, validating data, and highlighting data.
+            To display data in the WebInput.NET control set the Value properties to a valid data source (a string, datetime or numeric data type). WebInput.NET doesn't provide databinding mechanism cause the data that is proceed just a simple value. The Text property contains text data that is formatted, masked, edited and validated.
+            Supports .NET culture settings formatting, specifiers, separator etc (from Afrikaans to Vietnamese).
+            For a better editing experience, the WebInput.NET control has several features like : HighLighting, Formatting, Masking, and Validating data in client side (web browser). With HighLight, user can select specific edit value (whether a character, a phrase or a word), edit the value , and spin it (for spin, it requires EditFormat feature enabled). The Formatting lets  WebInput.NET formats and validate the display text data according to supplied format expression. The Masking provides better editing experience by defined input placeholders per character and literals , validate it per character or phrase, and spin the selected value. An exception to Masking, there is a DynamicNumber of MaskType that validates and reformats each value entered and each key stroked. This DynamicNumber doesn't need to specify the masking expression. The Validating mechanism is internally plugged to Formatting and Masking feature.
+            To interact intensively with WebInput.NET process at runtime, there is a client side class library of WebInput.NET that can be modified via script and persisted to server side when postback. The client side object is actually a mini version of server side object with some extra client side features. So client side object has consistent object model reflect to server side object model. There are also several client side event handlers that can be attach. Every event handlers provide minimum a controlId parameter as standard. 
+            There are 2 builtin editors that power editing capabilities, Calculator editor and DateTime editor. 
+            The editors work well with HighLight, Formatting, Masking and Validating feature.
+            WebInput.NET built base on new Intersoft WEBUI framework studio. As result, it inherits all power and benefit of new framework likes instance object cloning (with reference type), instance object reseting (with reference type), instance object copying (with reference type), instance object empty checking (with reference type), support Intersoft VML serializable and Intersoft Binary serializable, intuitive designtime support, and etc.
+            WebInput.NET control has 4 modes :
+            <list type="table">
+            <listheader>
+            <term>Mode</term>
+            <description>Description</description>
+            </listheader>
+            <item>
+            	<term>Basic</term>
+            	<description>WebInput.NET is used without formatting, editing and validating feature. There is no editor available.</description>
+            </item>
+            <item>
+            	<term>Display</term>
+            	<description>WebInput.NET is used with display format feature. For datetime format datatype, edit value is convert to default short or long datetime format. For number format datatype, there is simple buildin editing feature like plus-minus sign and decimal separator validation.  This mode supports formatting, validating, highlighting and client editor.</description>
+            </item>
+            <item>
+            	<term>Edit</term>
+            	<description>WebInput.NET is used with edit format feature. For datetime, number and other mask datatype, spinning feature is enabled. For dynamicNumber, highlighting and spinning feature are disabled. mask datatype This mode supports masking, validating, highlighting (except for MaskType.DynamicNumber) and client editor.</description>
+            </item>
+            <item>
+            	<term>Display and Edit</term>
+            	<description>Composition of display and edit mode. Display and edit mode must have synchronous data type.</description>
+            </item>
+            </list>
+            Each mode supports client editor with ascociate datatype.
+            Formatting and validating feature works in display mode.
+            Masking, HighLighting work at edit mode.
+            Masking is highly integrated with HighLighting feature. It required HighLighting feature to be enabled (these is set automatically).
+            Editors can be collaborate with HighLighting. If editors is collaborated with highlight and highlight is enabled then it only edit value that is highlighted.
+            When editors is work with highlight or masking, some of editors features are disabled for consolidation purpose.
+            </remarks>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.IMask">
+            <summary>
+            Summary description for IIMask.
+            </summary>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.WebInput.OnTextChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:ISNet.WebUI.WebControls.WebInput.TextChanged">TextChanged</see> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs">EventArgs</see> object that contains the event data.</param>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.WebInput.GetXMLData">
+            <summary>
+            Get xml data for WebInput client side object model serialization.
+            </summary>
+            <returns>A <see cref="T:System.String">String</see> that contains xml data.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.WebInput.CheckConstrains">
+            <summary>
+            Check WebInput constrains.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.WatermarkText">
+            <summary>
+            Gets or sets webinput watermark text. 
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.ValidationGroup">
+            <summary>
+            Gets or sets the group of controls for which the WebInput control causes validation when it posts back to the server. 
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.CausesValidation">
+            <summary>
+            Gets or sets a value indicating whether validation is performed when the WebInput control is set to validate when a postback occurs.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.TextBoxStyle">
+            <summary>
+            Gets or sets the style of text box element.
+            </summary>
+            <seealso cref="T:ISNet.WebUI.DynamicStyle"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.DropDownStyle">
+            <summary>
+            Gets or sets the style of dropdown button element.
+            </summary>
+            <seealso cref="T:ISNet.WebUI.DynamicStyle"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.FrameStyle">
+            <summary>
+            Gets or sets the style of the control's frame.
+            </summary>
+            <seealso cref="T:ISNet.WebUI.DynamicStyle"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.InitialSelection">
+            <summary>
+            Determines the selection position when control receives focus.
+            </summary>
+            <value>
+            One of the <see cref="T:ISNet.WebUI.WebControls.InitialSelection"/> enumeration values that determines the selection position when control receives input focus. The default is InitialSelection.SelectAll
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.HighLight">
+            <summary>
+            Represents the selection, which is a highlighted block of text.
+            </summary>
+            <seealso cref="T:ISNet.WebUI.WebControls.HighLight"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.EditFormat">
+            <summary>
+            "Represents edit format info.
+            </summary>
+            <seealso cref="T:ISNet.WebUI.WebControls.MaskValidatorInfo"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.DisplayFormat">
+            <summary>
+            Represents display format info.
+            </summary>
+            <seealso cref="T:ISNet.WebUI.WebControls.FormatValidatorInfo"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.CalculatorEditor">
+            <summary>
+            Gets or sets <c>CalculatorEditor</c> for this <c>WebInput</c>.
+            </summary>
+            <seealso cref="T:ISNet.WebUI.WebControls.CalculatorEditor"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.DateTimeEditor">
+            <summary>
+            Gets or sets <c>DateTimeEditor</c> for this <c>WebInput</c>.
+            </summary>
+            <seealso cref="T:ISNet.WebUI.WebControls.DateTimeEditor"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.EditFormatClientSideEvents">
+            <summary>
+            Gets or sets edit format client side events for WebInput.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.DisplayFormatClientSideEvents">
+            <summary>
+            Gets or sets display format client side events for WebInput.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.CalculatorEditorClientSideEvents">
+            <summary>
+            Gets or sets calculator editor client side events for WebInput.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.DateTimeEditorClientSideEvents">
+            <summary>
+            Gets or sets datetime editor client side events for WebInput.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.ImageSettings">
+            <summary>
+            Represents image settings.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.TextSettings">
+            <summary>
+            Represents text settings.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.StyleSettings">
+            <summary>
+            Represents style settings.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.AcceptEsc">
+            <summary>
+            Indicates if Esc characters are accepted as input. 
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.AcceptEnter">
+            <summary>
+            Indicates if Enter characters are accepted as input.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.AcceptTab">
+            <summary>
+            Indicates if Tab characters are accepted as input.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.ClientSideEvents">
+            <summary>
+            Gets or sets client side events for WebInput.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.CultureInfo">
+            <summary>
+            Gets or sets culture info for WebInput.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.CaseSentitive">
+            <summary>
+            Specifies if string comparisons within control are case-sensitive.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.CharacterCasing">
+            <summary>
+            Indicates whether the control modifies the case of characters as they are typed.
+            </summary>
+            <value>
+            One of the <see cref="T:ISNet.WebUI.WebControls.CharacterCasing"/> enumeration values that specifies whether the control modifies the case of characters. The default is CharacterCasing.Normal.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.Dir">
+            <summary>
+            Indicates the reading order of control.
+            </summary>
+            <value>
+            One of the <see cref="T:ISNet.WebUI.DIR"/> enumeration values that specifies the reading order of control. The default is DIR.ltr .
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.EmptyAsNull">
+            <summary>
+            Indicates if empty strings within control are interpreted as null values. 
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.Nullable">
+            <summary>
+            Indicates if control can contain null value.
+            </summary>
+            <value>
+            The default is false.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.MaxLength">
+            <summary>
+            Sets or retrieves a value that indicates the maximum number of characters that the user can enter (Not working for DisplayFormat and EditFormat).
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.NumericInput">
+            <summary>
+            Indicates if control only accepts numeric value.
+            </summary>
+            <value>
+            The default is false.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.ReadOnly">
+            <summary>
+            Indicates if control text can be edited.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.TabIndex">
+            <summary>
+            Gets or sets the tab order of the control within its container. 
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.Value">
+            <summary>
+            Represents control data source value.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.Text">
+            <summary>
+            Represents value that already been formatted, validated and masked.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.EditText">
+            <summary>
+            Represents value that already been edited.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.Rows">
+            <summary>
+            Specifies rows count.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.TextMode">
+            <summary>
+            Specifies the behavior mode of the text box.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.Wrap">
+            <summary>
+            Specifies the behavior mode of the text box.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.ShowCheckBoxForNullInput">
+            <summary>
+            Gets or sets a value indicating whether checkbox for nullable value is showed.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.UseDefaultStyle">
+            <summary>
+            Gets or sets a value indicating whether default style is used.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.Enabled">
+            <summary>
+            Gets or sets a value that indicates whether the control is enabled. 
+            </summary>
+            <value>
+            true if the control is enabled; otherwise, false. The default is true. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.ScriptDirectory">
+            <summary>
+            Gets or sets the directory where all required scripts for the control are stored.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInput.Controls">
+            <summary>
+            Gets the collection of controls contained within the control.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.PlaceHolder">
+            <summary>
+            Represents placeHolder character information.
+            </summary>
+            <remarks>
+            A placeholder character is an expression character that has a special meaning when used in mask expression.
+            A placeholder character represents another characters in mask expression real value.
+            In another term, placeholder character defines a rule what character is valid when textual data is inputted for placeholder location in mask expression.
+            Mask expression has default placeholder character likes '0' - Digit (0 to 9, entry required, plus [+] and minus [–] signs not allowed), 'L' - Letter (A to Z, entry required), etc.
+            For complete default placeholder character list, see <see cref="T:ISNet.WebUI.WebControls.MaskInfo">MaskInfo</see> help documentation.
+            Beside default, there is also custom placeholder character, see <see cref="T:ISNet.WebUI.WebControls.CustomPlaceHolder">CustomPlaceHolder</see> help documentation.
+            <see cref="P:ISNet.WebUI.WebControls.PlaceHolder.PromptChar">PromptChar</see> property represents a character for placeholder that is used in mask expression.
+            Character case for textual value can be determined too by setting <see cref="P:ISNet.WebUI.WebControls.PlaceHolder.CaseSensitive">CaseSensitive</see> property.
+            A character value in mask expression can be require or not by setting <see cref="P:ISNet.WebUI.WebControls.PlaceHolder.Optional">Optional</see> property.  
+            </remarks>
+            <seealso cref="T:ISNet.WebUI.WebControls.MaskInfo"/>
+            <seealso cref="T:ISNet.WebUI.WebControls.CustomPlaceHolder"/>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.PlaceHolder.IsValidChar(System.Char)">
+            <summary>
+            Check whether a character is a valid input character for this placeholder.
+            </summary>
+            <param name="character">An input character to be checked.</param>
+            <returns>true if value is valid; otherwise, false.</returns>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.PlaceHolder.CaseSensitive">
+            <summary>
+            Indicates whether string comparisons within the <c>PlaceHolder</c> are case-sensitive.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.PlaceHolder.Excluding">
+            <summary>
+            Indicates whether characters that is represented by <c>PlaceHolder</c> are excluding character.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.PlaceHolder.Optional">
+            <summary>
+            Indicates whether characters that is represented by <c>PlaceHolder</c> are optional character.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.PlaceHolder.PlaceHolderCharacter">
+            <summary>
+            Gets or sets <c>PlaceHolder</c> character.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.DefaultPlaceHolderCollection">
+            <summary>
+             Represents a collection of default placeholders.
+            </summary>
+            <seealso cref="T:ISNet.WebUI.WebControls.PlaceHolder"/>
+            <seealso cref="T:ISNet.WebUI.WebControls.CustomPlaceHolder"/>
+            <seealso cref="T:ISNet.WebUI.WebControls.MaskInfo"/>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ISNet.WebUI.WebControls.DefaultPlaceHolderCollection.Contains(ISNet.WebUI.WebControls.PlaceHolder)" -->
+        <member name="M:ISNet.WebUI.WebControls.DefaultPlaceHolderCollection.ContainsByCharacter(System.Char)">
+            <summary>
+            Determines whether a character is a default placeholder character.
+            </summary>
+            <param name="placeHolder">A <see cref="T:System.Char">char</see> to be checked.</param>
+            <returns>true if value is found in the <c>DefaultPlaceHolderCollection</c>; otherwise, false</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.DefaultPlaceHolderCollection.GetByCharacter(System.Char)">
+            <summary>
+            Gets a placeholder by character.
+            </summary>
+            <param name="placeHolder">A <see cref="T:System.Char">char</see> to be found.</param>
+            <returns>The found <c>PlaceHolder</c> object.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ISNet.WebUI.WebControls.DefaultPlaceHolderCollection.IsValidChar(System.Char,System.Char)" -->
+        <member name="P:ISNet.WebUI.WebControls.DefaultPlaceHolderCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the entry to get or set.</param>
+            <returns>The <c>PlaceHolder</c> object at the specified index.</returns>
+            <seealso cref="T:ISNet.WebUI.WebControls.PlaceHolder"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DefaultPlaceHolderCollection.PromptChar">
+            <summary>
+            Gets or sets promptchar for all placeholder in this collection.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.NGroupCollection">
+            <summary>
+            Represents a collection of NGroup.
+            </summary>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.NGroupCollection.Add(ISNet.WebUI.WebControls.NGroup)">
+            <summary>
+            Adds a string to the end of the <c>CustomPlaceHolderCollection</c>.
+            </summary>
+            <param name="value">The <c>CustomPlaceHolder</c> object to add to the end of the <c>CustomPlaceHolderCollection</c>.</param>
+            <returns>The zero-based index at which the new element is inserted.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.NGroupCollection.IndexOf(ISNet.WebUI.WebControls.NGroup)">
+            <summary>
+            Searches for the specified <c>CustomPlaceHolder</c> object and returns the zero-based index of the first occurrence within the <c>CustomPlaceHolderCollection</c>.
+            </summary>
+            <param name="value">The <c>CustomPlaceHolder</c> object to locate.</param>
+            <returns>The zero-based index of the first occurrence of value in the <c>CustomPlaceHolderCollection</c>, if found; otherwise, -1.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.NGroupCollection.Insert(System.Int32,ISNet.WebUI.WebControls.NGroup)">
+            <summary>
+            Inserts a <c>CustomPlaceHolder</c> object into the <c>CustomPlaceHolderCollection</c> at the specified index. 
+            </summary>
+            <param name="index">The zero-based index at which value is inserted. </param>
+            <param name="value">The <c>CustomPlaceHolder</c> object to insert.</param>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.NGroupCollection.Remove(ISNet.WebUI.WebControls.NGroup)">
+            <summary>
+            Removes the first occurrence of a specific <c>CustomPlaceHolder</c> object from the <c>CustomPlaceHolderCollection</c>.
+            </summary>
+            <param name="value">The <c>CustomPlaceHolder</c> object to remove from the <c>CustomPlaceHolderCollection</c></param>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.NGroupCollection.Contains(ISNet.WebUI.WebControls.NGroup)">
+            <summary>
+            Determines whether the specified string is in the <c>CustomPlaceHolderCollection</c>.
+            </summary>
+            <param name="value">The string to locate in the <c>CustomPlaceHolderCollection</c>.</param>
+            <returns>true if value is found in the <c>CustomPlaceHolderCollection</c>; otherwise, false. </returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.NGroupCollection.OnChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:ISNet.WebUI.WebControls.CustomPlaceHolderCollection.Changed">Changed</see> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs">EventArgs</see> object that contains the event data.</param>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.NGroupCollection.AddRange(System.Collections.ICollection)">
+            <summary>
+            Add NGroup instances to current collection.  
+            </summary>
+            <param name="c">A <see cref="!:System.Collection.ICollection">ICollection</see> of NGroup to be ranged.</param>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.NGroupCollection.ToArray">
+            <summary>
+            Converts current collection NGroup Group value to array of NGroup Group value.
+            </summary>
+            <returns>An array of <see cref="!:System.Int">Int</see> that contains group values.</returns>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.NGroupCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the entry to get or set.</param>
+            <returns>The <c>NGroup</c> object at the specified index.</returns>
+            <seealso cref="T:ISNet.WebUI.WebControls.NGroup"/>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.DTName">
+            <summary>
+            Represents DTName.
+            </summary>
+            <seealso cref="T:ISNet.WebUI.WebControls.DTNameCollection"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.DTName.Name">
+            <summary>
+            Gets or sets name.
+            </summary>
+            <value>
+            A <see cref="T:System.String">String</see> that contains the name.
+            </value>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.BaseDateTimeEditorClientSideEvents">
+            <summary>
+            Represents client side (Javascript) datetime editor element events.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.BaseDateTimeEditorClientSideEvents.OnClick">
+            <summary>
+            Specifies the client side (JavaScript) function name that will be invoked when control is clicked.
+            </summary>
+            <remarks>
+            Parameters :
+            <list type="bullet">
+            	<item>
+            		<description>controlId - string</description>
+            		<description>date - number</description>
+            		<description>month - number</description>
+            		<description>year - number</description>
+            	</item>
+            </list>
+            </remarks>
+            <example>
+            	<code>
+            		function doClick(controlId, date, month, year)
+            		{
+            			// do some action here 
+            		}
+            	</code>
+            </example>
+            <value>
+            The default is null.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.BaseDateTimeEditorClientSideEvents.OnDblClick">
+            <summary>
+            Specifies the client side (JavaScript) function name that will be invoked when control is double clicked.
+            </summary>
+            <remarks>
+            Parameters :
+            <list type="bullet">
+            	<item>
+            		<description>controlId - string</description>
+            		<description>date - number</description>
+            		<description>month - number</description>
+            		<description>year - number</description>
+            	</item>
+            </list>
+            </remarks>
+            <example>
+            	<code>
+            		function doDblClick(controlId, date, month, year)
+            		{
+            			// do some action here 
+            		}
+            	</code>
+            </example>
+            <value>
+            The default is null.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.BaseDateTimeEditorClientSideEvents.OnMouseDown">
+            <summary>
+            Specifies the client side (JavaScript) function name that will be invoked when mousedown event is fired on control.
+            </summary>
+            <remarks>
+            Parameters :
+            <list type="bullet">
+            	<item>
+            		<description>controlId - string</description>
+            		<description>date - number</description>
+            		<description>month - number</description>
+            		<description>year - number</description>
+            	</item>
+            </list>
+            </remarks>
+            <example>
+            	<code>
+            		function doMouseDown(controlId, date, month, year)
+            		{
+            			// do some action here 
+            		}
+            	</code>
+            </example>
+            <value>
+            The default is null.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.BaseDateTimeEditorClientSideEvents.OnMouseUp">
+            <summary>
+            Specifies the client side (JavaScript) function name that will be invoked when mouseup event is fired on control.
+            </summary>
+            <remarks>
+            Parameters :
+            <list type="bullet">
+            	<item>
+            		<description>controlId - string</description>
+            		<description>date - number</description>
+            		<description>month - number</description>
+            		<description>year - number</description>
+            	</item>
+            </list>
+            </remarks>
+            <example>
+            	<code>
+            		function doMouseUp(controlId, date, month, year)
+            		{
+            			// do some action here 
+            		}
+            	</code>
+            </example>
+            <value>
+            The default is null.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.BaseDateTimeEditorClientSideEvents.OnMouseOver">
+            <summary>
+            Specifies the client side (JavaScript) function name that will be invoked when mouseover event is fired on control.
+            </summary>
+            <remarks>
+            Parameters :
+            <list type="bullet">
+            	<item>
+            		<description>controlId - string</description>
+            		<description>date - number</description>
+            		<description>month - number</description>
+            		<description>year - number</description>
+            	</item>
+            </list>
+            </remarks>
+            <example>
+            	<code>
+            		function doMouseOver(controlId, date, month, year)
+            		{
+            			// do some action here 
+            		}
+            	</code>
+            </example>
+            <value>
+            The default is null.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.BaseDateTimeEditorClientSideEvents.OnMouseMove">
+            <summary>
+            Specifies the client side (JavaScript) function name that will be invoked when mousemove event is fired on control.
+            </summary>
+            <remarks>
+            Parameters :
+            <list type="bullet">
+            	<item>
+            		<description>controlId - string</description>
+            		<description>date - number</description>
+            		<description>month - number</description>
+            		<description>year - number</description>
+            	</item>
+            </list>
+            </remarks>
+            <example>
+            	<code>
+            		function doMouseMove(controlId, date, month, year)
+            		{
+            			// do some action here 
+            		}
+            	</code>
+            </example>
+            <value>
+            The default is null.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.BaseDateTimeEditorClientSideEvents.OnMouseOut">
+            <summary>
+            Specifies the client side (JavaScript) function name that will be invoked when mouseout event is fired on control.
+            </summary>
+            <remarks>
+            Parameters :
+            <list type="bullet">
+            	<item>
+            		<description>controlId - string</description>
+            		<description>date - number</description>
+            		<description>month - number</description>
+            		<description>year - number</description>
+            	</item>
+            </list>
+            </remarks>
+            <example>
+            	<code>
+            		function doMouseOut(controlId, date, month, year)
+            		{
+            			// do some action here 
+            		}
+            	</code>
+            </example>
+            <value>
+            The default is null.
+            </value>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.TextEditor">
+            <summary>
+            Represents text editor.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.TextEditor.Behavior">
+            <summary>
+            Gets or set behavior for <c>TextEditor</c>.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.TextEditor.WindowInfo">
+            <summary>
+            Defines how custom window information is layout at client.
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.EditorWindowInfo">WindowInfo</see> that contains window information is layout at client. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.TextEditor.IsCollaborateWithHighLight">
+            <summary>
+            Specifies if selected control value is default editor value and selected editor value assigned to selected control value when HighLight is enabled.
+            </summary>
+            <value>
+            <c>true</c> if the collaborate with highlight is enabled; otherwise false. The default is true.
+            </value>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.MaskValidatorInfo">
+            <summary>
+            Represents edit format info.
+            </summary>
+            <remarks>
+            Edit format info is applied when the control is activated (has focus and value is edited).
+            </remarks>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.MaskValidatorInfo.SetInfo(ISNet.WebUI.ISNetBaseValidator.ISNetBaseValidator)">
+            <summary>
+            Set validator info from mask validator control to mask validator info.
+            </summary>
+            <param name="validator">A <see cref="T:ISNet.WebUI.ISNetBaseValidator.ISNetBaseValidator">ISNetBaseValidator</see> object to be copied its value to format validator info.</param>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidatorInfo.ErrorText">
+            <summary>
+            Specifies error text.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidatorInfo.MaskInfo">
+            <summary>
+            Gets or sets a <see cref="T:ISNet.WebUI.WebControls.MaskInfo">MaskInfo</see> data.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidatorInfo.Format">
+            <summary>
+            Specifies format expression of the text diplayed in the control when the control value is edited.
+            </summary>
+            <remarks>
+            Using standard .NET formatting specifiers.
+            Format expression must be synchroned with <see cref="!:ISNet.WebUI.WebControls.WebInput.EditFormat.MaskInfo.MaskExpression"/>.
+            Format expression is ignored when <see cref="!:ISNet.WebUI.WebControls.WebInput.EditFormat.MaskType"/> = <see cref="F:ISNet.WebUI.WebControls.MaskType.Other"/>
+            </remarks>
+            <value>
+            The default is String.Empty
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidatorInfo.Type">
+            <summary>
+            Specifies edit format data type.
+            </summary>
+            <value>
+            One of the <see cref="T:ISNet.WebUI.WebControls.MaskType"/> enumeration values that specifies edit format data type. The default is MaskType.DateTime.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidatorInfo.IsValueSpinnable">
+            <summary>
+            Specifies if selected value can be spinned.
+            </summary>
+            <value>
+            The default is true;
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidatorInfo.SkipNavigateHoliday">
+            <summary>
+            Specifies if keyboard navigation (spin) is skipped when encounters holiday.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidatorInfo.MinDropDownYear">
+            <summary>
+            Gets or sets minimal dropdown year value.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.MaskValidatorInfo.MaxDropDownYear">
+            <summary>
+            Gets or sets maximum dropdown year value.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.FormatValidatorClientSideEvents">
+            <summary>
+            Represents client side (Javascript) display format events.
+            </summary>
+            <remarks>
+            There are 2 events in display format , OnBeforeValidate and OnAfterValidate.
+            Both events are involved in validating process.
+            Display format validates control value when value is edited, control is activated (focused) and control is deactivated (blur).
+            </remarks>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.FormatValidatorClientSideEvents.OnValidateError">
+             <summary>
+             Specifies the client side (JavaScript) function name that will be invoked when validation process failed.
+             </summary>
+             <remarks>
+             Parameters :
+             <list type="bullet">
+            		<item>
+            			<description>controlId - string</description>
+            		</item>
+             </list>
+            
+             </remarks>
+             <example>
+            		<code>
+            			function doValidateError(controlId)
+            			{
+            				// do some action here ...
+            			}
+            		</code>
+             </example>
+             <value>
+             The default is null.
+             </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.FormatValidatorClientSideEvents.OnBeforeValidate">
+             <summary>
+             Specifies the client side (JavaScript) function name that will be invoked before value is validated.
+             </summary>
+             <remarks>
+             Parameters :
+             <list type="bullet">
+            		<item>
+            			<description>controlId - string</description>
+            		</item>
+            		<item>
+            			<description>value - string</description>
+            		</item>
+             </list>
+            
+             Display format validates control value when value is edited, control is activated (focused) and control is deactivated (blur).
+             </remarks>
+             <example>
+            		<code>
+            			function doBeforeValidate(controlId, value)
+            			{
+            				// do some action here ...
+            			}
+            		</code>
+             </example>
+             <value>
+             The default is null.
+             </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.FormatValidatorClientSideEvents.OnAfterValidate">
+             <summary>
+             Specifies the client side (JavaScript) function name that will be invoked after value is validated.
+             </summary>
+             <remarks>
+             Parameters :
+             <list type="bullet">
+            		<item>
+            			<description>controlId - string</description>
+            		</item>
+            		<item>
+            			<description>value - string</description>
+            		</item>
+            		<item>
+            			<description>isValid - boolean</description>
+            		</item>
+             </list>
+            
+             Display format validates control value when value is edited, control is activated (focused) and control is deactivated (blur).
+             </remarks>
+             <example>
+            		<code>
+            			function doAfterValidate(controlId, value, isValid)
+            			{
+            				// do some action here ...
+            			}
+            		</code>
+             </example>
+             <value>
+             The default is null.
+             </value>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.CustomPlaceHolderCollection">
+            <summary>
+            Represents a collection of custom placeholder. 
+            </summary>
+            <seealso cref="T:ISNet.WebUI.WebControls.PlaceHolder"/>
+            <seealso cref="T:ISNet.WebUI.WebControls.CustomPlaceHolder"/>
+            <seealso cref="T:ISNet.WebUI.WebControls.MaskInfo"/>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.CustomPlaceHolderCollection.Add(ISNet.WebUI.WebControls.CustomPlaceHolder)">
+            <summary>
+            Adds a string to the end of the <c>CustomPlaceHolderCollection</c>.
+            </summary>
+            <param name="value">The <c>CustomPlaceHolder</c> object to add to the end of the <c>CustomPlaceHolderCollection</c>.</param>
+            <returns>The zero-based index at which the new element is inserted.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.CustomPlaceHolderCollection.IndexOf(ISNet.WebUI.WebControls.CustomPlaceHolder)">
+            <summary>
+            Searches for the specified <c>CustomPlaceHolder</c> object and returns the zero-based index of the first occurrence within the <c>CustomPlaceHolderCollection</c>.
+            </summary>
+            <param name="value">The <c>CustomPlaceHolder</c> object to locate.</param>
+            <returns>The zero-based index of the first occurrence of value in the <c>CustomPlaceHolderCollection</c>, if found; otherwise, -1.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.CustomPlaceHolderCollection.Insert(System.Int32,ISNet.WebUI.WebControls.CustomPlaceHolder)">
+            <summary>
+            Inserts a <c>CustomPlaceHolder</c> object into the <c>CustomPlaceHolderCollection</c> at the specified index. 
+            </summary>
+            <param name="index">The zero-based index at which value is inserted. </param>
+            <param name="value">The <c>CustomPlaceHolder</c> object to insert.</param>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.CustomPlaceHolderCollection.Remove(ISNet.WebUI.WebControls.CustomPlaceHolder)">
+            <summary>
+            Removes the first occurrence of a specific <c>CustomPlaceHolder</c> object from the <c>CustomPlaceHolderCollection</c>.
+            </summary>
+            <param name="value">The <c>CustomPlaceHolder</c> object to remove from the <c>CustomPlaceHolderCollection</c></param>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.CustomPlaceHolderCollection.Contains(ISNet.WebUI.WebControls.CustomPlaceHolder)">
+            <summary>
+            Determines whether the specified string is in the <c>CustomPlaceHolderCollection</c>.
+            </summary>
+            <param name="value">The string to locate in the <c>CustomPlaceHolderCollection</c>.</param>
+            <returns>true if value is found in the <c>CustomPlaceHolderCollection</c>; otherwise, false. </returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.CustomPlaceHolderCollection.OnChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:ISNet.WebUI.WebControls.CustomPlaceHolderCollection.Changed">Changed</see> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs">EventArgs</see> object that contains the event data.</param>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.CustomPlaceHolderCollection.ContainsByCharacter(System.Char)">
+            <summary>
+            Determines whether a placeholder in a CustomPlaceHolderCollection object. 
+            </summary>
+            <param name="placeHolder">The placeholder character to check the <c>CustomPlaceHolderCollection</c> object for.</param>
+            <returns>true if value is found in the <c>CustomPlaceHolderCollection</c>; otherwise, false</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.CustomPlaceHolderCollection.GetByCharacter(System.Char)">
+            <summary>
+            Gets a placeholder by character.
+            </summary>
+            <param name="placeHolder">A <see cref="T:System.Char">char</see> to be found.</param>
+            <returns>The found <c>PlaceHolder</c> object.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.CustomPlaceHolderCollection.IsValidChar(System.Char,System.Char)">
+            <summary>
+            Determines whether a character is a valid value for the placeholder. 
+            </summary>
+            <returns>true if value is found in the <c>CustomPlaceHolderCollection</c>; otherwise, false</returns>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CustomPlaceHolderCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the entry to get or set.</param>
+            <returns>The <c>CustomPlaceHolder</c> object at the specified index.</returns>
+            <seealso cref="T:ISNet.WebUI.WebControls.PlaceHolder"/>
+            <seealso cref="T:ISNet.WebUI.WebControls.CustomPlaceHolder"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CustomPlaceHolderCollection.PromptChar">
+            <summary>
+            Gets or sets promptchar for all placeholder in this collection.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.WebInputStyleSettings">
+            <summary>
+            Represents WebInput.Net style settings.
+            </summary>
+            <remarks>
+            A wrapper class that summaries WebInput.NET style settings.
+            Any style settings wrapper properties change will reflect automatically to WebInput.NET original style settings properties and vice versa.
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:ISNet.WebUI.WebControls.WebInputStyleSettings.TextBoxStyle" -->
+        <member name="P:ISNet.WebUI.WebControls.WebInputStyleSettings.FrameStyle">
+            <summary>
+            Gets or sets the style of the control's frame.
+            </summary>
+            <seealso cref="T:ISNet.WebUI.DynamicStyle"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputStyleSettings.DropDownStyle">
+            <summary>
+            Gets or sets the style of dropdown button element.
+            </summary>
+            <seealso cref="T:ISNet.WebUI.DynamicStyle"/>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputStyleSettings.CalculatorEditorStyle">
+            <summary>
+            Gets or sets the style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the calculator editor window. 
+            </value>
+            <remarks> 
+            Use <c>CalculatorStyle</c> to manage the style of calculator editor window including window background and border.
+            </remarks>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputStyleSettings.CalculatorEditorOperandStyle">
+            <summary>
+            Gets or sets the dynamic style of calculator operand style button. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.DynamicStyle">DynamicStyle</see> that contains the style for the calculator operand style button. 
+            </value>
+            <remarks> 
+            Use <c>OperandStyle</c> to manage the dynamic style of calculator operand style button including style on active state, style on over state, and style on normal state.
+            </remarks>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputStyleSettings.CalculatorEditorOperatorStyle">
+            <summary>
+            Gets or sets the dynamic style of calculator operator style button. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.DynamicStyle">DynamicStyle</see> that contains the style for the calculator operator style button. 
+            </value>
+            <remarks> 
+            Use <c>OperatorStyle</c> to manage the dynamic style of calculator operator style button including style on active state, style on over state, and style on normal state.
+            </remarks>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputStyleSettings.DateTimeEditorStyle">
+            <summary>
+            Gets or sets the style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the calculator editor window. 
+            </value>
+            <remarks> 
+            Use <c>DateTimeStyle</c> to manage the style of calculator editor window including window background and border.
+            </remarks>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputStyleSettings.DateTimeEditorDayStyle">
+            <summary>
+            Gets or sets the day section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the day section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputStyleSettings.DateTimeEditorOtherMonthDayStyle">
+            <summary>
+            Gets or sets the other month day section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the other month day section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputStyleSettings.DateTimeEditorHighLightMonthYearStyle">
+            <summary>
+            Gets or sets the hightlighted month year section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the highlighted month year section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputStyleSettings.DateTimeEditorDropDownMonthYearTextStyle">
+            <summary>
+            Gets or sets the dropdown month year text section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the dropdown month year text section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputStyleSettings.DateTimeEditorDropDownMonthYearHighLightTextStyle">
+            <summary>
+            Gets or sets the dropdown month year highlighted text section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the  the dropdown month year highlighted text section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputStyleSettings.DateTimeEditorDropDownMonthYearUpDownButtonStyle">
+            <summary>
+            Gets or sets the dropdown month year up down button section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the dropdown month year up down button section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputStyleSettings.DateTimeEditorHeaderStyle">
+            <summary>
+            Gets or sets the header section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the header section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputStyleSettings.DateTimeEditorHeaderDayStyle">
+            <summary>
+            Gets or sets the day header section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the day header section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputStyleSettings.DateTimeEditorFooterStyle">
+            <summary>
+            Gets or sets the footer section style of calculator editor window. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebStyle">WebStyle</see> that contains the style for the footer section style of calculator editor window. 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputStyleSettings.Directory">
+            <summary>
+            Gets or sets directory for current settings.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.LookUpCharCollection">
+            <summary>
+            Represents a collection of lookup char.
+            </summary>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.LookUpCharCollection.Add(ISNet.WebUI.WebControls.LookUpChar)">
+            <summary>
+            Adds a LookUpChar object to the end of the <c>LookUpCharCollection</c>.
+            </summary>
+            <param name="value">The <c>LookUpChar</c> object to add to the end of the <c>LookUpCharCollection</c>.</param>
+            <returns>The zero-based index at which the new element is inserted.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.LookUpCharCollection.IndexOf(ISNet.WebUI.WebControls.LookUpChar)">
+            <summary>
+            Searches for the specified <c>LookUpChar</c> object and returns the zero-based index of the first occurrence within the <c>LookUpCharCollection</c>.
+            </summary>
+            <param name="value">The <c>LookUpChar</c> object to locate.</param>
+            <returns>The zero-based index of the first occurrence of value in the <c>LookUpCharCollection</c>, if found; otherwise, -1.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.LookUpCharCollection.Insert(System.Int32,ISNet.WebUI.WebControls.LookUpChar)">
+            <summary>
+            Inserts a <c>LookUpChar</c> object into the <c>LookUpCharCollection</c> at the specified index. 
+            </summary>
+            <param name="index">The zero-based index at which value is inserted. </param>
+            <param name="value">The <c>LookUpChar</c> object to insert.</param>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.LookUpCharCollection.Remove(ISNet.WebUI.WebControls.LookUpChar)">
+            <summary>
+            Removes the first occurrence of a specific <c>LookUpChar</c> object from the <c>LookUpCharCollection</c>.
+            </summary>
+            <param name="value">The <c>LookUpChar</c> object to remove from the <c>LookUpCharCollection</c></param>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.LookUpCharCollection.Contains(ISNet.WebUI.WebControls.LookUpChar)">
+            <summary>
+            Determines whether the specified LookUpChar object is in the <c>LookUpCharCollection</c>.
+            </summary>
+            <param name="value">The LookUpChar object to locate in the <c>LookUpCharCollection</c>.</param>
+            <returns>true if value is found in the <c>LookUpCharCollection</c>; otherwise, false. </returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.LookUpCharCollection.OnChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:ISNet.WebUI.WebControls.LookUpCharCollection.Changed">Changed</see> event.
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs">EventArgs</see> object that contains the event data.</param>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.HighLight">
+            <summary>
+            Represents the selection, which is a highlighted block of text.
+            </summary>
+            <remarks>
+            Default behavior of highlight is replaced selected value with new value.
+            HighLight is working tightly with <see cref="P:ISNet.WebUI.WebControls.WebInput.EditFormat"/> feature (except for MaskType.DynamicNumber).
+            </remarks>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.HighLight.OnTypeChanged(System.EventArgs)">
+            <summary>
+            Raises <see cref="!:ISNet.WebUI.WebControls.TypeChanged">TypeChanged</see> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs">EventArgs</see> object that contains the event data.</param>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.HighLight.Type">
+            <summary>
+            Indicates whether HighLight selects a character, a phrase or a word. 
+            </summary>
+            <value>
+            One of the <see cref="T:ISNet.WebUI.WebControls.HighLightType"/> enumeration values that specifies whether HighLight selects a character, a phrase or a word. The default is HighLightType.Character 
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.HighLight.AutoTabWhenFilled">
+            <summary>
+            Indicates if HighLight selects another text object (a character, a phrase or a word) as soon as current text object is filled.
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.HighLight.IsSelected">
+            <summary>
+            Indicates if HighLight highlights current text object (select current text object with highlight or not).
+            </summary>
+            <value>
+            The default is true.
+            </value>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.CustomPlaceHolder">
+            <summary>
+            Represents custom placeHolder character information.
+            </summary>
+            <seealso cref="T:ISNet.WebUI.WebControls.PlaceHolder"/>
+            <seealso cref="T:ISNet.WebUI.WebControls.MaskInfo"/>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.CustomPlaceHolder.IsValidChar(System.Char)">
+            <summary>
+            Check whether a character is a valid input character for this placeholder.
+            </summary>
+            <param name="character">An input character to be checked</param>
+            <returns>true if value is valid; otherwise, false.</returns>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.CustomPlaceHolder.LookupChars">
+            <summary>
+            Gets lookup chars of custom placeholder. 
+            </summary>
+            <value>
+            A <see cref="T:ISNet.WebUI.WebControls.LookUpCharCollection">LookupChars</see> that contains lookup char list. 
+            </value>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.WebInputComponentEditor">
+            <summary>
+            Summary description for WebInputComponentEditor.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.WebInputClientSideEvents">
+            <summary>
+            Represents the client side (Javascript) WebInput input html element events.
+            </summary>
+            <remarks>
+            This class wraps some common event handlers of WebInput input element. 
+            </remarks>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.WebInputClientSideEvents.IsAnyAttachEventHandlers">
+            <summary>
+            Determine whether any event handler is attached.
+            </summary>
+            <returns>true if value is valid; otherwise, false.</returns>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputClientSideEvents.DropDownButtonEditorEvents">
+            <summary>
+            Specifies the client side (JavaScript) DropDownButton Editor element events.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputClientSideEvents.OnBeforeValueChanged">
+            <summary>
+            Specifies the client side (JavaScript) function name that will be invoked when control value is about to changed
+            </summary>
+            <remarks>
+            Parameters :
+            <list type="bullet">
+            	<item>
+            		<description>controlId - string</description>
+            	</item>
+            	<item>
+            		<description>oldValue - string</description>
+            	</item>
+            	<item>
+            		<description>oldText - string</description>
+            	</item>
+            	<item>
+            		<description>newValue - string</description>
+            	</item>
+            	<item>
+            		<description>newText - string</description>
+            	</item>
+            </list>
+            </remarks>
+            <example>
+            	<code>
+            		function doBeforeValueChanged(controlId,oldValue,oldText,newValue,newText)
+            		{
+            			// do some action here 
+            		}
+            	</code>
+            </example>
+            <value>
+            The default is null.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputClientSideEvents.OnAfterValueChanged">
+            <summary>
+            Specifies the client side (JavaScript) function name that will be invoked when control is clicked.
+            </summary>
+            <remarks>
+            Parameters :
+            <list type="bullet">
+            	<item>
+            		<description>controlId - string</description>
+            	</item>
+            	<item>
+            		<description>newValue - string</description>
+            	</item>
+            	<item>
+            		<description>newText - string</description>
+            	</item>
+            </list>
+            </remarks>
+            <example>
+            	<code>
+            		function doAfterValueChanged(controlId, newValue, newText)
+            		{
+            			// do some action here 
+            		}
+            	</code>
+            </example>
+            <value>
+            The default is null.
+            </value>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.WebInputClientSideEvents.OnDirty">
+            <summary>
+            Specifies the client side (JavaScript) function name that will be invoked when control value is changed.
+            </summary>
+            <remarks>
+            Parameters :
+            <list type="bullet">
+            	<item>
+            		<description>controlId - string</description>
+            	</item>
+            	<item>
+            		<description>dirtySourceType - int</description>
+            	</item>
+            </list>
+            </remarks>
+            <example>
+            	<code>
+            		function doDirty(controlId, dirtySourceType)
+            		{
+            			// do some action here 
+            		}
+            	</code>
+            </example>
+            <value>
+            The default is null.
+            </value>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.LookUpChar">
+            <summary>
+            Represents look up chars.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.LookUpChar.Char">
+            <summary>
+            Gets or sets a char for lookup character.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.HolidayCollection">
+            <summary>
+            Represents a collection of holiday.
+            </summary>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.HolidayCollection.GetEnumerator">
+            <summary>
+            Returns an enumerator object for the collection.
+            </summary>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.HolidayCollection.GetNamedItem(System.String)">
+            <summary>
+            Property indexer for the collection. Uses the Name string to return an Holiday object.
+            </summary>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.HolidayCollection.Add(ISNet.WebUI.WebControls.Holiday)">
+            <summary>
+            Add an Holiday object into the Holiday collection.
+            </summary>
+            <param name="holiday" >The Holiday object to be added.</param>
+            <returns>The index of the newly added Holiday.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.HolidayCollection.CopyFrom(ISNet.WebUI.WebControls.HolidayCollection)">
+            <summary>
+            Copy holiday items from spesific collection to this collection.
+            </summary>
+            <param name="passIn">A <see cref="T:ISNet.WebUI.WebControls.HolidayCollection">HolidayCollection</see> to be copied.</param>
+            <returns>A <see cref="T:ISNet.WebUI.WebControls.HolidayCollection">HolidayCollection</see> contains copied holiday items.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.HolidayCollection.Add(System.String)">
+            <summary>
+            Creates a new Holiday object in the collection and initializes its Name value.
+            </summary>
+            <param name="name">The unique Name value.</param>
+            <returns>The index of the newly-added Holiday object within the collection.</returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.HolidayCollection.Insert(System.Int32,ISNet.WebUI.WebControls.Holiday)">
+            <summary>
+            Inserts an Holiday object into the Holiday collection at a specified index.
+            </summary>
+            <param name="index">The position in the collection for the new Holiday.</param>
+            <param name="holiday" >The Holiday object to be inserted into the collection.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.HolidayCollection.Remove(ISNet.WebUI.WebControls.Holiday)">
+            <summary>
+            Removes the specified Holiday object from the collection.
+            </summary>
+            <param name="holiday">The Holiday object to be removed from the collection.</param>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.HolidayCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the Holiday object at the specified index from the collection.
+            </summary>
+            <param name="index">The index of the Holiday object to be removed.</param>
+        </member>
+        <member name="M:ISNet.WebUI.WebControls.HolidayCollection.Clear">
+            <summary>
+            Removes all Holiday objects from the collection.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.HolidayCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the entry to get or set.</param>
+            <returns>The <c>Holiday</c> object at the specified index.</returns>
+            <seealso cref="T:ISNet.WebUI.WebControls.Holiday"/>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.WebInputComponentWizard">
+            <summary>
+            Summary description for WebInputComponentEditor.
+            </summary>
+        </member>
+        <member name="T:ISNet.WebUI.WebControls.Holiday">
+            <summary>
+            Represents holiday.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.Holiday.Date">
+            <summary>
+            Gets or sets a date for holiday.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.Holiday.Month">
+            <summary>
+            Gets a string month of the holiday.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.Holiday.Day">
+            <summary>
+            Gets a string day of the holiday.
+            </summary>
+        </member>
+        <member name="P:ISNet.WebUI.WebControls.Holiday.Year">
+            <summary>
+            Gets a string year of the holiday.
+            </summary>
+        </member>
+    </members>
+</doc>
