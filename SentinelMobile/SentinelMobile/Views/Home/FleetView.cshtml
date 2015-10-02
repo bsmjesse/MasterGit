@@ -355,6 +355,8 @@
         var FollowInterval = 10000;
         var FollowMaxRecords = 200;
         var LoadFollowingData = false;
+        var InstallerName = "";
+        var InstallerOrganization = "";
 
         var HistoryBoxId = "";
         var HistoryVehicleId = 0;
@@ -1114,7 +1116,7 @@
             <h1 id="sendEmailPageTitle">@SentinelMobile.Resources.Resources.SendEmail</h1>
             <a href="javascript:void(0)" data-role="button" data-rel="back" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" data-inline="true">@SentinelMobile.Resources.Resources.Close</a>            
         </div>
-        <div data-role="content" data-theme="d" id="sendEmailPageContent">
+        <div data-role="content" data-theme="d" id="sendEmailPageContent" style="overflow:scroll">
             <div id="divSendEmailPageForm" class="configPageItem">
                 <form id="formSendEmail" name="formSendEmail" action="https://cs17.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
                     <input type=hidden name="orgid" value="00Dg0000006RPis">

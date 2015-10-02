@@ -460,10 +460,10 @@
     <value>Couches de base</value>
   </data>
   <data name="BoxID" xml:space="preserve">
-    <value>FR: Box ID</value>
+    <value>Identification de l'unité</value>
   </data>
   <data name="BoxLocation" xml:space="preserve">
-    <value>FR: Box Location</value>
+    <value>Emplacement de la boîte</value>
   </data>
   <data name="BoxLocationNotEmpty" xml:space="preserve">
     <value>FR: Box Location should not be empty</value>
@@ -475,13 +475,13 @@
     <value>Cellulaire</value>
   </data>
   <data name="CellAntennaLocation" xml:space="preserve">
-    <value>FR: Cell Antenna Location</value>
+    <value>Emplacement de l'antenne Cell</value>
   </data>
   <data name="CellAntennaLocationNotEmpty" xml:space="preserve">
     <value>FR: Cell Antenna Location should not be empty</value>
   </data>
   <data name="CenterDash" xml:space="preserve">
-    <value>FR: Center Dash</value>
+    <value>Centre du tableau bord</value>
   </data>
   <data name="Clear1" xml:space="preserve">
     <value>Effacer</value>
@@ -529,22 +529,22 @@
     <value>O</value>
   </data>
   <data name="DriverAPillar" xml:space="preserve">
-    <value>FR: Driver A Pillar</value>
+    <value>Pilier A Conducteur</value>
   </data>
   <data name="DriverFuseBoxBCM" xml:space="preserve">
-    <value>FR: Driver Fuse Box / BCM</value>
+    <value>Boîte à fuse conducteur / BCM</value>
   </data>
   <data name="DriverKickPanel" xml:space="preserve">
-    <value>FR: Driver Kick Panel</value>
+    <value>Kick Panel Conducteur</value>
   </data>
   <data name="DriverSideBottomDash" xml:space="preserve">
-    <value>FR: Driver Side - Bottom Dash</value>
+    <value>Côté conducteur  - bas du dash</value>
   </data>
   <data name="DriverSideTopDash" xml:space="preserve">
-    <value>FR: Driver Side - Top Dash</value>
+    <value>Côté conducteur - haut du dash</value>
   </data>
   <data name="ECM" xml:space="preserve">
-    <value>FR: ECM</value>
+    <value>ECM</value>
   </data>
   <data name="ECMNotEmpty" xml:space="preserve">
     <value>FR: ECM should not be empty</value>
@@ -559,7 +559,7 @@
     <value>Cylindrée du moteur (ml)</value>
   </data>
   <data name="EngineHours" xml:space="preserve">
-    <value>FR: EngineHours</value>
+    <value>Heures moteur</value>
   </data>
   <data name="EnterHierarchyName1" xml:space="preserve">
     <value>Entrer le nom de la hiérarchie</value>
@@ -589,7 +589,7 @@
     <value>Type de carburant</value>
   </data>
   <data name="Gas" xml:space="preserve">
-    <value>FR: Gas</value>
+    <value>Gaz</value>
   </data>
   <data name="Get1" xml:space="preserve">
     <value>Demander</value>
@@ -607,7 +607,7 @@
     <value>Google Streets</value>
   </data>
   <data name="GPSAntennaLocation" xml:space="preserve">
-    <value>FR: GPS Antenna Location</value>
+    <value>Emplacement de l'antenne GPS</value>
   </data>
   <data name="GPSAntennaLocationNotEmpty" xml:space="preserve">
     <value>FR: GPS Antenna Location should not be empty</value>
@@ -631,13 +631,13 @@
     <value>FR: Ignition Harness</value>
   </data>
   <data name="IgnitionSource" xml:space="preserve">
-    <value>FR: IgnitionSource</value>
+    <value>Source d'ignition</value>
   </data>
   <data name="IgnitionSourceNotEmpty" xml:space="preserve">
     <value>FR: Ignition Source should not be empty</value>
   </data>
   <data name="InstallerOrganization" xml:space="preserve">
-    <value>FR: Installer Organization</value>
+    <value>Compagnie du technicien</value>
   </data>
   <data name="InstallerOrganizationNotEmpty" xml:space="preserve">
     <value>FR: Installer Organization should not be empty</value>
@@ -709,37 +709,37 @@
     <value>Odomètre</value>
   </data>
   <data name="OdometerUnits" xml:space="preserve">
-    <value>FR: Odometer Units</value>
+    <value>Unité de l'odomètre</value>
   </data>
   <data name="OK1" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="Organization" xml:space="preserve">
-    <value>FR: Organization</value>
+    <value>Compagnie</value>
   </data>
   <data name="OrganizationNotEmpty" xml:space="preserve">
     <value>FR: Organization should not be empty</value>
   </data>
   <data name="Other" xml:space="preserve">
-    <value>FR: Other</value>
+    <value>Autre</value>
   </data>
   <data name="OverlayLayers1" xml:space="preserve">
     <value>Couches de superposition</value>
   </data>
   <data name="PassengerAPillar" xml:space="preserve">
-    <value>FR: Passenger A Pillar</value>
+    <value>Pilier A Passager</value>
   </data>
   <data name="PassengerFuseBoxBCM" xml:space="preserve">
-    <value>FR: Passenger Fuse Box / BCM</value>
+    <value>Boîte à fuse passager / BCM</value>
   </data>
   <data name="PassengerKickPanel" xml:space="preserve">
-    <value>FR: Passenger Kick Panel</value>
+    <value>Kick Panel passenger</value>
   </data>
   <data name="PassengerSideBottomDash" xml:space="preserve">
-    <value>FR: Passenger Side - Bottom Dash</value>
+    <value>Côté passager  - bas du dash</value>
   </data>
   <data name="PassengerSideTopDash" xml:space="preserve">
-    <value>FR: Passenger Side - Top Dash</value>
+    <value>Côté passager  - haut du dash</value>
   </data>
   <data name="Password1" xml:space="preserve">
     <value>Mot de passe</value>
@@ -748,13 +748,13 @@
     <value>Le champ mot de passe est requis</value>
   </data>
   <data name="Phone" xml:space="preserve">
-    <value>FR: Phone</value>
+    <value>Telephone du technicien</value>
   </data>
   <data name="PleaseWait1" xml:space="preserve">
     <value>Veuillez patienter...</value>
   </data>
   <data name="PowerSource" xml:space="preserve">
-    <value>FR: PowerSource</value>
+    <value>Source d'alimentation</value>
   </data>
   <data name="PowerSourceNotEmpty" xml:space="preserve">
     <value>FR: Power Source should not be empty</value>
@@ -766,7 +766,7 @@
     <value>PRL</value>
   </data>
   <data name="RadioHarness" xml:space="preserve">
-    <value>FR: Radio Harness</value>
+    <value>Harnais radio</value>
   </data>
   <data name="Refresh1" xml:space="preserve">
     <value>Actualiser</value>
@@ -868,7 +868,7 @@
     <value>Le champ nom d'usager est requis</value>
   </data>
   <data name="VehicleDescription" xml:space="preserve">
-    <value>FR: Vehicle Description</value>
+    <value>Numéro de véhicule</value>
   </data>
   <data name="VehicleName1" xml:space="preserve">
     <value>Nom du véhicule</value>

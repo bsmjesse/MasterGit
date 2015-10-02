@@ -42,7 +42,6 @@ C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\DasDb.dll
 C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\DasLogic.dll
 C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\ERR.dll
 C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\PatchDB.dll
-C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\ERRSecurity.dll
 C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\Npgsql.dll
 C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\Map.dll
 C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\MapLib.dll
@@ -59,7 +58,6 @@ C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\CLS.pdb
 C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\DasDb.pdb
 C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\DasLogic.pdb
 C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\ERR.pdb
-C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\ERRSecurity.pdb
 C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\Npgsql.xml
 C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\Map.pdb
 C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\MapLib.pdb
@@ -68,7 +66,6 @@ C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\GeoMicroRemoting.pdb
 C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\LSDProxy.pdb
 C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\RemoteGeoMicro.pdb
 C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\fr\DasDb.resources.dll
-C:\Builds\SentinelFM\Master\PatchLogic\bin\Debug\fr\ERRSecurity.resources.dll
 C:\Builds\SentinelFM\Master\PatchLogic\obj\Debug\PatchLogic.csprojResolveAssemblyReference.cache
 C:\Builds\SentinelFM\Master\PatchLogic\obj\Debug\PatchLogic.dll
 C:\Builds\SentinelFM\Master\PatchLogic\obj\Debug\PatchLogic.pdb
