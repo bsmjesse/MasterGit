@@ -72,49 +72,7 @@ namespace SentinelFM
                     }
                        if (request.Equals("GetVehiclePosition", StringComparison.CurrentCultureIgnoreCase))
                         {
-                            request = Request.QueryString["fleetID"];
-                            if (!string.IsNullOrEmpty(request))
-                            {
-                                if (MutipleUserHierarchyAssignment)
-                                {
-                                    sn.Map.SelectedMultiFleetIDs = request;
-                                    sn.Map.LastKnownXML = string.Empty;
-                                }
-                                else
-                                {
-                                    int fleetID = 0;
-                                    Int32.TryParse(request, out fleetID);
-                                    if (fleetID > 0)
-                                    {
-                                        sn.Map.SelectedFleetID = fleetID;
-                                        sn.Map.LastKnownXML = string.Empty;
-                                    }
-                                }
-                            }
-
-                            request = Request.QueryString["filters"];
-                            if (!string.IsNullOrEmpty(request))
-                                filters = request;
-                            else
-                                filters = String.Empty;
-
-                            vlStart = 0;
-                            vlLimit = 10000;
-                            request = Request.QueryString["start"];
-                            if (!string.IsNullOrEmpty(request))
-                            {
-                                Int32.TryParse(request, out vlStart);
-                                if (vlStart < 0) vlStart = 0;
-                            }
-
-                            request = Request.QueryString["limit"];
-                            if (!string.IsNullOrEmpty(request))
-                            {
-                                Int32.TryParse(request, out vlLimit);
-                                if (vlLimit <= 0) vlStart = vlLimit;
-                            }
-
-                            VehicleList_Fill_NewTZ();
+                            GetVehiclePosition();
                         }
                         else if (request.Equals("GetAllFleets", StringComparison.CurrentCultureIgnoreCase))
                         {
@@ -123,153 +81,34 @@ namespace SentinelFM
                         }  
                         else if(request.Equals("GetfleetPosition", StringComparison.CurrentCultureIgnoreCase))
                        {
-                           request = Request.QueryString["fleetID"];
-                           if (MutipleUserHierarchyAssignment)
-                           {
-                               sn.Map.SelectedMultiFleetIDs = request;
-                               sn.Map.LastKnownXML = string.Empty;
-                           }
-                           else
-                           {
-                               if (!string.IsNullOrEmpty(request))
-                               {
-                                   int fleetID = 0;
-                                   Int32.TryParse(request, out fleetID);
-                                   if (fleetID > 0)
-                                   {
-                                       sn.Map.SelectedFleetID = fleetID;
-                                       sn.Map.LastKnownXML = string.Empty;
-                                   }
-                               }
-                           }
-
-                           vlStart = 0;
-                           vlLimit = 10000;
-                           request = Request.QueryString["start"];
-                           if (!string.IsNullOrEmpty(request))
-                           {
-                               Int32.TryParse(request, out vlStart);
-                               if (vlStart < 0) vlStart = 0;                               
-                           }
-
-                           request = Request.QueryString["limit"];
-                           if (!string.IsNullOrEmpty(request))
-                           {
-                               Int32.TryParse(request, out vlLimit);
-                               if (vlLimit <= 0) vlStart = vlLimit;
-                           }
-                          
-                           FleetVehicles_Fill_NewTZ();
-                    }
+                           GetFleetPosition();
+                       }
                        else if (request.Equals("getClosestVehicles", StringComparison.CurrentCultureIgnoreCase))
                        {
-                           int fleetId = 0;
-                           double lon = 0;
-                           double lat = 0;
-                           int radius = 5;
-                           int numofvehicles = 10;
-                           request = Request.QueryString["fleetID"] ?? string.Empty;
-                           Int32.TryParse(request, out fleetId);
-                           if (fleetId <= 0)
-                           {
-                               return;
-                           }
-                           request = Request.QueryString["lon"] ?? string.Empty;
-                           double.TryParse(request, out lon);
-                           request = Request.QueryString["lat"] ?? string.Empty;
-                           double.TryParse(request, out lat);
-                           request = Request.QueryString["radius"] ?? string.Empty;
-                           int.TryParse(request, out radius);
-                           request = Request.QueryString["numofvehicles"] ?? string.Empty;
-                           int.TryParse(request, out numofvehicles);
-
-                           getClosestVehicles_NewTZ(fleetId, lon, lat, numofvehicles, radius);
-
+                           if (GetClosestVehicles()) return;
                        }
                        else if (request.Equals("getVehiclesInLandmark", StringComparison.CurrentCultureIgnoreCase))
                        {
-                           int fleetId = 0;
-                           request = Request.QueryString["fleetID"] ?? string.Empty;
-                           Int32.TryParse(request, out fleetId);
-
-                           long landmarkId = 0;
-                           request = Request.QueryString["landmarkId"] ?? string.Empty;
-                           Int64.TryParse(request, out landmarkId);
-
-                           if (fleetId <= 0)
-                           {
-                               return;
-                           }
-
-                           getVehiclesInLandmark(fleetId, landmarkId);
-
+                           if (GetVehiclesInLandmark()) return;
                        }
                        else if (request.Equals("searchHistoryAddress", StringComparison.CurrentCultureIgnoreCase))
                        {
-                           string IfSearchHistoryAddressByWebservice = ConfigurationManager.AppSettings["SearchHistoryAddressByWebservice"];
-                           //searchHistoryAddress();
-                           if (IfSearchHistoryAddressByWebservice == null || IfSearchHistoryAddressByWebservice == "0")
-                                searchHistoryAddressByDasLogic_NewTZ();
-                           else
-                                searchHistoryAddressByWebservice_NewTZ();
-                           
-
+                           SearchHistoryAddress();
                        }
                        else if (request.Equals("getVehicleInfo_NewTZ", StringComparison.CurrentCultureIgnoreCase))
                        {
-                           int vehicleId = 0;
-                           int.TryParse(Request.QueryString["vehicleId"], out vehicleId);
-                           getVehicleInfo_NewTZ(vehicleId);
+                           GetVehicleInfo();
                        }
                        else if (request.Equals("getBoxInfo", StringComparison.CurrentCultureIgnoreCase))
                        {
                            int BoxId = 0;
                            int.TryParse(Request.QueryString["BoxId"], out BoxId);
-                           getBoxInfo(BoxId);
+                           GetBoxInfo(BoxId);
                        }
 
                        else if (request.Equals("GetFilteredFleet", StringComparison.CurrentCultureIgnoreCase))
                        {
-                           request = Request.QueryString["filters"];
-                           if (!string.IsNullOrEmpty(request))
-                               filters = request;
-                           else
-                               filters = String.Empty;
-
-                           vlStart = 0;
-                           vlLimit = 10000;
-                           request = Request.QueryString["start"];
-                           if (!string.IsNullOrEmpty(request))
-                           {
-                               Int32.TryParse(request, out vlStart);
-                               if (vlStart < 0) vlStart = 0;
-                           }
-
-                           request = Request.QueryString["limit"];
-                           if (!string.IsNullOrEmpty(request))
-                           {
-                               Int32.TryParse(request, out vlLimit);
-                               if (vlLimit <= 0) vlStart = vlLimit;
-                           }
-
-
-                           request = Request.QueryString["operation"];
-                           if (!string.IsNullOrEmpty(request))
-                           {
-                               operation = request;
-                           }
-                           else
-                           {
-                               operation = "";
-                           }
-
-                           request =Request.QueryString["formattype"];
-                           if (!string.IsNullOrEmpty(request))
-                               formattype = request;
-                           else
-                               formattype = "";
-
-                           getFilteredFleet();
+                           GetFilteredFleet();
                        }
                        else if (request.Equals("GetAllFleetForMap", StringComparison.CurrentCultureIgnoreCase))
                        {
@@ -277,13 +116,7 @@ namespace SentinelFM
                        }
                        else if (request.Equals("resolveaddress", StringComparison.CurrentCultureIgnoreCase))
                        {
-                            int rBoxId = 0;
-                            float rLat = 0;
-                            float rLon = 0;
-                            int.TryParse(Request.QueryString["boxId"], out rBoxId);
-                            float.TryParse(Request.QueryString["lat"], out rLat);
-                            float.TryParse(Request.QueryString["lon"], out rLon);
-                            ResolveAddress(rBoxId, rLat, rLon);
+                            ResolveAddress();
                        }
                        else if (request.Equals("ListVehiclesInLandmarksForDashboard", StringComparison.CurrentCultureIgnoreCase))
                        {
@@ -293,20 +126,7 @@ namespace SentinelFM
                        }
                        else if (request.Equals("GetLandmarkDuration", StringComparison.CurrentCultureIgnoreCase))
                        {
-                           int serviceConfigId = 0;
-                           int.TryParse(Request.QueryString["serviceConfigId"], out serviceConfigId);
-
-                           long vehicleId = 0;
-                           long.TryParse(Request.QueryString["vehicleId"], out vehicleId);
-
-                           long landmarkId = 0;
-                           long.TryParse(Request.QueryString["landmarkId"], out landmarkId);
-
-                           int boxId = 0;
-                           int.TryParse(Request.QueryString["boxId"], out boxId);
-
-
-                           GetLandmarkDuration(serviceConfigId, vehicleId, landmarkId, boxId);
+                           GetLandmarkDuration();
                        }
                        else if (request.Equals("getVehilcesByLandmarkId", StringComparison.CurrentCultureIgnoreCase))
                        {
@@ -325,6 +145,234 @@ namespace SentinelFM
              {
                  System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.Message.ToString() + " User:" + sn.UserID.ToString() + " Form:" + Page.GetType().Name));
              }
+        }
+
+        private void ResolveAddress()
+        {
+            int rBoxId = 0;
+            float rLat = 0;
+            float rLon = 0;
+            int.TryParse(Request.QueryString["boxId"], out rBoxId);
+            float.TryParse(Request.QueryString["lat"], out rLat);
+            float.TryParse(Request.QueryString["lon"], out rLon);
+            ResolveAddress(rBoxId, rLat, rLon);
+        }
+
+        private void GetFilteredFleet()
+        {
+            string request;
+            request = Request.QueryString["filters"];
+            if (!string.IsNullOrEmpty(request))
+                filters = request;
+            else
+                filters = String.Empty;
+
+            vlStart = 0;
+            vlLimit = 10000;
+            request = Request.QueryString["start"];
+            if (!string.IsNullOrEmpty(request))
+            {
+                Int32.TryParse(request, out vlStart);
+                if (vlStart < 0) vlStart = 0;
+            }
+
+            request = Request.QueryString["limit"];
+            if (!string.IsNullOrEmpty(request))
+            {
+                Int32.TryParse(request, out vlLimit);
+                if (vlLimit <= 0) vlStart = vlLimit;
+            }
+
+
+            request = Request.QueryString["operation"];
+            if (!string.IsNullOrEmpty(request))
+            {
+                operation = request;
+            }
+            else
+            {
+                operation = "";
+            }
+
+            request = Request.QueryString["formattype"];
+            if (!string.IsNullOrEmpty(request))
+                formattype = request;
+            else
+                formattype = "";
+
+            getFilteredFleet();
+        }
+
+        private void GetLandmarkDuration()
+        {
+            int serviceConfigId = 0;
+            int.TryParse(Request.QueryString["serviceConfigId"], out serviceConfigId);
+
+            long vehicleId = 0;
+            long.TryParse(Request.QueryString["vehicleId"], out vehicleId);
+
+            long landmarkId = 0;
+            long.TryParse(Request.QueryString["landmarkId"], out landmarkId);
+
+            int boxId = 0;
+            int.TryParse(Request.QueryString["boxId"], out boxId);
+
+
+            GetLandmarkDuration(serviceConfigId, vehicleId, landmarkId, boxId);
+        }
+
+        private void GetVehicleInfo()
+        {
+            int vehicleId = 0;
+            int.TryParse(Request.QueryString["vehicleId"], out vehicleId);
+            getVehicleInfo_NewTZ(vehicleId);
+        }
+
+        private void SearchHistoryAddress()
+        {
+            string IfSearchHistoryAddressByWebservice = ConfigurationManager.AppSettings["SearchHistoryAddressByWebservice"];
+            //searchHistoryAddress();
+            if (IfSearchHistoryAddressByWebservice == null || IfSearchHistoryAddressByWebservice == "0")
+                searchHistoryAddressByDasLogic_NewTZ();
+            else
+                searchHistoryAddressByWebservice_NewTZ();
+        }
+
+        private bool GetVehiclesInLandmark()
+        {
+            string request;
+            int fleetId = 0;
+            request = Request.QueryString["fleetID"] ?? string.Empty;
+            Int32.TryParse(request, out fleetId);
+
+            long landmarkId = 0;
+            request = Request.QueryString["landmarkId"] ?? string.Empty;
+            Int64.TryParse(request, out landmarkId);
+
+            if (fleetId <= 0)
+            {
+                return true;
+            }
+
+            getVehiclesInLandmark(fleetId, landmarkId);
+            return false;
+        }
+
+        private bool GetClosestVehicles()
+        {
+            string request;
+            int fleetId = 0;
+            double lon = 0;
+            double lat = 0;
+            int radius = 5;
+            int numofvehicles = 10;
+            request = Request.QueryString["fleetID"] ?? string.Empty;
+            Int32.TryParse(request, out fleetId);
+            if (fleetId <= 0)
+            {
+                return true;
+            }
+            request = Request.QueryString["lon"] ?? string.Empty;
+            double.TryParse(request, out lon);
+            request = Request.QueryString["lat"] ?? string.Empty;
+            double.TryParse(request, out lat);
+            request = Request.QueryString["radius"] ?? string.Empty;
+            int.TryParse(request, out radius);
+            request = Request.QueryString["numofvehicles"] ?? string.Empty;
+            int.TryParse(request, out numofvehicles);
+
+            getClosestVehicles_NewTZ(fleetId, lon, lat, numofvehicles, radius);
+            return false;
+        }
+
+        private void GetFleetPosition()
+        {
+            string request;
+            request = Request.QueryString["fleetID"];
+            if (MutipleUserHierarchyAssignment)
+            {
+                sn.Map.SelectedMultiFleetIDs = request;
+                sn.Map.LastKnownXML = string.Empty;
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(request))
+                {
+                    int fleetID = 0;
+                    Int32.TryParse(request, out fleetID);
+                    if (fleetID > 0)
+                    {
+                        sn.Map.SelectedFleetID = fleetID;
+                        sn.Map.LastKnownXML = string.Empty;
+                    }
+                }
+            }
+
+            vlStart = 0;
+            vlLimit = 10000;
+            request = Request.QueryString["start"];
+            if (!string.IsNullOrEmpty(request))
+            {
+                Int32.TryParse(request, out vlStart);
+                if (vlStart < 0) vlStart = 0;
+            }
+
+            request = Request.QueryString["limit"];
+            if (!string.IsNullOrEmpty(request))
+            {
+                Int32.TryParse(request, out vlLimit);
+                if (vlLimit <= 0) vlStart = vlLimit;
+            }
+
+            FleetVehicles_Fill_NewTZ();
+        }
+
+        private void GetVehiclePosition()
+        {
+            string request;
+            request = Request.QueryString["fleetID"];
+            if (!string.IsNullOrEmpty(request))
+            {
+                if (MutipleUserHierarchyAssignment)
+                {
+                    sn.Map.SelectedMultiFleetIDs = request;
+                    sn.Map.LastKnownXML = string.Empty;
+                }
+                else
+                {
+                    int fleetID = 0;
+                    Int32.TryParse(request, out fleetID);
+                    if (fleetID > 0)
+                    {
+                        sn.Map.SelectedFleetID = fleetID;
+                        sn.Map.LastKnownXML = string.Empty;
+                    }
+                }
+            }
+
+            request = Request.QueryString["filters"];
+            if (!string.IsNullOrEmpty(request))
+                filters = request;
+            else
+                filters = String.Empty;
+
+            vlStart = 0;
+            vlLimit = 10000;
+            request = Request.QueryString["start"];
+            if (!string.IsNullOrEmpty(request))
+            {
+                Int32.TryParse(request, out vlStart);
+                if (vlStart < 0) vlStart = 0;
+            }
+
+            request = Request.QueryString["limit"];
+            if (!string.IsNullOrEmpty(request))
+            {
+                Int32.TryParse(request, out vlLimit);
+                if (vlLimit <= 0) vlStart = vlLimit;
+            }
+
+            VehicleList_Fill_NewTZ();
         }
 
         private void Fleets_Fill()
@@ -779,18 +827,12 @@ namespace SentinelFM
                     fleetId = Convert.ToInt32(sn.Map.SelectedFleetID);
                     //Convert.ToInt32(Convert.ToInt32(sn.Map.SelectedFleetID));
                 }
-                /*else if (sn.User.DefaultFleet != -1)
-                {
-                    fleetId = Convert.ToInt32(sn.User.DefaultFleet);
-                    //sn.Map.SelectedFleetID = sn.User.DefaultFleet;
-                }*/
                 System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceInfo, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Info, "-->VehicleList_Fill - Fleet Id:" + fleetId + ", User Id:" + sn.UserID.ToString()));
                 sn.Map.LastStatusChecked = DateTime.UtcNow;
                     //DateTime.Now;
 
                 DataSet dsVehiclesInfo = null;
-
-                //CultureInfo.CurrentUICulture.TwoLetterISOLanguageName
+                
                 string lng = ((sn.SelectedLanguage !=null && sn.SelectedLanguage.Length>0) ? sn.SelectedLanguage.Substring(0, 2):"en");
 
                 if (MutipleUserHierarchyAssignment)
@@ -801,14 +843,6 @@ namespace SentinelFM
                     dbFleet.Dispose();
                     if (dsVehiclesInfo.Tables[0].Rows.Count > 0)
                         sn.Map.LastKnownXML = "<data>yes</data>";
-                    
-                    //if (objUtil.ErrCheck(dbf.GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang(sn.UserID, sn.SecId, sn.Map.SelectedMultiFleetIDs, lng, ref xml), false))
-                    //    if (objUtil.ErrCheck(dbf.GetVehiclesLastKnownPositionInfoByMultipleFleetsByLang(sn.UserID, sn.SecId, sn.Map.SelectedMultiFleetIDs, lng, ref xml), true))
-                    //    {
-                    //        sn.Map.DsFleetInfoNew = null;
-                    //        sn.Map.LastKnownXML = string.Empty;
-                    //        return;
-                    //    }
                 }
                 else
                 {
@@ -818,38 +852,13 @@ namespace SentinelFM
                     dbFleet.Dispose();
                     if (dsVehiclesInfo.Tables[0].Rows.Count > 0)
                         sn.Map.LastKnownXML = "<data>yes</data>";
-
-                    //if (objUtil.ErrCheck(dbf.GetVehiclesLastKnownPositionInfoByLang(sn.UserID, sn.SecId, fleetId, lng, ref xml), false))
-                    //    if (objUtil.ErrCheck(dbf.GetVehiclesLastKnownPositionInfoByLang(sn.UserID, sn.SecId, fleetId, lng, ref xml), true))
-                    //        {
-                    //            sn.Map.DsFleetInfoNew = null;
-                    //            sn.Map.LastKnownXML = string.Empty;
-                    //            return;
-                    //        }
+                    
                 }
 
-                    //if (!string.IsNullOrEmpty(xml))
-                    //{
-                    //    xml = xml.Trim().Replace("<br>", "").Replace("-05:00", getUserTimezone()).Replace("-04:00", getUserTimezone());
-                    //    sn.Map.LastKnownXML = xml.Trim();
-                    //}
-
                 if (string.IsNullOrEmpty(xml) && dsVehiclesInfo==null)
-                //(xml == "" || xml == null)
                 {
-                    //sn.Map.DsFleetInfoNew = null;
                     if (sn.Map.SelectedFleetID == sn.User.DefaultFleet)
                     {
-                        //xml = sn.Map.DsFleetInfoNew.GetXml();
-                        //xml = xml.Trim().Replace("<br>", "").Trim().Replace("-05:00", getUserTimezone()).Replace("-04:00", getUserTimezone());
-                        ////byte[] data = Encoding.Default.GetBytes(xml);
-                        ////xml = Encoding.UTF8.GetString(data);
-                        //if (lng == "fr")
-                        //{
-                        //    xml = xml.Replace("<BoxArmed>true</BoxArmed>", "<BoxArmed>voir</BoxArmed>");
-                        //    xml = xml.Replace("<BoxArmed>false</BoxArmed>", "<BoxArmed>faux</BoxArmed>");
-                        //}
-                        //Response.Write(xml.Trim());
 
                         getXmlFromDs(sn.Map.DsFleetInfoNew, -1);
                     }
@@ -863,125 +872,13 @@ namespace SentinelFM
                     string strPath = Server.MapPath("./Datasets/FleetInfo.xsd");
                     DataSet dsFleetInfo = new DataSet();
 
-                    if (dsVehiclesInfo == null)
-                    {
 
-                        dsFleetInfo.ReadXmlSchema(strPath);
-                        dsFleetInfo.ReadXml(strrXML);
-                    }
-                    else
-                    {
                         dsFleetInfo = dsVehiclesInfo.Copy();
                         //Adding  PTO to Dataset
                         DataColumn dc = new DataColumn("PTO", Type.GetType("System.String"));
                         dc.DefaultValue = "Off";
                         dsFleetInfo.Tables["VehiclesLastKnownPositionInformation"].Columns.Add(dc);
-                    }
-                    //xml = dsFleetInfo.GetXml();
-                    //sn.Map.DSFleetInfoGenerator(sn, ref dsFleetInfo);
-                    //sn.Map.DsFleetInfoNew = dsFleetInfo;
-		//Edited by Rohit Mittal For Selected Vehicle Export
-                    //if (sn.Map.DsFleetInfoNew != null)
-                    //{
-                    //    foreach (DataRow row in dsFleetInfo.Tables["VehiclesLastKnownPositionInformation"].Rows)
-                    //    {
-                    //        clsMap _m = new clsMap();
-                    //        if (row["StreetAddress"].ToString().Trim() == VLF.CLS.Def.Const.addressNA)
-                    //        {
-                    //            row["StreetAddress"] = _m.ResolveStreetAddressTelogis(row["Latitude"].ToString(), row["Longitude"].ToString());
-                    //        }
-                    //        if (row["StreetAddress"].ToString().Trim() == "")
-                    //        {
-                    //            //var x = row["Latitude"].ToString();
-                    //            //var y = row["Longitude"].ToString();
-                    //            row["StreetAddress"] = VLF.CLS.Def.Const.addressNA;//"~~~~~~~~~~~~~~~~~~~~~~~";
-                    //        }
-                    //        string filter = string.Format("BoxId = '{0}'", row["BoxId"]);
-                    //        DataRow[] foundRows = sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Select(filter);
-                    //        if (foundRows.Length == 0)
-                    //        {
-                    //            // insert here
-                    //            DataRow insertedRow = sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].NewRow();
-                    //            insertedRow.ItemArray = row.ItemArray;
-                    //            sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows.Add(insertedRow);
-                    //            sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].AcceptChanges();
-                    //        }
-                    //        else
-                    //        {
-                    //            // update here
-                    //            for (int i = 0; i < foundRows.Length; i++)
-                    //            {
-                    //                try
-                    //                {
-                    //                    int index = sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows.IndexOf(foundRows[i]);
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["BoxId"] = row["BoxId"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["LastCommunicatedDateTime"] = row["LastCommunicatedDateTime"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["OriginDateTime"] = row["OriginDateTime"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["Latitude"] = row["Latitude"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["Longitude"] = row["Longitude"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["StreetAddress"] = row["StreetAddress"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["Description"] = row["Description"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["BoxArmed"] = row["BoxArmed"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["IconTypeName"] = row["IconTypeName"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["VehicleStatus"] = row["VehicleStatus"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["chkBoxShow"] = row["chkBoxShow"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["Updated"] = row["Updated"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["CustomUrl"] = row["CustomUrl"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["Speed"] = row["Speed"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["CustomSpeed"] = row["CustomSpeed"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["MyHeading"] = row["MyHeading"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["ProtocolId"] = row["ProtocolId"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["SensorMask"] = row["SensorMask"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["Driver"] = row["Driver"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["ImagePath"] = row["ImagePath"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["ConfiguredNum"] = row["ConfiguredNum"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["DriverCardNumber"] = row["DriverCardNumber"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["Field1"] = row["Field1"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["Field2"] = row["Field2"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["Field3"] = row["Field3"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["Field4"] = row["Field4"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["Field5"] = row["Field5"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["ModelYear"] = row["ModelYear"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["MakeName"] = row["MakeName"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["ModelName"] = row["ModelName"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["VehicleTypeName"] = row["VehicleTypeName"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["VinNum"] = row["VinNum"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["ManagerName"] = row["ManagerName"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["ManagerEmployeeId"] = row["ManagerEmployeeId"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["StateProvince"] = row["StateProvince"];
-                    //                    //Added by Rohit Mittal For EngineHours and Odometer
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["EngineHours"] = row["EngineHours"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].Rows[index]["Odometer"] = row["Odometer"];
-                    //                    sn.Map.DsFleetInfoNew.Tables["VehiclesLastKnownPositionInformation"].AcceptChanges();
-                    //                }
-                    //                catch (Exception Ex)
-                    //                {
-                    //                    System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.StackTrace.ToString()));
-                    //                }
-                    //            }
-                    //        }
-                    //    }
-                    //    if (vlStart == 0 && vlLimit == 10000)
-                    //    {
-                    //        xml = dsFleetInfo.GetXml();
-                    //    }
-                    //    else
-                    //    {
-                    //        DataSet dstemp = new DataSet();
-                    //        DataView dv = dsFleetInfo.Tables["VehiclesLastKnownPositionInformation"].DefaultView;
-                    //        dv.Sort = "OriginDateTime DESC";
-                    //        DataTable sortedTable = dv.ToTable();
-                    //        DataTable dt = sortedTable.AsEnumerable().Skip(vlStart).Take(vlLimit).CopyToDataTable();
-                    //        dt.TableName = "VehiclesLastKnownPositionInformation";
-                    //        dstemp.Tables.Add(dt);
-                    //        dstemp.DataSetName = "Fleet";
-                    //        xml = dstemp.GetXml();
-                    //        xml = xml.Replace("<Fleet>", "<Fleet><totalCount>" + dsFleetInfo.Tables["VehiclesLastKnownPositionInformation"].Rows.Count.ToString() + "</totalCount>");
-                    //    }
 
-                    //}
-                    //else
-                    //{
                         foreach (DataRow row in dsFleetInfo.Tables["VehiclesLastKnownPositionInformation"].Rows)
                         {
                             clsMap _m = new clsMap();
@@ -3039,8 +2936,7 @@ namespace SentinelFM
                 Dictionary<string, string> vehicleInfo = new Dictionary<string, string>();
 
                 objUtil = new clsUtility(sn);
-
-                //DumpBeforeCall(sn, string.Format("VehicleInfoLoad : VehicleId = {0}", VehicleId));
+                
                 if (objUtil.ErrCheck(dbv.GetVehicleInfoXMLByVehicleId_NewTZ(sn.UserID, sn.SecId, vehicleId, ref xml), false))
                     if (objUtil.ErrCheck(dbv.GetVehicleInfoXMLByVehicleId_NewTZ(sn.UserID, sn.SecId, vehicleId, ref xml), true))
                     {
@@ -3053,18 +2949,6 @@ namespace SentinelFM
                 }
 
                 ds.ReadXml(new StringReader(xml));
-
-                /*this.lblVehicleId.Text = Convert.ToString(ds.Tables[0].Rows[0]["VehicleId"]);
-                this.lblBoxId.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[1]);
-                this.lblPlate.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[0]);
-                this.lblMake.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[5]);
-                this.lblModel.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[6]);
-                this.lblVehicleInfo.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[11]);
-                this.lblVin.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[3]);
-                this.lblYear.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[9]);
-                this.lblColor.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[10]);
-                this.lblType.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[7]);*/
-
 
                 if (objUtil.ErrCheck(dbv.GetVehicleAdditionalInfoXML(sn.UserID, sn.SecId, Convert.ToInt64(vehicleId), ref xml), false))
                     if (objUtil.ErrCheck(dbv.GetVehicleAdditionalInfoXML(sn.UserID, sn.SecId, Convert.ToInt64(vehicleId), ref xml), true))
@@ -3118,7 +3002,6 @@ namespace SentinelFM
 
                 objUtil = new clsUtility(sn);
 
-                //DumpBeforeCall(sn, string.Format("VehicleInfoLoad : VehicleId = {0}", VehicleId));
                 if (objUtil.ErrCheck(dbv.GetVehicleInfoXMLByVehicleId(sn.UserID, sn.SecId, vehicleId, ref xml), false))
                     if (objUtil.ErrCheck(dbv.GetVehicleInfoXMLByVehicleId(sn.UserID, sn.SecId, vehicleId, ref xml), true))
                     {
@@ -3131,17 +3014,6 @@ namespace SentinelFM
                 }
 
                 ds.ReadXml(new StringReader(xml));
-
-                /*this.lblVehicleId.Text = Convert.ToString(ds.Tables[0].Rows[0]["VehicleId"]);
-                this.lblBoxId.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[1]);
-                this.lblPlate.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[0]);
-                this.lblMake.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[5]);
-                this.lblModel.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[6]);
-                this.lblVehicleInfo.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[11]);
-                this.lblVin.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[3]);
-                this.lblYear.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[9]);
-                this.lblColor.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[10]);
-                this.lblType.Text = Convert.ToString(ds.Tables[0].Rows[0].ItemArray[7]);*/
 
 
                 if (objUtil.ErrCheck(dbv.GetVehicleAdditionalInfoXML(sn.UserID, sn.SecId, Convert.ToInt64(vehicleId), ref xml), false))
@@ -3179,7 +3051,7 @@ namespace SentinelFM
             }
         }
 
-        private void getBoxInfo(int BoxId)
+        private void GetBoxInfo(int BoxId)
         {
             Response.ContentType = "text/html";
             Response.ContentEncoding = Encoding.UTF8;
@@ -3302,7 +3174,7 @@ namespace SentinelFM
             }
         }
 
-        private int getDuration(int serviceConfigId, long vehicleId, long landmarkId, int boxId)
+        private int GetDuration(int serviceConfigId, long vehicleId, long landmarkId, int boxId)
         {
             int rvDuration = -1;
 
@@ -3477,73 +3349,6 @@ namespace SentinelFM
                 System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.Message.ToString() + Ex.StackTrace.ToString() + " User:" + sn.UserID.ToString() + " Form:" + Page.GetType().Name));
             }
         }
-
-        /*private void searchHistoryAddress()
-        {
-            Response.ContentType = "text/xml";
-            Response.ContentEncoding = Encoding.UTF8;
-
-            try
-            {
-                
-
-                objUtil = new clsUtility(sn);
-
-                double lon = 0;
-                double lat = 0;
-                string SearchHistoryDateTime = Request["SearchHistoryDateTime"].ToString();
-                int SearchHistoryTimeRange = 60;
-                double radius = 2000;
-                double.TryParse(Request["lon"].ToString(), out lon);
-                double.TryParse(Request["lat"].ToString(), out lat);
-                int.TryParse(Request["SearchHistoryTimeRange"].ToString(), out SearchHistoryTimeRange);
-                double.TryParse(Request["radius"].ToString(), out radius);
-
-                string dtfrom = DateTime.ParseExact(SearchHistoryDateTime, "MM/dd/yyyy HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None).AddHours(-sn.User.TimeZone - sn.User.DayLightSaving).AddMinutes(-SearchHistoryTimeRange).ToString("MM/dd/yyyy HH:mm:ss");
-                string dtto = DateTime.ParseExact(SearchHistoryDateTime, "MM/dd/yyyy HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None).AddHours(-sn.User.TimeZone - sn.User.DayLightSaving).AddMinutes(SearchHistoryTimeRange).ToString("MM/dd/yyyy HH:mm:ss");
-
-                
-                string xml = string.Empty;
-                //if (objUtil.ErrCheck(dbhistory.GetVehicleAreaSearch(sn.UserID, sn.SecId, lat, lon, radius, dtfrom, dtto, sn.User.OrganizationId, 0, ref xml), false))
-                //    if (objUtil.ErrCheck(dbhistory.GetVehicleAreaSearch(sn.UserID, sn.SecId, lat, lon, radius, dtfrom, dtto, sn.User.OrganizationId, 0, ref xml), true))
-                //    {
-                //        return;
-                //    }
-                
-                string ConnnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DBReportConnectionString"].ConnectionString;
-
-                DataSet dsResult = null;
-
-                using (VLF.DAS.Logic.MapSearch ms = new VLF.DAS.Logic.MapSearch(ConnnectionString))
-                {
-
-                    dsResult = ms.GetVehicleAreaSearch(lat, lon, radius, dtfrom, dtto, sn.User.OrganizationId, 0);
-
-                    if (VLF.CLS.Util.IsDataSetValid(dsResult))
-                        xml = dsResult.GetXml();
-                    else
-                        xml = "";
-                }
-
-
-                if (!string.IsNullOrEmpty(xml))
-                {
-                    xml = xml.Trim().Replace("<br>", "").Replace("-05:00", getUserTimezone()).Replace("-04:00", getUserTimezone());
-                }
-                Response.Write(xml);
-            }
-            catch (NullReferenceException Ex)
-            {
-                System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.StackTrace.ToString()));
-                Response.Write("<error>" + Ex.ToString() + "</error>");
-
-            }
-            catch (Exception Ex)
-            {
-                System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.Message.ToString() + " User:" + sn.UserID.ToString() + " Form:" + Page.GetType().Name));
-                Response.Write("<error>" + Ex.ToString() + "</error>");
-            }
-        }*/
 
         public static string GetLocalResourceValue(string key)
         {
@@ -3855,7 +3660,7 @@ namespace SentinelFM
             try
             {
 
-                string ConnnectionString = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["DBReportConnectionString"].ConnectionString;
+                string connnectionString = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["DBReportConnectionString"].ConnectionString;
 
                 DataSet dsResult = null;
                 Response.ContentType = "text/xml";

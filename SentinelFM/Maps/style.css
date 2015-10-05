@@ -4,14 +4,46 @@
  * From Blueprint reset.css
  * http://blueprintcss.googlecode.com
  */
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
-body {line-height:1.5;}
-table {border-collapse:separate;border-spacing:0;}
-caption, th, td {text-align:left;font-weight:normal;}
-table, td, th {vertical-align:middle;}
-blockquote:before, blockquote:after, q:before, q:after {content:"";}
-blockquote, q {quotes:"" "";}
-a img {border:none;}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1.5;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+}
+
+table, td, th {
+    vertical-align: middle;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
+}
+
+blockquote, q {
+    quotes: "" "";
+}
+
+a img {
+    border: none;
+}
 
 /**
  * Basic Typography
@@ -23,18 +55,22 @@ body {
     background: #fff;
     margin: 1em 1.5em;
 }
+
 pre, code {
     margin: 1.5em 0;
     white-space: pre;
 }
+
 pre, code {
     font: 1em 'andale mono', 'lucida console', monospace;
-    line-height:1.5;
+    line-height: 1.5;
 }
+
 a[href] {
     color: #436976;
     background-color: transparent;
 }
+
 h1, h2, h3, h4, h5, h6 {
     color: #003a6b;
     background-color: transparent;
@@ -42,29 +78,35 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding-top: 0.5em;
 }
+
 h1 {
     font-size: 130%;
     margin-bottom: 0.5em;
     border-bottom: 1px solid #fcb100;
 }
+
 h2 {
     font-size: 120%;
     margin-bottom: 0.5em;
     border-bottom: 1px solid #aaa;
 }
+
 h3 {
     font-size: 110%;
     margin-bottom: 0.5em;
     text-decoration: underline;
 }
+
 h4 {
     font-size: 100%;
     font-weight: bold;
 }
+
 h5 {
     font-size: 100%;
     font-weight: bold;
 }
+
 h6 {
     font-size: 80%;
     font-weight: bold;
@@ -78,6 +120,7 @@ h6 {
     height: 580px;
     border: 0px solid #ccc;
 }
+
 #tags {
     display: none;
 }
@@ -88,139 +131,136 @@ h6 {
 /* mobile specific */
 @media only screen and (max-width: 600px) {
     body {
-        height           : 100%;
-        margin           : 0;
-        padding          : 0;
-        width            : 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
     }
+
     #map {
-        background : #7391ad;
-        width      : 100%;
+        background: #7391ad;
+        width: 100%;
     }
+
     #map {
-        border : 0;
-        height : 250px;
+        border: 0;
+        height: 250px;
     }
+
     #title {
-        font-size   : 1.3em;
-        line-height : 2em;
-        text-indent : 1em;
-        margin      : 0;
-        padding     : 0;
+        font-size: 1.3em;
+        line-height: 2em;
+        text-indent: 1em;
+        margin: 0;
+        padding: 0;
     }
+
     #docs {
-        bottom     : 0;
-        padding    : 1em;
+        bottom: 0;
+        padding: 1em;
     }
+
     #shortdesc {
-        color      : #aaa;
-        font-size  : 0.8em;
-        padding    : 1em;
-        text-align : right;
+        color: #aaa;
+        font-size: 0.8em;
+        padding: 1em;
+        text-align: right;
     }
+
     #tags {
-        display : none;
+        display: none;
     }
 }
+
 @media only screen and (orientation: landscape) and (max-width: 600px) {
     #shortdesc {
-       float: right;
-       width: 25%;
+        float: right;
+        width: 25%;
     }
+
     #map {
         width: 70%;
     }
+
     #docs {
         font-size: 12px;
     }
 }
+
 body {
     -webkit-text-size-adjust: none;
 }
 
-.popupwizard 
-{
+.popupwizard {
     border-top: 1px solid #F0F0E7;
     margin-top: 10px;
     padding-top: 8px;
 }
 
-.popupwizard a
-{
-    font-family: arial,sans-serif;
-    font-size: 13px;
-}
+    .popupwizard a {
+        font-family: arial,sans-serif;
+        font-size: 13px;
+    }
 
-.popupwizard a:link, .popupwizard a:visited
-{
-    text-decoration: none;
-    color: #1155CC;
-}
+        .popupwizard a:link, .popupwizard a:visited {
+            text-decoration: none;
+            color: #1155CC;
+        }
 
-.popupwizard a:hover 
-{
-    text-decoration: underline;    
-}
+        .popupwizard a:hover {
+            text-decoration: underline;
+        }
 
-#popupsendmessage
-{
+#popupsendmessage {
     margin: 0;
-   
 }
 
-#vehicleViewMoreLink
-{
+#vehicleViewMoreLink {
     margin-top: 10px;
 }
 
-.singleVehiclePopupContent
-{
-    clear:both;margin-top:10px;border-top:2px solid #CCCCCC;padding-top:5px;
+.singleVehiclePopupContent {
+    clear: both;
+    margin-top: 10px;
+    border-top: 2px solid #CCCCCC;
+    padding-top: 5px;
 }
 
-#wizardclosebar
-{
+#wizardclosebar {
     border-top: 1px solid #CCCCCC;
-    margin-top:5px;
+    margin-top: 5px;
     padding-top: 10px;
     width: 100%;
-    
 }
 
-#wizardclosebar-closebutton
-{
+#wizardclosebar-closebutton {
     float: right;
 }
 
-#sendmessageForm .textField
-{
+#sendmessageForm .textField {
     border: 1px solid #809DB9;
 }
 
-#sendmessageForm textarea:focus
-{
+#sendmessageForm textarea:focus {
     border: 2px solid #DDBB77;
 }
 
-.bsmforminput
-{
+.bsmforminput {
     border: 1px solid #809DB9;
     padding: 3px;
 }
 
-.bsmforminput:focus
-{
-    border: 2px solid #DDBB77;
-}
+    .bsmforminput:focus {
+        border: 2px solid #DDBB77;
+    }
 
 .kd-button {
     -moz-transition: all 0.218s ease 0s;
     background-color: #F5F5F5;
-    background-image: -moz-linear-gradient(center top , #F5F5F5, #F1F1F1);
+    background-image: -moz-linear-gradient(center top, #F5F5F5, #F1F1F1);
     /*border: 1px solid rgba(0, 0, 0, 0.1);*/
     border: 1px solid #D8D8D8;
     border-radius: 2px 2px 2px 2px;
-    
     color: #444444;
     display: inline-block;
     font-size: 100%;
@@ -233,106 +273,94 @@ body {
     text-align: center;
 }
 
-.kd-button:hover {
-    -moz-transition: all 0s ease 0s;
-    background-color: #F8F8F8;
-    background-image: -moz-linear-gradient(center top , #F8F8F8, #F1F1F1);
-    border: 1px solid #C6C6C6;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    color: #333333;
-    text-decoration: none;
-}
+    .kd-button:hover {
+        -moz-transition: all 0s ease 0s;
+        background-color: #F8F8F8;
+        background-image: -moz-linear-gradient(center top, #F8F8F8, #F1F1F1);
+        border: 1px solid #C6C6C6;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        color: #333333;
+        text-decoration: none;
+    }
 
 .kd-button-disabled, .kd-button-disabled:hover {
     -moz-transition: all 0.218s ease 0s !important;
     background-color: #F5F5F5 !important;
-    background-image: -moz-linear-gradient(center top , #F5F5F5, #F1F1F1) !important;
+    background-image: -moz-linear-gradient(center top, #F5F5F5, #F1F1F1) !important;
     border: 1px solid #D8D8D8 !important;
     border-radius: 2px 2px 2px 2px !important;
     color: #cccccc !important;
     font-weight: normal !important;
-    box-shadow: none !important;        
+    box-shadow: none !important;
 }
 
-.editformmainoptions, .editformmoreoptions
-{
+.editformmainoptions, .editformmoreoptions {
     height: 186px;
 }
 
-.editformextendedattributes
-{
+.editformextendedattributes {
     height: 226px;
 }
 
-#AllServicesList
-{
+#AllServicesList {
     border: 1px solid #cccccc;
     padding: 5px;
     width: 138px;
     height: 150px;
     overflow: auto;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
-#ruleslist
-{
+#ruleslist {
     border: 1px solid #cccccc;
     padding: 2px;
     width: 323px;
     height: 95px;
     margin-top: 2px;
     overflow: auto;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
-#createrulemessage
-{
+#createrulemessage {
     border: 0;
     height: 20px;
     color: Red;
 }
 
-#AllServicesList ul, #AppliedServiceList ul, #ruleslist ul
-{
+#AllServicesList ul, #AppliedServiceList ul, #ruleslist ul {
     font-family: Verdana, sans-serif;
-	font-size: 12px;
-	line-height: 18px;
-	padding: 0px;
-	margin: 0px;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 0px;
+    margin: 0px;
 }
 
-#AllServicesList ul li, #AppliedServiceList ul li, #ruleslist ul li
-{
-    list-style: none;
-	padding: 0px;
-	margin: 0px;
-	white-space: nowrap;
-	clear: both;
-	cursor: pointer;	
-}
+    #AllServicesList ul li, #AppliedServiceList ul li, #ruleslist ul li {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        white-space: nowrap;
+        clear: both;
+        cursor: pointer;
+    }
 
-#AllServicesList ul li:hover, #AppliedServiceList ul li:hover, #ruleslist ul li:hover
-{
-    background-color: #ACFA97;
-}
+        #AllServicesList ul li:hover, #AppliedServiceList ul li:hover, #ruleslist ul li:hover {
+            background-color: #ACFA97;
+        }
 
-#AppliedServiceList, #SerivceRule
-{
+#AppliedServiceList, #SerivceRule {
     margin: 0;
     border: 1px solid #cccccc;
     padding: 5px;
     width: 200px;
 }
 
-#AppliedServiceList
-{
-    
+#AppliedServiceList {
     height: 98px;
-    overflow:auto;
+    overflow: auto;
 }
 
-#SerivceRule
-{
+#SerivceRule {
     height: 50px;
     background-color: #333333;
     color: White;
@@ -340,52 +368,43 @@ body {
     overflow: auto;
 }
 
-#serviceleftpane, #servicerightpane
-{
+#serviceleftpane, #servicerightpane {
     height: 170px;
-    margin-left: 1px;    
+    margin-left: 1px;
 }
 
-#servicetoolbar
-{
+#servicetoolbar {
     margin-left: 10px;
 }
 
-.ruleitemnewserviceWrapper
-{
+.ruleitemnewserviceWrapper {
     padding: 2px;
-    float:left;
-    display:inline-block;
-    width:auto;
+    float: left;
+    display: inline-block;
+    width: auto;
 }
 
-.ruleitemnewserviceWrapper:hover
-{
-    background-color: yellow;
+    .ruleitemnewserviceWrapper:hover {
+        background-color: yellow;
+    }
+
+.ruleitemnewservice, .rulecloser {
+    float: left;
 }
 
-.ruleitemnewservice, .rulecloser
-{
-    float:left;
-}
-
-.rulecloser
-{
+.rulecloser {
     width: 10px;
 }
 
-.formtextprompt
-{
+.formtextprompt {
     color: #888888;
 }
 
-#subjectTemplate, #recepientsTemplate
-{
+#subjectTemplate, #recepientsTemplate {
     font-family: Arial,Helvetica,sans-serif;
     font-size: 13px;
     margin: 0;
     padding: 0;
-    
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
@@ -406,63 +425,426 @@ body {
     background-color: #EFEFEF;
 }
 
-#subjectTemplate
-{
+#subjectTemplate {
     height: 230px;
 }
 
-#recepientsTemplate
-{
+#recepientsTemplate {
     height: 150px;
 }
 
-#subjectTemplate ul, #recepientsTemplate ul
-{
-    padding: 0;
-    margin: 2px 0 5px 0;
-    height: 100px;
-    overflow:auto;
-}
+    #subjectTemplate ul, #recepientsTemplate ul {
+        padding: 0;
+        margin: 2px 0 5px 0;
+        height: 100px;
+        overflow: auto;
+    }
 
-#subjectTemplate li, #recepientsTemplate li
-{
-    list-style: none outside none;
-    line-height:24px;
-    padding: 0 0 0 10px;
-    color: #1A74B0;
-}
+    #subjectTemplate li, #recepientsTemplate li {
+        list-style: none outside none;
+        line-height: 24px;
+        padding: 0 0 0 10px;
+        color: #1A74B0;
+    }
 
-#subjectTemplate a, #recepientsTemplate a
-{
-    text-decoration:none;
-    color: #1A74B0;
-}
+    #subjectTemplate a, #recepientsTemplate a {
+        text-decoration: none;
+        color: #1A74B0;
+    }
 
-#subjectTemplate li:hover, #recepientsTemplate li:hover
-{
-    background-color:#EFF5F9;
-    cursor: pointer;    
-}
+    #subjectTemplate li:hover, #recepientsTemplate li:hover {
+        background-color: #EFF5F9;
+        cursor: pointer;
+    }
 
-#subjectTemplateTitle, #recepientsTemplateTitle
-{
+#subjectTemplateTitle, #recepientsTemplateTitle {
     background-color: #555555;
     color: #ffffff;
     margin: 0;
     padding: 5px 5px 5px 10px;
 }
 
-#subjectTemplateMain, #recepientsTemplateMain
-{
+#subjectTemplateMain, #recepientsTemplateMain {
     margin: 5px;
 }
 
-.validateError 
-{
-    border-color: Red
+.validateError {
+    border-color: Red;
 }
 
-.selectedservice, .selectedavailableservice
-{
+.selectedservice, .selectedavailableservice {
     background-color: #ACFA97;
 }
+
+/*html, body {
+            height: 100%;
+            margin: 0px 0px;
+        }*/
+
+#alarmpage {
+    float: right;
+    width: 525px;
+    background: white;
+    height: 100%;
+}
+
+#map {
+    overflow: hidden;
+    height: 100%;
+    border: 1px solid #999999;
+}
+
+.noAlarmPage {
+    width: 100%;
+}
+
+.olPopup p {
+    margin: 0px;
+    font-size: .9em;
+}
+
+.olPopup h2 {
+    font-size: 1.2em;
+}
+
+.cmbfonts {
+    font: normal 12px tahoma, arial, verdana, sans-serif !important;
+    margin-right: 10px;
+}
+
+#toolbar .toolbar-transparent {
+    border: 0;
+    background-color: #B5B2AE !important;
+    background-image: none;
+}
+
+.message {
+    background: none repeat scroll 0 0 #F9EDBE;
+    border: 1px solid #F0C36D !important;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 95%;
+    line-height: 29px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.searchmessage {
+    background: none repeat scroll 0 0 #F9EDBE;
+    border: 1px solid #F0C36D !important;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 95%;
+    line-height: 29px;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: Red;
+}
+
+.maptoolbarselected {
+    background: none repeat scroll 0 0 #ffffff !important;
+}
+
+.olControlLayerSwitcher {
+    top: 5px !important;
+}
+
+    .olControlLayerSwitcher .maximizeDiv, .olControlLayerSwitcher .minimizeDiv {
+        top: 0 !important;
+    }
+
+.olControlPanZoomBar {
+    top: 28px !important;
+    right: 50px !important;
+    left: auto !important;
+}
+
+.olControlPanZoom {
+    top: 28px !important;
+    right: 50px !important;
+    left: auto !important;
+}
+
+
+.olbsmtoolbar {
+    border: 0;
+    z-index: 1000;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    width: 173px; /* Devin */
+}
+
+.mapsearchtoolbar {
+    border: 0;
+    z-index: 1000;
+    position: absolute;
+    top: 8px;
+    left: 175px; /*width: 450px; height: 35px;*/
+}
+
+    .mapsearchtoolbar input {
+        margin-top: 2px;
+        margin-left: 5px;
+    }
+
+#searchAddressOptions {
+    border: 1px solid #cccccc;
+    border-radius: 4px 4px 4px 4px;
+    z-index: 1010;
+    position: absolute;
+    top: 45px;
+    left: 150px;
+    width: 500px;
+    height: 270px;
+    display: none;
+    background-color: #FFFFFF;
+    padding: 0;
+    overflow: hidden;
+}
+
+#searchAddressOptionsBody {
+    height: 230px;
+    overflow: auto;
+    padding: 10px;
+}
+
+#searchAddressOptionsFoot {
+    height: 40px;
+    background-color: #eeeeee;
+    padding: 10px;
+}
+
+.olControlScaleLine {
+    bottom: 40px !important;
+}
+
+.olControlMousePosition {
+    bottom: 15px !important;
+}
+
+.SearchAddressForms {
+    margin: 0;
+}
+
+#searchAddressBtnW {
+    display: inline-block;
+    margin: 1px 1px 0 0;
+    vertical-align: top;
+    padding: 0;
+}
+
+.searchAddressBtn {
+    background-color: #4A8BF5;
+    /*background-image: -moz-linear-gradient(center top , #4D90FE, #4787ED);*/
+    border: 1px solid #3079ED;
+    color: #FFFFFF !important;
+    margin: 0;
+    -moz-user-select: none;
+    border-radius: 2px 2px 2px 2px;
+    cursor: default !important;
+    display: inline-block;
+    font-weight: bold;
+    height: 29px;
+    line-height: 29px;
+    min-width: 54px;
+    padding: 0 8px;
+    text-align: center;
+    text-decoration: none !important;
+}
+
+    .searchAddressBtn:hover {
+        background-color: #3F83F1;
+    }
+
+.searchAddressBtnI {
+    display: inline-block;
+    height: 13px;
+    margin: 7px 19px;
+    width: 14px;
+    background-image: url("../images/search.png");
+}
+
+.nokia-searchbox {
+    width: 450px !important;
+}
+
+.nokia-searchbox-input {
+    height: 26px !important;
+    width: 300px !important;
+    margin-left: 5px !important;
+    margin-top: 2px !important;
+    border: 1px solid #809db9 !important;
+    padding: 3px !important;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) inset !important;
+    border-radius: 0 !important;
+}
+
+    .nokia-searchbox-input:focus {
+        border: 2px solid #ddbb77 !important;
+    }
+
+.nokia-searchbox-button {
+    -moz-user-select: none !important;
+    background-color: #4A8BF5 !important;
+    /*background-image: -moz-linear-gradient(center top , #4d90fe, #4787ed) !important;*/
+    background-image: url("../images/search.png") !important;
+    background-repeat: no-repeat !important;
+    border: 1px solid #3079ed !important;
+    border-radius: 2px !important;
+    color: #ffffff !important;
+    cursor: default !important;
+    display: inline-block !important;
+    font-weight: bold !important;
+    height: 29px !important;
+    width: 70px !important;
+    line-height: 29px !important;
+    min-width: 54px !important;
+    padding: 0 8px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    font-size: 0 !important;
+    margin: 1px 15px 0 4px !important;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+    background-position: center center !important;
+}
+
+    .nokia-searchbox-button:hover {
+        background-color: #3F83F1 !important;
+        background-image: url("../images/search.png") !important;
+    }
+
+.searchAddressOptionsBtn {
+    background-color: #DDDDDD;
+    border: 0;
+    color: #FFFFFF !important;
+    margin: 0;
+    -moz-user-select: none;
+    border-radius: 2px 2px 2px 2px;
+    cursor: default !important;
+    display: inline-block;
+    font-weight: bold;
+    height: 29px;
+    line-height: 29px;
+    min-width: 24px;
+    padding: 0;
+    text-align: center;
+    text-decoration: none !important;
+}
+
+    .searchAddressOptionsBtn:hover {
+        background-color: #CCCCCC;
+    }
+
+
+.searchAddressOptionsBtnI {
+    display: inline-block;
+    height: 27px;
+    margin: 0;
+    width: 14px;
+    background-image: url("../images/addressSearchOptions.png");
+}
+
+.ui-datepicker {
+    z-index: 9999 !important;
+}
+
+button.ui-datepicker-current {
+    display: none;
+}
+
+.ui-autocomplete {
+    z-index: 9999 !important;
+}
+
+.ui-autocomplete-loading {
+    background: white url('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/images/ui-anim_basic_16x16.gif') right center no-repeat;
+}
+
+@media print {
+    #alarmpage, .searchAddressBtn, .mapsearchtoolbar, .olbsmtoolbar, .olControlPanZoomBar, .olControlLayerSwitcher, .olControlMousePosition {
+        display: none !important;
+    }
+}
+
+svg {
+    -webkit-transform: none !important;
+}
+
+.olTileImage {
+    -webkit-backface-visibility: visible !important;
+    -webkit-transform: none !important;
+}
+
+.landmarkcategory {
+    margin-left: 13px;
+}
+
+#vehicleOperationalStateclosebar-closebutton {
+    float: right;
+}
+
+/* frm_Alarms.aspx */
+        .grid-row-red {
+            background-color: red;
+        }
+
+        .grid-row-yellow {
+            background-color: yellow;
+        }
+
+        .grid-row-orange {
+            background-color: orange;
+        }
+
+        .popupwindow {
+            font-family: Arial,Helvetica,sans-serif;
+            font-size: 13px;
+            margin: 0;
+            padding: 0;
+            -moz-border-bottom-colors: none;
+            -moz-border-left-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-top-colors: none;
+            background-color: #FFFFFF;
+            border-color: #BDBDBD;
+            border-image: none;
+            border-radius: 0 0 10px 10px;
+            border-style: solid;
+            border-width: 2px;
+            box-shadow: 0 1px 5px 0 rgba(51, 51, 51, 0.3);
+            display: none;
+            width: 340px;
+            padding: 0;
+            position: absolute;
+            visibility: visible;
+            z-index: 10;
+            background-color: #EFEFEF;
+        }
+
+            .popupwindow a {
+                text-decoration: none;
+                color: #1A74B0;
+            }
+
+        .popupwindowTitle {
+            background-color: #DE1F00;
+            color: #ffffff;
+            margin: 0;
+            padding: 5px 5px 5px 10px;
+        }
+
+        .popupwindowMain {
+            margin: 20px 10px;
+        }
+
+        .lastalarmchecked {
+            display: inline;
+            margin-left: 30px;
+            padding: 10px;
+        }
+
+        object embed {
+            width: 1px;
+            height: 1px;
+        }

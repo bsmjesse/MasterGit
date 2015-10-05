@@ -6,71 +6,6 @@
 <html>
 <head>
     <title>Alarm Information</title>
-    <style>
-        .grid-row-red {
-            background-color: red;
-        }
-
-        .grid-row-yellow {
-            background-color: yellow;
-        }
-
-        .grid-row-orange {
-            background-color: orange;
-        }
-
-        .popupwindow {
-            font-family: Arial,Helvetica,sans-serif;
-            font-size: 13px;
-            margin: 0;
-            padding: 0;
-            -moz-border-bottom-colors: none;
-            -moz-border-left-colors: none;
-            -moz-border-right-colors: none;
-            -moz-border-top-colors: none;
-            background-color: #FFFFFF;
-            border-color: #BDBDBD;
-            border-image: none;
-            border-radius: 0 0 10px 10px;
-            border-style: solid;
-            border-width: 2px;
-            box-shadow: 0 1px 5px 0 rgba(51, 51, 51, 0.3);
-            display: none;
-            width: 340px;
-            padding: 0;
-            position: absolute;
-            visibility: visible;
-            z-index: 10;
-            background-color: #EFEFEF;
-        }
-
-            .popupwindow a {
-                text-decoration: none;
-                color: #1A74B0;
-            }
-
-        .popupwindowTitle {
-            background-color: #DE1F00;
-            color: #ffffff;
-            margin: 0;
-            padding: 5px 5px 5px 10px;
-        }
-
-        .popupwindowMain {
-            margin: 20px 10px;
-        }
-
-        .lastalarmchecked {
-            display: inline;
-            margin-left: 30px;
-            padding: 10px;
-        }
-
-        object embed {
-            width: 1px;
-            height: 1px;
-        }
-    </style>
 
     <meta content="Microsoft Visual Studio 7.0" name="GENERATOR">
     <meta content="C#" name="CODE_LANGUAGE">
@@ -84,7 +19,7 @@
 <body>
     <div id='alarms-grid'></div>
     <%if (SourcePage == "newmap")
-      { %>
+        { %>
     <div style="position: absolute; left: 10px; top: 310px;"><a href="javascript:void(0)" onclick="clearLandmarkGeometry();">Clear Mapping</a></div>
     <%} %>
     <div id="sessiontimeout" class="popupwindow" style="display: none; left: 100px; top: 150px; height: 170px;">
@@ -150,73 +85,73 @@
         //--------------------------------------
         function NewWindow(AlarmId) {
             var target = "<%=alarmDetailPage%>";
-         var mypage = target + '?AlarmId=' + AlarmId + '&s=<%=SourcePage %>';                    
-         var myname='AlarmInfo';
-         var w=<%=windowWidth%>;
-             var h=<%=windowHeight%>;
-         var winl = (screen.width - w) / 2; 
-         var wint = (screen.height - h) / 2; 
-         if(AlarmId==-1 || AlarmId==-2)
-             h = 200;
+            var mypage = target + '?AlarmId=' + AlarmId + '&s=<%=SourcePage %>';                    
+            var myname='AlarmInfo';
+            var w=<%=windowWidth%>;
+         var h=<%=windowHeight%>;
+            var winl = (screen.width - w) / 2; 
+            var wint = (screen.height - h) / 2; 
+            if(AlarmId==-1 || AlarmId==-2)
+                h = 200;
             winprops = 'height=' + h + ',width=' + w + ',top=' + wint + ',left=' + winl + 'location=0,status=0,scrollbars=0,toolbar=0,menubar=0,';
             win = window.open(mypage, myname, winprops); 
-         if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
-     }
+            if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
+        }
 
-     function ClearAlarms(t) {
-         var alarmlist = '';
-         alarmgrid.getStore().each(function (record) {
-             if (t == -1 && record.data.AlarmLevel.toLowerCase().replace(/^\s+|\s+$/g, '') != 'critical' && record.data.AlarmDescription.toLowerCase().replace('cia:', '') == record.data.AlarmDescription.toLowerCase()) {
-                 alarmlist += record.data.AlarmId + ',';
-             }
-             else if (t == -2) {
-                 alarmlist += record.data.AlarmId + ',';
+        function ClearAlarms(t) {
+            var alarmlist = '';
+            alarmgrid.getStore().each(function (record) {
+                if (t == -1 && record.data.AlarmLevel.toLowerCase().replace(/^\s+|\s+$/g, '') != 'critical' && record.data.AlarmDescription.toLowerCase().replace('cia:', '') == record.data.AlarmDescription.toLowerCase()) {
+                    alarmlist += record.data.AlarmId + ',';
+                }
+                else if (t == -2) {
+                    alarmlist += record.data.AlarmId + ',';
             
-             }
+                }
 
-         });
+            });
 
-         if (alarmlist.length > 1)
-             alarmlist = alarmlist.substring(0, alarmlist.length - 1);
-         else {
-             alert('You have no alarms to clear.');
-             return;
+            if (alarmlist.length > 1)
+                alarmlist = alarmlist.substring(0, alarmlist.length - 1);
+            else {
+                alert('You have no alarms to clear.');
+                return;
+            }
+
+            var target = "<%=alarmDetailPage%>";
+         var mypage = target + '?AlarmId=' + t + '&al=' + alarmlist;                    
+         var myname='AlarmInfo';
+         var w=<%=windowWidth%>;
+             var h = 200;
+             var winl = (screen.width - w) / 2; 
+             var wint = (screen.height - h) / 2;         
+            
+             winprops = 'height='+h+',width='+w+',top='+wint+',left='+winl+'location=0,status=0,scrollbars=0,toolbar=0,menubar=0,' 
+             win = window.open(mypage, myname, winprops) 
+             if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
          }
 
-         var target = "<%=alarmDetailPage%>";
-             var mypage = target + '?AlarmId=' + t + '&al=' + alarmlist;                    
-             var myname='AlarmInfo';
-             var w=<%=windowWidth%>;
-        var h = 200;
-        var winl = (screen.width - w) / 2; 
-        var wint = (screen.height - h) / 2;         
-            
-        winprops = 'height='+h+',width='+w+',top='+wint+',left='+winl+'location=0,status=0,scrollbars=0,toolbar=0,menubar=0,' 
-        win = window.open(mypage, myname, winprops) 
-        if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
-    }
-
     
 
-    function redirectToLogin() {
-        top.document.all('TopFrame').cols = '0,*';
-        window.open('../Login.aspx', '_top');
-    }
+         function redirectToLogin() {
+             top.document.all('TopFrame').cols = '0,*';
+             window.open('../Login.aspx', '_top');
+         }
 
-    function showLanbmarkGeometry(){
-        var landmarkId = $('#landmarkId').val();
-        parent.showAlarm(null, 0, 0, landmarkId);
-    }
+         function showLanbmarkGeometry(){
+             var landmarkId = $('#landmarkId').val();
+             parent.showAlarm(null, 0, 0, landmarkId);
+         }
 
-    function showAlarm(alarmVehicleDescription, alarmLon, alarmLat, alarmLandmarkId){
+         function showAlarm(alarmVehicleDescription, alarmLon, alarmLat, alarmLandmarkId){
     
-        parent.showAlarm(alarmVehicleDescription, alarmLon, alarmLat, alarmLandmarkId);
-    }
+             parent.showAlarm(alarmVehicleDescription, alarmLon, alarmLat, alarmLandmarkId);
+         }
 
-    function clearLandmarkGeometry()
-    {
-        parent.clearLandmarkGeometry();
-    }
+         function clearLandmarkGeometry()
+         {
+             parent.clearLandmarkGeometry();
+         }
 
     </script>
 </body>
