@@ -3162,6 +3162,40 @@ Ext.onReady(function () {
     });
     //////////////////////////////////////////////////////////////////
 
+    function InitMainstoreData() {
+        if (!OpenlayerMapsPageLoaded)
+            setTimeout(function () { InitMainstoreData(); }, 100);
+        else {
+            if (LoadVehiclesBasedOn == 'fleet') {
+                //fleetstore.load();
+                mainstore.load(
+                 {
+                     params:
+                    {
+                        QueryType: 'GetfleetPosition',
+                        fleetID: DefaultFleetID,
+                        start: 0,
+                        limit: VehicleListPagesize
+                    }
+                 }
+                 );
+            }
+            else {
+                mainstore.load(
+                     {
+                         params:
+                        {
+                            QueryType: 'GetfleetPosition',
+                            fleetID: DefaultOrganizationHierarchyFleetId,
+                            start: 0,
+                            limit: VehicleListPagesize
+                        }
+                     }
+                     );
+            }
+        }
+    }
+
     northmappanel = Ext.create('Ext.Panel',
 {
     //region: defaultMapView,
@@ -3182,34 +3216,7 @@ Ext.onReady(function () {
     listeners:
    {
        'afterrender': function () {
-           if (LoadVehiclesBasedOn == 'fleet') {
-               //fleetstore.load();
-               mainstore.load(
-                {
-                    params:
-                   {
-                       QueryType: 'GetfleetPosition',
-                       fleetID: DefaultFleetID,
-                       start: 0,
-                       limit: VehicleListPagesize
-                   }
-                }
-                );
-           }
-           else {
-               mainstore.load(
-                    {
-                        params:
-                       {
-                           QueryType: 'GetfleetPosition',
-                           fleetID: DefaultOrganizationHierarchyFleetId,
-                           start: 0,
-                           limit: VehicleListPagesize
-                       }
-                    }
-                    );
-           }
-
+           InitMainstoreData();
        }
    }
 }

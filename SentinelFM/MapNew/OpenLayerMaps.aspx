@@ -611,6 +611,7 @@
             parent.openPopupWindow("Assign to fleet", urlToLoad, 520, 320);
         }    
         $(document).ready(function() {
+            parent.OpenlayerMapsPageLoaded = true;
             GoogleAddressService = new IniGoogleAutoComplete();
             //$( "#txtSearchAddress" ).datepicker();
 

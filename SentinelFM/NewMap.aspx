@@ -722,6 +722,7 @@
     <% } %>
 
     <script type="text/javascript">
+        var OpenlayerMapsPageLoaded = false;
         var MutipleUserHierarchyAssignment = <%=MutipleUserHierarchyAssignment.ToString().ToLower() %>;
         var mapAssets = <%=mapAssets.ToString().ToLower() %>;
         var maxVehiclesOnMap = <%=maxVehiclesOnMap%>;
