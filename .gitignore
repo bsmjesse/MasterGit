@@ -353,3 +353,7 @@ SentinelFM/Bin/DasLogic.pdb
 SentinelFM/Bin/ERR.pdb
 SentinelFM/Bin/fr/DasDb.resources.dll
 SentinelFM_Solution.v12.suo
+
+DasDb/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+ERR/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+LocalizationLayer/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
