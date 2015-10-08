@@ -38,3 +38,14 @@ D:\Apps\BSM\SentinelFM\Master\ERRSecurity\obj\Debug\ERRSecurity.csproj.GenerateR
 D:\Apps\BSM\SentinelFM\Master\ERRSecurity\obj\Debug\fr\ERRSecurity.resources.dll
 D:\Apps\BSM\SentinelFM\Master\ERRSecurity\obj\Debug\ERRSecurity.dll
 D:\Apps\BSM\SentinelFM\Master\ERRSecurity\obj\Debug\ERRSecurity.pdb
+C:\sites\Master-MapPerformance\BIN\ERRSecurity.dll
+C:\sites\Master-MapPerformance\BIN\ERRSecurity.pdb
+C:\sites\Master-MapPerformance\BIN\fr\ERRSecurity.resources.dll
+C:\sites\Master-MapPerformance\ERRSecurity\obj\Debug\ERRSecurity.csprojResolveAssemblyReference.cache
+C:\sites\Master-MapPerformance\ERRSecurity\obj\Debug\VLF.ERRSecurity.Resources.ERRSecurityConst.resources
+C:\sites\Master-MapPerformance\ERRSecurity\obj\Debug\VLF.ERRSecurity.Resources.ERRSecurityConst.fr.resources
+C:\sites\Master-MapPerformance\ERRSecurity\obj\Debug\ERRSecurity.csproj.GenerateResource.Cache
+C:\sites\Master-MapPerformance\ERRSecurity\obj\Debug\fr\ERRSecurity.resources.dll
+C:\sites\Master-MapPerformance\ERRSecurity\obj\Debug\ERRSecurity.dll
+C:\sites\Master-MapPerformance\ERRSecurity\obj\Debug\ERRSecurity.pdb
+C:\sites\Master-MapPerformance\BIN\NLog.config

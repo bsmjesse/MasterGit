@@ -38,3 +38,14 @@ D:\Apps\BSM\SentinelFM\Master\DasDb\obj\Debug\DasDb.csproj.GenerateResource.Cach
 D:\Apps\BSM\SentinelFM\Master\DasDb\obj\Debug\fr\DasDb.resources.dll
 D:\Apps\BSM\SentinelFM\Master\DasDb\obj\Debug\DasDb.dll
 D:\Apps\BSM\SentinelFM\Master\DasDb\obj\Debug\DasDb.pdb
+C:\sites\Master-MapPerformance\BIN\DasDb.dll
+C:\sites\Master-MapPerformance\BIN\DasDb.pdb
+C:\sites\Master-MapPerformance\BIN\fr\DasDb.resources.dll
+C:\sites\Master-MapPerformance\DasDb\obj\Debug\DasDb.csprojResolveAssemblyReference.cache
+C:\sites\Master-MapPerformance\DasDb\obj\Debug\VLF.DAS.DB.Resources.Const.resources
+C:\sites\Master-MapPerformance\DasDb\obj\Debug\VLF.DAS.DB.Resources.Const.fr.resources
+C:\sites\Master-MapPerformance\DasDb\obj\Debug\DasDb.csproj.GenerateResource.Cache
+C:\sites\Master-MapPerformance\DasDb\obj\Debug\fr\DasDb.resources.dll
+C:\sites\Master-MapPerformance\DasDb\obj\Debug\DasDb.dll
+C:\sites\Master-MapPerformance\DasDb\obj\Debug\DasDb.pdb
+C:\sites\Master-MapPerformance\BIN\NLog.config

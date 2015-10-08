@@ -362,7 +362,7 @@ Ext.define('HistoryListModel',
    {
        extend: 'Ext.data.Model',
        fields: [
-       //'BoxId', 
+       //'BoxId',
       {
           name: 'BoxId', type: 'int'
       },
@@ -373,7 +373,7 @@ Ext.define('HistoryListModel',
       , 'DclId', 'BoxMsgInTypeId', 'BoxMsgInTypeName', 'BoxProtocolTypeId',
       'BoxProtocolTypeName', 'CommInfo1', 'CommInfo2', 'ValidGps', 'Latitude', 'Longitude', 'Heading', 'SensorMask', 'CustomProp', 'BlobDataSize', 'SequenceNum',
       'StreetAddress',
-       'Speed', 
+       'Speed',
       'BoxArmed', 'MsgDirection', 'Acknowledged', 'Scheduled', 'MsgDetails', 'MyDateTime', 'MyHeading', 'dgKey', 'CustomUrl', 'HistoryInfoId', 'chkBoxShow',
       {
           name: 'OriginDateTime', type: 'date', dateFormat: 'c'
@@ -634,10 +634,10 @@ Ext.onReady(function () {
 
     var nframeadded = false, sframeadded = false, eframeadded = false;
     loadingMask = new Ext.LoadMask(Ext.getBody(), {
-        msg: ResloadingMaskMessage//"Loading..." 
+        msg: ResloadingMaskMessage//"Loading..."
     });
     searchingMask = new Ext.LoadMask(Ext.getBody(), {
-        msg: RessearchingMaskMessage//"Searching..." 
+        msg: RessearchingMaskMessage//"Searching..."
     });
     // Default
 
@@ -1360,7 +1360,7 @@ Ext.onReady(function () {
             //else
             //{
             //     fleetWin.show();
-            //}  
+            //}
         }
         catch (err) {
         }
@@ -1688,7 +1688,7 @@ Ext.onReady(function () {
     //	    },
     //	    scope: this
     //	}
-    //}); 
+    //});
 
     function openWindow(wintitle, winURL, winWidth, winHeight) {
         return openGeneralPopupWindow(wintitle, winURL, winWidth, winHeight, 'hide');
@@ -3620,7 +3620,7 @@ Ext.onReady(function () {
                 //vehiclerunner.stopAll();
                 //vehiclerunner.tasks.length = 0;
                 stopVehicleSync();
-                
+
                 var sortingp = "";
                 for (prop in sortingParam) {
                     sortingp += sortingParam[prop] + ',';
@@ -4717,7 +4717,7 @@ Ext.onReady(function () {
                         return (value * 1).toFixed(2);
                     return "";
                 },
-                //hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.LastIgnOnBatV) - 1] == "y") ? false : true               
+                //hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.LastIgnOnBatV) - 1] == "y") ? false : true
                 hidden: false
             });
             vehicleGridColumns.push(col_vgLastIgnOnBatV);
@@ -4752,7 +4752,7 @@ Ext.onReady(function () {
         /*if (BatteryTredingEnabled) {
             vehicleGridColumns.push({
                 id: 'vgLastBatV',
-                text: "Last Battery(v)", 
+                text: "Last Battery(v)",
                 align: 'left',
                 width: 120,
                 dataIndex: 'LastBatV',
@@ -4962,7 +4962,7 @@ Ext.onReady(function () {
         if (currentView == 'dashboard')
             return;
 
-        //vehiclegrid.headerCt.removeAll();        
+        //vehiclegrid.headerCt.removeAll();
 
         // Insert DashboardView columns
 
@@ -5090,13 +5090,13 @@ Ext.onReady(function () {
     features: [filters],
     stateId: 'stateVGrid',
     stateful: true, // state should be preserved
-    //stateEvents: ['columnresize', 'columnmove', 'show', 'hide'], 
+    //stateEvents: ['columnresize', 'columnmove', 'show', 'hide'],
 
     /*viewConfig:
     {
     stripeRows: false,
     emptyText: 'No vehicles to display',
-    useMsg: false          
+    useMsg: false
     }
     ,*/
     columns: vehicleGridColumns
@@ -5756,17 +5756,17 @@ Ext.onReady(function () {
    ,
     columns: [
      {
-         header: Resgeolandmarkgridcolumnsname, //'Name', 
+         header: Resgeolandmarkgridcolumnsname, //'Name',
          dataIndex: 'name'
      },
      {
-         header: ResgeolandmarkgridcolumnsType, //'Type', 
+         header: ResgeolandmarkgridcolumnsType, //'Type',
          dataIndex: 'type'
      }
     /*,
     { header: '',
     renderer: function (value, p, record) {
-    //var MsgKey = Ext.String.escape(record.data['MsgKey']);                
+    //var MsgKey = Ext.String.escape(record.data['MsgKey']);
     return '<a href="javascript:void(0);" onclick="return confirm(\'Are you sure you want to delete?\');"><img border="0" src="../images/delete.gif"></a>';
     }
     }*/
@@ -5896,7 +5896,7 @@ Ext.onReady(function () {
          hidden: false
      },
      {
-         header: ResgeozonegridcolumnsSeverityName, //'Severity', 
+         header: ResgeozonegridcolumnsSeverityName, //'Severity',
          dataIndex: 'SeverityName',
          filterable: true,
          sortable: true
@@ -5906,7 +5906,7 @@ Ext.onReady(function () {
          width: 120,
          renderer: function (value, p, record) {
              //var url = "./GeoZone_Landmarks/frmViewVehicleGeozones.aspx?geozoneId=" + value;
-             //var urlToLoad = '<iframe width=\\\'100%\\\' height=\\\'100%\\\' frameborder=\\\'0\\\' scrolling=\\\'no\\\' src=\\\'' + url + '\\\'></iframe>';                
+             //var urlToLoad = '<iframe width=\\\'100%\\\' height=\\\'100%\\\' frameborder=\\\'0\\\' scrolling=\\\'no\\\' src=\\\'' + url + '\\\'></iframe>';
              //return Ext.String.format('<a href="javascript:void(0);" OnClick="Ext.openWindow(\'Current Assignment\', \'{1}\', 400, 220)">Current Assignment</a>', value, urlToLoad);
 
              //return Ext.String.format('<a href="javascript:void(0);" OnClick="GetGeozoneCurrentAssignment({0});">Current Assignment</a>', value);
@@ -6009,7 +6009,7 @@ Ext.onReady(function () {
          hidden: false
      },
      {
-         header: Reslandmarkgriddesc, //'Description', 
+         header: Reslandmarkgriddesc, //'Description',
          dataIndex: 'desc', align: 'left',
          width: 120,
          filterable: true,
@@ -6018,7 +6018,7 @@ Ext.onReady(function () {
          hidden: true
      },
      {
-         header: ReslandmarkgridStreetAddress, //'Street Address', 
+         header: ReslandmarkgridStreetAddress, //'Street Address',
          dataIndex: 'StreetAddress', align: 'left',
          width: 270,
          filterable: true,
@@ -6027,7 +6027,7 @@ Ext.onReady(function () {
          hidden: false
      },
      {
-         header: ReslandmarkgridEmail, //'Email', 
+         header: ReslandmarkgridEmail, //'Email',
          dataIndex: 'Email', align: 'left',
          width: 100,
          filterable: true,
@@ -6054,7 +6054,7 @@ Ext.onReady(function () {
          hidden: false
      },
      {
-         header: ReslandmarkgridCategoryName, //'Category', 
+         header: ReslandmarkgridCategoryName, //'Category',
          dataIndex: 'CategoryName', align: 'left',
          width: 200,
          filterable: true,
@@ -6589,7 +6589,7 @@ Ext.onReady(function () {
     //                    );
     //                 }
     //                 catch(err){
-    //                 }                  
+    //                 }
     //              },
     //              'afterrender': function () {
     //                  //historyVehicleStore.load();
@@ -7005,7 +7005,7 @@ Ext.onReady(function () {
 
                                     historystore.loadRawData(docwholedata);
                                     historyPagerDoc = '1';
-                                    //Commented By Rohit                                       
+                                    //Commented By Rohit
                                     // historyPager.moveFirst();
                                     historyPageStore.loadRawData(doc);
                                     historygrid.down('pagingtoolbar').bindStore(historygrid.getStore());
@@ -7666,7 +7666,7 @@ Ext.onReady(function () {
 
     var historyGridColumns = [
      {
-         header: ReshistorygridBoxId, //'Unit ID', 
+         header: ReshistorygridBoxId, //'Unit ID',
          dataIndex: 'BoxId', align: 'left',
          width: 70,
          filterable: true,
@@ -7675,7 +7675,7 @@ Ext.onReady(function () {
          hidden: false
      },
      {
-         header: ReshistorygridDescription, // 'Vehicle', 
+         header: ReshistorygridDescription, // 'Vehicle',
          dataIndex: 'Description', align: 'left',
          width: 120,
          filterable: true,
@@ -7684,7 +7684,7 @@ Ext.onReady(function () {
          hidden: false
      },
      {
-         header: ReshistorygridOriginDateTime, //'Date/Time', 
+         header: ReshistorygridOriginDateTime, //'Date/Time',
          dataIndex: 'OriginDateTime', align: 'left',
          align: 'left',
          width: 150,
@@ -7700,7 +7700,7 @@ Ext.onReady(function () {
          }
      },
      {
-         header: ReshistorygridStreetAddress, //'Address', 
+         header: ReshistorygridStreetAddress, //'Address',
          dataIndex: 'StreetAddress', align: 'left',
          align: 'left',
          width: 230,
@@ -7800,7 +7800,7 @@ Ext.onReady(function () {
          }
      },
      {
-         header: ResAcknowledged, //'Ack', 
+         header: ResAcknowledged, //'Ack',
          dataIndex: 'Acknowledged', align: 'left',
          align: 'left',
          width: 50,
@@ -8289,7 +8289,7 @@ Ext.onReady(function () {
          hidden: false
      },
      {
-         header: ReshistoryStopGridLocation, //'Address', 
+         header: ReshistoryStopGridLocation, //'Address',
          dataIndex: 'Location',
          align: 'left',
          width: 220,
@@ -8299,7 +8299,7 @@ Ext.onReady(function () {
          hidden: false
      },
      {
-         header: ReshistoryStopGridDepartureDateTime, //'Departure', 
+         header: ReshistoryStopGridDepartureDateTime, //'Departure',
          dataIndex: 'DepartureDateTime', align: 'left',
          xtype: 'datecolumn',
          format: userdateformat, //'d/m/Y h:i:s a',
@@ -8320,7 +8320,7 @@ Ext.onReady(function () {
          hidden: false
      },
      {
-         header: ReshistoryStopGridRemarks, //'Status', 
+         header: ReshistoryStopGridRemarks, //'Status',
          dataIndex: 'Remarks',
          align: 'left',
          width: 80,
@@ -8416,7 +8416,7 @@ Ext.onReady(function () {
    ,
     columns: [
      {
-         header: ReshistoryTripGridDescription, //'Description', 
+         header: ReshistoryTripGridDescription, //'Description',
          dataIndex: 'Description', align: 'left',
          width: 150,
          filterable: true,
@@ -8425,7 +8425,7 @@ Ext.onReady(function () {
          hidden: false
      },
      {
-         header: ReshistoryTripGridDepartureTime, //'Departure', 
+         header: ReshistoryTripGridDepartureTime, //'Departure',
          dataIndex: 'DepartureTime', align: 'left',
          xtype: 'datecolumn',
          format: userdateformat, //'d/m/Y h:i:s a',
@@ -8436,7 +8436,7 @@ Ext.onReady(function () {
          hidden: false
      },
      {
-         header: ReshistoryTripGridArrivalTime, //'Arrival', 
+         header: ReshistoryTripGridArrivalTime, //'Arrival',
          dataIndex: 'ArrivalTime', align: 'left',
          xtype: 'datecolumn',
          format: userdateformat, //'d/m/Y h:i:s a',
@@ -8447,7 +8447,7 @@ Ext.onReady(function () {
          hidden: false
      },
      {
-         header: ReshistoryTripGrid_From, //'From', 
+         header: ReshistoryTripGrid_From, //'From',
          dataIndex: '_From', align: 'left',
          width: 200,
          filterable: true,
@@ -8456,7 +8456,7 @@ Ext.onReady(function () {
          hidden: false
      },
      {
-         header: ReshistoryTripGrid_To, //'To', 
+         header: ReshistoryTripGrid_To, //'To',
          dataIndex: '_To', align: 'left',
          width: 200,
          filterable: true,
@@ -8665,7 +8665,7 @@ Ext.onReady(function () {
                    name: 'OriginDateTime', type: 'date', dateFormat: 'c'
                },
                //'OriginDateTime',
-            //'Speed', 
+            //'Speed',
                 {
                     name: 'Speed', type: 'int',
                     convert: function (value, record) {
@@ -8791,7 +8791,7 @@ Ext.onReady(function () {
                  hidden: false
              },
              {
-                 header: ReshidtoryDetailsGridOriginDateTime, //'Date/Time', 
+                 header: ReshidtoryDetailsGridOriginDateTime, //'Date/Time',
                  dataIndex: 'OriginDateTime', align: 'left',
                  align: 'left',
                  width: 150,
@@ -8803,7 +8803,7 @@ Ext.onReady(function () {
                  hidden: false
              },
              {
-                 header: ReshidtoryDetailsGridStreetAddress, //'Address', 
+                 header: ReshidtoryDetailsGridStreetAddress, //'Address',
                  dataIndex: 'StreetAddress', align: 'left',
                  align: 'left',
                  width: 280,
@@ -8829,7 +8829,7 @@ Ext.onReady(function () {
                  hidden: false
              },
              {
-                 header: ReshidtoryDetailsGridBoxMsgInTypeName, //'Message', 
+                 header: ReshidtoryDetailsGridBoxMsgInTypeName, //'Message',
                  dataIndex: 'BoxMsgInTypeName', align: 'left',
                  renderer: function (value, p, record, ri) {
                      //return '<a href="javascript:var w =HistoryInfo(' + ri + ')">' + value + '</a>';
@@ -8844,7 +8844,7 @@ Ext.onReady(function () {
              },
              {
                  //header: 'MsgDetails', dataIndex: 'CustomProp', align: 'left',
-                 header: ReshidtoryDetailsGridMsgDetails, //'MsgDetails', 
+                 header: ReshidtoryDetailsGridMsgDetails, //'MsgDetails',
                  dataIndex: 'MsgDetails', align: 'left',
                  align: 'left',
                  width: 110,
@@ -8854,7 +8854,7 @@ Ext.onReady(function () {
                  hidden: false
              },
              {
-                 header: ReshidtoryDetailsGridAcknowledged, //'Ack', 
+                 header: ReshidtoryDetailsGridAcknowledged, //'Ack',
                  dataIndex: 'Acknowledged', align: 'left',
                  align: 'left',
                  width: 50,
@@ -9408,7 +9408,7 @@ function formatAMPM(date) {
 
 
 function OrganizationHierarchyNodeSelected(nodecode, fleetId, fleetName) {
-    
+
     HistoryOrganizationHierarchyNodeCode = nodecode;
     historyOrganizationHierarchy.setText(fleetName);
     HistoryOrganizationHierarchyFleetId = fleetId;
@@ -9803,7 +9803,7 @@ function gotoLandmark(landmarkId) {
                 break;
             }
         }
-        
+
     }
     else {
         setTimeout(function () { gotoLandmark(landmarkId); }, 500);

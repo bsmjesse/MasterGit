@@ -18,3 +18,9 @@ D:\Apps\BSM\SentinelFM\Master\BIN\DasLogic.pdb
 D:\Apps\BSM\SentinelFM\Master\DasLogic\obj\Debug\DasLogic.csprojResolveAssemblyReference.cache
 D:\Apps\BSM\SentinelFM\Master\DasLogic\obj\Debug\DasLogic.dll
 D:\Apps\BSM\SentinelFM\Master\DasLogic\obj\Debug\DasLogic.pdb
+C:\sites\Master-MapPerformance\BIN\DasLogic.dll
+C:\sites\Master-MapPerformance\BIN\DasLogic.pdb
+C:\sites\Master-MapPerformance\DasLogic\obj\Debug\DasLogic.csprojResolveAssemblyReference.cache
+C:\sites\Master-MapPerformance\DasLogic\obj\Debug\DasLogic.dll
+C:\sites\Master-MapPerformance\DasLogic\obj\Debug\DasLogic.pdb
+C:\sites\Master-MapPerformance\BIN\NLog.config
