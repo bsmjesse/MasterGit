@@ -375,4 +375,7 @@
   <data name="lblRedrawResource1.Text" xml:space="preserve">
     <value>Redraw</value>
   </data>
+  <data name="lblVehiclesResource1.Text" xml:space="preserve">
+    <value>Vehicles</value>
+  </data>
 </root>

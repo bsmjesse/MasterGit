@@ -102,6 +102,10 @@ var delayrunner;
 var ExtraVehicleForLandmark;
 
 var fromAutoSync = false;
+var vehicleAutoSyncStopped = false;
+var vehicleTimeOutId;
+
+var currentpage;
 
 Ext.define('Override.menu.Menu', {
     override: 'Ext.menu.Menu',
@@ -125,97 +129,97 @@ Ext.define('Override.menu.Menu', {
     }
 });
 
-Ext.create('Ext.toolbar.Toolbar', {
-    renderTo: Ext.getBody(),
-    items: [{
-        text: 'Button w/ Menu',
-        menu: [{
-            xtype: 'combobox',
-            hideLabel: true,
-            store: ['Arizona'],
-            typeAhead: true,
-            queryMode: 'local',
-            triggerAction: 'all',
-            emptyText: 'Select a state...',
-            selectOnFocus: true,
-            width: 135,
-            iconCls: 'no-icon'
-        }, // A Field in a Menu
-        {
-            text: 'I like Ext',
-            checked: true
-        }, '-', {
-            text: 'Radio Options',
-            menu: { // <-- submenu by nested config object
-                items: [
-                // stick any markup in a menu
-                '<b class="menu-title">Choose a Theme</b>', {
-                    text: 'Aero Glass',
-                    checked: true,
-                    group: 'theme'
-                }, {
-                    text: 'Vista Black',
-                    checked: false,
-                    group: 'theme'
-                }, {
-                    text: 'Gray Theme',
-                    checked: false,
-                    group: 'theme'
-                }, {
-                    text: 'Default Theme',
-                    checked: false,
-                    group: 'theme'
-                }]
-            }
-        }, {
-            text: 'Choose a Date',
-            iconCls: 'calendar',
-            menu: [{
-                xtype: 'datepicker'
-            }]
-        }, {
-            text: 'Choose a Color',
-            menu: [, {
-                xtype: 'colorpicker'
-            }]
-        }]
-    }, {
-        text: 'Users',
-        menu: {
-            xtype: 'menu',
-            plain: true,
-            items: {
-                xtype: 'buttongroup',
-                title: 'User options',
-                columns: 2,
-                defaults: {
-                    xtype: 'button',
-                    scale: 'large',
-                    iconAlign: 'left'
-                },
-                items: [{
-                    text: 'User<br/>manager',
-                    width: 90,
-                    displayText: 'User manager'
-                }, {
-                    tooltip: 'Add user',
-                    width: 40,
-                    displayText: 'Add user'
-                }, {
-                    colspan: 2,
-                    text: 'Import',
-                    scale: 'small',
-                    width: 130
-                }, {
-                    colspan: 2,
-                    text: 'Who is online?',
-                    scale: 'small',
-                    width: 130
-                }]
-            }
-        }
-    }]
-});
+//Ext.create('Ext.toolbar.Toolbar', {
+//    renderTo: Ext.getBody(),
+//    items: [{
+//        text: 'Button w/ Menu',
+//        menu: [{
+//            xtype: 'combobox',
+//            hideLabel: true,
+//            store: ['Arizona'],
+//            typeAhead: true,
+//            queryMode: 'local',
+//            triggerAction: 'all',
+//            emptyText: 'Select a state...',
+//            selectOnFocus: true,
+//            width: 135,
+//            iconCls: 'no-icon'
+//        }, // A Field in a Menu
+//        {
+//            text: 'I like Ext',
+//            checked: true
+//        }, '-', {
+//            text: 'Radio Options',
+//            menu: { // <-- submenu by nested config object
+//                items: [
+//                // stick any markup in a menu
+//                '<b class="menu-title">Choose a Theme</b>', {
+//                    text: 'Aero Glass',
+//                    checked: true,
+//                    group: 'theme'
+//                }, {
+//                    text: 'Vista Black',
+//                    checked: false,
+//                    group: 'theme'
+//                }, {
+//                    text: 'Gray Theme',
+//                    checked: false,
+//                    group: 'theme'
+//                }, {
+//                    text: 'Default Theme',
+//                    checked: false,
+//                    group: 'theme'
+//                }]
+//            }
+//        }, {
+//            text: 'Choose a Date',
+//            iconCls: 'calendar',
+//            menu: [{
+//                xtype: 'datepicker'
+//            }]
+//        }, {
+//            text: 'Choose a Color',
+//            menu: [, {
+//                xtype: 'colorpicker'
+//            }]
+//        }]
+//    }, {
+//        text: 'Users',
+//        menu: {
+//            xtype: 'menu',
+//            plain: true,
+//            items: {
+//                xtype: 'buttongroup',
+//                title: 'User options',
+//                columns: 2,
+//                defaults: {
+//                    xtype: 'button',
+//                    scale: 'large',
+//                    iconAlign: 'left'
+//                },
+//                items: [{
+//                    text: 'User<br/>manager',
+//                    width: 90,
+//                    displayText: 'User manager'
+//                }, {
+//                    tooltip: 'Add user',
+//                    width: 40,
+//                    displayText: 'Add user'
+//                }, {
+//                    colspan: 2,
+//                    text: 'Import',
+//                    scale: 'small',
+//                    width: 130
+//                }, {
+//                    colspan: 2,
+//                    text: 'Who is online?',
+//                    scale: 'small',
+//                    width: 130
+//                }]
+//            }
+//        }
+//    }]
+//});
 
 var baseColumns = [];
 var defaultViewColumns = [];
@@ -272,39 +276,23 @@ Ext.define('VehicleList',
        fields: [
        //'BoxId',
       {
-      name: 'BoxId', type: 'int'
-  },
+          name: 'BoxId', type: 'int'
+      },
       'Description',
       'StreetAddress', 'LatLon',
       {
           name: 'OriginDateTime', type: 'date', dateFormat: 'c'
       }
       ,
-       //      {
-       //          name: 'convertedDate', type: 'date'// , dateFormat : 'c'
-       //         , defaultValue: '', convert: function (value, record) {
-       //             var localDateStr;
-       //             localDateStr = record.get('OriginDateTime').toLocaleString();
-       //             var dt = Ext.Date.parse(localDateStr, 'F-d-y g:i:s A');
-       //             // March - 15 - 12 12 : 41 : 27 PM for mozilla
-       //             if (dt == undefined) {
-       //                 var currentDate = record.get('OriginDateTime');
-       //                 // Wed Dec 07 2011 10 : 58 : 19 GMT - 0500 (Eastern Standard Time) for all other browsers
-       //                 dt = new Date(currentDate);
-       //             }
-       //             return dt;
-       //         }
-       //      }
-       //      ,
-      {
-      name: 'convertedDisplayDate',
-      convert: function (value, record) {
-          var currentDate = record.get('OriginDateTime');
-          var dt = new Date(currentDate);
-          var newDt = Ext.Date.format(dt, userdateformat);
-          return newDt;
+       {
+          name: 'convertedDisplayDate',
+          convert: function (value, record) {
+              var currentDate = record.get('OriginDateTime');
+              var dt = new Date(currentDate);
+              var newDt = Ext.Date.format(dt, userdateformat);
+              return newDt;
+          }
       }
-  }
       ,
       'Speed',
       'BoxArmed',
@@ -314,49 +302,36 @@ Ext.define('VehicleList',
       'VehicleId',
       'LicensePlate',
       'Latitude',
-      'Longitude'
-       //      {
-       //          name: 'Latitude', type: 'float'
-       //      }
-       //      ,
-       //      {
-       //          name: 'Longitude', type: 'float'
-       //      }
-      ,
+      'Longitude',
       'IconTypeName',
-       //      {
-       //          name: 'CustomSpeed', type: 'int'
-       //      }
-       //      ,
-       //'CustomSpeed',
-      {
-      name: 'CustomSpeed', type: 'int'
-  },
+       {
+          name: 'CustomSpeed', type: 'int'
+      },
       'MyHeading',
       'icon',
       'Driver',
       'ImagePath',
-      'ConfiguredNum',      
+      'ConfiguredNum',
       'DriverCardNumber',
      'Field1',
      'Field2',
      'Field3',
      'Field4',
-     'Field5',     
+     'Field5',
      {
          name: 'ModelYear', type: 'int'
      },
      'MakeName',
      'ModelName',
-     'VehicleTypeName',     
+     'VehicleTypeName',
      'VinNum',
-     'ManagerName',     
+     'ManagerName',
      'ManagerEmployeeId',
      'StateProvince',
      'Color',
      'EngineHours',
      'Odometer',
-     {name: 'LastIgnOnBatV', type: 'float'},
+     { name: 'LastIgnOnBatV', type: 'float' },
      { name: 'LastIgnOffBatV', type: 'float' },
      { name: 'LastBatV', type: 'float' },
       {
@@ -374,7 +349,10 @@ Ext.define('VehicleList',
      , 'VehicleDeviceStatusID'
      , 'NearestLandmark'
      , 'SAP_number'
-      ],
+     , {
+         name: 'LandmarkInDateTime', type: 'date', dateFormat: 'c'
+     }
+       ],
        idProperty: 'BoxId'
    }
    );
@@ -384,10 +362,10 @@ Ext.define('HistoryListModel',
    {
        extend: 'Ext.data.Model',
        fields: [
-       //'BoxId', 
+       //'BoxId',
       {
-      name: 'BoxId', type: 'int'
-  },
+          name: 'BoxId', type: 'int'
+      },
       'VehicleId', 'LicensePlate', 'Description',
       {
           name: 'DateTimeReceived', type: 'date', dateFormat: 'c'
@@ -395,33 +373,24 @@ Ext.define('HistoryListModel',
       , 'DclId', 'BoxMsgInTypeId', 'BoxMsgInTypeName', 'BoxProtocolTypeId',
       'BoxProtocolTypeName', 'CommInfo1', 'CommInfo2', 'ValidGps', 'Latitude', 'Longitude', 'Heading', 'SensorMask', 'CustomProp', 'BlobDataSize', 'SequenceNum',
       'StreetAddress',
-       'Speed', //Edited by Rohit Mittal
-//      {
-//      name: 'Speed', type: 'int',
-//      convert: function (value, record) {
-//          if (value >= 0 || value < 0)
-//              return value * 1;
-//          else
-//              return -1;
-//      }
-//  },
+       'Speed',
       'BoxArmed', 'MsgDirection', 'Acknowledged', 'Scheduled', 'MsgDetails', 'MyDateTime', 'MyHeading', 'dgKey', 'CustomUrl', 'HistoryInfoId', 'chkBoxShow',
       {
           name: 'OriginDateTime', type: 'date', dateFormat: 'c'
       }
-      , 'icon', 'CP_Fuel', 'CP_Odometer', 'CP_RPM', 'CP_FLIP', 'CP_FLIS', 'CP_SeatBelt', 'CP_MIL', 'CP_CLT', 'CP_EOT', 'CP_EOP', 
+      , 'icon', 'CP_Fuel', 'CP_Odometer', 'CP_RPM', 'CP_FLIP', 'CP_FLIS', 'CP_SeatBelt', 'CP_MIL', 'CP_CLT', 'CP_EOT', 'CP_EOP',
       'RPM',
       'RoadSpeed',
-      'Driver',            
+      'Driver',
       'DriverHIDCard',
       'PTO',
-      {name: 'custSpeed', type: 'int'},
+      { name: 'custSpeed', type: 'int' },
       'TripColor',
       {
           name: 'TimeDifference', type: 'int'
       }
       , 'LatLon'
-      ]
+       ]
    }
    );
 
@@ -436,23 +405,9 @@ Ext.define('HistoryAddressModel',
               name: 'OriginDateTime', type: 'date', dateFormat: 'c'
           },
           'VehicleId', 'LicensePlate', 'Description', 'FleetId'
-      ]
+       ]
    }
    );
-
-//Ext.define('FleetList',
-//   {
-//       extend: 'Ext.data.Model',
-//       fields: [
-//      'OrganizationName',
-//      'FleetId',
-//      'FleetName',
-//      'Description',
-//      'IconTypeName',
-//      'MyHeading'
-//      ]
-//   }
-//   );
 
 Ext.define('HistoryVehicleList',
        {
@@ -471,7 +426,7 @@ Ext.define('HistoryVehicleList',
               'Description',
               'FleetId',
               'FleetName'
-          ]
+           ]
        }
    );
 
@@ -481,7 +436,7 @@ Ext.define('HistoryCommModeList',
            fields: [
               'CommModeName',
               'DclId'
-          ]
+           ]
        }
    );
 
@@ -491,7 +446,7 @@ Ext.define('HistoryMessageModel',
            fields: [
               'BoxMsgInTypeId',
               'BoxMsgInTypeName'
-          ]
+           ]
        }
    );
 
@@ -532,7 +487,7 @@ Ext.define('HistoryGridModel',
           'dgKey',
           'CustomUrl',
           'chkBoxShow'
-          ]
+       ]
    }
    );
 
@@ -568,7 +523,7 @@ Ext.define('HistoryStopModel',
             'Driver',
             'DriverHIDCard',
             'chkBoxShow'
-      ]
+       ]
    }
    );
 
@@ -609,7 +564,7 @@ Ext.define('HistoryTripModel',
             'BoxId',
             'Driver',
             'DriverHIDCard'
-      ]
+       ]
    }
    );
 
@@ -621,21 +576,16 @@ Ext.define('DashboardModel', {
         { name: 'OperationalStateName', type: 'string' },
         { name: 'Notes', type: 'string' },
         { name: 'TimeInLandmark', type: 'int' },
-        { name: 'DurationInLandmarkMin', type: 'int' }
-        
+        { name: 'DurationInLandmarkMin', type: 'int' },
+        { name: 'LandmarkInDateTime', type: 'date', dateFormat: 'c' }
+
     ]
 });
 
 var testStore = Ext.create('Ext.data.Store', {
     model: 'DashboardModel'//,
     , autoLoad: false
-    /*data: [
-        { id: '27880', OperationalState: 'Unavailable', Notes: '', TimeInLandmark: 240, LandmarkName: 'OCS garage' },
-        { id: '31271', OperationalState: 'Unavailable', Notes: '', TimeInLandmark: 60, LandmarkName: 'Toronto garage' },
-        { id: '9184', OperationalState: 'Available', Notes: '', TimeInLandmark: 80, LandmarkName: 'New York garage' },
-        { id: '108625', OperationalState: 'Available', Notes: 'To be picked up on May 19th', TimeInLandmark: 125, LandmarkName: 'BSM garage' }
-    ]*/
-    ,listeners:
+    , listeners:
     {
         'load': function (store, records, options) {
             try {
@@ -643,11 +593,11 @@ var testStore = Ext.create('Ext.data.Store', {
             }
             catch (err) {
             }
-        
+
         },
         scope: this
     }
-    ,proxy:
+    , proxy:
     {
         type: 'ajax',
         url: 'Vehicles.aspx?QueryType=ListVehiclesInLandmarksForDashboard',
@@ -664,13 +614,9 @@ var testStore = Ext.create('Ext.data.Store', {
 
 
 Ext.onReady(function () {
-    //   Ext.tip.QuickTipManager.init();
-    // setup the state provider, all state information will be saved to a cookie
-    // Ext.state.Manager.setProvider(Ext.create('Ext.state.CookieProvider'));
     Ext.QuickTips.init();
 
     // setup the state provider, all state information will be saved to a cookie
-    //Ext.state.Manager.setProvider(Ext.create('Ext.state.CookieProvider'));
     Ext.state.Manager.setProvider(new Ext.state.CookieProvider({
         expires: new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 30)) // 30 days
     }));
@@ -687,9 +633,11 @@ Ext.onReady(function () {
     var mapStyle = 'style="Height:100%; width:100%;  border:0;margin:0px"';
 
     var nframeadded = false, sframeadded = false, eframeadded = false;
-    loadingMask = new Ext.LoadMask(Ext.getBody(), { msg: ResloadingMaskMessage//"Loading..." 
+    loadingMask = new Ext.LoadMask(Ext.getBody(), {
+        msg: ResloadingMaskMessage//"Loading..."
     });
-    searchingMask = new Ext.LoadMask(Ext.getBody(), { msg: RessearchingMaskMessage//"Searching..." 
+    searchingMask = new Ext.LoadMask(Ext.getBody(), {
+        msg: RessearchingMaskMessage//"Searching..."
     });
     // Default
 
@@ -716,13 +664,18 @@ Ext.onReady(function () {
     MessagesLoaded: 11,
     GettingMessageUpdates: 6
 };
+    var stopVehicleSync = function() {
+        vehicleAutoSyncStopped = true;
+        if (vehicleTimeOutId) {
+            clearTimeout(vehicleTimeOutId);
+        }
+    }
 
     var currentState = LoadStates.FleetsLoading;
     var activetab = ActiveTabs.Vehicles;
     var dateformat = userdateformat;
     var initialData = "";
     var soundPresent = false;
-    // var newPosition = 10;
     var statusColorString = '#00C000';
 
     var sensorPage = './Map/frmSensorMain.aspx?LicensePlate=';
@@ -741,14 +694,14 @@ Ext.onReady(function () {
    {
        selectionchange: function (selModel, selections) {
            try {
-               vehiclerunner.stopAll();
+               //vehiclerunner.stopAll();
+               stopVehicleSync();
+
                alarmrunner.stopAll();
                messagerunner.stopAll();
 
-               //vehiclegrid.down('#finditmenu').setDisabled(selectedVehicleBoxId < 0);
                vehiclegrid.down('#trackitmenu').setDisabled(selectedVehicleBoxId < 0);
                vehiclegrid.down('#streetViewMenu').setDisabled(selectedVehicleBoxId < 0);
-               //vehiclegrid.down('#streetView2Button').setDisabled(selections.length == 0);               
                vehiclegrid.down('#updatePositionMenu').setDisabled(selections.length == 0);
                vehiclegrid.down('#clearAllMenu').setDisabled(selections.length == 0);
                if (ShowDashboardView) {
@@ -799,15 +752,15 @@ Ext.onReady(function () {
                //if (!firstLoad) {
                var zoommap = firstLoad;
                var allvehicleonmap = false;
-               
+
                try {
                    //mapSelections(selections, zoommap);
                    if ((!paged || currentpage == 1) && selections.length > 0) {
                        if (selectionon && !VehicleGridInSearchMode) {
                            allvehicleonmap = true;
-                           var postdata="filters=";
-                           for(var propt in currentFilters){
-                               postdata+= currentFilters[propt]+",";
+                           var postdata = "filters=";
+                           for (var propt in currentFilters) {
+                               postdata += currentFilters[propt] + ",";
                            }
                            //alert(fromAutoSync);
                            $.ajax({
@@ -845,15 +798,11 @@ Ext.onReady(function () {
                                            mapVehicles(true, records, true, false, true);
                                    }
                                    fromAutoSync = false;
-                                    //if (parseInt(alarminterval) > parseInt(vehinterval))
-                                    //    delayrunner.delay(parseInt(alarminterval))
-                                    //else
-                                   //    delayrunner.delay(parseInt(vehinterval))
                                    delayrunner.delay(parseInt(vehinterval));
-                                    
+
                                },
                                error: function (msg) {
-                                   
+
                                }
                            });
                        }
@@ -868,15 +817,15 @@ Ext.onReady(function () {
                        mapSelections(selections, true);
                    }
                    else if (!paged && selections.length == 0) {
-                       mapSelections(selections, true);                       
+                       mapSelections(selections, true);
                    }
-                   else if (paged && selections.length == 0) {                       
+                   else if (paged && selections.length == 0) {
                    }
                    else if (paged && selections.length > 0 && !selectionon) {
                        if (reselect == true)
                            mapSelections(selections, false);
                        else
-                           mapSelections(selections, true);                       
+                           mapSelections(selections, true);
                    }
                    if (reselect == true && selections.length == 0 && paged && (!selectionon || !fromAutoSync))
                        mapSelections(selections, false);
@@ -889,13 +838,9 @@ Ext.onReady(function () {
                catch (err) { alert(err); }
                //}
                firstLoad = false;
-               
+
                //vehiclegrid.getView().refresh();
                if (!allvehicleonmap) {
-                   //if (parseInt(alarminterval) > parseInt(vehinterval))
-                   //    delayrunner.delay(parseInt(alarminterval))
-                   //else
-                   //    delayrunner.delay(parseInt(vehinterval))
                    delayrunner.delay(parseInt(vehinterval));
                }
            }
@@ -912,14 +857,6 @@ Ext.onReady(function () {
 
             if (typeof el.allVehicles != "undefined")
                 el.allVehicles.length = 0;
-            //               if (el.parent.VehicleClustering) {
-            //               }
-            //               else if (el.parent.overlaysettings.vehicleDrivers)
-            //                   el.vehicleDriversLayer.destroyFeatures();
-            //               else if (el.parent.overlaysettings.vehiclenames)
-            //                   el.vehiclenamesLayer.destroyFeatures();
-
-            //el.markers.clearMarkers();
             el.markers.removeAllFeatures();
             if (el.parent.VehicleClustering) {
                 el.markerstrategy.clearCache();
@@ -989,10 +926,6 @@ Ext.onReady(function () {
                 Ext.each(selections, function (exirecord) {
 
                     if (isNumber(exirecord.data.Latitude) && isNumber(exirecord.data.Longitude) && (exirecord.data.Latitude != 0 || exirecord.data.Longitude != 0)) {
-
-                        /*var today = new Date();
-                        var posExpireDate = new Date();
-                        posExpireDate.setTime(today.getTime() - (60 * PositionExpiredTime * 1000));*/
 
                         if (exirecord.data.icon == undefined || exirecord.data.icon == '') {
                             var newIcon = "";
@@ -1147,36 +1080,36 @@ Ext.onReady(function () {
 }
 );
 
-       var batteryTrendingBtn = BatteryTredingEnabled ? Ext.create('Ext.Button',
-   {
-       text: ResBatteryTrendingBtnText, //'Battery',
-       id: 'batteryTrendingBtn',
-       tooltip: ResBatteryTrendingBtnText, //'Battery',
-       iconCls: 'map',
-       cls: 'cmbfonts',
-       textAlign: 'left',
-       hidden: false,
-       handler: function () {
-           try {
-               var selFleet = (LoadVehiclesBasedOn == 'fleet') ? SelectedFleetId : DefaultOrganizationHierarchyFleetId;
-               var mypage = './BatteryTrending/Index.aspx?fleetId=' + selFleet;
-               
-               var myname = ResBatteryTrendingBtnText; //'Battery';
-               myname = '';
-               var w = 900;
-               var h = 555;
-               var winl = (screen.width - w) / 2;
-               var wint = (screen.height - h) / 2;
-               winprops = 'height=' + h + ',width=' + w + ',top=' + wint + ',left=' + winl + 'location=0,status=0,scrollbars=1,toolbar=0,menubar=0,resizable=1';
-               win = window.open(mypage, myname, winprops);
-               if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
+    var batteryTrendingBtn = BatteryTredingEnabled ? Ext.create('Ext.Button',
+{
+    text: ResBatteryTrendingBtnText, //'Battery',
+    id: 'batteryTrendingBtn',
+    tooltip: ResBatteryTrendingBtnText, //'Battery',
+    iconCls: 'map',
+    cls: 'cmbfonts',
+    textAlign: 'left',
+    hidden: false,
+    handler: function () {
+        try {
+            var selFleet = (LoadVehiclesBasedOn == 'fleet') ? SelectedFleetId : DefaultOrganizationHierarchyFleetId;
+            var mypage = './BatteryTrending/Index.aspx?fleetId=' + selFleet;
 
-           }
-           catch (err) {               
-           }
-       }
-   }
-   ) : null;
+            var myname = ResBatteryTrendingBtnText; //'Battery';
+            myname = '';
+            var w = 900;
+            var h = 555;
+            var winl = (screen.width - w) / 2;
+            var wint = (screen.height - h) / 2;
+            winprops = 'height=' + h + ',width=' + w + ',top=' + wint + ',left=' + winl + 'location=0,status=0,scrollbars=1,toolbar=0,menubar=0,resizable=1';
+            win = window.open(mypage, myname, winprops);
+            if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
+
+        }
+        catch (err) {
+        }
+    }
+}
+) : null;
 
     var updatePosition = Ext.create('Ext.Button',
 {
@@ -1344,23 +1277,6 @@ Ext.onReady(function () {
     textAlign: 'left',
     handler: function () {
         try {
-            /*$('#organizationHierarchyTree').show();
-            if (!vehicletreeviewIni) {
-            vehicletreeviewIni = true;
-            $("#MySplitter").splitter({
-            type: "v",
-            outline: true,
-            minLeft: 100, sizeLeft: 280, minRight: 100,
-            resizeToWidth: true,
-            cookie: "vsplitter",
-            accessKey: 'I'
-            });
-
-            inifiletree(OrganizationHierarchyPath);
-
-            $('#vehiclelisttbl').tablesorter();
-            $('#vehiclelisttbl').colResizable({ headerOnly: true });
-            }*/
             onOrganizationHierarchyNodeCodeClick();
         }
         catch (err) {
@@ -1444,7 +1360,7 @@ Ext.onReady(function () {
             //else
             //{
             //     fleetWin.show();
-            //}  
+            //}
         }
         catch (err) {
         }
@@ -1639,15 +1555,15 @@ Ext.onReady(function () {
                   if (cat_id == 0)
                       return;
                   //alert(combo.getValue());
-                 // testStore.load(
-                 //{
-                 //    params:
-                 //    {
-                 //        landmarkCategoryId: cat_id
-                 //    }
+                  // testStore.load(
+                  //{
+                  //    params:
+                  //    {
+                  //        landmarkCategoryId: cat_id
+                  //    }
                   //});
 
-                  if (!VehicleGridInSearchMode) {                      
+                  if (!VehicleGridInSearchMode) {
                       if (!paged || currentpage == 1) {
                           if (selectionon && !VehicleGridInSearchMode) {
                               fromAutoSync = true;
@@ -1715,7 +1631,10 @@ Ext.onReady(function () {
     iconCls: 'map',
     cls: 'cmbfonts',
     textAlign: 'left',
-    disabled: true,
+    //disabled: true,
+    allowDepress: false,
+    pressed: true,
+    toggleGroup: 'vehiclegridViewGroup',
     handler: function () {
         try {
             //vehiclegrid.removeColumn('Position');
@@ -1730,12 +1649,15 @@ Ext.onReady(function () {
 
     var dashboardBtn = Ext.create('Ext.Button',
 {
-    text: 'Landmark Dashboard',
+    text: 'Dashboard',
     id: 'dashboardBtn',
     tooltip: '',
     iconCls: 'map',
     cls: 'cmbfonts',
-    textAlign: 'left',    
+    textAlign: 'left',
+    allowDepress: false,
+    pressed: false,
+    toggleGroup: 'vehiclegridViewGroup',
     handler: function () {
         try {
             //vehiclegrid.removeColumn('Position');
@@ -1760,15 +1682,15 @@ Ext.onReady(function () {
     //        text: 'Dashboard'
     //    }],
     //    listeners:
-	//	{
-	//	    change: function (btn, item) {
-	//	        alert(btn.text);
-	//	    },
-	//	    scope: this
-	//	}
-    //}); 
+    //	{
+    //	    change: function (btn, item) {
+    //	        alert(btn.text);
+    //	    },
+    //	    scope: this
+    //	}
+    //});
 
-    function openWindow(wintitle, winURL, winWidth, winHeight) {   
+    function openWindow(wintitle, winURL, winWidth, winHeight) {
         return openGeneralPopupWindow(wintitle, winURL, winWidth, winHeight, 'hide');
     }
 
@@ -2031,6 +1953,10 @@ Ext.onReady(function () {
    {
        type: 'string',
        dataIndex: 'LandmarkName'
+   },
+   {
+       type: 'date',
+       dataIndex: 'LandmarkInDateTime'
    }
     ]
 }
@@ -2212,7 +2138,7 @@ Ext.onReady(function () {
             root: 'items',
             totalProperty: 'total'
         }
-    }                     
+    }
 });
 
     geozonesstore = Ext.create('Ext.data.Store',
@@ -2249,7 +2175,7 @@ Ext.onReady(function () {
     autoLoad: false,
     listeners:
    {
-       'datachanged' : function (store) {
+       'datachanged': function (store) {
            store.totalCount = store.count();
            landmarksPager.onLoad();
        },
@@ -2323,6 +2249,50 @@ Ext.onReady(function () {
         }
     }
 
+    function vehicleAutoSync() {
+        try {
+            if (!mainstore.isLoading() && !recordUpdater.isLoading()) {
+                if (IsSyncOn && !VehicleGridInSearchMode) {
+                    //alert('paged:' + paged + ',currentpage:' + currentpage + ',selectionon:' + selectionon + ',VehicleGridInSearchMode:' + VehicleGridInSearchMode)
+                    if (!paged || currentpage == 1) {
+                        if (selectionon && !VehicleGridInSearchMode) {
+                            fromAutoSync = true;
+                            //alert('fromAutoSync:' + fromAutoSync);
+                        }
+                    }
+
+                    currentState = LoadStates.GettingUpdates;
+                    recordUpdater.removeAll(true);
+                    var mergeData = '';
+                    var cat_id = 0;
+                    if (currentView == 'dashboard') {
+                        cat_id = landmarkCategory.getValue();
+                        mergeData = 'VehiclesInLandmarks';
+                    }
+
+                    recordUpdater.load({
+                        params:
+                        {
+                            QueryType: 'GetVehiclePosition',
+                            filters: currentFilters,
+                            sorting: sortingParam,
+                            start: (currentpage - 1) * VehicleListPagesize,
+                            limit: VehicleListPagesize,
+                            mergeData: mergeData,
+                            landmarkCategoryId: cat_id
+                        }
+                    });
+                }
+            }
+        } catch (err) {
+        }
+
+        if (!vehicleAutoSyncStopped) {
+            vehicleTimeOutId = setTimeout(function () { vehicleAutoSync(); }, parseInt(vehinterval == '0' ? '60000' : vehinterval));
+        }
+
+    }
+
     // create the Data Store
     //Added by Rohit Mittal for sorting
     var sortingParam;
@@ -2354,7 +2324,9 @@ Ext.onReady(function () {
                        taskRunning = true;
                        if (ShowAlarmTab) alarmsstore.load();
                        if (ShowMessageTab) messagesstore.load();
-                       vehiclerunner.start(vehicletask);
+                       //vehiclerunner.start(vehicletask);
+                       vehicleAutoSyncStopped = false;
+                       vehicleAutoSync();
                        if (ShowAlarmTab) alarmrunner.start(alarmtask);
                        if (ShowMessageTab) messagerunner.start(messagetask);
                        loadingMask.hide();
@@ -2367,10 +2339,12 @@ Ext.onReady(function () {
                    if (!taskRunning) {
                        taskRunning = true;
                        if (ShowAlarmTab) alarmsstore.load();
-                       if(ShowMessageTab)messagesstore.load();
-                       vehiclerunner.start(vehicletask);
+                       if (ShowMessageTab) messagesstore.load();
+                       //vehiclerunner.start(vehicletask);
+                       vehicleAutoSyncStopped = false;
+                       vehicleAutoSync();
                        if (ShowAlarmTab) alarmrunner.start(alarmtask);
-                       if(ShowMessageTab)messagerunner.start(messagetask);
+                       if (ShowMessageTab) messagerunner.start(messagetask);
                        loadingMask.hide();
                    }
                }
@@ -2522,7 +2496,7 @@ Ext.onReady(function () {
                $('#historiescount').html(records.length);*/
                //historygrid.getDockedItems('pagingtoolbar')[0].doRefresh();
                //historyPager.doRefresh();
-              
+
                if (HGI && $('[rel=bootstrapHoverPopover]').length > 0)
                    setTimeout(function () { iniBootstrapHoverPopover(); }, 2000);
            }
@@ -2552,7 +2526,7 @@ Ext.onReady(function () {
             return;
         }
         if (hissortingParam.property == "Speed")
-            hissortingParam.property="custSpeed";
+            hissortingParam.property = "custSpeed";
         var mod = hissortingParam.direction.toUpperCase() == "DESC" ? -1 : 1;
         this.sorters.clear();
         this.sorters.add(hissortingParam);
@@ -2798,7 +2772,7 @@ Ext.onReady(function () {
                              start: (page - 1) * HistoryPagesize,
                              limit: HistoryPagesize
                          },
-                    callback: function (records, operation, success) {                        
+                    callback: function (records, operation, success) {
                         historygrid.getStore().loadRecords(records);
                         historygrid.down('pagingtoolbar').bindStore(tempStore);
                         historygrid.down('pagingtoolbar').onLoad();
@@ -2862,8 +2836,7 @@ Ext.onReady(function () {
                         }
                         else if (ExtraVehicleForLandmark && ExtraVehicleForLandmark.length) {
                             for (var j = 0; j < ExtraVehicleForLandmark.length; j++) {
-                                if (slectedboxidarray[i] == ExtraVehicleForLandmark[j].BoxId * 1)
-                                {
+                                if (slectedboxidarray[i] == ExtraVehicleForLandmark[j].BoxId * 1) {
                                     iniMap = true;
                                     ExtraVehicleForLandmark[j].BoxId = ExtraVehicleForLandmark[j].BoxId * 1;
                                     newRecToMap.push(ExtraVehicleForLandmark[j]);
@@ -2871,7 +2844,7 @@ Ext.onReady(function () {
                             }
                         }
                     }
-                    
+
                     vehiclegrid.reconfigure(mainstore);
                     mapVehicles(true, newRecToMap, iniMap, false, false);
                 }
@@ -2919,47 +2892,91 @@ Ext.onReady(function () {
         }
     });
 
-    var vehicletask = { run: function () {
-        try {
-            if (!mainstore.isLoading() && !recordUpdater.isLoading()) {
-                if (IsSyncOn && !VehicleGridInSearchMode) {
-                    //alert('paged:' + paged + ',currentpage:' + currentpage + ',selectionon:' + selectionon + ',VehicleGridInSearchMode:' + VehicleGridInSearchMode)
-                    if (!paged || currentpage == 1) {
-                        if (selectionon && !VehicleGridInSearchMode) {
-                            fromAutoSync = true;
-                            //alert('fromAutoSync:' + fromAutoSync);
-                        }
-                    }
-                    
-                    currentState = LoadStates.GettingUpdates;
-                    recordUpdater.removeAll(true);
-                    var mergeData = '';
-                    var cat_id = 0;
-                    if(currentView == 'dashboard')
-                    {
-                        cat_id = landmarkCategory.getValue();
-                        mergeData = 'VehiclesInLandmarks';
-                    }
-                    
-                    recordUpdater.load({
-                        params:
-                      {
-                          QueryType: 'GetVehiclePosition',
-                          filters: currentFilters,
-                          sorting: sortingParam,
-                          start: (currentpage - 1) * VehicleListPagesize,
-                          limit: VehicleListPagesize,
-                          mergeData: mergeData,
-                          landmarkCategoryId: cat_id
-                      }
-                    });
-                }
-            }
-        }
-        catch (err) { }
-    },
-        interval: parseInt(vehinterval == '0' ? '60000' : vehinterval) // 5 second
-    }
+    //var vehicletask = {
+    //    run: function () {
+    //        try {
+    //            if (!mainstore.isLoading() && !recordUpdater.isLoading()) {
+    //                if (IsSyncOn && !VehicleGridInSearchMode) {
+    //                    //alert('paged:' + paged + ',currentpage:' + currentpage + ',selectionon:' + selectionon + ',VehicleGridInSearchMode:' + VehicleGridInSearchMode)
+    //                    if (!paged || currentpage == 1) {
+    //                        if (selectionon && !VehicleGridInSearchMode) {
+    //                            fromAutoSync = true;
+    //                            //alert('fromAutoSync:' + fromAutoSync);
+    //                        }
+    //                    }
+
+    //                    currentState = LoadStates.GettingUpdates;
+    //                    recordUpdater.removeAll(true);
+    //                    var mergeData = '';
+    //                    var cat_id = 0;
+    //                    if (currentView == 'dashboard') {
+    //                        cat_id = landmarkCategory.getValue();
+    //                        mergeData = 'VehiclesInLandmarks';
+    //                    }
+
+    //                    recordUpdater.load({
+    //                        params:
+    //                      {
+    //                          QueryType: 'GetVehiclePosition',
+    //                          filters: currentFilters,
+    //                          sorting: sortingParam,
+    //                          start: (currentpage - 1) * VehicleListPagesize,
+    //                          limit: VehicleListPagesize,
+    //                          mergeData: mergeData,
+    //                          landmarkCategoryId: cat_id
+    //                      }
+    //                    });
+    //                }
+    //            }
+    //        }
+    //        catch (err) { }
+    //    },
+    //    interval: parseInt(vehinterval == '0' ? '60000' : vehinterval) // 5 second
+    //}
+
+    //function vehicleAutoSync() {
+    //    try {
+    //        if (!mainstore.isLoading() && !recordUpdater.isLoading()) {
+    //            if (IsSyncOn && !VehicleGridInSearchMode) {
+    //                //alert('paged:' + paged + ',currentpage:' + currentpage + ',selectionon:' + selectionon + ',VehicleGridInSearchMode:' + VehicleGridInSearchMode)
+    //                if (!paged || currentpage == 1) {
+    //                    if (selectionon && !VehicleGridInSearchMode) {
+    //                        fromAutoSync = true;
+    //                        //alert('fromAutoSync:' + fromAutoSync);
+    //                    }
+    //                }
+
+    //                currentState = LoadStates.GettingUpdates;
+    //                recordUpdater.removeAll(true);
+    //                var mergeData = '';
+    //                var cat_id = 0;
+    //                if (currentView == 'dashboard') {
+    //                    cat_id = landmarkCategory.getValue();
+    //                    mergeData = 'VehiclesInLandmarks';
+    //                }
+
+    //                recordUpdater.load({
+    //                    params:
+    //                    {
+    //                        QueryType: 'GetVehiclePosition',
+    //                        filters: currentFilters,
+    //                        sorting: sortingParam,
+    //                        start: (currentpage - 1) * VehicleListPagesize,
+    //                        limit: VehicleListPagesize,
+    //                        mergeData: mergeData,
+    //                        landmarkCategoryId: cat_id
+    //                    }
+    //                });
+    //            }
+    //        }
+    //    } catch (err) {
+    //    }
+
+    //    if (!vehicleAutoSyncStopped) {
+    //        setTimeout(function() { vehicleAutoSync(); }, parseInt(vehinterval == '0' ? '60000' : vehinterval));
+    //    }
+
+    //}
 
     vehiclerunner = new Ext.util.TaskRunner();
 
@@ -3137,110 +3154,47 @@ Ext.onReady(function () {
     messagerunner = new Ext.util.TaskRunner();
 
     delayrunner = new Ext.util.DelayedTask(function () {
-        vehiclerunner.start(vehicletask);
+        //vehiclerunner.start(vehicletask);
+        vehicleAutoSyncStopped = false;
+        vehicleAutoSync();
         if (ShowAlarmTab) alarmrunner.start(alarmtask);
         if (ShowMessageTab) messagerunner.start(messagetask);
     });
     //////////////////////////////////////////////////////////////////
 
-    //       var fleetstore = Ext.create('Ext.data.Store',
-    //   {
-    //       model: 'FleetList',
-    //       autoLoad: false,
-    //       storeId: 'FleetStore',
-
-    //       listeners:
-    //      {
-    //          'load': function (store, records, options) {
-    //              try {
-    //                  if (DefaultFleetID != -1) {
-    //                      fleets.setValue(DefaultFleetID);
-    //                      historyfleets.setValue(DefaultFleetID);
-    //                  }
-    //                  var selFleet = fleets.getValue();
-    //                  
-    //                  currentState = LoadStates.MainStoreLoading;
-    //                  /*mainstore.load(
-    //               {
-    //                   params:
-    //                  {
-    //                      QueryType: 'GetfleetPosition',
-    //                      fleetID: selFleet,
-    //                      start: 0,
-    //                      limit: pagesize
-    //                  }
-    //               }
-    //               );*/
-
-    //                  currentState = LoadStates.MainStoreLoaded;
-    //              }
-    //              catch (err) {
-    //              }
-    //          }
-    //         ,
-    //          scope: this
-    //      }
-    //      ,
-    //       proxy:
-    //      {
-    //          // load using HTTP
-    //          type: 'ajax',
-    //          url: 'Vehicles.aspx?QueryType=GetAllFleets',
-    //          timeout: proxyTimeOut,
-    //          reader:
-    //         {
-    //             type: 'xml',
-    //             root: 'Fleet',
-    //             record: 'FleetsInformation'
-    //         }
-    //      }
-    //   }
-    //   );
-
-    //       var fleets = Ext.create('Ext.form.ComboBox',
-    //   {
-    //       store: 'FleetStore',
-    //       displayField: 'FleetName',
-    //       valueField: 'FleetId',
-    //       typeAhead: true,
-    //       fieldStyle: 'cmbfonts',
-    //       labelCls: 'cmbLabel',
-    //       queryMode: 'local',
-    //       triggerAction: 'all',
-    //       fieldLabel: ' Fleets ',
-    //       emptyText: fleetDefaultText,
-    //       tooltip: 'Select group of vehicles to show',
-    //       selectOnFocus: true,
-    //       width: 300,
-    //       labelWidth: 40,
-    //       listeners:
-    //      {
-    //          scope: this,
-    //          'select': function (combo, value) {
-    //              currentState = LoadStates.MainStoreLoading;
-    //              try {
-    //                  var selFleet = combo.getValue();
-    //                  if (selFleet != '' && selFleet.length > 0) {
-    //                      mainstore.load(
-    //                  {
-    //                      params:
-    //                     {
-    //                         QueryType: 'GetVehiclePosition',
-    //                         fleetID: selFleet,
-    //                         start: 0,
-    //                         limit: pagesize
-    //                     }
-    //                  }
-    //                  );
-    //                  }
-    //              }
-    //              catch (err) {
-    //              }
-    //              currentState = LoadStates.MainStoreLoaded;
-    //          }
-    //      }
-    //   }
-    //   );
+    function InitMainstoreData() {
+        if (!OpenlayerMapsPageLoaded)
+            setTimeout(function () { InitMainstoreData(); }, 100);
+        else {
+            if (LoadVehiclesBasedOn == 'fleet') {
+                //fleetstore.load();
+                mainstore.load(
+                 {
+                     params:
+                    {
+                        QueryType: 'GetfleetPosition',
+                        fleetID: DefaultFleetID,
+                        start: 0,
+                        limit: VehicleListPagesize
+                    }
+                 }
+                 );
+            }
+            else {
+                mainstore.load(
+                     {
+                         params:
+                        {
+                            QueryType: 'GetfleetPosition',
+                            fleetID: DefaultOrganizationHierarchyFleetId,
+                            start: 0,
+                            limit: VehicleListPagesize
+                        }
+                     }
+                     );
+            }
+        }
+    }
 
     northmappanel = Ext.create('Ext.Panel',
 {
@@ -3262,34 +3216,7 @@ Ext.onReady(function () {
     listeners:
    {
        'afterrender': function () {
-           if (LoadVehiclesBasedOn == 'fleet') {
-               //fleetstore.load();
-               mainstore.load(
-                {
-                    params:
-                   {
-                       QueryType: 'GetfleetPosition',
-                       fleetID: DefaultFleetID,
-                       start: 0,
-                       limit: VehicleListPagesize
-                   }
-                }
-                );
-           }
-           else {
-               mainstore.load(
-                    {
-                        params:
-                       {
-                           QueryType: 'GetfleetPosition',
-                           fleetID: DefaultOrganizationHierarchyFleetId,
-                           start: 0,
-                           limit: VehicleListPagesize
-                       }
-                    }
-                    );
-           }
-
+           InitMainstoreData();
        }
    }
 }
@@ -3345,7 +3272,7 @@ Ext.onReady(function () {
                     newIcon = getIcon(selectedVehicleData, posExpireDate);
                     selectedVehicleData.data.icon = newIcon;
 
-                    selectedBoxs.push(selectedVehicleData.data);    
+                    selectedBoxs.push(selectedVehicleData.data);
                 }
 
                 SetWinTrackData2(selectedBoxs);
@@ -3524,11 +3451,12 @@ Ext.onReady(function () {
             }
             else {
                 loadingMask.show();
-                vehiclerunner.stopAll();
-                vehiclerunner.tasks.length = 0;
-                var sortingp="";
+                //vehiclerunner.stopAll();
+                //vehiclerunner.tasks.length = 0;
+                stopVehicleSync();
+                var sortingp = "";
                 for (prop in sortingParam) {
-                    sortingp +=sortingParam[prop]+',';
+                    sortingp += sortingParam[prop] + ',';
                 }
                 var filterp = "";
                 for (prop in currentFilters) {
@@ -3539,10 +3467,10 @@ Ext.onReady(function () {
                     if (index == 0)
                         return;
                     if (!col.hidden && col.id != "vgHistory" && col.id != "vgIsRouteAssigned") {
-                        if (col.text=="Vin #")
-                            columnsp += 'Vin'+':'+col.dataIndex + ',';
+                        if (col.text == "Vin #")
+                            columnsp += 'Vin' + ':' + col.dataIndex + ',';
                         else
-                            columnsp += col.text+':'+col.dataIndex + ',';
+                            columnsp += col.text + ':' + col.dataIndex + ',';
                     }
                 });
                 columnsp = columnsp.substring(0, columnsp.length - 1);
@@ -3556,13 +3484,17 @@ Ext.onReady(function () {
                 });
 
                 form.getForm().submit();
-                vehiclerunner.start(vehicletask);
+                //vehiclerunner.start(vehicletask);
+                vehicleAutoSyncStopped = false;
+                vehicleAutoSync();
                 loadingMask.hide();
             }
 
         }
         catch (err) {
-            vehiclerunner.start(vehicletask);
+            //vehiclerunner.start(vehicletask);
+            vehicleAutoSyncStopped = false;
+            vehicleAutoSync();
             loadingMask.hide();
             alert(err);
         }
@@ -3602,8 +3534,9 @@ Ext.onReady(function () {
             }
             else {
                 loadingMask.show();
-                vehiclerunner.stopAll();
-                vehiclerunner.tasks.length = 0;
+                //vehiclerunner.stopAll();
+                //vehiclerunner.tasks.length = 0;
+                stopVehicleSync();
                 var sortingp = "";
                 for (prop in sortingParam) {
                     sortingp += sortingParam[prop] + ',';
@@ -3634,13 +3567,17 @@ Ext.onReady(function () {
                 });
 
                 form.getForm().submit();
-                vehiclerunner.start(vehicletask);
+                //vehiclerunner.start(vehicletask);
+                vehicleAutoSyncStopped = false;
+                vehicleAutoSync();
                 loadingMask.hide();
             }
 
         }
         catch (err) {
-            vehiclerunner.start(vehicletask);
+            //vehiclerunner.start(vehicletask);
+            vehicleAutoSyncStopped = false;
+            vehicleAutoSync();
             loadingMask.hide();
             alert(err);
         }
@@ -3680,8 +3617,10 @@ Ext.onReady(function () {
             }
             else {
                 loadingMask.show();
-                vehiclerunner.stopAll();
-                vehiclerunner.tasks.length = 0;
+                //vehiclerunner.stopAll();
+                //vehiclerunner.tasks.length = 0;
+                stopVehicleSync();
+
                 var sortingp = "";
                 for (prop in sortingParam) {
                     sortingp += sortingParam[prop] + ',';
@@ -3712,13 +3651,17 @@ Ext.onReady(function () {
                 });
 
                 form.getForm().submit();
-                vehiclerunner.start(vehicletask);
+                //vehiclerunner.start(vehicletask);
+                vehicleAutoSyncStopped = false;
+                vehicleAutoSync();
                 loadingMask.hide();
 
             }
         }
         catch (err) {
-            vehiclerunner.start(vehicletask);
+            //vehiclerunner.start(vehicletask);
+            vehicleAutoSyncStopped = false;
+            vehicleAutoSync();
             loadingMask.hide();
             alert(err);
         }
@@ -4249,11 +4192,11 @@ Ext.onReady(function () {
                             numAvailable++;
                         else
                             numUnavailable++;
-                    });                    
+                    });
                     var defaultState = numUnavailable >= numAvailable ? 100 : 200;
                     var winurl = "./Widgets/BulkVehicleStateUpdate.aspx?defaultState=" + defaultState + "&selectedVehicles=" + selectedVehicles;
                     var htmlNewWin = '<iframe scrolling="no" src="' + winurl + '" style="Height:100%; width:100%;  border:0;margin:0px"></iframe>';
-                    openGeneralPopupWindow("Change Vehicle Status", htmlNewWin, 800, 430, 'destroy', 'winBulkVehicleStateUpdate'); 
+                    openGeneralPopupWindow("Change Vehicle Status", htmlNewWin, 900, 430, 'destroy', 'winBulkVehicleStateUpdate');
                     wincounter++;
                 }
                 catch (err) {
@@ -4264,100 +4207,100 @@ Ext.onReady(function () {
     }
 
     function buildBaseColumns() {
-    if (vgrid.indexOf("," + allGridColumns.BoxId + ",") > -1 || vgrid == "all") {
+        if (vgrid.indexOf("," + allGridColumns.BoxId + ",") > -1 || vgrid == "all") {
             var col_vgUnitID = Ext.create('Ext.grid.column.Column', {
-            id: 'vgUnitID',
-            text: ResvgUnitIDText, //'UnitID',
-            align: 'left',
-            width: 70,
-            dataIndex: 'BoxId',
-            filterable: true,
-            sortable: true,
-            hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.BoxId) - 1] == "y") ? false : true
-        });
+                id: 'vgUnitID',
+                text: ResvgUnitIDText, //'UnitID',
+                align: 'left',
+                width: 70,
+                dataIndex: 'BoxId',
+                filterable: true,
+                sortable: true,
+                hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.BoxId) - 1] == "y") ? false : true
+            });
 
             vehicleGridColumns.push(col_vgUnitID);
-            baseColumns.push(col_vgUnitID);            
-    }
-    if (vgrid.indexOf("," + allGridColumns.Driver + ",") > -1 || vgrid == "all") {
+            baseColumns.push(col_vgUnitID);
+        }
+        if (vgrid.indexOf("," + allGridColumns.Driver + ",") > -1 || vgrid == "all") {
             var col_vgDriver = Ext.create('Ext.grid.column.Column', {
-            id: 'vgDriver',
-            text: ResvgDriverText, //'Driver',
-            align: 'left',
-            width: 70,
-            dataIndex: 'Driver',
-            filterable: true,
-            sortable: true,
+                id: 'vgDriver',
+                text: ResvgDriverText, //'Driver',
+                align: 'left',
+                width: 70,
+                dataIndex: 'Driver',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.Driver) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgDriver);
-            baseColumns.push(col_vgDriver);            
-    }
-    if (vgrid.indexOf("," + allGridColumns.Description + ",") > -1 || vgrid == "all") {
+            baseColumns.push(col_vgDriver);
+        }
+        if (vgrid.indexOf("," + allGridColumns.Description + ",") > -1 || vgrid == "all") {
             var col_vgDescription = Ext.create('Ext.grid.column.Column', {
-            id: 'vgDescription',
-            text: ResvgDescriptionText, //'Description',
-            align: 'left',
-            width: 150,
-            renderer: function (value, p, record) {
-                return Ext.String.format('<a href="javascript:void(0);" rel="bootstrapvehiclegridpopover" data-mouseover="false" data-popup="false" class="withajaxpopover" data-html="true" data-poload="./MapNew/frmGetVehicleInfo.aspx?LicensePlate={0}" data-title="{1} <button type=\'button\' class=\'close\' onclick=\'closebootstrappopover(this);hasVehiclePopover=false;\'>&times;</button>" data-placement="right" data-container="#vehicleInfoPopover" OnClick="SensorInfoWindow(\'{0}\')">{1}</a>', Ext.String.escape(record.data['LicensePlate']), value);
-            },
-            dataIndex: 'Description',
-            filterable: true,
-            sortable: true,
+                id: 'vgDescription',
+                text: ResvgDescriptionText, //'Description',
+                align: 'left',
+                width: 150,
+                renderer: function (value, p, record) {
+                    return Ext.String.format('<a href="javascript:void(0);" rel="bootstrapvehiclegridpopover" data-mouseover="false" data-popup="false" class="withajaxpopover" data-html="true" data-poload="./MapNew/frmGetVehicleInfo.aspx?LicensePlate={0}" data-title="{1} <button type=\'button\' class=\'close\' onclick=\'closebootstrappopover(this);hasVehiclePopover=false;\'>&times;</button>" data-placement="right" data-container="#vehicleInfoPopover" OnClick="SensorInfoWindow(\'{0}\')">{1}</a>', Ext.String.escape(record.data['LicensePlate']), value);
+                },
+                dataIndex: 'Description',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.Description) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgDescription);
-            baseColumns.push(col_vgDescription);            
-    }
-    if (vgrid.indexOf("," + allGridColumns.VehicleStatus + ",") > -1 || vgrid == "all") {
+            baseColumns.push(col_vgDescription);
+        }
+        if (vgrid.indexOf("," + allGridColumns.VehicleStatus + ",") > -1 || vgrid == "all") {
             var col_vgStatus = Ext.create('Ext.grid.column.Column', {
-            id: 'vgStatus',
-            text: ResvgStatusText, //'Status',
-            align: 'left',
-            width: 120,
-            renderer: function (value) {
-                var fontColor = "black";
-                if (value.indexOf("Parked") != -1 || value.indexOf("Stationn") != -1) {
-                    fontColor = "red";
-                }
-                else if (value.indexOf("Idling") != -1 || value.indexOf("Moteur au ralenti") != -1) {
-                    fontColor = "orange";
-                }
-                else if (value.indexOf("Moving") != -1 || value.indexOf("En mouvement") != -1) {
-                    fontColor = "green";
-                }
-                return Ext.String.format(template, fontColor, value);
-            },
-            dataIndex: 'VehicleStatus',
-            filterable: true,
-            sortable: true,
+                id: 'vgStatus',
+                text: ResvgStatusText, //'Status',
+                align: 'left',
+                width: 120,
+                renderer: function (value) {
+                    var fontColor = "black";
+                    if (value.indexOf("Parked") != -1 || value.indexOf("Stationn") != -1) {
+                        fontColor = "red";
+                    }
+                    else if (value.indexOf("Idling") != -1 || value.indexOf("Moteur au ralenti") != -1) {
+                        fontColor = "orange";
+                    }
+                    else if (value.indexOf("Moving") != -1 || value.indexOf("En mouvement") != -1) {
+                        fontColor = "green";
+                    }
+                    return Ext.String.format(template, fontColor, value);
+                },
+                dataIndex: 'VehicleStatus',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.VehicleStatus) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgStatus);
-            baseColumns.push(col_vgStatus);            
-    }
+            baseColumns.push(col_vgStatus);
+        }
 
-    if (vgrid.indexOf("," + allGridColumns.OriginDateTime + ",") > -1 || vgrid == "all") {
+        if (vgrid.indexOf("," + allGridColumns.OriginDateTime + ",") > -1 || vgrid == "all") {
             var col_vgDateTime = Ext.create('Ext.grid.column.Column', {
-            id: 'vgDateTime',
-            text: ResvgDateTimeText, //'Date/Time',
-            align: 'left',
-            width: 135,
-            //xtype: 'datecolumn',
-            //format: userdateformat, //dateformat,
-            dataIndex: 'OriginDateTime',
-            filterable: true,
-            sortable: true,
-            tdCls: 'x-date-time',
-            hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.OriginDateTime) - 1] == "y") ? false : true,
-            renderer: function (value, p, record) {
-                return Ext.Date.format(value, userdateformat);
-            },
-        });
+                id: 'vgDateTime',
+                text: ResvgDateTimeText, //'Date/Time',
+                align: 'left',
+                width: 135,
+                //xtype: 'datecolumn',
+                //format: userdateformat, //dateformat,
+                dataIndex: 'OriginDateTime',
+                filterable: true,
+                sortable: true,
+                tdCls: 'x-date-time',
+                hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.OriginDateTime) - 1] == "y") ? false : true,
+                renderer: function (value, p, record) {
+                    return Ext.Date.format(value, userdateformat);
+                }
+            });
             vehicleGridColumns.push(col_vgDateTime);
             baseColumns.push(col_vgDateTime);
-    }
+        }
     }
 
     function buildDefaultViewColumns() {
@@ -4383,451 +4326,451 @@ Ext.onReady(function () {
             vehicleGridColumns.push(col_vgSpeed);
             defaultViewColumns.push(col_vgSpeed);
         }
-        
-    if (vgrid.indexOf("," + allGridColumns.StreetAddress + ",") > -1 || vgrid == "all") {
+
+        if (vgrid.indexOf("," + allGridColumns.StreetAddress + ",") > -1 || vgrid == "all") {
             var col_vgPosition = Ext.create('Ext.grid.column.Column', {
                 id: 'vgPosition',
-            text: 'Position',
-            align: 'left',
-            width: 180,
-            dataIndex: 'LatLon',
-            renderer: function (value, p, record) {
-                return Ext.String.format('<a href="javascript:void(0);" OnClick="GotoMapPosition({0},{1})">{0},{1}</a>', record.data['Latitude'], record.data['Longitude']);
-            },
-            filterable: false,
-            sortable: false,
-            hidden: true
-        });
+                text: 'Position',
+                align: 'left',
+                width: 180,
+                dataIndex: 'LatLon',
+                renderer: function (value, p, record) {
+                    return Ext.String.format('<a href="javascript:void(0);" OnClick="GotoMapPosition({0},{1})">{0},{1}</a>', record.data['Latitude'], record.data['Longitude']);
+                },
+                filterable: false,
+                sortable: false,
+                hidden: true
+            });
             vehicleGridColumns.push(col_vgPosition);
             defaultViewColumns.push(col_vgPosition);
-        
+
             var col_vgAddress = Ext.create('Ext.grid.column.Column', {
-            id: 'vgAddress',
-            text: ResvgAddressText, //'Address',
-            align: 'left',
-            width: 300,
-            dataIndex: 'StreetAddress',
-            renderer: function (value, p, record) {
-                if (value == 'Resolve Address' || value == 'Address resolution in progress')
-                    return '<a href="javascript:void(0);" alt="Resolve" title="' + ResResolveAddressToolTips + '"  OnClick="ResolveAddress(this, ' + record.data['BoxId'] + ',' + record.data['Latitude'] + ',' + record.data['Longitude'] + ')">' + ResAddressresolutioninprogress + '</a>';//, Ext.String.escape(record.data['BoxId']), Ext.String.escape(record.data['Latitude']), Ext.String.escape(record.data['Longitude']), value);
-                else
-                    return value;
-            },
-            filterable: true,
-            sortable: true,
+                id: 'vgAddress',
+                text: ResvgAddressText, //'Address',
+                align: 'left',
+                width: 300,
+                dataIndex: 'StreetAddress',
+                renderer: function (value, p, record) {
+                    if (value == 'Resolve Address' || value == 'Address resolution in progress')
+                        return '<a href="javascript:void(0);" alt="Resolve" title="' + ResResolveAddressToolTips + '"  OnClick="ResolveAddress(this, ' + record.data['BoxId'] + ',' + record.data['Latitude'] + ',' + record.data['Longitude'] + ')">' + ResAddressresolutioninprogress + '</a>';//, Ext.String.escape(record.data['BoxId']), Ext.String.escape(record.data['Latitude']), Ext.String.escape(record.data['Longitude']), value);
+                    else
+                        return value;
+                },
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.StreetAddress) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgAddress);
             defaultViewColumns.push(col_vgAddress);
-    }
-    if (vgrid.indexOf("," + allGridColumns.NearestLandmark + ",") > -1 || vgrid == "all") {
-        var col_vgNearestLandmark = Ext.create('Ext.grid.column.Column', {
-            id: 'vgNearestLandmark',
-            text: ResLandmarks,
-            align: 'left',
-            width: 90,
-            dataIndex: 'NearestLandmark',
-            filterable: true,
-            sortable: true,
-            hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.NearestLandmark) - 1] == "y") ? false : true
-        });
-        vehicleGridColumns.push(col_vgNearestLandmark);
-        defaultViewColumns.push(col_vgNearestLandmark);
-    }
-    if (vgrid.indexOf("," + allGridColumns.BoxArmed + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.NearestLandmark + ",") > -1 || vgrid == "all") {
+            var col_vgNearestLandmark = Ext.create('Ext.grid.column.Column', {
+                id: 'vgNearestLandmark',
+                text: ResLandmarks,
+                align: 'left',
+                width: 90,
+                dataIndex: 'NearestLandmark',
+                filterable: true,
+                sortable: true,
+                hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.NearestLandmark) - 1] == "y") ? false : true
+            });
+            vehicleGridColumns.push(col_vgNearestLandmark);
+            defaultViewColumns.push(col_vgNearestLandmark);
+        }
+        if (vgrid.indexOf("," + allGridColumns.BoxArmed + ",") > -1 || vgrid == "all") {
             var col_vgArmed = Ext.create('Ext.grid.column.Column', {
-            id: 'vgArmed',
-            text: ResvgArmedText, //'Armed',
-            align: 'left',
-            width: 40,
-            dataIndex: 'BoxArmed',
-            filterable: true,
-            sortable: true,
+                id: 'vgArmed',
+                text: ResvgArmedText, //'Armed',
+                align: 'left',
+                width: 40,
+                dataIndex: 'BoxArmed',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.BoxArmed) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgArmed);
             defaultViewColumns.push(col_vgArmed);
-    }
-    if (vgrid.indexOf("," + allGridColumns.History + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.History + ",") > -1 || vgrid == "all") {
             var col_vgHistory = Ext.create('Ext.grid.column.Column', {
-            id: 'vgHistory',
-            text: ResvgHistoryText, //'History',
-            align: 'left',
-            width: 90,
-            renderer: function (value) {
-                if (HistoryEnabled)
-                    return '<a href="javascript:void(0);" OnClick="historyMessageStore.load();showHistoryTab(\'' + value + '\');">' + ResHistoryLinkText + '</a>';
-                else
-                    return '';
-            },
-            dataIndex: 'VehicleId',
-            filterable: false,
-            sortable: false,
+                id: 'vgHistory',
+                text: ResvgHistoryText, //'History',
+                align: 'left',
+                width: 90,
+                renderer: function (value) {
+                    if (HistoryEnabled)
+                        return '<a href="javascript:void(0);" OnClick="historyMessageStore.load();showHistoryTab(\'' + value + '\');">' + ResHistoryLinkText + '</a>';
+                    else
+                        return '';
+                },
+                dataIndex: 'VehicleId',
+                filterable: false,
+                sortable: false,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.History) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgHistory);
             defaultViewColumns.push(col_vgHistory);
-    }
-    if (vgrid.indexOf("," + allGridColumns.DriverCardNumber + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.DriverCardNumber + ",") > -1 || vgrid == "all") {
             var col_vgDriverCardNumber = Ext.create('Ext.grid.column.Column', {
-            id: 'vgDriverCardNumber',
-            text: ResvgDriverCardNumberText,
-            align: 'left',
-            width: 120,
-            dataIndex: 'DriverCardNumber',
-            filterable: true,
-            sortable: true,
+                id: 'vgDriverCardNumber',
+                text: ResvgDriverCardNumberText,
+                align: 'left',
+                width: 120,
+                dataIndex: 'DriverCardNumber',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.DriverCardNumber) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgDriverCardNumber);
             defaultViewColumns.push(col_vgDriverCardNumber);
-    }
-    if (vgrid.indexOf("," + allGridColumns.Field1 + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.Field1 + ",") > -1 || vgrid == "all") {
             var col_vgField1 = Ext.create('Ext.grid.column.Column', {
-            id: 'vgField1',
-            text: ResvgField1Text, //'Driver',
-            align: 'left',
-            width: 70,
-            dataIndex: 'Field1',
-            filterable: true,
-            sortable: true,
+                id: 'vgField1',
+                text: ResvgField1Text, //'Driver',
+                align: 'left',
+                width: 70,
+                dataIndex: 'Field1',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.Field1) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgField1);
             defaultViewColumns.push(col_vgField1);
-    }
-    if (vgrid.indexOf("," + allGridColumns.Field2 + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.Field2 + ",") > -1 || vgrid == "all") {
             var col_vgField2 = Ext.create('Ext.grid.column.Column', {
-            id: 'vgField2',
-            text: ResvgField2Text, //'Driver',
-            align: 'left',
-            width: 70,
-            dataIndex: 'Field2',
-            filterable: true,
-            sortable: true,
+                id: 'vgField2',
+                text: ResvgField2Text, //'Driver',
+                align: 'left',
+                width: 70,
+                dataIndex: 'Field2',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.Field2) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgField2);
             defaultViewColumns.push(col_vgField2);
-    }
-    if (vgrid.indexOf("," + allGridColumns.Field3 + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.Field3 + ",") > -1 || vgrid == "all") {
             var col_vgField3 = Ext.create('Ext.grid.column.Column', {
-            id: 'vgField3',
-            text: ResvgField3Text, //'Driver',
-            align: 'left',
-            width: 70,
-            dataIndex: 'Field3',
-            filterable: true,
-            sortable: true,
+                id: 'vgField3',
+                text: ResvgField3Text, //'Driver',
+                align: 'left',
+                width: 70,
+                dataIndex: 'Field3',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.Field3) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgField3);
             defaultViewColumns.push(col_vgField3);
-    }
-    if (vgrid.indexOf("," + allGridColumns.Field4 + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.Field4 + ",") > -1 || vgrid == "all") {
             var col_vgField4 = Ext.create('Ext.grid.column.Column', {
-            id: 'vgField4',
-            text: ResvgField4Text, //'Driver',
-            align: 'left',
-            width: 70,
-            dataIndex: 'Field4',
-            filterable: true,
-            sortable: true,
+                id: 'vgField4',
+                text: ResvgField4Text, //'Driver',
+                align: 'left',
+                width: 70,
+                dataIndex: 'Field4',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.Field4) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgField4);
             defaultViewColumns.push(col_vgField4);
-    }
-    if (vgrid.indexOf("," + allGridColumns.Field5 + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.Field5 + ",") > -1 || vgrid == "all") {
             var col_vgField5 = Ext.create('Ext.grid.column.Column', {
-            id: 'vgField5',
-            text: ResvgField5Text, //'Driver',
-            align: 'left',
-            width: 70,
-            dataIndex: 'Field5',
-            filterable: true,
-            sortable: true,
+                id: 'vgField5',
+                text: ResvgField5Text, //'Driver',
+                align: 'left',
+                width: 70,
+                dataIndex: 'Field5',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.Field5) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgField5);
             defaultViewColumns.push(col_vgField5);
-    }
-    if (vgrid.indexOf("," + allGridColumns.ModelYear + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.ModelYear + ",") > -1 || vgrid == "all") {
             var col_vgModelYear = Ext.create('Ext.grid.column.Column', {
-            id: 'vgModelYear',
-            text: ResvgModelYearText, //'Driver',
-            align: 'left',
-            width: 50,
-            dataIndex: 'ModelYear',
-            filterable: true,
-            sortable: true,
+                id: 'vgModelYear',
+                text: ResvgModelYearText, //'Driver',
+                align: 'left',
+                width: 50,
+                dataIndex: 'ModelYear',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.ModelYear) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgModelYear);
             defaultViewColumns.push(col_vgModelYear);
-    }
-    if (vgrid.indexOf("," + allGridColumns.MakeName + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.MakeName + ",") > -1 || vgrid == "all") {
             var col_vgMakeName = Ext.create('Ext.grid.column.Column', {
-            id: 'vgMakeName',
-            text: ResvgMakeNameText, //'Driver',
-            align: 'left',
-            width: 50,
-            dataIndex: 'MakeName',
-            filterable: true,
-            sortable: true,
+                id: 'vgMakeName',
+                text: ResvgMakeNameText, //'Driver',
+                align: 'left',
+                width: 50,
+                dataIndex: 'MakeName',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.MakeName) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgMakeName);
             defaultViewColumns.push(col_vgMakeName);
-    }
-    if (vgrid.indexOf("," + allGridColumns.ModelName + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.ModelName + ",") > -1 || vgrid == "all") {
             var col_vgModelName = Ext.create('Ext.grid.column.Column', {
-            id: 'vgModelName',
-            text: ResvgModelNameText, //'Driver',
-            align: 'left',
-            width: 50,
-            dataIndex: 'ModelName',
-            filterable: true,
-            sortable: true,
+                id: 'vgModelName',
+                text: ResvgModelNameText, //'Driver',
+                align: 'left',
+                width: 50,
+                dataIndex: 'ModelName',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.ModelName) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgModelName);
             defaultViewColumns.push(col_vgModelName);
-    }
-    if (vgrid.indexOf("," + allGridColumns.VehicleTypeName + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.VehicleTypeName + ",") > -1 || vgrid == "all") {
             var col_vgVehicleTypeName = Ext.create('Ext.grid.column.Column', {
-            id: 'vgVehicleTypeName',
-            text: ResvgVehicleTypeNameText, //'Driver',
-            align: 'left',
-            width: 80,
-            dataIndex: 'VehicleTypeName',
-            filterable: true,
-            sortable: true,
+                id: 'vgVehicleTypeName',
+                text: ResvgVehicleTypeNameText, //'Driver',
+                align: 'left',
+                width: 80,
+                dataIndex: 'VehicleTypeName',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.VehicleTypeName) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgVehicleTypeName);
             defaultViewColumns.push(col_vgVehicleTypeName);
-    }
-    if (vgrid.indexOf("," + allGridColumns.LicensePlate + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.LicensePlate + ",") > -1 || vgrid == "all") {
             var col_vgLicensePlate = Ext.create('Ext.grid.column.Column', {
-            id: 'vgLicensePlate',
-            text: ResvgLicensePlateText, //'Driver',
-            align: 'left',
-            width: 75,
-            dataIndex: 'LicensePlate',
-            filterable: true,
-            sortable: true,
+                id: 'vgLicensePlate',
+                text: ResvgLicensePlateText, //'Driver',
+                align: 'left',
+                width: 75,
+                dataIndex: 'LicensePlate',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.LicensePlate) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgLicensePlate);
             defaultViewColumns.push(col_vgLicensePlate);
-    }
-    if (vgrid.indexOf("," + allGridColumns.VinNum + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.VinNum + ",") > -1 || vgrid == "all") {
             var col_vgVinNum = Ext.create('Ext.grid.column.Column', {
-            id: 'vgVinNum',
-            text: ResvgVinNumText, //'Driver',
-            align: 'left',
-            width: 50,
-            dataIndex: 'VinNum',
-            filterable: true,
-            sortable: true,
+                id: 'vgVinNum',
+                text: ResvgVinNumText, //'Driver',
+                align: 'left',
+                width: 50,
+                dataIndex: 'VinNum',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.VinNum) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgVinNum);
             defaultViewColumns.push(col_vgVinNum);
-    }
-    if (vgrid.indexOf("," + allGridColumns.ManagerName + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.ManagerName + ",") > -1 || vgrid == "all") {
             var col_vgManagerName = Ext.create('Ext.grid.column.Column', {
-            id: 'vgManagerName',
-            text: ResvgManagerNameText, //'Driver',
-            align: 'left',
-            width: 90,
-            dataIndex: 'ManagerName',
-            filterable: true,
-            sortable: true,
+                id: 'vgManagerName',
+                text: ResvgManagerNameText, //'Driver',
+                align: 'left',
+                width: 90,
+                dataIndex: 'ManagerName',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.ManagerName) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgManagerName);
             defaultViewColumns.push(col_vgManagerName);
-    }
-    if (vgrid.indexOf("," + allGridColumns.ManagerEmployeeId + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.ManagerEmployeeId + ",") > -1 || vgrid == "all") {
             var col_vgManagerEmployeeId = Ext.create('Ext.grid.column.Column', {
-            id: 'vgManagerEmployeeId',
-            text: ResvgManagerEmployeeIdText, //'Driver',
-            align: 'left',
-            width: 100,
-            dataIndex: 'ManagerEmployeeId',
-            filterable: true,
-            sortable: true,
+                id: 'vgManagerEmployeeId',
+                text: ResvgManagerEmployeeIdText, //'Driver',
+                align: 'left',
+                width: 100,
+                dataIndex: 'ManagerEmployeeId',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.ManagerEmployeeId) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgManagerEmployeeId);
             defaultViewColumns.push(col_vgManagerEmployeeId);
-    }
-    if (vgrid.indexOf("," + allGridColumns.StateProvince + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.StateProvince + ",") > -1 || vgrid == "all") {
             var col_vgStateProvince = Ext.create('Ext.grid.column.Column', {
-            id: 'vgStateProvince',
-            text: ResvgStateProvinceText, //'Driver',
-            align: 'left',
-            width: 90,
-            dataIndex: 'StateProvince',
-            filterable: true,
-            sortable: true,
+                id: 'vgStateProvince',
+                text: ResvgStateProvinceText, //'Driver',
+                align: 'left',
+                width: 90,
+                dataIndex: 'StateProvince',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.StateProvince) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgStateProvince);
             defaultViewColumns.push(col_vgStateProvince);
-    }
-    if (vgrid.indexOf("," + allGridColumns.Color + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.Color + ",") > -1 || vgrid == "all") {
             var col_vgColor = Ext.create('Ext.grid.column.Column', {
-            id: 'vgColor',
-            text: 'Color', //'Color'
-            align: 'left',
-            width: 90,
-            dataIndex: 'Color',
-            filterable: true,
-            sortable: true,
+                id: 'vgColor',
+                text: 'Color', //'Color'
+                align: 'left',
+                width: 90,
+                dataIndex: 'Color',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.Color) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgColor);
             defaultViewColumns.push(col_vgColor);
-    }
-    if (vgrid.indexOf("," + allGridColumns.PTO + ",") > -1 || vgrid == "all") {
+        }
+        if (vgrid.indexOf("," + allGridColumns.PTO + ",") > -1 || vgrid == "all") {
             var col_vgPTO = Ext.create('Ext.grid.column.Column', {
-            id: 'vgPTO',
-            text: "PTO", //'PTO',
-            align: 'left',
-            width: 40,
-            dataIndex: 'PTO',
-            filterable: true,
-            sortable: true,
+                id: 'vgPTO',
+                text: "PTO", //'PTO',
+                align: 'left',
+                width: 40,
+                dataIndex: 'PTO',
+                filterable: true,
+                sortable: true,
                 hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.PTO) - 1] == "y") ? false : true
-        });
+            });
             vehicleGridColumns.push(col_vgPTO);
             defaultViewColumns.push(col_vgPTO);
-    }
+        }
 
-    if (ShowEngineHours) {
-        if (vgrid.indexOf("," + allGridColumns.EngineHours + ",") > -1 || vgrid == "all") {
+        if (ShowEngineHours) {
+            if (vgrid.indexOf("," + allGridColumns.EngineHours + ",") > -1 || vgrid == "all") {
                 var col_vgEngineHours = Ext.create('Ext.grid.column.Column', {
-                id: 'vgEngineHours',
-                text: ResvgEngineHoursText,
-                align: 'left',
-                width: 80,
-                dataIndex: 'EngineHours',
-                filterable: true,
-                sortable: true,
-                hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.EngineHours) - 1] == "y") ? false : true
-            });
+                    id: 'vgEngineHours',
+                    text: ResvgEngineHoursText,
+                    align: 'left',
+                    width: 80,
+                    dataIndex: 'EngineHours',
+                    filterable: true,
+                    sortable: true,
+                    hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.EngineHours) - 1] == "y") ? false : true
+                });
                 vehicleGridColumns.push(col_vgEngineHours);
                 defaultViewColumns.push(col_vgEngineHours);
+            }
         }
-    }
-    if (ShowOdometer) {
-        if (vgrid.indexOf("," + allGridColumns.Odometer + ",") > -1 || vgrid == "all") {
+        if (ShowOdometer) {
+            if (vgrid.indexOf("," + allGridColumns.Odometer + ",") > -1 || vgrid == "all") {
                 var col_vgOdometer = Ext.create('Ext.grid.column.Column', {
-                id: 'vgOdometer',
-                text: ResvgOdometerText,
-                align: 'left',
-                width: 80,
-                dataIndex: 'Odometer',
-                filterable: true,
-                sortable: true,
-                hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.Odometer) - 1] == "y") ? false : true
-            });
+                    id: 'vgOdometer',
+                    text: ResvgOdometerText,
+                    align: 'left',
+                    width: 80,
+                    dataIndex: 'Odometer',
+                    filterable: true,
+                    sortable: true,
+                    hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.Odometer) - 1] == "y") ? false : true
+                });
                 vehicleGridColumns.push(col_vgOdometer);
                 defaultViewColumns.push(col_vgOdometer);
+            }
         }
-    }
-    if (vgrid.indexOf("," + allGridColumns.IsRouteAssigned + ",") > -1 || vgrid == "all" || DispatchOrganizationId == 480 || DispatchOrganizationId == 999991) {
+        if (vgrid.indexOf("," + allGridColumns.IsRouteAssigned + ",") > -1 || vgrid == "all" || DispatchOrganizationId == 480 || DispatchOrganizationId == 999991) {
             var col_vgIsRouteAssigned = Ext.create('Ext.grid.column.Column', {
-               id: 'vgIsRouteAssigned',
-               text: ResvgIsRouteAssignedText, //'Route Assigned',
-               align: 'left',
-               width: 90,
-               dataIndex: 'IsRouteAssigned',
-               renderer: function (value, p, record) {
-                   return Ext.String.format('<a href="javascript:void(0);" OnClick="RouteWindow(\'{0}\')">{1}</a>', Ext.String.escape(record.data['Description']).replace(/\'/g, "&singlequote;"), value);
-               },
-               filterable: true,
-               sortable: false,
-               hidden: (VGridActive == "" || DispatchOrganizationId == 480 || DispatchOrganizationId == 999991 || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.IsRouteAssigned) - 1] == "y") ? false : true
-           });
+                id: 'vgIsRouteAssigned',
+                text: ResvgIsRouteAssignedText, //'Route Assigned',
+                align: 'left',
+                width: 90,
+                dataIndex: 'IsRouteAssigned',
+                renderer: function (value, p, record) {
+                    return Ext.String.format('<a href="javascript:void(0);" OnClick="RouteWindow(\'{0}\')">{1}</a>', Ext.String.escape(record.data['Description']).replace(/\'/g, "&singlequote;"), value);
+                },
+                filterable: true,
+                sortable: false,
+                hidden: (VGridActive == "" || DispatchOrganizationId == 480 || DispatchOrganizationId == 999991 || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.IsRouteAssigned) - 1] == "y") ? false : true
+            });
             vehicleGridColumns.push(col_vgIsRouteAssigned);
             defaultViewColumns.push(col_vgIsRouteAssigned);
-       }
+        }
 
-    //if (vgrid.indexOf("," + allGridColumns.LastIgnOnBatV + ",") > -1 || vgrid == "all") {
+        //if (vgrid.indexOf("," + allGridColumns.LastIgnOnBatV + ",") > -1 || vgrid == "all") {
         if (BatteryTredingEnabled) {
             var col_vgLastIgnOnBatV = Ext.create('Ext.grid.column.Column', {
-               id: 'vgLastIgnOnBatV',
-               text: "Battery On(v)", //'Ign On Reading(V)',
-               align: 'left',
-               width: 80,
-               dataIndex: 'LastIgnOnBatV',
-               filterable: true,
-               sortable: true,
-               renderer: function (value, p, record) {
-                   if (value == 0)
-                       return value;
-                   else if (isNumber(value))
-                       return (value * 1).toFixed(2);
-                   return "";
-               },
-               //hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.LastIgnOnBatV) - 1] == "y") ? false : true               
-               hidden: false
-           });
+                id: 'vgLastIgnOnBatV',
+                text: "Battery On(v)", //'Ign On Reading(V)',
+                align: 'left',
+                width: 80,
+                dataIndex: 'LastIgnOnBatV',
+                filterable: true,
+                sortable: true,
+                renderer: function (value, p, record) {
+                    if (value == 0)
+                        return value;
+                    else if (isNumber(value))
+                        return (value * 1).toFixed(2);
+                    return "";
+                },
+                //hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.LastIgnOnBatV) - 1] == "y") ? false : true
+                hidden: false
+            });
             vehicleGridColumns.push(col_vgLastIgnOnBatV);
             defaultViewColumns.push(col_vgLastIgnOnBatV);
-       }
+        }
 
-       //if (vgrid.indexOf("," + allGridColumns.LastIgnOffBatV + ",") > -1 || vgrid == "all") {
+        //if (vgrid.indexOf("," + allGridColumns.LastIgnOffBatV + ",") > -1 || vgrid == "all") {
         if (BatteryTredingEnabled) {
             var col_vgLastIgnOffBatV = Ext.create('Ext.grid.column.Column', {
-               id: 'vgLastIgnOffBatV',
-               text: "Battery Off(v)", //'Vehicle Off Reading(V)',
-               align: 'left',
-               width: 115,
-               dataIndex: 'LastIgnOffBatV',
-               filterable: true,
-               sortable: true,
-               renderer: function (value, p, record) {
-                   if (value == 0)
-                       return value;
-                   else if (isNumber(value))
-                       return (value * 1).toFixed(2);
-                   return "";
-               },
-               //hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.LastIgnOffBatV) - 1] == "y") ? false : true
-               hidden: false
-           });
+                id: 'vgLastIgnOffBatV',
+                text: "Battery Off(v)", //'Vehicle Off Reading(V)',
+                align: 'left',
+                width: 115,
+                dataIndex: 'LastIgnOffBatV',
+                filterable: true,
+                sortable: true,
+                renderer: function (value, p, record) {
+                    if (value == 0)
+                        return value;
+                    else if (isNumber(value))
+                        return (value * 1).toFixed(2);
+                    return "";
+                },
+                //hidden: (VGridActive == "" || VGridActive.split(",")[vgrid.split(",").indexOf("" + allGridColumns.LastIgnOffBatV) - 1] == "y") ? false : true
+                hidden: false
+            });
             vehicleGridColumns.push(col_vgLastIgnOffBatV);
             defaultViewColumns.push(col_vgLastIgnOffBatV);
-       }
+        }
 
-       //if (vgrid.indexOf("," + allGridColumns.LastIgnOffBatV + ",") > -1 || vgrid == "all") {
-       /*if (BatteryTredingEnabled) {
-           vehicleGridColumns.push({
-               id: 'vgLastBatV',
-               text: "Last Battery(v)", 
-               align: 'left',
-               width: 120,
-               dataIndex: 'LastBatV',
-               filterable: true,
-               sortable: true,
-               renderer: function (value, p, record) {
-                   if (value == 0)
-                       return value;
-                   else if (isNumber(value))
-                       return (value * 1).toFixed(2);
-                   return "";
-               },
-               hidden: false
-           });
-       }*/
+        //if (vgrid.indexOf("," + allGridColumns.LastIgnOffBatV + ",") > -1 || vgrid == "all") {
+        /*if (BatteryTredingEnabled) {
+            vehicleGridColumns.push({
+                id: 'vgLastBatV',
+                text: "Last Battery(v)",
+                align: 'left',
+                width: 120,
+                dataIndex: 'LastBatV',
+                filterable: true,
+                sortable: true,
+                renderer: function (value, p, record) {
+                    if (value == 0)
+                        return value;
+                    else if (isNumber(value))
+                        return (value * 1).toFixed(2);
+                    return "";
+                },
+                hidden: false
+            });
+        }*/
 
         // if (vgrid.indexOf("," + allGridColumns.CustomConfig + ",") > -1 || vgrid == "all") {
-        if(DispatchOrganizationId == 123) { // Hard-coded MDT Serial column only for CN. Mantis # 15936
+        if (DispatchOrganizationId == 123) { // Hard-coded MDT Serial column only for CN. Mantis # 15936
             var col_vgCustomConfig = Ext.create('Ext.grid.column.Column', {
                 id: 'vgCustomConfig',
                 text: "MDT Serial", //'PPCID',
@@ -4893,6 +4836,24 @@ Ext.onReady(function () {
 
         dashboardViewColumns.push(col_vgDashboardNotes);
 
+        var col_vgLandmarkInDateTime = Ext.create('Ext.grid.column.Column', {
+            id: 'vgLandmarkInDateTime',
+            text: 'In DateTime',
+            align: 'left',
+            width: 150,
+            dataIndex: 'LandmarkInDateTime',
+            filterable: true,
+            sortable: true,
+            hidden: true,
+            renderer: function (value, p, record) {
+                if (value == '' || value == null) {
+                    return '';
+                }
+                return Ext.Date.format(value, userdateformat);
+            }
+        });
+        dashboardViewColumns.push(col_vgLandmarkInDateTime);
+
         var col_vgDashboardTimeInLandmark = Ext.create('Ext.grid.column.Column', {
             id: 'vgDashboardTimeInLandmark',
             text: 'Time Inside (hours)',
@@ -4902,9 +4863,11 @@ Ext.onReady(function () {
             filterable: true,
             sortable: true,
             hidden: false,
-            renderer: function (value) {
+            renderer: function (value, p, record) {
 
-                if (value == 0)
+                if (value == 0 && record.get('LandmarkName') != '')
+                    return 0;
+                else if (value == 0)
                     return '';
                 else
                     return value;
@@ -4979,7 +4942,7 @@ Ext.onReady(function () {
         if (vgrid.indexOf("," + allGridColumns.ManagerName + ",") > -1 || vgrid == "all") {
             var col_vgManagerNameDashboard = Ext.create('Ext.grid.column.Column', {
                 id: 'vgManagerName',
-                text: ResvgManagerNameText, 
+                text: ResvgManagerNameText,
                 align: 'left',
                 width: 90,
                 dataIndex: 'ManagerName',
@@ -4996,15 +4959,15 @@ Ext.onReady(function () {
 
     function ShowDashboard() {
 
-        if(currentView == 'dashboard')
+        if (currentView == 'dashboard')
             return;
 
-        //vehiclegrid.headerCt.removeAll();        
+        //vehiclegrid.headerCt.removeAll();
 
         // Insert DashboardView columns
-        
+
         clearVehiceSelections();
-        
+
         vehiclegrid.filters.addFilters(filters.filters);
         currentFilters = {};
 
@@ -5020,8 +4983,8 @@ Ext.onReady(function () {
 
         vehiclegrid.getView().refresh();
 
-        dashboardBtn.disable();
-        defaultViewBtn.enable();
+        //dashboardBtn.disable();
+        //defaultViewBtn.enable();
 
         recordUpdater.load({
             params:
@@ -5037,7 +5000,7 @@ Ext.onReady(function () {
 
     function ShowDefaultView() {
 
-        if(currentView == 'default')
+        if (currentView == 'default')
             return;
 
         // Remove DashboardView Columns
@@ -5047,7 +5010,7 @@ Ext.onReady(function () {
         //vehiclegrid.headerCt.removeAll();
 
         clearVehiceSelections();
-        
+
         vehiclegrid.filters.addFilters(filters.filters);
         currentFilters = {};
 
@@ -5063,11 +5026,11 @@ Ext.onReady(function () {
         currentView = 'default';
         landmarkCategory.hide();
         availabilityChartBtn.hide();
-        
+
         vehiclegrid.getView().refresh();
 
-        dashboardBtn.enable();
-        defaultViewBtn.disable();
+        //dashboardBtn.enable();
+        //defaultViewBtn.disable();
 
         recordUpdater.load({
             params:
@@ -5087,7 +5050,7 @@ Ext.onReady(function () {
             var el = document.getElementById(mapframe).contentWindow;
             el.closeVehiclePopups();
         }
-        catch(err) {}
+        catch (err) { }
     }
 
     function clone(obj) {
@@ -5104,4240 +5067,4134 @@ Ext.onReady(function () {
         return temp;
     }
 
-       var currentFilters = new Object();
-       var filteron = false;
-       vehiclegrid = Ext.create('Ext.grid.Panel',
-   {
-       id: 'vehiclesgrid',
-       enableColumnHide: true,
-       title: ResVehicles, //'Vehicles',
-       autoLoad: false,
-       autoScroll: true,
-       maxWidth: window.screen.width - 5,
-       maxHeight: window.screen.height,
-       enableSorting: true,
-       closable: false,
-       columnLines: true,
-       width: window.screen.width,
-       autoHeight: true,
-       store: mainstore,
-       collapsible: true,
-       animCollapse: false,
-       split: true,
-       features: [filters],
-       stateId: 'stateVGrid',
-       stateful: true, // state should be preserved
-       //stateEvents: ['columnresize', 'columnmove', 'show', 'hide'], 
+    var currentFilters = new Object();
+    var filteron = false;
+    vehiclegrid = Ext.create('Ext.grid.Panel',
+{
+    id: 'vehiclesgrid',
+    enableColumnHide: true,
+    title: ResVehicles, //'Vehicles',
+    autoLoad: false,
+    autoScroll: true,
+    maxWidth: window.screen.width - 5,
+    maxHeight: window.screen.height,
+    enableSorting: true,
+    closable: false,
+    columnLines: true,
+    width: window.screen.width,
+    autoHeight: true,
+    store: mainstore,
+    collapsible: true,
+    animCollapse: false,
+    split: true,
+    features: [filters],
+    stateId: 'stateVGrid',
+    stateful: true, // state should be preserved
+    //stateEvents: ['columnresize', 'columnmove', 'show', 'hide'],
 
-       /*viewConfig:
+    /*viewConfig:
+    {
+    stripeRows: false,
+    emptyText: 'No vehicles to display',
+    useMsg: false
+    }
+    ,*/
+    columns: vehicleGridColumns
+     , dockedItems: [
+   {
+       xtype: 'toolbar',
+       dock: 'top',
+       items: [LoadVehiclesBasedOn == 'fleet' ? fleetButton : organizationHierarchy,
+       /*{
+       xtype: 'cycle',
+       text: 'Reading Pane',
+       prependText: 'Map: ',
+       showText: true,
+       scope: this,
+       changeHandler: readingPaneChange,
+       hidden: true,
+       menu:
        {
-       stripeRows: false,
-       emptyText: 'No vehicles to display',
-       useMsg: false          
+       id: 'reading-menu',
+       items: [
+       {
+       text: 'Top',
+       checked: defaultMapView == "south" ? true : false,
+       iconCls: 'preview-top'
+       }
+       ,
+       {
+       text: 'Bottom',
+       checked: defaultMapView == "north" ? true : false,
+       iconCls: 'preview-bottom'
+       }
+       ,
+       {
+       text: 'Right',
+       checked: defaultMapView == "west" ? true : false,
+       iconCls: 'preview-right'
+       }
+       ,
+       {
+       text: 'Hide',
+       iconCls: 'preview-hide'
+       }
+       ]
+       }
        }
        ,*/
-       columns: vehicleGridColumns
-        , dockedItems: [
-      {
-          xtype: 'toolbar',
-          dock: 'top',
-          items: [LoadVehiclesBasedOn == 'fleet' ? fleetButton : organizationHierarchy,
-          /*{
-          xtype: 'cycle',
-          text: 'Reading Pane',
-          prependText: 'Map: ',
-          showText: true,
-          scope: this,
-          changeHandler: readingPaneChange,
-          hidden: true,
-          menu:
-          {
-          id: 'reading-menu',
-          items: [
-          {
-          text: 'Top',
-          checked: defaultMapView == "south" ? true : false,
-          iconCls: 'preview-top'
-          }
-          ,
-          {
-          text: 'Bottom',
-          checked: defaultMapView == "north" ? true : false,
-          iconCls: 'preview-bottom'
-          }
-          ,
-          {
-          text: 'Right',
-          checked: defaultMapView == "west" ? true : false,
-          iconCls: 'preview-right'
-          }
-          ,
-          {
-          text: 'Hide',
-          iconCls: 'preview-hide'
-          }
-          ]
-          }
-          }
-          ,*/
-				 '-',
-				 {
-				     icon: 'preview.png',
-				     cls: 'x-btn-text-icon',
-				     text: ResdockedItemsActionsText, //'Actions',
-				     menu: scrollMenu
-				 },
-				 searchMap, // exportButton,
-				 {
-				 itemId: 'AutoSync',
-				 boxLabel: 'AutoSync',
-				 boxLabelCls: 'cmbfonts',
-				 xtype: 'checkboxfield',
-				 disabled: vehinterval == 0 ? true : false,
-				 checked: IsSyncOn,
-				 tooltip: ResRefreshTheMapAndGridAutomatically, //'Refresh the map and grid automatically',
-				 handler: function () {
-				     IsSyncOn = !IsSyncOn;
-				 }
-				 // IsSyncOn
-	}, /*feedback, */, showDriverFinderButton ? findvehiclesdrivers : null, legend, /*VehicleClustering ? */labelonoff/* : null*/
-          /*, {
-          xtype: 'exporterbutton', //exportbutton
-          text: 'Export Grid Data',
-          formatter: "csv",
-          swfPath: './sencha/Ext.ux.Exporter/downloadify.swf',
-          downloadImage: './sencha/Ext.ux.Exporter/download.png',
-          downloadName: 'vehicles',
-          separator: ","
-          //  store: store
-          }*/
-         , { icon: 'preview.png',
-             cls: 'x-btn-text-icon',
-             text: ResdockedItemsExportText, //'Export',
-             menu: exportMenu
-         }
-         , clearSearchBtn
-		 , ShowRouteAssignment ? allRoutesBtn : null
-         , batteryTrendingBtn
-         , ShowDashboardView ? landmarkCategory : null
-         , ShowDashboardView ? availabilityChartBtn : null
-         , { xtype: 'tbfill' }
-         , ShowDashboardView ? defaultViewBtn : null
-         , ShowDashboardView ? dashboardBtn : null
-         
-         //, segmentbtn
-         ]
-      }
-      ]
-      , selModel: selModel
-      , listeners: {
-          'cellclick': function (grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
-
-              if (cellIndex != 0) {
-                  $(".highlightgrid").attr("style", "background-color: white");
-                  $(".highlightgrid").removeClass("highlightgrid");
-                  $(tr).children("td").addClass("highlightgrid");
-                  $(tr).children("td").attr("style", "background-color: #ACFA97 !important");
-                  $(".x-date-time").attr("style", "background-color: white");
-
-                  selectedVehicleBoxId = record.data.BoxId;
-                  selectedVehicleData = record; //record.data
-
-                  //vehiclegrid.down('#finditmenu').setDisabled(false);
-                  vehiclegrid.down('#trackitmenu').setDisabled(false);
-                  vehiclegrid.down('#streetViewMenu').setDisabled(false);
-              }
-          },
-          'celldblclick': function (grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
-
-              if (cellIndex != 0) {
-                  $(".highlightgrid").attr("style", "background-color: white");
-                  $(".highlightgrid").removeClass("highlightgrid");
-                  $(tr).children("td").addClass("highlightgrid");
-                  $(tr).children("td").attr("style", "background-color: #ACFA97 !important");
-                  $(".x-date-time").attr("style", "background-color: white");
-
-                  selectedVehicleBoxId = record.data.BoxId;
-                  selectedVehicleData = record.data;
-
-                  //vehiclegrid.down('#finditmenu').setDisabled(false);
-                  vehiclegrid.down('#trackitmenu').setDisabled(false);
-                  vehiclegrid.down('#streetViewMenu').setDisabled(false);
-
-                  //$('#mapitButton-btnEl').click();
-                  findit();
-              }
-          },
-          filterupdate: function () {
-              if(VehicleGridInSearchMode)
-                return;
-              var checkedHd = vehiclegrid.view.headerCt.child('gridcolumn[isCheckerHd]').el.hasCls(Ext.baseCSSPrefix + 'grid-hd-checker-on');
-              vehiclegrid.filters.deferredUpdate.cancel();
-              var filtersdata;
-              var stringvalue;
-              if (typeof (vehiclegrid) != 'undefined' && vehiclegrid.filters.filters.length > 0) {
-                  filtersdata = vehiclegrid.filters.getMenuFilter();
-                  if (filtersdata != null) {
-                      filtercolvalue = filtersdata.dataIndex;
-                      if (filtersdata.active == true) {
-                          if (typeof (filtersdata.getValue()) != 'undefined') {
-                              if (filtersdata.type == "int") {
-                                  stringvalue = "type int";
-                                  var fvalue = filtersdata.getValue();
-                                  if (typeof (fvalue["eq"]) != 'undefined')
-                                      stringvalue = stringvalue + " eq " + fvalue["eq"].toString();
-                                  else {
-                                      if (typeof (fvalue["lt"]) != 'undefined')
-                                          stringvalue = stringvalue + " lt " + fvalue["lt"].toString();
-                                      if (typeof (fvalue["gt"]) != 'undefined')
-                                          stringvalue = stringvalue + " gt " + fvalue["gt"].toString();
-                                  }
-                              }
-							  else if (filtersdata.type == "float") {
-                                  stringvalue = "type float";
-                                  var fvalue = filtersdata.getValue();
-                                  if (typeof (fvalue["eq"]) != 'undefined')
-                                      stringvalue = stringvalue + " eq " + fvalue["eq"].toString();
-                                  else {
-                                      if (typeof (fvalue["lt"]) != 'undefined')
-                                          stringvalue = stringvalue + " lt " + fvalue["lt"].toString();
-                                      if (typeof (fvalue["gt"]) != 'undefined')
-                                          stringvalue = stringvalue + " gt " + fvalue["gt"].toString();
-                                  }
-                              }
-                              else if (filtersdata.type == "date") {
-                                  stringvalue = "type date";
-                                  var fvalue = filtersdata.getValue();
-
-                                  if (typeof (fvalue["on"]) != 'undefined') {
-                                      var dt = new Date(fvalue["on"]);
-                                      var newDt = Ext.Date.format(dt, userdateformat);
-                                      stringvalue = stringvalue + " on " + newDt.toString();
-                                  }
-                                  else {
-                                      if (typeof (fvalue["before"]) != 'undefined') {
-                                          var dt = new Date(fvalue["before"]);
-                                          var newDt = Ext.Date.format(dt, userdateformat);
-                                          stringvalue = stringvalue + " before " + newDt.toString();
-                                      }
-                                      if (typeof (fvalue["after"]) != 'undefined') {
-                                          var dt = new Date(fvalue["after"]);
-                                          var newDt = Ext.Date.format(dt, userdateformat);
-                                          stringvalue = stringvalue + " after " + newDt.toString();
-                                      }
-                                  }
-                              }
-                              else {
-                                  stringvalue = filtersdata.getValue().toString();
-                              }
-                              if (typeof (stringvalue) != 'undefined' && stringvalue.length != 0 && (stringvalue != "" || stringvalue != null)) {
-                                  filteron = true;
-                                  currentFilters[filtercolvalue] = filtercolvalue + ":" + stringvalue;
-                                  var selFleet = (LoadVehiclesBasedOn == 'fleet') ? SelectedFleetId : DefaultOrganizationHierarchyFleetId;
-                                  mainstore.currentPage = 1;
-                                  loadingMask.show();
-                                  mainstore.load({
-                                      params:
-                                  {
-                                      QueryType: 'GetFilteredFleet',
-                                      sorting: sortingParam,
-                                      filters: currentFilters
-                                  },
-                                      callback: function (records, operation, success) {
-                                          loadingMask.hide();
-                                          if (checkedHd) {
-                                              selModel.selectAll(true);
-                                          }
-                                          else
-                                              slectedboxidarray.length = 0;
-                                      },
-                                      scope: this
-                                  });
-                              }
-                              else {
-                                  delete currentFilters[filtercolvalue];
-                                  if (Object.keys(currentFilters).length == 0) {
-                                      filteron = false;
-                                      mainstore.currentPage = currentpage;
-                                      loadingMask.show();
-                                      mainstore.load({
-                                          params:
-                                  {
-                                      QueryType: 'GetFilteredFleet',
-                                      sorting: sortingParam
-                                  },
-                                          callback: function (records, operation, success) {
-                                              loadingMask.hide();
-                                              slectedboxidarray.length = 0;
-                                          },
-                                          scope: this
-                                      });
-                                  }
-                                  else {
-                                      loadingMask.show();
-                                      mainstore.load({
-                                          params:
-                                  {
-                                      QueryType: 'GetFilteredFleet',
-                                      sorting: sortingParam,
-                                      filters: currentFilters
-                                  },
-                                          callback: function (records, operation, success) {
-                                              loadingMask.hide();
-                                              if (checkedHd) {
-                                                  selModel.selectAll(true);
-                                              }
-                                              else
-                                                  slectedboxidarray.length = 0;
-                                          },
-                                          scope: this
-                                      });
-                                  }
-                              }
-                          }
-                          else {
-                              delete currentFilters[filtercolvalue];
-                              if (Object.keys(currentFilters).length == 0) {
-                                  filteron = false;
-                                  mainstore.currentPage = currentpage;
-                                  loadingMask.show();
-                                  mainstore.load({
-                                      params:
-                                  {
-                                      QueryType: 'GetFilteredFleet',
-                                      sorting: sortingParam
-                                  },
-                                      callback: function (records, operation, success) {
-                                          loadingMask.hide();
-                                          slectedboxidarray.length = 0;
-                                      },
-                                      scope: this
-                                  });
-                              }
-                              else {
-                                  loadingMask.show();
-                                  mainstore.load({
-                                      params:
-                                  {
-                                      QueryType: 'GetFilteredFleet',
-                                      sorting: sortingParam,
-                                      filters: currentFilters
-                                  },
-                                      callback: function (records, operation, success) {
-                                          loadingMask.hide();
-                                          if (checkedHd) {
-                                              selModel.selectAll(true);
-                                          }
-                                          else
-                                              slectedboxidarray.length = 0;
-                                      },
-                                      scope: this
-                                  });
-                              }
-                          }
-                      }
-                      else {
-                          delete currentFilters[filtercolvalue];
-                          if (Object.keys(currentFilters).length == 0) {
-                              filteron = false;
-                              mainstore.currentPage = currentpage;
-                              loadingMask.show();
-                              mainstore.load({
-                                  params:
-                                  {
-                                      QueryType: 'GetFilteredFleet',
-                                      sorting: sortingParam
-                                  },
-                                  callback: function (records, operation, success) {
-                                      loadingMask.hide();
-                                      slectedboxidarray.length = 0;
-                                  },
-                                  scope: this
-                              });
-                          }
-                          else {
-                              loadingMask.show();
-                              mainstore.load({
-                                  params:
-                                  {
-                                      QueryType: 'GetFilteredFleet',
-                                      sorting: sortingParam,
-                                      filters: currentFilters
-                                  },
-                                  callback: function (records, operation, success) {
-                                      loadingMask.hide();
-                                      if (checkedHd) {
-                                          selModel.selectAll(true);
-                                      }
-                                      else
-                                          slectedboxidarray.length = 0;
-                                  },
-                                  scope: this
-                              });
-                          }
-                      }
-
+              '-',
+              {
+                  icon: 'preview.png',
+                  cls: 'x-btn-text-icon',
+                  text: ResdockedItemsActionsText, //'Actions',
+                  menu: scrollMenu
+              },
+              searchMap, // exportButton,
+              {
+                  itemId: 'AutoSync',
+                  boxLabel: 'AutoSync',
+                  boxLabelCls: 'cmbfonts',
+                  xtype: 'checkboxfield',
+                  disabled: vehinterval == 0 ? true : false,
+                  checked: IsSyncOn,
+                  tooltip: ResRefreshTheMapAndGridAutomatically, //'Refresh the map and grid automatically',
+                  handler: function () {
+                      IsSyncOn = !IsSyncOn;
                   }
-                  else {
-                      currentFilters = {};
-                      filteron = false;
-                      mainstore.currentPage = currentpage;
-                      loadingMask.show();
-                      mainstore.load({
-                          params:
-                                  {
-                                      QueryType: 'GetFilteredFleet',
-                                      sorting: sortingParam
-
-                                  },
-                          callback: function (records, operation, success) {
-                              loadingMask.hide();
-                              slectedboxidarray.length = 0;
-                          },
-                          scope: this
-                      });
-                  }
-              }
-          }
-      }
-      ,
-       viewConfig: {
-           loadMask: false,
-           stripeRows: false,
-           emptyText: ResVehiclePagerEmptyMsg, //'No vehicles to display',
-           useMsg: false,
-           getRowClass: function (record, index) {
-               var d = ((new Date()).getTime() - record.get('OriginDateTime').getTime()) / 1000 / 60 / 60;    // hours
-
-               if (d < 24)
-                   return 'withinlastday';
-               else if (d < 48)
-                   return 'withinlast2days';
-               else if (d < 72)
-                   return 'withinlast3days';
-               else if (d < 168)
-                   return 'withinlast7days';
-               else
-                   return 'morethan7days';
-           }
-       },
-       // paging bar on the bottom
-       bbar: vehiclePager
-   }
-   );
-
-       var AMfilters = {
-           ftype: 'filters',
-           encode: false,
-           local: true
-       };
-       var alarmgrid = Ext.create('Ext.grid.Panel',
-   {
-       id: 'alarmgrid',
-       animCollapse: false,
-       autoLoad: false,
-       autoScroll: true,
-       loadMask: true,
-       maxWidth: window.screen.width,
-       maxHeight: window.screen.height,
-       stateful: true,
-
-       closable: false,
-       enableColumnHide: true,
-       enableSorting: true,
-       features: [AMfilters],
-       closable: false,
-       width: window.screen.width,
-       autoHeight: true,
-       title: ResAlarms, //'Alarms',
-       store: alarmsstore,
-       columnLines: true,
-       stateId: 'stateAGrid',
-       viewConfig:
-      {
-          emptyText: ResalarmgridEmptyText, //'No alarms to display',
-          useMsg: false,
-          getRowClass: function (rec, rowIdx, params, store) {
-              if (rec.get('AlarmDescription').indexOf("CIA") != -1) {
-                  return 'grid-row-red';
-              }
-              if (rec.get('AlarmDescription').indexOf("VIA") != -1) {
-                  return 'grid-row-yellow';
-              }
-          }
-      }
-      ,
-       columns: [
-      {
-          text: ResalarmgridcolumnsAlarmId, //'Number',
-          align: 'left',
-          width: 80,
-          renderer: function (value) {
-              return Ext.String.format('<a href="javascript:void(0);" OnClick="NewAlarmWindow({0})">{1}</a>', value, value);
-          }
-         ,
-          dataIndex: 'AlarmId',
-          sortable: true,
-          filter: {
-              type: 'int'
-          }
-      }
-      ,
-      {
-          text: ResalarmgridcolumnsTimeCreated, //'Alarm Time',
-          align: 'left',
-          width: 135,
-          xtype: 'datecolumn',
-          format: userdateformat, //dateformat,
-          dataIndex: 'TimeCreated',
-          sortable: true,
-          filter: {
-              type: 'date'
-          }
-      }
-      ,
-      {
-          text: ResalarmgridcolumnsAlarmLevel, // 'Alarm Priority',
-          align: 'left',
-          width: 80,
-          dataIndex: 'AlarmLevel',
-          sortable: true,
-          filter: {
-              type: 'string'
-          }
-      }
-      ,
-      {
-          text: ResalarmgridcolumnsAlarmDescription, //'Alarm Description',
-          align: 'left',
-          width: 120,
-          renderer: function (value) {
-              if (value.indexOf("CIA") != -1 && soundPresent != true) {
-                  soundPresent = true;
-                  return Ext.String.format('{0} <object><embed src="../../sounds/FireAlarm.wav" hidden="true" autostart="True" loop="true" type="audio/wav" pluginspage="https://www.apple.com/quicktime/download/" /></object>', value);
-              }
-              else {
-                  return value;
-              }
-          }
-         ,
-          dataIndex: 'AlarmDescription',
-          sortable: true,
-          filter: {
-              type: 'string'
-          }
-      }
-      ,
-      {
-          text: ResalarmgridcolumnsvehicleDescription, // 'Vehicle Description',
-          align: 'left',
-          width: 120,
-          dataIndex: 'vehicleDescription',
-          sortable: true,
-          filter: {
-              type: 'string'
-          }
-      }
-      ]
-      , listeners: {
-          'activate': function (grid, eOpts) {
-              $('.alarmtabtitleunreadmsg').show();
-              $('.alarmtabtitleunreadmsg').removeClass('blinking');
-          }
-      }
-      ,
-       // paging bar on the bottom
-       bbar: alarmsPager
-   }
-   );
-
-       var messagegrid = Ext.create('Ext.grid.Panel',
-   {
-       id: 'messagegrid',
-       animCollapse: false,
-       autoLoad: false,
-       autoScroll: true,
-       loadMask: true,
-       maxWidth: window.screen.width,
-       maxHeight: window.screen.height,
-       stateful: true,
-
-       closable: false,
-       enableColumnHide: true,
-       enableSorting: true,
-       features: [AMfilters],
-       closable: false,
-       width: window.screen.width,
-       autoHeight: true,
-       title: ResMessages, //'Messages',
-       store: messagesstore,
-       columnLines: true,
-       stateId: 'stateMGrid',
-       viewConfig:
-      {
-          emptyText: ResmessagegridemptyText, //'No messages to display',
-          useMsg: false
-      }
-      ,
-       columns: [
-      {
-          text: ResmessagegridcolumnsMessageId, //'MessageId',
-          align: 'left',
-          width: 80,
-          renderer: function (value, p, record) {
-
-              var MsgKey = Ext.String.escape(record.data['MsgKey']);
-              return Ext.String.format('<a href="javascript:void(0);" OnClick="NewMessageWindow(\'{0}\')">{1}</a>', MsgKey, value);
-          }
-         ,
-          dataIndex: 'MessageId',
-          sortable: true,
-          filter: {
-              type: 'int'
-          }
-      }
-      ,
-      {
-          text: ResmessagegridcolumnsMsgDateTime, //'Date/Time',
-          align: 'left',
-          width: 135,
-          xtype: 'datecolumn',
-          format: userdateformat, //dateformat,
-          dataIndex: 'MsgDateTime',
-          sortable: true,
-          filter: {
-              type: 'date'
-          }
-      }
-      ,
-      {
-          text: ResmessagegridcolumnsDescription, // 'From',
-          align: 'left',
-          width: 150,
-          dataIndex: 'Description',
-          sortable: true,
-          filter: {
-              type: 'string'
-          }
-      }
-      ,
-      {
-          text: ResmessagegridcolumnsMsgBody, //'Message Body',
-          align: 'left',
-          width: 200,
-          dataIndex: 'MsgBody',
-          sortable: true,
-          filter: {
-              type: 'string'
-          }
-      }
-      ,
-      {
-          text: ResmessagegridcolumnsAcknowledged, //'Acknowledged',
-          align: 'left',
-          width: 120,
-          dataIndex: 'Acknowledged',
-          sortable: true,
-          filter: {
-              type: 'string'
-          }
-      }
-      ]
-      , dockedItems: [
-          {
-              xtype: 'toolbar',
-              dock: 'top',
-              items: [
-                sendmessage
-             ]
-          }
-      ]
-      , listeners: {
-          'activate': function (grid, eOpts) {
-              $('.messagetabtitleunreadmsg').show();
-              $('.messagetabtitleunreadmsg').removeClass('blinking');
-          }
-      }
-      ,
-       // paging bar on the bottom
-       bbar: messagesPager
-   }
-   );
-
-       geolandmarkgrid = Ext.create('Ext.grid.Panel',
-   {
-       id: 'geolandmarkgrid',
-       animCollapse: false,
-       autoLoad: false,
-       autoScroll: true,
-       loadMask: true,
-       maxWidth: window.screen.width,
-       maxHeight: window.screen.height,
-       stateful: true,
-
-       closable: false,
-       enableColumnHide: false,
-       enableSorting: true,
-       closable: false,
-       width: window.screen.width,
-       autoHeight: true,
-       title: ResGeozoneLandmarks, //'Geozone/Landmarks',
-       store: geolandmarksstore,
-       columnLines: true,
-       stateId: 'stateLandmarkGrid',
-       viewConfig:
-      {
-          emptyText: ResgeolandmarkgridemptyText, //'No Geozone/Landmarks to display',
-          useMsg: false
-      }
-      ,
-       columns: [
-        { header: Resgeolandmarkgridcolumnsname, //'Name', 
-            dataIndex: 'name'
-        },
-        { header: ResgeolandmarkgridcolumnsType, //'Type', 
-            dataIndex: 'type'
-        }
-       /*,
-       { header: '',
-       renderer: function (value, p, record) {
-       //var MsgKey = Ext.String.escape(record.data['MsgKey']);                
-       return '<a href="javascript:void(0);" onclick="return confirm(\'Are you sure you want to delete?\');"><img border="0" src="../images/delete.gif"></a>';
-       }
+                  // IsSyncOn
+              }, /*feedback, */, showDriverFinderButton ? findvehiclesdrivers : null, legend, /*VehicleClustering ? */labelonoff/* : null*/
+       /*, {
+       xtype: 'exporterbutton', //exportbutton
+       text: 'Export Grid Data',
+       formatter: "csv",
+       swfPath: './sencha/Ext.ux.Exporter/downloadify.swf',
+       downloadImage: './sencha/Ext.ux.Exporter/download.png',
+       downloadName: 'vehicles',
+       separator: ","
+       //  store: store
        }*/
-      ],
+      , {
+          icon: 'preview.png',
+          cls: 'x-btn-text-icon',
+          text: ResdockedItemsExportText, //'Export',
+          menu: exportMenu
+      }
+      , clearSearchBtn
+      , ShowRouteAssignment ? allRoutesBtn : null
+      , batteryTrendingBtn
+      , ShowDashboardView ? landmarkCategory : null
+      , ShowDashboardView ? availabilityChartBtn : null
+      , { xtype: 'tbfill' }
+      , ShowDashboardView ? defaultViewBtn : null
+      , ShowDashboardView ? dashboardBtn : null
+      //, segmentbtn
+       ]
+   }
+     ]
+   , selModel: selModel
+   , listeners: {
+       'cellclick': function (grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
 
-
-       listeners: {
-           'activate': function (grid, eOpts) {
-               geolandmarkgrid.setTitle(ResgeolandmarkgridsetTitle); //geolandmarkgrid.setTitle("Loading...");
-
-               setTimeout(function () { loadGeozoneLandmarks(); }, 100);
-
-
-           },
-           'cellclick': function (grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
-
-               $(".highlightgrid").attr("style", "");
+           if (cellIndex != 0) {
+               $(".highlightgrid").attr("style", "background-color: white");
                $(".highlightgrid").removeClass("highlightgrid");
                $(tr).children("td").addClass("highlightgrid");
-               $(tr).children("td").attr("style", "background-color: #BBCCFF !important");
+               $(tr).children("td").attr("style", "background-color: #ACFA97 !important");
+               $(".x-date-time").attr("style", "background-color: white");
 
-               var el = document.getElementById(mapframe).contentWindow;
-               el.map.zoomToExtent(record.data.f.geometry.getBounds(), closest = true);
-               var currentZoom = el.map.getZoom();
-               el.map.zoomTo(currentZoom - 2);
+               selectedVehicleBoxId = record.data.BoxId;
+               selectedVehicleData = record; //record.data
 
-               el.onFeatureSelect(record.data.f);
+               //vehiclegrid.down('#finditmenu').setDisabled(false);
+               vehiclegrid.down('#trackitmenu').setDisabled(false);
+               vehiclegrid.down('#streetViewMenu').setDisabled(false);
            }
        },
-       //bbar: ['->', 'Total Geozone/Landmarks: <span id="geolandmarkcount" style="margin-right:20px;">0</span>']
-       bbar: ['->', 'Total ' + ResGeozoneLandmarks + ': <span id="geolandmarkcount" style="margin-right:20px;">0</span>']
-   }
-   );
-       var vehiclegeozoneassignment = Ext.create('Ext.Button',
-   {
-       text: ResvehiclegeozoneassignmentButtonText, //'Vehicle-Geozone Assignment',
-       id: 'vehiclegeozoneassignmentButton',
-       tooltip: ResVehicleGeozoneAssignment, //'Vehicle-Geozone Assignment',
-       iconCls: 'map',
-       cls: 'cmbfonts',
-       textAlign: 'left',
-       handler: function () {
-           try {
-               /*var legendURL = "./GeoZone_Landmarks/frmVehicleGeoZone.aspx";
-               var urlToLoad = '<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="' + legendURL + '"></iframe>';
-               openWindow('Vehicle-Geozone Assignment', urlToLoad, 1010, 660);*/
+       'celldblclick': function (grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
 
-               var mypage = './GeoZone_Landmarks/frmVehicleGeoZone.aspx'
-               var myname = '';
-               var w = 1010;
-               var h = 660;
-               var winl = (screen.width - w) / 2;
-               var wint = (screen.height - h) / 2;
-               winprops = 'height=' + h + ',width=' + w + ',top=' + wint + ',left=' + winl + 'location=0,status=0,scrollbars=0,toolbar=0,menubar=0,'
-               win = window.open(mypage, myname, winprops)
-               if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
+           if (cellIndex != 0) {
+               $(".highlightgrid").attr("style", "background-color: white");
+               $(".highlightgrid").removeClass("highlightgrid");
+               $(tr).children("td").addClass("highlightgrid");
+               $(tr).children("td").attr("style", "background-color: #ACFA97 !important");
+               $(".x-date-time").attr("style", "background-color: white");
 
+               selectedVehicleBoxId = record.data.BoxId;
+               selectedVehicleData = record.data;
 
+               //vehiclegrid.down('#finditmenu').setDisabled(false);
+               vehiclegrid.down('#trackitmenu').setDisabled(false);
+               vehiclegrid.down('#streetViewMenu').setDisabled(false);
+
+               //$('#mapitButton-btnEl').click();
+               findit();
            }
-           catch (err) {
+       },
+       filterupdate: function () {
+           if (VehicleGridInSearchMode)
+               return;
+           var checkedHd = vehiclegrid.view.headerCt.child('gridcolumn[isCheckerHd]').el.hasCls(Ext.baseCSSPrefix + 'grid-hd-checker-on');
+           vehiclegrid.filters.deferredUpdate.cancel();
+           var filtersdata;
+           var stringvalue;
+           if (typeof (vehiclegrid) != 'undefined' && vehiclegrid.filters.filters.length > 0) {
+               filtersdata = vehiclegrid.filters.getMenuFilter();
+               if (filtersdata != null) {
+                   filtercolvalue = filtersdata.dataIndex;
+                   if (filtersdata.active == true) {
+                       if (typeof (filtersdata.getValue()) != 'undefined') {
+                           if (filtersdata.type == "int") {
+                               stringvalue = "type int";
+                               var fvalue = filtersdata.getValue();
+                               if (typeof (fvalue["eq"]) != 'undefined')
+                                   stringvalue = stringvalue + " eq " + fvalue["eq"].toString();
+                               else {
+                                   if (typeof (fvalue["lt"]) != 'undefined')
+                                       stringvalue = stringvalue + " lt " + fvalue["lt"].toString();
+                                   if (typeof (fvalue["gt"]) != 'undefined')
+                                       stringvalue = stringvalue + " gt " + fvalue["gt"].toString();
+                               }
+                           }
+                           else if (filtersdata.type == "float") {
+                               stringvalue = "type float";
+                               var fvalue = filtersdata.getValue();
+                               if (typeof (fvalue["eq"]) != 'undefined')
+                                   stringvalue = stringvalue + " eq " + fvalue["eq"].toString();
+                               else {
+                                   if (typeof (fvalue["lt"]) != 'undefined')
+                                       stringvalue = stringvalue + " lt " + fvalue["lt"].toString();
+                                   if (typeof (fvalue["gt"]) != 'undefined')
+                                       stringvalue = stringvalue + " gt " + fvalue["gt"].toString();
+                               }
+                           }
+                           else if (filtersdata.type == "date") {
+                               stringvalue = "type date";
+                               var fvalue = filtersdata.getValue();
+
+                               if (typeof (fvalue["on"]) != 'undefined') {
+                                   var dt = new Date(fvalue["on"]);
+                                   var newDt = Ext.Date.format(dt, userdateformat);
+                                   stringvalue = stringvalue + " on " + newDt.toString();
+                               }
+                               else {
+                                   if (typeof (fvalue["before"]) != 'undefined') {
+                                       var dt = new Date(fvalue["before"]);
+                                       var newDt = Ext.Date.format(dt, userdateformat);
+                                       stringvalue = stringvalue + " before " + newDt.toString();
+                                   }
+                                   if (typeof (fvalue["after"]) != 'undefined') {
+                                       var dt = new Date(fvalue["after"]);
+                                       var newDt = Ext.Date.format(dt, userdateformat);
+                                       stringvalue = stringvalue + " after " + newDt.toString();
+                                   }
+                               }
+                           }
+                           else {
+                               stringvalue = filtersdata.getValue().toString();
+                           }
+                           if (typeof (stringvalue) != 'undefined' && stringvalue.length != 0 && (stringvalue != "" || stringvalue != null)) {
+                               filteron = true;
+                               currentFilters[filtercolvalue] = filtercolvalue + ":" + stringvalue;
+                               var selFleet = (LoadVehiclesBasedOn == 'fleet') ? SelectedFleetId : DefaultOrganizationHierarchyFleetId;
+                               mainstore.currentPage = 1;
+                               loadingMask.show();
+                               mainstore.load({
+                                   params:
+                               {
+                                   QueryType: 'GetFilteredFleet',
+                                   sorting: sortingParam,
+                                   filters: currentFilters
+                               },
+                                   callback: function (records, operation, success) {
+                                       loadingMask.hide();
+                                       if (checkedHd) {
+                                           selModel.selectAll(true);
+                                       }
+                                       else
+                                           slectedboxidarray.length = 0;
+                                   },
+                                   scope: this
+                               });
+                           }
+                           else {
+                               delete currentFilters[filtercolvalue];
+                               if (Object.keys(currentFilters).length == 0) {
+                                   filteron = false;
+                                   mainstore.currentPage = currentpage;
+                                   loadingMask.show();
+                                   mainstore.load({
+                                       params:
+                               {
+                                   QueryType: 'GetFilteredFleet',
+                                   sorting: sortingParam
+                               },
+                                       callback: function (records, operation, success) {
+                                           loadingMask.hide();
+                                           slectedboxidarray.length = 0;
+                                       },
+                                       scope: this
+                                   });
+                               }
+                               else {
+                                   loadingMask.show();
+                                   mainstore.load({
+                                       params:
+                               {
+                                   QueryType: 'GetFilteredFleet',
+                                   sorting: sortingParam,
+                                   filters: currentFilters
+                               },
+                                       callback: function (records, operation, success) {
+                                           loadingMask.hide();
+                                           if (checkedHd) {
+                                               selModel.selectAll(true);
+                                           }
+                                           else
+                                               slectedboxidarray.length = 0;
+                                       },
+                                       scope: this
+                                   });
+                               }
+                           }
+                       }
+                       else {
+                           delete currentFilters[filtercolvalue];
+                           if (Object.keys(currentFilters).length == 0) {
+                               filteron = false;
+                               mainstore.currentPage = currentpage;
+                               loadingMask.show();
+                               mainstore.load({
+                                   params:
+                               {
+                                   QueryType: 'GetFilteredFleet',
+                                   sorting: sortingParam
+                               },
+                                   callback: function (records, operation, success) {
+                                       loadingMask.hide();
+                                       slectedboxidarray.length = 0;
+                                   },
+                                   scope: this
+                               });
+                           }
+                           else {
+                               loadingMask.show();
+                               mainstore.load({
+                                   params:
+                               {
+                                   QueryType: 'GetFilteredFleet',
+                                   sorting: sortingParam,
+                                   filters: currentFilters
+                               },
+                                   callback: function (records, operation, success) {
+                                       loadingMask.hide();
+                                       if (checkedHd) {
+                                           selModel.selectAll(true);
+                                       }
+                                       else
+                                           slectedboxidarray.length = 0;
+                                   },
+                                   scope: this
+                               });
+                           }
+                       }
+                   }
+                   else {
+                       delete currentFilters[filtercolvalue];
+                       if (Object.keys(currentFilters).length == 0) {
+                           filteron = false;
+                           mainstore.currentPage = currentpage;
+                           loadingMask.show();
+                           mainstore.load({
+                               params:
+                               {
+                                   QueryType: 'GetFilteredFleet',
+                                   sorting: sortingParam
+                               },
+                               callback: function (records, operation, success) {
+                                   loadingMask.hide();
+                                   slectedboxidarray.length = 0;
+                               },
+                               scope: this
+                           });
+                       }
+                       else {
+                           loadingMask.show();
+                           mainstore.load({
+                               params:
+                               {
+                                   QueryType: 'GetFilteredFleet',
+                                   sorting: sortingParam,
+                                   filters: currentFilters
+                               },
+                               callback: function (records, operation, success) {
+                                   loadingMask.hide();
+                                   if (checkedHd) {
+                                       selModel.selectAll(true);
+                                   }
+                                   else
+                                       slectedboxidarray.length = 0;
+                               },
+                               scope: this
+                           });
+                       }
+                   }
+
+               }
+               else {
+                   currentFilters = {};
+                   filteron = false;
+                   mainstore.currentPage = currentpage;
+                   loadingMask.show();
+                   mainstore.load({
+                       params:
+                               {
+                                   QueryType: 'GetFilteredFleet',
+                                   sorting: sortingParam
+
+                               },
+                       callback: function (records, operation, success) {
+                           loadingMask.hide();
+                           slectedboxidarray.length = 0;
+                       },
+                       scope: this
+                   });
+               }
            }
        }
    }
-   );
+   ,
+    viewConfig: {
+        loadMask: false,
+        stripeRows: false,
+        emptyText: ResVehiclePagerEmptyMsg, //'No vehicles to display',
+        useMsg: false,
+        getRowClass: function (record, index) {
+            var d = ((new Date()).getTime() - record.get('OriginDateTime').getTime()) / 1000 / 60 / 60;    // hours
 
-       geozonegrid = Ext.create('Ext.grid.Panel',
-   {
-       id: 'geozonegrid',
-       animCollapse: false,
-       autoLoad: false,
-       autoScroll: true,
-       loadMask: true,
-       maxWidth: window.screen.width,
-       maxHeight: window.screen.height,
-
-       closable: false,
-       enableColumnHide: false,
-       enableSorting: true,
-       width: window.screen.width,
-       autoHeight: true,
-       title: ResGeozones, //'Geozones',
-       store: geozonesstore,
-       columnLines: true,
-       stateId: 'stateGeozoneGrid',
-
-       enableColumnHide: true,
-       stateful: false,
-       width: window.screen.width,
-       collapsible: true,
-       animCollapse: true,
-       split: true,
-       features: [filters],
-
-       viewConfig:
-      {
-          emptyText: ResgeozonegridemptyText, //'No Geozones to display',
-          useMsg: false
-      }
-      ,
-       columns: [
-        {
-            header: ResgeozonegridcolumnsGeozone, //'Geozone'
-            dataIndex: 'name',
-            align: 'left',
-            width: 170,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-        {
-            text: Resgeozonegridcolumnsdesc, //'Description',
-            align: 'left',
-            width: 270,
-            dataIndex: 'desc',
-            filterable: true,
-            sortable: true,
-            hidden: true
-        },
-        {
-            header: ResgeozonegridcolumnsDirection, //'Direction',
-            dataIndex: 'direction',
-            align: 'left',
-            width: 70,
-            filterable: true,
-            sortable: true,
-            hidden: false
-        },
-        { header: ResgeozonegridcolumnsSeverityName, //'Severity', 
-            dataIndex: 'SeverityName',
-            filterable: true,
-            sortable: true
-        },
-        { header: '',
-            width: 120,
-            renderer: function (value, p, record) {
-                //var url = "./GeoZone_Landmarks/frmViewVehicleGeozones.aspx?geozoneId=" + value;
-                //var urlToLoad = '<iframe width=\\\'100%\\\' height=\\\'100%\\\' frameborder=\\\'0\\\' scrolling=\\\'no\\\' src=\\\'' + url + '\\\'></iframe>';                
-                //return Ext.String.format('<a href="javascript:void(0);" OnClick="Ext.openWindow(\'Current Assignment\', \'{1}\', 400, 220)">Current Assignment</a>', value, urlToLoad);
-
-                //return Ext.String.format('<a href="javascript:void(0);" OnClick="GetGeozoneCurrentAssignment({0});">Current Assignment</a>', value);
-                return Ext.String.format('<a href="javascript:void(0);" OnClick="GetGeozoneCurrentAssignment({0});">' + ResgeozonegridcolumnsCurrentAssignment + '</a>', value);
-            },
-            dataIndex: 'id',
-            filterable: true,
-            sortable: true
+            if (d < 24)
+                return 'withinlastday';
+            else if (d < 48)
+                return 'withinlast2days';
+            else if (d < 72)
+                return 'withinlast3days';
+            else if (d < 168)
+                return 'withinlast7days';
+            else
+                return 'morethan7days';
         }
-      ],
-       listeners: {
-           'activate': function (grid, eOpts) {
-               if (!geozonegridloaded) {
-                   geozonegrid.setTitle(ReshistorygridemptyText2/*"Loading..."*/);
-                   setTimeout(function () { loadGeozones(); }, 100);
-               }
-           },
-           'cellclick': function (grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
-               $(".highlightgrid").attr("style", "");
-               $(".highlightgrid").removeClass("highlightgrid");
-               $(tr).children("td").addClass("highlightgrid");
-               $(tr).children("td").attr("style", "background-color: #BBCCFF !important");
-           },
-           'celldblclick': function (grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
-               var el = document.getElementById(mapframe).contentWindow;
-               el.map.zoomToExtent(record.data.f.geometry.getBounds(), closest = true);
-               var currentZoom = el.map.getZoom();
-               el.map.zoomTo(currentZoom - 2);
+    },
+    // paging bar on the bottom
+    bbar: vehiclePager
+}
+);
 
-               el.onFeatureSelect(record.data.f);
+    var AMfilters = {
+        ftype: 'filters',
+        encode: false,
+        local: true
+    };
+    var alarmgrid = Ext.create('Ext.grid.Panel',
+{
+    id: 'alarmgrid',
+    animCollapse: false,
+    autoLoad: false,
+    autoScroll: true,
+    loadMask: true,
+    maxWidth: window.screen.width,
+    maxHeight: window.screen.height,
+    stateful: true,
+
+    closable: false,
+    enableColumnHide: true,
+    enableSorting: true,
+    features: [AMfilters],
+    closable: false,
+    width: window.screen.width,
+    autoHeight: true,
+    title: ResAlarms, //'Alarms',
+    store: alarmsstore,
+    columnLines: true,
+    stateId: 'stateAGrid',
+    viewConfig:
+   {
+       emptyText: ResalarmgridEmptyText, //'No alarms to display',
+       useMsg: false,
+       getRowClass: function (rec, rowIdx, params, store) {
+           if (rec.get('AlarmDescription').indexOf("CIA") != -1) {
+               return 'grid-row-red';
            }
-       },
-       dockedItems: [
-          {
-              xtype: 'toolbar',
-              dock: 'top',
-              items: [
-                vehiclegeozoneassignment
-             ]
-          }
-        ]
-       ,
-          //bbar: ['->', 'Total Geozones: <span id="geozonecount" style="margin-right:20px;">0</span>']
-          bbar: ['->', 'Total ' + ResGeozones + ': <span id="geozonecount" style="margin-right:20px;">0</span>']
+           if (rec.get('AlarmDescription').indexOf("VIA") != -1) {
+               return 'grid-row-yellow';
+           }
+       }
    }
-   );
+   ,
+    columns: [
+   {
+       text: ResalarmgridcolumnsAlarmId, //'Number',
+       align: 'left',
+       width: 80,
+       renderer: function (value) {
+           return Ext.String.format('<a href="javascript:void(0);" OnClick="NewAlarmWindow({0})">{1}</a>', value, value);
+       }
+      ,
+       dataIndex: 'AlarmId',
+       sortable: true,
+       filter: {
+           type: 'int'
+       }
+   }
+   ,
+   {
+       text: ResalarmgridcolumnsTimeCreated, //'Alarm Time',
+       align: 'left',
+       width: 135,
+       xtype: 'datecolumn',
+       format: userdateformat, //dateformat,
+       dataIndex: 'TimeCreated',
+       sortable: true,
+       filter: {
+           type: 'date'
+       }
+   }
+   ,
+   {
+       text: ResalarmgridcolumnsAlarmLevel, // 'Alarm Priority',
+       align: 'left',
+       width: 80,
+       dataIndex: 'AlarmLevel',
+       sortable: true,
+       filter: {
+           type: 'string'
+       }
+   }
+   ,
+   {
+       text: ResalarmgridcolumnsAlarmDescription, //'Alarm Description',
+       align: 'left',
+       width: 120,
+       renderer: function (value) {
+           if (value.indexOf("CIA") != -1 && soundPresent != true) {
+               soundPresent = true;
+               return Ext.String.format('{0} <object><embed src="../../sounds/FireAlarm.wav" hidden="true" autostart="True" loop="true" type="audio/wav" pluginspage="https://www.apple.com/quicktime/download/" /></object>', value);
+           }
+           else {
+               return value;
+           }
+       }
+      ,
+       dataIndex: 'AlarmDescription',
+       sortable: true,
+       filter: {
+           type: 'string'
+       }
+   }
+   ,
+   {
+       text: ResalarmgridcolumnsvehicleDescription, // 'Vehicle Description',
+       align: 'left',
+       width: 120,
+       dataIndex: 'vehicleDescription',
+       sortable: true,
+       filter: {
+           type: 'string'
+       }
+   }
+    ]
+   , listeners: {
+       'activate': function (grid, eOpts) {
+           $('.alarmtabtitleunreadmsg').show();
+           $('.alarmtabtitleunreadmsg').removeClass('blinking');
+       }
+   }
+   ,
+    // paging bar on the bottom
+    bbar: alarmsPager
+}
+);
+
+    var messagegrid = Ext.create('Ext.grid.Panel',
+{
+    id: 'messagegrid',
+    animCollapse: false,
+    autoLoad: false,
+    autoScroll: true,
+    loadMask: true,
+    maxWidth: window.screen.width,
+    maxHeight: window.screen.height,
+    stateful: true,
+
+    closable: false,
+    enableColumnHide: true,
+    enableSorting: true,
+    features: [AMfilters],
+    closable: false,
+    width: window.screen.width,
+    autoHeight: true,
+    title: ResMessages, //'Messages',
+    store: messagesstore,
+    columnLines: true,
+    stateId: 'stateMGrid',
+    viewConfig:
+   {
+       emptyText: ResmessagegridemptyText, //'No messages to display',
+       useMsg: false
+   }
+   ,
+    columns: [
+   {
+       text: ResmessagegridcolumnsMessageId, //'MessageId',
+       align: 'left',
+       width: 80,
+       renderer: function (value, p, record) {
+
+           var MsgKey = Ext.String.escape(record.data['MsgKey']);
+           return Ext.String.format('<a href="javascript:void(0);" OnClick="NewMessageWindow(\'{0}\')">{1}</a>', MsgKey, value);
+       }
+      ,
+       dataIndex: 'MessageId',
+       sortable: true,
+       filter: {
+           type: 'int'
+       }
+   }
+   ,
+   {
+       text: ResmessagegridcolumnsMsgDateTime, //'Date/Time',
+       align: 'left',
+       width: 135,
+       xtype: 'datecolumn',
+       format: userdateformat, //dateformat,
+       dataIndex: 'MsgDateTime',
+       sortable: true,
+       filter: {
+           type: 'date'
+       }
+   }
+   ,
+   {
+       text: ResmessagegridcolumnsDescription, // 'From',
+       align: 'left',
+       width: 150,
+       dataIndex: 'Description',
+       sortable: true,
+       filter: {
+           type: 'string'
+       }
+   }
+   ,
+   {
+       text: ResmessagegridcolumnsMsgBody, //'Message Body',
+       align: 'left',
+       width: 200,
+       dataIndex: 'MsgBody',
+       sortable: true,
+       filter: {
+           type: 'string'
+       }
+   }
+   ,
+   {
+       text: ResmessagegridcolumnsAcknowledged, //'Acknowledged',
+       align: 'left',
+       width: 120,
+       dataIndex: 'Acknowledged',
+       sortable: true,
+       filter: {
+           type: 'string'
+       }
+   }
+    ]
+   , dockedItems: [
+       {
+           xtype: 'toolbar',
+           dock: 'top',
+           items: [
+             sendmessage
+           ]
+       }
+   ]
+   , listeners: {
+       'activate': function (grid, eOpts) {
+           $('.messagetabtitleunreadmsg').show();
+           $('.messagetabtitleunreadmsg').removeClass('blinking');
+       }
+   }
+   ,
+    // paging bar on the bottom
+    bbar: messagesPager
+}
+);
+
+    geolandmarkgrid = Ext.create('Ext.grid.Panel',
+{
+    id: 'geolandmarkgrid',
+    animCollapse: false,
+    autoLoad: false,
+    autoScroll: true,
+    loadMask: true,
+    maxWidth: window.screen.width,
+    maxHeight: window.screen.height,
+    stateful: true,
+
+    closable: false,
+    enableColumnHide: false,
+    enableSorting: true,
+    closable: false,
+    width: window.screen.width,
+    autoHeight: true,
+    title: ResGeozoneLandmarks, //'Geozone/Landmarks',
+    store: geolandmarksstore,
+    columnLines: true,
+    stateId: 'stateLandmarkGrid',
+    viewConfig:
+   {
+       emptyText: ResgeolandmarkgridemptyText, //'No Geozone/Landmarks to display',
+       useMsg: false
+   }
+   ,
+    columns: [
+     {
+         header: Resgeolandmarkgridcolumnsname, //'Name',
+         dataIndex: 'name'
+     },
+     {
+         header: ResgeolandmarkgridcolumnsType, //'Type',
+         dataIndex: 'type'
+     }
+    /*,
+    { header: '',
+    renderer: function (value, p, record) {
+    //var MsgKey = Ext.String.escape(record.data['MsgKey']);
+    return '<a href="javascript:void(0);" onclick="return confirm(\'Are you sure you want to delete?\');"><img border="0" src="../images/delete.gif"></a>';
+    }
+    }*/
+    ],
+
+
+    listeners: {
+        'activate': function (grid, eOpts) {
+            geolandmarkgrid.setTitle(ResgeolandmarkgridsetTitle); //geolandmarkgrid.setTitle("Loading...");
+
+            setTimeout(function () { loadGeozoneLandmarks(); }, 100);
+
+
+        },
+        'cellclick': function (grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+
+            $(".highlightgrid").attr("style", "");
+            $(".highlightgrid").removeClass("highlightgrid");
+            $(tr).children("td").addClass("highlightgrid");
+            $(tr).children("td").attr("style", "background-color: #BBCCFF !important");
+
+            var el = document.getElementById(mapframe).contentWindow;
+            el.map.zoomToExtent(record.data.f.geometry.getBounds(), closest = true);
+            var currentZoom = el.map.getZoom();
+            el.map.zoomTo(currentZoom - 2);
+
+            el.onFeatureSelect(record.data.f);
+        }
+    },
+    //bbar: ['->', 'Total Geozone/Landmarks: <span id="geolandmarkcount" style="margin-right:20px;">0</span>']
+    bbar: ['->', 'Total ' + ResGeozoneLandmarks + ': <span id="geolandmarkcount" style="margin-right:20px;">0</span>']
+}
+);
+    var vehiclegeozoneassignment = Ext.create('Ext.Button',
+{
+    text: ResvehiclegeozoneassignmentButtonText, //'Vehicle-Geozone Assignment',
+    id: 'vehiclegeozoneassignmentButton',
+    tooltip: ResVehicleGeozoneAssignment, //'Vehicle-Geozone Assignment',
+    iconCls: 'map',
+    cls: 'cmbfonts',
+    textAlign: 'left',
+    handler: function () {
+        try {
+            /*var legendURL = "./GeoZone_Landmarks/frmVehicleGeoZone.aspx";
+            var urlToLoad = '<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="' + legendURL + '"></iframe>';
+            openWindow('Vehicle-Geozone Assignment', urlToLoad, 1010, 660);*/
+
+            var mypage = './GeoZone_Landmarks/frmVehicleGeoZone.aspx'
+            var myname = '';
+            var w = 1010;
+            var h = 660;
+            var winl = (screen.width - w) / 2;
+            var wint = (screen.height - h) / 2;
+            winprops = 'height=' + h + ',width=' + w + ',top=' + wint + ',left=' + winl + 'location=0,status=0,scrollbars=0,toolbar=0,menubar=0,'
+            win = window.open(mypage, myname, winprops)
+            if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
+
+
+        }
+        catch (err) {
+        }
+    }
+}
+);
+
+    geozonegrid = Ext.create('Ext.grid.Panel',
+{
+    id: 'geozonegrid',
+    animCollapse: false,
+    autoLoad: false,
+    autoScroll: true,
+    loadMask: true,
+    maxWidth: window.screen.width,
+    maxHeight: window.screen.height,
+
+    closable: false,
+    enableColumnHide: false,
+    enableSorting: true,
+    width: window.screen.width,
+    autoHeight: true,
+    title: ResGeozones, //'Geozones',
+    store: geozonesstore,
+    columnLines: true,
+    stateId: 'stateGeozoneGrid',
+
+    enableColumnHide: true,
+    stateful: false,
+    width: window.screen.width,
+    collapsible: true,
+    animCollapse: true,
+    split: true,
+    features: [filters],
+
+    viewConfig:
+   {
+       emptyText: ResgeozonegridemptyText, //'No Geozones to display',
+       useMsg: false
+   }
+   ,
+    columns: [
+     {
+         header: ResgeozonegridcolumnsGeozone, //'Geozone'
+         dataIndex: 'name',
+         align: 'left',
+         width: 170,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         text: Resgeozonegridcolumnsdesc, //'Description',
+         align: 'left',
+         width: 270,
+         dataIndex: 'desc',
+         filterable: true,
+         sortable: true,
+         hidden: true
+     },
+     {
+         header: ResgeozonegridcolumnsDirection, //'Direction',
+         dataIndex: 'direction',
+         align: 'left',
+         width: 70,
+         filterable: true,
+         sortable: true,
+         hidden: false
+     },
+     {
+         header: ResgeozonegridcolumnsSeverityName, //'Severity',
+         dataIndex: 'SeverityName',
+         filterable: true,
+         sortable: true
+     },
+     {
+         header: '',
+         width: 120,
+         renderer: function (value, p, record) {
+             //var url = "./GeoZone_Landmarks/frmViewVehicleGeozones.aspx?geozoneId=" + value;
+             //var urlToLoad = '<iframe width=\\\'100%\\\' height=\\\'100%\\\' frameborder=\\\'0\\\' scrolling=\\\'no\\\' src=\\\'' + url + '\\\'></iframe>';
+             //return Ext.String.format('<a href="javascript:void(0);" OnClick="Ext.openWindow(\'Current Assignment\', \'{1}\', 400, 220)">Current Assignment</a>', value, urlToLoad);
+
+             //return Ext.String.format('<a href="javascript:void(0);" OnClick="GetGeozoneCurrentAssignment({0});">Current Assignment</a>', value);
+             return Ext.String.format('<a href="javascript:void(0);" OnClick="GetGeozoneCurrentAssignment({0});">' + ResgeozonegridcolumnsCurrentAssignment + '</a>', value);
+         },
+         dataIndex: 'id',
+         filterable: true,
+         sortable: true
+     }
+    ],
+    listeners: {
+        'activate': function (grid, eOpts) {
+            if (!geozonegridloaded) {
+                geozonegrid.setTitle(ReshistorygridemptyText2/*"Loading..."*/);
+                setTimeout(function () { loadGeozones(); }, 100);
+            }
+        },
+        'cellclick': function (grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+            $(".highlightgrid").attr("style", "");
+            $(".highlightgrid").removeClass("highlightgrid");
+            $(tr).children("td").addClass("highlightgrid");
+            $(tr).children("td").attr("style", "background-color: #BBCCFF !important");
+        },
+        'celldblclick': function (grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+            var el = document.getElementById(mapframe).contentWindow;
+            el.map.zoomToExtent(record.data.f.geometry.getBounds(), closest = true);
+            var currentZoom = el.map.getZoom();
+            el.map.zoomTo(currentZoom - 2);
+
+            el.onFeatureSelect(record.data.f);
+        }
+    },
+    dockedItems: [
+       {
+           xtype: 'toolbar',
+           dock: 'top',
+           items: [
+             vehiclegeozoneassignment
+           ]
+       }
+    ]
+    ,
+    //bbar: ['->', 'Total Geozones: <span id="geozonecount" style="margin-right:20px;">0</span>']
+    bbar: ['->', 'Total ' + ResGeozones + ': <span id="geozonecount" style="margin-right:20px;">0</span>']
+}
+);
 
     var landmarksPager = new Ext.PagingToolbar(
     {
         store: landmarksstore,
         displayInfo: true,
         displayMsg: 'Total ' + ResLandmarks + ': {2}',//'Displaying alarms {0} - {1} of {2}',
-        emptyMsg: 'Total ' + ResLandmarks + ': 0' 
+        emptyMsg: 'Total ' + ResLandmarks + ': 0'
     });
 
-       landmarkgrid = Ext.create('Ext.grid.Panel',
+    landmarkgrid = Ext.create('Ext.grid.Panel',
+{
+    id: 'landmarkgrid',
+    animCollapse: false,
+    autoLoad: false,
+    autoScroll: true,
+    loadMask: true,
+    maxWidth: window.screen.width,
+    maxHeight: window.screen.height,
+    stateful: true,
+
+    closable: false,
+    enableColumnHide: false,
+    enableSorting: false,
+    closable: false,
+    width: window.screen.width,
+    autoHeight: true,
+    title: ResLandmarks, //'Landmarks',
+    store: landmarksstore,
+    columnLines: true,
+    stateId: 'stateLGrid',
+
+    enableColumnHide: true,
+    stateful: false,
+    width: window.screen.width,
+    collapsible: true,
+    animCollapse: true,
+    split: true,
+    features: [filters],
+
+    viewConfig:
    {
-       id: 'landmarkgrid',
-       animCollapse: false,
-       autoLoad: false,
-       autoScroll: true,
-       loadMask: true,
-       maxWidth: window.screen.width,
-       maxHeight: window.screen.height,
-       stateful: true,
+       emptyText: ReslandmarkgridemptyText, // 'No Landmarks to display',
+       useMsg: false
+   }
+   ,
+    columns: [
+     {
+         header: Reslandmarkgridname, //'Landmark',
+         dataIndex: 'name', align: 'left',
+         width: 170,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: Reslandmarkgriddesc, //'Description',
+         dataIndex: 'desc', align: 'left',
+         width: 120,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: true
+     },
+     {
+         header: ReslandmarkgridStreetAddress, //'Street Address',
+         dataIndex: 'StreetAddress', align: 'left',
+         width: 270,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: ReslandmarkgridEmail, //'Email',
+         dataIndex: 'Email', align: 'left',
+         width: 100,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: ReslandmarkgridContactPhoneNum, // 'Contact Phone',
+         dataIndex: 'ContactPhoneNum', align: 'left',
+         width: 90,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: Reslandmarkgridradius, // 'Radius (m)',
+         dataIndex: 'radius', align: 'right',
+         width: 70,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: ReslandmarkgridCategoryName, //'Category',
+         dataIndex: 'CategoryName', align: 'left',
+         width: 200,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     }
+    ],
+    listeners: {
+        'activate': function (grid, eOpts) {
+            if (!landmarkgridloaded) {
+                landmarkgrid.setTitle(ResgeolandmarkgridsetTitle/*"Loading..."*/);
+                setTimeout(function () { loadLandmarks(); }, 100);
+            }
+        },
+        'cellclick': function (grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
 
-       closable: false,
-       enableColumnHide: false,
-       enableSorting: false,
-       closable: false,
-       width: window.screen.width,
-       autoHeight: true,
-       title: ResLandmarks, //'Landmarks',
-       store: landmarksstore,
-       columnLines: true,
-       stateId: 'stateLGrid',
+            $(".highlightgrid").attr("style", "");
+            $(".highlightgrid").removeClass("highlightgrid");
+            $(tr).children("td").addClass("highlightgrid");
+            $(tr).children("td").attr("style", "background-color: #BBCCFF !important");
+        },
+        'celldblclick': function (grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+            var el = document.getElementById(mapframe).contentWindow;
+            el.map.zoomToExtent(record.data.f.geometry.getBounds(), closest = true);
+            var currentZoom = el.map.getZoom();
+            el.map.zoomTo(currentZoom - 2);
 
-       enableColumnHide: true,
-       stateful: false,
-       width: window.screen.width,
-       collapsible: true,
-       animCollapse: true,
-       split: true,
-       features: [filters],
-
-       viewConfig:
-      {
-          emptyText: ReslandmarkgridemptyText, // 'No Landmarks to display',
-          useMsg: false
-      }
-      ,
-       columns: [
-        { header: Reslandmarkgridname, //'Landmark',
-            dataIndex: 'name', align: 'left',
-            width: 170,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-        { header: Reslandmarkgriddesc, //'Description', 
-            dataIndex: 'desc', align: 'left',
-            width: 120,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: true
-        },
-        { header: ReslandmarkgridStreetAddress, //'Street Address', 
-            dataIndex: 'StreetAddress', align: 'left',
-            width: 270,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-        { header: ReslandmarkgridEmail, //'Email', 
-            dataIndex: 'Email', align: 'left',
-            width: 100,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-        { header: ReslandmarkgridContactPhoneNum, // 'Contact Phone',
-            dataIndex: 'ContactPhoneNum', align: 'left',
-            width: 90,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-        { header: Reslandmarkgridradius, // 'Radius (m)',
-            dataIndex: 'radius', align: 'right',
-            width: 70,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-        {
-            header: ReslandmarkgridCategoryName, //'Category', 
-            dataIndex: 'CategoryName', align: 'left',
-            width: 200,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
+            el.onFeatureSelect(record.data.f);
         }
-      ],
-       listeners: {
-           'activate': function (grid, eOpts) {
-               if (!landmarkgridloaded) {
-                   landmarkgrid.setTitle(ResgeolandmarkgridsetTitle/*"Loading..."*/);
-                   setTimeout(function () { loadLandmarks(); }, 100);
-               }
-           },
-           'cellclick': function (grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+    }
+    ,
+    //bbar: ['->', 'Total Landmarks: <span id="landmarkcount" style="margin-right:20px;">0</span>']
+    bbar: landmarksPager//['->', 'Total ' + ResLandmarks + ': <span id="landmarkcount" style="margin-right:20px;">0</span>']
+}
+);
 
-               $(".highlightgrid").attr("style", "");
-               $(".highlightgrid").removeClass("highlightgrid");
-               $(tr).children("td").addClass("highlightgrid");
-               $(tr).children("td").attr("style", "background-color: #BBCCFF !important");
-           },
-           'celldblclick': function (grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
-               var el = document.getElementById(mapframe).contentWindow;
-               el.map.zoomToExtent(record.data.f.geometry.getBounds(), closest = true);
-               var currentZoom = el.map.getZoom();
-               el.map.zoomTo(currentZoom - 2);
+    var geozonelandmarktabs = Ext.create('Ext.tab.Panel',
+{
+    region: 'center', // a center region is ALWAYS required for border layout
+    deferredRender: false,
+    title: ResGeozoneLandmarks, //'Geozone/Landmarks',
+    activeTab: 0,     // first tab initially active
+    items: [geozonegrid, landmarkgrid]
 
-               el.onFeatureSelect(record.data.f);
-           }
-       }
-       ,
-       //bbar: ['->', 'Total Landmarks: <span id="landmarkcount" style="margin-right:20px;">0</span>']
-       bbar: landmarksPager//['->', 'Total ' + ResLandmarks + ': <span id="landmarkcount" style="margin-right:20px;">0</span>']
-   }
-   );
+}
+);
 
-       var geozonelandmarktabs = Ext.create('Ext.tab.Panel',
+    var selHistoryModel = Ext.create('Ext.selection.CheckboxModel',
+{
+    checkOnly: true,
+    enableKeyNav: false,
+    listeners:
    {
-       region: 'center', // a center region is ALWAYS required for border layout
-       deferredRender: false,
-       title: ResGeozoneLandmarks, //'Geozone/Landmarks',
-       activeTab: 0,     // first tab initially active
-       items: [geozonegrid, landmarkgrid]
-
+       selectionchange: function (selModel, selections) {
+           try {
+               var isChecked = this.view.headerCt.child('gridcolumn[isCheckerHd]').el.hasCls(Ext.baseCSSPrefix + 'grid-hd-checker-on');
+               if (isChecked && selections.length < 1) {
+                   this.view.headerCt.child('gridcolumn[isCheckerHd]').el.removeCls(Ext.baseCSSPrefix + 'grid-hd-checker-on');
+                   this.clearSelections();
+               }
+           }
+           catch (err) {
+           }
+       }
    }
-   );
+}
+);
 
-       var selHistoryModel = Ext.create('Ext.selection.CheckboxModel',
+    var selHistoryStopModel = Ext.create('Ext.selection.CheckboxModel',
+{
+    checkOnly: true,
+    enableKeyNav: false,
+    listeners:
    {
-       checkOnly: true,
-       enableKeyNav: false,
-       listeners:
-      {
-          selectionchange: function (selModel, selections) {
-              try {
-                  var isChecked = this.view.headerCt.child('gridcolumn[isCheckerHd]').el.hasCls(Ext.baseCSSPrefix + 'grid-hd-checker-on');
-                  if (isChecked && selections.length < 1) {
-                      this.view.headerCt.child('gridcolumn[isCheckerHd]').el.removeCls(Ext.baseCSSPrefix + 'grid-hd-checker-on');
-                      this.clearSelections();
-                  }
-              }
-              catch (err) {
-              }
-          }
-      }
+       selectionchange: function (selModel, selections) {
+           try {
+
+
+           }
+           catch (err) {
+           }
+       }
    }
-   );
+}
+);
 
-       var selHistoryStopModel = Ext.create('Ext.selection.CheckboxModel',
+
+    /*
+    *
+    * Code of history grid with form
+    *
+    */
+
+
+    /*
+    * Here is where we create the Form
+    */
+    historyDateFrom = Ext.create('Ext.form.field.Date', {
+        anchor: '100%',
+        labelWidth: 50,
+        maxWidth: 190,
+        fieldLabel: ReshistoryDateFromfieldLabel, //'From',
+        name: 'historyDateFrom',
+        format: userDate,
+        value: new Date()
+    });
+    historyTimeFrom = Ext.create('Ext.form.field.Time', {
+        name: 'historyTimeFrom',
+        fieldLabel: '',
+        format: userTime,
+        labelWidth: 0,
+        minValue: '12 AM',
+        maxValue: '11:45 PM',
+        increment: 15,
+        value: '12:00 AM',
+        maxWidth: 100,
+        margin: '0 0 0 10',
+        editable: false
+    });
+    historyDateTo = Ext.create('Ext.form.field.Date', {
+        anchor: '100%',
+        labelWidth: 50,
+        maxWidth: 190,
+        fieldLabel: ReshistoryDateTofieldLabel, //'To',
+        name: 'historyDateTo',
+        format: userDate,
+        //value: (new Date()).getDate() + 1
+        value: new Date((new Date()).getFullYear(), (new Date()).getMonth(), (new Date()).getDate() + 1)
+    });
+    historyTimeTo = Ext.create('Ext.form.field.Time', {
+        name: 'historyTimeTo',
+        fieldLabel: '',
+        format: userTime,
+        labelWidth: 0,
+        minValue: '12 AM',
+        maxValue: '11:45 PM',
+        increment: 15,
+        value: '12:00 AM',
+        maxWidth: 100,
+        margin: '0 0 0 10',
+        editable: false
+    });
+
+    var historyDateTimeContainer = Ext.create('Ext.Panel', {
+        //title: 'Messages',
+        labelWidth: 0,
+        border: 0,
+        frame: false,
+        bodyStyle: 'padding:0;border:0;background-color:transparent;',
+        width: 300,
+        layout: 'column', // arrange fieldsets side by side
+        defaults: {
+            width: 240,
+            labelWidth: 90
+        },
+        //margin: '10px 0',
+        header: false,
+        defaultType: 'textfield',
+        items: [
+        historyDateFrom,
+        historyTimeFrom,
+        historyDateTo,
+        historyTimeTo]
+    });
+
+    var btnHistorySearch = Ext.create('Ext.Button',
+    {
+        text: ResbtmHistorySearchText, //'Advanced Search',
+        id: 'btmHistorySearch',
+        tooltip: ResSearchHistory, //'Search History',
+        iconCls: 'map',
+        cls: 'cmbfonts',
+        textAlign: 'left',
+        handler: function () {
+            try {
+                if (historyForm.isHidden())
+                    historyForm.show();
+                else
+                    historyForm.hide();
+
+            }
+            catch (err) {
+            }
+        }
+    }
+    );
+
+    var btnHistoryMapit = Ext.create('Ext.Button',
+    {
+        text: ResbtnHistoryMapitText, //'Map It',
+        id: 'btnHistoryMapit',
+        tooltip: ResMapTheSelectedHistoryRecords, //'Map the selected history records',
+        iconCls: 'map',
+        margin: '0 5',
+        cls: 'cmbfonts',
+        textAlign: 'left',
+        handler: function () {
+            try {
+                ResetHistoryReplay();
+
+                var historytype = historyType.getValue();
+                if (historytype == 0) {
+                    selections = historygrid.getSelectionModel().getSelection();
+                    mapHistories(selections, true, true, false);
+                }
+                else if (historytype == 1 || historytype == 2 || historytype == 3) {
+                    selections = historyStopGrid.getSelectionModel().getSelection();
+                    mapHistories(selections, true, true, true);
+                }
+                else if (historytype == 4) {
+                    var selections = [];
+                    for (itrip = 0; itrip < historyTripsNum; itrip++) {
+                        var innerGrid = Ext.getCmp('hidtoryDetailsGrid' + itrip);
+                        if (innerGrid) {
+                            var ss = innerGrid.getSelectionModel().getSelection();
+                            selections = selections.concat(ss);
+                        }
+                    }
+                    //var innerGrid = Ext.getCmp('hidtoryDetailsGrid' + '0');
+                    //var selections = innerGrid.getSelectionModel().getSelection();
+                    mapHistories(selections, true, true, false);
+                }
+
+            }
+            catch (err) {
+                var i = 0;
+            }
+        }
+    }
+    );
+
+    var winMapLegend;
+
+    var btnHistoryLegend = Ext.create('Ext.Button',
+    {
+        text: ResbtnHistoryLegendText, //'Map Legend',
+        id: 'btnHistoryLegend',
+        iconCls: 'map',
+        margin: '0 5',
+        cls: 'cmbfonts',
+        textAlign: 'left',
+        hidden: true,
+        handler: function () {
+            try {
+                if (!winMapLegend) {
+                    var legendURL = "./History/frmhistoryMapsoluteLegend.aspx?f=1";
+                    var urlToLoad = '<iframe style="background-color:white;" width="100%" height="100%" frameborder="0" scrolling="no" src="' + legendURL + '"></iframe>';
+                    winMapLegend = openWindow('Map Legend', urlToLoad, 300, 230);
+                }
+                else {
+                    if (winMapLegend.isVisible()) {
+                        winMapLegend.hide();
+                    } else {
+                        winMapLegend.show();
+                    }
+                }
+            }
+            catch (err) {
+            }
+        }
+    }
+    );
+
+    var btnHistoryMapAll = Ext.create('Ext.Button',
+    {
+        text: ResbtnHistoryMapAllText, //'Map All',
+        id: 'btnHistoryMapAll',
+        iconCls: 'map',
+        margin: '0 5',
+        cls: 'cmbfonts',
+        textAlign: 'left',
+        hidden: false,
+        handler: function () {
+            try {
+                ResetHistoryReplay();
+                if (AllHistoryRecords.length > 0)
+                    mapHistories(AllHistoryRecords, true, false, false);
+            }
+            catch (err) {
+            }
+        }
+    }
+    );
+
+    var historyTripColorsWin;
+    var historyTripColors = Ext.create('Ext.Button',
+{
+    text: ResHisTripColorsButtonText, //'Trip Colors',
+    id: 'TripColorsButton',
+    tooltip: ResHisTripColors, // 'Legend of Trip Colors',
+    iconCls: 'map',
+    margin: '0 5',
+    cls: 'cmbfonts',
+    textAlign: 'left',
+    handler: function () {
+        try {
+            if (!historyTripColorsWin) {
+                var legendURL = "./TripColors.aspx";
+                var urlToLoad = '<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="' + legendURL + '"></iframe>';
+                historyTripColorsWin = openWindow(ResHisTripColorsButtonText, urlToLoad, 500, 190);
+            }
+            else {
+                if (historyTripColorsWin.isVisible()) {
+                    historyTripColorsWin.hide();
+                } else {
+                    historyTripColorsWin.show();
+                }
+            }
+        }
+        catch (err) {
+        }
+    }
+});
+
+    btnVehicleonoff = Ext.create('Ext.Button',
+{
+    text: ifShowVehicleIcon ? ResbtnVehicleonoffHideDetailsText : ResbtnVehicleonoffShowDetailsText, //'Hide Details' : 'Show Details',
+    id: 'labelVehicleonoffButton',
+    tooltip: ResbtnVehicleonoffTooltipText, //'Hide/Show Vehicles',
+    iconCls: 'map',
+    cls: 'cmbfonts',
+    textAlign: 'left',
+    handler: function () {
+        try {
+
+            if (ifShowVehicleIcon) {
+                ifShowVehicleIcon = false;
+                btnVehicleonoff.setText(ResbtnVehicleonoffShowDetailsText/*'Show Details'*/);
+            }
+            else {
+                ifShowVehicleIcon = true;
+                btnVehicleonoff.setText(ResbtnVehicleonoffHideDetailsText/*'Hide Details'*/);
+            }
+
+            OriginIfShowVehicleIcon = ifShowVehicleIcon;
+
+            redrawHistoryVehicleMarkers();
+        }
+        catch (err) {
+        }
+    }
+}
+);
+
+    var btnHistorySendCommand = Ext.create('Ext.Button',
    {
-       checkOnly: true,
-       enableKeyNav: false,
-       listeners:
-      {
-          selectionchange: function (selModel, selections) {
-              try {
-
-
-              }
-              catch (err) {
-              }
-          }
-      }
-   }
-   );
-
-
-       /*
-       *
-       * Code of history grid with form
-       *
-       */
-
-
-       /*
-       * Here is where we create the Form
-       */
-       historyDateFrom = Ext.create('Ext.form.field.Date', {
-           anchor: '100%',
-           labelWidth: 50,
-           maxWidth: 190,
-           fieldLabel: ReshistoryDateFromfieldLabel, //'From',
-           name: 'historyDateFrom',
-           format: userDate,
-           value: new Date()
-       });
-       historyTimeFrom = Ext.create('Ext.form.field.Time', {
-           name: 'historyTimeFrom',
-           fieldLabel: '',
-           format : userTime,
-           labelWidth: 0,
-           minValue: '12 AM',
-           maxValue: '11:45 PM',
-           increment: 15,
-           value: '12:00 AM',
-           maxWidth: 100,
-           margin: '0 0 0 10',
-           editable: false
-       });
-       historyDateTo = Ext.create('Ext.form.field.Date', {
-           anchor: '100%',
-           labelWidth: 50,
-           maxWidth: 190,
-           fieldLabel: ReshistoryDateTofieldLabel, //'To',
-           name: 'historyDateTo',
-           format: userDate,
-           //value: (new Date()).getDate() + 1
-           value: new Date((new Date()).getFullYear(), (new Date()).getMonth(), (new Date()).getDate() + 1)
-       });
-       historyTimeTo = Ext.create('Ext.form.field.Time', {
-           name: 'historyTimeTo',
-           fieldLabel: '',
-           format: userTime,
-           labelWidth: 0,
-           minValue: '12 AM',
-           maxValue: '11:45 PM',
-           increment: 15,
-           value: '12:00 AM',
-           maxWidth: 100,
-           margin: '0 0 0 10',
-           editable: false
-       });
-
-       var historyDateTimeContainer = Ext.create('Ext.Panel', {
-           //title: 'Messages',
-           labelWidth: 0,
-           border: 0,
-           frame: false,
-           bodyStyle: 'padding:0;border:0;background-color:transparent;',
-           width: 300,
-           layout: 'column', // arrange fieldsets side by side
-           defaults: {
-               width: 240,
-               labelWidth: 90
-           },
-           //margin: '10px 0',
-           header: false,
-           defaultType: 'textfield',
-           items: [
-           historyDateFrom,
-           historyTimeFrom,
-           historyDateTo,
-           historyTimeTo]
-       });
-
-       var btnHistorySearch = Ext.create('Ext.Button',
-       {
-           text: ResbtmHistorySearchText, //'Advanced Search',
-           id: 'btmHistorySearch',
-           tooltip: ResSearchHistory, //'Search History',
-           iconCls: 'map',
-           cls: 'cmbfonts',
-           textAlign: 'left',
-           handler: function () {
-               try {
-                   if (historyForm.isHidden())
-                       historyForm.show();
-                   else
-                       historyForm.hide();
-
-               }
-               catch (err) {
-               }
-           }
-       }
-       );
-
-       var btnHistoryMapit = Ext.create('Ext.Button',
-       {
-           text: ResbtnHistoryMapitText, //'Map It',
-           id: 'btnHistoryMapit',
-           tooltip: ResMapTheSelectedHistoryRecords, //'Map the selected history records',
-           iconCls: 'map',
-           margin: '0 5',
-           cls: 'cmbfonts',
-           textAlign: 'left',
-           handler: function () {
-               try {
-                   ResetHistoryReplay();
-
-                   var historytype = historyType.getValue();
-                   if (historytype == 0) {
-                       selections = historygrid.getSelectionModel().getSelection();
-                       mapHistories(selections, true, true, false);
-                   }
-                   else if (historytype == 1 || historytype == 2 || historytype == 3) {
-                       selections = historyStopGrid.getSelectionModel().getSelection();
-                       mapHistories(selections, true, true, true);
-                   }
-                   else if (historytype == 4) {
-                       var selections = [];
-                       for (itrip = 0; itrip < historyTripsNum; itrip++) {
-                           var innerGrid = Ext.getCmp('hidtoryDetailsGrid' + itrip);
-                           if (innerGrid) {
-                               var ss = innerGrid.getSelectionModel().getSelection();
-                               selections = selections.concat(ss);
-                           }
-                       }
-                       //var innerGrid = Ext.getCmp('hidtoryDetailsGrid' + '0');
-                       //var selections = innerGrid.getSelectionModel().getSelection();
-                       mapHistories(selections, true, true, false);
-                   }
-
-               }
-               catch (err) {
-                   var i = 0;
-               }
-           }
-       }
-       );
-
-       var winMapLegend;
-
-       var btnHistoryLegend = Ext.create('Ext.Button',
-       {
-           text: ResbtnHistoryLegendText, //'Map Legend',
-           id: 'btnHistoryLegend',
-           iconCls: 'map',
-           margin: '0 5',
-           cls: 'cmbfonts',
-           textAlign: 'left',
-           hidden: true,
-           handler: function () {
-               try {
-                   if (!winMapLegend) {
-                       var legendURL = "./History/frmhistoryMapsoluteLegend.aspx?f=1";
-                       var urlToLoad = '<iframe style="background-color:white;" width="100%" height="100%" frameborder="0" scrolling="no" src="' + legendURL + '"></iframe>';
-                       winMapLegend = openWindow('Map Legend', urlToLoad, 300, 230);
-                   }
-                   else {
-                       if (winMapLegend.isVisible()) {
-                           winMapLegend.hide();
-                       } else {
-                           winMapLegend.show();
-                       }
-                   }
-               }
-               catch (err) {
-               }
-           }
-       }
-       );
-
-       var btnHistoryMapAll = Ext.create('Ext.Button',
-       {
-           text: ResbtnHistoryMapAllText, //'Map All',
-           id: 'btnHistoryMapAll',
-           iconCls: 'map',
-           margin: '0 5',
-           cls: 'cmbfonts',
-           textAlign: 'left',
-           hidden: false,
-           handler: function () {
-               try {
-                   ResetHistoryReplay();
-                   if (AllHistoryRecords.length > 0)
-                       mapHistories(AllHistoryRecords, true, false, false);
-               }
-               catch (err) {
-               }
-           }
-       }
-       );
-
-var historyTripColorsWin;
-       var historyTripColors = Ext.create('Ext.Button',
-   {
-       text: ResHisTripColorsButtonText, //'Trip Colors',
-       id: 'TripColorsButton',
-       tooltip: ResHisTripColors, // 'Legend of Trip Colors',
+       text: ResbtnHistorySendCMDText, //'Send Command',
+       id: 'btnHistorySendCommand',
+       tooltip: ResSendCMDHistoryRecords,
        iconCls: 'map',
        margin: '0 5',
        cls: 'cmbfonts',
        textAlign: 'left',
        handler: function () {
            try {
-               if (!historyTripColorsWin) {
-                   var legendURL = "./TripColors.aspx";
-                   var urlToLoad = '<iframe width="100%" height="100%" frameborder="0" scrolling="no" src="' + legendURL + '"></iframe>';
-                   historyTripColorsWin = openWindow(ResHisTripColorsButtonText, urlToLoad, 500, 190);
-               }
-               else {
-                   if (historyTripColorsWin.isVisible()) {
-                       historyTripColorsWin.hide();
-                   } else {
-                       historyTripColorsWin.show();
-                   }
+               if (historyVehicles.getValue() != null || historyVehicles.getValue().trim() != "") {
+                   var test = mainstore.findExact('VehicleId', historyVehicles.getValue(), 0);
+                   var testvalue = mainstore.getAt(test).data.LicensePlate;
+                   SensorInfoWindow(testvalue)
                }
            }
            catch (err) {
+
            }
        }
    });
 
-       btnVehicleonoff = Ext.create('Ext.Button',
-   {
-       text: ifShowVehicleIcon ? ResbtnVehicleonoffHideDetailsText : ResbtnVehicleonoffShowDetailsText, //'Hide Details' : 'Show Details',
-       id: 'labelVehicleonoffButton',
-       tooltip: ResbtnVehicleonoffTooltipText, //'Hide/Show Vehicles',
-       iconCls: 'map',
-       cls: 'cmbfonts',
-       textAlign: 'left',
-       handler: function () {
-           try {
+    btnHistoryReplay = Ext.create('Ext.Button',
+{
+    text: 'Replay',
+    id: 'labelHistoryReplay',
+    //tooltip: Res_historyReplayTooltip, //'History Replay',
+    iconCls: 'map',
+    cls: 'cmbfonts',
+    textAlign: 'left',
+    margin: '0 5',
+    handler: function () {
+        try {
 
-               if (ifShowVehicleIcon) {
-                   ifShowVehicleIcon = false;
-                   btnVehicleonoff.setText(ResbtnVehicleonoffShowDetailsText/*'Show Details'*/);
-               }
-               else {
-                   ifShowVehicleIcon = true;
-                   btnVehicleonoff.setText(ResbtnVehicleonoffHideDetailsText/*'Hide Details'*/);
-               }
+            if (ifShowVehicleIcon) {
+                ifShowVehicleIcon = false;
+                btnVehicleonoff.setText(ResbtnVehicleonoffShowDetailsText/*'Show Details'*/);
 
-               OriginIfShowVehicleIcon = ifShowVehicleIcon;
+                redrawHistoryVehicleMarkers();
+            }
 
-               redrawHistoryVehicleMarkers();
-           }
-           catch (err) {
-           }
-       }
-   }
-   );
+            //               if (HistoryPlayPaused) {
+            //                   HistoryPlayPaused = false;
+            //                   btnHistoryReplay.setText(Res_historyReplayStop); // 'Stop'
+            //               }
+            //               else {
+            //                   HistoryPlayPaused = true;
+            //                   btnHistoryReplay.setText(Res_HistoryReplayReplay); // 'Replay'
+            //               }
 
-       var btnHistorySendCommand = Ext.create('Ext.Button',
-      {
-          text: ResbtnHistorySendCMDText, //'Send Command',
-          id: 'btnHistorySendCommand',
-          tooltip: ResSendCMDHistoryRecords,
-          iconCls: 'map',
-          margin: '0 5',
-          cls: 'cmbfonts',
-          textAlign: 'left',
-          handler: function () {
-              try {
-                  if (historyVehicles.getValue()!=null || historyVehicles.getValue().trim()!="" ) {
-                      var test = mainstore.findExact('VehicleId', historyVehicles.getValue(), 0);
-                      var testvalue = mainstore.getAt(test).data.LicensePlate;
-                      SensorInfoWindow(testvalue)
+            HistoryPlayPaused = false;
+            btnHistoryReplay.setDisabled(true);
+            btnHistoryPlayPlay.hide();
+            btnHistoryPlayPause.show();
+
+            replayHistoryVehicleMarkers();
+
+            replayPanel.show();
+        }
+        catch (err) {
+        }
+    }
+}
+);
+
+    var btnHistoryGraph = Ext.create('Ext.Button',
+{
+    text: 'Graph',
+    id: 'labelHistoryGraph',
+    //tooltip: Res_historyReplayTooltip, //'History Replay',
+    iconCls: 'map',
+    cls: 'cmbfonts',
+    textAlign: 'left',
+    margin: '0 5',
+    handler: function () {
+        try {
+            if (historyGraphWindow.isHidden())
+                historyGraphWindow.show();
+            else
+                historyGraphWindow.hide();
+        }
+        catch (err) {
+        }
+    }
+}
+);
+
+
+    var historyType_values = [
+         [0, ResHistoryTypeValues_0 /*'Vehicle Path'*/],
+         [1, ResHistoryTypeValues_1/*'Stop and Idle Sequence'*/],
+         [2, ResHistoryTypeValues_2/*'Stop Sequence'*/],
+         [3, ResHistoryTypeValues_3/*'Idle Sequence'*/],
+         [4, ResHistoryTypeValues_4/*'Trip Report'*/]
+    ];
+
+    var historyType_store = new Ext.data.SimpleStore({
+        fields: ['number', 'histype'],
+        data: historyType_values
+    });
+
+
+    var historyType = new Ext.form.ComboBox({
+        name: 'historyType',
+        fieldLabel: ReshistoryTypefieldLabel, //'Type',
+        hiddenName: 'historyType',
+        store: historyType_store,
+        displayField: 'histype',
+        valueField: 'number',
+        value: 0,
+        labelWidth: 50,
+        width: 300,
+        typeAhead: true,
+        mode: 'local',
+        triggerAction: 'all',
+        emptyText: ReshistoryTypeemptyText, //'Choose number...',
+        selectOnFocus: true,
+        editable: false,
+        listeners:
+          {
+              scope: this,
+              'select': function (combo, value) {
+                  try {
+                      var selectedtype = combo.getValue();
+                      if (selectedtype == 0) {
+                          btnHistoryMapAll.show();
+                          btnHistoryLegend.hide();
+                          historytabs.setActiveTab(historyMessageForm);
+                      }
+                      else if (selectedtype == 1 || selectedtype == 2 || selectedtype == 3) {
+                          btnHistoryLegend.show();
+                          btnHistoryMapAll.hide();
+                          historytabs.setActiveTab(historyMessageForm);
+                      }
+                      else {
+                          btnHistoryLegend.hide();
+                          btnHistoryMapAll.hide();
+                          historytabs.setActiveTab(historyTripRadios);
+                      }
+                  }
+                  catch (err) {
                   }
               }
-              catch (err) {
-                 
-              }
           }
-      });
+    });
 
-       btnHistoryReplay = Ext.create('Ext.Button',
-   {
-       text: 'Replay',
-       id: 'labelHistoryReplay',
-       //tooltip: Res_historyReplayTooltip, //'History Replay',
-       iconCls: 'map',
-       cls: 'cmbfonts',
-       textAlign: 'left',
-       margin: '0 5',
-       handler: function () {
-           try {
+    historyHiddenFleet = Ext.create('Ext.form.field.Hidden',
+         {
+             name: 'historyFleet',
+             value: LoadVehiclesBasedOn == 'fleet' ? SelectedFleetId : DefaultOrganizationHierarchyFleetId
+         }
+     );
 
-               if (ifShowVehicleIcon) {
-                   ifShowVehicleIcon = false;
-                   btnVehicleonoff.setText(ResbtnVehicleonoffShowDetailsText/*'Show Details'*/);
+    //        var historyfleets = Ext.create('Ext.form.ComboBox',
+    //       {
+    //           name: 'historyFleet',
+    //           store: 'FleetStore',
+    //           displayField: 'FleetName',
+    //           valueField: 'FleetId',
+    //           typeAhead: true,
+    //           fieldStyle: 'cmbfonts',
+    //           labelCls: 'cmbLabel',
+    //           queryMode: 'local',
+    //           triggerAction: 'all',
+    //           fieldLabel: ' Fleet',
+    //           emptyText: fleetDefaultText,
+    //           tooltip: 'Select group of vehicles to show',
+    //           selectOnFocus: true,
+    //           width: 300,
+    //           labelWidth: 50,
+    //           editable: false,
+    //           listeners:
+    //          {
+    //              scope: this,
+    //              'select': function (combo, value) {
+    //                 //alert('selec changed');
+    //                 var selFleet = combo.getValue();
+    //                 try {
+    //                    historyVehicleStore.load(
+    //                        {
+    //                            params:
+    //                            {
+    //                                fleetID: selFleet
+    //                            }
+    //                        }
+    //                    );
+    //                 }
+    //                 catch(err){
+    //                 }
+    //              },
+    //              'afterrender': function () {
+    //                  //historyVehicleStore.load();
+    //              }
+    //          }
+    //       }
+    //       );
 
-                   redrawHistoryVehicleMarkers();
+    historyVehicleStore = Ext.create('Ext.data.Store',
+        {
+            model: 'HistoryVehicleList',
+            autoLoad: false,
+            storeId: 'historyVehicleStore',
+            listeners:
+            {
+                'load': function (xstore, records, options) {
+
+                    var u = Ext.create('HistoryVehicleList', {
+                        VehicleId: '-1',
+                        Description: ResHistoryVehicleListDescription1//'Select a Vehicle'
+                    });
+                    xstore.insert(0, u);
+                    //                       u = Ext.create('HistoryVehicleList', {
+                    //                           VehicleId: '0',
+                    //                           Description: ResHistoryVehicleListDescription2//'Entire Fleet'
+                    //                       });
+                    //                       xstore.insert(1, u);
+
+                    if (historyIniVehicleId != '') {
+                        historyVehicles.setValue(historyIniVehicleId);
+                        historyIniVehicleId = '';
+                    }
+
+                    historyVehicleStoreLoaded = true;
+                }
+            },
+            proxy:
+               {
+                   // load using HTTP
+                   type: 'ajax',
+                   url: './historynew/historyservices.aspx',
+                   timeout: proxyTimeOut,
+                   reader:
+                  {
+                      type: 'xml',
+                      root: 'Fleet',
+                      record: 'VehiclesInformation'
+                  }
+               }
+        }
+    );
+
+    historyVehicles = Ext.create('Ext.form.ComboBox',
+    {
+        name: 'historyVehicle',
+        store: 'historyVehicleStore',
+        displayField: ReshistoryVehiclesdisplayField, //'Description',
+        valueField: 'VehicleId',
+        typeAhead: true,
+        fieldStyle: 'cmbfonts',
+        labelCls: 'cmbLabel',
+        queryMode: 'local',
+        triggerAction: 'all',
+        fieldLabel: ReshistoryVehiclesfieldLabel, //' Vehicle',
+        emptyText: ReshistoryVehiclesEmptyText, //'Loading...',
+        tooltip: ResSelectVehicles, //'Select a vehicles',
+        selectOnFocus: true,
+        width: 300,
+        labelWidth: 50,
+        editable: true,
+        enableKeyEvents: true,
+        lastQuery: '',
+        listeners:
+       {
+           scope: this,
+           'select': function (combo, value) {
+               var selVehicle = combo.getValue();
+               try {
+                   historyCommModeStore.load(
+                     {
+                         params:
+                         {
+                             vehicleID: selVehicle
+                         }
+                     }
+                 );
+               }
+               catch (err) {
                }
 
-               //               if (HistoryPlayPaused) {
-               //                   HistoryPlayPaused = false;
-               //                   btnHistoryReplay.setText(Res_historyReplayStop); // 'Stop'
-               //               }
-               //               else {
-               //                   HistoryPlayPaused = true;
-               //                   btnHistoryReplay.setText(Res_HistoryReplayReplay); // 'Replay'
-               //               }
-
-               HistoryPlayPaused = false;
-               btnHistoryReplay.setDisabled(true);
-               btnHistoryPlayPlay.hide();
-               btnHistoryPlayPause.show();
-
-               replayHistoryVehicleMarkers();
-
-               replayPanel.show();
-           }
-           catch (err) {
-           }
-       }
-   }
-   );
-
-       var btnHistoryGraph = Ext.create('Ext.Button',
-   {
-       text: 'Graph',
-       id: 'labelHistoryGraph',
-       //tooltip: Res_historyReplayTooltip, //'History Replay',
-       iconCls: 'map',
-       cls: 'cmbfonts',
-       textAlign: 'left',
-       margin: '0 5',
-       handler: function () {
-           try {
-               if (historyGraphWindow.isHidden())
-                   historyGraphWindow.show();
-               else
-                   historyGraphWindow.hide();
-           }
-           catch (err) {
+           },
+           'keyup': function () {
+               if (!historyVehicleStoreLoaded) {
+                   if (LoadVehiclesBasedOn == 'fleet') {
+                       historyVehicleStore.load(
+                         {
+                             params:
+                                 {
+                                     fleetID: SelectedFleetId
+                                 }
+                         });
+                   }
+                   else {
+                       historyVehicleStore.load(
+                             {
+                                 params:
+                                 {
+                                     fleetId: DefaultOrganizationHierarchyFleetId
+                                 }
+                             });
+                   }
+               }
            }
        }
-   }
-   );
+    }
+    );
+
+    var historyCommModeStore = Ext.create('Ext.data.Store',
+        {
+            model: 'HistoryCommModeList',
+            autoLoad: false,
+            storeId: 'historyCommModeStore',
+            listeners:
+            {
+                'load': function (xstore, records, options) {
+
+                    var u = Ext.create('HistoryCommModeList', {
+                        DclId: '-1',
+                        CommModeName: ResHistoryCommModeNameText//'ALL'
+                    });
+                    xstore.insert(0, u);
+
+                    historyCommModes.setValue('-1');
+                }
+            },
+            proxy:
+               {
+                   // load using HTTP
+                   type: 'ajax',
+                   url: './historynew/historyservices.aspx?st=getcommmode',
+                   timeout: proxyTimeOut,
+                   reader:
+                  {
+                      type: 'xml',
+                      root: 'Box',
+                      record: 'BoxConfigInfo'
+                  }
+               }
+        }
+    );
+    var historyCommModes = Ext.create('Ext.form.ComboBox',
+    {
+        name: 'historyCommMode',
+        store: 'historyCommModeStore',
+        displayField: 'CommModeName',
+        valueField: 'DclId',
+        typeAhead: true,
+        fieldStyle: 'cmbfonts',
+        labelCls: 'cmbLabel',
+        queryMode: 'local',
+        triggerAction: 'all',
+        fieldLabel: ' Comm',
+        emptyText: ReshistoryCommModesEmptyText, //'Loading...',
+        tooltip: ResSelectCommMode, //'Select a Comm Mode',
+        selectOnFocus: true,
+        width: 300,
+        labelWidth: 50,
+        editable: false,
+        listeners:
+       {
+           scope: this,
+           'select': function (combo, value) {
+               try {
+
+               }
+               catch (err) {
+               }
+
+           },
+           'afterrender': function () {
+               //fleetstore.load();
+               //alert('afterrender');
+               historyCommModeStore.load();
+           }
+       }
+    }
+    );
+
+    var historyMessageCheckBox = Ext.create('Ext.form.field.Checkbox',
+        {
+            boxLabel: ReshistoryMessageCheckBoxboxLabel, //'Last message only',
+            name: 'lastmessageonly',
+            inputValue: '1',
+            id: 'checkbox1',
+            border: 0
+        }
+    );
+
+    historyMessageStore = Ext.create('Ext.data.Store',
+        {
+            model: 'HistoryMessageModel',
+            autoLoad: false,
+            storeId: 'historyMessageStore',
+            listeners:
+            {
+                'load': function (xstore, records, options) {
+                    var u = Ext.create('HistoryMessageModel', {
+                        BoxMsgInTypeId: '-1',
+                        BoxMsgInTypeName: 'All Messages'
+                    });
+                    xstore.insert(0, u);
+
+                    historyMessageList.setValue('-1');
+                }
+            },
+            proxy:
+               {
+                   // load using HTTP
+                   type: 'ajax',
+                   url: './historynew/historyservices.aspx?st=GetMessageList',
+                   timeout: proxyTimeOut,
+                   reader:
+                  {
+                      type: 'xml',
+                      root: 'Box',
+                      record: 'BoxMsgTypes'
+                  }
+               }
+        }
+    );
+
+    var historyMessageList = Ext.create('Ext.ux.form.MultiSelect',
+         {
+             anchor: '100%',
+             msgTarget: 'side',
+             fieldLabel: '',
+             name: 'historyMessageList',
+             width: 280,
+             allowBlank: true,
+             valueField: 'BoxMsgInTypeId',
+             displayField: 'BoxMsgInTypeName',
+             height: 120,
+             emptyText: '',
+             // minSelections: 2,
+             // maxSelections: 3,
+
+             store: historyMessageStore,
+             ddReorder: false
+         }
+     );
+
+    var historyMessageForm = Ext.create('Ext.Panel', {
+        title: ResMessages, //'Messages',
+        labelWidth: 50, // label settings here cascade unless overridden
+        frame: true,
+        bodyStyle: 'padding:5px 5px 0;',
+        width: 550,
+        layout: 'column', // arrange fieldsets side by side
+        defaults: {
+            width: 240,
+            labelWidth: 90
+        },
+        //margin: '10px 0',
+        header: true,
+        defaultType: 'textfield',
+        items: [historyMessageCheckBox, historyMessageList]
+    });
+
+    var historyLocationText = Ext.create('Ext.form.field.Text', {
+        name: 'historyLocation',
+        labelWidth: 50,
+        fieldLabel: ResHistoryLocationText, //'Address',
+        allowBlank: true  // requires a non-empty value
+    }
+     );
+
+    var historyByLocation = Ext.create('Ext.form.field.Hidden', {
+        name: 'historyByLocation',
+        value: '0'
+    }
+     );
+
+    var historyLoactionForm = Ext.create('Ext.Panel', {
+        id: 'historyLoactionForm',
+        title: ResLocation, //'Location',
+        labelWidth: 50, // label settings here cascade unless overridden
+        frame: true,
+        bodyStyle: 'padding:5px 5px 0;',
+        width: 550,
+        layout: 'column', // arrange fieldsets side by side
+        defaults: {
+            width: 240,
+            labelWidth: 90
+        },
+        //margin: '10px 0',
+        header: true,
+        defaultType: 'textfield',
+        items: [historyLocationText]
+    });
 
 
-       var historyType_values = [
-            [0, ResHistoryTypeValues_0 /*'Vehicle Path'*/],
-            [1, ResHistoryTypeValues_1/*'Stop and Idle Sequence'*/],
-            [2, ResHistoryTypeValues_2/*'Stop Sequence'*/],
-            [3, ResHistoryTypeValues_3/*'Idle Sequence'*/],
-            [4, ResHistoryTypeValues_4/*'Trip Report'*/]
-        ];
+    var historyTripRadios = Ext.create('Ext.Panel', {
+        title: ResTrip, //'Trip',
+        labelWidth: 0,
+        border: 0,
+        frame: true,
+        bodyStyle: 'padding:10;border:0;background-color:transparent;',
+        width: 310,
+        layout: 'column', // arrange fieldsets side by side
+        defaults: {
+            width: 240,
+            labelWidth: 90
+        },
+        //margin: '10px 0',
+        header: false,
+        defaultType: 'radiofield',
+        items: [{
+            xtype: 'component', html: ReshistoryTripRadioshtml, //'Calculate Trips based on:',
+            cls: ''
+        },
+                 {
+                     boxLabel: ReshistoryTripRadiosboxLabel1, //'Ignition',
+                     name: 'historytrip',
+                     inputValue: '3',
+                     id: 'historytrip1',
+                     checked: true
+                 }, {
+                     boxLabel: ReshistoryTripRadiosboxLabel2, // 'Tractor Power',
+                     name: 'historytrip',
+                     inputValue: '11',
+                     id: 'historytrip2'
+                 }, {
+                     boxLabel: ReshistoryTripRadiosboxLabel3, // 'PTO',
+                     name: 'historytrip',
+                     inputValue: '8',
+                     id: 'historytrip3'
+                 }]
+    });
 
-       var historyType_store = new Ext.data.SimpleStore({
-           fields: ['number', 'histype'],
-           data: historyType_values
-       });
+    var btnSubmit = Ext.create('Ext.Button', {
+        text: ResSubmitButtonText, //'View',
+        cls: 'cmbfonts',
+        //margin: '10 auto',
+        style: { margin: '10px 0 10px 55px' },
+        width: 100,
+        handler: function () {
+            try {
+                if (historyVehicles.getValue() == null || historyVehicles.getValue() == '-1') {
+                    Ext.Msg.alert('Oops', ResbtnSubmitMessage); //Ext.Msg.alert('Oops', 'Please select a vehicle...');
+                    return;
+                }
+                //var form = this.up('form').getForm();
+                var form = historyForm.getForm();
+                var historytype = historyType.getValue();
+                historyPageStore.currentPage = 1;
+                if (historytype == 0) {
+                    historyGridForm.remove(historyStopGrid, false);
+                    historyGridForm.remove(historyTripGrid, false);
+                    historystore.removeAll();
+                    historyPageStore.removeAll();
+                    historyGridForm.add(historygrid);
+                }
+                else if (historytype == 1 || historytype == 2 || historytype == 3) {
+                    historyGridForm.remove(historygrid, false);
+                    historyGridForm.remove(historyTripGrid, false);
+                    historyStopStore.removeAll();
+                    historyGridForm.add(historyStopGrid);
+                }
+                else if (historytype == 4) {
+                    historyGridForm.remove(historygrid, false);
+                    historyGridForm.remove(historyStopGrid, false);
+                    historyTripStore.removeAll();
+                    historyGridForm.add(historyTripGrid);
+                }
+                historyGridForm.doLayout();
 
+                if (form.isValid()) {
 
-       var historyType = new Ext.form.ComboBox({
-           name: 'historyType',
-           fieldLabel: ReshistoryTypefieldLabel, //'Type',
-           hiddenName: 'historyType',
-           store: historyType_store,
-           displayField: 'histype',
-           valueField: 'number',
-           value: 0,
-           labelWidth: 50,
-           width: 300,
-           typeAhead: true,
-           mode: 'local',
-           triggerAction: 'all',
-           emptyText: ReshistoryTypeemptyText, //'Choose number...',
-           selectOnFocus: true,
-           editable: false,
-           listeners:
-             {
-                 scope: this,
-                 'select': function (combo, value) {
-                     try {
-                         var selectedtype = combo.getValue();
-                         if (selectedtype == 0) {
-                             btnHistoryMapAll.show();
-                             btnHistoryLegend.hide();
-                             historytabs.setActiveTab(historyMessageForm);
-                         }
-                         else if (selectedtype == 1 || selectedtype == 2 || selectedtype == 3) {
-                             btnHistoryLegend.show();
-                             btnHistoryMapAll.hide();
-                             historytabs.setActiveTab(historyMessageForm);
-                         }
-                         else {
-                             btnHistoryLegend.hide();
-                             btnHistoryMapAll.hide();
-                             historytabs.setActiveTab(historyTripRadios);
-                         }
-                     }
-                     catch (err) {
-                     }
+                    ResetHistoryReplay();
+                    loadingMask.show();
+                    form.submit({
+                        url: './historynew/historyservices.aspx?st=gethistoryrecords&start=0&limit=' + HistoryPagesize,
+                        timeout: 1800,
+                        success: function (form, action) {
+                            try {
+                                var d;
+
+                                d = action.result.data;
+                                d = d.replace(/\u003c/g, "<").replace("\u003e", ">");
+
+                                if (action.result.iconTypeName != "") IconTypeName = action.result.iconTypeName;
+                                var doc;
+                                if (window.ActiveXObject) {         //IE
+                                    var doc = new ActiveXObject("Microsoft.XMLDOM");
+                                    doc.async = "false";
+                                    doc.loadXML(d);
+                                } else {                             //Mozilla
+                                    var doc = new DOMParser().parseFromString(d, "text/xml");
+                                }
+
+                                if (historytype == 0) {
+                                    var wholedata = action.result.wholedata;
+                                    wholedata = wholedata.replace(/\u003c/g, "<").replace("\u003e", ">");
+
+                                    var docwholedata;
+                                    if (window.ActiveXObject) {         //IE
+                                        docwholedata = new ActiveXObject("Microsoft.XMLDOM");
+                                        docwholedata.async = "false";
+                                        docwholedata.loadXML(wholedata);
+                                    } else {                             //Mozilla
+                                        docwholedata = new DOMParser().parseFromString(wholedata, "text/xml");
+                                    }
+
+                                    historystore.loadRawData(docwholedata);
+                                    historyPagerDoc = '1';
+                                    //Commented By Rohit
+                                    // historyPager.moveFirst();
+                                    historyPageStore.loadRawData(doc);
+                                    historygrid.down('pagingtoolbar').bindStore(historygrid.getStore());
+                                    historygrid.down('pagingtoolbar').onLoad();
+                                }
+                                else if (historytype == 1 || historytype == 2 || historytype == 3) {
+                                    historyStopStore.loadRawData(doc);
+                                }
+                                else if (historytype == 4) {
+                                    historyTripStore.loadRawData(doc);
+
+                                    var tripdetails = action.result.tripdata;
+                                    tripdetails = tripdetails.replace(/\u003c/g, "<").replace("\u003e", ">");
+
+                                    var doctripdata;
+                                    if (window.ActiveXObject) {         //IE
+                                        doctripdata = new ActiveXObject("Microsoft.XMLDOM");
+                                        doctripdata.async = "false";
+                                        doctripdata.loadXML(tripdetails);
+                                    } else {                             //Mozilla
+                                        doctripdata = new DOMParser().parseFromString(tripdetails, "text/xml");
+                                    }
+
+                                    historystore.loadRawData(doctripdata);
+                                    historygrid.down('pagingtoolbar').bindStore(historygrid.getStore());
+                                    historygrid.down('pagingtoolbar').onLoad();
+                                }
+
+                                //historystore.loadRawData(doc);
+                                historyForm.hide();
+                                loadingMask.hide();
+                            }
+                            catch (error) {
+                                historyForm.hide();
+                                loadingMask.hide();
+                            }
+
+                        },
+                        failure: function (form, action) {
+                            loadingMask.hide();
+                            Ext.Msg.alert(ResbtnSubmitAlertTitle, action.result.msg ? action.result.msg : 'Unknown Error');
+                        }
+                    });
+                }
+            }
+            catch (err) {
+            }
+        }
+    });
+
+    var txtButtonTitle = Ext.create('Ext.draw.Text', {
+        text: LoadVehiclesBasedOn == 'fleet' ? ResTxtButtonTitleFleetText : ResTxtButtonTitleHierarchyText, //'Fleet:' : 'Hierarchy:',
+        width: LoadVehiclesBasedOn == 'fleet' ? 50 : 55,
+        height: 20
+    });
+
+    var historyFormFieldContainer = Ext.create('Ext.Panel', {
+        //title: 'Messages',
+        labelWidth: 0,
+        border: 0,
+        frame: false,
+        bodyStyle: 'padding:0;border:0;background-color:transparent;',
+        width: 310,
+        layout: 'column', // arrange fieldsets side by side
+        defaults: {
+            width: 240,
+            labelWidth: 90
+        },
+        //margin: '10px 0',
+        header: false,
+        defaultType: 'textfield',
+        items: [historyDateTimeContainer, historyType, historyHiddenFleet,
+             txtButtonTitle,
+             LoadVehiclesBasedOn == 'fleet' ? historyFleetButton : historyOrganizationHierarchy,
+             historyVehicles, historyCommModes/*, btnSubmit*/]
+    });
+
+    var historytabs = Ext.create('Ext.tab.Panel',
+    {
+        region: 'center', // a center region is ALWAYS required for border layout
+        deferredRender: false,
+        titleCollapse: false,
+        autoScroll: true,
+        border: false,
+        width: 300,
+        height: 180,
+
+        autoHeight: true,
+        collapsible: false,
+        animCollapse: true,
+        autoDestroy: false,
+        activeTab: 0,     // first tab initially active
+        items: [historyMessageForm, historyLoactionForm, historyTripRadios],
+        listeners:
+         {
+             tabchange: function (tabPanel, newCard, oldCard, eOpts) {
+                 if (newCard.id == 'historyLoactionForm') {
+                     historyByLocation.setValue('1');
+                 }
+                 else {
+                     historyByLocation.setValue('0');
                  }
              }
-       });
+         }
 
-       historyHiddenFleet = Ext.create('Ext.form.field.Hidden',
-            {
-                name: 'historyFleet',
-                value: LoadVehiclesBasedOn == 'fleet' ? SelectedFleetId : DefaultOrganizationHierarchyFleetId
+    }
+    );
+
+    historyReplaySlider = Ext.create('Ext.slider.Single', {
+        width: 214,
+        minValue: 0,
+        hideLabel: true,
+        useTips: true,
+        maxValue: 100,
+        tipText: function (thumb) {
+            var currentDateTime = GetHistoryCurrentDateTime(thumb.value);
+            return Ext.String.format('{0}', Ext.Date.format(currentDateTime, userdateformat));
+        },
+        listeners: {
+            changecomplete: function (slider, newValue, thumb, eOpts) {
+                replayHistoryVehicleMarkers(newValue);
             }
-        );
+        }
+    });
 
-       //        var historyfleets = Ext.create('Ext.form.ComboBox',
-       //       {
-       //           name: 'historyFleet',
-       //           store: 'FleetStore',
-       //           displayField: 'FleetName',
-       //           valueField: 'FleetId',
-       //           typeAhead: true,
-       //           fieldStyle: 'cmbfonts',
-       //           labelCls: 'cmbLabel',
-       //           queryMode: 'local',
-       //           triggerAction: 'all',
-       //           fieldLabel: ' Fleet',
-       //           emptyText: fleetDefaultText,
-       //           tooltip: 'Select group of vehicles to show',
-       //           selectOnFocus: true,
-       //           width: 300,
-       //           labelWidth: 50,
-       //           editable: false,
-       //           listeners:
-       //          {
-       //              scope: this,
-       //              'select': function (combo, value) {
-       //                 //alert('selec changed');
-       //                 var selFleet = combo.getValue();
-       //                 try {
-       //                    historyVehicleStore.load(
-       //                        {
-       //                            params:
-       //                            {
-       //                                fleetID: selFleet
-       //                            }
-       //                        }
-       //                    );
-       //                 }
-       //                 catch(err){
-       //                 }                  
-       //              },
-       //              'afterrender': function () {
-       //                  //historyVehicleStore.load();
-       //              }
-       //          }
-       //       }
-       //       );
+    btnHistoryPlayPlay = Ext.create('Ext.Button',
+    {
+        text: '',
+        id: 'labelHistoryPlayPlay',
+        //tooltip: Res_historyReplayTooltip, //'History Replay',
+        iconCls: 'history-icons replayPlay',
+        overCls: 'history-icons-hover',
+        hidden: true,
+        cls: 'cmbfonts',
+        textAlign: 'left',
+        width: 22,
+        margin: '0 0 0 10',
+        handler: function () {
+            try {
+                btnHistoryPlayPlay.hide();
+                btnHistoryPlayPause.show();
+                HistoryPlayPaused = false;
+                replayHistoryVehicleMarkers();
 
-       historyVehicleStore = Ext.create('Ext.data.Store',
-           {
-               model: 'HistoryVehicleList',
-               autoLoad: false,
-               storeId: 'historyVehicleStore',
-               listeners:
-               {
-                   'load': function (xstore, records, options) {
-
-                       var u = Ext.create('HistoryVehicleList', {
-                           VehicleId: '-1',
-                           Description: ResHistoryVehicleListDescription1//'Select a Vehicle'
-                       });
-                       xstore.insert(0, u);
-//                       u = Ext.create('HistoryVehicleList', {
-//                           VehicleId: '0',
-//                           Description: ResHistoryVehicleListDescription2//'Entire Fleet'
-//                       });
-//                       xstore.insert(1, u);
-
-                       if (historyIniVehicleId != '') {
-                           historyVehicles.setValue(historyIniVehicleId);
-                           historyIniVehicleId = '';
-                       }
-
-                       historyVehicleStoreLoaded = true;
-                   }
-               },
-               proxy:
-                  {
-                      // load using HTTP
-                      type: 'ajax',
-                      url: './historynew/historyservices.aspx',
-                      timeout: proxyTimeOut,
-                      reader:
-                     {
-                         type: 'xml',
-                         root: 'Fleet',
-                         record: 'VehiclesInformation'
-                     }
-                  }
-           }
-       );
-
-       historyVehicles = Ext.create('Ext.form.ComboBox',
-       {
-           name: 'historyVehicle',
-           store: 'historyVehicleStore',
-           displayField: ReshistoryVehiclesdisplayField, //'Description',
-           valueField: 'VehicleId',
-           typeAhead: true,
-           fieldStyle: 'cmbfonts',
-           labelCls: 'cmbLabel',
-           queryMode: 'local',
-           triggerAction: 'all',
-           fieldLabel: ReshistoryVehiclesfieldLabel, //' Vehicle',
-           emptyText: ReshistoryVehiclesEmptyText, //'Loading...',
-           tooltip: ResSelectVehicles, //'Select a vehicles',
-           selectOnFocus: true,
-           width: 300,
-           labelWidth: 50,
-           editable: true,
-           enableKeyEvents: true,
-           lastQuery: '',
-           listeners:
-          {
-              scope: this,
-              'select': function (combo, value) {
-                  var selVehicle = combo.getValue();
-                  try {
-                      historyCommModeStore.load(
-                        {
-                            params:
-                            {
-                                vehicleID: selVehicle
-                            }
-                        }
-                    );
-                  }
-                  catch (err) {
-                  }
-
-              },
-			  'keyup': function () {
-			    if(!historyVehicleStoreLoaded)
-			    {
-                  if (LoadVehiclesBasedOn == 'fleet') {
-                      historyVehicleStore.load(
-                        {
-                            params:
-                                {
-                                    fleetID: SelectedFleetId
-                                }
-						});
-                        }
-                  else {
-                      historyVehicleStore.load(
-                            {
-                                params:
-                                {
-                                    fleetId: DefaultOrganizationHierarchyFleetId
-                                }
-						});
-                            }
-                  }
-              }
-          }
-       }
-       );
-
-       var historyCommModeStore = Ext.create('Ext.data.Store',
-           {
-               model: 'HistoryCommModeList',
-               autoLoad: false,
-               storeId: 'historyCommModeStore',
-               listeners:
-               {
-                   'load': function (xstore, records, options) {
-
-                       var u = Ext.create('HistoryCommModeList', {
-                           DclId: '-1',
-                           CommModeName: ResHistoryCommModeNameText//'ALL'
-                       });
-                       xstore.insert(0, u);
-
-                       historyCommModes.setValue('-1');
-                   }
-               },
-               proxy:
-                  {
-                      // load using HTTP
-                      type: 'ajax',
-                      url: './historynew/historyservices.aspx?st=getcommmode',
-                      timeout: proxyTimeOut,
-                      reader:
-                     {
-                         type: 'xml',
-                         root: 'Box',
-                         record: 'BoxConfigInfo'
-                     }
-                  }
-           }
-       );
-       var historyCommModes = Ext.create('Ext.form.ComboBox',
-       {
-           name: 'historyCommMode',
-           store: 'historyCommModeStore',
-           displayField: 'CommModeName',
-           valueField: 'DclId',
-           typeAhead: true,
-           fieldStyle: 'cmbfonts',
-           labelCls: 'cmbLabel',
-           queryMode: 'local',
-           triggerAction: 'all',
-           fieldLabel: ' Comm',
-           emptyText: ReshistoryCommModesEmptyText, //'Loading...',
-           tooltip: ResSelectCommMode, //'Select a Comm Mode',
-           selectOnFocus: true,
-           width: 300,
-           labelWidth: 50,
-           editable: false,
-           listeners:
-          {
-              scope: this,
-              'select': function (combo, value) {
-                  try {
-
-                  }
-                  catch (err) {
-                  }
-
-              },
-              'afterrender': function () {
-                  //fleetstore.load();
-                  //alert('afterrender');
-                  historyCommModeStore.load();
-              }
-          }
-       }
-       );
-
-       var historyMessageCheckBox = Ext.create('Ext.form.field.Checkbox',
-           {
-               boxLabel: ReshistoryMessageCheckBoxboxLabel, //'Last message only',
-               name: 'lastmessageonly',
-               inputValue: '1',
-               id: 'checkbox1',
-               border: 0
-           }
-       );
-
-       historyMessageStore = Ext.create('Ext.data.Store',
-           {
-               model: 'HistoryMessageModel',
-               autoLoad: false,
-               storeId: 'historyMessageStore',
-               listeners:
-               {
-                   'load': function (xstore, records, options) {
-                       var u = Ext.create('HistoryMessageModel', {
-                           BoxMsgInTypeId: '-1',
-                           BoxMsgInTypeName: 'All Messages'
-                       });
-                       xstore.insert(0, u);
-
-                       historyMessageList.setValue('-1');
-                   }
-               },
-               proxy:
-                  {
-                      // load using HTTP
-                      type: 'ajax',
-                      url: './historynew/historyservices.aspx?st=GetMessageList',
-                      timeout: proxyTimeOut,
-                      reader:
-                     {
-                         type: 'xml',
-                         root: 'Box',
-                         record: 'BoxMsgTypes'
-                     }
-                  }
-           }
-       );
-
-       var historyMessageList = Ext.create('Ext.ux.form.MultiSelect',
-            {
-                anchor: '100%',
-                msgTarget: 'side',
-                fieldLabel: '',
-                name: 'historyMessageList',
-                width: 280,
-                allowBlank: true,
-                valueField: 'BoxMsgInTypeId',
-                displayField: 'BoxMsgInTypeName',
-                height: 120,
-                emptyText: '',
-                // minSelections: 2,
-                // maxSelections: 3,
-
-                store: historyMessageStore,
-                ddReorder: false
             }
-        );
+            catch (err) {
+            }
+        }
+    }
+    );
 
-       var historyMessageForm = Ext.create('Ext.Panel', {
-           title: ResMessages, //'Messages',
-           labelWidth: 50, // label settings here cascade unless overridden
-           frame: true,
-           bodyStyle: 'padding:5px 5px 0;',
-           width: 550,
-           layout: 'column', // arrange fieldsets side by side
-           defaults: {
-               width: 240,
-               labelWidth: 90
-           },
-           //margin: '10px 0',
-           header: true,
-           defaultType: 'textfield',
-           items: [historyMessageCheckBox, historyMessageList]
-       });
+    btnHistoryPlayPause = Ext.create('Ext.Button',
+    {
+        text: '',
+        id: 'labelHistoryPlayPause',
+        //tooltip: Res_historyReplayTooltip, //'History Replay',
+        iconCls: 'history-icons replayPause',
+        overCls: 'history-icons-hover',
+        cls: 'cmbfonts',
+        textAlign: 'left',
+        width: 22,
+        margin: '0 0 0 10',
+        handler: function () {
+            try {
+                //               if (HistoryPlayPaused) {
+                //                   HistoryPlayPaused = false;
+                //                   btnHistoryReplay.setText(Res_historyReplayStop); // 'Stop'
+                //               }
+                //               else {
+                //                   HistoryPlayPaused = true;
+                //                   btnHistoryReplay.setText(Res_HistoryReplayReplay); // 'Replay'
+                //               }
 
-       var historyLocationText = Ext.create('Ext.form.field.Text', {
-           name: 'historyLocation',
-           labelWidth: 50,
-           fieldLabel: ResHistoryLocationText, //'Address',
-           allowBlank: true  // requires a non-empty value
-       }
-        );
+                btnHistoryPlayPlay.show();
+                btnHistoryPlayPause.hide();
+                HistoryPlayPaused = true;
+                replayHistoryVehicleMarkers();
 
-       var historyByLocation = Ext.create('Ext.form.field.Hidden', {
-           name: 'historyByLocation',
-           value: '0'
-       }
-        );
+            }
+            catch (err) {
+            }
+        }
+    }
+    );
 
-       var historyLoactionForm = Ext.create('Ext.Panel', {
-           id: 'historyLoactionForm',
-           title: ResLocation, //'Location',
-           labelWidth: 50, // label settings here cascade unless overridden
-           frame: true,
-           bodyStyle: 'padding:5px 5px 0;',
-           width: 550,
-           layout: 'column', // arrange fieldsets side by side
-           defaults: {
-               width: 240,
-               labelWidth: 90
-           },
-           //margin: '10px 0',
-           header: true,
-           defaultType: 'textfield',
-           items: [historyLocationText]
-       });
+    var historyPlaySpeedButtons = Ext.create('Ext.Container', {
+        items: [
+         {
+             xtype: 'button',
+             enableToggle: true,
+             text: '1/4 x',
+             toggleGroup: 'ratings',
+             width: 39,
+             margin: '0 2 0 10',
+             allowDepress: false,
+             handler: function () {
+                 try {
+                     setHistoryReplayDelayTime(4);
+                 }
+                 catch (err) {
+                 }
+             }
+         }, {
+             xtype: 'button',
+             enableToggle: true,
+             text: '1/2 x',
+             toggleGroup: 'ratings',
+             width: 39,
+             margin: '0 2 0 2',
+             allowDepress: false,
+             handler: function () {
+                 try {
+                     setHistoryReplayDelayTime(2);
+                 }
+                 catch (err) {
+                 }
+             }
+         }, {
+             xtype: 'button',
+             enableToggle: true,
+             text: '1 x',
+             toggleGroup: 'ratings',
+             width: 39,
+             margin: '0 2 0 2',
+             pressed: true,
+             allowDepress: false,
+             handler: function () {
+                 try {
+                     setHistoryReplayDelayTime(1);
+                 }
+                 catch (err) {
+                 }
+             }
+         }, {
+             xtype: 'button',
+             enableToggle: true,
+             text: '2 x',
+             toggleGroup: 'ratings',
+             width: 39,
+             margin: '0 2 0 2',
+             allowDepress: false,
+             handler: function () {
+                 try {
+                     setHistoryReplayDelayTime(0.5);
+                 }
+                 catch (err) {
+                 }
+             }
+         }, {
+             xtype: 'button',
+             enableToggle: true,
+             text: '4 x',
+             toggleGroup: 'ratings',
+             width: 39,
+             margin: '0 2 0 2',
+             allowDepress: false,
+             handler: function () {
+                 try {
+                     setHistoryReplayDelayTime(0.25);
+                 }
+                 catch (err) {
+                 }
+             }
+         }
+        ]
+    });
 
+    txtHistoryReplayDelayTime = Ext.create('Ext.form.field.Text',
+    {
+        width: 60,
+        margin: '0 0 0 20',
+        readOnly: true,
+        border: false,
+        value: '200ms'
+    });
 
-       var historyTripRadios = Ext.create('Ext.Panel', {
-           title: ResTrip, //'Trip',
-           labelWidth: 0,
-           border: 0,
-           frame: true,
-           bodyStyle: 'padding:10;border:0;background-color:transparent;',
-           width: 310,
-           layout: 'column', // arrange fieldsets side by side
-           defaults: {
-               width: 240,
-               labelWidth: 90
-           },
-           //margin: '10px 0',
-           header: false,
-           defaultType: 'radiofield',
-           items: [{ xtype: 'component', html: ReshistoryTripRadioshtml, //'Calculate Trips based on:',
-               cls: ''
-           },
-                    {
-                        boxLabel: ReshistoryTripRadiosboxLabel1, //'Ignition',
-                        name: 'historytrip',
-                        inputValue: '3',
-                        id: 'historytrip1',
-                        checked: true
-                    }, {
-                        boxLabel: ReshistoryTripRadiosboxLabel2, // 'Tractor Power',
-                        name: 'historytrip',
-                        inputValue: '11',
-                        id: 'historytrip2'
-                    }, {
-                        boxLabel: ReshistoryTripRadiosboxLabel3, // 'PTO',
-                        name: 'historytrip',
-                        inputValue: '8',
-                        id: 'historytrip3'
-                    }]
-       });
+    var btnHistoryPlayIncrease = Ext.create('Ext.Button',
+    {
+        text: '',
+        id: 'labelHistoryPlayIncrease',
+        //tooltip: Res_historyReplayTooltip, //'History Replay',
+        iconCls: 'history-icons replayIncrease',
+        overCls: 'history-icons-hover',
+        cls: 'cmbfonts',
+        textAlign: 'left',
+        width: 22,
+        margin: '0 0 0 0',
+        handler: function () {
+            try {
 
-       var btnSubmit = Ext.create('Ext.Button', {
-           text: ResSubmitButtonText, //'View',
-           cls: 'cmbfonts',
-           //margin: '10 auto',
-           style: { margin: '10px 0 10px 55px' },
-           width: 100,
-           handler: function () {
-               try {
-                   if (historyVehicles.getValue() == null || historyVehicles.getValue() == '-1') {
-                       Ext.Msg.alert('Oops', ResbtnSubmitMessage); //Ext.Msg.alert('Oops', 'Please select a vehicle...');
-                       return;
-                   }
-                   //var form = this.up('form').getForm();
-                   var form = historyForm.getForm();
-                   var historytype = historyType.getValue();
-                   historyPageStore.currentPage = 1;
-                   if (historytype == 0) {
-                       historyGridForm.remove(historyStopGrid, false);
-                       historyGridForm.remove(historyTripGrid, false);
-                       historystore.removeAll();
-                       historyPageStore.removeAll();
-                       historyGridForm.add(historygrid);
-                   }
-                   else if (historytype == 1 || historytype == 2 || historytype == 3) {
-                       historyGridForm.remove(historygrid, false);
-                       historyGridForm.remove(historyTripGrid, false);
-                       historyStopStore.removeAll();
-                       historyGridForm.add(historyStopGrid);
-                   }
-                   else if (historytype == 4) {
-                       historyGridForm.remove(historygrid, false);
-                       historyGridForm.remove(historyStopGrid, false);
-                       historyTripStore.removeAll();
-                       historyGridForm.add(historyTripGrid);
-                   }
-                   historyGridForm.doLayout();
+                //txtHistoryReplayDelayTime.setValue('250ms');
+                adjustHistoryReplayDelayTime(50);
+            }
+            catch (err) {
+            }
+        }
+    }
+    );
 
-                   if (form.isValid()) {
+    var btnHistoryPlayDecrease = Ext.create('Ext.Button',
+    {
+        text: '',
+        id: 'labelHistoryPlayDecrease',
+        //tooltip: Res_historyReplayTooltip, //'History Replay',
+        iconCls: 'history-icons replayDecrease',
+        overCls: 'history-icons-hover',
+        cls: 'cmbfonts',
+        textAlign: 'left',
+        width: 22,
+        margin: '0 0 0 0',
+        handler: function () {
+            try {
 
-                       ResetHistoryReplay();
-                       loadingMask.show();
-                       form.submit({
-                           url: './historynew/historyservices.aspx?st=gethistoryrecords&start=0&limit=' + HistoryPagesize,
-                           timeout: 1800,
-                           success: function (form, action) {
-                               try {
-                                   var d;
+                //txtHistoryReplayDelayTime.setValue('150ms');
+                adjustHistoryReplayDelayTime(-50);
+            }
+            catch (err) {
+            }
+        }
+    }
+    );
 
-                                   d = action.result.data;
-                                   d = d.replace(/\u003c/g, "<").replace("\u003e", ">");
+    var btnHistoryPlayClose = Ext.create('Ext.Button',
+    {
+        text: '',
+        id: 'labelHistoryPlayClose',
+        //tooltip: Res_historyReplayTooltip, //'History Replay',
+        iconCls: 'history-icons replayClose',
+        overCls: 'history-icons-hover',
+        cls: 'cmbfonts',
+        textAlign: 'left',
+        width: 22,
+        margin: '0 0 0 20',
+        handler: function () {
+            try {
 
-                                   if (action.result.iconTypeName != "") IconTypeName = action.result.iconTypeName;
-                                   var doc;
-                                   if (window.ActiveXObject) {         //IE
-                                       var doc = new ActiveXObject("Microsoft.XMLDOM");
-                                       doc.async = "false";
-                                       doc.loadXML(d);
-                                   } else {                             //Mozilla
-                                       var doc = new DOMParser().parseFromString(d, "text/xml");
-                                   }
+                btnHistoryPlayPlay.show();
+                btnHistoryPlayPause.hide();
+                HistoryPlayPaused = true;
+                replayHistoryVehicleMarkers();
+                replayPanel.hide();
+                btnHistoryReplay.setDisabled(false);
+            }
+            catch (err) {
+            }
+        }
+    }
+    );
 
-                                   if (historytype == 0) {
-                                       var wholedata = action.result.wholedata;
-                                       wholedata = wholedata.replace(/\u003c/g, "<").replace("\u003e", ">");
+    replayPanel = Ext.create('Ext.form.Panel', {
+        title: '',
+        labelWidth: 50, // label settings here cascade unless overridden
+        frame: true,
+        //bodyStyle: 'padding:5px 5px 0;margin:0 0 10px 0;',
+        margin: '0 10 10 10',
+        hidden: true,
+        width: 430,//530,
+        layout: 'column', // arrange fieldsets side by side
+        defaults: {
+            width: 240,
+            labelWidth: 90
+        },
+        //margin: '10px 0',
+        header: false,
+        defaultType: 'textfield',
+        items: [historyReplaySlider, btnHistoryPlayPlay, btnHistoryPlayPause, /*historyPlaySpeedButtons,*/txtHistoryReplayDelayTime, btnHistoryPlayIncrease, btnHistoryPlayDecrease, btnHistoryPlayClose]
+    });
 
-                                       var docwholedata;
-                                       if (window.ActiveXObject) {         //IE
-                                           docwholedata = new ActiveXObject("Microsoft.XMLDOM");
-                                           docwholedata.async = "false";
-                                           docwholedata.loadXML(wholedata);
-                                       } else {                             //Mozilla
-                                           docwholedata = new DOMParser().parseFromString(wholedata, "text/xml");
-                                       }
+    var historyGraphWidth = window.screen.width - 70;
 
-                                       historystore.loadRawData(docwholedata);
-                                       historyPagerDoc = '1';
-                                       //Commented By Rohit                                       
-                                      // historyPager.moveFirst();
-                                       historyPageStore.loadRawData(doc);
-                                       historygrid.down('pagingtoolbar').bindStore(historygrid.getStore());
-                                       historygrid.down('pagingtoolbar').onLoad();
-                                   }
-                                   else if (historytype == 1 || historytype == 2 || historytype == 3) {
-                                       historyStopStore.loadRawData(doc);
-                                   }
-                                   else if (historytype == 4) {
-                                       historyTripStore.loadRawData(doc);
-
-                                       var tripdetails = action.result.tripdata;
-                                       tripdetails = tripdetails.replace(/\u003c/g, "<").replace("\u003e", ">");
-
-                                       var doctripdata;
-                                       if (window.ActiveXObject) {         //IE
-                                           doctripdata = new ActiveXObject("Microsoft.XMLDOM");
-                                           doctripdata.async = "false";
-                                           doctripdata.loadXML(tripdetails);
-                                       } else {                             //Mozilla
-                                           doctripdata = new DOMParser().parseFromString(tripdetails, "text/xml");
-                                       }
-
-                                       historystore.loadRawData(doctripdata);
-                                       historygrid.down('pagingtoolbar').bindStore(historygrid.getStore());
-                                       historygrid.down('pagingtoolbar').onLoad();
-                                   }
-
-                                   //historystore.loadRawData(doc);
-                                   historyForm.hide();
-                                   loadingMask.hide();
-                               }
-                               catch (error) {
-                                   historyForm.hide();
-                                   loadingMask.hide();
-                               }
-
-                           },
-                           failure: function (form, action) {
-                               loadingMask.hide();
-                               Ext.Msg.alert(ResbtnSubmitAlertTitle, action.result.msg ? action.result.msg : 'Unknown Error');
-                           }
-                       });
-                   }
+    historyGraphWindow = Ext.create('Ext.panel.Panel', {
+        title: '',
+        labelWidth: 50, // label settings here cascade unless overridden
+        frame: true,
+        //bodyStyle: 'padding:5px 5px 0;margin:0 0 10px 0;',
+        margin: '0 10 10 10',
+        hidden: true,
+        height: 150,
+        width: historyGraphWidth, //830,
+        html: '<div id="divHistoryGraph"></div>',
+        listeners: {
+            afterrender: function () {
+                try {
+                    historyGraphWindow.setWidth(defaultMapView == 'west' ? (historyGraphWidth - northmappanel.getWidth()) : historyGraphWidth);
+                }
+                catch (err) { }
+            }
+           , beforeshow: function (p, eOpts) {
+               if (dataHistoryGraphSpeed.length == 0) {
+                   //initialise graph data
+                   dataHistoryGraphSpeed = GetHistoryGraphData();
                }
-               catch (err) {
+               if (dataHistoryGraphRPM.length == 0) {
+                   dataHistoryGraphRPM = GetHistoryGraphRPM();
                }
+               if (dataHistoryGraphRoadSpeed.length == 0) {
+                   dataHistoryGraphRoadSpeed = GetHistoryGraphRoadSpeed();
+               }
+               $(document).ready(function () {
+                   var background = {
+                       type: 'linearGradient',
+                       x0: 0,
+                       y0: 0,
+                       x1: 0,
+                       y1: 1,
+                       colorStops: [{ offset: 0, color: '#d2e6c9' },
+                          { offset: 1, color: 'white' }]
+                   };
+
+                   $('#divHistoryGraph').jqChart({
+                       width: (defaultMapView == 'west' ? (historyGraphWidth - northmappanel.getWidth()) : historyGraphWidth), //830,
+                       height: 150,
+                       title: { text: 'Speed Graph', font: '12px' },
+                       axes: [
+                                 {
+                                     type: 'category',
+                                     location: 'bottom',
+                                     zoomEnabled: true,
+                                     labels: { visible: false }
+                                 },
+                                 {
+                                     name: 'y1',
+                                     location: 'left'
+                                 },
+                                 {
+                                     name: 'y2',
+                                     location: 'left'
+                                 }
+                       ],
+                       border: { strokeStyle: '#6ba851' },
+                       background: background,
+                       tooltips: {
+                           type: 'shared'
+                       },
+                       crosshairs: {
+                           enabled: true,
+                           hLine: false,
+                           vLine: { strokeStyle: '#cc0a0c' }
+                       },
+                       series: [
+                                     {
+                                         type: 'line',
+                                         title: 'Vehicle Speed',
+                                         axisY: 'y1',
+                                         data: dataHistoryGraphSpeed
+                                     }
+                                     , {
+                                         type: 'line',
+                                         title: 'RPM',
+                                         axisY: 'y2',
+                                         data: dataHistoryGraphRPM
+                                     }
+                                     , {
+                                         type: 'line',
+                                         title: 'Road Speed',
+                                         axisY: 'y1',
+                                         data: dataHistoryGraphRoadSpeed
+                                     }
+                       ]
+                   });
+               });
            }
-       });
+        }
 
-       var txtButtonTitle = Ext.create('Ext.draw.Text', {
-           text: LoadVehiclesBasedOn == 'fleet' ? ResTxtButtonTitleFleetText : ResTxtButtonTitleHierarchyText, //'Fleet:' : 'Hierarchy:',
-           width: LoadVehiclesBasedOn == 'fleet' ? 50 : 55,
-           height: 20
-       });
+    });
 
-       var historyFormFieldContainer = Ext.create('Ext.Panel', {
-           //title: 'Messages',
-           labelWidth: 0,
-           border: 0,
-           frame: false,
-           bodyStyle: 'padding:0;border:0;background-color:transparent;',
-           width: 310,
-           layout: 'column', // arrange fieldsets side by side
-           defaults: {
-               width: 240,
-               labelWidth: 90
-           },
-           //margin: '10px 0',
-           header: false,
-           defaultType: 'textfield',
-           items: [historyDateTimeContainer, historyType, historyHiddenFleet,
-                txtButtonTitle,
-                LoadVehiclesBasedOn == 'fleet' ? historyFleetButton : historyOrganizationHierarchy,
-                historyVehicles, historyCommModes/*, btnSubmit*/]
-       });
+    var historyForm = Ext.create('Ext.form.Panel', {
+        title: '',
+        labelWidth: 50, // label settings here cascade unless overridden
+        url: './historynew/historyservices.aspx?st=gethistoryrecords',
+        frame: true,
+        bodyStyle: 'padding:5px 5px 0;',
+        width: 630,
+        layout: 'column', // arrange fieldsets side by side
+        defaults: {
+            width: 240,
+            labelWidth: 90
+        },
+        //margin: '10px 0',
+        header: false,
+        defaultType: 'textfield',
+        items: [historyByLocation, historyFormFieldContainer, historytabs]
+    });
 
-       var historytabs = Ext.create('Ext.tab.Panel',
-       {
-           region: 'center', // a center region is ALWAYS required for border layout
-           deferredRender: false,
-           titleCollapse: false,
-           autoScroll: true,
-           border: false,
-           width: 300,
-           height: 180,
+    historyGridForm = Ext.create('Ext.Panel', {
+        id: 'historyGridForm',
+        frame: false,
+        border: 0,
+        title: ResHistory, //'History',
+        header: false,
+        bodyPadding: 0,
+        margin: '5px',
+        width: 750,
+        closable: true,
+        autoHeight: true,
+        autoScroll: true,
+        layout: 'anchor',    // Specifies that the items will now be arranged in columns
 
-           autoHeight: true,
-           collapsible: false,
-           animCollapse: true,
-           autoDestroy: false,
-           activeTab: 0,     // first tab initially active
-           items: [historyMessageForm, historyLoactionForm, historyTripRadios],
-           listeners:
-            {
-                tabchange: function (tabPanel, newCard, oldCard, eOpts) {
-                    if (newCard.id == 'historyLoactionForm') {
-                        historyByLocation.setValue('1');
+        fieldDefaults: {
+            labelAlign: 'left',
+            msgTarget: 'side'
+        },
+        //Edited by Rohit Mittal for Trip Colors button
+        items: [btnHistorySearch, btnHistoryMapit, btnHistoryMapAll, btnHistorySendCommand, ShowMultiColor ? historyTripColors : null, btnVehicleonoff, btnHistoryReplay, btnSubmit, btnHistoryGraph, btnHistoryLegend, replayPanel, historyGraphWindow, historyForm]
+        , listeners: {
+            'activate': function (grid, eOpts) {
+                if (historyIniVehicleId != '') {
+                    var testvalue;
+                    Ext.each(mainstore.data.items, function (item, index) {
+                        if (index < 0)
+                            return false;
+                        if (item.data.VehicleId == historyIniVehicleId) {
+                            testvalue = item.data.Description
+                            if (historyVehicles.getStore().findExact('VehicleId', historyIniVehicleId, 0) == -1) {
+                                var u = Ext.create('HistoryVehicleList', {
+                                    VehicleId: historyIniVehicleId,
+                                    Description: testvalue
+                                });
+                                historyVehicles.getStore().insert(0, u);
+                            }
+                            return false;
+                        }
+                    });
+                    if (historyVehicles.getStore().data.length <= 0) {
+                        if (LoadVehiclesBasedOn == 'fleet') {
+                            historyVehicleStore.load(
+                              {
+                                  params:
+                                      {
+                                          fleetID: SelectedFleetId
+                                      }
+                              });
+                        }
+                        else {
+                            historyVehicleStore.load(
+                                  {
+                                      params:
+                                      {
+                                          fleetId: DefaultOrganizationHierarchyFleetId
+                                      }
+                                  });
+                        }
+                    }
+                    historyVehicles.setValue(historyIniVehicleId);
+                }
+                if (historyAddressResetField) {
+                    historyAddressResetField = false;
+                    SelectedFleetId = historyAddressFleetId;
+                    if (historyAddressFleetId == historyHiddenFleet.getValue() && historyVehicleStoreLoaded) {
+
+                        historyVehicles.setValue(historyIniVehicleId);
+                        historyIniVehicleId = '';
+                    }
+                    else if (historyVehicleStoreLoaded) {
+                        historyVehicleStore.load(
+                             {
+                                 params:
+                                 {
+                                     fleetID: historyAddressFleetId
+                                 }
+                             }
+                         );
+                    }
+
+                    if (LoadVehiclesBasedOn == 'fleet') {
+                        historyFleetButton.setText(ReshistoryFleetButtonsetText); //historyFleetButton.setText('All Vehicles');
+                        historyHiddenFleet.setValue(historyAddressFleetId);
                     }
                     else {
-                        historyByLocation.setValue('0');
+                        historyOrganizationHierarchy.setText(ReshistoryFleetButtonsetText); //historyOrganizationHierarchy.setText('All Vehicles');
+                        historyHiddenFleet.setValue(historyAddressFleetId);
+                    }
+
+                    historyForm.show();
+                    removeHistoriesOnMap(mapframe);
+                    historystore.removeAll();
+                    historyPageStore.removeAll();
+                    historyStopStore.removeAll();
+
+                    return;
+                }
+                if (historyIni) {
+                    historyIni = false;
+
+                    if (LoadVehiclesBasedOn == 'fleet') {
+                        //historyFleetId = SelectedFleetId;
+                        //historyFleetName = SelectedFleetName;
+                        historyFleetButton.setText(SelectedFleetName);
+                        historyHiddenFleet.setValue(SelectedFleetId);
+                    }
+                    else {
+                        //HistoryOrganizationHierarchyFleetId = DefaultOrganizationHierarchyFleetId;
+                        //HistoryOrganizationHierarchyNodeCode = DefaultOrganizationHierarchyNodeCode;
+                        historyOrganizationHierarchy.setText(organizationHierarchy.getText());
+                        historyHiddenFleet.setValue(DefaultOrganizationHierarchyFleetId);
+                    }
+
+
+                    historyForm.show();
+                    removeHistoriesOnMap(mapframe);
+                    historystore.removeAll();
+                    historyPageStore.removeAll();
+                    historyStopStore.removeAll();
+                }
+                if (historyIniVehicleId != '' && historyVehicleStoreLoaded) {
+                    if (LoadVehiclesBasedOn == 'fleet') {
+                        if (historyFleetId == SelectedFleetId) {
+                            historyVehicles.setValue(historyIniVehicleId);
+                            historyIniVehicleId = '';
+                        }
+                        else {
+                            historyFleetId = SelectedFleetId;
+                            historyFleetName = SelectedFleetName;
+                            historyFleetButton.setText(historyFleetName);
+                            historyHiddenFleet.setValue(historyFleetId);
+
+                            historyVehicleStore.load(
+                             {
+                                 params:
+                                 {
+                                     fleetID: historyFleetId
+                                 }
+                             }
+                         );
+                        }
+                    }
+                    else {
+                        if (HistoryOrganizationHierarchyFleetId == DefaultOrganizationHierarchyFleetId) {
+                            historyVehicles.setValue(historyIniVehicleId);
+                            historyIniVehicleId = '';
+                        }
+                        else {
+                            HistoryOrganizationHierarchyFleetId = DefaultOrganizationHierarchyFleetId;
+                            HistoryOrganizationHierarchyNodeCode = DefaultOrganizationHierarchyNodeCode;
+                            historyOrganizationHierarchy.setText(organizationHierarchy.getText());
+                            historyHiddenFleet.setValue(HistoryOrganizationHierarchyFleetId);
+
+                            historyVehicleStore.load(
+                             {
+                                 params:
+                                 {
+                                     fleetID: HistoryOrganizationHierarchyFleetId
+                                 }
+                             }
+                         );
+                        }
                     }
                 }
+            },
+            'close': function (panel, eOpts) {
+                removeHistoriesOnMap(mapframe);
+                historystore.removeAll();
+                historyPageStore.removeAll();
+                historyStopStore.removeAll();
             }
+        }
+    });
 
-       }
-       );
-
-       historyReplaySlider = Ext.create('Ext.slider.Single', {
-           width: 214,
-           minValue: 0,
-           hideLabel: true,
-           useTips: true,
-           maxValue: 100,
-           tipText: function (thumb) {
-               var currentDateTime = GetHistoryCurrentDateTime(thumb.value);
-               return Ext.String.format('{0}', Ext.Date.format(currentDateTime, userdateformat));
-           },
-           listeners: {
-               changecomplete: function (slider, newValue, thumb, eOpts) {
-                   replayHistoryVehicleMarkers(newValue);
-               }
-           }
-       });
-
-       btnHistoryPlayPlay = Ext.create('Ext.Button',
-       {
-           text: '',
-           id: 'labelHistoryPlayPlay',
-           //tooltip: Res_historyReplayTooltip, //'History Replay',
-           iconCls: 'history-icons replayPlay',
-           overCls: 'history-icons-hover',
-           hidden: true,
-           cls: 'cmbfonts',
-           textAlign: 'left',
-           width: 22,
-           margin: '0 0 0 10',
-           handler: function () {
-               try {
-                   btnHistoryPlayPlay.hide();
-                   btnHistoryPlayPause.show();
-                   HistoryPlayPaused = false;
-                   replayHistoryVehicleMarkers();
-
-               }
-               catch (err) {
-               }
-           }
-       }
-       );
-
-       btnHistoryPlayPause = Ext.create('Ext.Button',
-       {
-           text: '',
-           id: 'labelHistoryPlayPause',
-           //tooltip: Res_historyReplayTooltip, //'History Replay',
-           iconCls: 'history-icons replayPause',
-           overCls: 'history-icons-hover',
-           cls: 'cmbfonts',
-           textAlign: 'left',
-           width: 22,
-           margin: '0 0 0 10',
-           handler: function () {
-               try {
-                   //               if (HistoryPlayPaused) {
-                   //                   HistoryPlayPaused = false;
-                   //                   btnHistoryReplay.setText(Res_historyReplayStop); // 'Stop'
-                   //               }
-                   //               else {
-                   //                   HistoryPlayPaused = true;
-                   //                   btnHistoryReplay.setText(Res_HistoryReplayReplay); // 'Replay'
-                   //               }
-
-                   btnHistoryPlayPlay.show();
-                   btnHistoryPlayPause.hide();
-                   HistoryPlayPaused = true;
-                   replayHistoryVehicleMarkers();
-
-               }
-               catch (err) {
-               }
-           }
-       }
-       );
-
-       var historyPlaySpeedButtons = Ext.create('Ext.Container', {
-           items: [
-            {
-                xtype: 'button',
-                enableToggle: true,
-                text: '1/4 x',
-                toggleGroup: 'ratings',
-                width: 39,
-                margin: '0 2 0 10',
-                allowDepress: false,
-                handler: function () {
-                    try {
-                        setHistoryReplayDelayTime(4);
-                    }
-                    catch (err) {
-                    }
-                }
-            }, {
-                xtype: 'button',
-                enableToggle: true,
-                text: '1/2 x',
-                toggleGroup: 'ratings',
-                width: 39,
-                margin: '0 2 0 2',
-                allowDepress: false,
-                handler: function () {
-                    try {
-                        setHistoryReplayDelayTime(2);
-                    }
-                    catch (err) {
-                    }
-                }
-            }, {
-                xtype: 'button',
-                enableToggle: true,
-                text: '1 x',
-                toggleGroup: 'ratings',
-                width: 39,
-                margin: '0 2 0 2',
-                pressed: true,
-                allowDepress: false,
-                handler: function () {
-                    try {
-                        setHistoryReplayDelayTime(1);
-                    }
-                    catch (err) {
-                    }
-                }
-            }, {
-                xtype: 'button',
-                enableToggle: true,
-                text: '2 x',
-                toggleGroup: 'ratings',
-                width: 39,
-                margin: '0 2 0 2',
-                allowDepress: false,
-                handler: function () {
-                    try {
-                        setHistoryReplayDelayTime(0.5);
-                    }
-                    catch (err) {
-                    }
-                }
-            }, {
-                xtype: 'button',
-                enableToggle: true,
-                text: '4 x',
-                toggleGroup: 'ratings',
-                width: 39,
-                margin: '0 2 0 2',
-                allowDepress: false,
-                handler: function () {
-                    try {
-                        setHistoryReplayDelayTime(0.25);
-                    }
-                    catch (err) {
-                    }
-                }
-            }
-        ]
-       });
-
-       txtHistoryReplayDelayTime = Ext.create('Ext.form.field.Text',
-       {
-           width: 60,
-           margin: '0 0 0 20',
-           readOnly: true,
-           border: false,
-           value: '200ms'
-       });
-
-       var btnHistoryPlayIncrease = Ext.create('Ext.Button',
-       {
-           text: '',
-           id: 'labelHistoryPlayIncrease',
-           //tooltip: Res_historyReplayTooltip, //'History Replay',
-           iconCls: 'history-icons replayIncrease',
-           overCls: 'history-icons-hover',
-           cls: 'cmbfonts',
-           textAlign: 'left',
-           width: 22,
-           margin: '0 0 0 0',
-           handler: function () {
-               try {
-
-                   //txtHistoryReplayDelayTime.setValue('250ms');
-                   adjustHistoryReplayDelayTime(50);
-               }
-               catch (err) {
-               }
-           }
-       }
-       );
-
-       var btnHistoryPlayDecrease = Ext.create('Ext.Button',
-       {
-           text: '',
-           id: 'labelHistoryPlayDecrease',
-           //tooltip: Res_historyReplayTooltip, //'History Replay',
-           iconCls: 'history-icons replayDecrease',
-           overCls: 'history-icons-hover',
-           cls: 'cmbfonts',
-           textAlign: 'left',
-           width: 22,
-           margin: '0 0 0 0',
-           handler: function () {
-               try {
-
-                   //txtHistoryReplayDelayTime.setValue('150ms');
-                   adjustHistoryReplayDelayTime(-50);
-               }
-               catch (err) {
-               }
-           }
-       }
-       );
-
-       var btnHistoryPlayClose = Ext.create('Ext.Button',
-       {
-           text: '',
-           id: 'labelHistoryPlayClose',
-           //tooltip: Res_historyReplayTooltip, //'History Replay',
-           iconCls: 'history-icons replayClose',
-           overCls: 'history-icons-hover',
-           cls: 'cmbfonts',
-           textAlign: 'left',
-           width: 22,
-           margin: '0 0 0 20',
-           handler: function () {
-               try {
-
-                   btnHistoryPlayPlay.show();
-                   btnHistoryPlayPause.hide();
-                   HistoryPlayPaused = true;
-                   replayHistoryVehicleMarkers();
-                   replayPanel.hide();
-                   btnHistoryReplay.setDisabled(false);
-               }
-               catch (err) {
-               }
-           }
-       }
-       );
-
-       replayPanel = Ext.create('Ext.form.Panel', {
-           title: '',
-           labelWidth: 50, // label settings here cascade unless overridden
-           frame: true,
-           //bodyStyle: 'padding:5px 5px 0;margin:0 0 10px 0;',
-           margin: '0 10 10 10',
-           hidden: true,
-           width: 430,//530,
-           layout: 'column', // arrange fieldsets side by side
-           defaults: {
-               width: 240,
-               labelWidth: 90
-           },
-           //margin: '10px 0',
-           header: false,
-           defaultType: 'textfield',
-           items: [historyReplaySlider, btnHistoryPlayPlay, btnHistoryPlayPause, /*historyPlaySpeedButtons,*/txtHistoryReplayDelayTime, btnHistoryPlayIncrease, btnHistoryPlayDecrease, btnHistoryPlayClose]
-       });
-
-       var historyGraphWidth = window.screen.width - 70;
-
-       historyGraphWindow = Ext.create('Ext.panel.Panel', {
-           title: '',
-           labelWidth: 50, // label settings here cascade unless overridden
-           frame: true,
-           //bodyStyle: 'padding:5px 5px 0;margin:0 0 10px 0;',
-           margin: '0 10 10 10',
-           hidden: true,
-           height: 150,
-           width: historyGraphWidth, //830,
-           html: '<div id="divHistoryGraph"></div>',
-           listeners: {
-               afterrender: function () {
-                   try {
-                       historyGraphWindow.setWidth(defaultMapView == 'west' ? (historyGraphWidth - northmappanel.getWidth()) : historyGraphWidth);
-                   }
-                   catch (err) { }
-               }
-              , beforeshow: function (p, eOpts) {
-                  if (dataHistoryGraphSpeed.length == 0) {
-                      //initialise graph data
-                      dataHistoryGraphSpeed = GetHistoryGraphData();
-                  }
-                  if (dataHistoryGraphRPM.length == 0) {
-                      dataHistoryGraphRPM = GetHistoryGraphRPM();
-                  }
-                  if (dataHistoryGraphRoadSpeed.length == 0) {
-                      dataHistoryGraphRoadSpeed = GetHistoryGraphRoadSpeed();
-                  }
-                  $(document).ready(function () {
-                      var background = {
-                          type: 'linearGradient',
-                          x0: 0,
-                          y0: 0,
-                          x1: 0,
-                          y1: 1,
-                          colorStops: [{ offset: 0, color: '#d2e6c9' },
-                             { offset: 1, color: 'white'}]
-                      };
-
-                      $('#divHistoryGraph').jqChart({
-                          width: (defaultMapView == 'west' ? (historyGraphWidth - northmappanel.getWidth()) : historyGraphWidth), //830,
-                          height: 150,
-                          title: { text: 'Speed Graph', font: '12px' },
-                          axes: [
-                                    {
-                                        type: 'category',
-                                        location: 'bottom',
-                                        zoomEnabled: true,
-                                        labels: { visible: false }
-                                    },
-                                    {
-                                        name: 'y1',
-                                        location: 'left'
-                                    },
-                                    {
-                                        name: 'y2',
-                                        location: 'left'
-                                    }
-                                ],
-                          border: { strokeStyle: '#6ba851' },
-                          background: background,
-                          tooltips: {
-                              type: 'shared'
-                          },
-                          crosshairs: {
-                              enabled: true,
-                              hLine: false,
-                              vLine: { strokeStyle: '#cc0a0c' }
-                          },
-                          series: [
-                                        {
-                                            type: 'line',
-                                            title: 'Vehicle Speed',
-                                            axisY: 'y1',
-                                            data: dataHistoryGraphSpeed
-                                        }
-                                        ,{
-                                            type: 'line',
-                                            title: 'RPM',
-                                            axisY: 'y2',
-                                            data: dataHistoryGraphRPM
-                                        }
-                                        , {
-                                            type: 'line',
-                                            title: 'Road Speed',
-                                            axisY: 'y1',
-                                            data: dataHistoryGraphRoadSpeed
-                                        }
-                                    ]
-                      });
-                  });
-              }
-           }
-
-       });
-
-       var historyForm = Ext.create('Ext.form.Panel', {
-           title: '',
-           labelWidth: 50, // label settings here cascade unless overridden
-           url: './historynew/historyservices.aspx?st=gethistoryrecords',
-           frame: true,
-           bodyStyle: 'padding:5px 5px 0;',
-           width: 630,
-           layout: 'column', // arrange fieldsets side by side
-           defaults: {
-               width: 240,
-               labelWidth: 90
-           },
-           //margin: '10px 0',
-           header: false,
-           defaultType: 'textfield',
-           items: [historyByLocation, historyFormFieldContainer, historytabs]
-       });
-
-       historyGridForm = Ext.create('Ext.Panel', {
-           id: 'historyGridForm',
-           frame: false,
-           border: 0,
-           title: ResHistory, //'History',
-           header: false,
-           bodyPadding: 0,
-           margin: '5px',
-           width: 750,
-           closable: true,
-           autoHeight: true,
-           autoScroll: true,
-           layout: 'anchor',    // Specifies that the items will now be arranged in columns
-
-           fieldDefaults: {
-               labelAlign: 'left',
-               msgTarget: 'side'
-           },
-//Edited by Rohit Mittal for Trip Colors button
-           items: [btnHistorySearch, btnHistoryMapit, btnHistoryMapAll, btnHistorySendCommand, ShowMultiColor ? historyTripColors : null, btnVehicleonoff, btnHistoryReplay, btnSubmit, btnHistoryGraph, btnHistoryLegend, replayPanel, historyGraphWindow, historyForm]
-           , listeners: {
-               'activate': function (grid, eOpts) {
-                   if (historyIniVehicleId != '') {
-                       var testvalue;
-                       Ext.each(mainstore.data.items, function (item, index) {
-                           if (index < 0)
-                               return false;
-                           if (item.data.VehicleId == historyIniVehicleId) {
-                               testvalue = item.data.Description
-                               if (historyVehicles.getStore().findExact('VehicleId', historyIniVehicleId, 0) == -1) {
-                                   var u = Ext.create('HistoryVehicleList', {
-                                       VehicleId: historyIniVehicleId,
-                                       Description: testvalue
-                                   });
-                                   historyVehicles.getStore().insert(0, u);
-                               }
-                               return false;
-                           }
-                       });
-                       if (historyVehicles.getStore().data.length <= 0) {
-                               if (LoadVehiclesBasedOn == 'fleet') {
-                                   historyVehicleStore.load(
-                                     {
-                                         params:
-                                             {
-                                                 fleetID: SelectedFleetId
-                                             }
-                                     });
-                               }
-                               else {
-                                   historyVehicleStore.load(
-                                         {
-                                             params:
-                                             {
-                                                 fleetId: DefaultOrganizationHierarchyFleetId
-                                             }
-                                         });
-                               }
-                       }
-                       historyVehicles.setValue(historyIniVehicleId);
-                   }
-                   if (historyAddressResetField) {
-                       historyAddressResetField = false;
-                       SelectedFleetId = historyAddressFleetId;
-                       if (historyAddressFleetId == historyHiddenFleet.getValue() && historyVehicleStoreLoaded) {
-
-                           historyVehicles.setValue(historyIniVehicleId);
-                           historyIniVehicleId = '';
-                       }
-                       else if (historyVehicleStoreLoaded) {
-                           historyVehicleStore.load(
-                                {
-                                    params:
-                                    {
-                                        fleetID: historyAddressFleetId
-                                    }
-                                }
-                            );
-                       }
-
-                       if (LoadVehiclesBasedOn == 'fleet') {
-                           historyFleetButton.setText(ReshistoryFleetButtonsetText); //historyFleetButton.setText('All Vehicles');
-                           historyHiddenFleet.setValue(historyAddressFleetId);
-                       }
-                       else {
-                           historyOrganizationHierarchy.setText(ReshistoryFleetButtonsetText); //historyOrganizationHierarchy.setText('All Vehicles');
-                           historyHiddenFleet.setValue(historyAddressFleetId);
-                       }
-
-                       historyForm.show();
-                       removeHistoriesOnMap(mapframe);
-                       historystore.removeAll();
-                       historyPageStore.removeAll();
-                       historyStopStore.removeAll();
-
-                       return;
-                   }
-                   if (historyIni) {
-                       historyIni = false;
-
-                       if (LoadVehiclesBasedOn == 'fleet') {
-                           //historyFleetId = SelectedFleetId;
-                           //historyFleetName = SelectedFleetName;
-                           historyFleetButton.setText(SelectedFleetName);
-                           historyHiddenFleet.setValue(SelectedFleetId);
-                       }
-                       else {
-                           //HistoryOrganizationHierarchyFleetId = DefaultOrganizationHierarchyFleetId;
-                           //HistoryOrganizationHierarchyNodeCode = DefaultOrganizationHierarchyNodeCode;
-                           historyOrganizationHierarchy.setText(organizationHierarchy.getText());
-                           historyHiddenFleet.setValue(DefaultOrganizationHierarchyFleetId);
-                       }
-
-
-                       historyForm.show();
-                       removeHistoriesOnMap(mapframe);
-                       historystore.removeAll();
-                       historyPageStore.removeAll();
-                       historyStopStore.removeAll();
-                   }
-                   if (historyIniVehicleId != '' && historyVehicleStoreLoaded) {
-                       if (LoadVehiclesBasedOn == 'fleet') {
-                           if (historyFleetId == SelectedFleetId) {
-                               historyVehicles.setValue(historyIniVehicleId);
-                               historyIniVehicleId = '';
-                           }
-                           else {
-                               historyFleetId = SelectedFleetId;
-                               historyFleetName = SelectedFleetName;
-                               historyFleetButton.setText(historyFleetName);
-                               historyHiddenFleet.setValue(historyFleetId);
-
-                               historyVehicleStore.load(
-                                {
-                                    params:
-                                    {
-                                        fleetID: historyFleetId
-                                    }
-                                }
-                            );
-                           }
-                       }
-                       else {
-                           if (HistoryOrganizationHierarchyFleetId == DefaultOrganizationHierarchyFleetId) {
-                               historyVehicles.setValue(historyIniVehicleId);
-                               historyIniVehicleId = '';
-                           }
-                           else {
-                               HistoryOrganizationHierarchyFleetId = DefaultOrganizationHierarchyFleetId;
-                               HistoryOrganizationHierarchyNodeCode = DefaultOrganizationHierarchyNodeCode;
-                               historyOrganizationHierarchy.setText(organizationHierarchy.getText());
-                               historyHiddenFleet.setValue(HistoryOrganizationHierarchyFleetId);
-
-                               historyVehicleStore.load(
-                                {
-                                    params:
-                                    {
-                                        fleetID: HistoryOrganizationHierarchyFleetId
-                                    }
-                                }
-                            );
-                           }
-                       }
-                   }
-               },
-               'close': function (panel, eOpts) {
-                   removeHistoriesOnMap(mapframe);
-                   historystore.removeAll();
-                   historyPageStore.removeAll();
-                   historyStopStore.removeAll();
-               }
-           }
-       });
-
-       var historyGridColumns = [
-        { header: ReshistorygridBoxId, //'Unit ID', 
-            dataIndex: 'BoxId', align: 'left',
-            width: 70,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-        { header: ReshistorygridDescription, // 'Vehicle', 
-            dataIndex: 'Description', align: 'left',
-            width: 120,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-        {
-            header: ReshistorygridOriginDateTime, //'Date/Time', 
-            dataIndex: 'OriginDateTime', align: 'left',
-            align: 'left',
-            width: 150,
-            xtype: 'datecolumn',
-            format: userdateformat, //'d/m/Y h:i:s a',
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false,
-            tdCls: 'x-date-time',
-            renderer: function (value, p, record) {
-                return Ext.String.format('<div title="Received Date/Time: {0}" href="javascript:void(0);" style="width:100%;display:inline-block;overflow:hidden;" rel="bootstrapHoverPopover" data-html="true" data-container="body" data-content="{0}" data-html="true" data-title="Received Date/Time" data-placement="right" data-container="body">{1}</div>', Ext.Date.format(record.data.DateTimeReceived, userdateformat/*'d/m/Y h:i:s a'*/), Ext.Date.format(value, userdateformat/*'d/m/Y h:i:s a'*/));
-            }
-        },
-        {
-            header: ReshistorygridStreetAddress, //'Address', 
-            dataIndex: 'StreetAddress', align: 'left',
-            align: 'left',
-            width: 230,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false,
-            renderer: function (value, p, record) {
-                if (record.data.ValidGps * 1 == 0 || record.data.ValidGps * 1 == 1)
-                    return value;
-                else
-                    return '---';
-            }
-        },
-        {
-            header: 'Lat, Lon',
-            dataIndex: 'LatLon', align: 'left',
-            align: 'left',
-            width: 130,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: true/*,
+    var historyGridColumns = [
+     {
+         header: ReshistorygridBoxId, //'Unit ID',
+         dataIndex: 'BoxId', align: 'left',
+         width: 70,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: ReshistorygridDescription, // 'Vehicle',
+         dataIndex: 'Description', align: 'left',
+         width: 120,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: ReshistorygridOriginDateTime, //'Date/Time',
+         dataIndex: 'OriginDateTime', align: 'left',
+         align: 'left',
+         width: 150,
+         xtype: 'datecolumn',
+         format: userdateformat, //'d/m/Y h:i:s a',
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false,
+         tdCls: 'x-date-time',
+         renderer: function (value, p, record) {
+             return Ext.String.format('<div title="Received Date/Time: {0}" href="javascript:void(0);" style="width:100%;display:inline-block;overflow:hidden;" rel="bootstrapHoverPopover" data-html="true" data-container="body" data-content="{0}" data-html="true" data-title="Received Date/Time" data-placement="right" data-container="body">{1}</div>', Ext.Date.format(record.data.DateTimeReceived, userdateformat/*'d/m/Y h:i:s a'*/), Ext.Date.format(value, userdateformat/*'d/m/Y h:i:s a'*/));
+         }
+     },
+     {
+         header: ReshistorygridStreetAddress, //'Address',
+         dataIndex: 'StreetAddress', align: 'left',
+         align: 'left',
+         width: 230,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false,
+         renderer: function (value, p, record) {
+             if (record.data.ValidGps * 1 == 0 || record.data.ValidGps * 1 == 1)
+                 return value;
+             else
+                 return '---';
+         }
+     },
+     {
+         header: 'Lat, Lon',
+         dataIndex: 'LatLon', align: 'left',
+         align: 'left',
+         width: 130,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: true/*,
             renderer: function (value, p, record) {
                 if (record.data.ValidGps * 1 == 0)
                     return Ext.String.format('{0}, {1}', record.data.Latitude, record.data.Longitude);
                 else
                     return ResTextNA;
             }*/
-        },
-        {
-            header: ResValidGPS,//'Valid GPS',
-            dataIndex: 'ValidGps', align: 'left',
-            align: 'left',
-            width: 60,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: true,
-            renderer: function (value, p, record) {
-                if (value * 1 == 0)
-                    return ResTextTrue;//'true';
-                else if (value * 1 == 1)
-                    return ResTextFalse;//'false';
-                else
-                    return ResTextNA;//'N/A';
-            }
-        },
-        {
-            header: ReshistorygridSpeed, //'Speed',
-            dataIndex: 'Speed', align: 'left',
-            align: 'left',
-            width: 50,
-            renderer: function (value, p, record) {
-                if (value == -1)
-                    return 'N/A';
-                else
-                    return value;
+     },
+     {
+         header: ResValidGPS,//'Valid GPS',
+         dataIndex: 'ValidGps', align: 'left',
+         align: 'left',
+         width: 60,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: true,
+         renderer: function (value, p, record) {
+             if (value * 1 == 0)
+                 return ResTextTrue;//'true';
+             else if (value * 1 == 1)
+                 return ResTextFalse;//'false';
+             else
+                 return ResTextNA;//'N/A';
+         }
+     },
+     {
+         header: ReshistorygridSpeed, //'Speed',
+         dataIndex: 'Speed', align: 'left',
+         align: 'left',
+         width: 50,
+         renderer: function (value, p, record) {
+             if (value == -1)
+                 return 'N/A';
+             else
+                 return value;
+         },
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: ReshistorygridBoxMsgInTypeName, //'Message',
+         dataIndex: 'BoxMsgInTypeName', align: 'left',
+         renderer: function (value, p, record, ri) {
+             //return '<a href="javascript:var w =HistoryInfo(' + ri + ')">' + value + '</a>';
+             var r = '<a href="' + record.data.CustomUrl + '" style="float:left;">' + value + '</a>';
+             if (record.data.MsgDetails.indexOf("Video Available") >= 0)
+                 r += " <a style='float:right;' href='javascript:void(0)' onclick='VideoViewer(" + record.data.BoxId + ", \"" + Ext.Date.format(record.data.OriginDateTime, userdateformat) + "\" )'>V</a>";
+             return r;
+         },
+         align: 'left',
+         width: 130,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         //header: 'MsgDetails', dataIndex: 'CustomProp', align: 'left',
+         header: ReshistorygridMsgDetails, //'MsgDetails',
+         dataIndex: 'MsgDetails', align: 'left',
+         align: 'left',
+         width: 130,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false,
+         renderer: function (value, p, record) {
+             if (HGI)
+                 return Ext.String.format('<div href="javascript:void(0);" style="width:100%;display:inline-block;overflow:hidden;" rel="bootstrapHoverPopover" data-html="true" data-container="body" data-content="[{0}]" data-html="true" data-title="Custom Prop" data-placement="right" data-container="body">{1}</div>', record.data.CustomProp, value);
+             else
+                 return value;
+         }
+     },
+     {
+         header: ResAcknowledged, //'Ack',
+         dataIndex: 'Acknowledged', align: 'left',
+         align: 'left',
+         width: 50,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+
+             {
+                 id: 'vgHisDriver',
+                 text: 'Driver Name',
+                 align: 'left',
+                 width: 90,
+                 dataIndex: 'Driver',
+                 filterable: true,
+                 sortable: true
+             },
+             {
+                 id: 'vgHisDriverHIDCard',
+                 text: 'Driver ID',
+                 align: 'left',
+                 width: 130,
+                 dataIndex: 'DriverHIDCard',
+                 filterable: true,
+                 sortable: true
+             },
+            {
+                id: 'vgHisRPM',
+                text: 'RPM',
+                align: 'right',
+                width: 60,
+                dataIndex: 'RPM',
+                filterable: true,
+                sortable: true
             },
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-        {
-            header: ReshistorygridBoxMsgInTypeName, //'Message',
-            dataIndex: 'BoxMsgInTypeName', align: 'left',
-            renderer: function (value, p, record, ri) {
-                //return '<a href="javascript:var w =HistoryInfo(' + ri + ')">' + value + '</a>';
-                var r = '<a href="' + record.data.CustomUrl + '" style="float:left;">' + value + '</a>';
-                if (record.data.MsgDetails.indexOf("Video Available") >= 0)
-                    r += " <a style='float:right;' href='javascript:void(0)' onclick='VideoViewer(" + record.data.BoxId + ", \"" + Ext.Date.format(record.data.OriginDateTime, userdateformat) + "\" )'>V</a>";
-                return r;
-            },
-            align: 'left',
-            width: 130,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-        {
-            //header: 'MsgDetails', dataIndex: 'CustomProp', align: 'left',
-            header: ReshistorygridMsgDetails, //'MsgDetails',
-            dataIndex: 'MsgDetails', align: 'left',
-            align: 'left',
-            width: 130,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false,
-            renderer: function (value, p, record) {
-                if (HGI)
-                    return Ext.String.format('<div href="javascript:void(0);" style="width:100%;display:inline-block;overflow:hidden;" rel="bootstrapHoverPopover" data-html="true" data-container="body" data-content="[{0}]" data-html="true" data-title="Custom Prop" data-placement="right" data-container="body">{1}</div>', record.data.CustomProp, value);
-                else
-                    return value;
+            {
+                id: 'vgHisPTO',
+                text: 'PTO',
+                align: 'left',
+                width: 40,
+                dataIndex: 'PTO',
+                filterable: true,
+                sortable: true
             }
-        },
-        {
-            header: ResAcknowledged, //'Ack', 
-            dataIndex: 'Acknowledged', align: 'left',
-            align: 'left',
-            width: 50,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-
-                {
-                   id: 'vgHisDriver',
-                   text: 'Driver Name',
-                   align: 'left',
-                   width: 90,
-                   dataIndex: 'Driver',
-                   filterable: true,
-                   sortable: true
-               },
-                {
-                   id: 'vgHisDriverHIDCard',
-                   text: 'Driver ID',
-                   align: 'left',
-                   width: 130,
-                   dataIndex: 'DriverHIDCard',
-                   filterable: true,
-                   sortable: true
-               },
-               {
-                   id: 'vgHisRPM',
-                   text: 'RPM',
-                   align: 'right',
-                   width: 60,
-                   dataIndex: 'RPM',
-                   filterable: true,
-                   sortable: true
-               },
-               {
-                   id: 'vgHisPTO',
-                   text: 'PTO',
-                   align: 'left',
-                   width: 40,
-                   dataIndex: 'PTO',
-                   filterable: true,
-                   sortable: true
-               }
 
 
-      ];
+    ];
 
-       // 'CP_Fuel', 'CP_Odometer', 'CP_RPM', 'CP_FLIP', 'CP_FLIS', 'CP_SeatBelt', 'CP_MIL', 'CP_CLT', 'CP_EOT', 'CP_EOP'
-       if (ShowHistoryDetails) {
-           historyGridColumns.push(
-                {
-                    id: 'vgHisCPFuel',
-                    text: 'Fuel',
-                    align: 'right',
-                    width: 60,
-                    dataIndex: 'CP_Fuel',
-                    filterable: true,
-                    sortable: true
-                },
-               {
-                   id: 'vgHisCPOdometer',
-                   text: 'Odometer',
-                   align: 'right',
-                   width: 70,
-                   dataIndex: 'CP_Odometer',
-                   filterable: true,
-                   sortable: true
-               },
-           //               {
-           //                   id: 'vgHisCPRPM',
-           //                   text: 'RPM',
-           //                   align: 'right',
-           //                   width: 60,
-           //                   dataIndex: 'CP_RPM',
-           //                   filterable: true,
-           //                   sortable: true
-           //               },
-               {
-                   id: 'vgHisCPFLIP',
-                   text: 'Fuel Level P. (%)',
-                   align: 'right',
-                   width: 100,
-                   dataIndex: 'CP_FLIP',
-                   filterable: true,
-                   sortable: true
-               },
-               {
-                   id: 'vgHisCPFLIS',
-                   text: 'Fuel Level S. (%)',
-                   align: 'right',
-                   width: 100,
-                   dataIndex: 'CP_FLIS',
-                   filterable: true,
-                   sortable: true
-               },
-               {
-                   id: 'vgHisCPCLT',
-                   text: 'Coolant Temp. (&#176C)',
-                   align: 'right',
-                   width: 100,
-                   dataIndex: 'CP_CLT',
-                   filterable: true,
-                   sortable: true
-               },
-               {
-                   id: 'vgHisCPEOT',
-                   text: 'Eng Oil Temp. (&#176C)',
-                   align: 'right',
-                   width: 110,
-                   dataIndex: 'CP_EOT',
-                   filterable: true,
-                   sortable: true
-               },
-               {
-                   id: 'vgHisCPEOP',
-                   text: 'Eng Oil Pres (kPa)',
-                   align: 'right',
-                   width: 110,
-                   dataIndex: 'CP_EOP',
-                   filterable: true,
-                   sortable: true
-               },
-               {
-                   id: 'vgHisCPSeatBelt',
-                   text: 'Seat Belt',
-                   align: 'left',
-                   width: 90,
-                   dataIndex: 'CP_SeatBelt',
-                   filterable: true,
-                   sortable: true
-               },
-               {
-                   id: 'vgHisCPMIL',
-                   text: 'MIL',
-                   align: 'left',
-                   width: 90,
-                   dataIndex: 'CP_MIL',
-                   filterable: true,
-                   sortable: true
-               }
-           );
-       }
+    // 'CP_Fuel', 'CP_Odometer', 'CP_RPM', 'CP_FLIP', 'CP_FLIS', 'CP_SeatBelt', 'CP_MIL', 'CP_CLT', 'CP_EOT', 'CP_EOP'
+    if (ShowHistoryDetails) {
+        historyGridColumns.push(
+             {
+                 id: 'vgHisCPFuel',
+                 text: 'Fuel',
+                 align: 'right',
+                 width: 60,
+                 dataIndex: 'CP_Fuel',
+                 filterable: true,
+                 sortable: true
+             },
+            {
+                id: 'vgHisCPOdometer',
+                text: 'Odometer',
+                align: 'right',
+                width: 70,
+                dataIndex: 'CP_Odometer',
+                filterable: true,
+                sortable: true
+            },
+        //               {
+        //                   id: 'vgHisCPRPM',
+        //                   text: 'RPM',
+        //                   align: 'right',
+        //                   width: 60,
+        //                   dataIndex: 'CP_RPM',
+        //                   filterable: true,
+        //                   sortable: true
+        //               },
+            {
+                id: 'vgHisCPFLIP',
+                text: 'Fuel Level P. (%)',
+                align: 'right',
+                width: 100,
+                dataIndex: 'CP_FLIP',
+                filterable: true,
+                sortable: true
+            },
+            {
+                id: 'vgHisCPFLIS',
+                text: 'Fuel Level S. (%)',
+                align: 'right',
+                width: 100,
+                dataIndex: 'CP_FLIS',
+                filterable: true,
+                sortable: true
+            },
+            {
+                id: 'vgHisCPCLT',
+                text: 'Coolant Temp. (&#176C)',
+                align: 'right',
+                width: 100,
+                dataIndex: 'CP_CLT',
+                filterable: true,
+                sortable: true
+            },
+            {
+                id: 'vgHisCPEOT',
+                text: 'Eng Oil Temp. (&#176C)',
+                align: 'right',
+                width: 110,
+                dataIndex: 'CP_EOT',
+                filterable: true,
+                sortable: true
+            },
+            {
+                id: 'vgHisCPEOP',
+                text: 'Eng Oil Pres (kPa)',
+                align: 'right',
+                width: 110,
+                dataIndex: 'CP_EOP',
+                filterable: true,
+                sortable: true
+            },
+            {
+                id: 'vgHisCPSeatBelt',
+                text: 'Seat Belt',
+                align: 'left',
+                width: 90,
+                dataIndex: 'CP_SeatBelt',
+                filterable: true,
+                sortable: true
+            },
+            {
+                id: 'vgHisCPMIL',
+                text: 'MIL',
+                align: 'left',
+                width: 90,
+                dataIndex: 'CP_MIL',
+                filterable: true,
+                sortable: true
+            }
+        );
+    }
 
-       var hiscurrentFilters = new Object();
-       var hisfilteron = false;
-       historygrid = Ext.create('Ext.grid.Panel',
+    var hiscurrentFilters = new Object();
+    var hisfilteron = false;
+    historygrid = Ext.create('Ext.grid.Panel',
+{
+    id: 'historygrid',
+    animCollapse: false,
+    autoLoad: false,
+    autoScroll: true,
+    loadMask: true,
+    //maxWidth: window.screen.width - 50,
+    //maxHeight: window.screen.height,
+    anchor: '-10, -45',
+    autoHeight: true,
+    stateful: true,
+    closable: false,
+    enableColumnHide: true,
+    enableSorting: true,
+    title: '',
+    store: historyPageStore,
+    columnLines: true,
+    stateId: 'stateHistoryGrid',
+
+    enableColumnHide: true,
+    stateful: false,
+
+    collapsible: false,
+    animCollapse: true,
+    split: true,
+    features: [filters],
+    margin: '0',
+    selModel: selHistoryModel,
+    columns: historyGridColumns,
+    viewConfig:
    {
-       id: 'historygrid',
-       animCollapse: false,
-       autoLoad: false,
-       autoScroll: true,
-       loadMask: true,
-       //maxWidth: window.screen.width - 50,
-       //maxHeight: window.screen.height,
-       anchor: '-10, -45',
-       autoHeight: true,
-       stateful: true,
-       closable: false,
-       enableColumnHide: true,
-       enableSorting: true,
-       title: '',
-       store: historyPageStore,
-       columnLines: true,
-       stateId: 'stateHistoryGrid',
+       emptyText: ReshistorygridEmptyText, //'No History to display',
+       useMsg: false,
+       getRowClass: function (record, index) {
+           var d = record.get('TimeDifference') * 1;    // hours
+           //alert(d);
+           if (d > 0)
+               return 'latereceived';
+           else
+               return '';
+       }
+   },
+    dockedItems: {
+        xtype: 'toolbar',
+        dock: 'top',
+        items: [
+     {
+         icon: 'preview.png',
+         cls: 'x-btn-text-icon',
+         text: ResExport, //'Export',
+         menu: historyExportMenu
+     }
+        ]
+    },
+    listeners: {
+        //Added by Rohit Mittal
+        filterupdate: function () {
+            historygrid.filters.deferredUpdate.cancel();
+            var filtersdata;
+            var stringvalue;
+            var tempStore = Ext.create('Ext.data.Store', {
+                model: 'HistoryListModel',
+                pageSize: HistoryPagesize,
+                proxy: {
+                    type: 'ajax',
+                    url: './historynew/historyservices.aspx',
+                    reader: {
+                        type: 'xml',
+                        root: 'MsgInHistory',
+                        record: 'VehicleStatusHistory',
+                        totalProperty: 'totalCount'
+                    }
+                }
+            });
+            if (typeof (historygrid) != 'undefined' && historygrid.filters.filters.length > 0) {
+                filtersdata = historygrid.filters.getMenuFilter();
+                if (filtersdata != null) {
+                    filtercolvalue = filtersdata.dataIndex;
+                    if (filtersdata.active == true) {
+                        if (typeof (filtersdata.getValue()) != 'undefined') {
 
-       enableColumnHide: true,
-       stateful: false,
+                            if (filtersdata.type == "int") {
+                                stringvalue = "type int";
+                                var fvalue = filtersdata.getValue();
+                                if (typeof (fvalue["eq"]) != 'undefined')
+                                    stringvalue = stringvalue + " eq " + fvalue["eq"].toString();
+                                else {
+                                    if (typeof (fvalue["lt"]) != 'undefined')
+                                        stringvalue = stringvalue + " lt " + fvalue["lt"].toString();
+                                    if (typeof (fvalue["gt"]) != 'undefined')
+                                        stringvalue = stringvalue + " gt " + fvalue["gt"].toString();
+                                }
+                            }
+                            else if (filtersdata.type == "date") {
+                                stringvalue = "type date";
+                                var fvalue = filtersdata.getValue();
 
-       collapsible: false,
-       animCollapse: true,
-       split: true,
-       features: [filters],
-       margin: '0',
-       selModel: selHistoryModel,
-       columns: historyGridColumns,
-       viewConfig:
-      {
-          emptyText: ReshistorygridEmptyText, //'No History to display',
-          useMsg: false,
-          getRowClass: function (record, index) {
-              var d = record.get('TimeDifference') * 1;    // hours
-              //alert(d);
-              if (d > 0)
-                  return 'latereceived';
-              else
-                  return '';
-          }
-      },
-       dockedItems: {
-           xtype: 'toolbar',
-           dock: 'top',
-           items: [
-        { icon: 'preview.png',
-            cls: 'x-btn-text-icon',
-            text: ResExport, //'Export',
-            menu: historyExportMenu
+                                if (typeof (fvalue["on"]) != 'undefined') {
+                                    var dt = new Date(fvalue["on"]);
+                                    var newDt = Ext.Date.format(dt, userdateformat);
+                                    stringvalue = stringvalue + " on " + newDt.toString();
+                                }
+                                else {
+                                    if (typeof (fvalue["before"]) != 'undefined') {
+                                        var dt = new Date(fvalue["before"]);
+                                        var newDt = Ext.Date.format(dt, userdateformat);
+                                        stringvalue = stringvalue + " before " + newDt.toString();
+                                    }
+                                    if (typeof (fvalue["after"]) != 'undefined') {
+                                        var dt = new Date(fvalue["after"]);
+                                        var newDt = Ext.Date.format(dt, userdateformat);
+                                        stringvalue = stringvalue + " after " + newDt.toString();
+                                    }
+                                }
+                            }
+                            else {
+                                stringvalue = filtersdata.getValue().toString();
+                            }
+                            if (typeof (stringvalue) != 'undefined' && stringvalue.length != 0 && (stringvalue != "" || stringvalue != null)) {
+                                hisfilteron = true;
+                                hiscurrentFilters[filtercolvalue] = filtercolvalue + ":" + stringvalue;
+                                historyPageStore.currentPage = 1;
+                                loadingMask.show();
+                                tempStore.load({
+                                    params:
+                               {
+                                   st: 'GetFilteredRecord',
+                                   sorting: hissortingParam,
+                                   filters: hiscurrentFilters
+                               },
+                                    callback: function (records, operation, success) {
+                                        historygrid.getStore().loadRecords(records);
+                                        historygrid.down('pagingtoolbar').bindStore(tempStore);
+                                        historygrid.down('pagingtoolbar').onLoad();
+                                        loadingMask.hide();
+                                    },
+                                    scope: this
+                                });
+                            }
+                            else {
+                                delete hiscurrentFilters[filtercolvalue];
+                                if (Object.keys(hiscurrentFilters).length == 0) {
+                                    hisfilteron = false;
+                                    tempStore.currentPage = hiscurrentpage;
+                                    loadingMask.show();
+                                    tempStore.load({
+                                        params:
+                               {
+                                   st: 'GetFilteredRecord',
+                                   sorting: hissortingParam
+                               },
+                                        callback: function (records, operation, success) {
+                                            historygrid.getStore().loadRecords(records);
+                                            historygrid.down('pagingtoolbar').bindStore(tempStore);
+                                            historygrid.down('pagingtoolbar').onLoad();
+                                            loadingMask.hide();
+                                        },
+                                        scope: this
+                                    });
+                                }
+                                else {
+                                    loadingMask.show();
+                                    tempStore.load({
+                                        params:
+                               {
+                                   st: 'GetFilteredRecord',
+                                   sorting: hissortingParam,
+                                   filters: hiscurrentFilters
+                               },
+                                        callback: function (records, operation, success) {
+                                            historygrid.getStore().loadRecords(records);
+                                            historygrid.down('pagingtoolbar').bindStore(tempStore);
+                                            historygrid.down('pagingtoolbar').onLoad();
+                                            loadingMask.hide();
+                                        },
+                                        scope: this
+                                    });
+                                }
+                            }
+                        }
+                        else {
+                            delete hiscurrentFilters[filtercolvalue];
+                            if (Object.keys(hiscurrentFilters).length == 0) {
+                                hisfilteron = false;
+                                tempStore.currentPage = hiscurrentpage;
+                                loadingMask.show();
+                                tempStore.load({
+                                    params:
+                               {
+                                   st: 'GetFilteredRecord',
+                                   sorting: hissortingParam
+                               },
+                                    callback: function (records, operation, success) {
+                                        historygrid.getStore().loadRecords(records);
+                                        historygrid.down('pagingtoolbar').bindStore(tempStore);
+                                        historygrid.down('pagingtoolbar').onLoad();
+                                        loadingMask.hide();
+                                    },
+                                    scope: this
+                                });
+                            }
+                            else {
+                                loadingMask.show();
+                                tempStore.load({
+                                    params:
+                               {
+                                   st: 'GetFilteredRecord',
+                                   sorting: hissortingParam,
+                                   filters: hiscurrentFilters
+                               },
+                                    callback: function (records, operation, success) {
+                                        historygrid.getStore().loadRecords(records);
+                                        historygrid.down('pagingtoolbar').bindStore(tempStore);
+                                        historygrid.down('pagingtoolbar').onLoad();
+                                        loadingMask.hide();
+                                    },
+                                    scope: this
+                                });
+                            }
+                        }
+                    }
+                    else {
+                        delete hiscurrentFilters[filtercolvalue];
+                        if (Object.keys(hiscurrentFilters).length == 0) {
+                            hisfilteron = false;
+                            tempStore.currentPage = hiscurrentpage;
+                            loadingMask.show();
+                            tempStore.load({
+                                params:
+                               {
+                                   st: 'GetFilteredRecord',
+                                   sorting: hissortingParam
+                               },
+                                callback: function (records, operation, success) {
+                                    historygrid.getStore().loadRecords(records);
+                                    historygrid.down('pagingtoolbar').bindStore(tempStore);
+                                    historygrid.down('pagingtoolbar').onLoad();
+                                    loadingMask.hide();
+                                },
+                                scope: this
+                            });
+                        }
+                        else {
+                            loadingMask.show();
+                            tempStore.load({
+                                params:
+                               {
+                                   st: 'GetFilteredRecord',
+                                   sorting: hissortingParam,
+                                   filters: hiscurrentFilters
+                               },
+                                callback: function (records, operation, success) {
+                                    historygrid.getStore().loadRecords(records);
+                                    historygrid.down('pagingtoolbar').bindStore(tempStore);
+                                    historygrid.down('pagingtoolbar').onLoad();
+                                    loadingMask.hide();
+                                },
+                                scope: this
+                            });
+                        }
+                    }
+
+                }
+                else {
+                    hiscurrentFilters = {};
+                    hisfilteron = false;
+                    tempStore.currentPage = hiscurrentpage;
+                    loadingMask.show();
+                    tempStore.load({
+                        params:
+                               {
+                                   st: 'GetFilteredRecord',
+                                   sorting: hissortingParam
+
+                               },
+                        callback: function (records, operation, success) {
+                            historygrid.getStore().loadRecords(records);
+                            historygrid.down('pagingtoolbar').bindStore(tempStore);
+                            historygrid.down('pagingtoolbar').onLoad();
+                            loadingMask.hide();
+                        },
+                        scope: this
+                    });
+                }
+            }
         }
-       ]
-       },
-       listeners: {
-           //Added by Rohit Mittal
-           filterupdate: function () {
-               historygrid.filters.deferredUpdate.cancel();
-               var filtersdata;
-               var stringvalue;
-               var tempStore = Ext.create('Ext.data.Store', {
-                   model: 'HistoryListModel',
-                   pageSize: HistoryPagesize,
-                   proxy: {
-                       type: 'ajax',
-                       url: './historynew/historyservices.aspx',
-                       reader: {
-                           type: 'xml',
-                           root: 'MsgInHistory',
-                           record: 'VehicleStatusHistory',
-                           totalProperty: 'totalCount'
+    },
+    bbar: historyPager
+});
+
+    historyStopGrid = Ext.create('Ext.grid.Panel',
+{
+    id: 'historyStopGrid',
+    animCollapse: false,
+    autoLoad: false,
+    autoScroll: true,
+    loadMask: true,
+    maxWidth: window.screen.width - 50,
+    maxHeight: window.screen.height,
+
+    autoHeight: true,
+    stateful: true,
+    closable: false,
+    enableColumnHide: false,
+    enableSorting: false,
+
+    title: '',
+    store: historyStopStore,
+    columnLines: true,
+    stateId: 'stateHistoryStopGrid',
+
+    enableColumnHide: true,
+    stateful: false,
+
+    collapsible: false,
+    animCollapse: true,
+    split: true,
+    features: [filters],
+    margin: '0',
+    selModel: selHistoryStopModel,
+
+    viewConfig:
+   {
+       emptyText: ReshistoryStopGridEmptyText, //'No History to display',
+       useMsg: false
+   }
+   ,
+    columns: [
+     {
+         header: ReshistoryStopGridArrivalDateTime, //'Arrival',
+         dataIndex: 'ArrivalDateTime', align: 'left',
+         xtype: 'datecolumn',
+         format: userdateformat, //'d/m/Y h:i:s a',
+         width: 150,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: ReshistoryStopGridLocation, //'Address',
+         dataIndex: 'Location',
+         align: 'left',
+         width: 220,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: ReshistoryStopGridDepartureDateTime, //'Departure',
+         dataIndex: 'DepartureDateTime', align: 'left',
+         xtype: 'datecolumn',
+         format: userdateformat, //'d/m/Y h:i:s a',
+         width: 150,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: ReshistoryStopGridStopDuration, //'Duration',
+         dataIndex: 'StopDuration',
+         align: 'left',
+         width: 80,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: ReshistoryStopGridRemarks, //'Status',
+         dataIndex: 'Remarks',
+         align: 'left',
+         width: 80,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: 'Driver Name',
+         dataIndex: 'Driver',
+         align: 'left',
+         width: 80,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: 'Driver ID',
+         dataIndex: 'DriverHIDCard',
+         align: 'left',
+         width: 80,
+         filterable: true,
+         sortable: true,
+         // flex : 1,
+         hidden: false
+     }
+    ],
+    dockedItems: {
+        xtype: 'toolbar',
+        dock: 'top',
+        items: [
+     {
+         icon: 'preview.png',
+         cls: 'x-btn-text-icon',
+         text: 'Export',
+         menu: historyStopExportMenu
+     }
+        ]
+    },
+    bbar: ['->', 'Total Histories: <span id="stophistoriescount" style="margin-right:20px;">0</span>']
+    //bbar: ['->', 'Total Histories: <span id="historiescount" style="margin-right:20px;">0</span>']
+    //bbar: historyPager
+}
+);
+
+    historyTripGrid = Ext.create('Ext.grid.Panel',
+{
+    id: 'historyTripGrid',
+    animCollapse: false,
+    autoLoad: false,
+    autoScroll: true,
+    loadMask: true,
+    maxWidth: window.screen.width - 50,
+    //maxHeight: window.screen.height,
+
+    autoHeight: true,
+    stateful: true,
+    closable: false,
+    enableColumnHide: false,
+    enableSorting: false,
+
+    title: '',
+    store: historyTripStore,
+    columnLines: true,
+    stateId: 'stateHistoryTripGrid',
+
+    enableColumnHide: true,
+    stateful: false,
+
+    collapsible: false,
+    animCollapse: true,
+    split: true,
+    features: [filters],
+    margin: '0',
+    selModel: {
+        selType: 'cellmodel'
+    },
+    plugins: [{
+        ptype: 'rowexpander',
+        rowBodyTpl: [
+             '<div id="tripsummary{TripId}">',
+             '</div>'
+        ]
+    }],
+
+    viewConfig:
+   {
+       emptyText: ReshistoryTripGridEmptyText, //'No History to display',
+       useMsg: false
+   }
+   ,
+    columns: [
+     {
+         header: ReshistoryTripGridDescription, //'Description',
+         dataIndex: 'Description', align: 'left',
+         width: 150,
+         filterable: true,
+         sortable: false,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: ReshistoryTripGridDepartureTime, //'Departure',
+         dataIndex: 'DepartureTime', align: 'left',
+         xtype: 'datecolumn',
+         format: userdateformat, //'d/m/Y h:i:s a',
+         width: 150,
+         filterable: true,
+         sortable: false,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: ReshistoryTripGridArrivalTime, //'Arrival',
+         dataIndex: 'ArrivalTime', align: 'left',
+         xtype: 'datecolumn',
+         format: userdateformat, //'d/m/Y h:i:s a',
+         width: 150,
+         filterable: true,
+         sortable: false,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: ReshistoryTripGrid_From, //'From',
+         dataIndex: '_From', align: 'left',
+         width: 200,
+         filterable: true,
+         sortable: false,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: ReshistoryTripGrid_To, //'To',
+         dataIndex: '_To', align: 'left',
+         width: 200,
+         filterable: true,
+         sortable: false,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: ReshistoryTripGridDuration, //'Duration',
+         dataIndex: 'Duration',
+         align: 'left',
+         width: 80,
+         filterable: true,
+         sortable: false,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: ReshistoryTripGridFuelConsumed, //'Fuel Consumed',
+         dataIndex: 'FuelConsumed',
+         align: 'left',
+         width: 80,
+         filterable: true,
+         sortable: false,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: 'Driver Name',
+         dataIndex: 'Driver',
+         align: 'left',
+         width: 80,
+         filterable: true,
+         sortable: false,
+         // flex : 1,
+         hidden: false
+     },
+     {
+         header: 'Driver ID',
+         dataIndex: 'DriverHIDCard',
+         align: 'left',
+         width: 80,
+         filterable: true,
+         sortable: false,
+         // flex : 1,
+         hidden: false
+     }
+    ],
+    dockedItems: {
+        xtype: 'toolbar',
+        dock: 'top',
+        items: [
+     {
+         icon: 'preview.png',
+         cls: 'x-btn-text-icon',
+         text: 'Export',
+         menu: historyTripExportMenu
+     }
+        ]
+    }
+    //,bbar: ['->', 'Total Histories: <span id="stophistoriescount" style="margin-right:20px;">0</span>']
+    //,bbar: ['->', 'Total Histories: <span id="historiescount" style="margin-right:20px;">0</span>']
+    //,bbar: historyPager
+}
+);
+
+    historyAddressGrid = Ext.create('Ext.grid.Panel',
+{
+    id: 'historyAddressGrid',
+    enableColumnHide: true,
+    title: ResSearchResult, //'Search Result',
+    autoLoad: false,
+    autoScroll: true,
+    loadMask: true,
+    maxWidth: window.screen.width - 5,
+    maxHeight: window.screen.height,
+    enableSorting: true,
+    closable: true,
+    columnLines: true,
+    width: window.screen.width,
+    autoHeight: true,
+    store: historyAddressStore,
+    collapsible: false,
+    animCollapse: false,
+    split: true,
+
+    columns: [
+           {
+               id: 'haUnitID',
+               //stateId: 'stUnitId',
+               text: ReshistoryAddressGridhaUnitID, //'UnitID',
+               align: 'left',
+               width: 70,
+               dataIndex: 'BoxId',
+               filterable: true,
+               sortable: true,
+               // flex : 1,
+               hidden: false
+           },
+           {
+               id: 'haDescription',
+               //stateId: 'stDescription',
+               text: ReshistoryAddressGridhaDescription, //'Description',
+               align: 'left',
+               width: 150,
+               dataIndex: 'Description',
+               filterable: true,
+               sortable: true
+           },
+
+           {
+               id: 'haDateTime',
+               //stateId: 'stDateTime',
+               text: ReshistoryAddressGridhaDateTime, //'Date/Time',
+               align: 'left',
+               width: 135,
+               xtype: 'datecolumn',
+               format: userdateformat, //dateformat,
+               dataIndex: 'OriginDateTime',
+               filterable: false,
+               sortable: false,
+               tdCls: 'x-date-time'
+           }
+           , {
+               id: 'haDetails',
+               text: ReshistoryAddressGridhaDetails, //'Details',
+               align: 'left',
+               width: 90,
+               dataIndex: 'VehicleId',
+               renderer: function (value, p, record) {
+                   return '<a href="javascript:void(0);" OnClick="historyMessageStore.load();showHistoryTab(\'' + value + '\', true, ' + record.data.FleetId + ');">Details</a>';
+               }
+              ,
+               dataIndex: 'VehicleId',
+               filterable: false,
+               sortable: false
+           }
+    ],
+    listeners:
+           {
+               'close': function () {
+                   try {
+                       /* clear map markers */
+                       var el = document.getElementById(mapframe);
+                       if (el.contentWindow) {
+                           //el.contentWindow.removeMarkersOnMap();
+                           el.contentWindow.searchArea.removeAllFeatures();
+                       }
+                       else if (el.contentDocument) {
+                           //el.contentDocument.removeMarkersOnMap();
+                           el.contentDocument.searchArea.removeAllFeatures();
                        }
                    }
-               });
-               if (typeof (historygrid) != 'undefined' && historygrid.filters.filters.length > 0) {
-                   filtersdata = historygrid.filters.getMenuFilter();
-                   if (filtersdata != null) {
-                       filtercolvalue = filtersdata.dataIndex;
-                       if (filtersdata.active == true) {
-                           if (typeof (filtersdata.getValue()) != 'undefined') {
+                   catch (err) {
+                   }
+               }
+              ,
+               scope: this
+           }
+   , viewConfig: {
+       stripeRows: false,
+       emptyText: ResVehiclePagerEmptyMsg, //'No vehicles to display',
+       useMsg: false
+   },
+    dockedItems: {
+        xtype: 'toolbar',
+        dock: 'top',
+        items: [
+     {
+         icon: 'preview.png',
+         cls: 'x-btn-text-icon',
+         text: 'Export',
+         menu: historyAddressExportMenu
+     }
+        ]
+    }
+}
+);
 
-                               if (filtersdata.type == "int") {
-                                   stringvalue = "type int";
-                                   var fvalue = filtersdata.getValue();
-                                   if (typeof (fvalue["eq"]) != 'undefined')
-                                       stringvalue = stringvalue + " eq " + fvalue["eq"].toString();
-                                   else {
-                                       if (typeof (fvalue["lt"]) != 'undefined')
-                                           stringvalue = stringvalue + " lt " + fvalue["lt"].toString();
-                                       if (typeof (fvalue["gt"]) != 'undefined')
-                                           stringvalue = stringvalue + " gt " + fvalue["gt"].toString();
-                                   }
-                               }
-                               else if (filtersdata.type == "date") {
-                                   stringvalue = "type date";
-                                   var fvalue = filtersdata.getValue();
 
-                                   if (typeof (fvalue["on"]) != 'undefined') {
-                                       var dt = new Date(fvalue["on"]);
-                                       var newDt = Ext.Date.format(dt, userdateformat);
-                                       stringvalue = stringvalue + " on " + newDt.toString();
-                                   }
-                                   else {
-                                       if (typeof (fvalue["before"]) != 'undefined') {
-                                           var dt = new Date(fvalue["before"]);
-                                           var newDt = Ext.Date.format(dt, userdateformat);
-                                           stringvalue = stringvalue + " before " + newDt.toString();
-                                       }
-                                       if (typeof (fvalue["after"]) != 'undefined') {
-                                           var dt = new Date(fvalue["after"]);
-                                           var newDt = Ext.Date.format(dt, userdateformat);
-                                           stringvalue = stringvalue + " after " + newDt.toString();
-                                       }
-                                   }
-                               }
-                               else {
-                                   stringvalue = filtersdata.getValue().toString();
-                               }
-                               if (typeof (stringvalue) != 'undefined' && stringvalue.length != 0 && (stringvalue != "" || stringvalue != null)) {
-                                   hisfilteron = true;
-                                   hiscurrentFilters[filtercolvalue] = filtercolvalue + ":" + stringvalue;
-                                   historyPageStore.currentPage = 1;
-                                   loadingMask.show();
-                                   tempStore.load({
-                                       params:
-                                  {
-                                      st: 'GetFilteredRecord',
-                                      sorting: hissortingParam,
-                                      filters: hiscurrentFilters
-                                  },
-                                       callback: function (records, operation, success) {
-                                           historygrid.getStore().loadRecords(records);
-                                           historygrid.down('pagingtoolbar').bindStore(tempStore);
-                                           historygrid.down('pagingtoolbar').onLoad();
-                                           loadingMask.hide();
-                                       },
-                                       scope: this
-                                   });
-                               }
-                               else {
-                                   delete hiscurrentFilters[filtercolvalue];
-                                   if (Object.keys(hiscurrentFilters).length == 0) {
-                                       hisfilteron = false;
-                                       tempStore.currentPage = hiscurrentpage;
-                                       loadingMask.show();
-                                       tempStore.load({
-                                           params:
-                                  {
-                                      st: 'GetFilteredRecord',
-                                      sorting: hissortingParam
-                                  },
-                                           callback: function (records, operation, success) {
-                                               historygrid.getStore().loadRecords(records);
-                                               historygrid.down('pagingtoolbar').bindStore(tempStore);
-                                               historygrid.down('pagingtoolbar').onLoad();
-                                               loadingMask.hide();
-                                           },
-                                           scope: this
-                                       });
-                                   }
-                                   else {
-                                       loadingMask.show();
-                                       tempStore.load({
-                                           params:
-                                  {
-                                      st: 'GetFilteredRecord',
-                                      sorting: hissortingParam,
-                                      filters: hiscurrentFilters
-                                  },
-                                           callback: function (records, operation, success) {
-                                               historygrid.getStore().loadRecords(records);
-                                               historygrid.down('pagingtoolbar').bindStore(tempStore);
-                                               historygrid.down('pagingtoolbar').onLoad();
-                                               loadingMask.hide();
-                                           },
-                                           scope: this
-                                       });
-                                   }
-                               }
-                           }
-                           else {
-                               delete hiscurrentFilters[filtercolvalue];
-                               if (Object.keys(hiscurrentFilters).length == 0) {
-                                   hisfilteron = false;
-                                   tempStore.currentPage = hiscurrentpage;
-                                   loadingMask.show();
-                                   tempStore.load({
-                                       params:
-                                  {
-                                      st: 'GetFilteredRecord',
-                                      sorting: hissortingParam
-                                  },
-                                       callback: function (records, operation, success) {
-                                           historygrid.getStore().loadRecords(records);
-                                           historygrid.down('pagingtoolbar').bindStore(tempStore);
-                                           historygrid.down('pagingtoolbar').onLoad();
-                                           loadingMask.hide();
-                                       },
-                                       scope: this
-                                   });
-                               }
-                               else {
-                                   loadingMask.show();
-                                   tempStore.load({
-                                       params:
-                                  {
-                                      st: 'GetFilteredRecord',
-                                      sorting: hissortingParam,
-                                      filters: hiscurrentFilters
-                                  },
-                                       callback: function (records, operation, success) {
-                                           historygrid.getStore().loadRecords(records);
-                                           historygrid.down('pagingtoolbar').bindStore(tempStore);
-                                           historygrid.down('pagingtoolbar').onLoad();
-                                           loadingMask.hide();
-                                       },
-                                       scope: this
-                                   });
-                               }
-                           }
-                       }
-                       else {
-                           delete hiscurrentFilters[filtercolvalue];
-                           if (Object.keys(hiscurrentFilters).length == 0) {
-                               hisfilteron = false;
-                               tempStore.currentPage = hiscurrentpage;
-                               loadingMask.show();
-                               tempStore.load({
-                                   params:
-                                  {
-                                      st: 'GetFilteredRecord',
-                                      sorting: hissortingParam
-                                  },
-                                   callback: function (records, operation, success) {
-                                       historygrid.getStore().loadRecords(records);
-                                       historygrid.down('pagingtoolbar').bindStore(tempStore);
-                                       historygrid.down('pagingtoolbar').onLoad();
-                                       loadingMask.hide();
-                                   },
-                                   scope: this
-                               });
-                           }
-                           else {
-                               loadingMask.show();
-                               tempStore.load({
-                                   params:
-                                  {
-                                      st: 'GetFilteredRecord',
-                                      sorting: hissortingParam,
-                                      filters: hiscurrentFilters
-                                  },
-                                   callback: function (records, operation, success) {
-                                       historygrid.getStore().loadRecords(records);
-                                       historygrid.down('pagingtoolbar').bindStore(tempStore);
-                                       historygrid.down('pagingtoolbar').onLoad();
-                                       loadingMask.hide();
-                                   },
-                                   scope: this
-                               });
-                           }
-                       }
+    historyTripGrid.view.on('expandBody', function (rowNode, record, expandRow, eOpts) {
+        displayInnerGrid(record.get('TripId'), record);
+    });
+
+    historyTripGrid.view.on('collapsebody', function (rowNode, record, expandRow, eOpts) {
+        destroyInnerGrid(record);
+    });
+
+    function displayInnerGrid(renderId, record) {
+
+        var parent = document.getElementById('tripsummary' + record.get('TripId'));
+        var child = parent.firstChild;
+        if (child != null) {
+            child.style.display = "";
+            return;
+        }
+
+        //Model for the inside grid store
+        Ext.define('HistoryTripDetailsModel',
+        {
+            extend: 'Ext.data.Model',
+            fields: [
+               'BoxId', 'VehicleId', 'LicensePlate', 'Description', 'DateTimeReceived', 'DclId', 'BoxMsgInTypeId', 'BoxMsgInTypeName', 'BoxProtocolTypeId', 'BoxProtocolTypeName',
+               'CommInfo1', 'CommInfo2', 'ValidGps', 'Latitude', 'Longitude', 'Heading', 'SensorMask', 'CustomProp', 'BlobDataSize', 'SequenceNum', 'StreetAddress',
+               {
+                   name: 'OriginDateTime', type: 'date', dateFormat: 'c'
+               },
+               //'OriginDateTime',
+            //'Speed',
+                {
+                    name: 'Speed', type: 'int',
+                    convert: function (value, record) {
+                        if (value >= 0 || value < 0)
+                            return value * 1;
+                        else
+                            return -1;
+                    }
+                },
+               'BoxArmed', 'MsgDirection', 'Acknowledged', 'Scheduled', 'MsgDetails', 'MyDateTime', 'MyHeading', 'dgKey', 'CustomUrl', 'chkBoxShow'
+            ]
+        }
+        );
+
+        var historyDetailsStore = Ext.create('Ext.data.Store',
+        {
+            //buffered: true,
+            pageSize: 10000,
+            model: 'HistoryTripDetailsModel',
+            autoLoad: false,
+            listeners:
+           {
+               'load': function (store, records, options) {
+                   try {
+                       /*mapHistories(records, true, false, false);
+                       historygrid.getSelectionModel().selectAll(false);
+                       $('#historiescount').html(records.length);*/
+                       $('#detailshistoriescount' + renderId).html(records.length);
+                   }
+                   catch (err) {
+                   }
+               }
+              ,
+               scope: this
+           },
+
+            proxy: {
+                type: 'memory',
+                reader: {
+                    type: 'xml',
+                    root: 'HistoryTripDetailed',
+                    record: 'TripDetails',
+                    totalProperty: 'totalCount'
+                }
+            }
+        });
+
+        var insideSelModel = Ext.create('Ext.selection.CheckboxModel',
+        {
+            checkOnly: true,
+            enableKeyNav: false,
+            listeners:
+           {
+               selectionchange: function (selModel, selections) {
+                   try {
+
 
                    }
-                   else {
-                       hiscurrentFilters = {};
-                       hisfilteron = false;
-                       tempStore.currentPage = hiscurrentpage;
-                       loadingMask.show();
-                       tempStore.load({
-                           params:
-                                  {
-                                      st: 'GetFilteredRecord',
-                                      sorting: hissortingParam
-
-                                  },
-                           callback: function (records, operation, success) {
-                               historygrid.getStore().loadRecords(records);
-                               historygrid.down('pagingtoolbar').bindStore(tempStore);
-                               historygrid.down('pagingtoolbar').onLoad();
-                               loadingMask.hide();
-                           },
-                           scope: this
-                       });
+                   catch (err) {
                    }
                }
            }
-       },
-       bbar: historyPager
-   });
-
-       historyStopGrid = Ext.create('Ext.grid.Panel',
-   {
-       id: 'historyStopGrid',
-       animCollapse: false,
-       autoLoad: false,
-       autoScroll: true,
-       loadMask: true,
-       maxWidth: window.screen.width - 50,
-       maxHeight: window.screen.height,
-
-       autoHeight: true,
-       stateful: true,
-       closable: false,
-       enableColumnHide: false,
-       enableSorting: false,
-
-       title: '',
-       store: historyStopStore,
-       columnLines: true,
-       stateId: 'stateHistoryStopGrid',
-
-       enableColumnHide: true,
-       stateful: false,
-
-       collapsible: false,
-       animCollapse: true,
-       split: true,
-       features: [filters],
-       margin: '0',
-       selModel: selHistoryStopModel,
-
-       viewConfig:
-      {
-          emptyText: ReshistoryStopGridEmptyText, //'No History to display',
-          useMsg: false
-      }
-      ,
-       columns: [
-        { header: ReshistoryStopGridArrivalDateTime, //'Arrival',
-            dataIndex: 'ArrivalDateTime', align: 'left',
-            xtype: 'datecolumn',
-            format: userdateformat, //'d/m/Y h:i:s a',
-            width: 150,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-        {
-            header: ReshistoryStopGridLocation, //'Address', 
-            dataIndex: 'Location',
-            align: 'left',
-            width: 220,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-        { header: ReshistoryStopGridDepartureDateTime, //'Departure', 
-            dataIndex: 'DepartureDateTime', align: 'left',
-            xtype: 'datecolumn',
-            format: userdateformat, //'d/m/Y h:i:s a',
-            width: 150,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-        {
-            header: ReshistoryStopGridStopDuration, //'Duration',
-            dataIndex: 'StopDuration',
-            align: 'left',
-            width: 80,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-        {
-            header: ReshistoryStopGridRemarks, //'Status', 
-            dataIndex: 'Remarks',
-            align: 'left',
-            width: 80,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-        {
-            header: 'Driver Name', 
-            dataIndex: 'Driver',
-            align: 'left',
-            width: 80,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
-        },
-        {
-            header: 'Driver ID', 
-            dataIndex: 'DriverHIDCard',
-            align: 'left',
-            width: 80,
-            filterable: true,
-            sortable: true,
-            // flex : 1,
-            hidden: false
         }
-      ],
-       dockedItems: {
-           xtype: 'toolbar',
-           dock: 'top',
-           items: [
-        { icon: 'preview.png',
-            cls: 'x-btn-text-icon',
-            text: 'Export',
-            menu: historyStopExportMenu
-        }
-       ]
-       },
-       bbar: ['->', 'Total Histories: <span id="stophistoriescount" style="margin-right:20px;">0</span>']
-       //bbar: ['->', 'Total Histories: <span id="historiescount" style="margin-right:20px;">0</span>']
-       //bbar: historyPager
-   }
-   );
+        );
 
-       historyTripGrid = Ext.create('Ext.grid.Panel',
-   {
-       id: 'historyTripGrid',
-       animCollapse: false,
-       autoLoad: false,
-       autoScroll: true,
-       loadMask: true,
-       maxWidth: window.screen.width - 50,
-       //maxHeight: window.screen.height,
+        historyDetailsGrid = Ext.create('Ext.grid.Panel',
+        {
+            id: 'hidtoryDetailsGrid' + renderId,
+            animCollapse: false,
+            autoLoad: false,
+            autoScroll: true,
+            loadMask: true,
+            maxWidth: window.screen.width - 50,
+            //maxHeight: window.screen.height,
 
-       autoHeight: true,
-       stateful: true,
-       closable: false,
-       enableColumnHide: false,
-       enableSorting: false,
+            autoHeight: true,
+            stateful: true,
+            closable: false,
+            enableColumnHide: false,
+            enableSorting: false,
 
-       title: '',
-       store: historyTripStore,
-       columnLines: true,
-       stateId: 'stateHistoryTripGrid',
+            title: '',
+            store: historyDetailsStore,
+            columnLines: true,
+            stateId: 'stateHistoryGrid',
 
-       enableColumnHide: true,
-       stateful: false,
+            enableColumnHide: true,
+            stateful: false,
 
-       collapsible: false,
-       animCollapse: true,
-       split: true,
-       features: [filters],
-       margin: '0',
-       selModel: {
-           selType: 'cellmodel'
-       },
-       plugins: [{
-           ptype: 'rowexpander',
-           rowBodyTpl: [
-                '<div id="tripsummary{TripId}">',
-                '</div>'
+            collapsible: false,
+            animCollapse: true,
+            split: true,
+            features: [filters],
+            margin: '0',
+            selModel: insideSelModel,
+            renderTo: 'tripsummary' + renderId,
+            //enableColumnResize: true,
+            //bubbleEvents: ['add', 'remove', 'columnresize'],
+
+            viewConfig:
+           {
+               emptyText: ReshidtoryDetailsGridEmptyText, //'No History to display',
+               useMsg: false
+           }
+           ,
+            columns: [
+             {
+                 header: ReshidtoryDetailsGridBoxId, //'Unit ID',
+                 dataIndex: 'BoxId', align: 'left',
+                 width: 60,
+                 filterable: true,
+                 sortable: true,
+                 // flex : 1,
+                 hidden: false
+             },
+             {
+                 header: ReshidtoryDetailsGridDescription, //'Vehicle',
+                 dataIndex: 'Description', align: 'left',
+                 width: 120,
+                 filterable: true,
+                 sortable: true,
+                 // flex : 1,
+                 hidden: false
+             },
+             {
+                 header: ReshidtoryDetailsGridOriginDateTime, //'Date/Time',
+                 dataIndex: 'OriginDateTime', align: 'left',
+                 align: 'left',
+                 width: 150,
+                 xtype: 'datecolumn',
+                 format: userdateformat, //'d/m/Y h:i:s a',
+                 filterable: true,
+                 sortable: true,
+                 // flex : 1,
+                 hidden: false
+             },
+             {
+                 header: ReshidtoryDetailsGridStreetAddress, //'Address',
+                 dataIndex: 'StreetAddress', align: 'left',
+                 align: 'left',
+                 width: 280,
+                 filterable: true,
+                 sortable: true,
+                 // flex : 1,
+                 hidden: false
+             },
+             {
+                 header: ReshidtoryDetailsGridSpeed, //'Speed',
+                 dataIndex: 'Speed', align: 'left',
+                 align: 'left',
+                 width: 50,
+                 renderer: function (value, p, record) {
+                     if (value == -1)
+                         return 'N/A';
+                     else
+                         return value;
+                 },
+                 filterable: true,
+                 sortable: true,
+                 // flex : 1,
+                 hidden: false
+             },
+             {
+                 header: ReshidtoryDetailsGridBoxMsgInTypeName, //'Message',
+                 dataIndex: 'BoxMsgInTypeName', align: 'left',
+                 renderer: function (value, p, record, ri) {
+                     //return '<a href="javascript:var w =HistoryInfo(' + ri + ')">' + value + '</a>';
+                     return '<a href="' + record.data.CustomUrl + '">' + value + '</a>';
+                 },
+                 align: 'left',
+                 width: 140,
+                 filterable: true,
+                 sortable: true,
+                 // flex : 1,
+                 hidden: false
+             },
+             {
+                 //header: 'MsgDetails', dataIndex: 'CustomProp', align: 'left',
+                 header: ReshidtoryDetailsGridMsgDetails, //'MsgDetails',
+                 dataIndex: 'MsgDetails', align: 'left',
+                 align: 'left',
+                 width: 110,
+                 filterable: true,
+                 sortable: true,
+                 // flex : 1,
+                 hidden: false
+             },
+             {
+                 header: ReshidtoryDetailsGridAcknowledged, //'Ack',
+                 dataIndex: 'Acknowledged', align: 'left',
+                 align: 'left',
+                 width: 50,
+                 filterable: true,
+                 sortable: true,
+                 // flex : 1,
+                 hidden: false
+             }
             ]
-       }],
-
-       viewConfig:
-      {
-          emptyText: ReshistoryTripGridEmptyText, //'No History to display',
-          useMsg: false
-      }
-      ,
-       columns: [
-        { header: ReshistoryTripGridDescription, //'Description', 
-            dataIndex: 'Description', align: 'left',
-            width: 150,
-            filterable: true,
-            sortable: false,
-            // flex : 1,
-            hidden: false
-        },
-        { header: ReshistoryTripGridDepartureTime, //'Departure', 
-            dataIndex: 'DepartureTime', align: 'left',
-            xtype: 'datecolumn',
-            format: userdateformat, //'d/m/Y h:i:s a',
-            width: 150,
-            filterable: true,
-            sortable: false,
-            // flex : 1,
-            hidden: false
-        },
-        { header: ReshistoryTripGridArrivalTime, //'Arrival', 
-            dataIndex: 'ArrivalTime', align: 'left',
-            xtype: 'datecolumn',
-            format: userdateformat, //'d/m/Y h:i:s a',
-            width: 150,
-            filterable: true,
-            sortable: false,
-            // flex : 1,
-            hidden: false
-        },
-        { header: ReshistoryTripGrid_From, //'From', 
-            dataIndex: '_From', align: 'left',
-            width: 200,
-            filterable: true,
-            sortable: false,
-            // flex : 1,
-            hidden: false
-        },
-        { header: ReshistoryTripGrid_To, //'To', 
-            dataIndex: '_To', align: 'left',
-            width: 200,
-            filterable: true,
-            sortable: false,
-            // flex : 1,
-            hidden: false
-        },
-        {
-            header: ReshistoryTripGridDuration, //'Duration',
-            dataIndex: 'Duration',
-            align: 'left',
-            width: 80,
-            filterable: true,
-            sortable: false,
-            // flex : 1,
-            hidden: false
-        },
-        {
-            header: ReshistoryTripGridFuelConsumed, //'Fuel Consumed',
-            dataIndex: 'FuelConsumed',
-            align: 'left',
-            width: 80,
-            filterable: true,
-            sortable: false,
-            // flex : 1,
-            hidden: false
-        },
-        {
-            header: 'Driver Name',
-            dataIndex: 'Driver',
-            align: 'left',
-            width: 80,
-            filterable: true,
-            sortable: false,
-            // flex : 1,
-            hidden: false
-        },
-        {
-            header: 'Driver ID',
-            dataIndex: 'DriverHIDCard',
-            align: 'left',
-            width: 80,
-            filterable: true,
-            sortable: false,
-            // flex : 1,
-            hidden: false
+            ,
+            bbar: ['->', 'Total Histories: <span id="detailshistoriescount' + renderId + '" style="margin-right:20px;">0</span>']
+            //bbar: ['->', 'Total Histories: <span id="historiescount" style="margin-right:20px;">0</span>']
+            //bbar: historyPager
         }
-      ],
-       dockedItems: {
-           xtype: 'toolbar',
-           dock: 'top',
-           items: [
-        { icon: 'preview.png',
-            cls: 'x-btn-text-icon',
-            text: 'Export',
-            menu: historyTripExportMenu
-        }
-       ]
-       }
-       //,bbar: ['->', 'Total Histories: <span id="stophistoriescount" style="margin-right:20px;">0</span>']
-       //,bbar: ['->', 'Total Histories: <span id="historiescount" style="margin-right:20px;">0</span>']
-       //,bbar: historyPager
-   }
-   );
+        );
 
-       historyAddressGrid = Ext.create('Ext.grid.Panel',
+        var form = historyForm.getForm();
+
+        form.submit({
+            url: './historynew/historyservices.aspx?fromsession=1&st=gettripdetails&tripId=' + renderId,
+            success: function (form, action) {
+                historyDetailsGrid.getView().emptyText = ReshistoryFormEmptyText; //'No History to display';
+                var d = action.result.data;
+                d = d.replace(/\u003c/g, "<").replace("\u003e", ">");
+                //alert(d);
+                //if (action.result.iconTypeName != "") IconTypeName = action.result.iconTypeName;
+                var doc;
+                if (window.ActiveXObject) {         //IE
+                    var doc = new ActiveXObject("Microsoft.XMLDOM");
+                    doc.async = "false";
+                    doc.loadXML(d);
+                } else {                             //Mozilla
+                    var doc = new DOMParser().parseFromString(d, "text/xml");
+                }
+                historyDetailsStore.loadRawData(doc);
+                //historyForm.hide();
+            },
+            failure: function (form, action) {
+                historygrid.getView().emptyText = ReshistoryFormEmptyText, //'No History to display';
+                //Ext.Msg.alert(ReshistoryFormAlertTitle, ReshistoryFormAlertMessage); //Ext.Msg.alert('Failed', 'some error');
+     Ext.Msg.alert(ReshistoryFormAlertTitle, "Too much data requested. Please reduce your search criteria."); //Ext.Msg.alert('Failed', 'some error');
+            }
+        });
+
+        historyDetailsGrid.getEl().swallowEvent([
+                 'mousedown', 'mouseup', 'click',
+                 'contextmenu', 'mouseover', 'mouseout',
+                 'dblclick', 'mousemove'
+        ]);
+
+
+    }
+
+    function destroyInnerGrid(record) {
+
+        var parent = document.getElementById('tripsummary' + record.get('TripId'));
+        var child = parent.firstChild;
+
+        var innerGrid = Ext.getCmp('hidtoryDetailsGrid' + record.get('TripId'));
+        var selections = innerGrid.getSelectionModel().getSelection();
+        //alert('you selected: ' + selections.length);
+
+        child.style.display = "none";
+
+    }
+
+    /*
+    *
+    * Code of history grid with form Finished
+    *
+    */
+
+    var cookieheight = readCookie(DispatchOrganizationId + 'mapGridDefaultHeight');
+    var cookiewidth = readCookie(DispatchOrganizationId + 'mapGridDefaultWidth');
+    cookiedefaultmapview = readCookie(DispatchOrganizationId + 'DefaultMapView');
+
+    var hideGridDefault = false;
+    if (cookiedefaultmapview != '') {
+        if (cookiedefaultmapview == 'normal')
+            hideMapByDefault = false;
+        else if (cookiedefaultmapview == 'FullGridView') {
+            hideMapByDefault = true;
+            mapStatus = 'collapse';
+        }
+        else if (cookiedefaultmapview == 'FullMapView') {
+            hideGridDefault = true;
+            hideMapByDefault = false;
+            gridStatus = 'collapse';
+        }
+    }
+
+    mapGridOriginalHeight = cookieheight != '' ? cookieheight * 1 : getDocHeight() - (window.screen.height / 2);
+    mapGridOriginalWidth = cookiewidth != '' ? cookiewidth * 1 : getDocWidth() - (window.screen.width / 2);
+
+    tabs = Ext.create('Ext.tab.Panel',
+{
+    id: 'tabs',
+    region: defaultMapView,
+    split: true,
+    titleCollapse: false,
+    header: false,
+    autoScroll: true,
+    border: false,
+    //height: window.screen.height / 2,
+    //width: window.screen.width / 2,
+    //height: hideMapByDefault ? $(document).height() : mapGridOriginalHeight, //getDocHeight() - (window.screen.height / 2),
+    //width: hideMapByDefault ? $(document).width() : mapGridOriginalWidth, //getDocWidth() - (window.screen.width / 2),
+    height: hideMapByDefault ? $(document).height() : (hideGridDefault ? (defaultMapView == 'west' ? mapGridOriginalHeight : 25) : mapGridOriginalHeight),
+    width: hideMapByDefault ? $(document).width() : (hideGridDefault ? (defaultMapView == 'west' ? 1 : mapGridOriginalWidth) : mapGridOriginalWidth),
+    autoHeight: true,
+    collapsible: true,
+    animCollapse: true,
+    deferredRender: false,
+    activeTab: 0,     // first tab initially active
+    autoDestroy: false,
+    items: [vehiclegrid, ShowAlarmTab ? alarmgrid : null, ShowMessageTab ? messagegrid : null, geozonelandmarktabs],
+    listeners:
    {
-       id: 'historyAddressGrid',
-       enableColumnHide: true,
-       title: ResSearchResult, //'Search Result',
-       autoLoad: false,
-       autoScroll: true,
-       loadMask: true,
-       maxWidth: window.screen.width - 5,
-       maxHeight: window.screen.height,
-       enableSorting: true,
-       closable: true,
-       columnLines: true,
-       width: window.screen.width,
-       autoHeight: true,
-       store: historyAddressStore,
-       collapsible: false,
-       animCollapse: false,
-       split: true,
+       afterrender: function () {
+           try {
+               $('.x-collapse-el').hide();
+               var s = '<div class=\'togglemap\'><a href=\'javascript:void(0);\' onclick="toggleMap();"><img src=\'images/menutogglemaphandler.png\'></a></div>';
+               $('#tabs').parent().prepend(s);
+               s = '<div class=\'collapsebutton\'><a href=\'javascript:void(0);\' onclick="toggleGrid();"><img src=\'images/menuhandler.png\' alt=\'hide/show grid\' title=\'hide/show grid\'></a></div>';
+               $('#tabs').parent().prepend(s);
+               //s = '<div class=\'expandgridbutton\'><a href=\'javascript:void(0);\' onclick="toggleMap();"><img src=\'images/menumaphandler.png\' style=\'border:1px solid #666666\' alt=\'hide/show map\' title=\'hide/show map\'></a></div>';
+               //$('#tabs').parent().prepend(s);
+               $('#tabs-body').css('overflow', 'hidden');
 
-       columns: [
-              {
-                  id: 'haUnitID',
-                  //stateId: 'stUnitId',
-                  text: ReshistoryAddressGridhaUnitID, //'UnitID',
-                  align: 'left',
-                  width: 70,
-                  dataIndex: 'BoxId',
-                  filterable: true,
-                  sortable: true,
-                  // flex : 1,
-                  hidden: false
-              },
-              {
-                  id: 'haDescription',
-                  //stateId: 'stDescription',
-                  text: ReshistoryAddressGridhaDescription, //'Description',
-                  align: 'left',
-                  width: 150,
-                  dataIndex: 'Description',
-                  filterable: true,
-                  sortable: true
-              },
+               /*if (defaultMapView == 'west') {
+               $('.collapsebutton').css("top", 7);
+               $('.collapsebutton').css("left", tabs.getWidth() - 50);
+               }
+               else if (defaultMapView == 'south') {
+               $('.collapsebutton').css("top", northmappanel.getHeight() + 10);
+               $('.collapsebutton').css("left", tabs.getWidth() - 50);
+               }
+               else if (defaultMapView == 'north') {
+               $('.collapsebutton').css("top", 7);
+               $('.collapsebutton').css("left", tabs.getWidth() - 50);
+               }*/
 
-              {
-                  id: 'haDateTime',
-                  //stateId: 'stDateTime',
-                  text: ReshistoryAddressGridhaDateTime, //'Date/Time',
-                  align: 'left',
-                  width: 135,
-                  xtype: 'datecolumn',
-                  format: userdateformat, //dateformat,
-                  dataIndex: 'OriginDateTime',
-                  filterable: false,
-                  sortable: false,
-                  tdCls: 'x-date-time'
-              }
-              , {
-                  id: 'haDetails',
-                  text: ReshistoryAddressGridhaDetails, //'Details',
-                  align: 'left',
-                  width: 90,
-                  dataIndex: 'VehicleId',
-                  renderer: function (value, p, record) {
-                      return '<a href="javascript:void(0);" OnClick="historyMessageStore.load();showHistoryTab(\'' + value + '\', true, ' + record.data.FleetId + ');">Details</a>';
-                  }
-                 ,
-                  dataIndex: 'VehicleId',
-                  filterable: false,
-                  sortable: false
-              }
-        ],
-       listeners:
-              {
-                  'close': function () {
-                      try {
-                          /* clear map markers */
-                          var el = document.getElementById(mapframe);
-                          if (el.contentWindow) {
-                              //el.contentWindow.removeMarkersOnMap();
-                              el.contentWindow.searchArea.removeAllFeatures();
-                          }
-                          else if (el.contentDocument) {
-                              //el.contentDocument.removeMarkersOnMap();
-                              el.contentDocument.searchArea.removeAllFeatures();
-                          }
-                      }
-                      catch (err) {
-                      }
-                  }
-                 ,
-                  scope: this
-              }
-      , viewConfig: {
-          stripeRows: false,
-          emptyText: ResVehiclePagerEmptyMsg, //'No vehicles to display',
-          useMsg: false
-      },
-       dockedItems: {
-           xtype: 'toolbar',
-           dock: 'top',
-           items: [
-        { icon: 'preview.png',
-            cls: 'x-btn-text-icon',
-            text: 'Export',
-            menu: historyAddressExportMenu
-        }
-       ]
-       }
-   }
-   );
-
-
-       historyTripGrid.view.on('expandBody', function (rowNode, record, expandRow, eOpts) {
-           displayInnerGrid(record.get('TripId'), record);
-       });
-
-       historyTripGrid.view.on('collapsebody', function (rowNode, record, expandRow, eOpts) {
-           destroyInnerGrid(record);
-       });
-
-       function displayInnerGrid(renderId, record) {
-
-           var parent = document.getElementById('tripsummary' + record.get('TripId'));
-           var child = parent.firstChild;
-           if (child != null) {
-               child.style.display = "";
+               //if (ViolationTabAtNewMapPage)
+               //    IniViolations();
+           }
+           catch (err) { alert(err); }
+       },
+       resize: function (o, width, height, oldWidth, oldHeight, eOpts) {
+           if (!SaveGridSizeToCookie) {
+               SaveGridSizeToCookie = true;
                return;
            }
 
-           //Model for the inside grid store
-           Ext.define('HistoryTripDetailsModel',
-           {
-               extend: 'Ext.data.Model',
-               fields: [
-                  'BoxId', 'VehicleId', 'LicensePlate', 'Description', 'DateTimeReceived', 'DclId', 'BoxMsgInTypeId', 'BoxMsgInTypeName', 'BoxProtocolTypeId', 'BoxProtocolTypeName',
-                  'CommInfo1', 'CommInfo2', 'ValidGps', 'Latitude', 'Longitude', 'Heading', 'SensorMask', 'CustomProp', 'BlobDataSize', 'SequenceNum', 'StreetAddress',
-                  {
-                      name: 'OriginDateTime', type: 'date', dateFormat: 'c'
-                  },
-                  //'OriginDateTime',
-               //'Speed', 
-                   {
-                   name: 'Speed', type: 'int',
-                   convert: function (value, record) {
-                       if (value >= 0 || value < 0)
-                           return value * 1;
-                       else
-                           return -1;
-                   }
-               },
-                  'BoxArmed', 'MsgDirection', 'Acknowledged', 'Scheduled', 'MsgDetails', 'MyDateTime', 'MyHeading', 'dgKey', 'CustomUrl', 'chkBoxShow'
-                  ]
-           }
-           );
+           var CookieDate = new Date;
+           CookieDate.setFullYear(CookieDate.getFullYear() + 1);
+           if (defaultMapView == 'west' || defaultMapView == 'east')
+               document.cookie = DispatchOrganizationId + 'mapGridDefaultWidth=' + width + '; expires=' + CookieDate.toGMTString() + ';';
+           else
+               document.cookie = DispatchOrganizationId + 'mapGridDefaultHeight=' + height + '; expires=' + CookieDate.toGMTString() + ';';
 
-           var historyDetailsStore = Ext.create('Ext.data.Store',
-           {
-               //buffered: true,
-               pageSize: 10000,
-               model: 'HistoryTripDetailsModel',
-               autoLoad: false,
-               listeners:
-              {
-                  'load': function (store, records, options) {
-                      try {
-                          /*mapHistories(records, true, false, false);
-                          historygrid.getSelectionModel().selectAll(false);
-                          $('#historiescount').html(records.length);*/
-                          $('#detailshistoriescount' + renderId).html(records.length);
-                      }
-                      catch (err) {
-                      }
-                  }
-                 ,
-                  scope: this
-              },
+           document.cookie = DispatchOrganizationId + 'DefaultMapView=normal; expires=' + CookieDate.toGMTString() + ';';
 
-               proxy: {
-                   type: 'memory',
-                   reader: {
-                       type: 'xml',
-                       root: 'HistoryTripDetailed',
-                       record: 'TripDetails',
-                       totalProperty: 'totalCount'
-                   }
-               }
-           });
+           cookiedefaultmapview = readCookie(DispatchOrganizationId + 'DefaultMapView');
+           gridStatus = 'expanded';
+           mapStatus = 'expanded';
+       }
+   }
 
-           var insideSelModel = Ext.create('Ext.selection.CheckboxModel',
-		   {
-		       checkOnly: true,
-		       enableKeyNav: false,
-		       listeners:
-			  {
-			      selectionchange: function (selModel, selections) {
-			          try {
+}
+);
 
-
-			          }
-			          catch (err) {
-			          }
-			      }
-			  }
-		   }
-		   );
-
-           historyDetailsGrid = Ext.create('Ext.grid.Panel',
-           {
-               id: 'hidtoryDetailsGrid' + renderId,
-               animCollapse: false,
-               autoLoad: false,
-               autoScroll: true,
-               loadMask: true,
-               maxWidth: window.screen.width - 50,
-               //maxHeight: window.screen.height,
-
-               autoHeight: true,
-               stateful: true,
-               closable: false,
-               enableColumnHide: false,
-               enableSorting: false,
-
-               title: '',
-               store: historyDetailsStore,
-               columnLines: true,
-               stateId: 'stateHistoryGrid',
-
-               enableColumnHide: true,
-               stateful: false,
-
-               collapsible: false,
-               animCollapse: true,
-               split: true,
-               features: [filters],
-               margin: '0',
-               selModel: insideSelModel,
-               renderTo: 'tripsummary' + renderId,
-               //enableColumnResize: true,
-               //bubbleEvents: ['add', 'remove', 'columnresize'],
-
-               viewConfig:
-              {
-                  emptyText: ReshidtoryDetailsGridEmptyText, //'No History to display',
-                  useMsg: false
-              }
-              ,
-               columns: [
-                { header: ReshidtoryDetailsGridBoxId, //'Unit ID',
-                    dataIndex: 'BoxId', align: 'left',
-                    width: 60,
-                    filterable: true,
-                    sortable: true,
-                    // flex : 1,
-                    hidden: false
+    //Devin Added
+    try {
+        if (DispatchOrganizationId == 480) {
+            var DispatchTab = Ext.create('Ext.Panel', {
+                labelWidth: 0,
+                border: 0,
+                frame: false,
+                bodyStyle: 'padding:3px;border:0;background-color:transparent;',
+                width: 800,
+                id: "DispatchTab",
+                layout: {
+                    type: 'column',
+                    margin: 10
+                }, // arrange fieldsets side by side
+                defaults: {
+                    width: 800,
+                    labelWidth: 90
                 },
-                { header: ReshidtoryDetailsGridDescription, //'Vehicle',
-                    dataIndex: 'Description', align: 'left',
-                    width: 120,
-                    filterable: true,
-                    sortable: true,
-                    // flex : 1,
-                    hidden: false
-                },
-                {
-                    header: ReshidtoryDetailsGridOriginDateTime, //'Date/Time', 
-                    dataIndex: 'OriginDateTime', align: 'left',
-                    align: 'left',
-                    width: 150,
-                    xtype: 'datecolumn',
-                    format: userdateformat, //'d/m/Y h:i:s a',
-                    filterable: true,
-                    sortable: true,
-                    // flex : 1,
-                    hidden: false
-                },
-                {
-                    header: ReshidtoryDetailsGridStreetAddress, //'Address', 
-                    dataIndex: 'StreetAddress', align: 'left',
-                    align: 'left',
-                    width: 280,
-                    filterable: true,
-                    sortable: true,
-                    // flex : 1,
-                    hidden: false
-                },
-                {
-                    header: ReshidtoryDetailsGridSpeed, //'Speed',
-                    dataIndex: 'Speed', align: 'left',
-                    align: 'left',
-                    width: 50,
-                    renderer: function (value, p, record) {
-                        if (value == -1)
-                            return 'N/A';
-                        else
-                            return value;
-                    },
-                    filterable: true,
-                    sortable: true,
-                    // flex : 1,
-                    hidden: false
-                },
-                {
-                    header: ReshidtoryDetailsGridBoxMsgInTypeName, //'Message', 
-                    dataIndex: 'BoxMsgInTypeName', align: 'left',
-                    renderer: function (value, p, record, ri) {
-                        //return '<a href="javascript:var w =HistoryInfo(' + ri + ')">' + value + '</a>';
-                        return '<a href="' + record.data.CustomUrl + '">' + value + '</a>';
-                    },
-                    align: 'left',
-                    width: 140,
-                    filterable: true,
-                    sortable: true,
-                    // flex : 1,
-                    hidden: false
-                },
-                {
-                    //header: 'MsgDetails', dataIndex: 'CustomProp', align: 'left',
-                    header: ReshidtoryDetailsGridMsgDetails, //'MsgDetails', 
-                    dataIndex: 'MsgDetails', align: 'left',
-                    align: 'left',
-                    width: 110,
-                    filterable: true,
-                    sortable: true,
-                    // flex : 1,
-                    hidden: false
-                },
-                {
-                    header: ReshidtoryDetailsGridAcknowledged, //'Ack', 
-                    dataIndex: 'Acknowledged', align: 'left',
-                    align: 'left',
-                    width: 50,
-                    filterable: true,
-                    sortable: true,
-                    // flex : 1,
-                    hidden: false
+                header: false,
+                title: ResDispatch, //'Dispatch',
+                defaultType: 'textfield'
+            });
+
+
+            tabs.add(DispatchTab);
+            tabs.items.each(function (i) {
+                if (i.id == "DispatchTab") {
+                    i.tab.on('click', function (el, e) {
+                        e.stopEvent();
+
+                        var ant_w = 800;
+                        var ant_h = 800;
+                        var ant_left = (screen.width / 2) - (ant_w / 2);
+                        var ant_top = (screen.height / 2) - (ant_h / 2);
+
+                        window.open('../../Ant/Ant.html', ResDispatch, 'width=' + ant_w + ',height=' + ant_h + ',left=' + ant_left + ',top=' + ant_top + ',screenX=0,screenY=100');
+                    });
                 }
-              ]
-               ,
-               bbar: ['->', 'Total Histories: <span id="detailshistoriescount' + renderId + '" style="margin-right:20px;">0</span>']
-               //bbar: ['->', 'Total Histories: <span id="historiescount" style="margin-right:20px;">0</span>']
-               //bbar: historyPager
-           }
-           );
+            });
+        }
 
-           var form = historyForm.getForm();
+    }
+    catch (err) { }
 
-           form.submit({
-               url: './historynew/historyservices.aspx?fromsession=1&st=gettripdetails&tripId=' + renderId,
-               success: function (form, action) {
-                   historyDetailsGrid.getView().emptyText = ReshistoryFormEmptyText; //'No History to display';
-                   var d = action.result.data;
-                   d = d.replace(/\u003c/g, "<").replace("\u003e", ">");
-                   //alert(d);
-                   //if (action.result.iconTypeName != "") IconTypeName = action.result.iconTypeName;
-                   var doc;
-                   if (window.ActiveXObject) {         //IE
-                       var doc = new ActiveXObject("Microsoft.XMLDOM");
-                       doc.async = "false";
-                       doc.loadXML(d);
-                   } else {                             //Mozilla
-                       var doc = new DOMParser().parseFromString(d, "text/xml");
-                   }
-                   historyDetailsStore.loadRawData(doc);
-                   //historyForm.hide();
-               },
-               failure: function (form, action) {
-                   historygrid.getView().emptyText = ReshistoryFormEmptyText, //'No History to display';
-                 //Ext.Msg.alert(ReshistoryFormAlertTitle, ReshistoryFormAlertMessage); //Ext.Msg.alert('Failed', 'some error');
-		Ext.Msg.alert(ReshistoryFormAlertTitle, "Too much data requested. Please reduce your search criteria."); //Ext.Msg.alert('Failed', 'some error');
-               }
-           });
-
-           historyDetailsGrid.getEl().swallowEvent([
-					'mousedown', 'mouseup', 'click',
-					'contextmenu', 'mouseover', 'mouseout',
-					'dblclick', 'mousemove'
-				]);
-
-
-       }
-
-       function destroyInnerGrid(record) {
-
-           var parent = document.getElementById('tripsummary' + record.get('TripId'));
-           var child = parent.firstChild;
-
-           var innerGrid = Ext.getCmp('hidtoryDetailsGrid' + record.get('TripId'));
-           var selections = innerGrid.getSelectionModel().getSelection();
-           //alert('you selected: ' + selections.length);
-
-           child.style.display = "none";
-
-       }
-
-       /*
-       *
-       * Code of history grid with form Finished
-       *
-       */
-
-       var cookieheight = readCookie(DispatchOrganizationId + 'mapGridDefaultHeight');
-       var cookiewidth = readCookie(DispatchOrganizationId + 'mapGridDefaultWidth');
-       cookiedefaultmapview = readCookie(DispatchOrganizationId + 'DefaultMapView');
-
-       var hideGridDefault = false;
-       if (cookiedefaultmapview != '') {
-           if (cookiedefaultmapview == 'normal')
-               hideMapByDefault = false;
-           else if (cookiedefaultmapview == 'FullGridView') {
-               hideMapByDefault = true;
-               mapStatus = 'collapse';
-           }
-           else if (cookiedefaultmapview == 'FullMapView') {
-               hideGridDefault = true;
-               hideMapByDefault = false;
-               gridStatus = 'collapse';
-           }
-       }
-
-       mapGridOriginalHeight = cookieheight != '' ? cookieheight * 1 : getDocHeight() - (window.screen.height / 2);
-       mapGridOriginalWidth = cookiewidth != '' ? cookiewidth * 1 : getDocWidth() - (window.screen.width / 2);
-
-       tabs = Ext.create('Ext.tab.Panel',
+    var viewport = Ext.create('Ext.Viewport',
+{
+    layout: 'border',
+    border: false,
+    items: [northmappanel, tabs],
+    listeners:
    {
-       id: 'tabs',
-       region: defaultMapView,
-       split: true,
-       titleCollapse: false,
-       header: false,
-       autoScroll: true,
-       border: false,
-       //height: window.screen.height / 2,
-       //width: window.screen.width / 2,
-       //height: hideMapByDefault ? $(document).height() : mapGridOriginalHeight, //getDocHeight() - (window.screen.height / 2),
-       //width: hideMapByDefault ? $(document).width() : mapGridOriginalWidth, //getDocWidth() - (window.screen.width / 2),
-       height: hideMapByDefault ? $(document).height() : (hideGridDefault ? (defaultMapView == 'west' ? mapGridOriginalHeight : 25) : mapGridOriginalHeight),
-       width: hideMapByDefault ? $(document).width() : (hideGridDefault ? (defaultMapView == 'west' ? 1 : mapGridOriginalWidth) : mapGridOriginalWidth),
-       autoHeight: true,
-       collapsible: true,
-       animCollapse: true,
-       deferredRender: false,
-       activeTab: 0,     // first tab initially active
-       autoDestroy: false,
-       items: [vehiclegrid, ShowAlarmTab ? alarmgrid : null, ShowMessageTab?messagegrid:null, geozonelandmarktabs],
-       listeners:
-      {
-          afterrender: function () {
-              try {
-                  $('.x-collapse-el').hide();
-                  var s = '<div class=\'togglemap\'><a href=\'javascript:void(0);\' onclick="toggleMap();"><img src=\'images/menutogglemaphandler.png\'></a></div>';
-                  $('#tabs').parent().prepend(s);
-                  s = '<div class=\'collapsebutton\'><a href=\'javascript:void(0);\' onclick="toggleGrid();"><img src=\'images/menuhandler.png\' alt=\'hide/show grid\' title=\'hide/show grid\'></a></div>';
-                  $('#tabs').parent().prepend(s);
-                  //s = '<div class=\'expandgridbutton\'><a href=\'javascript:void(0);\' onclick="toggleMap();"><img src=\'images/menumaphandler.png\' style=\'border:1px solid #666666\' alt=\'hide/show map\' title=\'hide/show map\'></a></div>';
-                  //$('#tabs').parent().prepend(s);
-                  $('#tabs-body').css('overflow', 'hidden');
+       afterlayout: function (o, layout, eOpts) {
+           if (defaultMapView == 'west') {
+               if (gridStatus == 'expanded') {
+                   $('.collapsebutton').css("top", 7);
+                   $('.collapsebutton').css("left", tabs.getWidth() - 50);
 
-                  /*if (defaultMapView == 'west') {
-                  $('.collapsebutton').css("top", 7);
-                  $('.collapsebutton').css("left", tabs.getWidth() - 50);
-                  }
-                  else if (defaultMapView == 'south') {
-                  $('.collapsebutton').css("top", northmappanel.getHeight() + 10);
-                  $('.collapsebutton').css("left", tabs.getWidth() - 50);
-                  }
-                  else if (defaultMapView == 'north') {
-                  $('.collapsebutton').css("top", 7);
-                  $('.collapsebutton').css("left", tabs.getWidth() - 50);
-                  }*/
+                   $('.togglemap').css("top", 7);
+                   $('.togglemap').css("left", tabs.getWidth() - 80);
+               }
 
-                  //if (ViolationTabAtNewMapPage)
-                  //    IniViolations();
-              }
-              catch (err) { alert(err); }
-          },
-          resize: function (o, width, height, oldWidth, oldHeight, eOpts) {
-              if (!SaveGridSizeToCookie) {
-                  SaveGridSizeToCookie = true;
-                  return;
-              }
+               if (cookiedefaultmapview == 'FullMapView') {
+                   $('.collapsebutton').css("left", 30);
+                   $('.collapsebutton').css("top", 0);
 
-              var CookieDate = new Date;
-              CookieDate.setFullYear(CookieDate.getFullYear() + 1);
-              if (defaultMapView == 'west' || defaultMapView == 'east')
-                  document.cookie = DispatchOrganizationId + 'mapGridDefaultWidth=' + width + '; expires=' + CookieDate.toGMTString() + ';';
-              else
-                  document.cookie = DispatchOrganizationId + 'mapGridDefaultHeight=' + height + '; expires=' + CookieDate.toGMTString() + ';';
+                   $('.togglemap').css("left", 0);
+                   $('.togglemap').css("top", 0);
+               }
 
-              document.cookie = DispatchOrganizationId + 'DefaultMapView=normal; expires=' + CookieDate.toGMTString() + ';';
+           }
+           else if (defaultMapView == 'south') {
+               $('.collapsebutton').css("top", northmappanel.getHeight() + 10);
+               $('.collapsebutton').css("left", tabs.getWidth() - 50);
 
-              cookiedefaultmapview = readCookie(DispatchOrganizationId + 'DefaultMapView');
-              gridStatus = 'expanded';
-              mapStatus = 'expanded';
-          }
-      }
+               $('.togglemap').css("top", northmappanel.getHeight() + 10);
+               $('.togglemap').css("left", tabs.getWidth() - 80);
+           }
+           else if (defaultMapView == 'north') {
+               $('.collapsebutton').css("top", 7);
+               $('.collapsebutton').css("left", tabs.getWidth() - 50);
 
-   }
-   );
-
-       //Devin Added
-       try {
-           if (DispatchOrganizationId == 480) {
-               var DispatchTab = Ext.create('Ext.Panel', {
-                   labelWidth: 0,
-                   border: 0,
-                   frame: false,
-                   bodyStyle: 'padding:3px;border:0;background-color:transparent;',
-                   width: 800,
-                   id: "DispatchTab",
-                   layout: {
-                       type: 'column',
-                       margin: 10
-                   }, // arrange fieldsets side by side
-                   defaults: {
-                       width: 800,
-                       labelWidth: 90
-                   },
-                   header: false,
-                   title: ResDispatch, //'Dispatch',
-                   defaultType: 'textfield'
-               });
-
-
-               tabs.add(DispatchTab);
-               tabs.items.each(function (i) {
-                   if (i.id == "DispatchTab") {
-                       i.tab.on('click', function (el, e) {
-                           e.stopEvent();
-
-                           var ant_w = 800;
-                           var ant_h = 800;
-                           var ant_left = (screen.width / 2) - (ant_w / 2);
-                           var ant_top = (screen.height / 2) - (ant_h / 2);
-
-                           window.open('../../Ant/Ant.html', ResDispatch, 'width=' + ant_w + ',height=' + ant_h + ',left=' + ant_left + ',top=' + ant_top + ',screenX=0,screenY=100');
-                       });
-                   }
-               });
+               $('.togglemap').css("top", 7);
+               $('.togglemap').css("left", tabs.getWidth() - 80);
            }
 
-       }
-       catch (err) { }
 
-       var viewport = Ext.create('Ext.Viewport',
-   {
-       layout: 'border',
-       border: false,
-       items: [northmappanel, tabs],
-       listeners:
-      {
-          afterlayout: function (o, layout, eOpts) {
-              if (defaultMapView == 'west') {
-                  if (gridStatus == 'expanded') {
-                      $('.collapsebutton').css("top", 7);
-                      $('.collapsebutton').css("left", tabs.getWidth() - 50);
-
-                      $('.togglemap').css("top", 7);
-                      $('.togglemap').css("left", tabs.getWidth() - 80);
-                  }
-
-                  if (cookiedefaultmapview == 'FullMapView') {
-                      $('.collapsebutton').css("left", 30);
-                      $('.collapsebutton').css("top", 0);
-
-                      $('.togglemap').css("left", 0);
-                      $('.togglemap').css("top", 0);
-                  }
-
-              }
-              else if (defaultMapView == 'south') {
-                  $('.collapsebutton').css("top", northmappanel.getHeight() + 10);
-                  $('.collapsebutton').css("left", tabs.getWidth() - 50);
-
-                  $('.togglemap').css("top", northmappanel.getHeight() + 10);
-                  $('.togglemap').css("left", tabs.getWidth() - 80);
-              }
-              else if (defaultMapView == 'north') {
-                  $('.collapsebutton').css("top", 7);
-                  $('.collapsebutton').css("left", tabs.getWidth() - 50);
-
-                  $('.togglemap').css("top", 7);
-                  $('.togglemap').css("left", tabs.getWidth() - 80);
-              }
-
-
-          }
-      }
-   }
-   );
-
-       /*function readingPaneChange(cycle, activeItem) {
-       switch (activeItem.text) {
-       case 'Top':
-       northmappanel.show();
-       northmappanel.region = "north";
-       northmappanel.isHorz = false;
-       northmappanel.isVert = true;
-       northmappanel.setHeight(window.screen.height / 2);
-       if (defaultMapView == "north")
-       $('#nmappanel-splitter').show();
-       else
-       $('#nmappanel-splitter').hide();
-       viewport.doLayout();
-       break;
-       case 'Bottom':
-       northmappanel.show();
-       northmappanel.region = "south";
-       northmappanel.isHorz = false;
-       northmappanel.isVert = true;
-       northmappanel.setHeight(window.screen.height / 2);
-       if (defaultMapView == "south")
-       $('#nmappanel-splitter').show();
-       else
-       $('#nmappanel-splitter').hide();
-       viewport.doLayout();
-       break;
-       case 'Right':
-       northmappanel.show();
-       northmappanel.region = "east";
-       northmappanel.isHorz = true;
-       northmappanel.isVert = false;
-       northmappanel.setWidth(window.screen.width / 2);
-       if (defaultMapView == "east")
-       $('#nmappanel-splitter').show();
-       else
-       $('#nmappanel-splitter').hide();
-       viewport.doLayout();
-       break;
-       default:
-       northmappanel.hide();
-       break;
-       }
-       }*/
-
-       function onItemClick(item) {
-           alert('Menu Click, You clicked the "' + item.text + '" menu item.');
-       }
-
-       /*function findit(finditvehicleBoxId) {
-       if (finditvehicleBoxId == undefined) {
-       finditvehicleBoxId = selectedVehicleBoxId;
-       }
-       try {
-       mapLoading = true;
-
-       if (finditvehicleBoxId > 0) {
-       var gridindex = 0;
-       vehiclegrid.getStore().each(function (record) {
-       if (record.data.BoxId == finditvehicleBoxId) {
-       if (!vehiclegrid.getSelectionModel().isSelected(gridindex))
-       vehiclegrid.getSelectionModel().select(gridindex, true, false);
-       return false;
-       }
-       gridindex++;
-
-       });
-
-       var selectedBoxs = new Array();
-       selectedBoxs.push(selectedVehicleData);
-       mapSelecteds(selectedBoxs, "nmapframe");
-       }
-       mapLoading = false;
-       }
-       catch (err) {
-       }
-       return false;
-       }*/
-
-       function loadGeozoneLandmarks() {
-           var el = document.getElementById(mapframe).contentWindow;
-
-           if (el.geozoneLoaded && el.landmarkLoaded) {
-               var landmarks = [];
-               for (i = 0; i < el.geoLandmarkFeatures.length; i++) {
-                   var ss = el.geoLandmarkFeatures[i].fid.split(':::');
-                   d = { 'type': ss[0], 'name': ss[1], 'f': el.geoLandmarkFeatures[i] };
-                   landmarks.push(d);
-               }
-
-               geolandmarksstore.loadData(landmarks);
-               geolandmarkgrid.setTitle(ResGeozoneLandmarks);
-               $('#geolandmarkcount').html(landmarks.length);
-           }
-           else {
-               setTimeout(function () { loadGeozoneLandmarks(); }, 500);
-           }
-       }
-
-       /*function loadGeozones() {
-       var el = document.getElementById(mapframe).contentWindow;
-
-       if (el.geozoneLoaded) {
-       var geozones = [];
-       for (i = 0; i < el.geoLandmarkFeatures.length; i++) {
-       var ss = el.geoLandmarkFeatures[i].fid.split(':::');
-       if (ss[0] == "Geozone") {
-       d = { 'type': ss[0], 'name': ss[1], 'f': el.geoLandmarkFeatures[i], 'desc': el.geoLandmarkFeatures[i].GeoDescription, 'direction': el.geoLandmarkFeatures[i].GeoDirection,
-       'SeverityName': el.geoLandmarkFeatures[i].SeverityName,
-       'id': el.geoLandmarkFeatures[i].GeozoneID
-       };
-       geozones.push(d);
-       }
-       }
-       geozonesstore.loadData(geozones);
-       //geolandmarksstore.loadData(geolandmarksdata);
-
-       geozonegrid.setTitle("Geozones");
-
-       $('#geozonecount').html(geozones.length);
-       }
-       else {
-       setTimeout(function () { loadGeozones(); }, 500);
-       }
-       }
-
-       function loadLandmarks() {
-       var el = document.getElementById(mapframe).contentWindow;
-
-       if (el.landmarkLoaded) {
-       var landmarks = [];
-       for (i = 0; i < el.geoLandmarkFeatures.length; i++) {
-       var ss = el.geoLandmarkFeatures[i].fid.split(':::');
-       if (ss[0] == "Landmark" || ss[0] == "LandmarkCircle") {
-       d = { 'type': ss[0], 'name': ss[1], 'f': el.geoLandmarkFeatures[i],
-       'desc': el.geoLandmarkFeatures[i].landmarkDescription,
-       'StreetAddress': el.geoLandmarkFeatures[i].StreetAddress,
-       'Email': el.geoLandmarkFeatures[i].Email,
-       'ContactPhoneNum': el.geoLandmarkFeatures[i].ContactPhoneNum,
-       'radius': el.geoLandmarkFeatures[i].radius
-       };
-       landmarks.push(d);
-       }
-       }
-       landmarksstore.loadData(landmarks);
-       //geolandmarksstore.loadData(geolandmarksdata);
-
-       landmarkgrid.setTitle("Landmarks");
-
-       $('#landmarkcount').html(landmarks.length);
-       }
-       else {
-       setTimeout(function () { loadLandmarks(); }, 500);
-       }
-       }*/
-
-       loadingMask.show();
-
-       function getIcon(exirecord, posExpireDate) {
-           var newIcon;
-           if (exirecord.data.ImagePath != "" && exirecord.data.ImagePath != null) {    // custom icon
-               if (exirecord.data.OriginDateTime < posExpireDate) {
-                   newIcon = "Grey"; // +bicon;
-               }
-               else {
-                   if (exirecord.data.CustomSpeed != 0) {
-                       newIcon = "Green"; // +bicon;
-                   }
-                   else {
-                       newIcon = "Red"; // +bicon;
-                   }
-                   if (exirecord.data.VehicleStatus.indexOf("Idling") > -1 || exirecord.data.VehicleStatus.indexOf("Moteur au ralenti") > -1) {
-                       newIcon = "Orange";
-                   }
-                   if (exirecord.data.PTO == 'On') {
-                       newIcon = "Blue";
-                   }
-               }
-
-               var bicon = exirecord.data.ImagePath.replace("\\", "/");
-               var cicon = '';
-               if (bicon.split("/").length > 1) {
-                   //bicon = bicon.split("/")[0];
-                   newIcon = bicon.split("/")[0] + "/" + newIcon + bicon.split("/")[1];
-               }
-               else
-                   newIcon = newIcon + bicon;
-           }
-           else {
-               if (exirecord.data.OriginDateTime < posExpireDate) {
-                   newIcon = "Grey" + exirecord.data.IconTypeName + ".ico";
-               }
-               else {
-                   if (exirecord.data.CustomSpeed != 0) {
-                       newIcon = "Green" + exirecord.data.IconTypeName + exirecord.data.MyHeading + ".ico";
-                   }
-                   else {
-                       newIcon = "Red" + exirecord.data.IconTypeName + ".ico";
-                   }
-                   if (exirecord.data.VehicleStatus.indexOf("Idling") > -1 || exirecord.data.VehicleStatus.indexOf("Moteur au ralenti") > -1) {
-                       newIcon = "Orange" + exirecord.data.IconTypeName + ".ico";
-                   }
-                   if (exirecord.data.PTO == 'On') {
-                       newIcon = "Blue" + exirecord.data.IconTypeName + ".ico";
-                   }
-               }
-           }
-           return newIcon;
        }
    }
+}
+);
+
+    function onItemClick(item) {
+        alert('Menu Click, You clicked the "' + item.text + '" menu item.');
+    }
+
+    function loadGeozoneLandmarks() {
+        var el = document.getElementById(mapframe).contentWindow;
+
+        if (el.geozoneLoaded && el.landmarkLoaded) {
+            var landmarks = [];
+            for (i = 0; i < el.geoLandmarkFeatures.length; i++) {
+                var ss = el.geoLandmarkFeatures[i].fid.split(':::');
+                d = { 'type': ss[0], 'name': ss[1], 'f': el.geoLandmarkFeatures[i] };
+                landmarks.push(d);
+            }
+
+            geolandmarksstore.loadData(landmarks);
+            geolandmarkgrid.setTitle(ResGeozoneLandmarks);
+            $('#geolandmarkcount').html(landmarks.length);
+        }
+        else {
+            setTimeout(function () { loadGeozoneLandmarks(); }, 500);
+        }
+    }
+
+    loadingMask.show();
+
+    function getIcon(exirecord, posExpireDate) {
+        var newIcon;
+        if (exirecord.data.ImagePath != "" && exirecord.data.ImagePath != null) {    // custom icon
+            if (exirecord.data.OriginDateTime < posExpireDate) {
+                newIcon = "Grey"; // +bicon;
+            }
+            else {
+                if (exirecord.data.CustomSpeed != 0) {
+                    newIcon = "Green"; // +bicon;
+                }
+                else {
+                    newIcon = "Red"; // +bicon;
+                }
+                if (exirecord.data.VehicleStatus.indexOf("Idling") > -1 || exirecord.data.VehicleStatus.indexOf("Moteur au ralenti") > -1) {
+                    newIcon = "Orange";
+                }
+                if (exirecord.data.PTO == 'On') {
+                    newIcon = "Blue";
+                }
+            }
+
+            var bicon = exirecord.data.ImagePath.replace("\\", "/");
+            var cicon = '';
+            if (bicon.split("/").length > 1) {
+                //bicon = bicon.split("/")[0];
+                newIcon = bicon.split("/")[0] + "/" + newIcon + bicon.split("/")[1];
+            }
+            else
+                newIcon = newIcon + bicon;
+        }
+        else {
+            if (exirecord.data.OriginDateTime < posExpireDate) {
+                newIcon = "Grey" + exirecord.data.IconTypeName + ".ico";
+            }
+            else {
+                if (exirecord.data.CustomSpeed != 0) {
+                    newIcon = "Green" + exirecord.data.IconTypeName + exirecord.data.MyHeading + ".ico";
+                }
+                else {
+                    newIcon = "Red" + exirecord.data.IconTypeName + ".ico";
+                }
+                if (exirecord.data.VehicleStatus.indexOf("Idling") > -1 || exirecord.data.VehicleStatus.indexOf("Moteur au ralenti") > -1) {
+                    newIcon = "Orange" + exirecord.data.IconTypeName + ".ico";
+                }
+                if (exirecord.data.PTO == 'On') {
+                    newIcon = "Blue" + exirecord.data.IconTypeName + ".ico";
+                }
+            }
+        }
+        return newIcon;
+    }
+}
 );
 
 
@@ -9380,7 +9237,8 @@ function loadGeozones() {
         for (i = 0; i < el.geoLandmarkFeatures.length; i++) {
             var ss = el.geoLandmarkFeatures[i].fid.split(':::');
             if (ss[0] == "Geozone") {
-                d = { 'type': ss[0], 'name': ss[1], 'f': el.geoLandmarkFeatures[i], 'desc': el.geoLandmarkFeatures[i].GeoDescription, 'direction': el.geoLandmarkFeatures[i].GeoDirection,
+                d = {
+                    'type': ss[0], 'name': ss[1], 'f': el.geoLandmarkFeatures[i], 'desc': el.geoLandmarkFeatures[i].GeoDescription, 'direction': el.geoLandmarkFeatures[i].GeoDirection,
                     'SeverityName': el.geoLandmarkFeatures[i].SeverityName,
                     'id': el.geoLandmarkFeatures[i].GeozoneID
                 };
@@ -9408,7 +9266,8 @@ function loadLandmarks() {
         for (i = 0; i < el.geoLandmarkFeatures.length; i++) {
             var ss = el.geoLandmarkFeatures[i].fid.split(':::');
             if (ss[0] == "Landmark" || ss[0] == "LandmarkCircle") {
-                d = { 'type': ss[0], 'name': ss[1], 'f': el.geoLandmarkFeatures[i],
+                d = {
+                    'type': ss[0], 'name': ss[1], 'f': el.geoLandmarkFeatures[i],
                     'desc': el.geoLandmarkFeatures[i].landmarkDescription,
                     'StreetAddress': el.geoLandmarkFeatures[i].StreetAddress,
                     'Email': el.geoLandmarkFeatures[i].Email,
@@ -9421,7 +9280,7 @@ function loadLandmarks() {
         }
         landmarksstore.loadRawData(landmarks);
         //geolandmarksstore.loadData(geolandmarksdata);
-        
+
         landmarkgrid.setTitle(ResLandmarks/*"Landmarks"*/);
 
         //$('#landmarkcount').html(landmarks.length);
@@ -9517,7 +9376,7 @@ function showHistoryTab(VehicleId, setDateTime, fleetId) {
         historyTimeFrom.setValue(formatAMPM(newDateTimeFrom));
         historyDateTo.setValue((newDateTimeTo.getMonth() + 1) + '/' + newDateTimeTo.getDate() + '/' + newDateTimeTo.getFullYear());
         historyTimeTo.setValue(formatAMPM(newDateTimeTo));
-        
+
         //value: new Date((new Date()).getFullYear(), (new Date()).getMonth(), (new Date()).getDate() + 1)
     }
     tabs.add(historyGridForm);
@@ -9531,17 +9390,17 @@ function isNumber(n) {
 
 function formatAMPM(date) {
     var hours = date.getHours();
-    var minutes = date.getMinutes();    
+    var minutes = date.getMinutes();
     minutes = minutes < 10 ? '0' + minutes : minutes;
     var strTime
     if (userTime == "h:i:s A") {
         var ampm = hours >= 12 ? 'PM' : 'AM';
         hours = hours % 12;
-        hours = hours ? hours : 12;        
+        hours = hours ? hours : 12;
         strTime = hours + ':' + minutes + ' ' + ampm;
     }
     else
-        strTime = hours + ':' + minutes ;
+        strTime = hours + ':' + minutes;
     return strTime;
 }
 
@@ -9549,9 +9408,7 @@ function formatAMPM(date) {
 
 
 function OrganizationHierarchyNodeSelected(nodecode, fleetId, fleetName) {
-    /*$('#<%=hidOrganizationHierarchyNodeCode.ClientID %>').val(nodecode);
-    $('#<%=hidOrganizationHierarchyFleetId.ClientID %>').val(fleetId);
-    $('#<%=hidOrganizationHierarchyPostBack.ClientID %>').click();*/
+
     HistoryOrganizationHierarchyNodeCode = nodecode;
     historyOrganizationHierarchy.setText(fleetName);
     HistoryOrganizationHierarchyFleetId = fleetId;
@@ -9610,7 +9467,7 @@ function OnFleetSelect(c, fleetId, fleetName, caller) {
             }
 
             loadingMask.show();
-            
+
             mainstore.load(
                 {
                     params:
@@ -9623,8 +9480,8 @@ function OnFleetSelect(c, fleetId, fleetName, caller) {
                         landmarkCategoryId: cat_id
                     }
                 });
-                vehiclegrid.down('pagingtoolbar').bindStore(vehiclegrid.getStore());
-                vehiclegrid.down('pagingtoolbar').onLoad();
+            vehiclegrid.down('pagingtoolbar').bindStore(vehiclegrid.getStore());
+            vehiclegrid.down('pagingtoolbar').onLoad();
         }
         else if (caller == 'violationFleetButton') {
             ViolationOnFleetSelect(fleetId, fleetName);
@@ -9648,7 +9505,7 @@ function OnFleetSelect(c, fleetId, fleetName, caller) {
             );
         }
     }
-    
+
 }
 
 function toggleGrid() {
@@ -9683,7 +9540,7 @@ function toggleGrid() {
 
         if (gridStatus == 'expanded') {
             gridStatus = 'collapse';
-            if(cookiedefaultmapview != 'FullGridView')
+            if (cookiedefaultmapview != 'FullGridView')
                 mapGridOriginalHeight = tabs.getHeight();
 
             tabs.setHeight(25);
@@ -9818,6 +9675,34 @@ function getClosestVehicles(lon, lat, radius, numofvehicles) {
 
 }
 
+function getVehiclesInLandmark(landmarkId) {
+    //alert(lon + ',' + lat);
+    var fleetId;
+    if (LoadVehiclesBasedOn == 'fleet') {
+        fleetId = DefaultFleetID;
+    }
+    else {
+        fleetId = DefaultOrganizationHierarchyFleetId;
+    }
+
+    loadingMask.show();
+    FromClosestVehicles = true;
+    VehicleGridInSearchMode = true;
+    originSelectionon = selectionon;
+    mainstore.load(
+    {
+        params:
+        {
+            QueryType: 'getVehiclesInLandmark',
+            landmarkId: landmarkId,
+            fleetID: fleetId
+        }
+    });
+
+    clearSearchBtn.show();
+
+}
+
 var SearchHistoryDateTime;
 var SearchHistoryTimeRange;
 
@@ -9910,25 +9795,15 @@ function gotoLandmark(landmarkId) {
     var el = document.getElementById(mapframe).contentWindow;
 
     if (el.landmarkLoaded) {
-        
+
         for (i = 0; i < el.geoLandmarkFeatures.length; i++) {
-            //var ss = el.geoLandmarkFeatures[i].fid.split(':::');
-            //if (ss[0] == "Landmark" || ss[0] == "LandmarkCircle") {
-            //    if (ss[1] == landmarkName)
-            //    {
-            //        el.map.zoomToExtent(el.geoLandmarkFeatures[i].geometry.getBounds(), closest = true);
-            //        break;
-            //    }
-            //}
-            if (el.geoLandmarkFeatures[i].LandmarkId == landmarkId)
-            {
+            if (el.geoLandmarkFeatures[i].LandmarkId == landmarkId) {
                 el.map.zoomToExtent(el.geoLandmarkFeatures[i].geometry.getBounds(), closest = true);
                 getVehilcesByLandmarkIdAndMapIt(landmarkId);
                 break;
             }
         }
 
-        //getVehilcesByLandmarkIdAndMapIt(landmarkId);
     }
     else {
         setTimeout(function () { gotoLandmark(landmarkId); }, 500);
@@ -9975,7 +9850,7 @@ function getVehilcesByLandmarkIdAndMapIt(landmarkId) {
 
                 var gridindex = 0;
                 vehiclegrid.getStore().each(function (record) {
-                    if ($.inArray(record.data.BoxId, boxIds) >= 0) {                        
+                    if ($.inArray(record.data.BoxId, boxIds) >= 0) {
                         if (!vehiclegrid.getSelectionModel().isSelected(gridindex))
                             vehiclegrid.getSelectionModel().select(gridindex, true, true);
                         return false;
@@ -9985,7 +9860,7 @@ function getVehilcesByLandmarkIdAndMapIt(landmarkId) {
                 });
 
                 mapVehicles(true, records, true, false, false);
-            }            
+            }
 
         },
         error: function (msg) {
@@ -10013,16 +9888,16 @@ function clone(obj) {
 }
 
 function updateOperationalState(boxId, operationalState, operationalStateName, operationalStateNotes) {
-    
+
     mainstore.each(function (record, idx) {
         val = record.get('BoxId');
         if (val == boxId) {
             record.set('OperationalStateName', operationalStateName);
             record.set('OperationalStateNotes', operationalStateNotes);
-            record.commit();            
+            record.commit();
         }
     });
-    
+
     vehiclegrid.getView().refresh();
 }
 
@@ -10030,7 +9905,7 @@ function updateOperationalStateByVehicleId(vehicleId, operationalState, operatio
 
     mainstore.each(function (record, idx) {
         val = record.get('VehicleId');
-        var operationalStateName = (operationalState * 1 == 100) ? 'Available':'Unavailable';
+        var operationalStateName = (operationalState * 1 == 100) ? 'Available' : 'Unavailable';
         if (val == vehicleId) {
             record.set('OperationalStateName', operationalStateName);
             record.set('OperationalStateNotes', operationalStateNotes);

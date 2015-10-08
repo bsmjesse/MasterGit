@@ -206,4 +206,7 @@
   <data name="SuccessMsgFleet" xml:space="preserve">
     <value>Vehicle Successfully added to Fleet:</value>
   </data>
+  <data name="SuccessMsgMultipleFleet" xml:space="preserve">
+    <value>Vehicle Successfully added.</value>
+  </data>
 </root>

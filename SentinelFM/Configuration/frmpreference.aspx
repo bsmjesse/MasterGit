@@ -756,7 +756,11 @@ ErrorMessage="Value must be a whole number between 0- 1000;" Text="*" meta:resou
 												<asp:requiredfieldvalidator id="valNewPassword" runat="server" Enabled="False" ControlToValidate="txtNewPassword"
 													ErrorMessage="Enter a new Password" meta:resourcekey="valNewPasswordResource1" Text="*"></asp:requiredfieldvalidator>
 												<asp:requiredfieldvalidator id="valOldPassword" runat="server" Enabled="False" ControlToValidate="txtOldPassword"
-													ErrorMessage="Enter you old password" meta:resourcekey="valOldPasswordResource1" Text="*"></asp:requiredfieldvalidator></td>
+													ErrorMessage="Enter you old password" meta:resourcekey="valOldPasswordResource1" Text="*"></asp:requiredfieldvalidator>
+                                       <asp:CustomValidator ID="CustomValidator1" runat="server"  ClientValidationFunction="validatePassword" EnableClientScript="true" ControlToValidate ="txtNewPassword" 
+                                                           ErrorMessage="" CssClass="formtext"/>
+                                                                        
+                                 </td>
                                  <td style="width: 103px">
 												<asp:textbox id="txtOldPassword" tabIndex="2" runat="server" Width="140px" CssClass="formtext"
 													Enabled="False" TextMode="Password" meta:resourcekey="txtOldPasswordResource1"></asp:textbox></td>
@@ -782,19 +786,19 @@ ErrorMessage="Value must be a whole number between 0- 1000;" Text="*" meta:resou
                                  </td>
                                  <td align="right">
                                     &nbsp;<asp:button id="cmdSavePsw" runat="server" Width="114px" CssClass="combutton" Text="Edit Password" onclick="cmdSavePsw_Click" meta:resourcekey="cmdSavePswResource1"></asp:button></td>
-                              </tr>
+                              </tr>                              
                               <tr>
-                                 <td colspan="2">
-                                 <asp:label id="lblPswMsg" runat="server" CssClass="errortext" Visible="False" meta:resourcekey="lblPswMsgResource1"></asp:label>
-                                 </td>
-                              </tr>
-                              <tr>
-                                 <td class="style3">
+                                 <td class="style3">                                    
                                  </td>
                                  <td align="right">
                                     <asp:Button runat=server CssClass=combutton ID=cmdHome style="width:114px; height:19px"  text=Cancel meta:resourcekey="cmdHomeResource1" OnClick="cmdHome_Click" CausesValidation="False" />
                                     <asp:Button runat="server" CssClass=combutton ID="cmdExit" Visible=false   style="width:114px; height:19px"  text=Close OnClientClick="javascript:window.close();"   CausesValidation="False"/>
                                     </td> 
+                              </tr>
+                               <tr>
+                                 <td colspan="2">
+                                 <asp:label id="lblPswMsg" runat="server" CssClass="errortext" Visible="False" meta:resourcekey="lblPswMsgResource1"></asp:label>
+                                 </td>
                               </tr>
                            </table>
 								</TD>
@@ -817,7 +821,7 @@ ErrorMessage="Value must be a whole number between 0- 1000;" Text="*" meta:resou
                                     <ul>
                                         <li>
                                             <asp:Label ID="Label4" runat="server" 
-                                                Text="Password must be atleast 7 characters in length" 
+                                                Text="Password must be atleast 8 characters in length" 
                                                 meta:resourcekey="Label4Resource1"></asp:Label>
                                         </li>
                                        <%-- <li>
@@ -959,9 +963,9 @@ ErrorMessage="Value must be a whole number between 0- 1000;" Text="*" meta:resou
          function passwordChanged() 
          {
 	        var strength = document.getElementById('strength');
-	        var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
-	        var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
-	        var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+	        var strongRegex = new RegExp("^(?=.{9,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+	        var mediumRegex = new RegExp("^(?=.{8,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+	        var enoughRegex = new RegExp("(?=.{7,}).*", "g");
 	        var pwd = document.getElementById("txtNewPassword");
 	        var txtPasswordStatus=document.forms[0].elements["txtPasswordStatus"];
 	            
@@ -1013,6 +1017,20 @@ ErrorMessage="Value must be a whole number between 0- 1000;" Text="*" meta:resou
         //$('#colorPicker').mouseleave(function () { $('#colorPicker').offset({left:0,top:0}).hide(); });
 
         //$('#polygonStyleEditorLineColor').colorPicker({ colorPickerDiv: 'colorPicker' });
+
+		function validatePassword(sender, args)
+		{
+		    var NewPassword = document.getElementById("txtNewPassword").value;
+		    var OldPassword = document.getElementById("txtOldPassword").value;
+
+		    if (NewPassword == OldPassword) { 
+		        args.IsValid = false;
+		       sender.errormessage = "<%= msgPsw_OldNewNotSame%>";  
+		        document.getElementById("txtNewPassword").focus();
+		        
+		        return ; 
+		    }
+		}
         
     </script>
 	</body>

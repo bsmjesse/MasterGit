@@ -82,7 +82,11 @@ namespace SentinelFM
                 {
                     controlId = getPostBackControlName();
                 }
-                catch { }
+                catch (Exception Ex)
+                {
+                    //lblMessage.Text = Ex.Message.ToString();
+                    //lblMessage.Visible = true;
+                }
                 lblEmailExample = GetLocalResourceObject("lblEmailExample").ToString();
                 string u = Request.ServerVariables["HTTP_USER_AGENT"];
                 System.Text.RegularExpressions.Regex b = new System.Text.RegularExpressions.Regex(@"(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino", System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Multiline);
@@ -252,19 +256,19 @@ namespace SentinelFM
                 else
                 {
                     if (controlId != null && controlId.Trim().ToLower() != "lnkenglish" && controlId.Trim().ToLower() != "lnkfrench" && controlId.Trim().ToLower() != "btnregen")
-                    if (Request.QueryString["Password"] != null)
-                    {
-
-                        DoLogin();
-
-                    }
-                    else
-                        if (this.txtPassword.Text != "")
+                        if (Request.QueryString["Password"] != null)
                         {
 
                             DoLogin();
 
                         }
+                        else
+                            if (this.txtPassword.Text != "")
+                            {
+
+                                DoLogin();
+
+                            }
                 }
 
                 if (AuthenticationFailed == 1)
@@ -277,7 +281,8 @@ namespace SentinelFM
             catch (System.Threading.ThreadAbortException) { return; }
             catch (Exception Ex)
             {
-                //System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError,VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error,Ex.Message.ToString()+" Form:Login.aspx"));    
+                //lblMessage.Text = Ex.Message.ToString();
+                //lblMessage.Visible = true;
             }
             //finally
             //{
@@ -359,7 +364,7 @@ namespace SentinelFM
 
             try
             {
-                if (Convert.ToInt16(ViewState["failcount"]) > 2)
+                if (Convert.ToInt16(ViewState["failcount"]) > 1 && Convert.ToInt16(ViewState["failcount"]) < 5)
                 {
                     if (!CaptchaPanel.Visible)
                         SetCaptcha();
@@ -367,10 +372,17 @@ namespace SentinelFM
                         if (!TestCaptcha())
                             return;
                 }
+                else if (Convert.ToInt16(ViewState["failcount"]) == 5)
+                {                  
+                    this.lblMessage.Text = (string)base.GetLocalResourceObject("lblMessage_Text_ExceedLoginAttempts");
+                    return;
+                }
+            
             }
             catch (Exception Ex)
             {
                 lblMessage.Text = Ex.Message.ToString();
+                lblMessage.Visible = true;
                 System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.Message.ToString() + " User:" + sn.UserID.ToString() + " Form:Login.aspx"));
             }
 
@@ -403,8 +415,10 @@ namespace SentinelFM
 
 
             }
-            catch
+            catch (Exception Ex)
             {
+                //lblMessage.Text = Ex.Message.ToString();
+                //lblMessage.Visible = true;
             }
 
 
@@ -433,8 +447,8 @@ namespace SentinelFM
             }
             catch (Exception Ex)
             {
-                //lblMessage.Text = Ex.Message.ToString();
-                //lblMessage.Visible = true;
+                lblMessage.Text = Ex.Message.ToString();
+                lblMessage.Visible = true;
 
                 System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.Message.ToString() + " User:" + sn.UserID.ToString() + " Form:Login.aspx"));
             }
@@ -503,8 +517,10 @@ namespace SentinelFM
                 }
               
             }
-            catch
+            catch (Exception Ex)
             {
+                //lblMessage.Text = Ex.Message.ToString();
+                //lblMessage.Visible = true;
             }
 
             #endregion check IP
@@ -539,19 +555,38 @@ namespace SentinelFM
                 if (errCode != (int)VLF.ERRSecurity.InterfaceError.NoError)
                 {
 
-                    this.lblMessage.Text = (string)base.GetLocalResourceObject("lblMessage_Text_AuthFailed");
-                    this.lblMessage.Visible = true;
-                    AuthenticationFailed = 1;
-                    //sec.AddFailedEntry(txtUserName.Text, IpAddr);
-                    //captcha
-                    if (ViewState["failcount"] == null)
-                        ViewState["failcount"] = 1;
-                    else
+                    //Changes
+                    if (Convert.ToInt16(ViewState["failcount"]) == 4)
+                    {
+                        //captcha
+                        CaptchaPanel.Visible = false;
+                        this.lblMessage.Text = (string)base.GetLocalResourceObject("lblMessage_Text_ExceedLoginAttempts");
                         ViewState["failcount"] = Convert.ToInt16(ViewState["failcount"]) + 1;
+                        return;
+                    }
+
+                    else
+                    {
+
+                        this.lblMessage.Text = (string)base.GetLocalResourceObject("lblMessage_Text_AuthFailed");
+                        this.lblMessage.Visible = true;
+                        AuthenticationFailed = 1;
+                        //sec.AddFailedEntry(txtUserName.Text, IpAddr);
+
+
+
+                        //captcha
+                        if (ViewState["failcount"] == null)
+                            ViewState["failcount"] = 1;
+                        else
+                            ViewState["failcount"] = Convert.ToInt16(ViewState["failcount"]) + 1;
 
                     //captcha
 
-                    vdbu.RecordUserAction("User", 0, 0, "vlfUser", null, "Login failed", IpAddr, this.Context.Request.RawUrl, string.Format("{0}:{1} at IP:{2}login failed", strUsername, HashPassword, IpAddr));
+                        vdbu.RecordUserAction("User", 0, 0, "vlfUser", null, "Login failed", IpAddr, this.Context.Request.RawUrl, string.Format("{0}:{1} at IP:{2}login failed", strUsername, HashPassword, IpAddr));
+                    }
+                    
+
 
                 }
                 else
@@ -561,12 +596,15 @@ namespace SentinelFM
                     //captcha
                     this.lblMessage.Visible = false;
 
+                   
+
                     // sec.ClearFailedLoginsByIP(IpAddr);
 
                     sn.UserID = uid;
                     sn.LoginUserID = uid;
                     SNuserid.Value = uid.ToString();
                     sn.SecId = secId;
+                    sn.LoginUserSecId = secId;
                     SNsecId.Value = secId;
                     sn.UserName = txtUserName.Text;
                     sn.Password = HashPassword;
@@ -738,8 +776,8 @@ namespace SentinelFM
 
             catch (Exception Ex)
             {
-                //lblMessage.Text = Ex.Message.ToString();
-                //lblMessage.Visible = true;
+                lblMessage.Text = Ex.Message.ToString();
+                lblMessage.Visible = true;
 
                 System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.Message.ToString() + " User:" + sn.UserID.ToString() + " Form:Login.aspx"));
             }

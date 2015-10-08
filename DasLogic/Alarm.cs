@@ -9,7 +9,7 @@ namespace VLF.DAS.Logic
 	/// <summary>
 	/// Provides interface to alarms functionality in database
 	/// </summary>
-	public class Alarm : Das
+	public class Alarm : ActiveRecord
 	{
 		private VLF.DAS.DB.Alarm alarm = null;
 		#region General Interfaces
@@ -28,7 +28,13 @@ namespace VLF.DAS.Logic
 		{
 			base.Dispose();
 		}
-		#endregion
+
+	  public override string Get(int pageSize, int pageNumber, params string[] fieldNames)
+	  {
+	    throw new NotImplementedException();
+	  }
+
+	  #endregion
 
 		#region Public Interfaces
 		/// <summary>

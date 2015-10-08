@@ -4462,6 +4462,12 @@ function getClosestVehicles(lon, lat) {
     map.removePopup(searchMarkerPopup);
 }
 
+function getVehiclesInLandmark(landmarkId, popup) {
+    parent.getVehiclesInLandmark(landmarkId);
+    map.removePopup(popup);
+    
+}
+
 function searchHistoryAddress(lon, lat) {
     SearchHistoryRadius = $('#SearchHistoryRadius').val();
     SearchHistoryMinutes = $('#SearchHistoryMinutes').val();
@@ -5202,6 +5208,9 @@ function getPopupContent(cv) {
                         "<input type='hidden' id='vehicleId' name='vehicleId' value='" + cv.VehicleId + "' />" +
                         "<input type='hidden' id='boxId' name='boxId' value='" + cv.BoxId + "' />" +
                         "<input type='hidden' id='landmarkId' name='landmarkId' value='" + cv.LandmarkID + "' />" +
+                        "<input type='hidden' id='landmarkEventId' name='landmarkEventId' value='" + cv.LandmarkEventId + "' />" +
+                        "<input type='hidden' id='landmarkInDatetime' name='landmarkInDatetime' value='" + cv.LandmarkInDateTime + "' />" +
+                        "<input type='hidden' id='originOperationState' name='originOperationState' value='" + cv.OperationalState + "' />" +
                         "<table border=0 style='margin-top:10px;' cellpadding='5'>";
         if (cv.LandmarkID != undefined && cv.LandmarkID != null && cv.LandmarkID * 1 > 0) {
             popupContent += " <tr id='trOperationalStateServiceName' style='" + (cv.ServiceConfigurations.length==0 ? "display:none;":"") + "'>" +
@@ -5214,7 +5223,7 @@ function getPopupContent(cv) {
                             " </tr>";
 
             popupContent += " <tr id='trLandmarkDuration' style='" + (cv.OperationalState == "200" || cv.ServiceConfigurations.length == 0 ? "display:none;" : "") + "'>" +
-                        "   <td height='30'>Postpone Duration: </td><td><select id='LandmarkDuration' name='LandmarkDuration'>" +
+                        "   <td height='30'>Email Reminder Period: </td><td><select id='LandmarkDuration' name='LandmarkDuration'>" +
                         "                                       <option value='0' " + (cv.LandmarkDuration == 0 ? "selected":"") + ">0</option>" +
                         "                                       <option value='12' " + (cv.LandmarkDuration == 12 ? "selected" : "") + ">12</option>" +
                         "                                       <option value='24' " + (cv.LandmarkDuration == 24 ? "selected" : "") + ">24</option>" +
@@ -5222,8 +5231,8 @@ function getPopupContent(cv) {
                         "                                       <option value='48' " + (cv.LandmarkDuration == 48 ? "selected" : "") + ">48</option>" +
                         "                                       <option value='60' " + (cv.LandmarkDuration == 60 ? "selected" : "") + ">60</option>" +
                         "                                       <option value='72' " + (cv.LandmarkDuration == 72 ? "selected" : "") + ">72</option>" +
-                        "                                    </select> Hours</td>" +
-                        " </tr>";
+                        "                                    </select> Hours &nbsp;<input type='checkbox' name='chkSendEmailImmediately' " + ((cv.ShouldSendEmailImmediately != undefined && cv.ShouldSendEmailImmediately.toLowerCase() == 'false') ? '' : 'checked') + " id='chkSendEmailImmediately' /> Send Email Immediately</td>" +
+                        " </tr>";            
         }
         popupContent += " <tr><td height='20'>Vehicle State: </td><td><select id='OperationalState' name='OperationalState' onchange='onOperationalStateChange()'>" +
                         "                                       <option value='100' " + (cv.OperationalState == "100" ? "Selected" : "") + ">Available</option>" +
@@ -5312,6 +5321,15 @@ function getLandmarkDuration(vehicleId, landmarkId, boxId)
                     $('#LandmarkDuration').val(msg.landmarkDuration);
                     $('#trOperationalStateMessage').hide();
                 }
+
+                if (msg.ShouldSendEmailImmediately != undefined && msg.ShouldSendEmailImmediately.toLowerCase() == "false") {
+                    $('#chkSendEmailImmediately').prop('checked', false);
+                }
+                else {
+                    $('#chkSendEmailImmediately').prop('checked', true);
+                }
+
+                
             }
             
         },
@@ -5323,10 +5341,12 @@ function getLandmarkDuration(vehicleId, landmarkId, boxId)
 
 function onOperationalStateChange() {    
     var length = $('#OperationalStateServiceConfigId').children('option').length;    
-    if ($('#OperationalState').val() == '100' && length > 0)
-        $('#trLandmarkDuration').show();
-    else
-        $('#trLandmarkDuration').hide();
+    if ($('#OperationalState').val() == '100' && length > 0) {
+        $('#trLandmarkDuration').show();        
+    }
+    else {
+        $('#trLandmarkDuration').hide();        
+    }
 }
 
 function getHistoryPopupContent(cv) {

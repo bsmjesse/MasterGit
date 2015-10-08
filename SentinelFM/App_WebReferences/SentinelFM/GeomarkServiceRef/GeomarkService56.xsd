@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Telogis.GeoBase" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Telogis.GeoBase" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dev2:8080/GeomarkService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="LatLon">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="_x" type="xs:unsignedInt" />
+      <xs:element name="_y" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LatLon" nillable="true" type="tns:LatLon" />
+  <xs:complexType name="ArrayOfLatLon">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LatLon" type="tns:LatLon" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLatLon" nillable="true" type="tns:ArrayOfLatLon" />
+</xs:schema>

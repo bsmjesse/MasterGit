@@ -1380,6 +1380,32 @@ public class clsHOSManager
         }
         return groupId;
     }
+
+    public void AddLogdata_SMCSCode(int defectLevel, string SMCSCode, int organizationId)
+    {
+        SqlConnection connection;
+        using (connection = new SqlConnection(hosConnectionString))
+        {
+            using (SqlCommand sqlCmd = new SqlCommand())
+            {
+                sqlCmd.Connection = connection;
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.CommandText = "usp_hos_AddLogdata_SMCSCode";                
+                SqlParameter sqlPara = new SqlParameter("@defectLevel", SqlDbType.Int);
+                sqlPara.Value = defectLevel;
+                sqlCmd.Parameters.Add(sqlPara);
+                sqlPara = new SqlParameter("@SMCSCode", SqlDbType.VarChar);
+                sqlPara.Value = SMCSCode;
+                sqlCmd.Parameters.Add(sqlPara);
+                sqlPara = new SqlParameter("@OrganizationId", SqlDbType.Int);
+                sqlPara.Value = organizationId;
+                sqlCmd.Parameters.Add(sqlPara);
+                connection.Open();
+                sqlCmd.ExecuteNonQuery();
+            }
+        }
+    }
+
     public void AddOrUpdateLogdata_Question(int rowID, string defect, int defectLevel, string SMCSCode, int organizationId)
     {
         SqlConnection connection;
@@ -2108,6 +2134,43 @@ public class clsHOSManager
             sqlPara.Value = organizationId;
             adapter.SelectCommand.Parameters.Add(sqlPara);
 
+            adapter.Fill(dataSet);
+        }
+        return dataSet;
+
+    }
+
+
+    public DataTable GetOrganizationInspections(int organizationId, DateTime start, DateTime stop, String driverId)
+    {
+        DataTable dataSet = new DataTable();
+        SqlDataAdapter adapter = new SqlDataAdapter();
+   
+        using (SqlConnection connection = new SqlConnection(hosConnectionString))
+        {
+            adapter.SelectCommand = new SqlCommand();
+            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            adapter.SelectCommand.CommandText = "usp_hos_GetOrganizationInspections";
+            adapter.SelectCommand.Connection = connection;
+            adapter.SelectCommand.CommandTimeout = 60;
+            SqlParameter sqlPara = new SqlParameter("@organization", SqlDbType.Int);
+            sqlPara.Value = organizationId;
+            adapter.SelectCommand.Parameters.Add(sqlPara);
+
+            sqlPara = new SqlParameter("@start", SqlDbType.DateTime);
+            sqlPara.Value = start;
+            adapter.SelectCommand.Parameters.Add(sqlPara);
+
+            sqlPara = new SqlParameter("@stop", SqlDbType.DateTime);
+            sqlPara.Value = stop;
+            adapter.SelectCommand.Parameters.Add(sqlPara);
+
+            if (!String.IsNullOrEmpty(driverId))
+            {
+                sqlPara = new SqlParameter("driverId", SqlDbType.VarChar);
+                sqlPara.Value = driverId;
+                adapter.SelectCommand.Parameters.Add(sqlPara);
+            }
             adapter.Fill(dataSet);
         }
         return dataSet;

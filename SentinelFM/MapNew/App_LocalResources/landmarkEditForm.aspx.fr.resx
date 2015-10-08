@@ -358,4 +358,7 @@
   <data name="lblCategoryTitleResource1.Tooltip" xml:space="preserve">
     <value />
   </data>
+  <data name="lblVehiclesResource1.Text" xml:space="preserve">
+    <value>Véhicules</value>
+  </data>
 </root>

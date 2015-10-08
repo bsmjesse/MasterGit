@@ -16,3 +16,16 @@ C:\tfs\SentinelFM\HotFixes\BIN\ReportGenerator.xml
 C:\tfs\SentinelFM\HotFixes\ReportGenerator\obj\Debug\ReportGenerator.csprojResolveAssemblyReference.cache
 C:\tfs\SentinelFM\HotFixes\ReportGenerator\obj\Debug\ReportGenerator.dll
 C:\tfs\SentinelFM\HotFixes\ReportGenerator\obj\Debug\ReportGenerator.pdb
+D:\Apps\BSM\SentinelFM\Master\BIN\ReportGenerator.dll
+D:\Apps\BSM\SentinelFM\Master\BIN\ReportGenerator.pdb
+D:\Apps\BSM\SentinelFM\Master\BIN\ReportGenerator.xml
+D:\Apps\BSM\SentinelFM\Master\ReportGenerator\obj\Debug\ReportGenerator.csprojResolveAssemblyReference.cache
+D:\Apps\BSM\SentinelFM\Master\ReportGenerator\obj\Debug\ReportGenerator.dll
+D:\Apps\BSM\SentinelFM\Master\ReportGenerator\obj\Debug\ReportGenerator.pdb
+C:\sites\Master-MapPerformance\BIN\ReportGenerator.dll
+C:\sites\Master-MapPerformance\BIN\ReportGenerator.pdb
+C:\sites\Master-MapPerformance\BIN\ReportGenerator.xml
+C:\sites\Master-MapPerformance\ReportGenerator\obj\Debug\ReportGenerator.csprojResolveAssemblyReference.cache
+C:\sites\Master-MapPerformance\ReportGenerator\obj\Debug\ReportGenerator.dll
+C:\sites\Master-MapPerformance\ReportGenerator\obj\Debug\ReportGenerator.pdb
+C:\sites\Master-MapPerformance\BIN\NLog.config

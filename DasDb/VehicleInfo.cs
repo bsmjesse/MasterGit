@@ -63,6 +63,46 @@ namespace VLF.DAS.DB
             return rowsAffected;
         }
 
+        public int LandmarkInOut_Update_EndDate_Of_UnavailableEvents(int orgId, int userId, int boxId, int landmarkId, string landmarkInDate, bool makeItUnavailableAgain)
+        {
+            int rowsAffected = 0;
+            try
+            {
+                string sql = "usp_LandmarkInOut_Update_EndDate_Of_UnavailableEvents";
+
+                sqlExec.ClearCommandParameters();
+
+                sqlExec.AddCommandParam("@organizationId", SqlDbType.Int, orgId);
+                sqlExec.AddCommandParam("@userId", SqlDbType.Int, userId);
+                sqlExec.AddCommandParam("@boxId", SqlDbType.Int, boxId);
+                sqlExec.AddCommandParam("@landmarkId", SqlDbType.Int, landmarkId);
+                sqlExec.AddCommandParam("@LandmarkInDate", SqlDbType.DateTime, landmarkInDate);
+                sqlExec.AddCommandParam("@makeItUnavailableAgain", SqlDbType.Bit, makeItUnavailableAgain);
+                
+                if (sqlExec.RequiredTransaction())
+                {
+                    sqlExec.AttachToTransaction(sql);
+                }
+                rowsAffected = sqlExec.SPExecuteNonQuery(sql);
+            }
+            catch (SqlException objException)
+            {
+                string prefixMsg = "Unable to LandmarkInOut_Update_EndDate_Of_UnavailableEvents organizationId=" + orgId + " userId=" + userId + " boxId=" + boxId.ToString();
+                Util.ProcessDbException(prefixMsg, objException);
+            }
+            catch (DASDbConnectionClosed exCnn)
+            {
+                throw new DASDbConnectionClosed(exCnn.Message);
+            }
+            catch (Exception objException)
+            {
+                string prefixMsg = "Unable to LandmarkInOut_Update_EndDate_Of_UnavailableEvents organizationId=" + orgId + " userId=" + userId + " boxId=" + boxId.ToString();
+                throw new DASException(prefixMsg + " " + objException.Message);
+            }
+
+            return rowsAffected;
+        }
+
         public DataSet GetVehicleOperationalState(int userId, int orgId, long vehicleId)
         {
             DataSet resultSet = null;
@@ -182,6 +222,41 @@ namespace VLF.DAS.DB
 
                 // SQL statement
                 string sql = "[GetVehicleAvailabilityByManagerForDashboard]";
+                //Executes SQL statement
+                resultSet = sqlExec.SPExecuteDataset(sql, sqlParams);
+
+            }
+            catch (SqlException objException)
+            {
+                Util.ProcessDbException(prefixMsg, objException);
+            }
+            catch (DASDbConnectionClosed exCnn)
+            {
+                throw new DASDbConnectionClosed(exCnn.Message);
+            }
+            catch (Exception objException)
+            {
+                throw new DASException(prefixMsg + " " + objException.Message);
+            }
+            return resultSet;
+        }
+
+        public DataSet ListVehiclesInLandmarkByFleet(int userId, int orgId, int fleetId, long landmarkId)
+        {
+            DataSet resultSet = null;
+            string prefixMsg = "";
+            try
+            {
+
+                prefixMsg = "ListVehiclesInLandmarkByFleet->Unable to get info for userid  = " + userId.ToString() + ", landmarkId = " + landmarkId.ToString() + ".";
+                SqlParameter[] sqlParams = new SqlParameter[4];                
+                sqlParams[0] = new SqlParameter("@UserId", userId);
+                sqlParams[1] = new SqlParameter("@OrganizationId", orgId);
+                sqlParams[2] = new SqlParameter("@FleetId", fleetId);
+                sqlParams[3] = new SqlParameter("@LandmarkId", landmarkId);
+
+                // SQL statement
+                string sql = "[ListVehiclesInLandmarkByFleet]";
                 //Executes SQL statement
                 resultSet = sqlExec.SPExecuteDataset(sql, sqlParams);
 

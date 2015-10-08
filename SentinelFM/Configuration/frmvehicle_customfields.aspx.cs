@@ -137,7 +137,31 @@ namespace SentinelFM
                 this.txtVehicleWeight.Text = ds.Tables[0].Rows[0]["VehicleWeight"].ToString();
                 string vwu = "Select Unit";
                 vwu = (DBNull.Value == ds.Tables[0].Rows[0]["VehicleWtUnit"] || "" == ds.Tables[0].Rows[0]["VehicleWtUnit"]) ? vwu : ds.Tables[0].Rows[0]["VehicleWtUnit"].ToString();
-                cboVehicleWtUnit.SelectedIndex = cboVehicleWtUnit.Items.IndexOf(cboVehicleWtUnit.Items.FindByText(vwu));
+
+                vwu = vwu.ToLower();
+                foreach (ListItem item in cboVehicleWtUnit.Items)
+                {
+                    if (vwu == item.Text.ToLower())
+                    {
+                        cboVehicleWtUnit.SelectedIndex = cboVehicleWtUnit.Items.IndexOf(item);
+                        break;
+                    }
+                    if ((item.Text.ToLower() == "kg" || item.Text.ToLower() == "kilogram") &&
+                        (vwu == "kg" || vwu == "kilogram"))
+                    {
+                        cboVehicleWtUnit.SelectedIndex = cboVehicleWtUnit.Items.IndexOf(item);
+                        break;
+                    }
+                    if ((item.Text.ToLower() == "pound" || item.Text.ToLower() == "lb") &&
+                        (vwu == "pound" || vwu == "lb"))
+                    {
+                        cboVehicleWtUnit.SelectedIndex = cboVehicleWtUnit.Items.IndexOf(item);
+                        break;
+                    }
+                }
+
+                //cboVehicleWtUnit.SelectedIndex = cboVehicleWtUnit.Items.IndexOf(cboVehicleWtUnit.Items.FindByText(vwu));
+
                 this.txtFuelCapacity.Text = ds.Tables[0].Rows[0]["FuelCapacity"].ToString();
                 this.txtFuelBurnRate.Text = ds.Tables[0].Rows[0]["FuelBurnRate"].ToString();
             }

@@ -18,16 +18,17 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.9.95/GeomarkService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://DEV2:8080/GeomarkService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Landmark.wsdl" MetadataType="Wsdl" ID="23cbb7b5-2478-4ffa-bf94-03923f1f1368" SourceId="1" SourceUrl="http://192.168.9.95/GeomarkService.svc?wsdl" />
-    <MetadataFile FileName="GeomarkService.disco" MetadataType="Disco" ID="a777da42-2660-4f49-ae77-51f9a9fddb92" SourceId="1" SourceUrl="http://192.168.9.95/GeomarkService.svc?disco" />
-    <MetadataFile FileName="GeomarkService2.xsd" MetadataType="Schema" ID="eef3a09d-8c00-43a2-999d-afa919b55cef" SourceId="1" SourceUrl="http://192.168.9.95/GeomarkService.svc?xsd=xsd0" />
-    <MetadataFile FileName="GeomarkService1.xsd" MetadataType="Schema" ID="7f62a53a-8caa-479e-ac7b-6e059452d1ca" SourceId="1" SourceUrl="http://192.168.9.95/GeomarkService.svc?xsd=xsd2" />
-    <MetadataFile FileName="GeomarkService3.xsd" MetadataType="Schema" ID="6ad55605-ea20-4dc7-846c-410125efaff4" SourceId="1" SourceUrl="http://192.168.9.95/GeomarkService.svc?xsd=xsd1" />
-    <MetadataFile FileName="GeomarkService.xsd" MetadataType="Schema" ID="047b9072-96e5-44f5-80ec-3f1245f48d7b" SourceId="1" SourceUrl="http://192.168.9.95/GeomarkService.svc?xsd=xsd3" />
-    <MetadataFile FileName="GeomarkService4.xsd" MetadataType="Schema" ID="de8d44a7-42b5-47f3-b1a7-097d072578a9" SourceId="1" SourceUrl="http://192.168.9.95/GeomarkService.svc?xsd=xsd4" />
+    <MetadataFile FileName="GeomarkService5.xsd" MetadataType="Schema" ID="73487e42-1315-4584-91ed-6c7580df36e2" SourceId="1" SourceUrl="http://dev2:8080/GeomarkService.svc?xsd=xsd4" />
+    <MetadataFile FileName="Landmark1.wsdl" MetadataType="Wsdl" ID="6a9a096d-57d6-4d35-bca1-99db0831214a" SourceId="1" SourceUrl="http://dev2:8080/GeomarkService.svc?wsdl" />
+    <MetadataFile FileName="GeomarkService52.xsd" MetadataType="Schema" ID="e0ebde55-555a-48a2-a462-57341dd00bb2" SourceId="1" SourceUrl="http://dev2:8080/GeomarkService.svc?xsd=xsd5" />
+    <MetadataFile FileName="GeomarkService53.xsd" MetadataType="Schema" ID="cdf3b185-28a0-4976-bc3f-5fbd1b2ae482" SourceId="1" SourceUrl="http://dev2:8080/GeomarkService.svc?xsd=xsd2" />
+    <MetadataFile FileName="GeomarkService1.disco" MetadataType="Disco" ID="997d3c09-c2eb-4024-992b-7ecf3212bd12" SourceId="1" SourceUrl="http://dev2:8080/GeomarkService.svc?disco" />
+    <MetadataFile FileName="GeomarkService54.xsd" MetadataType="Schema" ID="e720eafb-cc9b-40d0-aea1-d8560dd6aa22" SourceId="1" SourceUrl="http://dev2:8080/GeomarkService.svc?xsd=xsd1" />
+    <MetadataFile FileName="GeomarkService55.xsd" MetadataType="Schema" ID="5ea42970-af42-484b-83b1-54b3f005bae3" SourceId="1" SourceUrl="http://dev2:8080/GeomarkService.svc?xsd=xsd0" />
+    <MetadataFile FileName="GeomarkService56.xsd" MetadataType="Schema" ID="338fbe04-332a-4aa3-ae0e-87c29854215d" SourceId="1" SourceUrl="http://dev2:8080/GeomarkService.svc?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

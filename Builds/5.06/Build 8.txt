@@ -1,0 +1,19 @@
+5.06 Build 8 Created 24 Sept 2015
+Bug 873 : 0016080: Ameco Audit of Sentinel has uncovered several issues with log-in security Archana
+Bug 874 : Search vehilces in landmark Peter
+Bug 876 : 16439: TDSB - Vehicle 2LL0208 - Box 36120 Not Able To Retrieve Data From September 22nd Peter
+Rolled back: Bug 849 : Addition of User/Fleet Assignment column in "User Info" Screen
+Bug 882 : 0015808: Bell would like us to look into sorting users in alphabetical order throughout administartion Shreya
+Bug 881 : 0016343: TDSB - Geozone Time Issues Shreya
+Bug 883 : 0016167: Garda - Wrong Time on Geozone Notifications Shreya
+Bug 847 : 0016031: Add "LB" for weight unit to vehcile info page Devin
+
+Please dont include Disco file while sync
+
+Deploy to Preprod : 25 Sept 2015
+
+
+
+
+
+

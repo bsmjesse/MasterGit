@@ -166,8 +166,8 @@ namespace SentinelFM
 
             ServerDBUser.DBUser dbu = new ServerDBUser.DBUser();
 
-            if (objUtil.ErrCheck(dbu.DeleteUserGroup(sn.UserID, sn.SecId, Convert.ToInt32(dgGroups.DataKeys[e.Item.ItemIndex].ToString())), false))
-                if (objUtil.ErrCheck(dbu.DeleteUserGroup(sn.UserID, sn.SecId, Convert.ToInt32(dgGroups.DataKeys[e.Item.ItemIndex].ToString())), true))
+            if (objUtil.ErrCheck(dbu.DeleteUserGroup(sn.LoginUserID, sn.LoginUserSecId, Convert.ToInt32(dgGroups.DataKeys[e.Item.ItemIndex].ToString())), false))
+                if (objUtil.ErrCheck(dbu.DeleteUserGroup(sn.LoginUserID, sn.LoginUserSecId, Convert.ToInt32(dgGroups.DataKeys[e.Item.ItemIndex].ToString())), true))
                 {
                     this.lblMessage.Visible = true;
                     this.lblMessage.Text = (string)base.GetLocalResourceObject("DeleteUserGroupError");
@@ -176,7 +176,6 @@ namespace SentinelFM
                 }
 
             dgGroups.SelectedIndex = -1;
-            //lblMessage.Text = (string)base.GetLocalResourceObject("GroupDeleted");
             dgGroups.CurrentPageIndex = 0;
             dgGroups_Fill();
             ViewState["ConfirmDelete"] = "0";

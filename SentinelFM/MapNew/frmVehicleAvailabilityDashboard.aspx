@@ -141,7 +141,7 @@
                             format: ' {point.percentage:.1f} %',
                             distance: -30,
                             style: {
-                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                "color": 'white', "textShadow": 0, "fontWeight": "normal"
                             }
                         }
                     }

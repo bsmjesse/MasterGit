@@ -781,6 +781,8 @@ namespace SentinelFM
             this.tblServiceLandmarks.Visible = false;
             this.tblLandmarkCategory.Visible = false;
             this.tblLandmarkListOption.Visible = false;
+            this.trReportLayout.Visible = false;
+            this.lblMessage.Text = "";
 
             string ReportID = this.cboReports.SelectedValue;
             string resourceDescriptionName = "";
@@ -1442,14 +1444,31 @@ namespace SentinelFM
                 case "10109":   // Tamper Activity Summary Report
                     break;
 
-                //case "10110":   // Rag and Fatigue Manage Report 
+                case "10110":   // Rag and Fatigue Manage Report
                 //    this.tblRFViolationWeightPoint.Visible = true;
-                //    break;
+                    break;
 
                 case "10111":   // Landmark Auditing Report
                     FleetVehicleShow(false);
                     break;
-                    
+
+                case "10112":   // Fleet User Assignment List Report
+                case "10113":   // Fleet User Assignment List Report (DrillDown)
+                    this.DateTimeLabel.Visible = false;
+                    this.DateTimeEntry.Visible = false;
+                    this.trReportLayout.Visible = true;
+                    this.cboFleet.SelectedIndex = 0;
+                    this.cboVehicle.Enabled = false;
+                    //FleetVehicleShow(false);
+
+                    break;
+
+                case "10114":   // Reefer Temperature Report
+                case "10116":   // Vehicle Door Status Report
+                    this.trReportLayout.Visible = true;
+
+                    break;
+
                 default:
                     break;
             }
@@ -1806,6 +1825,23 @@ namespace SentinelFM
                     if (this.chkIdleTimeOption.Checked && this.chkPTOTimeOption.Checked) ReportID = 10106;
                 }
             }
+            // Report layout: { 1=Normal | 2=Drilldown } -- Available only for reports w. Drilldown edition.
+            if (this.trReportLayout.Visible && this.rblReportLayout.Visible && this.rblReportLayout.Enabled)
+            {
+                switch (ReportID) { 
+                    case 10112:
+                        ReportID = (this.rblReportLayout.SelectedValue == "2") ? 10113 : 10112;
+                        break;
+                    case 10114:
+                        ReportID = (this.rblReportLayout.SelectedValue == "2") ? 10115 : 10114;
+                        break;
+                    case 10116:
+                        ReportID = (this.rblReportLayout.SelectedValue == "2") ? 10117 : 10116;
+                        break;
+                    default:
+                        break;
+                }
+            }
 
             #endregion
 
@@ -1899,7 +1935,10 @@ namespace SentinelFM
                 {
                     sn.Report.IsFleet = true;
                     sn.Report.FleetName = this.cboFleet.SelectedItem.Text;
-                    sbp.Append("fleetid:  " + this.cboFleet.SelectedItem.Value + delimitor);
+                    if ((ReportID == 10112 || ReportID == 10113) && this.cboFleet.SelectedIndex == 0)
+                        sbp.Append("fleetid:  0" + delimitor);
+                    else
+                        sbp.Append("fleetid:  " + this.cboFleet.SelectedItem.Value + delimitor);
                 }
 
                 if (this.cboVehicle.Visible && this.cboVehicle.Enabled && this.cboVehicle.SelectedIndex > 0) 
@@ -3415,6 +3454,36 @@ namespace SentinelFM
   
                 ret = standardReport.CreateReportParams(cboVehicle);
 
+                //If it is schedule report and HOS Audit Report
+                if (standardReport.cboReports == "103" && hidSubmitType.Value == "2")
+                {
+                    String auditKeyValue = standardReport.keyValue;
+                    String auditFleetId = "";
+                    String auditPrefrence = "";
+                    if (auditKeyValue.Contains("Multi-Fleet"))
+                    {
+                        int start = auditKeyValue.IndexOf(":");
+                        int stop = auditKeyValue.IndexOf("<b>S");
+                        auditFleetId = auditKeyValue.Substring(start + 1, stop - start - 1);
+                        auditPrefrence = "hierarchy";
+
+                    }
+                    else
+                    {
+                        if (sn.Report.OrganizationHierarchyNodeCode != "")
+                        {
+                            auditFleetId = sn.Report.FleetId.ToString();
+                            auditPrefrence = "hierarchy";
+                        }
+                        else
+                        {
+                            auditFleetId = sn.Report.FleetId.ToString();
+                            auditPrefrence = "fleet";
+                        }
+                    }
+                    sn.Report.XmlParams += ReportTemplate.MakePair(ReportTemplate.RptHOSParamFleetId, auditFleetId);
+                    sn.Report.XmlParams += ReportTemplate.MakePair(ReportTemplate.RptHOSParamPrefrence, auditPrefrence);
+                }
             }
             catch (NullReferenceException Ex)
             {

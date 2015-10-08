@@ -2241,12 +2241,17 @@ namespace VLF.DAS.Logic
          return box.GetVehicleLastStreetAddress(boxId);
       }
       #endregion
-
+       
 
       public int SaveVehicleOperationalState(int userId, int orgId, long vehicleId,
            int operationalState, string notes)
       {
           return vehicleInfo.SaveVehicleOperationalState(userId, orgId, vehicleId, operationalState, notes);
+      }
+
+      public int LandmarkInOut_Update_EndDate_Of_UnavailableEvents(int orgId, int userId, int boxId, int landmarkId, string landmarkInDate, bool makeItUnavailableAgain)
+      {
+          return vehicleInfo.LandmarkInOut_Update_EndDate_Of_UnavailableEvents(orgId, userId, boxId, landmarkId, landmarkInDate, makeItUnavailableAgain);
       }
 
       public DataSet GetVehicleOperationalState(int userId, int orgId, long vehicleId)
@@ -2287,6 +2292,20 @@ namespace VLF.DAS.Logic
                   dsResult.Tables[0].TableName = "ManagerVehiclesAvailability";
               }
               dsResult.DataSetName = "Fleet";
+          }
+          return dsResult;
+      }
+
+      public DataSet ListVehiclesInLandmarkByFleet(int userId, int orgId, int fleetId, long landmarkId)
+      {
+          DataSet dsResult = vehicleInfo.ListVehiclesInLandmarkByFleet(userId, orgId, fleetId, landmarkId);
+          if (dsResult != null)
+          {
+              if (dsResult.Tables.Count > 0)
+              {
+                  dsResult.Tables[0].TableName = "VehicleList";
+              }
+              dsResult.DataSetName = "Vehicle";
           }
           return dsResult;
       }

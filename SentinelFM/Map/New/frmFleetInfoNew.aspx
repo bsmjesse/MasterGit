@@ -308,12 +308,6 @@
                                         <telerik:GridBoundColumn HeaderText='<%$ Resources:dgFleetInfo_StreetAddress %>'
                                             DataField="StreetAddress" UniqueName="StreetAddress" meta:resourcekey="GridBoundColumnResource2">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn HeaderText='Latitude'
-                                            DataField="Latitude" UniqueName="Latitude" Visible="false">
-                                        </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn HeaderText='Longitude'
-                                            DataField="Longitude" UniqueName="Longitude" Visible="false">
-                                        </telerik:GridBoundColumn>
                                         <telerik:GridDateTimeColumn HeaderText='<%$ Resources:dgFleetInfo_MyDateTime %>'
                                             DataField="OriginDateTime" UniqueName="MyDateTime" DataType="System.DateTime"
                                             meta:resourcekey="GridBoundColumnResource3" PickerType="None">
@@ -357,6 +351,12 @@
                                             <ItemStyle Width="50px" HorizontalAlign="Center" CssClass="GridButton" />
                                             <HeaderStyle Width="50px" />
                                         </telerik:GridButtonColumn>
+                                        <telerik:GridBoundColumn HeaderText='Latitude'
+                                            DataField="Latitude" UniqueName="Latitude" Visible="false">
+                                        </telerik:GridBoundColumn>
+                                        <telerik:GridBoundColumn HeaderText='Longitude'
+                                            DataField="Longitude" UniqueName="Longitude" Visible="false">
+                                        </telerik:GridBoundColumn>
                                     </Columns>
                                     <HeaderStyle HorizontalAlign="Left" ForeColor="White" CssClass="RadGridtblHeader" />
                                     <ItemStyle HorizontalAlign="Left" Font-Size="11px" Wrap="true" CssClass="GridRowStyle" />

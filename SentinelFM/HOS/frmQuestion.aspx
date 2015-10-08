@@ -91,15 +91,12 @@
               var combo = $find("<%= cboSMCS.ClientID %>");
               if (combo.get_selectedItem() == null)
               {
-                  $('#lblMessage').html('<%= msgSMCSisrequired %>');
-                  return false;
-
-              }
-              var var_smcsValue = combo.get_selectedItem().get_value();
-              if (var_smcsValue == undefined || var_smcsValue == "-1" || var_smcsValue == "")
-              {
-                  $('#lblMessage').html('<%= msgSMCSisrequired %>');
-                  return false;
+                  if (combo._text != "") {
+                      if (confirm('<%= msgSMCSAdd %>') == false) {
+                          combo.set_text("");
+                          return;
+                      }
+                  }
               }
               return true;
           }
@@ -322,11 +319,11 @@
                     <td>
                         <telerik:RadComboBox ID="cboSMCS" runat="server" Height="200px" Width="500px" DropDownWidth="500px"
                             AllowCustomText="true" 
-                            EmptyMessage="Select a SMCS code" HighlightTemplatedItems="true" Filter="Contains" DataTextField="SMCS"
+                            EmptyMessage="<%# msgSelectSMCScode %>" HighlightTemplatedItems="true" Filter="Contains" DataTextField="SMCS"
                             DataValueField="SMCS" AppendDataBoundItems="true"
                             meta:resourcekey="cboQuestionsResource1">
                             <Items>
-                                <telerik:RadComboBoxItem Text="Select a Question" Value="-1" />
+                                <telerik:RadComboBoxItem Text="<%# msgSelectSMCScode %>" Value="-1" />
                             </Items>
                             </telerik:RadComboBox>
                     </td>

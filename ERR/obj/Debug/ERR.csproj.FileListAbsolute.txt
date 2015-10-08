@@ -13,3 +13,14 @@ C:\tfs\SentinelFM\HotFixes\ERR\obj\Debug\ERR.csprojResolveAssemblyReference.cach
 C:\tfs\SentinelFM\HotFixes\ERR\obj\Debug\ERR.dll
 C:\tfs\SentinelFM\HotFixes\ERR\obj\Debug\ERR.pdb
 C:\Builds\SentinelFM\Master\ERR\obj\Debug\ERR.csprojResolveAssemblyReference.cache
+D:\Apps\BSM\SentinelFM\Master\BIN\ERR.dll
+D:\Apps\BSM\SentinelFM\Master\BIN\ERR.pdb
+D:\Apps\BSM\SentinelFM\Master\ERR\obj\Debug\ERR.csprojResolveAssemblyReference.cache
+D:\Apps\BSM\SentinelFM\Master\ERR\obj\Debug\ERR.dll
+D:\Apps\BSM\SentinelFM\Master\ERR\obj\Debug\ERR.pdb
+C:\sites\Master-MapPerformance\BIN\ERR.dll
+C:\sites\Master-MapPerformance\BIN\ERR.pdb
+C:\sites\Master-MapPerformance\ERR\obj\Debug\ERR.csprojResolveAssemblyReference.cache
+C:\sites\Master-MapPerformance\ERR\obj\Debug\ERR.dll
+C:\sites\Master-MapPerformance\ERR\obj\Debug\ERR.pdb
+C:\sites\Master-MapPerformance\BIN\NLog.config

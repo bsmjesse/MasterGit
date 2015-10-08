@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Globalization;
+using VLF.DAS.Logic;
 
 namespace SentinelFM
 {
@@ -109,7 +110,7 @@ namespace SentinelFM
                             cboStatusSearch.Items.Insert(2, "Effacer");
 
                         }
-                    }
+                    }  
                 }
                 else
                 {
@@ -128,8 +129,8 @@ namespace SentinelFM
                     }
 
                 }
-
-
+               
+               
 
                 MultipleHierarchySetting = clsPermission.FeaturePermissionCheck(sn, "MutipleUserHierarchyAssignment");
                 if (MultipleHierarchySetting)
@@ -155,6 +156,7 @@ namespace SentinelFM
 
                 if (!Page.IsPostBack)
                 {
+
                     LocalizationLayer.GUILocalizationLayer.GUILocalizeForm(ref frmVehicleInfo, System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName);
                     GuiSecurity(this);
                     this.chkbxViewDeletedUser.Visible = true;
@@ -182,13 +184,15 @@ namespace SentinelFM
                     //if (!String.IsNullOrEmpty(ReenterPassword))
                     //    txtReenterPassword.Attributes["value"] = ReenterPassword;
                 }
-
             }
+
             catch (NullReferenceException Ex)
             {
                 System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.StackTrace.ToString()));
                 RedirectToLogin();
             }
+
+
             catch (Exception Ex)
             {
                 System.Diagnostics.Trace.WriteLineIf(AppConfig.tsMain.TraceError, VLF.CLS.Util.TraceFormat(VLF.CLS.Def.Enums.TraceSeverity.Error, Ex.Message.ToString() + " User:" + sn.UserID.ToString() + " Form:" + Page.GetType().Name));
@@ -207,7 +211,7 @@ namespace SentinelFM
             if (ChkbxViewDeletedUser)
             {
                 DgUsers_Fill();
-
+               
                 if (!sn.User.ControlEnable(sn, 71))
                     cmdGroups.Visible = false;
                 if (!sn.User.ControlEnable(sn, 21))
@@ -219,7 +223,7 @@ namespace SentinelFM
                 if (!sn.User.ControlEnable(sn, 70))
                     cmdControls.Visible = false;
                 if (!sn.User.ControlEnable(sn, 90))
-                    cmdServices.Visible = false;
+                    cmdServices.Visible = false; 
             }
             else
             {
@@ -236,9 +240,11 @@ namespace SentinelFM
                 if (!sn.User.ControlEnable(sn, 70))
                     cmdControls.Visible = false;
                 if (!sn.User.ControlEnable(sn, 90))
-                    cmdServices.Visible = false;
-            }
+                    cmdServices.Visible = false; 
 
+
+            }
+            
         }
 
         private void UserGroupsFill()
@@ -248,6 +254,8 @@ namespace SentinelFM
 
             try
             {
+
+
                 string xml = "";
                 ServerDBUser.DBUser dbu = new ServerDBUser.DBUser();
 
@@ -257,6 +265,14 @@ namespace SentinelFM
                         ddlUserGroup.DataSource = null;
                         return;
                     }
+
+                //if (objUtil.ErrCheck(dbu.GetUserGroupsbyUser(sn.UserID, GetUserGroupsbyUser, sn.SecId, ref xml), false))
+                //    if (objUtil.ErrCheck(dbu.GetUserGroupsbyUser(sn.UserID, GetUserGroupsbyUser, sn.SecId, ref xml), true))
+                //    {
+                //        ddlUserGroup.DataSource = null;
+                //        ddlUserGroup.DataBind();
+                //        return;
+                //    } Abhishek
 
                 if (xml == "")
                     return;
@@ -283,15 +299,28 @@ namespace SentinelFM
         {
             try
             {
-
+                
                 DataSet dsUsers = new DataSet();
                 StringReader strrXML = null;
 
                 string xml = "";
                 ServerDBOrganization.DBOrganization dbo = new ServerDBOrganization.DBOrganization();
 
-                if (objUtil.ErrCheck(dbo.GetUsersInfoByOrganizationByLang(sn.UserID, sn.SecId, sn.User.OrganizationId, System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, ChkbxViewDeletedUser, ref xml), false))
-                    if (objUtil.ErrCheck(dbo.GetUsersInfoByOrganizationByLang(sn.UserID, sn.SecId, sn.User.OrganizationId, System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, ChkbxViewDeletedUser, ref xml), true))
+                //if( objUtil.ErrCheck( dbo.GetUsersInfoByOrganization ( sn.UserID , sn.SecId ,sn.User.OrganizationId,   ref xml ),false ) )
+                //    if( objUtil.ErrCheck( dbo.GetUsersInfoByOrganization ( sn.UserID , sn.SecId ,sn.User.OrganizationId,   ref xml ),true ) )
+                //    {
+                //        this.dgUsers.DataSource = null;
+                //        this.dgUsers.DataBind();  
+                //        return;
+                //    }
+
+
+                //DumpBeforeCall(sn, string.Format("frmUsers -- DgUsers_Fill"));
+
+                                
+
+                if (objUtil.ErrCheck(dbo.GetUsersInfoByOrganizationByLang(sn.UserID, sn.SecId, sn.User.OrganizationId, System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,ChkbxViewDeletedUser, ref xml), false))
+                    if (objUtil.ErrCheck(dbo.GetUsersInfoByOrganizationByLang(sn.UserID, sn.SecId, sn.User.OrganizationId, System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,ChkbxViewDeletedUser, ref xml), true))
                     {
                         this.dgUsers.DataSource = null;
                         this.dgUsers.DataBind();
@@ -326,8 +355,10 @@ namespace SentinelFM
                                 DateTime tmpDate = DateTime.ParseExact(dr["ExpiredDate"].ToString(), (string)base.GetLocalResourceObject("resGlobalDateFormat"), CultureInfo.InvariantCulture);
                                 dr["ExpiredDate"] = tmpDate.ToString((string)base.GetLocalResourceObject("resDateFormat"));
                             }
+
+
                         }
-                        //datetime format issues changes
+  //datetime format issues changes
                         else if (!(dr["ExpiredDate"] == "Unlimited" || dr["ExpiredDate"] == "Illimitée" || dr["ExpiredDate"] == ""))
                         {
 
@@ -338,12 +369,12 @@ namespace SentinelFM
                     {
                     }
                 }
-
+               
                 this.dgUsers.DataSource = dsUsers;
                 dgUsers.DataBind();
                 sn.Misc.ConfDsUsers = dsUsers;
 
-                SetExcel(dsUsers.Tables[0]);
+                SetExcel(dsUsers.Tables[0]);  
             }
             catch (NullReferenceException Ex)
             {
@@ -530,7 +561,7 @@ namespace SentinelFM
 
                 try
                 {
-                    if (this.txtExpire.Text != "Unlimited" && this.txtExpire.Text != "Illimitée" && this.txtExpire.Text != "Illimité")
+                     if (this.txtExpire.Text != "Unlimited" && this.txtExpire.Text != "Illimitée" && this.txtExpire.Text != "Illimité")
                     {
                         try
                         {
@@ -579,7 +610,7 @@ namespace SentinelFM
                         return;
                     }
 
-                    int addResult = dbu.AddUserToGroups(sn.UserID, sn.SecId, sn.User.OrganizationId, this.txtUserName.Text, "", this.txtPassword.Text, this.txtFirstName.Text, this.txtLastName.Text, ExpireDate, sUserGroupIDs);
+                    int addResult = dbu.AddUserToGroups(sn.LoginUserID, sn.LoginUserSecId, sn.User.OrganizationId, this.txtUserName.Text, "", this.txtPassword.Text, this.txtFirstName.Text, this.txtLastName.Text, ExpireDate, sUserGroupIDs);
                     if (objUtil.ErrCheck(addResult, false))
                         if (objUtil.ErrCheck(addResult, true))
                         {
@@ -605,28 +636,28 @@ namespace SentinelFM
                         }
 
 
-                    #region Assign User to Top UP fleet
-                    try
+		#region Assign User to Top UP fleet
+                try
+                {
+                    ServerDBFleet.DBFleet dbf = new ServerDBFleet.DBFleet();
+                    string sConnectionString = ConfigurationManager.ConnectionStrings["SentinelFMConnection"].ConnectionString;
+                    if (sn.User.OrganizationId == 951)
                     {
-                        ServerDBFleet.DBFleet dbf = new ServerDBFleet.DBFleet();
-                        string sConnectionString = ConfigurationManager.ConnectionStrings["SentinelFMConnection"].ConnectionString;
-                        if (sn.User.OrganizationId == 951)
-                        {
-                            VLF.DAS.Logic.User dlU = new VLF.DAS.Logic.User(sConnectionString);
-                            int userIdNew = dlU.GetUserIdByUserName(this.txtUserName.Text);
-                            int topUPFleetId = 11881;
+                        VLF.DAS.Logic.User dlU = new VLF.DAS.Logic.User(sConnectionString);
+                        int userIdNew = dlU.GetUserIdByUserName(this.txtUserName.Text);
+                        int topUPFleetId = 11881;
 
+                        if (objUtil.ErrCheck(dbf.AddUserToFleet(sn.UserID, sn.SecId, topUPFleetId, userIdNew), false))
                             if (objUtil.ErrCheck(dbf.AddUserToFleet(sn.UserID, sn.SecId, topUPFleetId, userIdNew), false))
-                                if (objUtil.ErrCheck(dbf.AddUserToFleet(sn.UserID, sn.SecId, topUPFleetId, userIdNew), false))
-                                {
-                                    return;
-                                }
-                        }
+                            {
+                                return;
+                            }
                     }
-                    catch
-                    {
-                    }
-                    #endregion
+                }
+                catch
+                {
+                }
+                #endregion
 
 
 
@@ -635,7 +666,7 @@ namespace SentinelFM
                 }
                 else // update selected user
                 {
-                    string UserId = this.lblUserId.Text;
+                     string UserId = this.lblUserId.Text;
                     string userStatus = "";
 
                     switch (this.cboStatus.SelectedItem.Value)
@@ -648,7 +679,9 @@ namespace SentinelFM
                                     this.lblMessage.Text = (string)base.GetLocalResourceObject("FutureExpirationDate.ErrorMessage");
                                     this.lblMessage.Visible = true;
                                     return;
+
                                 }
+
                             }
                             else
                             {
@@ -675,7 +708,9 @@ namespace SentinelFM
                                     this.lblMessage.Text = (string)base.GetLocalResourceObject("FutureExpirationDate.ErrorMessage");
                                     this.lblMessage.Visible = true;
                                     return;
+
                                 }
+
                             }
                             else
                             {
@@ -693,7 +728,9 @@ namespace SentinelFM
                                     this.lblMessage.Text = (string)base.GetLocalResourceObject("PastExpirationDate.ErrorMessage");
                                     this.lblMessage.Visible = true;
                                     return;
+
                                 }
+
                             }
                             else
                             {
@@ -744,7 +781,6 @@ namespace SentinelFM
                                 {
                                     ExpireDate = VLF.CLS.Def.Const.unassignedDateTime.ToString();
                                 }
-
                             }
 
                             if (this.lblUserStatusText.Text == "Deactivated" || this.lblUserStatusText.Text == "Désactivé")
@@ -767,6 +803,8 @@ namespace SentinelFM
                                     this.lblMessage.Visible = true;
                                     return;
                                 }
+
+
                             }
 
                             if (this.lblUserStatusText.Text == "Deleted" || this.lblUserStatusText.Text == "Effacé")
@@ -775,7 +813,7 @@ namespace SentinelFM
                                 if (!(this.txtExpire.Text == "Unlimited" || this.txtExpire.Text == "Illimitée" || this.txtExpire.Text == "" || this.txtExpire.Text == "Illimité"))
                                 {
 
-
+                                    
                                 }
                                 else
                                 {
@@ -786,10 +824,8 @@ namespace SentinelFM
                             break;
                     }
 
-
-
-                    if (objUtil.ErrCheck(dbu.UpdateUserInfoStatusAndGroups(sn.UserID, sn.SecId, Convert.ToInt32(UserId), txtUserName.Text, txtFirstName.Text, txtLastName.Text, ExpireDate, userStatus, sUserGroupIDs), false))
-                        if (objUtil.ErrCheck(dbu.UpdateUserInfoStatusAndGroups(sn.UserID, sn.SecId, Convert.ToInt32(UserId), txtUserName.Text, txtFirstName.Text, txtLastName.Text, ExpireDate, userStatus, sUserGroupIDs), true))
+                    if (objUtil.ErrCheck(dbu.UpdateUserInfoStatusAndGroups(sn.LoginUserID, sn.LoginUserSecId, Convert.ToInt32(UserId), txtUserName.Text, txtFirstName.Text, txtLastName.Text, ExpireDate, userStatus, sUserGroupIDs), false))
+                        if (objUtil.ErrCheck(dbu.UpdateUserInfoStatusAndGroups(sn.LoginUserID, sn.LoginUserSecId, Convert.ToInt32(UserId), txtUserName.Text, txtFirstName.Text, txtLastName.Text, ExpireDate, userStatus, sUserGroupIDs), true))
                         {
                             this.lblMessage.Visible = true;
                             this.cmdAddUser.Enabled = true;
@@ -856,10 +892,12 @@ namespace SentinelFM
                                 }
                         }
                     }
+
                 }
 
                 cmdSearch_Click1(sender, e);
 
+              
                 //DgUsers_Fill();
                 ClearFields();
                 this.chkbxViewDeletedUser.Visible = true;
@@ -871,16 +909,18 @@ namespace SentinelFM
                 this.tblSearch.Visible = true;
                 this.cmdAddUser.Visible = true;
 
-                // dgUsers.SelectedIndex = -1;
+               // dgUsers.SelectedIndex = -1;
                 if (pageInd + 1 <= dgUsers.PageCount)
                 {
-                    dgUsers.CurrentPageIndex = pageInd;
-
+                    dgUsers.CurrentPageIndex= pageInd;                    
+                    
                 }
                 else
                 {
                     dgUsers.CurrentPageIndex = 0;
                 }
+               
+               
             }
             catch (NullReferenceException Ex)
             {
@@ -911,7 +951,11 @@ namespace SentinelFM
                     return;
 
                 lblMessage.Visible = true;
+
+
                 ServerDBUser.DBUser dbu = new ServerDBUser.DBUser();
+
+
 
                 if (objUtil.ErrCheck(dbu.DeleteUserByUserId(sn.UserID, sn.SecId, Convert.ToInt32(dgUsers.DataKeys[e.Item.ItemIndex].ToString())), false))
                     if (objUtil.ErrCheck(dbu.DeleteUserByUserId(sn.UserID, sn.SecId, Convert.ToInt32(dgUsers.DataKeys[e.Item.ItemIndex].ToString())), true))
@@ -957,7 +1001,7 @@ namespace SentinelFM
         {
             //Check security 
             bool cmdUpdate = sn.User.ControlEnable(sn, 20);
-
+            
             //if (dgUsers.SelectedItem.Cells[5].Text == "Deleted" || dgUsers.SelectedItem.Cells[5].Text == "Effacé")
             //{
             //    lblMessage.Visible = true;
@@ -974,7 +1018,7 @@ namespace SentinelFM
             HierarchyTree1.Field_OrganizationHierarchyNodeCode = poh.GetOrganizationHierarchyRootNodeCodeUserID(sn.User.OrganizationId, int.Parse(dgUsers.DataKeys[dgUsers.SelectedIndex].ToString()), true);
             HierarchyTree1.SetOrganizationHierarchyPath();
 
-            this.chkbxViewDeletedUser.Visible = false;
+            this.chkbxViewDeletedUser.Visible =  false;
             this.tblAddUsers.Visible = true;
             imgExcel.Visible = false;
             this.lblMessage.Text = "";
@@ -1049,18 +1093,18 @@ namespace SentinelFM
 
                 if (System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "fr")
                 {
-                    this.cboStatus.Items.Add(new ListItem("Activer", "1"));
+                    this.cboStatus.Items.Add(new ListItem("Activer", "1"));                    
                 }
                 else
                 {
-                    this.cboStatus.Items.Add(new ListItem("Activate", "1"));
+                    this.cboStatus.Items.Add(new ListItem("Activate", "1"));                   
                 }
             }
-            else if (this.lblUserStatusText.Text == "Deactivated" || this.lblUserStatusText.Text == "Désactivé")
+            else if (this.lblUserStatusText.Text == "Deactivated" || this.lblUserStatusText.Text == "Désactivé" )
             {
                 //this.tblExpire.Visible = false;
-                // this.cmdCancelExpire.Enabled = false;
-
+               // this.cmdCancelExpire.Enabled = false;
+              
                 if (System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "fr")
                 {
                     this.cboStatus.Items.Add(new ListItem("Activer", "1"));
@@ -1113,7 +1157,7 @@ namespace SentinelFM
                 {
                     this.cboStatus.Items.Add(new ListItem("Activer", "1"));
                     this.cboStatus.Items.Add(new ListItem("Effacer", "2"));
-                    this.cboStatus.Items.Add(new ListItem("Réinitialiser le mot de passe", "3"));
+                    this.cboStatus.Items.Add(new ListItem("Réinitialiser le mot de passe", "3"));                    
                     this.cboStatus.Items.Add(new ListItem("Désactiver", "4"));
                 }
                 else
@@ -1151,11 +1195,9 @@ namespace SentinelFM
             if ((e.Item.ItemType == ListItemType.AlternatingItem) || (e.Item.ItemType == ListItemType.Item))
             {
                 e.Item.Cells[8].ToolTip = (string)base.GetLocalResourceObject("EditToolTip");
-                //e.Item.Cells[7].ToolTip = (string)base.GetLocalResourceObject("DeleteToolTip");
 
                 LinkButton settings = (LinkButton)e.Item.Cells[9].Controls[0];
 
-                //if (sn.User.UserGroupId == 1 || sn.User.UserGroupId == 2)
                 if (sn.User.ControlEnable(sn, 78))
                 {
                     string windowOpen = "preferenceWindow('" + dgUsers.DataKeys[e.Item.ItemIndex].ToString() + "','" + e.Item.Cells[3].Text + "')";
@@ -1197,10 +1239,10 @@ namespace SentinelFM
                 StringReader strrXML = null;
                 string xml = "";
                 ServerDBOrganization.DBOrganization dbo = new ServerDBOrganization.DBOrganization();
+                
 
-
-                if (objUtil.ErrCheck(dbo.GetUsersInfoByOrganizationByLang(sn.UserID, sn.SecId, sn.User.OrganizationId, System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, ChkbxViewDeletedUser, ref xml), false))
-                    if (objUtil.ErrCheck(dbo.GetUsersInfoByOrganizationByLang(sn.UserID, sn.SecId, sn.User.OrganizationId, System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, ChkbxViewDeletedUser, ref xml), true))
+                if (objUtil.ErrCheck(dbo.GetUsersInfoByOrganizationByLang(sn.UserID, sn.SecId, sn.User.OrganizationId, System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,ChkbxViewDeletedUser, ref xml), false))
+                    if (objUtil.ErrCheck(dbo.GetUsersInfoByOrganizationByLang(sn.UserID, sn.SecId, sn.User.OrganizationId, System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,ChkbxViewDeletedUser, ref xml), true))
                     {
                         this.dgUsers.DataSource = null;
                         this.dgUsers.DataBind();
@@ -1258,7 +1300,7 @@ namespace SentinelFM
                                     dr["ExpiredDate"] = tmpDate.ToString((string)base.GetLocalResourceObject("resDateFormat"));
                                 }
                             }
-                            //datetime format issues changes
+//datetime format issues changes
                             else if (!(dr["ExpiredDate"] == "Unlimited" || dr["ExpiredDate"] == "Illimitée" || dr["ExpiredDate"] == ""))
                             {
 
@@ -1300,7 +1342,7 @@ namespace SentinelFM
                                     dr["ExpiredDate"] = tmpDate.ToString((string)base.GetLocalResourceObject("resDateFormat"));
                                 }
                             }
-                            //datetime format issues changes
+//datetime format issues changes
                             else if (!(dr["ExpiredDate"] == "Unlimited" || dr["ExpiredDate"] == "Illimitée" || dr["ExpiredDate"] == ""))
                             {
 
@@ -1355,9 +1397,9 @@ namespace SentinelFM
                 string xml = "";
                 ServerDBOrganization.DBOrganization dbo = new ServerDBOrganization.DBOrganization();
 
-
-                if (objUtil.ErrCheck(dbo.GetUsersInfoByOrganizationByLang(sn.UserID, sn.SecId, sn.User.OrganizationId, System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, ChkbxViewDeletedUser, ref xml), false))
-                    if (objUtil.ErrCheck(dbo.GetUsersInfoByOrganizationByLang(sn.UserID, sn.SecId, sn.User.OrganizationId, System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName, ChkbxViewDeletedUser, ref xml), true))
+                
+                if (objUtil.ErrCheck(dbo.GetUsersInfoByOrganizationByLang(sn.UserID, sn.SecId, sn.User.OrganizationId, System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,ChkbxViewDeletedUser, ref xml), false))
+                    if (objUtil.ErrCheck(dbo.GetUsersInfoByOrganizationByLang(sn.UserID, sn.SecId, sn.User.OrganizationId, System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName,ChkbxViewDeletedUser, ref xml), true))
                     {
                         this.dgUsers.DataSource = null;
                         this.dgUsers.DataBind();
@@ -1417,7 +1459,7 @@ namespace SentinelFM
                                     dr["ExpiredDate"] = tmpDate.ToString((string)base.GetLocalResourceObject("resDateFormat"));
                                 }
                             }
-                            //datetime format issues changes
+//datetime format issues changes
                             else if (!(dr["ExpiredDate"] == "Unlimited" || dr["ExpiredDate"] == "Illimitée" || dr["ExpiredDate"] == ""))
                             {
 
@@ -1458,7 +1500,7 @@ namespace SentinelFM
                                     dr["ExpiredDate"] = tmpDate.ToString((string)base.GetLocalResourceObject("resDateFormat"));
                                 }
                             }
-                            //datetime format issues changes
+//datetime format issues changes
                             else if (!(dr["ExpiredDate"] == "Unlimited" || dr["ExpiredDate"] == "Illimitée" || dr["ExpiredDate"] == ""))
                             {
 
@@ -1541,22 +1583,22 @@ namespace SentinelFM
                 cboStatusSearch.SelectedIndex = cboStatusSearch.Items.IndexOf(cboStatusSearch.Items.FindByValue("0"));
                 txtSearchParam.Visible = false;
                 this.cboStatusSearch.Visible = true;
-                //    if (chkbxViewDeletedUser.Checked == false)
-                //    {               
+            //    if (chkbxViewDeletedUser.Checked == false)
+            //    {               
 
-                //        cboStatusSearch.Items.Cast<ListItem>().Where(i => i.Value == "Deleted").ToList().ForEach(i => cboStatusSearch.Items.Remove(i));
-                //    }            
-                //    else
-                //    {
-                //        if (cboStatusSearch.Items.FindByText("Deleted") == null)
-                //        {
-                //            cboStatusSearch.Items.Insert(2, "Deleted");
-
-                //        }
-                //}
-
-
-
+            //        cboStatusSearch.Items.Cast<ListItem>().Where(i => i.Value == "Deleted").ToList().ForEach(i => cboStatusSearch.Items.Remove(i));
+            //    }            
+            //    else
+            //    {
+            //        if (cboStatusSearch.Items.FindByText("Deleted") == null)
+            //        {
+            //            cboStatusSearch.Items.Insert(2, "Deleted");
+                        
+            //        }
+            //}
+                
+                
+                
             }
             else
             {
@@ -1596,7 +1638,7 @@ namespace SentinelFM
             }
 
             if (!String.IsNullOrEmpty(Password))
-                txtPassword.Attributes["value"] = Password;
+                txtPassword.Attributes["value"] = Password; 
             if (!String.IsNullOrEmpty(ReenterPassword))
                 txtReenterPassword.Attributes["value"] = ReenterPassword;
             if (!String.IsNullOrEmpty(PasswordStatus))

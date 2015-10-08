@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SentinelFM", "SentinelFM", "{0A7AC609-AB6B-4F7D-84B1-46A321888D2E}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SentinelFM", "SentinelFM\", "{0A7AC609-AB6B-4F7D-84B1-46A321888D2E}"
 	ProjectSection(WebsiteProperties) = preProject
 		SccProjectName = "SAK"
 		SccAuxPath = "SAK"
@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERRSecurity", "ERRSecurity\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERR", "ERR\ERR.csproj", "{AA24C24E-F232-467B-9C14-98F68A759BB6}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ASI", "ASI", "{9B4A9375-D630-4021-BDB0-FF3778C9F643}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ASI", "ASI\", "{9B4A9375-D630-4021-BDB0-FF3778C9F643}"
 	ProjectSection(WebsiteProperties) = preProject
 		SccProjectName = "SAK"
 		SccAuxPath = "SAK"
@@ -74,49 +74,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatchLogic", "PatchLogic\PatchLogic.csproj", "{C4EC9848-818E-4AF3-B14B-37B397369327}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 12
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tor-tfs:8080/tfs/bsmcollection
-		SccLocalPath0 = .
-		SccWebProject1 = true
-		SccProjectUniqueName1 = SentinelFM
-		SccProjectName1 = SentinelFM
-		SccLocalPath1 = SentinelFM
-		SccProjectEnlistmentChoice1 = 2
-		SccProjectUniqueName2 = DasDb\\DasDb.csproj
-		SccProjectName2 = DasDb
-		SccLocalPath2 = DasDb
-		SccProjectUniqueName3 = DasLogic\\DasLogic.csproj
-		SccProjectName3 = DasLogic
-		SccLocalPath3 = DasLogic
-		SccProjectUniqueName4 = CLS\\CLS.csproj
-		SccProjectName4 = CLS
-		SccLocalPath4 = CLS
-		SccProjectUniqueName5 = ERRSecurity\\ERRSecurity.csproj
-		SccProjectName5 = ERRSecurity
-		SccLocalPath5 = ERRSecurity
-		SccProjectUniqueName6 = ERR\\ERR.csproj
-		SccProjectName6 = ERR
-		SccLocalPath6 = ERR
-		SccWebProject7 = true
-		SccProjectUniqueName7 = ASI
-		SccProjectName7 = ASI
-		SccLocalPath7 = ASI
-		SccProjectEnlistmentChoice7 = 2
-		SccProjectUniqueName8 = ReportGenerator\\ReportGenerator.csproj
-		SccProjectName8 = ReportGenerator
-		SccLocalPath8 = ReportGenerator
-		SccProjectUniqueName9 = LocalizationLayer\\LocalizationLayer.csproj
-		SccProjectName9 = LocalizationLayer
-		SccLocalPath9 = LocalizationLayer
-		SccProjectUniqueName10 = PatchDB\\PatchDB.csproj
-		SccProjectName10 = PatchDB
-		SccLocalPath10 = PatchDB
-		SccProjectUniqueName11 = PatchLogic\\PatchLogic.csproj
-		SccProjectName11 = PatchLogic
-		SccLocalPath11 = PatchLogic
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

@@ -1810,6 +1810,24 @@ namespace VLF.DAS.Logic
 
 
         }
+
+        //Changes
+        /// <summary>
+        /// Add All new vehicle to multiple fleets.
+        /// </summary>
+        /// <param name="result"></param>
+        /// <param name="fleetId"></param>
+        /// <returns>Int</returns>
+        /// <exception cref="DASAppWrongResultException">Thrown if unable to retrieve organization info for current fleet.</exception>
+        /// <exception cref="DASAppViolatedIntegrityConstraintsException">Thrown if fleet and vehicle do no assigned to same organization..</exception>
+        /// <exception cref="DASException">Thrown DASException in all other exception cases.</exception>
+        public int AddAllVehicleToMultipleFleet(string result, int organizationId)
+        {
+
+            return fleetVehicles.AddAllVehicleToMultipleFleet(result, organizationId);
+
+
+        }
        
    }		
 }

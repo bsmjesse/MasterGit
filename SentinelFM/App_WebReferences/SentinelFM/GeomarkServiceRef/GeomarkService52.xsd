@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GeomarkWcfService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GeomarkWcfService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="LandmarkInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Associatedlandmark" type="xs:int" />
+      <xs:element minOccurs="0" name="Autoadjustdaylightsaving" type="xs:int" />
+      <xs:element minOccurs="0" name="Contactpersonname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contactphonenum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedDatetime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Createuserid" type="xs:int" />
+      <xs:element minOccurs="0" name="Daylightsaving" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LandmarkId" type="xs:long" />
+      <xs:element minOccurs="0" name="LandmarkName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LandmarkType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+      <xs:element minOccurs="0" name="OrganizationId" type="xs:int" />
+      <xs:element minOccurs="0" name="OriginalLandmarkId" type="xs:int" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Radius" type="xs:int" />
+      <xs:element minOccurs="0" name="StreetAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timezone" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LandmarkInfo" nillable="true" type="tns:LandmarkInfo" />
+  <xs:complexType name="GeoCoderNavteqResp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FunctionalClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HouseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsIntersection" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPostedSpeed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpeedCategory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpeedLimit" type="xs:short" />
+      <xs:element minOccurs="0" name="SpeedZoneType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeoCoderNavteqResp" nillable="true" type="tns:GeoCoderNavteqResp" />
+</xs:schema>

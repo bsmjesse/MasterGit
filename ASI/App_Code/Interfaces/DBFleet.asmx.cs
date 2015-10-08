@@ -3393,5 +3393,38 @@ namespace VLF.ASI.Interfaces
                 return (int)ASIErrorCheck.CheckError(Ex);
             }
         }
+
+        //Changes
+        [WebMethod(Description = "Assign All vehicle in excel to multiple fleets.")]
+        public int AddAllVehicleToMultipleFleet(int userId, string SID, string result,int organizationId)
+        {
+            try
+            {
+                Log(">> AddAllVehicleToMultipleFleet(uId={0}, AllvehicleId={1})", userId,result);
+
+                if (!ValidateUserOrganization(userId, SID, organizationId))
+                    return Convert.ToInt32(InterfaceError.AuthorizationFailed);
+
+                
+
+                using (Fleet dbFleet = new Fleet(LoginManager.GetConnnectionString(userId)))
+                {
+                    dbFleet.AddAllVehicleToMultipleFleet(result, organizationId);
+
+                    //LoggerManager.RecordUserAction("Fleet", userId, 0, "vlfFleetVehicles",
+                    //                            string.Format("FleetId={0} AND VehicleId={1}", fleetId, vehicleId),
+                    //                            "Add", this.Context.Request.UserHostAddress,
+                    //                            this.Context.Request.RawUrl,
+                    //                            string.Format("Add vehicle({1}) to fleet({0})", fleetId, vehicleId));
+                }
+
+                return (int)InterfaceError.NoError;
+            }
+            catch (Exception Ex)
+            {
+                LogException("<< AddAllVehicleToMultipleFleet : uId={0}, EXC={1}", userId, Ex.Message);
+                return (int)ASIErrorCheck.CheckError(Ex);
+            }
+        }
     }
 }

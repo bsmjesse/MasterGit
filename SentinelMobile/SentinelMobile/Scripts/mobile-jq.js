@@ -22,7 +22,7 @@ var setSeatbeltOdometerStep = 1;
 
 // fix height of content
 function fixContentHeight() {
-    
+
     /*if (navigator.userAgent.match(/Android/i)) {
         window.scrollTo(0, 1);
     }*/
@@ -37,14 +37,14 @@ function fixContentHeight() {
         //contentHeight = footer.position().top - (header.position().top + header.outerHeight());
         //contentHeight = footer.position().top - 44;
         contentHeight = viewHeight - header.outerHeight();
-    
+
     if (window.map && window.map instanceof OpenLayers.Map && mapcontentheight == contentHeight) {
         return;
     }
     mapcontentheight = contentHeight;
-    
-        //contentHeight = viewHeight - footer.outerHeight();
-    
+
+    //contentHeight = viewHeight - footer.outerHeight();
+
     /*if ((content.outerHeight() + header.outerHeight() + footer.outerHeight()) !== viewHeight) {
         contentHeight -= (content.outerHeight() - content.height() + 1);
         content.height(contentHeight);
@@ -59,16 +59,16 @@ function fixContentHeight() {
         panelcontentHeight -= (panelcontent.outerHeight() - panelcontent.height() + 1);
         panelcontent.height(panelcontentHeight);
     }
-    
-    if (window.map && window.map instanceof OpenLayers.Map) {    
-        map.updateSize(); 
-    } else {    
+
+    if (window.map && window.map instanceof OpenLayers.Map) {
+        map.updateSize();
+    } else {
         // initialize map
-        init(function(feature) { 
+        init(function (feature) {
             selectedFeature = feature;
-            
+
             var s = '';
-            
+
             s += '<b>' + feature.attributes.DisplayDateTime + '</b><br />';
             s += feature.attributes.Location + '';
             s += '<div style="margin-top:5px;">' + ResourceSpeed + ': ' + feature.attributes.Speed;
@@ -77,7 +77,7 @@ function fixContentHeight() {
             }
             s += "</div>";
             //if (feature.layer.name == ResourceVehicles) {
-                s += ResourceDirection + ': ' + feature.attributes.MyHeading + '<br />';
+            s += ResourceDirection + ': ' + feature.attributes.MyHeading + '<br />';
             //}
 
             $('#popup #vehicleinfo').empty().append(s);
@@ -96,14 +96,14 @@ function fixContentHeight() {
                     //showConfig = true;
                 }
                 else {
-                    $('a#followBtn').find('.ui-btn-text').html(ResourceFollow);                    
+                    $('a#followBtn').find('.ui-btn-text').html(ResourceFollow);
                 }
             }
             else {
                 $('#followBtn').hide();
                 $('#historyBtn').hide();
             }
-            
+
             $('#popup').popup();
             $('#popup').popup("open");
 
@@ -114,22 +114,22 @@ function fixContentHeight() {
             */
             selectControl.unselect(feature);
         });
-        initLayerList();        
+        initLayerList();
     }
-    
+
 }
 
 // one-time initialisation of button handlers 
 
-$("#plus").live('click', function(){
+$("#plus").live('click', function () {
     map.zoomIn();
 });
 
-$("#minus").live('click', function(){
+$("#minus").live('click', function () {
     map.zoomOut();
 });
 
-$("#locate").live('click',function(){
+$("#locate").live('click', function () {
     var control = map.getControlsBy("id", "locate-control")[0];
     if (control.active) {
         control.getCurrentLocation();
@@ -146,10 +146,9 @@ $('#mappage').live('pageshow', function () {
     //$('#mappage').css('padding-top', '0');
     fixContentHeight();
     $(window).bind("orientationchange resize pageshow", fixContentHeight);
-    if(setBaseLayer)
-    {
-        baseLayer.map.setBaseLayer(baseLayer);        
-        setBaseLayer = false;        
+    if (setBaseLayer) {
+        baseLayer.map.setBaseLayer(baseLayer);
+        setBaseLayer = false;
     }
 });
 
@@ -163,7 +162,7 @@ $('#vehicleList').live('pageshow', function () {
     $('#vehicleInfoPage').page();
     $('#historypage').page();
     $('#sendEmailPage').page();
-    
+
     loadVehicleByFleet(CurrentFleetId);
 
     $('#vehicleListSearch').bind('change', function (e) {
@@ -176,41 +175,41 @@ $('#vehicleList').live('pageshow', function () {
     $('#vehicleList').die('pageshow', arguments.callee);
 });
 
-$('#fleetPage').live('pageshow', function () {    
+$('#fleetPage').live('pageshow', function () {
     if (!FleetPageIni && FleetType == 'flat')
         loadFleets(CurrentFleetId);
 
-    $('#fleetSearch').bind('change', function (e) {        
+    $('#fleetSearch').bind('change', function (e) {
         FleetCurrentSearchString = $('#fleetSearch').val();
         FleetSearchMode = 1;
         loadFleets(CurrentFleetId, 1);
-        
+
     });
 
 
     $('#fleetPage').die('pageshow', arguments.callee);
 });
 
-$('#popup').live('pageshow',function(event, ui){
+$('#popup').live('pageshow', function (event, ui) {
     var li = "";
-    
-    for(var attr in selectedFeature.attributes){
-        li += "<li><div style='width:25%;float:left'>" + attr + "</div><div style='width:75%;float:right'>" 
+
+    for (var attr in selectedFeature.attributes) {
+        li += "<li><div style='width:25%;float:left'>" + attr + "</div><div style='width:75%;float:right'>"
         + selectedFeature.attributes[attr] + "</div></li>";
     }
     $("ul#details-list").empty().append(li).listview("refresh");
 });
 
-$('#searchpage').live('pageshow',function(event, ui){
+$('#searchpage').live('pageshow', function (event, ui) {
     $('#searchpage').page();
     $('#query').bind('change', function (e) {
         // Prevent form send
         e.preventDefault();
-        
+
         getLonLatOfAddressAndFindClosestVehicles();
     });
     GoogleAddressService = new IniGoogleAutoComplete();
-    
+
     // only listen to the first event triggered
     $('#searchpage').die('pageshow', arguments.callee);
 });
@@ -225,58 +224,20 @@ $('#historypage').live('pageshow', function () {
 });
 
 $('#sendEmailPage').live('pageshow', function () {
-    var emailHeader = "Customer: " + OrganizationName + "\n" +
-                      "Vehicle ID: " + FollowingVehicleName + "\n" +
-                      boxChangeInfoForEmail;
-    if (setFuelConfigurationForEmail == '')
-        emailHeader += "Engine Displacement: \n";
-                      
-    emailHeader += "Bus Type: ODBII or JBus/6pin/9pin\n" +
-                      "Box location: \n" +
-                      "GPS Antenna Location: \n" +
-                      "Cell Antenna Location: \n" +
-                      "Power Source: \n" +
-                      "Ignition Source: \n" +
-                      //"Power Info: \n" +
-                      "Other comments: \n\n";
+    $("#company").prop("readonly", true);
+    $('#00Ng00000018gf1').val(InstallerOrganization);
+    $('#00Ng00000018grq').val(InstallerName);
+    $('#00Ng000000177hz').val(FollowingVehicleName);
+    $("#00Ng000000177hz").prop("readonly", true);
+    $('#00Ng00000018Oah').val(FollowingBoxId);
+    $("#00Ng00000018Oah").prop("readonly", true);
+    $('#00Ng00000016f5w').val(FollowingVehicleOdometer);
+    $("#00Ng00000016f5w").prop("readonly", true);
+    $('#00Ng00000016f6B').val(FollowingVehicleFuelType).selectmenu('refresh', true);
+    $('#00Ng00000016f66').val(FollowingVehicleEngineDisplacement);
+    $("#00Ng00000016f66").prop("readonly", true);
+    $('#00Ng0000001L0XQ').val(FollowingVehicleOdometerUnits).selectmenu('refresh', true);
 
-    if (vehicleInfoForEmail != '') {
-        emailHeader += vehicleInfoForEmail + "\n";
-    }
-
-    if (setFuelConfigurationForEmail != '') {
-        emailHeader += setFuelConfigurationForEmail + "\n";
-    }
-    $('#sendEmailTRecipiants').val(emailrecipients);
-    $('#sendEmailSubject').val("Send From: " + UserFullName + "(" + UserName + "), Box: " + emailsubject);
-    var vehicleInfoBoxId = selectedFeature.attributes.BoxId;
-    var vehicleInfoLicensePlate = selectedFeature.attributes.LicensePlate;
-    var EditableSensor = '';
-    $('#sendEmailBody').val(emailHeader + emailcontent + EditableSensor + "\n");
-    if (OrganizationId == "951" || OrganizationId == "999994" || OrganizationId == "1000148" ) {
-        var url = rootPath + 'Home/_getVehicleEditableSensors/' + vehicleInfoBoxId + ',' + vehicleInfoLicensePlate;
-        $.ajax({
-            url: url,
-            async: true,
-            success: function (result) {
-                if (result == null) {
-                }
-                EditableSensor = '';
-                if (Object.keys(result).length > 0) {
-                    for (var prop in result) {
-                        EditableSensor += result[prop] + " \n";
-                    }
-                }
-                $('#sendEmailBody').val(emailHeader + emailcontent + EditableSensor + "\n");
-            },
-            error: function (msg) {
-                alert("Couldn't get the sensor list");
-            }
-        });
-    }
-   
-    //var s = "mailto:" + emailrecipients + "?subject=" + encodeURIComponent(emailsubject) + "&body=" + emailHeader + emailcontent;
-    //document.location.href = s;
 });
 
 //var addressTryTimes = 0;
@@ -314,7 +275,7 @@ function findClosestVehicles() {
     }
 
     addressTryTimes = 0;*/
-    
+
     if (searchLon == 0 && searchLat == 0)
         return;
 
@@ -331,38 +292,38 @@ function findClosestVehicles() {
 
     //$.getJSON(searchUrl, function (data) {
 
-        try {
-            //if (data.lat != 0 && data.lon != 0) {
-            //alert(searchLon + ',' + searchLat);
-                $.ajax({
-                    url: rootPath + 'Home/_FindMyVehiclesByPosition/' + searchLon + ',' + searchLat + ',' + CurrentFleetId + '?searchNumVehicles=' + searchNumVehicles + '&searchRadius=' + searchRadius,
-                    success: function (result) {
-                        if (result.indexOf("<!DOCTYPE html>") != -1) {
-                            $.mobile.hidePageLoadingMsg();
-                            location.replace(rootPath + 'Account/Login');
-                            return;
-                        }
-                        //alert(result);
-                        $('#search_results').append(result).listview('refresh');
-                        $.mobile.hidePageLoadingMsg();
-                        findingClosestVehicles = false;                        
-                    },
-                    error: function (msg) {
-                        $.mobile.hidePageLoadingMsg();
-                        findingClosestVehicles = false;
-                    }
-                });
-                
-            //}
-            //else {
-            //    $.mobile.hidePageLoadingMsg();
-            //    findingClosestVehicles = false;
-            //}
-        }
-        catch (e) {
-            $.mobile.hidePageLoadingMsg();
-            findingClosestVehicles = false;
-        }
+    try {
+        //if (data.lat != 0 && data.lon != 0) {
+        //alert(searchLon + ',' + searchLat);
+        $.ajax({
+            url: rootPath + 'Home/_FindMyVehiclesByPosition/' + searchLon + ',' + searchLat + ',' + CurrentFleetId + '?searchNumVehicles=' + searchNumVehicles + '&searchRadius=' + searchRadius,
+            success: function (result) {
+                if (result.indexOf("<!DOCTYPE html>") != -1) {
+                    $.mobile.hidePageLoadingMsg();
+                    location.replace(rootPath + 'Account/Login');
+                    return;
+                }
+                //alert(result);
+                $('#search_results').append(result).listview('refresh');
+                $.mobile.hidePageLoadingMsg();
+                findingClosestVehicles = false;
+            },
+            error: function (msg) {
+                $.mobile.hidePageLoadingMsg();
+                findingClosestVehicles = false;
+            }
+        });
+
+        //}
+        //else {
+        //    $.mobile.hidePageLoadingMsg();
+        //    findingClosestVehicles = false;
+        //}
+    }
+    catch (e) {
+        $.mobile.hidePageLoadingMsg();
+        findingClosestVehicles = false;
+    }
 
 
     //});
@@ -372,41 +333,41 @@ function findClosestVehicles() {
 function initLayerList() {
     $('#layerspage').page();
     $('<li>', {
-            "data-role": "list-divider",
-            text: ResourceBaseLayers
-        })
+        "data-role": "list-divider",
+        text: ResourceBaseLayers
+    })
         .appendTo('#layerslist');
     var baseLayers = map.getLayersBy("isBaseLayer", true);
-    $.each(baseLayers, function() {
+    $.each(baseLayers, function () {
         addLayerToList(this);
     });
 
     $('<li>', {
-            "data-role": "list-divider",
-            text: ResourceOverlayLayers
-        })
+        "data-role": "list-divider",
+        text: ResourceOverlayLayers
+    })
         .appendTo('#layerslist');
     var overlayLayers = map.getLayersBy("isBaseLayer", false);
-    $.each(overlayLayers, function() {
-        if(this.displayInLayerSwitcher)
+    $.each(overlayLayers, function () {
+        if (this.displayInLayerSwitcher)
             addLayerToList(this);
     });
     $('#layerslist').listview('refresh');
-    
-    map.events.register("addlayer", this, function(e) {
+
+    map.events.register("addlayer", this, function (e) {
         addLayerToList(e.layer);
     });
 }
 
 function addLayerToList(layer) {
     var item = $('<li>', {
-            "data-icon": "check",
-            "class": layer.visibility ? "checked" : ""
-        })
+        "data-icon": "check",
+        "class": layer.visibility ? "checked" : ""
+    })
         .append($('<a />', {
             text: layer.name
         })
-            .click(function() {
+            .click(function () {
                 $.mobile.changePage('#mappage');
                 if (layer.isBaseLayer) {
                     //layer.map.setBaseLayer(layer);
@@ -424,14 +385,14 @@ function addLayerToList(layer) {
         )
         .appendTo('#layerslist');
     layer.events.on({
-        'visibilitychanged': function() {
+        'visibilitychanged': function () {
             $(item).toggleClass('checked');
         }
     });
 }
 
 function mapVehicle(boxId, trytimes) {
-    
+
     attributes = eval("(" + $('#vehicle_0_' + boxId).attr('data-attr') + ")");
     //alert(attributes.LicensePlate);
 
@@ -440,7 +401,7 @@ function mapVehicle(boxId, trytimes) {
     mapSelectedVehicle(0);
 }
 
-function mapSelectedVehicle(trytimes) {    
+function mapSelectedVehicle(trytimes) {
     if (trytimes == undefined) trytimes = 0;
     if (map == undefined) {
         if (trytimes > 5) return;
@@ -449,7 +410,7 @@ function mapSelectedVehicle(trytimes) {
     }
 
     if (sprintersLayer && map) {
-        sprintersLayer.removeAllFeatures();        
+        sprintersLayer.removeAllFeatures();
     }
 
     if (allVehicles.length == 0) return;
@@ -461,11 +422,11 @@ function mapSelectedVehicle(trytimes) {
 
     for (i = 0; i < allVehicles.length; i++) {
         //if (followingFeature != null && followingFeature.BoxId == allVehicles[i].BoxId) {
-        if( HistoryBoxId == allVehicles[i].BoxId || FollowingBoxId == allVehicles[i].BoxId) {
-            mapFollows = true;            
+        if (HistoryBoxId == allVehicles[i].BoxId || FollowingBoxId == allVehicles[i].BoxId) {
+            mapFollows = true;
         }
         var _v = allVehicles[i];
-        newLoc = transformCoords(_v.lon, _v.lat);        
+        newLoc = transformCoords(_v.lon, _v.lat);
         var point = new OpenLayers.Geometry.Point(newLoc.lon, newLoc.lat);
         var marker = new OpenLayers.Feature.Vector(point);
         bounds.extend(newLoc);
@@ -473,10 +434,10 @@ function mapSelectedVehicle(trytimes) {
         marker.attributes = _v;
 
         vehicleFeatures.push(marker);
-    }    
+    }
     sprintersLayer.addFeatures(vehicleFeatures);
-    
-    if (!mapFollows) {        
+
+    if (!mapFollows) {
         allFollows = [];
         followLayer.removeAllFeatures();
     }
@@ -576,11 +537,11 @@ function loadVehicleByFleet(fleetId, pageIndex, changePageToVehicleList, keepSel
         isSearch = 0;
         searchString = 'na';
     }*/
-    
+
     VehicleListPageLazyLoading = true;
     if (pageIndex == 1)
         $.mobile.showPageLoadingMsg();
-    
+
     var checkedVehicleIds = ';';
     if (keepSelects || pageIndex != 1) {
         for (i = 0; i < allVehicles.length; i++) {
@@ -589,13 +550,13 @@ function loadVehicleByFleet(fleetId, pageIndex, changePageToVehicleList, keepSel
         }
     }
     if (CurrentSearchString == '') {
-        SearchMode = 0;        
+        SearchMode = 0;
     }
 
-    $.ajax({    
+    $.ajax({
         url: loadVehicleByFleetPath + fleetId + "," + pageIndex + "," + SearchMode + "," + (CurrentSearchString == '' ? 'na' : CurrentSearchString) + "," + checkedVehicleIds,
         success: function (result) {
-            
+
             VehicleListPageLazyLoading = false;
             if (result.indexOf("<!DOCTYPE html>") != -1) {
                 location.replace(rootPath + 'Account/Login');
@@ -603,18 +564,18 @@ function loadVehicleByFleet(fleetId, pageIndex, changePageToVehicleList, keepSel
             }
             if (pageIndex == 1) {
                 $('#ulVehicleList').html(result).listview('refresh');
-                if(!keepSelects)
+                if (!keepSelects)
                     allVehicles = [];
                 if (changePageToVehicleList) {
-                    $.mobile.changePage('#vehicleList');                    
+                    $.mobile.changePage('#vehicleList');
                 }
             }
             else {
                 $('#ulVehicleList').append(result).listview('refresh');
             }
             if (result.indexOf("checkBoxLeft") == -1) VehicleListPageLoadingFinished = true;
-            
-            $.mobile.hidePageLoadingMsg();            
+
+            $.mobile.hidePageLoadingMsg();
         },
         error: function (msg) {
             $('#listviewmsg').html('It has some problem loading the vehilces. Please try again later.');
@@ -623,7 +584,7 @@ function loadVehicleByFleet(fleetId, pageIndex, changePageToVehicleList, keepSel
         }
     });
 
-    
+
 }
 
 function loadFleets(fleetId, pageIndex) {
@@ -642,7 +603,7 @@ function loadFleets(fleetId, pageIndex) {
     }*/
 
     FleetListPageLazyLoading = true;
-    if(pageIndex == 1)
+    if (pageIndex == 1)
         $.mobile.showPageLoadingMsg();
 
     if (FleetCurrentSearchString == '')
@@ -664,14 +625,14 @@ function loadFleets(fleetId, pageIndex) {
                 return;
             }
             if (pageIndex == 1) {
-                $('#ulFleetPage').html(result).listview('refresh');                
+                $('#ulFleetPage').html(result).listview('refresh');
             }
             else {
                 $('#ulFleetPage').append(result).listview('refresh');
             }
             FleetPageIni = true;
             if (result.indexOf("checkBoxLeft") == -1) FleetListPageLoadingFinished = true;
-            
+
             $.mobile.hidePageLoadingMsg();
         },
         error: function (msg) {
@@ -705,7 +666,7 @@ function isAtBottom() {
 
     totalHeight = document.body.offsetHeight;
     visibleHeight = document.documentElement.clientHeight;
-    
+
     return (totalHeight <= currentScroll + visibleHeight)
 }
 
@@ -718,7 +679,7 @@ function searchVehicleList(fleetId) {
 
 function setSearchCriteria() {
     searchNumVehicles = $('#selSearchNumVehicles').val();
-    searchRadius = $('#selSearchRadius').val();    
+    searchRadius = $('#selSearchRadius').val();
 }
 
 function follow(o) {
@@ -746,7 +707,7 @@ function follow(o) {
 
     emailsubject = "";
     emailcontent = "";
-    
+
     if (boxId == FollowingBoxId) {
         FollowingBoxId = "";
         $('#liFollow').hide();
@@ -770,7 +731,7 @@ function follow(o) {
         //emailsubject = followingFeature.attributes.Description;
         emailsubject = FollowingBoxId;
         //$("#emailfollowpage").attr('href', "mailto:" + emailrecipients + "?subject=" + encodeURIComponent(emailsubject) + "&body=" + emailcontent);
-        
+
         FollowIntervalId = setInterval(function () {
             getLastestVehicleInfo(FollowingBoxId);
         }, FollowInterval);
@@ -782,7 +743,7 @@ function follow(o) {
 function showhistory(o) {
     //boxId = $(o).attr('rel');
     historyFeature = selectedFeature;
-    
+
     // Unfollow
     FollowingVehicleId = 0;
     FollowingVehicleName = "";
@@ -790,7 +751,7 @@ function showhistory(o) {
     setFuelConfigurationForEmail = "";
     FollowingBoxId = '';
     clearConfig();
-    
+
     $('ul#follow_results').empty();
     followLayer.removeAllFeatures();
     allFollows = [];
@@ -808,19 +769,19 @@ function showhistory(o) {
         $.mobile.changePage('#historypage');
     });
     $('#liFollow').show();
-    
+
     $('#popup').popup('close');
     $('#historyPageTitle').html(ResourceHistory + ': ' + historyFeature.attributes.Description);
     $.mobile.changePage('#historypage');
 }
 
 function config(o) {
-    
+
     ConfigBoxId = selectedFeature.attributes.BoxId;
     ConfigVehicleId = selectedFeature.attributes.VehicleId;
-    
+
     vehicleInfo(o);
-    
+
     //FollowingLicensePlate = followingFeature.attributes.LicensePlate;
     //FollowingVehicleId = 0;
 
@@ -844,7 +805,7 @@ function config(o) {
 
             try {
                 if (data.hasCommands == 1) {
-                    if(data.setOdometer == 'true')
+                    if (data.setOdometer == 'true')
                         $('#configOdometerConfig').show();
                     if (data.updatePosition == 'true')
                         $('#updatePositionConfig').show();
@@ -889,7 +850,7 @@ function vehicleInfo(o) {
         ;
 
         var url = rootPath + 'Home/_getVehicleInfoComboList/';
-        
+
         $.getJSON(url, function (data) {
 
             try {
@@ -914,7 +875,7 @@ function vehicleInfo(o) {
             }
             catch (e) {
             }
-            
+
             loadVehicleInfo(vehicleInfoLicensePlate);
         });
     }
@@ -931,7 +892,7 @@ function vehicleInfo(o) {
 
         loadVehicleInfo(vehicleInfoLicensePlate);
     }
-    
+
     $('#popup').popup('close');
 }
 
@@ -948,11 +909,11 @@ function loadVehicleInfo(licencePlate) {
                 $('#vehicleInfoLicensePlate').val(data.LicensePlate);
 
                 $("select#selVehiceInfoVehicleType option")
-                    .each(function () { this.selected = (this.text == data.VehicleTypeName); });                
+                    .each(function () { this.selected = (this.text == data.VehicleTypeName); });
                 $("select#selVehiceInfoVehicleType").selectmenu("refresh", true);
 
                 $("select#selVehiceInfoMake option")
-                    .each(function () { this.selected = (this.text == data.MakeName); });                
+                    .each(function () { this.selected = (this.text == data.MakeName); });
                 $("select#selVehiceInfoMake").selectmenu("refresh", true);
 
                 $("select#vehicleInfoProvince option")
@@ -971,7 +932,7 @@ function loadVehicleInfo(licencePlate) {
                 // set up hidden fields
                 $('#vehicleInfoOldLicense').val(data.LicensePlate);
                 $('#vehicleInfoCost').val(data.Cost);
-                $('#vehicleInfoDescription').val(data.Description);                
+                $('#vehicleInfoDescription').val(data.Description);
                 $('#vehicleInfoVehicleId').val(data.VehicleId);
                 $('#vehicleInfoBoxId').val(data.BoxId);
                 $('#vehicleInfoIconTypeId').val(data.IconTypeId);
@@ -1004,7 +965,7 @@ function loadModelInfo(setSeatbeltOdometer) {
     if (setSeatbeltOdometer == undefined) {
         setSeatbeltOdometer = false;
     }
-    
+
     var urlModel = rootPath + 'Home/_getModelByMakeId/' + $("#selVehiceInfoMake").val();
 
     $.mobile.showPageLoadingMsg();
@@ -1033,7 +994,7 @@ function loadModelInfo(setSeatbeltOdometer) {
 
 function checkSetSeatBeltOdometer() {
     var url = rootPath + 'Home/_checkSetSeatBeltOdometer/' + encodeURIComponent($("#selVehiceInfoMake option:selected").text()) + "," + encodeURIComponent($("#selVehiceInfoModel option:selected").text()) + "," + encodeURIComponent($('#vehicleInfoYear').val());
-    
+
     $.getJSON(url, function (data) {
 
         try {
@@ -1042,7 +1003,7 @@ function checkSetSeatBeltOdometer() {
             }
 
         }
-        catch (e) { alert(e);  }
+        catch (e) { alert(e); }
 
     });
 }
@@ -1052,7 +1013,7 @@ function disableSetSeatbeltOdometerBtn() {
 }
 
 function getLastestVehicleInfo(boxId) {
-    
+
     if (LoadFollowingData)
         return;
 
@@ -1070,26 +1031,26 @@ function getLastestVehicleInfo(boxId) {
                 location.replace(rootPath + 'Account/Login');
                 return;
             }
-            
+
             if (data.success == 1 && data.hasData == 1) {
-                
+
                 for (i = data.data.length - 1; i >= 0; i--) {
                     var odometer = '';
                     var fuel = '';
                     var rpm = '';
                     var customprop = '';
-                    
+
                     odometer = getValueByKey('odometer', data.data[i].CustomProp);
                     fuel = getValueByKey('fuel', data.data[i].CustomProp);
                     rpm = getValueByKey('rpm', data.data[i].CustomProp);
-                    
+
                     if (odometer != '')
                         customprop += ResourceOdometer + '=' + odometer + '; ';
                     if (rpm != '')
                         customprop += ResourceRPM + '=' + rpm + '; ';
                     if (fuel != '')
-                        customprop += ResourceFuel + '=' + fuel + '; ';                    
-                    
+                        customprop += ResourceFuel + '=' + fuel + '; ';
+
                     var validgps = data.data[i].ValidGps;
                     if (validgps == 0)
                         customprop += ResourceGpsValid + "; ";
@@ -1104,13 +1065,13 @@ function getLastestVehicleInfo(boxId) {
                         "<p>" + ResourceMessage + ": " + data.data[i].MsgDetails + " " + customprop + "</p>" +
                         "<p>" + data.data[i].Address + "</p>" +
                         "</li>";
-                    
+
                     //var emailli = encodeURIComponent(data.data[i].displayDateTime) + "%0D" +
                     var emailli = data.data[i].displayDateTime + "\n" +
                             ResourceSpeed + ": " + data.data[i].Speed + "\n" +
                             ResourceMessage + ": " + data.data[i].MsgDetails + " " + customprop + "\n" +
                             data.data[i].Address + "\n\n";
-                    
+
                     followingFeature.attributes.OriginDateTime = data.data[i].originDateTime;
                     followingFeature.attributes.DisplayDateTime = data.data[i].displayDateTime;
 
@@ -1122,7 +1083,7 @@ function getLastestVehicleInfo(boxId) {
 
                     $("ul#follow_results").listview("refresh");
                     //alert(followingFeature.attributes.LicensePlate);
-                    
+
                     mapFollow({
                         BoxId: followingFeature.attributes.BoxId,
                         VehicleId: followingFeature.attributes.VehicleId,
@@ -1149,8 +1110,8 @@ function getLastestVehicleInfo(boxId) {
                     //alert(emailcontent);
                     //$("#emailfollowpage").attr('href', "mailto:" + emailrecipients + "?subject=" + encodeURIComponent(emailsubject) + "&body=" + emailcontent);                    
                 }
-            }            
-            
+            }
+
         }
         catch (e) {
         }
@@ -1170,10 +1131,10 @@ function saveVehicleInfo() {
         return;
     }
 
-    var regex = new RegExp("^[a-zA-Z0-9]+$");    
+    var regex = new RegExp("^[a-zA-Z0-9]+$");
 
     var vin = $('#vehicleInfoVIN').val();
-    if (vin.length != 17 ) {
+    if (vin.length != 17) {
         $('#vehicleInfoVIN').addClass('textboxError');
         $('#vehicleInfoVIN').focus();
         $('#vehicleInfoVINMsg').css('color', 'red').html(ResourceVIN17Characters);
@@ -1205,7 +1166,7 @@ function saveVehicleInfo() {
     $('#vehicleInfoLicensePlate').removeClass('textboxError');
 
     vehicleInfoForEmail = '';
-    
+
     $('#vehicleInfoMsg').css('color', 'green').html('').show();
 
     $.ajax({
@@ -1216,11 +1177,11 @@ function saveVehicleInfo() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         async: false,
-        success: function (data) {            
+        success: function (data) {
             if (data.success == "1") {
                 $('#vehicleInfoOldLicense').val($('#vehicleInfoLicensePlate').val());
                 $('#vehicleInfoMsg').css('color', 'green').html(ResourceSuccessfullySaved).show();
-                
+
                 //$('#vehicleInfoMsg').delay(1000).html('');
                 vehicleInfoForEmail = ResourceVin + ": " + $('#vehicleInfoVIN').val() + "\n" +
                                       ResourceLicensePlace + ": " + $('#vehicleInfoLicensePlate').val() + "\n" +
@@ -1231,7 +1192,7 @@ function saveVehicleInfo() {
                                       ResourceColor + ": " + $('#vehicleInfoColor').val() + "\n" +
                                       ResourceStateProvince + ": " + $('#vehicleInfoProvince').val() + "\n";
                 checkSetSeatBeltOdometer();
-                
+
                 var oldDescription = selectedFeature.attributes.Description;
                 if (oldDescription != newDescription) {
                     $('#vehicleList #listviewwrapper ul li#livehiclelist_' + selectedFeature.attributes.VehicleId + ' h2').html(newDescription + ' ');
@@ -1257,7 +1218,7 @@ function saveVehicleInfo() {
                     var s2 = "{ BoxId: " + $('#selVehiceInfoBox').val() + ",";
                     var h = $('#vehicleList #listviewwrapper ul li#livehiclelist_' + selectedFeature.attributes.VehicleId).html();
                     h = h.replace(new RegExp(s1, 'g'), s2);
-                    
+
                     $('#vehicleList #listviewwrapper ul li#livehiclelist_' + selectedFeature.attributes.VehicleId).html(h);
 
                     unassignedBoxIdOptions = '<option value="' + $('#vehicleInfoBoxId').val() + '">' + $('#vehicleInfoBoxId').val() + '</option>' + unassignedBoxIdOptions;
@@ -1314,14 +1275,14 @@ function saveVehicleInfo() {
 
             }
             else {
-                $('#vehicleInfoMsg').css('color', 'red').html(ResourceFailedToSave).show();                
+                $('#vehicleInfoMsg').css('color', 'red').html(ResourceFailedToSave).show();
             }
-            
+
         },
         error: function (msg) {
             $('#vehicleInfoMsg').css('color', 'red').html(ResourceFailedToSave).show();
         }
-    });    
+    });
 }
 
 function swapVehicle() {
@@ -1391,73 +1352,127 @@ function removeVehicleAfterSwap() {
 }
 
 function sendEmail() {
-    $('#sendEmailTRecipiants').removeClass('textboxError');
-    $('#sendEmailSubject').removeClass('textboxError');
-    $('#sendEmailBody').removeClass('textboxError');
-    $('#sendEmailInstaller').removeClass('textboxError');
-    $('#sendEmailInstallerEmail').removeClass('textboxError');
+    $('#company').removeClass('textboxError');          //Organization
+    $('#00Ng00000018gf1').removeClass('textboxError');  //Installer Organization
+    $('#00Ng00000018grq').removeClass('textboxError');  //Installer Name
+    $('#00Ng00000018gew').removeClass('textboxError');  //Installer Email
+    $('#00Ng0000001MI3p').removeClass('textboxError');  //Installer Phone
+    //$('#00Ng00000018Oah').removeClass('textboxError');  //Box ID
+    //$('#00Ng000000177hz').removeClass('textboxError');  //Vehicle Description
+    $('#00Ng00000016kAm').removeClass('textboxError');  //ECM
+    $('#00Ng00000016f5w').removeClass('textboxError');  //Odometer
+    //$('#00Ng0000001L0XQ').removeClass('textboxError');  //Odometer Units
+    //$('#00Ng00000016f61').removeClass('textboxError');  //Engine Hours
+    //$('#00Ng00000016f6B').removeClass('textboxError');  //Fuel Type
+    //$('#00Ng00000016f66').removeClass('textboxError');  //Engine Displacement
+    $('#00Ng00000016jwG').removeClass('textboxError');  //Ignition Source
+    $('#00Ng00000016jvw').removeClass('textboxError');  //Power Source
+    $('00Ng00000016jZR').removeClass('textboxError');   //Box Location
+    $('00Ng00000016jtb').removeClass('textboxError');   //GPS Antenna Location
+    $('00Ng00000016juy').removeClass('textboxError');   //Cell Antenna Location
 
-    var sendEmailTRecipiants = $('#sendEmailTRecipiants').val();
-    if (sendEmailTRecipiants == '') {
-        $('#sendEmailTRecipiants').addClass('textboxError');
-        $('#sendEmailTRecipiants').focus();
-        $('#sendEmailToMsg').css('color', 'red').html(ResourceEmailToNotEmpty).show().delay(1000).fadeOut(1000);
+    if ($('#company').val() == '') {
+        $('#company').addClass('textboxError');
+        $('#company').focus();
+        $('#OrganizationMsg').css('color', 'red').html(OrganizationNotEmpty).show().delay(1000).fadeOut(1000);
         return;
     }
 
-    if ($('#sendEmailSubject').val() == '') {
-        $('#sendEmailSubject').addClass('textboxError');
-        $('#sendEmailSubject').focus();
-        $('#sendEmailSubjectMsg').css('color', 'red').html(ResourceEmailSubjectNotEmpty).show().delay(1000).fadeOut(1000);
+    if ($('#00Ng00000018gf1').val() == '') {
+        $('#00Ng00000018gf1').addClass('textboxError');
+        $('#00Ng00000018gf1').focus();
+        $('#InstallerOrganizationMsg').css('color', 'red').html(InstallerOrganizationNotEmpty).show().delay(1000).fadeOut(1000);
+        return;
+    }
+    else {
+        InstallerOrganization = $('#00Ng00000018gf1').val();
+    }
+
+    if ($('#00Ng00000018grq').val() == '') {
+        $('#00Ng00000018grq').addClass('textboxError');
+        $('#00Ng00000018grq').focus();
+        $('#InstallerMsg').css('color', 'red').html(ResourceInstallerNotEmpty).show().delay(1000).fadeOut(1000);
+        return;
+    }
+    else {
+        InstallerName = $('#00Ng00000018grq').val();
+    }
+
+    if ($('#00Ng00000018gew').val() == '') {
+        $('#00Ng00000018gew').addClass('textboxError');
+        $('#00Ng00000018gew').focus();
+        $('#InstallerEmailMsg').css('color', 'red').html(ResourceEmailToNotEmpty).show().delay(1000).fadeOut(1000);
         return;
     }
 
-    if ($('#sendEmailBody').val() == '') {
-        $('#sendEmailBody').addClass('textboxError');
-        $('#sendEmailBody').focus();
-        $('#sendEmailBodyMsg').css('color', 'red').html(ResourceEmailBodyNotEmpty).show().delay(1000).fadeOut(1000);
+    //invalid email address
+    var sendEmailInstallerEmail = $('#00Ng00000018gew').val();
+    if (sendEmailInstallerEmail != '' && !isValidEmailAddress(sendEmailInstallerEmail)) {
+        $('#00Ng00000018gew').addClass('textboxError');
+        $('#00Ng00000018gew').focus();
+        $('#InstallerEmailMsg').css('color', 'red').html(ResourceInvalidEmailAddress).show().delay(1000).fadeOut(1000);
         return;
     }
 
-    if ($('#sendEmailInstaller').val() == '') {
-        $('#sendEmailInstaller').addClass('textboxError');
-        $('#sendEmailInstaller').focus();
-        $('#sendEmailInstallerMsg').css('color', 'red').html(ResourceInstallerNotEmpty).show().delay(1000).fadeOut(1000);
+    if ($('#00Ng0000001MI3p').val() == '') {
+        $('#00Ng0000001MI3p').addClass('textboxError');
+        $('#00Ng0000001MI3p').focus();
+        $('#InstallerPhoneMsg').css('color', 'red').html(InstallerPhoneNotEmpty).show().delay(1000).fadeOut(1000);
         return;
     }
 
-    var sendEmailInstallerEmail = $('#sendEmailInstallerEmail').val();
-    if (sendEmailInstallerEmail == '' || !isValidEmailAddress(sendEmailInstallerEmail)) {
-        $('#sendEmailInstallerEmail').addClass('textboxError');
-        $('#sendEmailInstallerEmail').focus();
-        $('#sendEmailInstallerEmailMsg').css('color', 'red').html(ResourceInvalidEmailAddress).show().delay(1000).fadeOut(1000);
+    if ($('#00Ng00000016kAm').val() == '') {
+        $('#00Ng00000016kAm').addClass('textboxError');
+        $('#00Ng00000016kAm').focus();
+        $('#ECMMsg').css('color', 'red').html(ECMNotEmpty).show().delay(1000).fadeOut(1000);
         return;
     }
 
-    $.ajax({
-        type: 'POST',
-        url: rootPath + 'Home/_sendEmail/',
-        //data: $('#formVehicleInfo').serialize(),
-        data: JSON.stringify($('#formSendEmail').serializeObject()),
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        async: false,
-        success: function (data) {
-            if (data.success == "1") {
-                $('#sendEmailMsg').css('color', 'green').html(ResourceSuccessfullySendEmail).show().delay(1000).fadeOut(2000);
-                setTimeout(function () { window.history.back(); }, 2000);
-                
-            }
-            else {
-                $('#sendEmailMsg').css('color', 'red').html(ResourceFailedToSendEmail).show().delay(1000).fadeOut(2000);
-            }
-            
-        },
-        error: function (msg) {
-            $('#sendEmailMsg').css('color', 'red').html(ResourceFailedToSendEmail).show().delay(1000).fadeOut(2000);
-        }
-    });
+    //odometer should be numeric
+    VehicleOdometer = $('#00Ng00000016f5w').val();
+    if (VehicleOdometer != '' && !$.isNumeric(VehicleOdometer)) {
+        $('#00Ng00000016f5w').addClass('textboxError');
+        $('#00Ng00000016f5w').focus();
+        $('#OdometerMsg').css('color', 'red').html(InvalidOdometer2).show().delay(1000).fadeOut(1000);
+        return;
+    }
 
+    if ($('#00Ng00000016jwG').val() == '') {
+        $('#00Ng00000016jwG').addClass('textboxError');
+        $('#00Ng00000016jwG').focus();
+        $('#IgnitionSourceMsg').css('color', 'red').html(IgnitionSourceNotEmpty).show().delay(1000).fadeOut(1000);
+        return;
+    }
+
+    if ($('#00Ng00000016jvw').val() == '') {
+        $('#00Ng00000016jvw').addClass('textboxError');
+        $('#00Ng00000016jvw').focus();
+        $('#PowerSourceMsg').css('color', 'red').html(PowerSourceNotEmpty).show().delay(1000).fadeOut(1000);
+        return;
+    }
+
+    if ($('#00Ng00000016jZR').val() == '') {
+        $('#00Ng00000016jZR').addClass('textboxError');
+        $('#00Ng00000016jZR').focus();
+        $('#BoxLocationMsg').css('color', 'red').html(BoxLocationNotEmpty).show().delay(1000).fadeOut(1000);
+        return;
+    }
+
+    if ($('#00Ng00000016jtb').val() == '') {
+        $('#00Ng00000016jtb').addClass('textboxError');
+        $('#00Ng00000016jtb').focus();
+        $('#GPSAntennaLocationMsg').css('color', 'red').html(GPSAntennaLocationNotEmpty).show().delay(1000).fadeOut(1000);
+        return;
+    }
+
+    if ($('#00Ng00000016juy').val() == '') {
+        $('#00Ng00000016juy').addClass('textboxError');
+        $('#00Ng00000016juy').focus();
+        $('#CellAntennaLocationMsg').css('color', 'red').html(CellAntennaLocationNotEmpty).show().delay(1000).fadeOut(1000);
+        return;
+    }
+
+    $("#formSendEmail").submit();
 }
 
 function mapFollow(attributes, trytimes) {
@@ -1470,13 +1485,13 @@ function mapFollow(attributes, trytimes) {
 
     if (!$.isNumeric(attributes.lon) || !$.isNumeric(attributes.lat) || attributes.lon == 0 || attributes.lat == 0)
         return;
-    
+
     for (j = 0; j < allVehicles.length; j++) {
         if (allVehicles[j].BoxId == attributes.BoxId) {
             try {
                 // change current position to history
                 //historyFeature = allVehicles[j];
-                
+
                 var oldattr = eval("(" + $('#vehicle_0_' + attributes.BoxId).attr('data-attr') + ")");
                 oldattr.DisplayDateTime = attributes.DisplayDateTime;
                 oldattr.OriginDateTime = attributes.OriginDateTime;
@@ -1492,7 +1507,7 @@ function mapFollow(attributes, trytimes) {
                 $('#vehicle_datetime_0_' + attributes.BoxId).html(oldattr.DisplayDateTime);
                 $('#vehicle_speed_0_' + attributes.BoxId).html(oldattr.Speed);
                 $('#vehicle_address_0_' + attributes.BoxId).html(oldattr.Location);
-                var newLoc;                
+                var newLoc;
                 //var _v = historyFeature;
                 var _v = allVehicles[j];
                 //alert('allVehicles[j].displayDateTime:' + _v.DisplayDateTime);
@@ -1501,7 +1516,7 @@ function mapFollow(attributes, trytimes) {
                 var hpoint = new OpenLayers.Geometry.Point(newLoc.lon, newLoc.lat);
                 var hmarker = new OpenLayers.Feature.Vector(hpoint);
                 var vspeed = _v.Speed.split(" ")[0];
-                
+
                 if ($.isNumeric(vspeed) && vspeed > 0) {
                     _v.icon = "/mobile/content/images/followBlue" + _v.MyHeadingIcon + ".png";
                 }
@@ -1510,7 +1525,7 @@ function mapFollow(attributes, trytimes) {
                 }
                 //hmarker.attributes = _v;
                 hmarker.attributes = jQuery.extend(true, {}, _v);
-                
+
                 followLayer.addFeatures([hmarker]);
 
                 allFollows.push(hmarker);
@@ -1519,7 +1534,7 @@ function mapFollow(attributes, trytimes) {
                     followLayer.removeFeatures(allFollows.slice(0, allFollows.length - FollowMaxRecords));
                     allFollows.splice(0, allFollows.length - FollowMaxRecords);
                 }
-                
+
                 // update live position                
                 _v = attributes;
                 newLoc = transformCoords(_v.lon, _v.lat);
@@ -1533,16 +1548,16 @@ function mapFollow(attributes, trytimes) {
                 allVehicles[j] = _v;
             }
             catch (err) {
-                
+
             }
             break;
         }
-    }    
+    }
 }
 
 
 function IniGoogleAutoComplete() {
-    
+
     //Google auto completion    
     /*var mapOptions = {
         center: new google.maps.LatLng(43.67746, -79.5850766666667),
@@ -1590,7 +1605,7 @@ function IniGoogleAutoComplete() {
     //    var place = autocomplete.getPlace();
     //    //console.log(place.address_components);
     //});
-    
+
 }
 
 /*function configOdometer() {
@@ -1637,7 +1652,7 @@ function sendCommand(commandName) {
         vehicleInfoForEmail = '';
         boxChangeInfoForEmail = '';
         followingFeature = selectedFeature;
-        
+
         $('ul#follow_results').empty();
         followLayer.removeAllFeatures();
         allFollows = [];
@@ -1693,12 +1708,18 @@ function sendCommand(commandName) {
             $('#configOdometer').focus();
             validation = false;
         }
-        
+
         if (!validation)
             return;
-        
+
         cmdName = 'setodometer';
-        commandValue = Math.round(odometer / selMesUnits);        
+        commandValue = Math.round(odometer / selMesUnits);
+
+        FollowingVehicleOdometer = odometer;
+        if (selMesUnits == 1)
+            FollowingVehicleOdometerUnits = "KM";
+        else
+            FollowingVehicleOdometerUnits = "MI";
     }
     else if (commandName == 'updatePosition') {
         cmdName = 'updateposition';
@@ -1805,11 +1826,18 @@ function sendCommand(commandName) {
         if (SetFuelConfigurationAirFuelRatiox10.trim() == '') SetFuelConfigurationAirFuelRatiox10 = 0;
         if (SetFuelConfigurationDenominator.trim() == '') SetFuelConfigurationDenominator = 0;
 
+        FollowingVehicleEngineDisplacement = SetFuelConfigurationEngineDisplacement;
+        if (FuelType == '0' || FuelType == '1' || FuelType == '2')
+            FollowingVehicleFuelType = 'Gas';
+        else if (FuelType == '4')
+            FollowingVehicleFuelType = 'Diesel';
+        else
+            FollowingVehicleFuelType = '';
+
         commandValue = FuelType + ';' + SetFuelConfigurationEngineDisplacement + ';' + SetFuelConfigurationVolumeEfficency + ';' + SetFuelConfigurationAirFuelRatiox10 + ';' + SetFuelConfigurationDenominator;
         cmdName = 'setfuelconfiguration';
     }
-    else if (commandName == 'setSeatbeltOdometer')
-    {
+    else if (commandName == 'setSeatbeltOdometer') {
         commandValue = encodeURIComponent($("#selVehiceInfoMake option:selected").text()) + ";" + encodeURIComponent($("#selVehiceInfoModel option:selected").text()) + ";" + encodeURIComponent($('#vehicleInfoYear').val());
         cmdName = 'setSeatbeltOdometer';
     }
@@ -1849,8 +1877,7 @@ function sendCommand(commandName) {
 function sendSetSeatbeltOdometerFollowingCommands(commandName) {
     var commandValue = ""
     var cmdName = "";
-    if (commandName == 'setSeatbeltOdometer')
-    {
+    if (commandName == 'setSeatbeltOdometer') {
         commandValue = "na";
         cmdName = 'setSeatbeltOdometerNext1';
     }
@@ -1911,7 +1938,7 @@ function configVehicleName() {
             $('#configVehicleNameBtn').removeClass('ui-disabled');
             $('#vehicleNameSettingWaiting').hide();
 
-            if (data.result > 0) {                
+            if (data.result > 0) {
                 $('#vehicleNameSettingMsg').css('color', 'green').html(data.Msg);
 
                 var oldDescription = followingFeature.attributes.Description;
@@ -1928,7 +1955,7 @@ function configVehicleName() {
                 //emailsubject = newDescription;
             }
             else {
-                $('#vehicleNameSettingMsg').css('color', 'red').html(data.Msg);                
+                $('#vehicleNameSettingMsg').css('color', 'red').html(data.Msg);
             }
         }
         catch (e) {
@@ -1937,8 +1964,8 @@ function configVehicleName() {
 }
 
 function checkCommandStatus(boxId, ProtocolTypeId, CommModeId, commandName, vehicleId) {
-    var url = rootPath + 'Home/_checkCommandStatus/' + boxId + ',' + ProtocolTypeId + ',' + CommModeId + ',' + vehicleId;    
-    
+    var url = rootPath + 'Home/_checkCommandStatus/' + boxId + ',' + ProtocolTypeId + ',' + CommModeId + ',' + vehicleId;
+
     $.getJSON(url, function (data) {
         //alert(url + ', ' + data.Status);
         try {
@@ -1967,7 +1994,7 @@ function checkCommandStatus(boxId, ProtocolTypeId, CommModeId, commandName, vehi
                         sendSetSeatbeltOdometerFollowingCommands(commandName);
                     }
                     else if (commandName == 'setSeatbeltOdometerNext2') {
-                        $('#setSeatbeltOdometerMsg').html(data.Msg);                        
+                        $('#setSeatbeltOdometerMsg').html(data.Msg);
                     }
                     else {
                         $('#' + commandName + 'Msg').css('color', 'green').html(data.Msg);
@@ -1978,24 +2005,24 @@ function checkCommandStatus(boxId, ProtocolTypeId, CommModeId, commandName, vehi
                     if (commandName == 'SetFuelConfiguration') {
                         setFuelConfigurationForEmail = ResourceFuelType + ": " + $("#selSetFuelConfigurationFuelType option:selected").text() + "\n" +
                                 ResourceEngineDisplacement + ": " + $('#SetFuelConfigurationEngineDisplacement').val() + "\n";
-                                //ResourceVolumeEfficency + ": " + $('#SetFuelConfigurationVolumeEfficency').val() + "\n" +
-                                //ResourceAirFuelRatiox10 + ": " + $('#SetFuelConfigurationAirFuelRatiox10').val() + "\n";
+                        //ResourceVolumeEfficency + ": " + $('#SetFuelConfigurationVolumeEfficency').val() + "\n" +
+                        //ResourceAirFuelRatiox10 + ": " + $('#SetFuelConfigurationAirFuelRatiox10').val() + "\n";
                     }
                 }
 
             }
             else if (data.Status == 500) {
                 $('#' + commandName + 'Msg').css('color', 'red').html(data.Msg);
-                
+
                 if (commandName == 'setSeatbeltOdometerNext1') {
-                    $('#setSeatbeltOdometerMsg').css('color', 'red').html(data.Msg);                    
+                    $('#setSeatbeltOdometerMsg').css('color', 'red').html(data.Msg);
                 }
                 else if (commandName == 'setSeatbeltOdometerNext2') {
-                    $('#setSeatbeltOdometerMsg').css('color', 'red').html(data.Msg);                    
+                    $('#setSeatbeltOdometerMsg').css('color', 'red').html(data.Msg);
                 }
 
                 $('.configButton').removeClass('ui-disabled');
-                $('#' + commandName + 'Waiting').hide();              
+                $('#' + commandName + 'Waiting').hide();
             }
 
 
@@ -2030,7 +2057,7 @@ function getValueByKey(key, s) {
         m = s.indexOf(";");
         return s.substring(n + key.length, m);
     }
-    
+
     n = s.indexOf(";" + key);
     m = s.indexOf(";", n + 1);
     if (n == -1)
@@ -2042,9 +2069,8 @@ function getValueByKey(key, s) {
 
 function mailFollowPage() {
     //$("#emailfollowpage").attr('href', "mailto:" + emailrecipients + "?subject=" + encodeURIComponent(emailsubject) + "&body=" + emailcontent);
-
     var emailHeader = encodeURIComponent("Customer: " + OrganizationName + "\n") +
-                      encodeURIComponent("Vehicle ID: " + FollowingVehicleName  + "\n") +
+                      encodeURIComponent("Vehicle ID: " + FollowingVehicleName + "\n") +
                       encodeURIComponent("Engine Displacement: \n") +
                       //encodeURIComponent("Bluetooth ID: \n") +
                       encodeURIComponent("Bus Type: ODBII or JBus/6pin/9pin\n") +
@@ -2056,17 +2082,16 @@ function mailFollowPage() {
                       //encodeURIComponent("Power Info: \n") +
                       encodeURIComponent("Other comments: \n\n");
 
-    if (vehicleInfoForEmail != '')
-    {
+    if (vehicleInfoForEmail != '') {
         emailHeader += vehicleInfoForEmail + encodeURIComponent("\n");
     }
 
     if (setFuelConfigurationForEmail != '') {
         emailHeader += setFuelConfigurationForEmail + encodeURIComponent("\n");
     }
-    
+
     var s = "mailto:" + emailrecipients + "?subject=" + encodeURIComponent(emailsubject) + "&body=" + emailHeader + emailcontent;
-    
+
     document.location.href = s;
 }
 
@@ -2094,7 +2119,7 @@ function searchHistory() {
     $.getJSON(url, function (data) {
         $('#historyCriteria').popup('close');
         LoadingHistoryData = false;
-        
+
         try {
             if (data.success == 0 && data.Msg == "sessiontimeout") {
                 $.mobile.hidePageLoadingMsg();
@@ -2103,7 +2128,7 @@ function searchHistory() {
             }
 
             if (data.success == 1 && data.hasData == 1) {
-                
+
                 for (i = data.data.length - 1; i >= 0; i--) {
                     var odometer = '';
                     var fuel = '';
@@ -2129,16 +2154,14 @@ function searchHistory() {
 
                     if (data.data[i].MsgDetails != '')
                         customprop = '; ' + customprop;
-                    
+
                     var li = "<li><h2>" + data.data[i].displayDateTime + "</h2>" +
                         "<p>" + ResourceSpeed + ": " + data.data[i].Speed + "</p>" +
                         "<p>" + ResourceMessage + ": " + data.data[i].MsgDetails + " " + customprop + "</p>" +
                         "<p>" + data.data[i].Address + "</p>";
-                    if (data.data[i].reeferData == "1")
-                    {
+                    if (data.data[i].reeferData == "1") {
                         li += "<p>Tether: " + data.data[i].Tether + "; Reefer Power: " + data.data[i].Power;
-                        if (data.data[i].Tether != "Off" && data.data[i].Power != "Off")
-                        {
+                        if (data.data[i].Tether != "Off" && data.data[i].Power != "Off") {
                             li += "<p style='white-space: normal;'>Amb:" + data.data[i].Amb +
                                 "; Battery(v):" + data.data[i].BatteryVolt +
                                 "; Setpt.:" + data.data[i].Setpt +
@@ -2158,21 +2181,21 @@ function searchHistory() {
                         li += "</p>";
                     }
 
-                        li += "</li>";
+                    li += "</li>";
 
                     /*var emailli = encodeURIComponent(data.data[i].displayDateTime + "\n") +
                             encodeURIComponent(ResourceSpeed + ": " + data.data[i].Speed + "\n") +
                             encodeURIComponent(ResourceMessage + ": " + data.data[i].MsgDetails + " " + customprop + "\n") +
                             encodeURIComponent(data.data[i].Address + "\n\n");
                      */
-                    
+
                     $("ul#history_results").prepend(li);
-                    
+
                     //if ($('ul#history_results').children().length > FollowMaxRecords) {
                     //    $('ul#history_results').children().slice(FollowMaxRecords, $('ul#follow_results').children().length).remove();
                     //}
 
-                    
+
 
                     var _v = {
                         BoxId: historyFeature.attributes.BoxId,
@@ -2194,8 +2217,8 @@ function searchHistory() {
                     };
 
                     var newLoc;
-                    
-                    
+
+
                     newLoc = transformCoords(_v.lon, _v.lat);
                     var hpoint = new OpenLayers.Geometry.Point(newLoc.lon, newLoc.lat);
                     var hmarker = new OpenLayers.Feature.Vector(hpoint);
@@ -2213,12 +2236,12 @@ function searchHistory() {
 
                     //emailsubject = followingFeature.attributes.Description;
                     //emailcontent = emailli + emailcontent;
-                    
+
                 }
                 //alert("finished");
 
                 $("ul#history_results").listview("refresh");
-                
+
             }
             $.mobile.hidePageLoadingMsg();
 
@@ -2226,7 +2249,7 @@ function searchHistory() {
         catch (e) {
             //alert(e);
             $.mobile.hidePageLoadingMsg();
-            
+
         }
 
     });
@@ -2255,14 +2278,14 @@ function changeVehicleListTitle(o) {
 }
 
 function AttributesToString(o) {
-    
+
     var attrstring = '';
     for (var prop in o) {
         attrstring += prop + ": '" + o[prop] + "',";
     }
     if (attrstring.length > 0)
         attrstring = attrstring.substring(0, attrstring.length - 1);
-    
+
     return "{" + attrstring + "}";
 }
 
@@ -2424,7 +2447,7 @@ function rename(checkbox, id, SensorId, sensorNameControl) {
         checkbox.className = "checkBoxLeft checkBoxLeftNotChecked";
         document.getElementById(id).checked = false;
     }
-       
+
 }
 
 function saveSensorInfo() {
@@ -2440,7 +2463,7 @@ function saveSensorInfo() {
 
     $.ajax({
         url: url,
-        data: { "selected": JSON.stringify(UpdatedSelectedSensorlist), "unselected": JSON.stringify(UpdatedUnSelectedSensorlist), "selectedName": JSON.stringify(UpdatedSelectedSensorNameList), "unselectedName": JSON.stringify(UpdatedUnSelectedSensorNameList) ,"LicensePlate":vehicleInfoLicensePlate},
+        data: { "selected": JSON.stringify(UpdatedSelectedSensorlist), "unselected": JSON.stringify(UpdatedUnSelectedSensorlist), "selectedName": JSON.stringify(UpdatedSelectedSensorNameList), "unselectedName": JSON.stringify(UpdatedUnSelectedSensorNameList), "LicensePlate": vehicleInfoLicensePlate },
         success: function (result) {
 
             $.mobile.hidePageLoadingMsg();
@@ -2452,12 +2475,13 @@ function saveSensorInfo() {
             //  Success
             if (result == 0) {
                 $.mobile.loading('show', { theme: "d", text: "Sensors saved successfully...", textonly: true, textVisible: true });
-                setTimeout(function () { $.mobile.loading('hide'); 
-                UpdatedSelectedSensorlist = [];
-                UpdatedUnSelectedSensorlist = [];
-                UpdatedSelectedSensorNameList = [];
-                UpdatedUnSelectedSensorNameList = [];
-                $.mobile.changePage('#vehicleInfoPage');
+                setTimeout(function () {
+                    $.mobile.loading('hide');
+                    UpdatedSelectedSensorlist = [];
+                    UpdatedUnSelectedSensorlist = [];
+                    UpdatedSelectedSensorNameList = [];
+                    UpdatedUnSelectedSensorNameList = [];
+                    $.mobile.changePage('#vehicleInfoPage');
                 }, 3000);
             }
             else {

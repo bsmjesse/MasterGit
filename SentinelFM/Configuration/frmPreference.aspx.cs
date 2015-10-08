@@ -27,6 +27,8 @@ namespace SentinelFM
         public string msgPsw_MoreCharacters = "";
         public string msgPsw_Strong = "";
         public string msgPsw_TypePassword = "";
+        
+        public string msgPsw_OldNewNotSame = "";
       public string OrganizationHierarchyPath = "";
       public string OrganizationHierarchyNamePath = "";
         string sConnectionString = ConfigurationManager.ConnectionStrings["SentinelFMConnection"].ConnectionString;
@@ -111,6 +113,8 @@ namespace SentinelFM
 
                 MutipleUserHierarchyAssignment = clsPermission.FeaturePermissionCheck(sn, "MutipleUserHierarchyAssignment");
 
+                
+                msgPsw_OldNewNotSame = GetScriptEscapeString((string)base.GetLocalResourceObject("msgPsw_OldNewNotSame"));
                 cmdExit.Text = (string)base.GetLocalResourceObject("cmdExit");
                 msgPsw_Medium = GetScriptEscapeString((string)base.GetLocalResourceObject("msgPsw_Medium"));
                 msgPsw_Weak = GetScriptEscapeString((string)base.GetLocalResourceObject("msgPsw_Weak"));
@@ -354,15 +358,18 @@ namespace SentinelFM
                         //return;
                     }
 
-                sn.User.DefaultFleet = Convert.ToInt32(this.cboFleet.SelectedItem.Value);
-
-                if (this.cboFleet.SelectedItem.Value != "-1")
+                if (this.cboFleet.SelectedIndex != -1)
                 {
-                    if (objUtil.ErrCheck(dbu.UserPreference_Add_Update_ByUserId(sn.UserID, sn.SecId, userIdToUpdate, Convert.ToInt16(VLF.CLS.Def.Enums.Preference.DefaultFleet), this.cboFleet.SelectedItem.Value), false))
-                        if (objUtil.ErrCheck(dbu.UserPreference_Add_Update_ByUserId(sn.UserID, sn.SecId, userIdToUpdate, Convert.ToInt16(VLF.CLS.Def.Enums.Preference.DefaultFleet), this.cboFleet.SelectedItem.Value), true))
-                        {
-                            //return;
-                        }
+                    sn.User.DefaultFleet = Convert.ToInt32(this.cboFleet.SelectedItem.Value);
+
+                    if (this.cboFleet.SelectedItem.Value != "-1")
+                    {
+                        if (objUtil.ErrCheck(dbu.UserPreference_Add_Update_ByUserId(sn.UserID, sn.SecId, userIdToUpdate, Convert.ToInt16(VLF.CLS.Def.Enums.Preference.DefaultFleet), this.cboFleet.SelectedItem.Value), false))
+                            if (objUtil.ErrCheck(dbu.UserPreference_Add_Update_ByUserId(sn.UserID, sn.SecId, userIdToUpdate, Convert.ToInt16(VLF.CLS.Def.Enums.Preference.DefaultFleet), this.cboFleet.SelectedItem.Value), true))
+                            {
+                                //return;
+                            }
+                    }
                 }
 
                 if (this.chkMapAssets.Checked)
@@ -1153,6 +1160,10 @@ namespace SentinelFM
                         {
                             this.lblPswMsg.Text = (string)base.GetLocalResourceObject("AddUserPasswordFailed22");
                         }
+                        else if (changeResult == 4)
+                        {
+                            this.lblPswMsg.Text = (string)base.GetLocalResourceObject("msgPsw_OldPswIncorrect");
+                        }
                         else
                         {
                             this.lblPswMsg.Text = (string)base.GetLocalResourceObject("MsgUpdateFailed");
@@ -1164,8 +1175,16 @@ namespace SentinelFM
 
 
                 this.lblMessageError.Visible = false;
-		this.lblPswMsg.Visible = true;
-                this.lblPswMsg.Text = (string)base.GetLocalResourceObject("cmdPswUpdated");
+		        this.lblPswMsg.Visible = true;
+
+                if (sn.User.OrganizationId == 1000065) // Only Burnbrae has the mobile link
+                {
+                    this.lblPswMsg.Text = (string)base.GetLocalResourceObject("cmdPswUpdatedAmeco");
+                }
+                else
+                {
+                    this.lblPswMsg.Text = (string)base.GetLocalResourceObject("cmdPswUpdated");
+                }
                 sn.Password = this.txtNewPassword.Text;
 
 
@@ -1180,8 +1199,8 @@ namespace SentinelFM
                     this.cmdSavePsw.Text = (string)base.GetLocalResourceObject("cmdEditPsw");
                 }
 
-                Session["SentinelFMSession"] = null;
-                Session.Abandon();
+                //Session["SentinelFMSession"] = null;
+                //Session.Abandon();
 
                 //if (userIdToUpdate == sn.UserID)
                 ////Response.Write("<script language='javascript'>window.close()</script>");// Commented By Salman, June 26, 2014 and added following {}
@@ -1224,6 +1243,11 @@ namespace SentinelFM
                         cboFleet.DataSource = null;
                         return;
                     }
+
+                if (xml == "")
+                {
+                    return;
+                }
                 strrXML = new StringReader(xml);
                 dsFleets.ReadXml(strrXML);
 
@@ -1359,10 +1383,26 @@ namespace SentinelFM
         {
             if (Request.QueryString["errormsg"] != null)
             {
-                Response.Redirect("../login.aspx");
+                if (sn.User.OrganizationId == 1000065)
+                    Response.Redirect("../Loginameco.aspx");
+                else
+                    Response.Redirect("../login.aspx");
             }
             else
-                Response.Redirect("../Home/frmMainHome.aspx");
+            {
+                // Response.Redirect("../Home/frmMainHome.aspx");
+                this.cmdSavePsw.Text = (string)base.GetLocalResourceObject("cmdEditPsw");                
+                this.txtNewPassword.Text = string.Empty;
+                this.txtNewPassword1.Text = string.Empty;
+                this.txtOldPassword.Text = string.Empty;
+                this.lblPswMsg.Text = string.Empty;
+                this.txtNewPassword.Enabled = false;
+                this.txtNewPassword1.Enabled = false;
+                this.txtOldPassword.Enabled = false;
+                this.vlComp.Enabled = false;
+                this.valNewPassword.Enabled = false;
+                this.valOldPassword.Enabled = false;
+            }
         }
 
 

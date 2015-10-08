@@ -79,6 +79,46 @@ namespace VLF.ASI
             return geozoneNo;
         }
 
+        /// <summary>
+        /// Retrieves current HGI user
+        /// </summary>
+        /// <param name="LoginUserId"></param>
+        /// <param name="LoginUserSecId"></param>
+        /// <returns>UserId, OrganizationId</returns>
+        public static void GetCurrentHGIUser(int LoginUserId, string LoginUserSecId, ref int CurrentUserID, ref int CurrentOrgID)
+        {
+            DataSet dsUser = new DataSet();
+            DataTable dtHGIUser = new DataTable();
+            
+            try
+            {
+                using (LogEvent logEvent = new LogEvent(LoginManager.GetConnnectionString(LoginUserId)))
+                {
+                    dsUser = logEvent.GetCurrentHGIUser(LoginUserId, LoginUserSecId);
+                    if (dsUser != null)
+                    {
+                        dtHGIUser = dsUser.Tables[0];
+                        if (dtHGIUser.Rows.Count > 0)
+                        {
+                            CurrentUserID = Convert.ToInt32(dtHGIUser.Rows[0]["UserId"]);
+                            CurrentOrgID = Convert.ToInt32(dtHGIUser.Rows[0]["OrganizationId"]);
+                        }
+                        else
+                        {
+                            CurrentUserID = LoginUserId;
+                            CurrentOrgID = 0;
+                        }
+                    }
+                    logEvent.Dispose();
+                }
+            }
+            catch (Exception objException)
+            {
+                LogException("<<GetCurrentHGIUser : LoginUserId={0}, LoginUserSecId={1}, EXC={2}", LoginUserId.ToString(), LoginUserSecId, objException.Message);
+                //return (int)ASIErrorCheck.CheckError(objException);
+            }
+        }
+
         private static void LogException(string strFormat, params object[] objects)
         {
             try
